@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_CH_FORM">
+  <Field Name="I_EVENT_ID" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_EVENT_ID" Editable="True" Visible="True" />
+
+
+
+
+  <Field Name="BT_X_RAY_TO_RULE_OUT_FRACTURE_DISLOCATION_BONE_PATHOLOGY" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_X_RAY_TO_RULE_OUT_FRACTURE_DISLOCATION_BONE_PATHOLOGY" Editable="True" Visible="True" />
+  <Field Name="BT_MANAGEMENT_PLAN_CERVICAL_SPINE" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_MANAGEMENT_PLAN_CERVICAL_SPINE" Editable="True" Visible="True" />
+  <Field Name="BT_MANAGEMENT_PLAN_THORACIC_SPINE" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_MANAGEMENT_PLAN_THORACIC_SPINE" Editable="True" Visible="True" />
+  <Field Name="BT_MANAGEMENT_PLAN_LUMBAR_SPINE" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_MANAGEMENT_PLAN_LUMBAR_SPINE" Editable="True" Visible="True" />
+  <Field Name="SZ_OTHER_MANAGEMENT_PLAN" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_OTHER_MANAGEMENT_PLAN" Editable="True" Visible="True" />
+  <Field Name="BT_MANAGEMENT_PLAN_MAGNETIC_RESONANCE_IMAGING" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_MANAGEMENT_PLAN_MAGNETIC_RESONANCE_IMAGING" Editable="True" Visible="True" />
+  <Field Name="BT_MANAGEMENT_PLAN_MAGNETIC_RESONANCE_IMAGING_CERVICAL_SPINE" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_MANAGEMENT_PLAN_MAGNETIC_RESONANCE_IMAGING_CERVICAL_SPINE" Editable="True" Visible="True" />
+  <Field Name="BT_MANAGEMENT_PLAN_MAGNETIC_RESONANCE_IMAGING_THORACIC_SPINE" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_MANAGEMENT_PLAN_MAGNETIC_RESONANCE_IMAGING_THORACIC_SPINE" Editable="True" Visible="True" />
+  <Field Name="BT_MANAGEMENT_PLAN_MAGNETIC_RESONANCE_IMAGING_LUMBAR_SPINE" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_MANAGEMENT_PLAN_MAGNETIC_RESONANCE_IMAGING_LUMBAR_SPINE" Editable="True" Visible="True" />
+  <Field Name="SZ_MANAGEMENT_PLAN_MAGNETIC_RESONANCE_IMAGING_OTHER" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MANAGEMENT_PLAN_MAGNETIC_RESONANCE_IMAGING_OTHER" Editable="True" Visible="True" />
+  <Field Name="BT_EMPLOYED" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_EMPLOYED" Editable="True" Visible="True" />
+  <Field Name="BT_STUDENT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_STUDENT" Editable="True" Visible="True" />
+  <Field Name="BT_FULL_TIME" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_FULL_TIME" Editable="True" Visible="True" />
+  <Field Name="BT_PART_TIME" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PART_TIME" Editable="True" Visible="True" />
+  <Field Name="SZ_PART_TIME" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_PART_TIME" Editable="True" Visible="True" />
+
+  <Field Name="BT_PATIENT_NOT_BEEN_BACK_TO_WORK_SINCE_THE_ACCIDENT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PATIENT_NOT_BEEN_BACK_TO_WORK_SINCE_THE_ACCIDENT" Editable="True" Visible="True" />
+  <Field Name="BT_PATIENT_DECLARED_THAT_NOT_WORKING_AT_THE_TIME_OF_THE_ACCIDENT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PATIENT_DECLARED_THAT_NOT_WORKING_AT_THE_TIME_OF_THE_ACCIDENT" Editable="True" Visible="True" />
+  <Field Name="BT_PATIENT_WORK_ON_DUTY" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PATIENT_WORK_ON_DUTY" Editable="True" Visible="True" />
+  <Field Name="SZ_PATIENT_WORK_OCCUPATION_ON_DUTY" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_PATIENT_WORK_OCCUPATION_ON_DUTY" Editable="True" Visible="True" />
+  <Field Name="SZ_PATIENT_EMPLOYER_ON_DUTY" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_PATIENT_EMPLOYER_ON_DUTY" Editable="True" Visible="True" />
+
+  <Field Name="BT_LIMITED_LIFTING" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_LIMITED_LIFTING" Editable="True" Visible="True" />
+  <Field Name="BT_LIMITED_BENDING" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_LIMITED_BENDING" Editable="True" Visible="True" />
+  <Field Name="BT_TWISTING" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_TWISTING" Editable="True" Visible="True" />
+  <Field Name="BT_PULLING" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PULLING" Editable="True" Visible="True" />
+  <Field Name="BT_CARRYING" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_CARRYING" Editable="True" Visible="True" />
+  <Field Name="BT_SITTING" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_SITTING" Editable="True" Visible="True" />
+  <Field Name="BT_STANDING_TIME" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_STANDING_TIME" Editable="True" Visible="True" />
+  <Field Name="SZ_STANDING_TIME" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_STANDING_TIME" Editable="True" Visible="True" />
+  <Field Name="SZ_CONSERVATIVE_CHIROPRACTIC_MANIPULATIVE_TREATMENT_PLAN_TIME_PER_WEEK" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_CONSERVATIVE_CHIROPRACTIC_MANIPULATIVE_TREATMENT_PLAN_TIME_PER_WEEK" Editable="True" Visible="True" />
+  <Field Name="SZ_WEEKS_UNTIL_RE_EVALUATION" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_WEEKS_UNTIL_RE_EVALUATION" Editable="True" Visible="True" />
+  <Field Name="BT_PROGONIOUS_DEFERRED_FURTHER_OBSERVATION_AND_MANAGEMENT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PROGONIOUS_DEFERRED_FURTHER_OBSERVATION_AND_MANAGEMENT" Editable="True" Visible="True" />
+  <Field Name="BT_PATIENTS_PROGNOSIS_IS_GUARDED_AT_THIS_TIME" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PATIENTS_PROGNOSIS_IS_GUARDED_AT_THIS_TIME" Editable="True" Visible="True" />
+
+
+
+  <StoreProcedure name="SP_CH_FORM_CHIRO_TREATMENT_PLAN" />
+</Table>

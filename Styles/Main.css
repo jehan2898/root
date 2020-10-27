@@ -1,0 +1,713 @@
+
+	DIV#Main 
+	{
+		BORDER-RIGHT: #bbb 1px solid; 
+		PADDING-RIGHT: 3px; 
+		BORDER-TOP: #bbb 1px solid; 
+		PADDING-LEFT: 3px; 
+		BACKGROUND: #fff; 
+		PADDING-BOTTOM: 3px; 
+		BORDER-LEFT: #bbb 1px solid; 
+		PADDING-TOP: 3px; 
+		BORDER-BOTTOM: #bbb 1px solid 
+	}
+	DIV#Heading 
+	{
+		PADDING-RIGHT: 0px; 
+		PADDING-LEFT: 0px; 
+		FONT-WEIGHT: bold; 
+		FONT-SIZE: 16px; 
+		PADDING-BOTTOM: 5px; 
+		MARGIN: 0px; 
+		COLOR: #904; 
+		PADDING-TOP: 0px; 
+		FONT-FAMILY: "trebuchet ms", ""lucida grande"", verdana, arial, sans-serif 
+	}
+	H2 
+	{
+		PADDING-RIGHT: 0px; 
+		PADDING-LEFT: 0px; 
+		FONT-WEIGHT: bold; 
+		FONT-SIZE: 105%; 
+		PADDING-BOTTOM: 0px; 
+		MARGIN: 0px 0px 8px; 
+		TEXT-TRANSFORM: uppercase; 
+		COLOR: #999; 
+		PADDING-TOP: 0px; 
+		BORDER-BOTTOM: #ddd 1px solid; 
+		FONT-FAMILY: "trebuchet ms", ""lucida grande"", verdana, arial, sans-serif 
+	}
+	
+	A:link 
+	{
+		COLOR: #002c99; 
+		TEXT-DECORATION: none 
+	}
+	A:visited 
+	{
+		COLOR: #002c99; 
+		TEXT-DECORATION: none 
+	}
+	A:hover 
+	{
+		COLOR: #cc0066; 
+		TEXT-DECORATION: underline 
+	}
+	.Labels 
+	{
+		PADDING-RIGHT: 0px; 
+		PADDING-LEFT: 0px; 
+		FONT-WEIGHT: bold; 
+		FONT-SIZE: 11px; 
+		PADDING-BOTTOM: 1px; 
+		MARGIN: 0px; 
+		COLOR: #904; 
+		PADDING-TOP: 0px; 
+		FONT-FAMILY: "trebuchet ms", ""lucida grande"", verdana, arial, sans-serif 
+	}
+	.Header 
+	{
+		PADDING-RIGHT: 0px; 
+		PADDING-LEFT: 0px; 
+		FONT-WEIGHT: bold; 
+		FONT-SIZE: 16px; 
+		PADDING-BOTTOM: 1px; 
+		MARGIN: 0px; 
+		COLOR: #002c99; 
+		PADDING-TOP: 0px; 
+		FONT-FAMILY: "trebuchet ms", ""lucida grande"", verdana, arial, sans-serif 
+	}
+	.Footer 
+	{
+		PADDING-RIGHT: 0px; 
+		PADDING-LEFT: 0px; 
+		FONT-WEIGHT: bold; 
+		FONT-SIZE: 16px; 
+		PADDING-BOTTOM: 1px; 
+		MARGIN: 0px; 
+		COLOR: #904; 
+		PADDING-TOP: 0px; 
+		FONT-FAMILY: "trebuchet ms", ""lucida grande"", verdana, arial, sans-serif 
+	}
+	.blueText 
+	{
+		PADDING-RIGHT: 0px; 
+		PADDING-LEFT: 0px; 
+		FONT-WEIGHT: bold; 
+		FONT-SIZE: 11px; 
+		PADDING-BOTTOM: 1px; 
+		MARGIN: 0px; 
+		COLOR: #002c99; 
+		PADDING-TOP: 0px; 
+		FONT-FAMILY: "trebuchet ms", ""lucida grande"", verdana, arial, sans-serif 
+	}
+	.orangeText 
+	{
+		PADDING-RIGHT: 0px; 
+		PADDING-LEFT: 0px; 
+		FONT-WEIGHT: bold; 
+		FONT-SIZE: 11px; 
+		PADDING-BOTTOM: 1px; 
+		MARGIN: 0px; 
+		COLOR: #FF6600; 
+		PADDING-TOP: 0px; 
+		FONT-FAMILY: "trebuchet ms", ""lucida grande"", verdana, arial, sans-serif 
+	}
+	
+	INPUT.Textbox 
+	{
+		PADDING-RIGHT: 0px; 
+		PADDING-LEFT: 0px; 
+		PADDING-BOTTOM: 0px; 
+		WIDTH: 100%; 
+		COLOR: #000000; 
+		PADDING-TOP: 0px; 
+	   font-size: 11px;
+		FONT-FAMILY: verdana, arial, sans-serif 
+	}
+	A.Button:link 
+	{
+		BORDER-RIGHT: #999 1px solid; 
+		PADDING-RIGHT: 12px; 
+		BORDER-TOP: #999 1px solid; 
+		DISPLAY: block; 
+		PADDING-LEFT: 12px; 
+		FONT-WEIGHT: bold; 
+		FONT-SIZE: 11px; 
+		BACKGROUND: #904; 
+		FLOAT: left; 
+		PADDING-BOTTOM: 3px; 
+		BORDER-LEFT: #999 1px solid; 
+		COLOR: #fff; 
+		PADDING-TOP: 3px; 
+		BORDER-BOTTOM: #999 1px solid 
+	}
+	
+	A.Button:visited 
+	{
+		BORDER-RIGHT: #999 1px solid; 
+		PADDING-RIGHT: 12px; 
+		BORDER-TOP: #999 1px solid; 
+		DISPLAY: block; 
+		PADDING-LEFT: 12px; 
+		FONT-WEIGHT: bold; 
+		FONT-SIZE: 11px; 
+		BACKGROUND: #904; 
+		FLOAT: left; 
+		PADDING-BOTTOM: 3px; 
+		BORDER-LEFT: #999 1px solid; 
+		COLOR: #fff; 
+		PADDING-TOP: 3px; 
+		BORDER-BOTTOM: #999 1px solid 
+	}
+	
+	SPAN.ErrorMessage 
+	{
+		DISPLAY: block; 
+		FONT-WEIGHT: bold; 
+		COLOR: #904 
+	}
+	SPAN.Label 
+	{
+		FONT-WEIGHT: bold; 
+		font-size: 11px;
+		COLOR: #904 
+	}
+	
+		
+	INPUT.buttonsizerSmall 
+	{
+		FONT-WEIGHT: 700; 
+		FONT-SIZE: 12px; 
+		WIDTH: 70px; 
+		COLOR: #303030; 
+		FONT-FAMILY: Arial; 
+		HEIGHT: 22px 
+	}
+	
+	INPUT.inputbox 
+	{
+		FONT-WEIGHT: 700; 
+		FONT-SIZE: 12px; 
+		WIDTH: 70px; 
+		COLOR: #FF6600; 
+		FONT-FAMILY: Arial; 
+		HEIGHT: 22px 
+	}
+	.defaultText
+	{
+    COLOR: #000000;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 11px
+	}
+	SELECT{
+	 BACKGROUND: #FFFFFF;
+    BORDER-BOTTOM: #303030 1px solid;
+    BORDER-LEFT: #303030 1px solid;
+    BORDER-RIGHT: #303030 1px solid;
+    BORDER-TOP: #303030 1px solid;
+    COLOR: #333333;
+    FONT-SIZE: 13px;
+    HEIGHT: 20px;
+	}
+	
+	SELECT.pulldown
+{
+    BACKGROUND: #FFFFFF;
+    BORDER-BOTTOM: #303030 1px solid;
+    BORDER-LEFT: #303030 1px solid;
+    BORDER-RIGHT: #303030 1px solid;
+    BORDER-TOP: #303030 1px solid;
+    COLOR: #333333;
+    FONT-SIZE: 11px;
+    HEIGHT: 20px;
+    WIDTH: 250px
+}
+SELECT{
+	 BACKGROUND: #FFFFFF;
+    BORDER-BOTTOM: #303030 1px solid;
+    BORDER-LEFT: #303030 1px solid;
+    BORDER-RIGHT: #303030 1px solid;
+    BORDER-TOP: #303030 1px solid;
+    COLOR: #333333;
+    FONT-SIZE: 11px;
+    HEIGHT: 20px;
+}
+SELECT.pulldown2
+{
+    BACKGROUND: #FFFFFF;
+    BORDER-BOTTOM: #303030 1px solid;
+    BORDER-LEFT: #303030 1px solid;
+    BORDER-RIGHT: #303030 1px solid;
+    BORDER-TOP: #303030 1px solid;
+    COLOR: #333333;
+    FONT-SIZE: 11px;
+    HEIGHT: 20px;
+	 WIDTH: 100%;
+}
+SELECT.pulldown3
+{
+    BACKGROUND: #CFCFCF;
+    BORDER-BOTTOM: #303030 1px solid;
+    BORDER-LEFT: #303030 1px solid;
+    BORDER-RIGHT: #303030 1px solid;
+    BORDER-TOP: #303030 1px solid;
+    COLOR: #333333;
+    FONT-SIZE: 11px;
+    HEIGHT: 20px;
+    WIDTH: 205px
+}
+SELECT.pulldown4
+{
+    BACKGROUND: #CFCFCF;
+    BORDER-BOTTOM: #303030 1px solid;
+    BORDER-LEFT: #303030 1px solid;
+    BORDER-RIGHT: #303030 1px solid;
+    BORDER-TOP: #303030 1px solid;
+    COLOR: #333333;
+    FONT-SIZE: 11px;
+    HEIGHT: 20px;
+    WIDTH: 440px
+}
+SELECT.pulldownSmall
+{
+    BACKGROUND: #FFFFFF;
+    BORDER-BOTTOM: #303030 1px solid;
+    BORDER-LEFT: #303030 1px solid;
+    BORDER-RIGHT: #303030 1px solid;
+    BORDER-TOP: #303030 1px solid;
+    COLOR: #333333;
+    FONT-SIZE: 11px;
+    HEIGHT: 18px;
+    WIDTH: 120px;
+}
+SELECT.pulldown5
+{
+    BACKGROUND: #FFFFFF;
+    BORDER-BOTTOM: #303030 1px solid;
+    BORDER-LEFT: #303030 1px solid;
+    BORDER-RIGHT: #303030 1px solid;
+    BORDER-TOP: #303030 1px solid;
+    COLOR: #333333;
+	 font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    FONT-SIZE: 11px;
+    HEIGHT: 18px;
+    WIDTH: 283px;
+}
+
+SELECT.ddl1
+{
+    BACKGROUND: #FFFFFF;
+    BORDER-BOTTOM: #303030 1px solid;
+    BORDER-LEFT: #303030 1px solid;
+    BORDER-RIGHT: #303030 1px solid;
+    BORDER-TOP: #303030 1px solid;
+    COLOR: #333333;
+    FONT-SIZE: 11px;
+    HEIGHT: 18px;
+    WIDTH: 100px
+}
+
+SELECT.ddl2
+{
+    BACKGROUND: #FFFFFF;
+    BORDER-BOTTOM: #303030 1px solid;
+    BORDER-LEFT: #303030 1px solid;
+    BORDER-RIGHT: #303030 1px solid;
+    BORDER-TOP: #303030 1px solid;
+    COLOR: #333333;
+    FONT-SIZE: 11px;
+    HEIGHT: 18px;
+    WIDTH: 300px
+}
+
+.defaultText
+{
+    COLOR: #000000;
+    FONT-FAMILY: Tahoma;
+    FONT-SIZE: 11px
+}
+.contentBold
+{
+    COLOR: black;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 13px;
+    FONT-WEIGHT: 600
+}
+.moduleHeader
+{
+    COLOR: #00659C;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 12px;
+    FONT-WEIGHT: 600;
+	 
+}
+
+TEXTAREA
+{
+	BACKGROUND-COLOR: #FFFFFF;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 12px
+}
+TEXTAREA.boxArea
+{
+	BACKGROUND-COLOR: #FFFFFF;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 12px;
+    HEIGHT: 75px;
+    WIDTH: 75%
+}
+TEXTAREA.memoBox
+{
+	BACKGROUND-COLOR: #FFFFFF;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 12px;
+    HEIGHT: 38px;
+    WIDTH: 100%;
+}
+TEXTAREA.memoBoxDisable
+{
+	BACKGROUND-COLOR: #FFFFFF;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 12px;
+    HEIGHT: 38px;
+    WIDTH: 95%
+}
+INPUT.resizeme
+{
+	BACKGROUND-COLOR: #FFFFFF;
+    WIDTH: 100%
+}
+INPUT.box
+{
+    BACKGROUND-COLOR: #FFFFFF;
+    FONT-FAMILY: arial;
+    FONT-SIZE: 12px;
+    HEIGHT: 21px;
+    WIDTH: 200px
+}
+INPUT.inputBox
+{
+    BACKGROUND: #FFFFFF;
+    BORDER-BOTTOM: #303030 1px solid;
+    BORDER-LEFT: #303030 1px solid;
+    BORDER-RIGHT: #303030 1px solid;
+    BORDER-TOP: #303030 1px solid;
+    COLOR: #333333;
+    FONT-SIZE: 11px;
+    HEIGHT: 20px;
+    WIDTH: 50px;
+}
+INPUT.inputBox2
+{
+    BACKGROUND: #FFFFFF;
+    BORDER-BOTTOM: #303030 1px solid;
+    BORDER-LEFT: #303030 1px solid;
+    BORDER-RIGHT: #303030 1px solid;
+    BORDER-TOP: #303030 1px solid;
+    COLOR: #333333;
+    FONT-SIZE: 11px;
+    HEIGHT: 18px;
+    WIDTH: 100%;
+}
+INPUT.inputBoxDisable
+{
+    BACKGROUND: #FFFFFF;
+    BORDER-BOTTOM: #303030 1px solid;
+    BORDER-LEFT: #303030 1px solid;
+    BORDER-RIGHT: #303030 1px solid;
+    BORDER-TOP: #303030 1px solid;
+    COLOR: #333333;
+    FONT-SIZE: 11px;
+    HEIGHT: 20px;
+    WIDTH: 100%
+}
+INPUT.inputBox3
+{
+    BACKGROUND: #FFFFFF;
+    BORDER-BOTTOM: #303030 1px solid;
+    BORDER-LEFT: #303030 1px solid;
+    BORDER-RIGHT: #303030 1px solid;
+    BORDER-TOP: #303030 1px solid;
+    COLOR: #333333;
+    FONT-SIZE: 11px;
+    HEIGHT: 20px;
+    WIDTH: 205px
+}
+
+INPUT.Box4
+{
+    BACKGROUND: #FFFFFF;
+    BORDER-BOTTOM: #303030 1px solid;
+    BORDER-LEFT: #303030 1px solid;
+    BORDER-RIGHT: #303030 1px solid;
+    BORDER-TOP: #303030 1px solid;
+    COLOR: #333333;
+    FONT-SIZE: 11px;
+    HEIGHT: 20px;
+    WIDTH: 120px
+}
+INPUT.Box5
+{
+    BACKGROUND: #FFFFFF;
+    BORDER-BOTTOM: #303030 1px solid;
+    BORDER-LEFT: #303030 1px solid;
+    BORDER-RIGHT: #303030 1px solid;
+    BORDER-TOP: #303030 1px solid;
+    COLOR: #333333;
+    FONT-SIZE: 11px;
+    HEIGHT: 20px;
+    WIDTH: 100px;
+}
+
+INPUT.Box6
+{
+    BACKGROUND: #FFFFFF;
+    BORDER-BOTTOM: #303030 1px solid;
+    BORDER-LEFT: #303030 1px solid;
+    BORDER-RIGHT: #303030 1px solid;
+    BORDER-TOP: #303030 1px solid;
+    COLOR: #333333;
+    FONT-SIZE: 11px;
+    HEIGHT: 20px;
+    WIDTH: 70px;
+}
+
+INPUT.Box7
+{
+    BACKGROUND: #FFFFFF;
+    BORDER-BOTTOM: #303030 1px solid;
+    BORDER-LEFT: #303030 1px solid;
+    BORDER-RIGHT: #303030 1px solid;
+    BORDER-TOP: #303030 1px solid;
+    COLOR: #333333;
+    FONT-SIZE: 11px;
+    HEIGHT: 20px;
+    WIDTH: 35px;
+}
+
+INPUT.Box6Bold
+{
+    BACKGROUND: #FFFFFF;
+    BORDER-BOTTOM: #303030 1px solid;
+    BORDER-LEFT: #303030 1px solid;
+    BORDER-RIGHT: #303030 1px solid;
+    BORDER-TOP: #303030 1px solid;
+    COLOR: #333333;
+    FONT-SIZE: 11px;
+	 font-weight: 700;
+    HEIGHT: 20px;
+    WIDTH: 100px;
+}
+INPUT.Box6Green
+{
+    BACKGROUND: #FFFFFF;
+    BORDER-BOTTOM: #303030 1px solid;
+    BORDER-LEFT: #303030 1px solid;
+    BORDER-RIGHT: #303030 1px solid;
+    BORDER-TOP: #303030 1px solid;
+    COLOR: #008000;
+    FONT-SIZE: 11px;
+	 font-weight: 700;
+    HEIGHT: 20px;
+    WIDTH: 100px;
+}
+INPUT.Box6Red
+{
+    BACKGROUND: #FFFFFF;
+    BORDER-BOTTOM: #303030 1px solid;
+    BORDER-LEFT: #303030 1px solid;
+    BORDER-RIGHT: #303030 1px solid;
+    BORDER-TOP: #303030 1px solid;
+    COLOR: #8B0000;
+    FONT-SIZE: 11px;
+	 font-weight: 700;
+    HEIGHT: 20px;
+    WIDTH: 100px;
+}
+INPUT.inputBox4
+{
+    BACKGROUND: #FFFFFF;
+    BORDER-BOTTOM: #303030 1px solid;
+    BORDER-LEFT: #303030 1px solid;
+    BORDER-RIGHT: #303030 1px solid;
+    BORDER-TOP: #303030 1px solid;
+    COLOR: #333333;
+    FONT-SIZE: 11px;
+    HEIGHT: 20px;
+    WIDTH: 210px
+}
+INPUT.inputBox5
+{
+    BACKGROUND: #FFFFFF;
+    BORDER-BOTTOM: #303030 1px solid;
+    BORDER-LEFT: #303030 1px solid;
+    BORDER-RIGHT: #303030 1px solid;
+    BORDER-TOP: #303030 1px solid;
+    COLOR: #333333;
+    FONT-SIZE: 11px;
+    HEIGHT: 20px;
+    WIDTH: 100%
+}
+INPUT.inputBoxSmall
+{
+    BACKGROUND: #FFFFFF;
+    BORDER-BOTTOM: #303030 1px solid;
+    BORDER-LEFT: #303030 1px solid;
+    BORDER-RIGHT: #303030 1px solid;
+    BORDER-TOP: #303030 1px solid;
+    COLOR: #333333;
+    FONT-SIZE: 11px;
+    HEIGHT: 20px;
+    WIDTH: 100px
+}
+INPUT.buttonsizer
+{
+    COLOR: #303030;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 11px;    
+    HEIGHT: 22px;
+    WIDTH: 100px;
+	 font-weight: 700;
+}
+INPUT.buttonsizerSmall
+{
+    COLOR: #303030;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 12px;    
+    HEIGHT: 22px;
+    WIDTH: 70px;
+	font-weight: 700;
+}
+INPUT.buttonsizerX
+{
+    COLOR: #303030;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 11px;    
+    HEIGHT: 22px;
+    WIDTH: 140px;
+}
+INPUT.buttonsizerblue
+{
+    BACKGROUND: #6699cc;    
+    COLOR: #303030;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 10px;
+    FONT-WEIGHT: 800;    
+    HEIGHT: 22px;
+    WIDTH: 100px
+}
+.blueBack
+{
+	background : #1366B9;
+	color: #FFFFFF;
+	font-family : Arial;
+	FONT-SIZE: 13px;	 
+	font-weight: 700;
+}
+.blueBackBold_old
+{
+	background : #00287B;
+	color: #FFFFFF;
+	font-family : Arial;
+	FONT-SIZE: 12px;
+	font-weight : 700;	 
+}
+.blueBackBold
+{
+	box-sizing:border-box;
+	
+    background-image:url(background_parent.gif);
+    background-repeat:repeat-x;
+	border-top:1px solid #DADBDB;
+    font:11px Tahoma;
+    color:#006896;
+    text-align:left;
+	padding: 2px;
+    padding-left: 12px;
+	cursor:pointer; 
+    height:21px;
+}
+
+.fbdcomp
+{
+	color: #683808;
+	font-size : 11px;
+	padding-left: 3px;
+}
+
+.setBorder
+{
+		BORDER-RIGHT: #bbb 1px solid; 
+		PADDING-RIGHT: 3px; 
+		BORDER-TOP: #bbb 1px solid; 
+		PADDING-LEFT: 3px; 
+		BACKGROUND: #fff; 
+		PADDING-BOTTOM: 3px; 
+		BORDER-LEFT: #bbb 1px solid; 
+		PADDING-TOP: 3px; 
+		BORDER-BOTTOM: #bbb 1px solid;
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size: 11px;
+}
+
+.esnav
+{
+    COLOR: #303030;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 11px;
+	 font-weight: 700;
+    TEXT-DECORATION: none
+}
+
+	.lblID
+	{
+		PADDING-RIGHT: 0px; 
+		PADDING-LEFT: 0px; 
+		FONT-WEIGHT: bold; 
+		FONT-SIZE: 11px; 
+		PADDING-BOTTOM: 1px; 
+		MARGIN: 0px; 
+		COLOR: #002c99; 
+		PADDING-TOP: 0px; 
+		font-family: sans-serif;
+		font-size: 11px;
+		
+	}
+	
+	.grid {
+	font-family: Arial, Helvetica, sans-serif;
+	border-top: 1px solid #D5D291;
+	border-right: 1px solid #D5D291;
+	border-left: 1px solid #D5D291;
+	border-bottom: 1px solid #D5D291;
+	background-color: #EDECD1;
+	text-align: justify;
+	padding-top: 3px;
+	padding-right: 18px;
+	padding-bottom: 3px;
+	padding-left: 18px;
+  	
+}
+
+.grid11 {
+	font-family: Arial, Helvetica, sans-serif;
+	border-top: 1px solid #D5D291;
+	border-right: 1px solid #D5D291;
+	border-left: 1px solid #D5D291;
+	border-bottom: 1px solid #D5D291;
+	background-color: #EDECD1;
+	text-align: justify;
+	padding-top: 1px;
+	padding-right: 1px;
+	padding-bottom: 1px;
+	padding-left: 1px;
+	font-size: 11px;
+
+	border-bottom-width: thin;
+	border-left-width: thin;
+	border-right-width: thin;
+	border-top-width: thin;
+	
+  	
+}

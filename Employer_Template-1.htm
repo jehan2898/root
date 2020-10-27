@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Untitled Page</title>
+    <STYLE TYPE="text/css">
+
+
+
+
+TD{ font-family: Arial; font-size: 10px; height:5pt;}
+
+</STYLE>
+</head>
+<body>
+    <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+            <td width='100%' style='border-color :White;' align="center">
+                <table width="40%" cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                    <tr>
+                        <td style='font-size: 18px; font-family: Trebuchet MS; vertical-align:top' align="center">
+                            <b>@PROVIDER_NAME</b></td>
+                    </tr>
+                    <tr>
+                        <td style='font-size: 12px; font-family: Trebuchet MS; vertical-align:top' align="center">
+                            @PROVIDER_STREET</td>
+                    </tr>
+                    <tr>
+                        <td style='font-size: 12px; font-family: Trebuchet MS; vertical-align:top' align="center">
+                            @PROVIDER_CITY</td>
+                    </tr>
+                    <tr>
+                        <td style='font-size: 12px; font-family: Trebuchet MS; vertical-align:top' align="center">
+                            PHONE: @PROVIDER_PHONE</td>
+                    </tr>
+                    <tr>
+                        <td style='font-size: 12px; font-family: Trebuchet MS; vertical-align:top' align="center">
+                            FAX: @PROVIDER_FAX</td>
+                    </tr>
+                </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td style='font-size: 12px; font-family: Trebuchet MS' align="right">
+                Date: @DATE</td>
+        </tr>
+        <tr>
+            <td>
+                <table width="100%" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td style='font-size: 14px; font-family: Trebuchet MS'>
+                            Bill To:</td>
+						<td>&nbsp;</td>
+						<td style='font-size: 14px; font-family: Trebuchet MS' align='left' >
+							Employer:</td>
+                    </tr>
+                    <tr>
+                        <td valign='top' width='100%' style='font-size:16px; font-family:Trebuchet MS;  align='left'>
+                            <b>@PATIENT_NAME</b></td>
+						<td>&nbsp;</td>
+						<td valign='top' width='100%' style='font-size:16px' >
+							<b>@EMPLOYER_NAME</b></td>
+                    </tr>
+					<tr>
+                        <td valign='bottom' width='400' style='font-size:12px font-family:Trebuchet MS'>
+                            @sz_patient_address<br /> @PATIENT_CITY_ZIP <br /> @PATIENT_PHONE</td>
+						<td>&nbsp;</td>
+						<td valign='bottom' width='400' style='font-size:12px font-family:Trebuchet MS'>
+							@EMPLOYER_ADDRESS<br /> @Employer_State <br /> @SZ_EMPLOYER_PHONE</td>
+                    </tr>
+					
+                    <tr>
+                        <td style='font-size: 12px; font-family: Trebuchet MS'>
+                            <b>DATE OF ACCIDENT: @ACCIDENT_DATE</b></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+        </tr>
+    </table>
+    <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td align="center">
+                @PROC_TABLE
+            </td>
+        </tr>
+    </table>
+    
+    <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td style='font-size: 12px; font-family: Trebuchet MS' align="center">
+                <b>Make all check payable to @BOTTOM_PROVIDER_NAME</b></td>
+        </tr>
+        <tr>
+            <td style='font-size: 12px; font-family: Trebuchet MS' align="center">
+                <b>If attorney information has been provided at the time of services, a copy of this
+                    invoice may be sent to your attorney informing them of the lien assignment you have
+                    made.</b></td>
+        </tr>
+    </table>
+</body>
+</html>

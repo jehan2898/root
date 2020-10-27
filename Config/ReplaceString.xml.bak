@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  
+<!--
+  <key name="VL_SZ_PATIENT_LAST_NAME" value="SZ_PATIENT_LAST_NAME"></key>
+  <key name="VL_SZ_PATIENT_FIRST_NAME" value="SZ_PATIENT_FIRST_NAME"></key>
+  <key name="VL_SZ_MI" value="SZ_MI"></key>
+  <key name="VL_SZ_WCB_NO" value="SZ_WCB_NO"></key>
+  <key name="VL_SZ_SOCIAL_SECURITY_NO" value="SZ_SOCIAL_SECURITY_NO"></key>
+  <key name="VL_DT_DOB" value="DT_DOB"></key>
+  <key name="VL_SZ_GENDER" value="SZ_GENDER"></key>
+  <key name="VL_DT_INJURY" value="DT_INJURY"></key>
+  <key name="VL_SZ_JOB_TITLE" value="SZ_JOB_TITLE"></key>
+  <key name="VL_SZ_WORK_ACTIVITIES" value="SZ_WORK_ACTIVITIES"></key>
+  <key name="VL_SZ_PATIENT_PHONE" value="SZ_PATIENT_PHONE"></key>
+  <key name="VL_SZ_PATIENT_STATE" value="SZ_PATIENT_STATE"></key>
+  <key name="VL_SZ_CARRIER_CASE_NO" value="SZ_CARRIER_CASE_NO"></key>
+  <key name="VL_SZ_PATIENT_STREET" value="SZ_PATIENT_STREET"></key>
+  <key name="VL_SZ_PATIENT_ZIP" value="SZ_PATIENT_ZIP"></key>
+  <key name="VL_SZ_PATIENT_CITY" value="SZ_PATIENT_CITY"></key>
+  <key name="VL_SZ_INSURANCE_NAME" value="SZ_INSURANCE_NAME"></key>
+  <key name="VL_SZ_INSURANCE_STREET" value="SZ_INSURANCE_STREET"></key>
+  <key name="VL_SZ_INSURANCE_CITY" value="SZ_INSURANCE_CITY"></key>
+  <key name="VL_SZ_INSURANCE_ZIP" value="SZ_INSURANCE_ZIP"></key>
+  <key name="VL_SZ_INSURANCE_ADDRESS" value="SZ_INSURANCE_ADDRESS"></key>
+  <key name="VL_SZ_INSURANCE_STATE" value="SZ_INSURANCE_STATE"></key>
+  <key name="VL_SZ_PATIENT_ADDRESS" value="SZ_PATIENT_ADDRESS"></key>
+  <key name="VL_NOWDT" value="NOWDT"></key>
+  <key name="VL_SZ_POLICY_NUMBER" value="SZ_POLICY_NUMBER"></key>
+  <key name="VL_SZ_INS_CLAIM_NUMBER" value="SZ_INS_CLAIM_NUMBER"></key>
+
+  <key name="VL_SZ_PROVIDER_NAME" value="SZ_PROVIDER_NAME"></key>
+  <key name="VL_SZ_PROVIDER_CONTACT" value="SZ_PROVIDER_CONTACT"></key>
+  <key name="VL_SZ_PROVIDER_LOCAL_ADDRESS" value="SZ_PROVIDER_LOCAL_ADDRESS"></key>
+  <key name="VL_SZ_PROVIDER_PERM_CITY" value="SZ_PROVIDER_PERM_CITY"></key>
+  <key name="VL_SZ_PROVIDER_PERM_STATE" value="SZ_PROVIDER_PERM_STATE"></key>
+  <key name="VL_SZ_PROVIDER_LOCAL_CITY" value="SZ_PROVIDER_LOCAL_CITY"></key>
+  <key name="VL_SZ_PROVIDER_LOCAL_STATE" value="SZ_PROVIDER_LOCAL_STATE"></key>
+  <key name="VL_SZ_PROVIDER_PERM_ZIP" value="SZ_PROVIDER_PERM_ZIP"></key>
+  <key name="VL_SZ_PROVIDER_LOCAL_ZIP" value="SZ_PROVIDER_LOCAL_ZIP"></key>
+  <key name="VL_SZ_PROVIDER_PERM_PHONE" value="SZ_PROVIDER_PERM_PHONE"></key>
+  <key name="VL_SZ_PROVIDER_PERM_ADDRESS" value="SZ_PROVIDER_PERM_ADDRESS"></key>-->
+  <key name="VL_SZ_DOCTOR_SPECIALITY" value="SZ_DOCTOR_SPECIALITY"></key>
+
+    
+
+
+</root>

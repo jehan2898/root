@@ -1,0 +1,106 @@
+﻿/*  ----------------------------------------------------------------------------
+ *  Kalitte Professional Information Technologies
+ *  ----------------------------------------------------------------------------
+ *  Dynamic Dashboards
+ *  ----------------------------------------------------------------------------
+ *  File:       WidgetEditor.aspx.cs
+ *  ----------------------------------------------------------------------------
+ */
+
+using System;
+using System.Collections.Generic;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using Kalitte.Dashboard.Framework.Types;
+using Kalitte.Dashboard.Framework;
+
+
+    public partial class WidgetEditor : System.Web.UI.Page
+    {
+        private WidgetInstance instance = null;
+        private UserControl editor = null;
+
+
+        private IWidgetEditor Editor
+        {
+            get
+            {
+                return EditorControl as IWidgetEditor;
+            }
+        }
+
+        private UserControl EditorControl
+        {
+            get
+            {
+                if (editor == null)
+                {
+                    try
+                    {
+                        UserControl c = Page.LoadControl(Instance.Type.EditorPath) as UserControl;
+                        if (!(c is IWidgetEditor))
+                            throw new InvalidOperationException("Editor must implement IWidgetEditor");
+                        editor = c;
+                    }
+                    catch (Exception exc)
+                    {
+                        throw new ArgumentException(string.Format("Cannot load {0}", Instance.Type.EditorPath), exc);
+                    }
+                }
+                return editor;
+            }
+        }
+
+        private WidgetInstance Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    string id = Request["ID"];
+                    instance = Kalitte.Dashboard.Framework.DashboardFramework.GetWidgetInstance(id);
+                }
+                return instance;
+            }
+        }
+
+        protected override void CreateChildControls()
+        {
+            base.CreateChildControls();
+            pc.Controls.Add(EditorControl);
+            if (!Page.IsPostBack)
+                Editor.Edit(Instance.Key);
+        }
+
+
+        protected void btnOk_Click(object sender, EventArgs e)
+        {
+            Dictionary<string, object> pr = new Dictionary<string, object>();
+            if (Editor.EndEdit(pr))
+            {
+                hdnValue.Value = "done";
+                if (pr.Count == 0)
+                    arguments.Value = "null";
+                else arguments.Value = Utils.Serialize(pr);
+            }
+        }
+
+        protected void btnApply_Click(object sender, EventArgs e)
+        {
+            Dictionary<string, object> pr = new Dictionary<string, object>();
+            if (Editor.EndEdit(pr))
+            {
+                hdnValue.Value = "apply";
+                if (pr.Count == 0)
+                    arguments.Value = "null";
+                else arguments.Value = Utils.Serialize(pr);
+            }
+        }
+
+        protected override void OnInit(EventArgs e)
+        {
+            base.OnInit(e);
+        }
+    }
+

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <document  procedure_name="SP_MST_PERMANENT_IMPAIREMENT">
+  <field sz_field_name="SZ_PERMANANT_IMPAIREMENT_ID"         sz_field_value=""></field>
+  <field sz_field_name="BT_MEDICAL_IMPROVEMENT"              sz_field_value="0" ></field>
+  <field sz_field_name="DT_MEDICAL_IMPROVEMENT_DATE"         sz_field_value=""></field>
+  <field sz_field_name="BT_PERMANENT_IMPAIRMENT"             sz_field_value="0"></field>
+  <field sz_field_name="I_PATIENT_WORKING"                   sz_field_value="0"></field>
+  <field sz_field_name="BT_PATIENT_WORKING_LIMITATION"       sz_field_value="0"></field>
+  <field sz_field_name="SZ_PATIENT_WORKING_LIMITATION_DESC"  sz_field_value=""></field>
+  <field sz_field_name="I_WITH_WHOM_DISCUSS"                 sz_field_value="0"></field>
+  <field sz_field_name="BT_PATIENT_BENEFIT"                  sz_field_value="0"></field>
+  <field sz_field_name="SZ_PATIENT_BENEFIT_DESC"             sz_field_value=""></field>
+  </document>
+</root>

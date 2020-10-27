@@ -1,0 +1,452 @@
+<root>
+<document type= "FUNDING_SYSTEM" description="LSC Payoff letter template" lastmodified="June 22 2009 15:35" procedure_name="SP_WORKER_TEMPLATE_SPECIFIC_PDF_NEW_TEST" >
+<field db_field_name="chk_I_2_C_Bending"       pdf_field_index="1"  pdf_field_name="chk_I_2_C_Bending"   if_blank=" "/>
+<field db_field_name="chk_I_1_No"       pdf_field_index="2"  pdf_field_name="chk_I_1_No"   if_blank=" "/>
+<field db_field_name="chk_H_5_5_6_Week"       pdf_field_index="3"  pdf_field_name="chk_H_5_5_6_Week"   if_blank=" "/>
+<field db_field_name="chk_H_3_Chiropractor"       pdf_field_index="4"  pdf_field_name="chk_H_3_Chiropractor"   if_blank=" "/>
+<field db_field_name="SZ_QUANIFY_LIMITATION_1"       pdf_field_index="5"  pdf_field_name="SZ_QUANIFY_LIMITATION_1"   if_blank=" "/>
+<field db_field_name="txt_H_3_Left_Other"       pdf_field_index="6"  pdf_field_name="txt_H_3_Left_Other"   if_blank=" "/>
+<field db_field_name="txt_H_3_Labs"       pdf_field_index="7"  pdf_field_name="txt_H_3_Labs"   if_blank=" "/>
+<field db_field_name="chk_H_2_None"       pdf_field_index="8"  pdf_field_name="chk_H_2_None"   if_blank=" "/>
+<field db_field_name="chk_G_3_No"       pdf_field_index="9"  pdf_field_name="chk_G_3_No"   if_blank=" "/>
+<field db_field_name="chk_F_4_JointEffusion"       pdf_field_index="10"  pdf_field_name="chk_F_4_JointEffusion"   if_blank=" "/>
+<field db_field_name="chk_F_7_None"       pdf_field_index="11"  pdf_field_name="chk_F_7_None"   if_blank=" "/>
+<field db_field_name="SZ_PROPOSED_TREATEMENT_3"       pdf_field_index="12"  pdf_field_name="SZ_PROPOSED_TREATEMENT_3"   if_blank=" "/>
+<field db_field_name="SZ_PROGNOSIS_RECOVERY_2"       pdf_field_index="13"  pdf_field_name="SZ_PROGNOSIS_RECOVERY_2"   if_blank=" "/>
+<field db_field_name="chk_F_3_Poisoning"       pdf_field_index="14"  pdf_field_name="chk_F_3_Poisoning"   if_blank=" "/>
+<field db_field_name="chk_F_3_Abrasion"       pdf_field_index="15"  pdf_field_name="chk_F_3_Abrasion"   if_blank=" "/>
+<field db_field_name="ZIP_1"       pdf_field_index="16"  pdf_field_name="ZIP_1"   if_blank=" "/>
+<field db_field_name="chk_EIN"       pdf_field_index="17"  pdf_field_name="chk_EIN"   if_blank=" "/>
+<field db_field_name="chkPhysician"       pdf_field_index="18"  pdf_field_name="chkPhysician"   if_blank=" "/>
+<field db_field_name="chkMale"       pdf_field_index="19"  pdf_field_name="chkMale"   if_blank=" "/>
+<field db_field_name="SZ_NPI"       pdf_field_index="20"  pdf_field_name="SZ_NPI"   if_blank=" "/>
+<field db_field_name="SZ_OFFICE_ADDRESS"       pdf_field_index="21"  pdf_field_name="SZ_OFFICE_ADDRESS"   if_blank=" "/>
+<field db_field_name="SZ_DOCTOR_NAME"       pdf_field_index="22"  pdf_field_name="SZ_DOCTOR_NAME"   if_blank=" "/>
+<field db_field_name="SZ_EMPLOYER_ZIP"       pdf_field_index="23"  pdf_field_name="SZ_EMPLOYER_ZIP"   if_blank=" "/>
+<field db_field_name="SZ_PATIENT_LAST_NAME"       pdf_field_index="24"  pdf_field_name="SZ_PATIENT_LAST_NAME"   if_blank=" "/>
+<field db_field_name="txt_H_3_Specialist"       pdf_field_index="25"  pdf_field_name="txt_H_3_Specialist"   if_blank=" "/>
+<field db_field_name="chk_G_2_No"       pdf_field_index="26"  pdf_field_name="chk_G_2_No"   if_blank=" "/>
+<field db_field_name="chk_F_4_Neuromuscular"       pdf_field_index="27"  pdf_field_name="chk_F_4_Neuromuscular"   if_blank=" "/>
+<field db_field_name="chk_F_4_Pain"       pdf_field_index="28"  pdf_field_name="chk_F_4_Pain"   if_blank=" "/>
+<field db_field_name="txt_F_4_Hematoma"       pdf_field_index="29"  pdf_field_name="txt_F_4_Hematoma"   if_blank=" "/>
+<field db_field_name="chk_F_3_Sprain"       pdf_field_index="30"  pdf_field_name="chk_F_3_Sprain"   if_blank=" "/>
+<field db_field_name="chk_F_3_PuntureWound"       pdf_field_index="31"  pdf_field_name="chk_F_3_PuntureWound"   if_blank=" "/>
+<field db_field_name="chk_F_3_Hernia"       pdf_field_index="32"  pdf_field_name="chk_F_3_Hernia"   if_blank=" "/>
+<field db_field_name="chk_F_3_Dislocation"       pdf_field_index="33"  pdf_field_name="chk_F_3_Dislocation"   if_blank=" "/>
+<field db_field_name="txt_F_Numbness"       pdf_field_index="34"  pdf_field_name="txt_F_Numbness"   if_blank=" "/>
+<field db_field_name="ZIP_2"       pdf_field_index="35"  pdf_field_name="ZIP_2"   if_blank=" "/>
+<field db_field_name="CHARGE_1"       pdf_field_index="36"  pdf_field_name="CHARGE_1"   if_blank=" "/>
+<field db_field_name="MODIFIER_1"       pdf_field_index="37"  pdf_field_name="MODIFIER_1"   if_blank=" "/>
+<field db_field_name="SZ_OFFICE_STATE"       pdf_field_index="38"  pdf_field_name="SZ_OFFICE_STATE"   if_blank=" "/>
+<field db_field_name="SZ_EMPLOYER_CITY"       pdf_field_index="39"  pdf_field_name="SZ_EMPLOYER_CITY"   if_blank=" "/>
+<field db_field_name="SZ_PATIENT_FULL_ADDRESS"       pdf_field_index="40"  pdf_field_name="SZ_PATIENT_FULL_ADDRESS"   if_blank=" "/>
+<field db_field_name="chk_H_2_1_2_Days"       pdf_field_index="41"  pdf_field_name="chk_H_2_1_2_Days"   if_blank=" "/>
+<field db_field_name="chk_H_3_Specialist"       pdf_field_index="42"  pdf_field_name="chk_H_3_Specialist"   if_blank=" "/>
+<field db_field_name="chk_H_3_Occupational"       pdf_field_index="43"  pdf_field_name="chk_H_3_Occupational"   if_blank=" "/>
+<field db_field_name="chk_H_3_Left_Other"       pdf_field_index="44"  pdf_field_name="chk_H_3_Left_Other"   if_blank=" "/>
+<field db_field_name="SZ_LIMITATION_DURATION"       pdf_field_index="45"  pdf_field_name="SZ_LIMITATION_DURATION"   if_blank=" "/>
+<field db_field_name="SZ_VARIANCE_GUIDELINES"       pdf_field_index="46"  pdf_field_name="SZ_VARIANCE_GUIDELINES"   if_blank=" "/>
+<field db_field_name="chk_H_2_Other"       pdf_field_index="47"  pdf_field_name="chk_H_2_Other"   if_blank=" "/>
+<field db_field_name="chk_G_1_No"       pdf_field_index="48"  pdf_field_name="chk_G_1_No"   if_blank=" "/>
+<field db_field_name="chk_F_4_Palpable"       pdf_field_index="49"  pdf_field_name="chk_F_4_Palpable"   if_blank=" "/>
+<field db_field_name="SZ_AFFECT_TREATMENT_PROGNOSIS_DESCRIPTION"       pdf_field_index="50"  pdf_field_name="SZ_AFFECT_TREATMENT_PROGNOSIS_DESCRIPTION"   if_blank=" "/>
+<field db_field_name="SZ_PROGNOSIS_RECOVERY_1"       pdf_field_index="51"  pdf_field_name="SZ_PROGNOSIS_RECOVERY_1"   if_blank=" "/>
+<field db_field_name="chk_F_3_RepetitiveStrainInjury"       pdf_field_index="52"  pdf_field_name="chk_F_3_RepetitiveStrainInjury"   if_blank=" "/>
+<field db_field_name="chk_F_3_NeedleStick"       pdf_field_index="53"  pdf_field_name="chk_F_3_NeedleStick"   if_blank=" "/>
+<field db_field_name="txt_F_3_RepetitiveStrainInjury"       pdf_field_index="54"  pdf_field_name="txt_F_3_RepetitiveStrainInjury"   if_blank=" "/>
+<field db_field_name="DT_PREVIOUSLY_TREATED_DATE"       pdf_field_index="55"  pdf_field_name="DT_PREVIOUSLY_TREATED_DATE"   if_blank=" " is_date_formate="1"/>
+<field db_field_name="ZIP_3"       pdf_field_index="56"  pdf_field_name="ZIP_3"   if_blank=" "/>
+<field db_field_name="CHARGE_2"       pdf_field_index="57"  pdf_field_name="CHARGE_2"   if_blank=" "/>
+<field db_field_name="MODIFIER_2"       pdf_field_index="58"  pdf_field_name="MODIFIER_2"   if_blank=" "/>
+<field db_field_name="SZ_PATIENT_ZIP"       pdf_field_index="59"  pdf_field_name="SZ_PATIENT_ZIP"   if_blank=" "/>
+<field db_field_name="SZ_BILLING_PHONE"       pdf_field_index="60"  pdf_field_name="SZ_BILLING_PHONE"   if_blank=" " is_phone_formate=""/>
+<field db_field_name="SZ_BILLING_ZIP"       pdf_field_index="61"  pdf_field_name="SZ_BILLING_ZIP"   if_blank=" "/>
+<field db_field_name="DT_DATE_OF_ACCIDENT"       pdf_field_index="62"  pdf_field_name="DT_DATE_OF_ACCIDENT"   if_blank=" " is_date_formate="1" />
+<field db_field_name="chk_H_4_NA"       pdf_field_index="63"  pdf_field_name="chk_H_4_NA"   if_blank=" "/>
+<field db_field_name="chk_H_2_Unknown"       pdf_field_index="64"  pdf_field_name="chk_H_2_Unknown"   if_blank=" "/>
+<field db_field_name="chk_I_2_C_Standing"       pdf_field_index="65"  pdf_field_name="chk_I_2_C_Standing"   if_blank=" "/>
+<field db_field_name="chk_H_3_Interist"       pdf_field_index="66"  pdf_field_name="chk_H_3_Interist"   if_blank=" "/>
+<field db_field_name="chk_F_4_Wasting"       pdf_field_index="67"  pdf_field_name="chk_F_4_Wasting"   if_blank=" "/>
+<field db_field_name="SZ_TREATMENT"       pdf_field_index="68"  pdf_field_name="SZ_TREATMENT"   if_blank=" "/>
+<field db_field_name="txt_F_4_Gait"       pdf_field_index="69"  pdf_field_name="txt_F_4_Gait"   if_blank=" "/>
+<field db_field_name="txt_F_4_PassiveROM"       pdf_field_index="70"  pdf_field_name="txt_F_4_PassiveROM"   if_blank=" "/>
+<field db_field_name="txt_F_4_Deformity"       pdf_field_index="71"  pdf_field_name="txt_F_4_Deformity"   if_blank=" "/>
+<field db_field_name="chk_F_3_VisionLoss"       pdf_field_index="72"  pdf_field_name="chk_F_3_VisionLoss"   if_blank=" "/>
+<field db_field_name="chk_F_3_Torn"       pdf_field_index="73"  pdf_field_name="chk_F_3_Torn"   if_blank=" "/>
+<field db_field_name="chk_F_3_Contusion"       pdf_field_index="74"  pdf_field_name="chk_F_3_Contusion"   if_blank=" "/>
+<field db_field_name="chk_F_Weakness"       pdf_field_index="75"  pdf_field_name="chk_F_Weakness"   if_blank=" "/>
+<field db_field_name="txt_F_3_SpinalCordInjury"       pdf_field_index="76"  pdf_field_name="txt_F_3_SpinalCordInjury"   if_blank=" "/>
+<field db_field_name="ZIP_4"       pdf_field_index="77"  pdf_field_name="ZIP_4"   if_blank=" "/>
+<field db_field_name="CHARGE_3"       pdf_field_index="78"  pdf_field_name="CHARGE_3"   if_blank=" "/>
+<field db_field_name="MODIFIER_3"       pdf_field_index="79"  pdf_field_name="MODIFIER_3"   if_blank=" "/>
+<field db_field_name="SZ_PATIENT_CITY"       pdf_field_index="80"  pdf_field_name="SZ_PATIENT_CITY"   if_blank=" "/>
+<field db_field_name="SZ_WCB_RATING_CODE"       pdf_field_index="81"  pdf_field_name="SZ_WCB_RATING_CODE"   if_blank=" "/>
+<field db_field_name="chkFemale"       pdf_field_index="82"  pdf_field_name="chkFemale"   if_blank=" "/>
+<field db_field_name="SZ_EMPLOYER_NAME"       pdf_field_index="83"  pdf_field_name="SZ_EMPLOYER_NAME"   if_blank=" "/>
+<field db_field_name="SZ_WORK_ACTIVITIES_1"       pdf_field_index="84"  pdf_field_name="SZ_WORK_ACTIVITIES_1"   if_blank=" "/>
+<field db_field_name="chk_I_2_C_OpMotorVehicle"       pdf_field_index="85"  pdf_field_name="chk_I_2_C_OpMotorVehicle"   if_blank=" "/>
+<field db_field_name="chk_H_4_Other"       pdf_field_index="86"  pdf_field_name="chk_H_4_Other"   if_blank=" "/>
+<field db_field_name="SZ_PATIENT_RETURN_WORK_DESCRIPTION"       pdf_field_index="87"  pdf_field_name="SZ_PATIENT_RETURN_WORK_DESCRIPTION"   if_blank=" "/>
+<field db_field_name="chk_G_1_Yes"       pdf_field_index="88"  pdf_field_name="chk_G_1_Yes"   if_blank=" "/>
+<field db_field_name="chk_F_4_Strength"       pdf_field_index="89"  pdf_field_name="chk_F_4_Strength"   if_blank=" "/>
+<field db_field_name="chk_F_4_Bruising"       pdf_field_index="90"  pdf_field_name="chk_F_4_Bruising"   if_blank=" "/>
+<field db_field_name="SZ_PROGNOSIS_RECOVERY"       pdf_field_index="91"  pdf_field_name="SZ_PROGNOSIS_RECOVERY"   if_blank=" "/>
+<field db_field_name="txt_F_4_Wasting"       pdf_field_index="92"  pdf_field_name="txt_F_4_Wasting"   if_blank=" "/>
+<field db_field_name="txt_F_4_Burns"       pdf_field_index="93"  pdf_field_name="txt_F_4_Burns"   if_blank=" "/>
+<field db_field_name="chk_F_3_Bite"       pdf_field_index="94"  pdf_field_name="chk_F_3_Bite"   if_blank=" "/>
+<field db_field_name="chk_H_No"       pdf_field_index="95"  pdf_field_name="chk_H_No"   if_blank=" "/>
+<field db_field_name="txt_F_3_PuntureWound"       pdf_field_index="96"  pdf_field_name="txt_F_3_PuntureWound"   if_blank=" "/>
+<field db_field_name="txt_F_3_Laceration"       pdf_field_index="97"  pdf_field_name="txt_F_3_Laceration"   if_blank=" "/>
+<field db_field_name="txt_F_3_Abrasion"       pdf_field_index="98"  pdf_field_name="txt_F_3_Abrasion"   if_blank=" "/>
+<field db_field_name="SZ_INJURY_ILLNESS_DETAIL"       pdf_field_index="99"  pdf_field_name="SZ_INJURY_ILLNESS_DETAIL"   if_blank=" "/>
+<field db_field_name="TOTAL_BAL_AMOUNT"       pdf_field_index="100"  pdf_field_name="TOTAL_BAL_AMOUNT"   if_blank=" "/>
+<field db_field_name="TOTAL_PAID_AMOUNT"       pdf_field_index="101"  pdf_field_name="TOTAL_PAID_AMOUNT"   if_blank=" "/>
+<field db_field_name="ZIP_5"       pdf_field_index="102"  pdf_field_name="ZIP_5"   if_blank=" "/>
+<field db_field_name="CHARGE_4"       pdf_field_index="103"  pdf_field_name="CHARGE_4"   if_blank=" "/>
+<field db_field_name="MODIFIER_4"       pdf_field_index="104"  pdf_field_name="MODIFIER_4"   if_blank=" "/>
+<field db_field_name="DC_1"       pdf_field_index="105"  pdf_field_name="DC_1"   if_blank=" "/>
+<field db_field_name="POS_1"       pdf_field_index="106"  pdf_field_name="POS_1"   if_blank=" "/>
+<field db_field_name="chk_SSN"       pdf_field_index="107"  pdf_field_name="chk_SSN"   if_blank=" "/>
+<field db_field_name="DOB"       pdf_field_index="108"  pdf_field_name="DOB"   if_blank=" " is_date_formate="1" />
+<field db_field_name="chk_H_2_NA"       pdf_field_index="109"  pdf_field_name="chk_H_2_NA"   if_blank=" "/>
+<field db_field_name="chk_I_1_Yes"       pdf_field_index="110"  pdf_field_name="chk_I_1_Yes"   if_blank=" "/>
+<field db_field_name="chk_H_5_Return"       pdf_field_index="111"  pdf_field_name="chk_H_5_Return"   if_blank=" "/>
+<field db_field_name="chk_H_5_Month"       pdf_field_index="112"  pdf_field_name="chk_H_5_Month"   if_blank=" "/>
+<field db_field_name="chk_H_4_Walker"       pdf_field_index="113"  pdf_field_name="chk_H_4_Walker"   if_blank=" "/>
+<field db_field_name="chk_H_3_MRI"       pdf_field_index="114"  pdf_field_name="chk_H_3_MRI"   if_blank=" "/>
+<field db_field_name="SZ_APPOINTMENT"       pdf_field_index="115"  pdf_field_name="SZ_APPOINTMENT"   if_blank=" "/>
+<field db_field_name="chk_G_3_NA"       pdf_field_index="116"  pdf_field_name="chk_G_3_NA"   if_blank=" "/>
+<field db_field_name="chk_G_2_Yes"       pdf_field_index="117"  pdf_field_name="chk_G_2_Yes"   if_blank=" "/>
+<field db_field_name="chk_F_4_PassiveROM"       pdf_field_index="118"  pdf_field_name="chk_F_4_PassiveROM"   if_blank=" "/>
+<field db_field_name="SZ_AFFECT_TREATMENT_PROGNOSIS_DESCRIPTION_1"       pdf_field_index="119"  pdf_field_name="SZ_AFFECT_TREATMENT_PROGNOSIS_DESCRIPTION_1"   if_blank=" "/>
+<field db_field_name="txt_F_4_Pain"       pdf_field_index="120"  pdf_field_name="txt_F_4_Pain"   if_blank=" "/>
+<field db_field_name="chk_F_3_Laceration"       pdf_field_index="121"  pdf_field_name="chk_F_3_Laceration"   if_blank=" "/>
+<field db_field_name="chk_F_3_Avulsion"       pdf_field_index="122"  pdf_field_name="chk_F_3_Avulsion"   if_blank=" "/>
+<field db_field_name="chk_F_Swelling"       pdf_field_index="123"  pdf_field_name="chk_F_Swelling"   if_blank=" "/>
+<field db_field_name="txt_F_3_Inhalation_Exposure"       pdf_field_index="124"  pdf_field_name="txt_F_3_Inhalation_Exposure"   if_blank=" "/>
+<field db_field_name="ZIP_6"       pdf_field_index="125"  pdf_field_name="ZIP_6"   if_blank=" "/>
+<field db_field_name="CHARGE_5"       pdf_field_index="126"  pdf_field_name="CHARGE_5"   if_blank=" "/>
+<field db_field_name="MODIFIER_5"       pdf_field_index="127"  pdf_field_name="MODIFIER_5"   if_blank=" "/>
+<field db_field_name="DC_2"       pdf_field_index="128"  pdf_field_name="DC_2"   if_blank=" "/>
+<field db_field_name="POS_2"       pdf_field_index="129"  pdf_field_name="POS_2"   if_blank=" "/>
+<field db_field_name="SZ_CARRIER_CASE_NO"       pdf_field_index="130"  pdf_field_name="SZ_CARRIER_CASE_NO"   if_blank=" "/>
+<field db_field_name="chk_H_3_CTScan"       pdf_field_index="131"  pdf_field_name="chk_H_3_CTScan"   if_blank=" "/>
+<field db_field_name="chk_H_3_Yes"       pdf_field_index="132"  pdf_field_name="chk_H_3_Yes"   if_blank=" "/>
+<field db_field_name="SZ_VARIANCE_GUIDELINES_1"       pdf_field_index="133"  pdf_field_name="SZ_VARIANCE_GUIDELINES_1"   if_blank=" "/>
+<field db_field_name="chk_G_3_Yes"       pdf_field_index="134"  pdf_field_name="chk_G_3_Yes"   if_blank=" "/>
+<field db_field_name="chk_F_4_ActiveROM"       pdf_field_index="135"  pdf_field_name="chk_F_4_ActiveROM"   if_blank=" "/>
+<field db_field_name="chk_F_4_Abnormal"       pdf_field_index="136"  pdf_field_name="chk_F_4_Abnormal"   if_blank=" "/>
+<field db_field_name="chk_F_4_Edema"       pdf_field_index="137"  pdf_field_name="chk_F_4_Edema"   if_blank=" "/>
+<field db_field_name="SZ_MEDICATION_RESTRICTIONS_DESCRIPTION"       pdf_field_index="138"  pdf_field_name="SZ_MEDICATION_RESTRICTIONS_DESCRIPTION"   if_blank=" "/>
+<field db_field_name="SZ_MEDICATIONS_PRESCRIBED"       pdf_field_index="139"  pdf_field_name="SZ_MEDICATIONS_PRESCRIBED"   if_blank=" "/>
+<field db_field_name="SZ_TREATMENT_1"       pdf_field_index="140"  pdf_field_name="SZ_TREATMENT_1"   if_blank=" "/>
+<field db_field_name="txt_F_4_Palpable"       pdf_field_index="141"  pdf_field_name="txt_F_4_Palpable"   if_blank=" "/>
+<field db_field_name="chk_H_MedicalRecords"       pdf_field_index="142"  pdf_field_name="chk_H_MedicalRecords"   if_blank=" "/>
+<field db_field_name="txt_F_3_NeedleStick"       pdf_field_index="143"  pdf_field_name="txt_F_3_NeedleStick"   if_blank=" "/>
+<field db_field_name="txt_F_3_Dislocation"       pdf_field_index="144"  pdf_field_name="txt_F_3_Dislocation"   if_blank=" "/>
+<field db_field_name="CHARGE_6"       pdf_field_index="145"  pdf_field_name="CHARGE_6"   if_blank=" "/>
+<field db_field_name="MODIFIER_6"       pdf_field_index="146"  pdf_field_name="MODIFIER_6"   if_blank=" "/>
+<field db_field_name="DC_3"       pdf_field_index="147"  pdf_field_name="DC_3"   if_blank=" "/>
+<field db_field_name="POS_3"       pdf_field_index="148"  pdf_field_name="POS_3"   if_blank=" "/>
+<field db_field_name="SZ_INSURANCE_ZIP"       pdf_field_index="149"  pdf_field_name="SZ_INSURANCE_ZIP"   if_blank=" "/>
+<field db_field_name="SZ_INSURANCE_CITY"       pdf_field_index="150"  pdf_field_name="SZ_INSURANCE_CITY"   if_blank=" "/>
+<field db_field_name="SZ_INSURANCE_STREET"       pdf_field_index="151"  pdf_field_name="SZ_INSURANCE_STREET"   if_blank=" "/>
+<field db_field_name="SZ_EMPLOYER_PHONE"       pdf_field_index="152"  pdf_field_name="SZ_EMPLOYER_PHONE"   if_blank=" " is_phone_formate="1"/>
+<field db_field_name="SZ_READINGDOCTOR"       pdf_field_index="153"  pdf_field_name="SZ_READINGDOCTOR"   if_blank=" "/>
+<field db_field_name="chk_I_1_PatientReturnNo"       pdf_field_index="154"  pdf_field_name="chk_I_1_PatientReturnNo"   if_blank=" "/>
+<field db_field_name="chk_I_1_PatientWorkingNo"       pdf_field_index="155"  pdf_field_name="chk_I_1_PatientWorkingNo"   if_blank=" "/>
+<field db_field_name="chk_I_1_PatientWorkingYes"       pdf_field_index="156"  pdf_field_name="chk_I_1_PatientWorkingYes"   if_blank=" "/>
+<field db_field_name="chk_H_5_3_4_Week"       pdf_field_index="157"  pdf_field_name="chk_H_5_3_4_Week"   if_blank=" "/>
+<field db_field_name="chk_F_4_Reflexes"       pdf_field_index="158"  pdf_field_name="chk_F_4_Reflexes"   if_blank=" "/>
+<field db_field_name="chk_F_4_Crepitation"       pdf_field_index="159"  pdf_field_name="chk_F_4_Crepitation"   if_blank=" "/>
+<field db_field_name="FT_TEMPORARY_IMPAIRMENT_PERCENTAGE"       pdf_field_index="160"  pdf_field_name="FT_TEMPORARY_IMPAIRMENT_PERCENTAGE"   if_blank=" "/>
+<field db_field_name="chk_F_3_CurshInjury"       pdf_field_index="161"  pdf_field_name="chk_F_3_CurshInjury"   if_blank=" "/>
+<field db_field_name="chk_F_Numbness"       pdf_field_index="162"  pdf_field_name="chk_F_Numbness"   if_blank=" "/>
+<field db_field_name="chk_H_4_Yes"       pdf_field_index="163"  pdf_field_name="chk_H_4_Yes"   if_blank=" "/>
+<field db_field_name="txt_F_3_Torn"       pdf_field_index="164"  pdf_field_name="txt_F_3_Torn"   if_blank=" "/>
+<field db_field_name="txt_F_3_Psychological"       pdf_field_index="165"  pdf_field_name="txt_F_3_Psychological"   if_blank=" "/>
+<field db_field_name="SZ_INJURY_ILLNESS_DETAIL_1"       pdf_field_index="166"  pdf_field_name="SZ_INJURY_ILLNESS_DETAIL_1"   if_blank=" "/>
+<field db_field_name="TOTAL_BILL_AMOUNT"       pdf_field_index="167"  pdf_field_name="TOTAL_BILL_AMOUNT"   if_blank=" "/>
+<field db_field_name="DC_4"       pdf_field_index="168"  pdf_field_name="DC_4"   if_blank=" "/>
+<field db_field_name="POS_4"       pdf_field_index="169"  pdf_field_name="POS_4"   if_blank=" "/>
+<field db_field_name="chkChiropractor"       pdf_field_index="170"  pdf_field_name="chkChiropractor"   if_blank=" "/>
+<field db_field_name="chkPodiatrist"       pdf_field_index="171"  pdf_field_name="chkPodiatrist"   if_blank=" "/>
+<field db_field_name="SZ_FEDERAL_TAX_ID"       pdf_field_index="172"  pdf_field_name="SZ_FEDERAL_TAX_ID"   if_blank=" "/>
+<field db_field_name="SZ_BILLING_STATE"       pdf_field_index="173"  pdf_field_name="SZ_BILLING_STATE"   if_blank=" "/>
+<field db_field_name="SZ_OFFICE_CITY"       pdf_field_index="174"  pdf_field_name="SZ_OFFICE_CITY"   if_blank=" "/>
+<field db_field_name="SZ_PATIENT_PHONE"       pdf_field_index="175"  pdf_field_name="SZ_PATIENT_PHONE"   if_blank=" " is_phone_formate="1"/>
+<field db_field_name="chk_H_3_EMGNCS"       pdf_field_index="176"  pdf_field_name="chk_H_3_EMGNCS"   if_blank=" "/>
+<field db_field_name="SZ_MEDICATIONS_ADVISED"       pdf_field_index="177"  pdf_field_name="SZ_MEDICATIONS_ADVISED"   if_blank=" "/>
+<field db_field_name="SZ_TEST_RESULTS_1"       pdf_field_index="178"  pdf_field_name="SZ_TEST_RESULTS_1"   if_blank=" "/>
+<field db_field_name="txt_F_4_Strength"       pdf_field_index="179"  pdf_field_name="txt_F_4_Strength"   if_blank=" "/>
+<field db_field_name="txt_F_4_Sensation"       pdf_field_index="180"  pdf_field_name="txt_F_4_Sensation"   if_blank=" "/>
+<field db_field_name="txt_F_4_Laceration"       pdf_field_index="181"  pdf_field_name="txt_F_4_Laceration"   if_blank=" "/>
+<field db_field_name="txt_F_4_Bruising"       pdf_field_index="182"  pdf_field_name="txt_F_4_Bruising"   if_blank=" "/>
+<field db_field_name="chk_H_Patient"       pdf_field_index="183"  pdf_field_name="chk_H_Patient"   if_blank=" "/>
+<field db_field_name="txt_F_3_Other_1"       pdf_field_index="184"  pdf_field_name="txt_F_3_Other_1"   if_blank=" "/>
+<field db_field_name="txt_F_3_Bite"       pdf_field_index="185"  pdf_field_name="txt_F_3_Bite"   if_blank=" "/>
+<field db_field_name="SZ_INJURY_ILLNESS_DETAIL_2"       pdf_field_index="186"  pdf_field_name="SZ_INJURY_ILLNESS_DETAIL_2"   if_blank=" "/>
+<field db_field_name="DC_5"       pdf_field_index="187"  pdf_field_name="DC_5"   if_blank=" "/>
+<field db_field_name="POS_5"       pdf_field_index="188"  pdf_field_name="POS_5"   if_blank=" "/>
+<field db_field_name="COB_1"       pdf_field_index="189"  pdf_field_name="COB_1"   if_blank=" "/>
+<field db_field_name="CPT_1"       pdf_field_index="190"  pdf_field_name="CPT_1"   if_blank=" "/>
+<field db_field_name="SZ_INSURANCE_STATE"       pdf_field_index="191"  pdf_field_name="SZ_INSURANCE_STATE"   if_blank=" "/>
+<field db_field_name="SZ_INSURANCE_NAME"       pdf_field_index="192"  pdf_field_name="SZ_INSURANCE_NAME"   if_blank=" "/>
+<field db_field_name="chk_H_2_3_7_Days"       pdf_field_index="193"  pdf_field_name="chk_H_2_3_7_Days"   if_blank=" "/>
+<field db_field_name="SZ_SPECIALITY"       pdf_field_index="194"  pdf_field_name="SZ_SPECIALITY"   if_blank=" "/>
+<field db_field_name="SZ_OFFICE_NAME"       pdf_field_index="195"  pdf_field_name="SZ_OFFICE_NAME"   if_blank=" "/>
+<field db_field_name="txt_H_4_Other"       pdf_field_index="196"  pdf_field_name="txt_H_4_Other"   if_blank=" "/>
+<field db_field_name="chk_F_3_Psychological"       pdf_field_index="197"  pdf_field_name="chk_F_3_Psychological"   if_blank=" "/>
+<field db_field_name="chk_F_3_Fracture"       pdf_field_index="198"  pdf_field_name="chk_F_3_Fracture"   if_blank=" "/>
+<field db_field_name="chk_F_Other"       pdf_field_index="199"  pdf_field_name="chk_F_Other"   if_blank=" "/>
+<field db_field_name="chk_H_Yes"       pdf_field_index="200"  pdf_field_name="chk_H_Yes"   if_blank=" "/>
+<field db_field_name="txt_F_3_Avulsion"       pdf_field_index="201"  pdf_field_name="txt_F_3_Avulsion"   if_blank=" "/>
+<field db_field_name="SZ_ANOTHER_HEALTH_PROVIDER_DESCRIPTION"       pdf_field_index="202"  pdf_field_name="SZ_ANOTHER_HEALTH_PROVIDER_DESCRIPTION"   if_blank=" "/>
+<field db_field_name="DC_6"       pdf_field_index="203"  pdf_field_name="DC_6"   if_blank=" "/>
+<field db_field_name="POS_6"       pdf_field_index="204"  pdf_field_name="POS_6"   if_blank=" "/>
+<field db_field_name="COB_2"       pdf_field_index="205"  pdf_field_name="COB_2"   if_blank=" "/>
+<field db_field_name="CPT_2"       pdf_field_index="206"  pdf_field_name="CPT_2"   if_blank=" "/>
+<field db_field_name="UNIT_1"       pdf_field_index="207"  pdf_field_name="UNIT_1"   if_blank=" "/>
+<field db_field_name="chk_H_2_15P_Days"       pdf_field_index="208"  pdf_field_name="chk_H_2_15P_Days"   if_blank=" "/>
+<field db_field_name="chk_I_2_C_EnvironmentalCond"       pdf_field_index="209"  pdf_field_name="chk_I_2_C_EnvironmentalCond"   if_blank=" "/>
+<field db_field_name="chk_I_2_a"       pdf_field_index="210"  pdf_field_name="chk_I_2_a"   if_blank=" "/>
+<field db_field_name="chk_H_5_7_8_Week"       pdf_field_index="211"  pdf_field_name="chk_H_5_7_8_Week"   if_blank=" "/>
+<field db_field_name="chk_H_4_WheelChair"       pdf_field_index="212"  pdf_field_name="chk_H_4_WheelChair"   if_blank=" "/>
+<field db_field_name="chk_H_3_XRay"       pdf_field_index="213"  pdf_field_name="chk_H_3_XRay"   if_blank=" "/>
+<field db_field_name="txt_H_5_Month"       pdf_field_index="214"  pdf_field_name="txt_H_5_Month"   if_blank=" "/>
+<field db_field_name="chk_F_8_Yes"       pdf_field_index="215"  pdf_field_name="chk_F_8_Yes"   if_blank=" "/>
+<field db_field_name="chk_F_4_Laceration"       pdf_field_index="216"  pdf_field_name="chk_F_4_Laceration"   if_blank=" "/>
+<field db_field_name="chk_F_4_Deformity"       pdf_field_index="217"  pdf_field_name="chk_F_4_Deformity"   if_blank=" "/>
+<field db_field_name="chk_F_3_Other"       pdf_field_index="218"  pdf_field_name="chk_F_3_Other"   if_blank=" "/>
+<field db_field_name="chk_F_3_Burn"       pdf_field_index="219"  pdf_field_name="chk_F_3_Burn"   if_blank=" "/>
+<field db_field_name="chk_F_Stiffness"       pdf_field_index="220"  pdf_field_name="chk_F_Stiffness"   if_blank=" "/>
+<field db_field_name="chk_H_Other"       pdf_field_index="221"  pdf_field_name="chk_H_Other"   if_blank=" "/>
+<field db_field_name="txt_F_3_Poisoning"       pdf_field_index="222"  pdf_field_name="txt_F_3_Poisoning"   if_blank=" "/>
+<field db_field_name="COB_3"       pdf_field_index="223"  pdf_field_name="COB_3"   if_blank=" "/>
+<field db_field_name="CPT_3"       pdf_field_index="224"  pdf_field_name="CPT_3"   if_blank=" "/>
+<field db_field_name="UNIT_2"       pdf_field_index="225"  pdf_field_name="UNIT_2"   if_blank=" "/>
+<field db_field_name="SZ_OFFICE_ZIP"       pdf_field_index="226"  pdf_field_name="SZ_OFFICE_ZIP"   if_blank=" "/>
+<field db_field_name="SZ_EMPLOYER_ADDRESS"       pdf_field_index="227"  pdf_field_name="SZ_EMPLOYER_ADDRESS"   if_blank=" "/>
+<field db_field_name="SZ_WORK_ACTIVITIES"       pdf_field_index="228"  pdf_field_name="SZ_WORK_ACTIVITIES"   if_blank=" "/>
+<field db_field_name="SZ_JOB_TITLE"       pdf_field_index="229"  pdf_field_name="SZ_JOB_TITLE"   if_blank=" "/>
+<field db_field_name="chk_H_3_Patient"       pdf_field_index="230"  pdf_field_name="chk_H_3_Patient"   if_blank=" "/>
+<field db_field_name="chk_I_2_C_UseOfUpperExtremeities"       pdf_field_index="231"  pdf_field_name="chk_I_2_C_UseOfUpperExtremeities"   if_blank=" "/>
+<field db_field_name="chk_I_2_b"       pdf_field_index="232"  pdf_field_name="chk_I_2_b"   if_blank=" "/>
+<field db_field_name="chk_H_8_No"       pdf_field_index="233"  pdf_field_name="chk_H_8_No"   if_blank=" "/>
+<field db_field_name="chk_H_8_Yes"       pdf_field_index="234"  pdf_field_name="chk_H_8_Yes"   if_blank=" "/>
+<field db_field_name="txt_H_3_MRI"       pdf_field_index="235"  pdf_field_name="txt_H_3_MRI"   if_blank=" "/>
+<field db_field_name="SZ_DIAGNOSTIC_TEST_1"       pdf_field_index="236"  pdf_field_name="SZ_DIAGNOSTIC_TEST_1"   if_blank=" "/>
+<field db_field_name="txt_F_4_Reflexes"       pdf_field_index="237"  pdf_field_name="txt_F_4_Reflexes"   if_blank=" "/>
+<field db_field_name="txt_F_4_Edema"       pdf_field_index="238"  pdf_field_name="txt_F_4_Edema"   if_blank=" "/>
+<field db_field_name="txt_F_4_Crepitation"       pdf_field_index="239"  pdf_field_name="txt_F_4_Crepitation"   if_blank=" "/>
+<field db_field_name="chk_F_3_HearingLoss"       pdf_field_index="240"  pdf_field_name="chk_F_3_HearingLoss"   if_blank=" "/>
+<field db_field_name="chkService"       pdf_field_index="241"  pdf_field_name="chkService"   if_blank=" "/>
+<field db_field_name="txt_F_3_InfectiousDisease"       pdf_field_index="242"  pdf_field_name="txt_F_3_InfectiousDisease"   if_blank=" "/>
+<field db_field_name="txt_F_3_CurshInjury"       pdf_field_index="243"  pdf_field_name="txt_F_3_CurshInjury"   if_blank=" "/>
+<field db_field_name="txt_F_Stiffness"       pdf_field_index="244"  pdf_field_name="txt_F_Stiffness"   if_blank=" "/>
+<field db_field_name="COB_4"       pdf_field_index="245"  pdf_field_name="COB_4"   if_blank=" "/>
+<field db_field_name="CPT_4"       pdf_field_index="246"  pdf_field_name="CPT_4"   if_blank=" "/>
+<field db_field_name="UNIT_3"       pdf_field_index="247"  pdf_field_name="UNIT_3"   if_blank=" "/>
+<field db_field_name="TO_YY_1"       pdf_field_index="248"  pdf_field_name="TO_YY_1"   if_blank=" "/>
+<field db_field_name="TO_DD_1"       pdf_field_index="249"  pdf_field_name="TO_DD_1"   if_blank=" "/>
+<field db_field_name="TO_MM_1"       pdf_field_index="250"  pdf_field_name="TO_MM_1"   if_blank=" "/>
+<field db_field_name="FROM_YY_1"       pdf_field_index="251"  pdf_field_name="FROM_YY_1"   if_blank=" "/>
+<field db_field_name="FROM_DD_1"       pdf_field_index="252"  pdf_field_name="FROM_DD_1"   if_blank=" "/>
+<field db_field_name="FROM_MM_1"       pdf_field_index="253"  pdf_field_name="FROM_MM_1"   if_blank=" "/>
+<field db_field_name="SZ_DIGNOSIS"       pdf_field_index="254"  pdf_field_name="SZ_DIGNOSIS"   if_blank=" "/>
+<field db_field_name="SZ_EMPLOYER_STATE"       pdf_field_index="255"  pdf_field_name="SZ_EMPLOYER_STATE"   if_blank=" "/>
+<field db_field_name="SZ_SOCIAL_SECURITY_NO"       pdf_field_index="256"  pdf_field_name="SZ_SOCIAL_SECURITY_NO"   if_blank=" "/>
+<field db_field_name="chk_H_2_8_14_Days"       pdf_field_index="257"  pdf_field_name="chk_H_2_8_14_Days"   if_blank=" "/>
+<field db_field_name="chk_I_2_C_Climbing"       pdf_field_index="258"  pdf_field_name="chk_I_2_C_Climbing"   if_blank=" "/>
+<field db_field_name="chk_I_2_c"       pdf_field_index="259"  pdf_field_name="chk_I_2_c"   if_blank=" "/>
+<field db_field_name="chk_H_4_Orthotics"       pdf_field_index="260"  pdf_field_name="chk_H_4_Orthotics"   if_blank=" "/>
+<field db_field_name="chk_H_4_Cane"       pdf_field_index="261"  pdf_field_name="chk_H_4_Cane"   if_blank=" "/>
+<field db_field_name="chk_H_3_Right_Other"       pdf_field_index="262"  pdf_field_name="chk_H_3_Right_Other"   if_blank=" "/>
+<field db_field_name="DT_PATIENT_MISSED_WORK_DATE"       pdf_field_index="263"  pdf_field_name="DT_PATIENT_MISSED_WORK_DATE"   if_blank=" " is_date_formate="1" />
+<field db_field_name="chk_F_4_Scar"       pdf_field_index="264"  pdf_field_name="chk_F_4_Scar"   if_blank=" "/>
+<field db_field_name="txt_F_4_OtherFindings"       pdf_field_index="265"  pdf_field_name="txt_F_4_OtherFindings"   if_blank=" "/>
+<field db_field_name="chk_F_3_SpinalCordInjury"       pdf_field_index="266"  pdf_field_name="chk_F_3_SpinalCordInjury"   if_blank=" "/>
+<field db_field_name="chk_F_3_InfectiousDisease"       pdf_field_index="267"  pdf_field_name="chk_F_3_InfectiousDisease"   if_blank=" "/>
+<field db_field_name="txt_F_3_Sprain"       pdf_field_index="268"  pdf_field_name="txt_F_3_Sprain"   if_blank=" "/>
+<field db_field_name="txt_F_3_Hernia"       pdf_field_index="269"  pdf_field_name="txt_F_3_Hernia"   if_blank=" "/>
+<field db_field_name="txt_F_3_Fracture"       pdf_field_index="270"  pdf_field_name="txt_F_3_Fracture"   if_blank=" "/>
+<field db_field_name="COB_5"       pdf_field_index="271"  pdf_field_name="COB_5"   if_blank=" "/>
+<field db_field_name="CPT_5"       pdf_field_index="272"  pdf_field_name="CPT_5"   if_blank=" "/>
+<field db_field_name="UNIT_4"       pdf_field_index="273"  pdf_field_name="UNIT_4"   if_blank=" "/>
+<field db_field_name="TO_YY_2"       pdf_field_index="274"  pdf_field_name="TO_YY_2"   if_blank=" "/>
+<field db_field_name="TO_DD_2"       pdf_field_index="275"  pdf_field_name="TO_DD_2"   if_blank=" "/>
+<field db_field_name="TO_MM_2"       pdf_field_index="276"  pdf_field_name="TO_MM_2"   if_blank=" "/>
+<field db_field_name="FROM_YY_2"       pdf_field_index="277"  pdf_field_name="FROM_YY_2"   if_blank=" "/>
+<field db_field_name="FROM_DD_2"       pdf_field_index="278"  pdf_field_name="FROM_DD_2"   if_blank=" "/>
+<field db_field_name="FROM_MM_2"       pdf_field_index="279"  pdf_field_name="FROM_MM_2"   if_blank=" "/>
+<field db_field_name="SZ_PATIENT_STATE"       pdf_field_index="280"  pdf_field_name="SZ_PATIENT_STATE"   if_blank=" "/>
+<field db_field_name="SZ_WCB_AUTHORIZATION"       pdf_field_index="281"  pdf_field_name="SZ_WCB_AUTHORIZATION"   if_blank=" "/>
+<field db_field_name="chk_I_2_C_Lifting"       pdf_field_index="282"  pdf_field_name="chk_I_2_C_Lifting"   if_blank=" "/>
+<field db_field_name="chk_H_3_Physical"       pdf_field_index="283"  pdf_field_name="chk_H_3_Physical"   if_blank=" "/>
+<field db_field_name="chk_H_3_Labs"       pdf_field_index="284"  pdf_field_name="chk_H_3_Labs"   if_blank=" "/>
+<field db_field_name="txtTodayDate"       pdf_field_index="285"  pdf_field_name="txtTodayDate"   if_blank=" " is_date_formate="1"/>
+<field db_field_name="chk_F_8_No"       pdf_field_index="286"  pdf_field_name="chk_F_8_No"   if_blank=" "/>
+<field db_field_name="txt_F_3_Contusion"       pdf_field_index="287"  pdf_field_name="txt_F_3_Contusion"   if_blank=" "/>
+<field db_field_name="txt_F_3_Amputation"       pdf_field_index="288"  pdf_field_name="txt_F_3_Amputation"   if_blank=" "/>
+<field db_field_name="txt_F_Pain"       pdf_field_index="289"  pdf_field_name="txt_F_Pain"   if_blank=" "/>
+<field db_field_name="DT_DATE_OF_EXAMINATION"       pdf_field_index="290"  pdf_field_name="DT_DATE_OF_EXAMINATION"   if_blank=" " is_date_formate="1" />
+<field db_field_name="SZ_INJURY_LEARN_SOURCE_DESCRIPTION"       pdf_field_index="291"  pdf_field_name="SZ_INJURY_LEARN_SOURCE_DESCRIPTION"   if_blank=" "  />
+<field db_field_name="COB_6"       pdf_field_index="292"  pdf_field_name="COB_6"   if_blank=" "/>
+<field db_field_name="CPT_6"       pdf_field_index="293"  pdf_field_name="CPT_6"   if_blank=" "/>
+<field db_field_name="UNIT_5"       pdf_field_index="294"  pdf_field_name="UNIT_5"   if_blank=" "/>
+<field db_field_name="TO_YY_3"       pdf_field_index="295"  pdf_field_name="TO_YY_3"   if_blank=" "/>
+<field db_field_name="TO_DD_3"       pdf_field_index="296"  pdf_field_name="TO_DD_3"   if_blank=" "/>
+<field db_field_name="TO_MM_3"       pdf_field_index="297"  pdf_field_name="TO_MM_3"   if_blank=" "/>
+<field db_field_name="FROM_YY_3"       pdf_field_index="298"  pdf_field_name="FROM_YY_3"   if_blank=" "/>
+<field db_field_name="FROM_DD_3"       pdf_field_index="299"  pdf_field_name="FROM_DD_3"   if_blank=" "/>
+<field db_field_name="FROM_MM_3"       pdf_field_index="300"  pdf_field_name="FROM_MM_3"   if_blank=" "/>
+<field db_field_name="SZ_OFFICE_PHONE"       pdf_field_index="301"  pdf_field_name="SZ_OFFICE_PHONE"   if_blank=" " is_phone_formate="1" />
+<field db_field_name="SZ_WCB_NO"       pdf_field_index="302"  pdf_field_name="SZ_WCB_NO"   if_blank=" "/>
+<field db_field_name="chk_I_2_C_Kneeling"       pdf_field_index="303"  pdf_field_name="chk_I_2_C_Kneeling"   if_blank=" "/>
+<field db_field_name="chk_H_5_1_2_Week"       pdf_field_index="304"  pdf_field_name="chk_H_5_1_2_Week"   if_blank=" "/>
+<field db_field_name="SZ_QUANIFY_LIMITATION"       pdf_field_index="305"  pdf_field_name="SZ_QUANIFY_LIMITATION"   if_blank=" "/>
+<field db_field_name="chk_F_4_Hematoma"       pdf_field_index="306"  pdf_field_name="chk_F_4_Hematoma"   if_blank=" "/>
+<field db_field_name="chk_F_3_Amputation"       pdf_field_index="307"  pdf_field_name="chk_F_3_Amputation"   if_blank=" "/>
+<field db_field_name="chk_F_Pain"       pdf_field_index="308"  pdf_field_name="chk_F_Pain"   if_blank=" "/>
+<field db_field_name="txt_F_3_Dermatitis"       pdf_field_index="309"  pdf_field_name="txt_F_3_Dermatitis"   if_blank=" "/>
+<field db_field_name="txt_F_3_Burn"       pdf_field_index="310"  pdf_field_name="txt_F_3_Burn"   if_blank=" "/>
+<field db_field_name="UNIT_6"       pdf_field_index="311"  pdf_field_name="UNIT_6"   if_blank=" "/>
+<field db_field_name="TO_YY_4"       pdf_field_index="312"  pdf_field_name="TO_YY_4"   if_blank=" "/>
+<field db_field_name="TO_DD_4"       pdf_field_index="313"  pdf_field_name="TO_DD_4"   if_blank=" "/>
+<field db_field_name="TO_MM_4"       pdf_field_index="314"  pdf_field_name="TO_MM_4"   if_blank=" "/>
+<field db_field_name="FROM_YY_4"       pdf_field_index="315"  pdf_field_name="FROM_YY_4"   if_blank=" "/>
+<field db_field_name="FROM_DD_4"       pdf_field_index="316"  pdf_field_name="FROM_DD_4"   if_blank=" "/>
+<field db_field_name="FROM_MM_4"       pdf_field_index="317"  pdf_field_name="FROM_MM_4"   if_blank=" "/>
+<field db_field_name="SZ_BILLING_CITY"       pdf_field_index="318"  pdf_field_name="SZ_BILLING_CITY"   if_blank=" "/>
+<field db_field_name="chk_H_Provider_1"       pdf_field_index="319"  pdf_field_name="chk_H_Provider_1"   if_blank=" "/>
+<field db_field_name="chk_I_2_C_Sitting"       pdf_field_index="320"  pdf_field_name="chk_I_2_C_Sitting"   if_blank=" "/>
+<field db_field_name="chk_I_2_C_PersonalProtectiveEq"       pdf_field_index="321"  pdf_field_name="chk_I_2_C_PersonalProtectiveEq"   if_blank=" "/>
+<field db_field_name="chk_I_2_C_Other"       pdf_field_index="322"  pdf_field_name="chk_I_2_C_Other"   if_blank=" "/>
+<field db_field_name="SZ_PATIENT_RETURN_WORK_LIMITATION"       pdf_field_index="323"  pdf_field_name="SZ_PATIENT_RETURN_WORK_LIMITATION"   if_blank=" "/>
+<field db_field_name="chk_F_4_Sensation"       pdf_field_index="324"  pdf_field_name="chk_F_4_Sensation"   if_blank=" "/>
+<field db_field_name="chk_F_4_OtherFindings"       pdf_field_index="325"  pdf_field_name="chk_F_4_OtherFindings"   if_blank=" "/>
+<field db_field_name="Text226"       pdf_field_index="326"  pdf_field_name="Text226"   if_blank=" "/>
+<field db_field_name="SZ_PROPOSED_TREATEMENT_1"       pdf_field_index="327"  pdf_field_name="SZ_PROPOSED_TREATEMENT_1"   if_blank=" "/>
+<field db_field_name="SZ_PROPOSED_TREATEMENT"       pdf_field_index="328"  pdf_field_name="SZ_PROPOSED_TREATEMENT"   if_blank=" "/>
+<field db_field_name="SZ_TEST_RESULTS"       pdf_field_index="329"  pdf_field_name="SZ_TEST_RESULTS"   if_blank=" "/>
+<field db_field_name="txt_F_4_JointEffusion"       pdf_field_index="330"  pdf_field_name="txt_F_4_JointEffusion"   if_blank=" "/>
+<field db_field_name="chk_F_3_Inhalation_Exposure"       pdf_field_index="331"  pdf_field_name="chk_F_3_Inhalation_Exposure"   if_blank=" "/>
+<field db_field_name="chk_F_3_Dermatitis"       pdf_field_index="332"  pdf_field_name="chk_F_3_Dermatitis"   if_blank=" "/>
+<field db_field_name="chk_H_4_No"       pdf_field_index="333"  pdf_field_name="chk_H_4_No"   if_blank=" "/>
+<field db_field_name="txt_F_3_Other"       pdf_field_index="334"  pdf_field_name="txt_F_3_Other"   if_blank=" "/>
+<field db_field_name="txt_F_3_HearingLoss"       pdf_field_index="335"  pdf_field_name="txt_F_3_HearingLoss"   if_blank=" "/>
+<field db_field_name="txt_F_Other"       pdf_field_index="336"  pdf_field_name="txt_F_Other"   if_blank=" "/>
+<field db_field_name="txt_F_Weakness"       pdf_field_index="337"  pdf_field_name="txt_F_Weakness"   if_blank=" "/>
+<field db_field_name="FROM_DD_5"       pdf_field_index="338"  pdf_field_name="FROM_DD_5"   if_blank=" "/>
+<field db_field_name="TO_YY_5"       pdf_field_index="339"  pdf_field_name="TO_YY_5"   if_blank=" "/>
+<field db_field_name="TO_DD_5"       pdf_field_index="340"  pdf_field_name="TO_DD_5"   if_blank=" "/>
+<field db_field_name="TO_MM_5"       pdf_field_index="341"  pdf_field_name="TO_MM_5"   if_blank=" "/>
+<field db_field_name="FROM_YY_5"       pdf_field_index="342"  pdf_field_name="FROM_YY_5"   if_blank=" "/>
+<field db_field_name="FROM_MM_5"       pdf_field_index="343"  pdf_field_name="FROM_MM_5"   if_blank=" "/>
+<field db_field_name="SZ_PATIENT_FIRST_NAME"       pdf_field_index="344"  pdf_field_name="SZ_PATIENT_FIRST_NAME"   if_blank=" "/>
+<field db_field_name="SZ_BILLING_ADDRESS"       pdf_field_index="345"  pdf_field_name="SZ_BILLING_ADDRESS"   if_blank=" "/>
+<field db_field_name="chk_H_Provider_2"       pdf_field_index="346"  pdf_field_name="chk_H_Provider_2"   if_blank=" "/>
+<field db_field_name="chk_H_3_PatientsEmployer"       pdf_field_index="347"  pdf_field_name="chk_H_3_PatientsEmployer"   if_blank=" "/>
+<field db_field_name="chk_I_2_C_UsePublicTrans"       pdf_field_index="348"  pdf_field_name="chk_I_2_C_UsePublicTrans"   if_blank=" "/>
+<field db_field_name="chk_I_2_C_OperatingHeavy"       pdf_field_index="349"  pdf_field_name="chk_I_2_C_OperatingHeavy"   if_blank=" "/>
+<field db_field_name="chk_I_1_PatientReturnYes"       pdf_field_index="350"  pdf_field_name="chk_I_1_PatientReturnYes"   if_blank=" "/>
+<field db_field_name="chk_H_5_WithinWeek"       pdf_field_index="351"  pdf_field_name="chk_H_5_WithinWeek"   if_blank=" "/>
+<field db_field_name="chk_H_4_Crutches"       pdf_field_index="352"  pdf_field_name="chk_H_4_Crutches"   if_blank=" "/>
+<field db_field_name="chk_H_3_No"       pdf_field_index="353"  pdf_field_name="chk_H_3_No"   if_blank=" "/>
+<field db_field_name="Text249"       pdf_field_index="354"  pdf_field_name="Text249"   if_blank=" "/>
+<field db_field_name="txt_H_3_Right_Other"       pdf_field_index="355"  pdf_field_name="txt_H_3_Right_Other"   if_blank=" "/>
+<field db_field_name="chk_F_4_Gait"       pdf_field_index="356"  pdf_field_name="chk_F_4_Gait"   if_blank=" "/>
+<field db_field_name="chk_F_4_Burns"       pdf_field_index="357"  pdf_field_name="chk_F_4_Burns"   if_blank=" "/>
+<field db_field_name="SZ_DIAGNOSTIC_TEST"       pdf_field_index="358"  pdf_field_name="SZ_DIAGNOSTIC_TEST"   if_blank=" "/>
+<field db_field_name="txt_F_4_ActiveROM"       pdf_field_index="359"  pdf_field_name="txt_F_4_ActiveROM"   if_blank=" "/>
+<field db_field_name="txt_F_4_Scar"       pdf_field_index="360"  pdf_field_name="txt_F_4_Scar"   if_blank=" "/>
+<field db_field_name="txt_F_Swelling"       pdf_field_index="361"  pdf_field_name="txt_F_Swelling"   if_blank=" "/>
+<field db_field_name="TO_YY_6"       pdf_field_index="362"  pdf_field_name="TO_YY_6"   if_blank=" "/>
+<field db_field_name="TO_DD_6"       pdf_field_index="363"  pdf_field_name="TO_DD_6"   if_blank=" "/>
+<field db_field_name="TO_MM_6"       pdf_field_index="364"  pdf_field_name="TO_MM_6"   if_blank=" "/>
+<field db_field_name="FROM_YY_6"       pdf_field_index="365"  pdf_field_name="FROM_YY_6"   if_blank=" "/>
+<field db_field_name="FROM_MM_6"       pdf_field_index="366"  pdf_field_name="FROM_MM_6"   if_blank=" "/>
+<field db_field_name="Text117"       pdf_field_index="367"  pdf_field_name="Text117"   if_blank=" "/>
+<field db_field_name="SZ_MI"       pdf_field_index="368"  pdf_field_name="SZ_MI"   if_blank=" "/>
+
+
+  <field db_field_name="I_GENDER" pdf_field_index="19,82,0" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="2" flip_index="" />
+
+  <!-- Section C - Doctors Information -->
+
+  <field db_field_name="I_DOCTOR_TYPE" pdf_field_index="18,171,170,0" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="2" flip_index="" />
+
+
+  <field db_field_name="BIT_TAX_ID_TYPE" pdf_field_index="17" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="1"
+    flip_index="107" />
+  <!-- Section D - Billing Information -->
+
+  <field db_field_name="BT_PPO" pdf_field_index="241" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="0"
+    flip_index="" />
+
+  <!-- Section E - History -->
+  <field db_field_name="SZ_INJURY_LEARN_SOURCE_ID" pdf_field_index="183,142,221,0" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="2" flip_index="" />
+  <field db_field_name="BT_IS_ANOTHER_HEALTH_PROVIDER" pdf_field_index="95" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="1"
+       flip_index="200" />
+
+  <field db_field_name="BT_IS_PREVIOUSLY_TREATED" pdf_field_index="333" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="1"
+      flip_index="163" />
+
+  <!--  Section - Exam Information -->
+
+  <field db_field_name="BT_IS_AFFECT_TREATMENT_PROGNOSIS" pdf_field_index="286" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="1"
+     flip_index="215" />
+
+
+  <!-- Section E - Doctor's Opinion -->
+
+  <field db_field_name="BT_IS_COMPETENT_MEDICAL_CAUSE" pdf_field_index="48" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="1" flip_index="88" />
+
+  <field db_field_name="BT_IS_CONSISTENT_WITH_HISTORY" pdf_field_index="26" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="1" flip_index="117" />
+
+  <field db_field_name="BT_IS_CONSISTENT_WITH_OBJECTIVE_FINDINGS" pdf_field_index="134,9,116" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="2" flip_index="" />
+
+  <!-- Plan of Care -->
+
+  <field db_field_name="BT_MEDICATION_RESTRICTIONS" pdf_field_index="47" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="1" flip_index="8" />
+
+  <field db_field_name="BT_IS_DIAGNOSTIC_REFERRALS_REQUIRED" pdf_field_index="353" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="1" flip_index="132" />
+
+  <field db_field_name="SZ_APPOINTMENT_MONTH" pdf_field_index="351,304,157,3,211,112,111" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="2" flip_index="" />
+
+  <field db_field_name="BT_IS_ADHERE_NEWYORK_TREATMENT" pdf_field_index="233" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="1" flip_index="234" />
+
+
+  <!-- Section - Work Status -->
+  
+  <field db_field_name="BT_PATIENT_MISSED_WORK" pdf_field_index="2" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="1" flip_index="110" />
+
+  <field db_field_name="BT_PATIENT_CUR_WORKING" pdf_field_index="156" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="1" flip_index="155	" />
+
+  <field db_field_name="BT_PATIENT_WORK_TYPE" pdf_field_index="154" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="1" flip_index="350" />
+
+  <field db_field_name="BT_BOARD_AUTHORIZED" pdf_field_index="346" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="1"
+flip_index="319" />
+
+  <field db_field_name="BT_PATIENT_RETURN_WORK" pdf_field_index="210,232,259,0" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="2" flip_index="" />
+
+  <field db_field_name="INT_WHOM_DISCUSS" pdf_field_index="230,347,63,0" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="2" flip_index="" />
+
+  <field db_field_name="INT_HOW_LONG_LIMITATION_APPLY" pdf_field_index="41,193,257,208,64,109,0" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="2" flip_index="" />
+
+
+  <field db_field_name="MONTH,DAY,YEAR,TO_MONTH,TO_DAY,TO_YEAR,SZ_PROCEDURE_CODE,FL_AMOUNT,I_UNIT,BILL_AMOUNT,PAID_AMOUNT,BALANCE,ZIP_CODE,PLACE_OF_SERVICE,SZ_MODIFIER"  pdf_field_index="253,279,300,317,343,366:252,278,299,316,367,338:251,277,298,315,342,365:250,276,297,314,341,364:249,275,296,313,340,363:248,274,295,312,339,362:190,206,224,246,272,293:36,57,78,103,126,145:207,225,247,273,294,311:167,167,167,167,167,167:101,101,101,101,101,101:100,100,100,100,100,100:16,35,56,77,102,125:106,129,148,169,188,204:37,58,79,104,127,146" pdf_field_name="1,2,3,4,5,6:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f" if_blank="" is_service = "1" />
+  
+  <field db_field_name="Numbness/Tingling,Swelling,Pain,Weakness,Stiffness,Other(Specify)" pdf_field_index="162,123,308,75,220,199" pdf_Textfield_index="34,361,289,337,244,336"  pdf_field_name="" if_blank="" is_check_box = "1" is_bit="3" flip_index="" pdf_proc_name="SP_MULTIPLE_CHECKBOX_SELECT_FOR_TEMPLATE" pdf_flag_name="PATIENT_COMPLAINTS" />
+  <field db_field_name="Abrasion,Infectious Disease,Amputation,Inhalation Exposure,Avulsion,Laceration,Bite,Needle Stick,Burn,Poisoning/Toxic Effects,Contusion/Hematoma,Psychological,Crush Injury,Puncture Wound,Dermatitis,Repetitive Strain Injury,Dislocation,Spinal Cord Injury,Fracture,Sprain/Strain,Hearing Loss,Torn Ligament Tendon or Muscle,Hernia,Vision Loss,Other(Specify) :" pdf_field_index="15,267,307,331,122,121,94,53,219,14,74,197,161,31,332,52,33,266,198,30,240,73,32,72,218"   pdf_Textfield_index="98,242,288,124,201,97,185,143,310,222,287,165,243,96,309,54,144,76,270,268,335,164,269,0,334"  pdf_field_name="" if_blank="" is_check_box = "1" is_bit="3" flip_index="" pdf_proc_name="SP_MULTIPLE_CHECKBOX_SELECT_FOR_TEMPLATE" pdf_flag_name="PATIENT_TYPE_INJURY" />
+  <field db_field_name="None at present,Bruising,Burns,Crepitation,Deformity,Edema,Hematoma/Lump/Swelling,Joint Effusion,Laceration/Sutures,Pain/Tenderness,Scar,Other(Specify) ::,Neuromuscular Findings:,Abnormal/Restricted ROM,Active ROM,Passive ROM,Gait,Palpable Muscle Spasm,Reflexes,Sensation,Strength (Weakness),Wasting/Muscle Atrophy" pdf_field_index="11,90,357,159,217,137,306,10,216,28,264,325,27,136,135,118,356,49,158,324,89,67"  pdf_Textfield_index="0,182,93,239,71,238,29,330,181,120,360,265,0,0,359,70,69,141,237,180,179,92"  pdf_field_name="" if_blank="" is_check_box = "1" is_bit="3" flip_index="" pdf_proc_name="SP_MULTIPLE_CHECKBOX_SELECT_FOR_TEMPLATE" pdf_flag_name="PATIENT_PHYSICAL_EXAM" />
+  <field db_field_name="CT Scan,EMG/NCS,MRI (specify):,Labs (specify):,X-rays (specify):,Other (specify):" pdf_field_index="131,176,114,284,213,44"  pdf_Textfield_index="0,0,235,7,0,6"  pdf_field_name="" if_blank="" is_check_box = "1" is_bit="3" flip_index="" pdf_proc_name="SP_MULTIPLE_CHECKBOX_SELECT_FOR_TEMPLATE" pdf_flag_name="DIAGNOSTIC_TESTS" />
+  <field db_field_name="Chiropractor,Internist/Family Physician,Occupational Therapist,Physical Therapist,Specialist in,Other (specify)" pdf_field_index="4,66,43,283,42,262"  pdf_Textfield_index="0,0,0,0,25,355"  pdf_field_name="" if_blank="" is_check_box = "1" is_bit="3" flip_index="" pdf_proc_name="SP_MULTIPLE_CHECKBOX_SELECT_FOR_TEMPLATE" pdf_flag_name="REFERRALS" />
+  <field db_field_name="Cane,Crutches,Orthotics,Walker,Wheelchair,Other-(specify):" pdf_field_index="261,352,260,113,212,86"  pdf_Textfield_index="0,0,0,0,0,196"  pdf_field_name="" if_blank="" is_check_box = "1" is_bit="3" flip_index="" pdf_proc_name="SP_MULTIPLE_CHECKBOX_SELECT_FOR_TEMPLATE" pdf_flag_name="ASSISTIVE_DEVICES" />
+  <field db_field_name="Bending/twisting,Lifting,Sitting,Climbing stairs/ladders,Operating heavy equipment,Standing,Environmental conditions,Operation of motor vehicles,Use of public transportation,Kneeling,Personal protective equipment,Use of upper extremities,Other (explain):" pdf_field_index="1,282,320,258,349,65,209,85,348,303,321,231,322"  pdf_Textfield_index="0,0,0,0,0,0"  pdf_field_name="" if_blank="" is_check_box = "1" is_bit="3" flip_index="" pdf_proc_name="SP_MULTIPLE_CHECKBOX_SELECT_FOR_TEMPLATE" pdf_flag_name="WORK_STATUS" />
+
+
+
+
+
+</document></root>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_CASE_MASTER">
+  <Field Name="sz_company_id"      DataType="NVarChar"    Size="20" Null="False" Control="TextBox" ControlID="txtCompanyId" Editable="True"  Visible="True" ></Field>
+  <StoreProcedure name="sp_lf_account_details_new"></StoreProcedure>
+  <ListControl name="grdLitigationCompanyWise"></ListControl>
+</Table>  

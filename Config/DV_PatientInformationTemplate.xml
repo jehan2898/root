@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <document  procedure_name="SP_MST_PATIENT_INFORMATION" >
+      <Field sz_field_name="SZ_BILL_NUMBER"         ></Field>
+      <Field sz_field_name="SZ_PATIENT_FIRST_NAME"  ></Field>
+      <Field sz_field_name="MI"                     ></Field>
+      <Field sz_field_name="SZ_PATIENT_LAST_NAME"   ></Field>
+      <Field sz_field_name="DT_INJURY"              ></Field>
+      <Field sz_field_name="SZ_SOCIAL_SECURITY_NO"  ></Field>
+
+      <Field sz_field_name="SZ_PATIENT_STREET"      ></Field>
+      <Field sz_field_name="SZ_PATIENT_CITY"        ></Field>
+      <Field sz_field_name="SZ_PATIENT_STATE"       ></Field>
+      <Field sz_field_name="SZ_PATIENT_ZIP"         ></Field>
+      <Field sz_field_name="SZ_CASE_ID"             ></Field>
+      <Field sz_field_name="SZ_COMPANY_ID"          ></Field>
+      <Field sz_field_name="SZ_PATIENT_ACCOUNT_NUMBER" ></Field>
+  </document>
+</root>

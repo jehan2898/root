@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_CASE_MASTER">
+  <Field Name="SZ_COMPANY_ID"      DataType="NVarChar"    Size="50" Null="True" Control="TextBox" ControlID="txtCompanyId" Editable="True"  Visible="True" ></Field>
+  <Field Name="DT_FROM_DATE"      DataType="NVarChar"    Size="50" Null="False" Control="TextBox" ControlID="txtFromDate" Editable="True"  Visible="True" ></Field>
+  <Field Name="DT_TO_DATE"      DataType="NVarChar"    Size="50" Null="False" Control="TextBox" ControlID="txtToDate" Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_CASE_NO"      DataType="NVarChar"    Size="50" Null="False" Control="TextBox" ControlID="txtCaseNo" Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_TRANS_ID"      DataType="NVarChar"    Size="50" Null="False" Control="ExtendedDropDownList" ControlID="extddlTransport" Editable="True"  Visible="True" ></Field>
+  
+  <StoreProcedure name="SP_GET_TRANS_INFO"></StoreProcedure>
+  <ListControl name="grdTransport"></ListControl>
+</Table>

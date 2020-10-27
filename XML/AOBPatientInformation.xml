@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="TXN_CALENDER_EVENT">
+  <Field Name="SZ_CASE_ID" DataType="Int" Size="" Null="True" Control ="TextBox" ControlID="TXT_I_EVENT" Editable="True" Visible="True"></Field>
+
+  <Field Name="SZ_PATIENT_NAME" DataType="NVarChar" Size="500" Null="True" Control ="TextBox" ControlID="TXT_PATIENT_NAME" Editable="True" Visible="True"></Field>
+  <Field Name="DT_DOA" DataType="DateTime" Size="" Null="True" Control ="TextBox" ControlID="TXT_DOA" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PROVIDER_COMPANY_NAME" DataType="NVarChar" Size="" Null="True" Control ="TextBox" ControlID="TXT_PROVIDER_COMPANY_NAME" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PATIENT_ADDRESS" DataType="NVarChar" Size="" Null="True" Control ="TextBox" ControlID="TXT_PATIENT_ADDRESS" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PROVIDER_NAME" DataType="NVarChar" Size="" Null="True" Control ="TextBox" ControlID="TXT_PROVIDER_NAME" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PROVIDER_ADDRESS" DataType="NVarChar" Size="" Null="True" Control ="TextBox" ControlID="TXT_PROVIDER_ADDRESS" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PROVIDER_NAME_ADDESS" DataType="NVarChar" Size="" Null="True" Control ="TextBox" ControlID="TXT_PROVIDER_NAME_ADDESS" Editable="True" Visible="True"></Field>
+
+  <Field Name="SZ_DOB" DataType="Int" Size="" Null="True" Control ="TextBox" ControlID="TXT_DOB" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_SSN" DataType="Int" Size="" Null="True" Control ="TextBox" ControlID="TXT_SSN" Editable="True" Visible="True"></Field>
+
+  <StoreProcedure name="SP_AOB_PATIENT_DETAILS"></StoreProcedure>
+
+</Table>

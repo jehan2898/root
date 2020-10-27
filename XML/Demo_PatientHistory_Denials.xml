@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <SZ_BILL_NUMBER>WC-00120-121001</SZ_BILL_NUMBER>
+	<DT_BILL_DATE>01-FEB-2009</DT_BILL_DATE>
+    <FLT_BILL_AMOUNT>1241.90</FLT_BILL_AMOUNT>
+	<DT_FIRST_DENIAL>22-FEB-2009</DT_FIRST_DENIAL>
+	<DT_SECOND_DENIAL></DT_SECOND_DENIAL>
+	<SZ_REMARK>Bills denied - Excessive treatment</SZ_REMARK>
+  </Table>
+  <Table>
+    <SZ_BILL_NUMBER>WC-00120-121001</SZ_BILL_NUMBER>
+	<DT_BILL_DATE>01-FEB-2009</DT_BILL_DATE>
+    <FLT_BILL_AMOUNT>1241.90</FLT_BILL_AMOUNT>
+	<DT_FIRST_DENIAL></DT_FIRST_DENIAL>
+	<DT_SECOND_DENIAL>10-MAR-2009</DT_SECOND_DENIAL>
+	<SZ_REMARK>Bills denied for second time - Excessive treatment. Send request sent on 28-MAR-2009</SZ_REMARK>
+  </Table>
+</NewDataSet>

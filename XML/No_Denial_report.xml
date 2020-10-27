@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="abc">
+  <Field Name="sz_company_id" DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox" ControlID="txtCompanyID"            Editable="True"  Visible="True" ></Field>
+  <Field Name="sz_case_no" DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox" ControlID="txtCaseNo"            Editable="True"  Visible="True" ></Field>
+  <Field Name="from_date" DataType="NVarChar"    Size="10"     Null="False"   Control="TextBox" ControlID="txtFromDate"            Editable="True"  Visible="True" ></Field>
+  <Field Name="to_date" DataType="NVarChar"    Size="10"     Null="False"   Control="TextBox" ControlID="txtToDate"            Editable="True"  Visible="True" ></Field>
+  <Field Name="sz_bill_no" DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox" ControlID="txtBillNo"            Editable="True"  Visible="True" ></Field>
+  <Field Name="patient_name" DataType="NVarChar"    Size="2000"     Null="False"   Control="TextBox" ControlID="txtupdatePatientName"            Editable="True"  Visible="True" ></Field>
+  <Field Name="sz_case_type" DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox" ControlID="txtCaseType"            Editable="True"  Visible="True" ></Field>
+  <Field Name="insurance_id" DataType="NVarChar"    Size="200"     Null="False"   Control="TextBox" ControlID="txtInsurance"            Editable="True"  Visible="True" ></Field>
+  <Field Name="type" DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox" ControlID="txtPOMVerification"            Editable="True"  Visible="True" ></Field>
+  <Field Name="days" DataType="NVarChar"    Size="10"     Null="False"   Control="TextBox" ControlID="txtDays"            Editable="True"  Visible="True" ></Field>
+ 
+  <StoreProcedure name="proc_get_unprocess_bills"></StoreProcedure>
+  <ListControl name="grdvNoDenial"></ListControl>
+</Table>

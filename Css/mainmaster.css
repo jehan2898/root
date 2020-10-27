@@ -1,0 +1,522 @@
+body
+{
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    margin: 0px;
+    padding-top: 0px;
+    background-color: #F7F7F7;
+    width: 100%; 
+    height: 100%;
+}
+
+.brd-1 {
+	padding-right: 2px;
+	padding-left: 2px;
+}
+.links {
+	font-family: Tahoma;
+	font-size: 12px;
+	font-weight: bold;
+	color: #000000;
+	padding-left: 55px;
+	height: 36px;
+	width: 145px;
+}
+.frame-1 {
+	background-image: url(../images/top-corn-lft.jpg);
+	background-repeat: no-repeat;
+	background-position: left top;
+	padding-top: 9px;
+	padding-right: 0px;
+	padding-bottom: 8px;
+	padding-left: 7px;
+	width: 184px;
+}
+.frame-2 {
+	background-image: url(../images/top-corn-rght.jpg);
+	background-repeat: no-repeat;
+	background-position: right top;
+	padding-top: 9px;
+	padding-bottom: 8px;
+	padding-left: 7px;
+	height: 34px;
+}
+
+.space {
+	padding-left: 5px;
+	font-family: Tahoma;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	padding-right: 5px;
+}
+
+
+.menu-1 {
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: normal;
+	color: #333333;
+	width: 175px;
+}
+.menu-botm {
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: normal;
+	color: #333333;
+	width: 100%;
+}
+
+.menu-2 {
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: normal;
+	color: #000000;
+	width: 107px;
+}
+
+
+.menu-3 {
+
+
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: normal;
+	color: #000000;
+	width: 118px;
+}
+.noborder {
+	border-top-style: solid;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-color: #00FF00;
+	border-right-color: #00FF00;
+	border-bottom-color: #00FF00;
+	border-left-color: #00FF00;
+}
+.border-1 {
+	background-color: #DBE6FA;
+	border: 1px solid #82ABD9;
+}
+
+.border-2 {
+	background-color: #DBE6FA;
+	padding: 10px;
+	border: 1px solid #82ABD9;
+}
+
+.tahoma-11-blue {
+	font-family: Tahoma;
+	font-size: 11px;
+	color: #054482;
+	font-weight: normal;
+}
+
+.box-100 {
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: normal;
+	color: #000000;
+	width: 100px;
+}
+
+.box-160 {
+
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: normal;
+	color: #000000;
+	width: 160px;
+}
+
+
+.box-200 {
+
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: normal;
+	color: #333333;
+	width: 200px;
+}
+.button-1 {
+	font-family: Tahoma;
+	font-size: 11px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	color: #000000;
+	text-align: center;
+	padding-right: 5px;
+	padding-left: 5px;
+	height: 21px;
+	padding-bottom: 5px;
+}
+.button-2 {
+	font-family: Tahoma;
+	font-size: 11px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	color: #000000;
+	text-align: center;
+	padding-right: 5px;
+	padding-left: 5px;
+	height: 21px;
+	padding-bottom: 5px;
+}
+
+.tahoma-11-blue-bold {
+	font-family: Tahoma;
+	font-size: 11px;
+	color: #054482;
+	font-weight: bold;
+}
+.table-heading-1 {
+	font-family: Tahoma;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	padding-right: 5px;
+	padding-left: 5px;
+	background-color: #8AADE5;
+	border-top-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-left-style: solid;
+	border-top-color: #FFFFFF;
+	border-left-color: #FFFFFF;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-right-style: none;
+	border-bottom-style: none;
+	line-height: normal;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+.table-content {
+	font-family: Tahoma;
+	font-size: 11px;
+	color: #000000;
+	padding-right: 5px;
+	padding-left: 5px;
+	background-color: #FFFFFF;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	font-weight: normal;
+	text-align: right;
+}
+.tahoma-11-blue-2 {
+	font-family: Tahoma;
+	font-size: 11px;
+	color: #054482;
+	font-weight: normal;
+	padding-right: 10px;
+}
+
+
+.tahoma-11-back {
+	font-family: Tahoma;
+	font-size: 11px;
+	color: #000000;
+	font-weight: normal;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 5px;
+}
+
+/*--------------All Padding----------------*/
+.l5 {
+
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 5px;
+}
+.r5 {
+	padding-top: 0px;
+	padding-right: 5px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+.t5 {
+	padding-top: 5px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+.b5 {
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 5px;
+	padding-left: 0px;
+}
+
+.text-box-100 {
+
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: normal;
+	color: #000000;
+	width: 100px;
+}
+.tahoma-11-black-2 {
+
+	font-family: Tahoma;
+	font-size: 11px;
+	color: #000000;
+	font-weight: normal;
+}
+
+
+.LeftTop
+{
+	background-position: left top;
+	
+	background-image: url(../images/inner-box-corn-toplft.jpg);
+	background-repeat: no-repeat;
+	width: 10px;
+	height: 10px;
+}
+
+.CenterTop
+{
+	background-position: center top;
+	
+	background-image: url(../images/inner-box-corn-top.jpg);
+	background-repeat: repeat-x;	
+	height: 10px;
+	width:auto;
+}
+
+.RightTop
+{
+	background-position: right top;
+	
+	background-image: url(../images/inner-box-corn-toprght.jpg);
+	background-repeat: no-repeat;
+	width: 10px;
+	height: 10px;
+}
+
+.LeftCenter
+{
+	background-position: left center;
+	
+	background-image: url(../images/inner-box-corn-lft.jpg);
+	background-repeat: repeat-y;
+}
+
+.Center
+{
+	
+}
+
+.RightCenter
+{
+	background-position: right center;
+	
+	background-image: url(../images/inner-box-corn-rght.jpg);
+	background-repeat: repeat-y;
+	width: 10px;
+	height: 10px;
+}
+
+.LeftBottom
+{
+	background-position: left bottom;
+	
+	background-image: url(../images/inner-box-corn-botmlft.jpg);
+	background-repeat: no-repeat;
+	width: 10px;
+	height: 10px;
+}
+
+.CenterBottom
+{
+	background-position: center bottom;
+	
+	background-image: url(../images/inner-box-corn-botm.jpg);
+	background-repeat: repeat-x;
+	height: 10px;
+	width:auto;
+}
+
+.RightBottom
+{
+	background-position: right bottom;
+	
+	background-image: url(../images/inner-box-corn-botmrght.jpg);
+	background-repeat: no-repeat;
+	width: 10px;
+	height: 10px;
+}
+
+.MainBodyTable
+{
+	width: 100%;
+	height: 100%;
+	
+}
+
+.Center.TABLE
+{
+	background-image: url(Images/bg-blue.jpg);
+}
+
+.TDPart
+{
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	background-color: #DBE6FA;
+	border: 1px solid #82ABD9;	
+}
+
+.UserTable
+{
+    font-family: Tahoma;
+	font-size: 12px;
+	font-weight: bold;
+	color: #000000;
+	
+}
+
+
+/***************************************    GRID CLASSES      ****************************************************/
+
+.GridTable
+{
+    border: #8babe4 1px solid;    
+}
+
+.GridHeader
+{
+    font-weight: bold;
+    font-size: 12px;
+    font-family: arial;
+    background-color: #8babe4;   
+}
+
+.GridHeader th
+{
+    padding:3px;
+}
+
+.GridRow
+{
+    border: #8babe4 1px solid;    
+    background-color: #fff;
+}
+
+.GridRow td
+{
+    border: #8babe4 1px solid;   
+    padding:2px;
+    font-size: 12px;
+    font-family: arial;
+}
+
+.SectionDevider
+{
+    height:10px;
+}
+
+/*********************************************************************************/
+
+.ContentLabel
+{
+    font-size: 12px;
+    font-family: arial;
+    text-align:right;
+}
+
+.Buttons
+{
+    font-size: 12px;
+    color: #000099;
+    font-family: arial;
+    background-color: #8babe4;
+    border: 1px solid #000099;	
+    padding-top:1px;
+    padding-bottom:1px;
+    padding-left:5px;
+    padding-right:5px;
+}
+
+/*********************************************************************************/
+
+/************************************ Tab styles ********************************/
+
+.ajax__tab_theme .ajax__tab_header 
+{
+    font-family:verdana,tahoma,helvetica;
+    font-size:11px;
+    
+}
+.ajax__tab_theme .ajax__tab_header .ajax__tab_outer 
+{
+    padding-right:4px;
+    background:url(../Styles/Tab/tab-right.gif) no-repeat right;
+    height:26px;
+}
+.ajax__tab_theme .ajax__tab_header .ajax__tab_inner 
+{
+    padding-left:3px;
+    background:url(../Styles/Tab/tab-left.gif) no-repeat;
+}
+.ajax__tab_theme .ajax__tab_header .ajax__tab_tab
+{
+    height:20px;    
+    padding-top:6px;
+    padding-left:10px;
+    padding-right:10px;
+    padding-bottom:4px;
+    margin:0;
+    background:url(../Styles/Tab/tab.gif) repeat-x;
+}
+.ajax__tab_theme .ajax__tab_hover .ajax__tab_outer 
+{
+    background:url(../Styles/Tab/tab-hover-right.gif) no-repeat right;
+}
+.ajax__tab_theme .ajax__tab_hover .ajax__tab_inner 
+{
+    background:url(../Styles/Tab/tab-hover-left.gif) no-repeat;
+}
+.ajax__tab_theme .ajax__tab_hover .ajax__tab_tab 
+{
+    background:url(../Styles/Tab/tab-hover.gif) repeat-x;
+}
+.ajax__tab_theme .ajax__tab_active .ajax__tab_outer 
+{
+    background:url(../Styles/Tab/tab-active-right.gif) no-repeat right;
+}
+.ajax__tab_theme .ajax__tab_active .ajax__tab_inner 
+{
+    background:url(../Styles/Tab/tab-active-left.gif) no-repeat;
+}
+.ajax__tab_theme .ajax__tab_active .ajax__tab_tab 
+{
+    background:url(../Styles/Tab/tab-active.gif) repeat-x;
+}
+.ajax__tab_theme .ajax__tab_body 
+{
+    font-family:verdana,tahoma,helvetica;
+    font-size:10pt;    
+    padding: 10px;	
+	background-color: #DBE6FA;
+	border: 1px solid #82ABD9;	
+}
+
+
+
+/***********************************************************************************/

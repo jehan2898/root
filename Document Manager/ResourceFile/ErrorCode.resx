@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ER1" xml:space="preserve">
+    <value>Login Failed</value>
+  </data>
+  <data name="ER2" xml:space="preserve">
+    <value>Welcome to SEAC Portal</value>
+  </data>
+  <data name="ER3" xml:space="preserve">
+    <value>Thanks for sending suggestion !Your suggestion send successfully</value>
+  </data>
+  <data name="ER4" xml:space="preserve">
+    <value>Your message has been sent.</value>
+  </data>
+  <data name="ER5" xml:space="preserve">
+    <value>We apologize for not being able to serve your request at this moment</value>
+  </data>
+  <data name="ER6" xml:space="preserve">
+    <value>Application Setting Update Successfully</value>
+  </data>
+  <data name="ER7" xml:space="preserve">
+    <value>Password Changed Successfully</value>
+  </data>
+  <data name="ER8" xml:space="preserve">
+    <value>Password Has Been Successfully Sent To Your Mail-ID</value>
+  </data>
+  <data name="ER9" xml:space="preserve">
+    <value>An error has occured during password updation</value>
+  </data>
+  <data name="ER10" xml:space="preserve">
+    <value>An error has occurred while saving roles data</value>
+  </data>
+  <data name="ER11" xml:space="preserve">
+    <value>Roles Assigned Successfully</value>
+  </data>
+  <data name="ER12" xml:space="preserve">
+    <value>SE Member Details cannot be saved</value>
+  </data>
+  <data name="ER13" xml:space="preserve">
+    <value>Thank You for registering at SEAC portal You will soon be getting your login details at your e-mail.</value>
+  </data>
+  <data name="ER14" xml:space="preserve">
+    <value>An Error has occurred while saving data</value>
+  </data>
+  <data name="ER15" xml:space="preserve">
+    <value>You are not authorized for this operation</value>
+  </data>
+  <data name="ER16" xml:space="preserve">
+    <value>An error has occurred while saving service profile</value>
+  </data>
+  <data name="ER17" xml:space="preserve">
+    <value>Your Network details saved successfully to add SQL Server for this network please click here.</value>
+  </data>
+  <data name="ER18" xml:space="preserve">
+    <value>No SQL server found.</value>
+  </data>
+  <data name="ER19" xml:space="preserve">
+    <value>Uploaded file does not contain information of selected network. Please upload proper file</value>
+  </data>
+  <data name="ER20" xml:space="preserve">
+    <value>Network Details not found</value>
+  </data>
+  <data name="ER21" xml:space="preserve">
+    <value>Uploaded file is not valid</value>
+  </data>
+  <data name="ER22" xml:space="preserve">
+    <value>This SQL server already being added.</value>
+  </data>
+  <data name="ER23" xml:space="preserve">
+    <value>Server Mapped to the Service Successfully</value>
+  </data>
+  <data name="ER24" xml:space="preserve">
+    <value>Reenter agent file path</value>
+  </data>
+  <data name="ER25" xml:space="preserve">
+    <value>Reenter service detail file path</value>
+  </data>
+  <data name="ER26" xml:space="preserve">
+    <value>Please Select agent file path</value>
+  </data>
+  <data name="ER27" xml:space="preserve">
+    <value>Please Select service detail file path</value>
+  </data>
+  <data name="ER28" xml:space="preserve">
+    <value>Services add Successfully</value>
+  </data>
+  <data name="ER29" xml:space="preserve">
+    <value>Only one partner is allowed</value>
+  </data>
+  <data name="ER30" xml:space="preserve">
+    <value>Service Profile Saved Successfully</value>
+  </data>
+  <data name="ER31" xml:space="preserve">
+    <value>An error has occurred while saving service profile</value>
+  </data>
+  <data name="ER32" xml:space="preserve">
+    <value>Please select at least one service from list</value>
+  </data>
+  <data name="ER33" xml:space="preserve">
+    <value>Please enter service name</value>
+  </data>
+  <data name="ER34" xml:space="preserve">
+    <value>Some error has occured while fetching data</value>
+  </data>
+  <data name="ER35" xml:space="preserve">
+    <value>Please Select at least one User</value>
+  </data>
+  <data name="ER36" xml:space="preserve">
+    <value>User Mapped to the Service Successfully</value>
+  </data>
+  <data name="ER37" xml:space="preserve">
+    <value>User Added and Mapped to the Service Successfully</value>
+  </data>
+  <data name="ER38" xml:space="preserve">
+    <value>Sorry! You can not add user at this time.</value>
+  </data>
+  <data name="ER39" xml:space="preserve">
+    <value>Sorry! You can not add user at this time.</value>
+  </data>
+  <data name="ER40" xml:space="preserve">
+    <value>Customer Admin Details cannot be saved</value>
+  </data>
+  <data name="ER41" xml:space="preserve">
+    <value>Please Select Same Time Zone</value>
+  </data>
+  <data name="ER42" xml:space="preserve">
+    <value>An error has occured during file upload</value>
+  </data>
+  <data name="ER43" xml:space="preserve">
+    <value>Consultant Assigned Successfully</value>
+  </data>
+  <data name="ER44" xml:space="preserve">
+    <value>An error has occurred while saving data</value>
+  </data>
+  <data name="ER45" xml:space="preserve">
+    <value>Data saved successfully</value>
+  </data>
+  <data name="ER46" xml:space="preserve">
+    <value>User Registered Successfully.</value>
+  </data>
+  <data name="ER47" xml:space="preserve">
+    <value>data cannot be processed.</value>
+  </data>
+  <data name="ER48" xml:space="preserve">
+    <value>Customer Admin Details cannot be saved</value>
+  </data>
+  <data name="ER49" xml:space="preserve">
+    <value>An error has occured while loading requested page</value>
+  </data>
+  <data name="ER50" xml:space="preserve">
+    <value>Registration Invitation Sent Successfully</value>
+  </data>
+  <data name="ER51" xml:space="preserve">
+    <value>An error has occured during Sending Registration Invitation</value>
+  </data>
+  <data name="ER52" xml:space="preserve">
+    <value>Thank You for registering at SEAC portal.You will soon get back to you after varification your login details on your mail.</value>
+  </data>
+  <data name="ER53" xml:space="preserve">
+    <value>Customer Admin Details cannot be saved.</value>
+  </data>
+  <data name="ER54" xml:space="preserve">
+    <value>Partner Admin Details cannot be saved</value>
+  </data>
+  <data name="ER55" xml:space="preserve">
+    <value>Record Successfully updated</value>
+  </data>
+  <data name="ER56" xml:space="preserve">
+    <value>Thank You for registering at SEAC portal &lt;br&gt; You have registered successfully. &lt;BR&gt;You will soon get your login details on your mail</value>
+  </data>
+  <data name="ER57" xml:space="preserve">
+    <value>An error has occured during Downloading Contacts</value>
+  </data>
+  <data name="ER58" xml:space="preserve">
+    <value>Report could not be loaded, An error has occurred</value>
+  </data>
+  <data name="ER59" xml:space="preserve">
+    <value>An error has occurred while update Application Setting</value>
+  </data>
+  <data name="ER60" xml:space="preserve">
+    <value>An error has occured while preparing report</value>
+  </data>
+  <data name="ER61" xml:space="preserve">
+    <value>Record Not updated</value>
+  </data>
+  <data name="ER62" xml:space="preserve">
+    <value>Some Error has occurred while saving data ! SE MEMBER ALREADY EXISTS</value>
+  </data>
+  <data name="ER63" xml:space="preserve">
+    <value>Schedule Engagement Updated Successfully</value>
+  </data>
+  <data name="ER64" xml:space="preserve">
+    <value>An error has occurred while updating the Schedule Engagement</value>
+  </data>
+  <data name="ER65" xml:space="preserve">
+    <value>Record Saved Successfully</value>
+  </data>
+  <data name="ER66" xml:space="preserve">
+    <value>We apologize for not being able to serve your request at this moment,&lt;br&gt; because</value>
+  </data>
+  <data name="ER67" xml:space="preserve">
+    <value>Your session has expired, Please login to proceed further.</value>
+  </data>
+  <data name="ER68" xml:space="preserve">
+    <value>We apologize for not being able to serve your request at this moment</value>
+  </data>
+  <data name="ER69" xml:space="preserve">
+    <value>Connection Timeout! Remote server not responding.</value>
+  </data>
+  <data name="ER70" xml:space="preserve">
+    <value>The file you are trying to attach does not exist.Please check the name of the file and try again.</value>
+  </data>
+  <data name="ER71" xml:space="preserve">
+    <value>The Zip code should be minimum of 4 characters</value>
+  </data>
+  <data name="ER72" xml:space="preserve">
+    <value>The Zip code is invalid (numbers only 0 to 9)</value>
+  </data>
+  <data name="ER73" xml:space="preserve">
+    <value>First Name should have alphabets only</value>
+  </data>
+  <data name="ER74" xml:space="preserve">
+    <value>Last Name should have alphabets only</value>
+  </data>
+  <data name="ER75" xml:space="preserve">
+    <value>Please Upload .doc or.rtf File Only</value>
+  </data>
+  <data name="ER76" xml:space="preserve">
+    <value>Please Upload Proper File</value>
+  </data>
+  <data name="ER77" xml:space="preserve">
+    <value>Contact Person should have alphabets only</value>
+  </data>
+  <data name="ER78" xml:space="preserve">
+    <value>Confirm Password field is mandatory</value>
+  </data>
+  <data name="ER79" xml:space="preserve">
+    <value>Thanks for your suggestions,we will soon get back to you.</value>
+  </data>
+  <data name="ER80" xml:space="preserve">
+    <value>Please Select a Role Name</value>
+  </data>
+  <data name="ER81" xml:space="preserve">
+    <value>Please Enter a Role Name</value>
+  </data>
+  <data name="ER82" xml:space="preserve">
+    <value>Please Assign atleast one Activity</value>
+  </data>
+  <data name="ER83" xml:space="preserve">
+    <value>Internet Protocol (IP) Address is Invalid ! To continue please enter a valid IP address</value>
+  </data>
+  <data name="ER84" xml:space="preserve">
+    <value>Service Successfully Updated</value>
+  </data>
+  <data name="ER85" xml:space="preserve">
+    <value>Record could not be saved</value>
+  </data>
+  <data name="ER86" xml:space="preserve">
+    <value>Only one partner is allowed</value>
+  </data>
+  <data name="ER87" xml:space="preserve">
+    <value>Please Select at least one User</value>
+  </data>
+  <data name="ER88" xml:space="preserve">
+    <value>End Date must be greater than Start Date</value>
+  </data>
+  <data name="ER89" xml:space="preserve">
+    <value>Start Date must be equal to or greater than Current Date</value>
+  </data>
+  <data name="ER90" xml:space="preserve">
+    <value>Start time must be greater than or equal to Current Time</value>
+  </data>
+  <data name="ER91" xml:space="preserve">
+    <value>Start time must be less than End Time</value>
+  </data>
+  <data name="ER92" xml:space="preserve">
+    <value>Please Select Same Time Zone</value>
+  </data>
+  <data name="ER93" xml:space="preserve">
+    <value>Please checkmark records of same time zone to schedule</value>
+  </data>
+  <data name="ER94" xml:space="preserve">
+    <value>To Date must be greater than From Date</value>
+  </data>
+  <data name="ER95" xml:space="preserve">
+    <value>Please Check! There Should be At-least One Active Admin</value>
+  </data>
+  <data name="ER96" xml:space="preserve">
+    <value>Please select at least one record</value>
+  </data>
+  <data name="ER97" xml:space="preserve">
+    <value>No SQL server was found</value>
+  </data>
+  <data name="ER98" xml:space="preserve">
+    <value>Please enter password ,SORRY! Connection could not be established</value>
+  </data>
+  <data name="ER99" xml:space="preserve">
+    <value>Section Added Successfully.</value>
+  </data>
+  <data name="ER100" xml:space="preserve">
+    <value>User with the Same Email-ID already exists.</value>
+  </data>
+  <data name="ER101" xml:space="preserve">
+    <value>Please enter userId &amp; password ,SORRY! Connection could not be established</value>
+  </data>
+  <data name="ER102" xml:space="preserve">
+    <value>Your assignment has been saved &amp; forwarded to the sales department for the approval. We will get back to you once SOW is approved. You can now logout or can register other servers for SE Services.</value>
+  </data>
+  <data name="ER103" xml:space="preserve">
+    <value>The statement of work (SOW) is being approved. SEPM could now be able to Assign Consultants for this engagement.</value>
+  </data>
+  <data name="ER104" xml:space="preserve">
+    <value>The payment for selected assignment(s) has been approved. SEPM/Consultants could now proceed to execute the job.</value>
+  </data>
+  <data name="ER105" xml:space="preserve">
+    <value>An error has occurred while populating assignments list. Please try again later.</value>
+  </data>
+  <data name="ER106" xml:space="preserve">
+    <value>An error has occured while downloading the file. Please try again later.</value>
+  </data>
+  <data name="ER107" xml:space="preserve">
+    <value>Users are mapped to the service profile successfully. Now u can register servers and create assignments by mapping servers and services. Or u can create another service profile.</value>
+  </data>
+</root>

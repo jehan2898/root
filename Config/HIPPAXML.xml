@@ -1,0 +1,28 @@
+<root>
+<document type= "FUNDING_SYSTEM" description="LSC Payoff letter template" lastmodified="June 22 2009 15:35" procedure_name="SP_GET_HIPPA_DETAILS" >
+<field db_field_name="TXT_PATIENT_NAME"       pdf_field_index="1"  pdf_field_name="TXT_PATIENT_NAME"   if_blank=" "/>
+<field db_field_name="TXT_MENTAL_HEALTH_INFORMATION"       pdf_field_index="2"  pdf_field_name="TXT_MENTAL_HEALTH_INFORMATION"   if_blank=" "/>
+<field db_field_name="TXT_ALOCOHOL_DRUG_TREATMENT"       pdf_field_index="3"  pdf_field_name="TXT_ALOCOHOL_DRUG_TREATMENT"   if_blank=" "/>
+<field db_field_name="TXT_NAME_ADDRESS_OF_PERSON"       pdf_field_index="4"  pdf_field_name="TXT_NAME_ADDRESS_OF_PERSON"   if_blank=" "/>
+<field db_field_name="TXT_OTHER_RELEASE_INFORMATION"       pdf_field_index="5"  pdf_field_name="TXT_OTHER_RELEASE_INFORMATION"   if_blank=" "/>
+<field db_field_name="TXT_HIV_RELATED_INFORMATION"       pdf_field_index="6"  pdf_field_name="TXT_HIV_RELATED_INFORMATION"   if_blank=" "/>
+<field db_field_name="TXT_OTHER_PROVIDERS"       pdf_field_index="7"  pdf_field_name="TXT_OTHER_PROVIDERS"   if_blank=" "/>
+<field db_field_name="TXT_SSN"       pdf_field_index="8"  pdf_field_name="TXT_SSN"   if_blank=" "/>
+<field db_field_name="CHK_OTHER_RELEASE_INFORMATION"       pdf_field_index="9"  pdf_field_name="CHK_OTHER_RELEASE_INFORMATION"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+<field db_field_name="CHK_AT_REQUEST_OF_INDIVIDUAL"       pdf_field_index="10"  pdf_field_name="CHK_AT_REQUEST_OF_INDIVIDUAL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+<field db_field_name="TXT_HEALTH_PROVISER_NAME_ADDRESS"       pdf_field_index="11"  pdf_field_name="TXT_HEALTH_PROVISER_NAME_ADDRESS"   if_blank=" "/>
+<field db_field_name="TXT_PATIENT_ADDRESS"       pdf_field_index="12"  pdf_field_name="TXT_PATIENT_ADDRESS"   if_blank=" "/>
+<field db_field_name="CHK_MEDICAL_RECORD_DATE_FROM_TO"       pdf_field_index="13"  pdf_field_name="CHK_MEDICAL_RECORD_DATE_FROM_TO"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+<field db_field_name="TXT_MEDICAL_RECORD_FROM"       pdf_field_index="14"  pdf_field_name="TXT_MEDICAL_RECORD_FROM"   if_blank=" "/>
+<field db_field_name="TXT_IF_NOT_PATIENT_NAME_OF_PERSON_SIGNING_FORM"       pdf_field_index="15"  pdf_field_name="TXT_IF_NOT_PATIENT_NAME_OF_PERSON_SIGNING_FORM"   if_blank=" "/>
+<field db_field_name="TXT_AUTHORIZATION_EXPIRE_DATE_OR_EVENT"       pdf_field_index="16"  pdf_field_name="TXT_AUTHORIZATION_EXPIRE_DATE_OR_EVENT"   if_blank=" "/>
+<field db_field_name="TXT_BY_INITILING_HERE"       pdf_field_index="17"  pdf_field_name="TXT_BY_INITILING_HERE"   if_blank=" "/>
+<field db_field_name="TXT_MEDICAL_RECORD_TO"       pdf_field_index="18"  pdf_field_name="TXT_MEDICAL_RECORD_TO"   if_blank=" "/>
+<field db_field_name="TXT_AUTHORITY_TO_SIGN_ON_BEHALF_OF_PATIENT"       pdf_field_index="19"  pdf_field_name="TXT_AUTHORITY_TO_SIGN_ON_BEHALF_OF_PATIENT"   if_blank=" "/>
+<field db_field_name="CHK_BY_INITILING_HERE"       pdf_field_index="20"  pdf_field_name="CHK_BY_INITILING_HERE"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+<field db_field_name="TXT_DOB"       pdf_field_index="21"  pdf_field_name="TXT_DOB"   if_blank=" "/>
+<field db_field_name="CHK_OTHER_PROVIDERS"       pdf_field_index="22"  pdf_field_name="CHK_OTHER_PROVIDERS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+<field db_field_name="TXT_AUTHORIZE"       pdf_field_index="23"  pdf_field_name="TXT_AUTHORIZE"   if_blank=" "/>
+<field db_field_name="CHK_HEALTH_CARE_PROVIDERS"       pdf_field_index="24"  pdf_field_name="CHK_HEALTH_CARE_PROVIDERS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+<field db_field_name="TXT_AUHORIZATION_DATE"       pdf_field_index="25"  pdf_field_name="TXT_AUHORIZATION_DATE"   if_blank=" "/>
+ </document></root>

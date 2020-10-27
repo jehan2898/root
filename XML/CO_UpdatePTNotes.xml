@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_PT_NOTES">
+  <Field Name="I_EVENT_ID"            DataType="Int"        Size=""       Null="False" Control="TextBox"     ControlID=""               Editable="false"  Visible="false" ></Field>
+  <Field Name="SZ_PATIENT_NAME"       DataType="NVarChar"   Size="500"    Null="False" Control="TextBox"     ControlID="txtPatientName"           Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PRECAUTIONS"        DataType="NVarChar"   Size="500"    Null="True"  Control="TextBox"     ControlID="txtPrecautions"           Editable="True"  Visible="True" ></Field>
+  <Field Name="DT_DATE" DataType="DateTime"    Size=""      Null="False"   Control="TextBox"                ControlID="txtDate"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_COMPLAINTS"         DataType="NVarChar"   Size="500"    Null="True"  Control="TextBox"     ControlID="txtPatientcomplaints"       Editable="True"  Visible="True" ></Field>
+  <Field Name="BT_OBJECTIVE1"         DataType="Bit"        Size=""       Null="True"  Control="CheckBox"    ControlID="chkPatientstatescondition"  Editable="True"  Visible="True" ></Field>
+  <Field Name="BT_OBJECTIVE2"         DataType="Bit"        Size=""       Null="True"  Control="CheckBox"    ControlID="chkPatientstateslittle"     Editable="True"  Visible="True" ></Field>
+  <Field Name="BT_OBJECTIVE3"         DataType="Bit"        Size=""       Null="True"  Control="CheckBox"    ControlID="chkPatientstatesmuch"       Editable="True"  Visible="True" ></Field>
+  <Field Name="BT_PATIENT_TOLERATED"  DataType="Bit"        Size=""       Null="True"  Control="CheckBox"    ControlID="chkPatienttolerated"        Editable="True"  Visible="True" ></Field>
+  <Field Name="BT_ASS_OTHER_COMMENTS" DataType="Bit"     Size=""    Null="True"  Control="CheckBox"     ControlID="chkOtherComments"           Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_OTHER_COMMENTS"     DataType="NVarChar"   Size="500"    Null="True"  Control="TextBox"     ControlID="txtOthercomments"       Editable="True"  Visible="True" ></Field>
+  <Field Name="BT_COTINUE_THERAPY"    DataType="Bit"        Size=""       Null="True"  Control="CheckBox"    ControlID="chkProgresstherapy"         Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_BT_PLAN_OHER_COMMENTS" DataType="NVarChar"  Size="500"    Null="True"  Control="TextBox"    ControlID="txtPlanOthercomments"           Editable="True"  Visible="True" ></Field>
+  <Field Name="BT_PLAN_OTHER_COMMENTS" DataType="Bit"  Size=""          Null="True"  Control="CheckBox"  ControlID="chkPlanOthercomments"         Editable="True"  Visible="True" ></Field>
+  <StoreProcedure name="SP_MST_PT_NOTES"></StoreProcedure>
+</Table>

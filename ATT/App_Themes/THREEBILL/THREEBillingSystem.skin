@@ -1,0 +1,16 @@
+<asp:DataGrid Width="100%" runat="Server" 
+                CellPadding="4" 
+                GridLines="None" 
+                AllowPaging="False" 
+                HorizontalAlign="Center" 
+                ShowFooter="True" 
+                AutoGenerateColumns="false">
+                <FooterStyle Font-Bold="True" ForeColor="White"  />
+                <SelectedItemStyle />
+                <PagerStyle CssClass="grid-pager" HorizontalAlign="Center" Mode="NumericPages" Font-Bold="False" Font-Italic="False" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" Wrap="False"/>
+                <AlternatingItemStyle CssClass="grid-alternate"/>
+                <ItemStyle CssClass="grid-items" />     
+                <HeaderStyle CssClass="grid-header" /> 
+                       
+</asp:DataGrid>
+  

@@ -1,0 +1,121 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using Reminders;
+public partial class AJAX_Pages_Bill_Sys_Reminder_Pop_UP : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        btnDismiss.Attributes.Add("onClick", "return ConfirmDisMis();");
+        if (!Page.IsPostBack)
+        {
+            //Session["dtReminderView"] = "";
+            //Session["intOrder"] = "1";                          
+            LoadGrid();
+        }
+
+    }
+
+
+
+
+
+    public void LoadGrid()
+    {
+        ReminderBO objReminder = null; ;
+        DataSet dsReminder = null;
+        string strUserId = "";
+        DateTime dtCurrent_Date;
+        try
+        {
+            objReminder = new ReminderBO();
+            dsReminder = new DataSet();
+            strUserId = ((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_ID;
+            dtCurrent_Date = Convert.ToDateTime(System.DateTime.Now.ToShortDateString());
+            dsReminder = objReminder.LoadReminderDetails(strUserId, dtCurrent_Date);
+            if (dsReminder.Tables[0].Rows.Count > 0)
+            {
+                lblREsult.Visible = false;
+                grdReminder.DataSource = null;
+                grdReminder.DataBind();
+
+                grdReminder.DataSource = dsReminder;
+                grdReminder.DataBind();
+                //Session["dtReminderView"] = dsReminder.Tables[0].DefaultView;
+            }
+            else
+            {
+                //Page.RegisterStartupScript("ss", "<script language='javascript'> CloseCheckoutReminderPopup();</script>");
+            
+                this.frmReminder.Dispose();
+                this.frmReminder.Style.Add("Visibility", "Hidden");
+
+            }
+        }
+        catch (Exception ex)
+        {
+            //string strError = ex.Message.ToString();
+            //strError = strError.Replace("\n", " ");
+            //Response.Redirect("Error/PFS_Sys_ErrorPage.aspx?ErrMsg=" + strError);
+        }
+        finally
+        {
+            objReminder = null;
+            dsReminder = null;
+        }
+    }
+
+
+
+    protected void btnDismiss_Click(object sender, EventArgs e)
+    {
+        ReminderBO objReminder = null;
+        DataSet dsReminder = null;
+        DataSet dsLog = null;
+        string strUserId = "";
+        int iRecurrence_Id;
+        try
+        {
+            objReminder = new ReminderBO();
+            dsReminder = new DataSet();
+            dsLog = new DataSet();
+            strUserId = ((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_ID;
+
+            foreach (DataGridItem dgiDiary in grdReminder.Items)
+            {
+                CheckBox chkSelect = (CheckBox)dgiDiary.Cells[8].FindControl("chkSelect");
+                if (chkSelect.Checked == true)
+                {
+                    iRecurrence_Id = Convert.ToInt32(dgiDiary.Cells[0].Text.Trim().ToString());
+                    dsReminder = objReminder.DismissReminder(iRecurrence_Id);
+                }
+            }
+            LoadGrid();
+            ScriptManager.RegisterClientScriptBlock(btnDismiss, typeof(Button), "Msg", "alert('Reminder dismissed successfully..!!')", true);
+        }
+        catch (Exception ex)
+        {
+            //string strError = ex.Message.ToString();
+            //strError = strError.Replace("\n", " ");
+            //Response.Redirect("Error/PFS_Sys_ErrorPage.aspx?ErrMsg=" + strError);
+        }
+        finally
+        {
+            objReminder = null;
+            dsReminder = null;
+            dsLog = null;
+        }
+    }   
+
+
+
+
+
+}

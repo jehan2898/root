@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="mst_case_master">
+  <Field 
+      Name="sz_company_id"  
+      DataType="NVarChar"
+      Size="20" Null="False"
+      Control="TextBox"
+      ControlID="txtCompanyID"
+      Editable="True"
+      Visible="True"></Field>
+  <StoreProcedure name="sp_list_unpaid_bills"></StoreProcedure>
+  <ListControl name="grdUnpaidBill"></ListControl>
+</Table>

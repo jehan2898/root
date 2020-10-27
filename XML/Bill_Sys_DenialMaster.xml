@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="mst_denial">
+  <Field Name="sz_company_id"      DataType="NVarChar"    Size="20" Null="False" Control="TextBox" ControlID="txtCompanyID" Editable="True"  Visible="True" ></Field>
+    <StoreProcedure name="SP_Denial_Master"></StoreProcedure>
+  <ListControl name="grdDenialReasons"></ListControl>
+</Table>

@@ -1,0 +1,49 @@
+.borderblue 
+{
+	border: 1px solid #5998C9;
+}
+
+.menutxt 
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+.toplinktxt
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #438C00;
+	text-decoration: underline;
+}
+        
+/* mozilla */
+.wiz-sbar
+{
+	font-family:Arial;
+	font-size:10px;
+	font-style:normal;
+	color:#736F6E;
+	text-decoration:none;
+	text-align:left;
+	vertical-align:middle;	
+	background-color:#F1F1F1;
+}
+        
+/* mozilla */
+.sider
+{
+	vertical-align:top;
+	width:130px;
+}
+
+/* mozilla */
+.sider-a
+{
+	font-size:12px;
+	font-family:Sans-Serif;
+	text-decoration: none;
+	color: rgb(128, 128, 128);
+}

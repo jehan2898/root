@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DocumentManager>
+
+  <Category ID="INTAK" Name="Intake">
+    <SubCategory ID="ININT" Name="Intake Sheet">
+    </SubCategory>
+    <SubCategory ID="INNF2" Name="NF2">
+    </SubCategory>
+    <SubCategory ID="ININS" Name="Insurance Card">
+    </SubCategory>
+    <SubCategory ID="INHIP" Name="HIPPA Forms">
+    </SubCategory>
+    <SubCategory ID="INPOL" Name="Police Report">
+    </SubCategory>
+    <SubCategory ID="INMIS" Name="Misc">
+    </SubCategory>
+    <SubCategory ID="NFLNK" Name="Lien">
+    </SubCategory>
+  </Category>
+
+  <Category ID="NOFAU" Name="No Fault File">
+    <SubCategory ID="NFBIL" Name="Bills"></SubCategory>
+    <SubCategory ID="NFAOB" Name="AOB">
+    </SubCategory>
+    <SubCategory ID="NFMED" Name="Medicals">
+      <SubCategory ID="NFMIM" Name="IM"></SubCategory>
+      <SubCategory ID="NFMPT" Name="PT"></SubCategory>
+      <SubCategory ID="NFMWB" Name="WB"></SubCategory>
+      <SubCategory ID="NFMCH" Name="CH"></SubCategory>
+      <SubCategory ID="NFMAC" Name="AC"></SubCategory>
+      <SubCategory ID="NFMPS" Name="PSYCHOLOGY"></SubCategory>
+      <SubCategory ID="NFMXR" Name="XRAY"></SubCategory>
+      <SubCategory ID="NFMMR" Name="MRI"></SubCategory>
+      <SubCategory ID="NFMEE" Name="EEG"></SubCategory>
+      <SubCategory ID="NFMCP " Name="CPT"></SubCategory>
+      <SubCategory ID="NFMNE" Name="NEUROLOGY"></SubCategory>
+      <SubCategory ID="NFMRO" Name="ROM"></SubCategory>
+      <SubCategory ID="NFMSO" Name="Sonography"></SubCategory>
+      <SubCategory ID="NFMCT" Name="CT-SCAN"></SubCategory>
+      <SubCategory ID="NFMPP" Name="PPT"></SubCategory>
+      <SubCategory ID="NFMOR" Name="ORTHO"></SubCategory>
+      <SubCategory ID="NFMOU" Name="OutCome Test"></SubCategory>
+      <SubCategory ID="NFMPA" Name="Pain Management"></SubCategory>
+    </SubCategory>
+    <SubCategory ID="NFVER" Name="Verification Requests"></SubCategory>
+    <SubCategory ID="NFDEN" Name="Denials"></SubCategory>
+    <SubCategory ID="NFPAY" Name="Payments"></SubCategory>
+    <SubCategory ID="NFIME" Name="IMEI"></SubCategory>
+    <SubCategory ID="NFPRO" Name="Proof of Mailing"></SubCategory>
+    <SubCategory ID="NFCOR" Name="Correspondence"></SubCategory>
+    <SubCategory ID="NFMIS" Name="MISC"></SubCategory>
+  </Category>
+</DocumentManager>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="mst_patient">
+  <Field Name="SZ_CASE_TYPE_ID"      DataType="NVarChar"    Size="20" Null="False" Control="TextBox" ControlID="txtCaseType" Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PATIENT_ID"      DataType="NVarChar"    Size="20" Null="False" Control="TextBox" ControlID="txtPatient" Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_INSURANCE_ID"      DataType="NVarChar"    Size="1000" Null="False" Control="TextBox" ControlID="txtInsurance" Editable="True"  Visible="True" ></Field>
+  <Field Name="DT_DATE_OF_ACCIDENT"      DataType="DateTime"    Size="" Null="False" Control="TextBox" ControlID="txtAccidentDate" Editable="True"  Visible="True" ></Field>
+  <Field Name="DT_DOB"      DataType="DateTime"    Size="" Null="False" Control="TextBox" ControlID="txtBirth" Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_CLAIM_NUMBER"      DataType="NVarChar"    Size="20" Null="False" Control="TextBox" ControlID="txtClaimNo" Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_SOCIAL_SECURITY_NO"      DataType="NVarChar"    Size="20" Null="False" Control="TextBox" ControlID="txtSSNNo" Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_CASE_STATUS_ID"      DataType="NVarChar"    Size="20" Null="False" Control="TextBox" ControlID="txtCaseStatus" Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_ASSIGNED_LAW_FIRM_ID"      DataType="NVarChar"    Size="20" Null="False" Control="TextBox" ControlID="txtLawFirmID" Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_COMPANY_ID"      DataType="NVarChar"    Size="20" Null="False" Control="TextBox" ControlID="txtMedicalFacility" Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_BATCH_STATUS"      DataType="NVarChar"    Size="20" Null="False" Control="TextBox" ControlID="txtBatchStatus" Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_BILL_NUMBER"      DataType="NVarChar"    Size="20" Null="False" Control="TextBox" ControlID="txtBillNumber" Editable="True"  Visible="True" ></Field>
+  
+  <StoreProcedure name="SP_PATIENT_LAW_FIRM_NEW"></StoreProcedure>
+  <ListControl name="grid"></ListControl>
+</Table>
+

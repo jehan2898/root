@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="mst_patient">
+  <Field Name="SZ_COMPANY_ID"      DataType="NVarChar"    Size="50" Null="False" Control="TextBox" ControlID="txtCompanyID" Editable="True"  Visible="True" ></Field>
+  <Field Name="DT_FROM_DATE"      DataType="NVarChar"    Size="50" Null="False" Control="TextBox" ControlID="txtFromDate" Editable="True"  Visible="True" ></Field>
+  <Field Name="DT_TO_DATE"      DataType="NVarChar"    Size="50" Null="False" Control="TextBox" ControlID="txtToDate" Editable="True"  Visible="True" ></Field>
+  <StoreProcedure name="SP_MASTERBILLING_FOR_DOCTOR_PT"></StoreProcedure>
+  <ListControl name="grdMasterBilling"></ListControl>
+</Table>

@@ -1,0 +1,115 @@
+<root>
+  <document type= "FUNDING_SYSTEM" description="LSC Payoff letter template" lastmodified="June 22 2009 15:35" procedure_name="SP_PHYSICAL_THERAPHY_DETIALS_PDF" >
+    <field db_field_name="CHK_NEW_AILMENT_11_OF_11"       pdf_field_index="1"  pdf_field_name="CHK_NEW_AILMENT_11_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MASS_IMPROVEMENTS_11_OF_11"       pdf_field_index="2"  pdf_field_name="CHK_MASS_IMPROVEMENTS_11_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MASS_IMPROVEMENTS_10_OF_11"       pdf_field_index="3"  pdf_field_name="CHK_MASS_IMPROVEMENTS_10_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="IMG_SIGNATURE_10_OF_11"       pdf_field_index="4"  pdf_field_name="IMG_SIGNATURE_10_OF_11"   if_blank=" " isImage="1"/>
+    <field db_field_name="CHK_NEW_AILMENT_5_OF_11"       pdf_field_index="5"  pdf_field_name="CHK_NEW_AILMENT_5_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MASS_IMPROVEMENTS_5_OF_11"       pdf_field_index="6"  pdf_field_name="CHK_MASS_IMPROVEMENTS_5_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_NEW_AILMENT_4_OF_11"       pdf_field_index="7"  pdf_field_name="CHK_NEW_AILMENT_4_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MASS_IMPROVEMENTS_4_OF_11"       pdf_field_index="8"  pdf_field_name="CHK_MASS_IMPROVEMENTS_4_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LITTLE_IMPROVEMENT_1_OF_11"       pdf_field_index="9"  pdf_field_name="CHK_LITTLE_IMPROVEMENT_1_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_TREATMENT_DATE_1_OF_11"       pdf_field_index="10"  pdf_field_name="TXT_TREATMENT_DATE_1_OF_11"   if_blank=" "/>
+    <field db_field_name="TXT_PATIENT_NAME"       pdf_field_index="11"  pdf_field_name="TXT_PATIENT_NAME"   if_blank=" "/>
+    <field db_field_name="CHK_NO_CHANGE_11_OF_11"       pdf_field_index="12"  pdf_field_name="CHK_NO_CHANGE_11_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="IMG_SIGNATURE_11_OF_11"       pdf_field_index="13"  pdf_field_name="IMG_SIGNATURE_11_OF_11"   if_blank=" " isImage="1"/>
+    <field db_field_name="CHK_NO_CHANGE_10_OF_11"       pdf_field_index="14"  pdf_field_name="CHK_NO_CHANGE_10_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_NEW_AILMENT_6_OF_11"       pdf_field_index="15"  pdf_field_name="CHK_NEW_AILMENT_6_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MASS_IMPROVEMENTS_6_OF_11"       pdf_field_index="16"  pdf_field_name="CHK_MASS_IMPROVEMENTS_6_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_TREATMENT_DATE_3_OF_11"       pdf_field_index="17"  pdf_field_name="TXT_TREATMENT_DATE_3_OF_11"   if_blank=" "/>
+    <field db_field_name="CHK_LITTLE_IMPROVEMENT_2_OF_11"       pdf_field_index="18"  pdf_field_name="CHK_LITTLE_IMPROVEMENT_2_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_TREATMENT_DATE_2_OF_11"       pdf_field_index="19"  pdf_field_name="TXT_TREATMENT_DATE_2_OF_11"   if_blank=" "/>
+    <field db_field_name="CHK_COMPLAINTS_1_OF_11"       pdf_field_index="20"  pdf_field_name="CHK_COMPLAINTS_1_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_PROVIDER_ADDRESS"       pdf_field_index="21"  pdf_field_name="TXT_PROVIDER_ADDRESS"   if_blank=" "/>
+    <field db_field_name="CHK_COMPLAINTS_11_OF_11"       pdf_field_index="22"  pdf_field_name="CHK_COMPLAINTS_11_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_COMPLAINTS_10_OF_11"       pdf_field_index="23"  pdf_field_name="CHK_COMPLAINTS_10_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_NEW_AILMENT_8_OF_11"       pdf_field_index="24"  pdf_field_name="CHK_NEW_AILMENT_8_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MASS_IMPROVEMENTS_8_OF_11"       pdf_field_index="25"  pdf_field_name="CHK_MASS_IMPROVEMENTS_8_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_NEW_AILMENT_7_OF_11"       pdf_field_index="26"  pdf_field_name="CHK_NEW_AILMENT_7_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MASS_IMPROVEMENTS_7_OF_11"       pdf_field_index="27"  pdf_field_name="CHK_MASS_IMPROVEMENTS_7_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LITTLE_IMPROVEMENT_4_OF_11"       pdf_field_index="28"  pdf_field_name="CHK_LITTLE_IMPROVEMENT_4_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_TREATMENT_DATE_4_OF_11"       pdf_field_index="29"  pdf_field_name="TXT_TREATMENT_DATE_4_OF_11"   if_blank=" "/>
+    <field db_field_name="CHK_LITTLE_IMPROVEMENT_3_OF_11"       pdf_field_index="30"  pdf_field_name="CHK_LITTLE_IMPROVEMENT_3_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_COMPLAINTS_2_OF_11"       pdf_field_index="31"  pdf_field_name="CHK_COMPLAINTS_2_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="IMG_SIGNATURE_2_OF_11"       pdf_field_index="32"  pdf_field_name="IMG_SIGNATURE_2_OF_11"   if_blank=" "/>
+    <field db_field_name="IMG_SIGNATURE_1_OF_11"       pdf_field_index="33"  pdf_field_name="IMG_SIGNATURE_1_OF_11"   if_blank=" " isImage="1"/>
+    <field db_field_name="CHK_NEW_AILMENT_9_OF_11"       pdf_field_index="34"  pdf_field_name="CHK_NEW_AILMENT_9_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MASS_IMPROVEMENTS_9_OF_11"       pdf_field_index="35"  pdf_field_name="CHK_MASS_IMPROVEMENTS_9_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LITTLE_IMPROVEMENT_5_OF_11"       pdf_field_index="36"  pdf_field_name="CHK_LITTLE_IMPROVEMENT_5_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_TREATMENT_DATE_5_OF_11"       pdf_field_index="37"  pdf_field_name="TXT_TREATMENT_DATE_5_OF_11"   if_blank=" "/>
+    <field db_field_name="CHK_COMPLAINTS_4_OF_11"       pdf_field_index="38"  pdf_field_name="CHK_COMPLAINTS_4_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_COMPLAINTS_3_OF_11"       pdf_field_index="39"  pdf_field_name="CHK_COMPLAINTS_3_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="IMG_SIGNATURE_3_OF_11"       pdf_field_index="40"  pdf_field_name="IMG_SIGNATURE_3_OF_11"   if_blank=" "/>
+    <field db_field_name="CHK_CONDITION_WARESENING_1_OF_11"       pdf_field_index="41"  pdf_field_name="CHK_CONDITION_WARESENING_1_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_TREATMENT_DATE_7_OF_11"       pdf_field_index="42"  pdf_field_name="TXT_TREATMENT_DATE_7_OF_11"   if_blank=" "/>
+    <field db_field_name="CHK_LITTLE_IMPROVEMENT_6_OF_11"       pdf_field_index="43"  pdf_field_name="CHK_LITTLE_IMPROVEMENT_6_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_TREATMENT_DATE_6_OF_11"       pdf_field_index="44"  pdf_field_name="TXT_TREATMENT_DATE_6_OF_11"   if_blank=" "/>
+    <field db_field_name="CHK_COMPLAINTS_5_OF_11"       pdf_field_index="45"  pdf_field_name="CHK_COMPLAINTS_5_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="IMG_SIGNATURE_5_OF_11"       pdf_field_index="46"  pdf_field_name="IMG_SIGNATURE_5_OF_11"   if_blank=" "/>
+    <field db_field_name="IMG_SIGNATURE_4_OF_11"       pdf_field_index="47"  pdf_field_name="IMG_SIGNATURE_4_OF_11"   if_blank=" "/>
+    <field db_field_name="CHK_CONDITION_WARESENING_3_OF_11"       pdf_field_index="48"  pdf_field_name="CHK_CONDITION_WARESENING_3_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CONDITION_WARESENING_2_OF_11"       pdf_field_index="49"  pdf_field_name="CHK_CONDITION_WARESENING_2_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LITTLE_IMPROVEMENT_8_OF_11"       pdf_field_index="50"  pdf_field_name="CHK_LITTLE_IMPROVEMENT_8_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_TREATMENT_DATE_8_OF_11"       pdf_field_index="51"  pdf_field_name="TXT_TREATMENT_DATE_8_OF_11"   if_blank=" "/>
+    <field db_field_name="CHK_LITTLE_IMPROVEMENT_7_OF_11"       pdf_field_index="52"  pdf_field_name="CHK_LITTLE_IMPROVEMENT_7_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_COMPLAINTS_7_OF_11"       pdf_field_index="53"  pdf_field_name="CHK_COMPLAINTS_7_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_COMPLAINTS_6_OF_11"       pdf_field_index="54"  pdf_field_name="CHK_COMPLAINTS_6_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="IMG_SIGNATURE_6_OF_11"       pdf_field_index="55"  pdf_field_name="IMG_SIGNATURE_6_OF_11"   if_blank=" "/>
+    <field db_field_name="CHK_CONDITION_WARESENING_4_OF_11"       pdf_field_index="56"  pdf_field_name="CHK_CONDITION_WARESENING_4_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_RESIDUAL_IMPROVEMENT_1_OF_11"       pdf_field_index="57"  pdf_field_name="CHK_RESIDUAL_IMPROVEMENT_1_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_BARCODE_PATH"       pdf_field_index="58"  pdf_field_name="TXT_BARCODE_PATH"   if_blank=" " isImage="1"/>
+    <field db_field_name="CHK_LITTLE_IMPROVEMENT_9_OF_11"       pdf_field_index="59"  pdf_field_name="CHK_LITTLE_IMPROVEMENT_9_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_TREATMENT_DATE_9_OF_11"       pdf_field_index="60"  pdf_field_name="TXT_TREATMENT_DATE_9_OF_11"   if_blank=" "/>
+    <field db_field_name="CHK_COMPLAINTS_8_OF_11"       pdf_field_index="61"  pdf_field_name="CHK_COMPLAINTS_8_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="IMG_SIGNATURE_7_OF_11"       pdf_field_index="62"  pdf_field_name="IMG_SIGNATURE_7_OF_11"   if_blank=" "/>
+    <field db_field_name="CHK_CONDITION_WARESENING_6_OF_11"       pdf_field_index="63"  pdf_field_name="CHK_CONDITION_WARESENING_6_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CONDITION_WARESENING_5_OF_11"       pdf_field_index="64"  pdf_field_name="CHK_CONDITION_WARESENING_5_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_RESIDUAL_IMPROVEMENT_2_OF_11"       pdf_field_index="65"  pdf_field_name="CHK_RESIDUAL_IMPROVEMENT_2_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CONDITION_WARESENING_10_OF_11"       pdf_field_index="66"  pdf_field_name="CHK_CONDITION_WARESENING_10_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LITTLE_IMPROVEMENT_10_OF_11"       pdf_field_index="67"  pdf_field_name="CHK_LITTLE_IMPROVEMENT_10_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_COMPLAINTS_9_OF_11"       pdf_field_index="68"  pdf_field_name="CHK_COMPLAINTS_9_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="IMG_SIGNATURE_9_OF_11"       pdf_field_index="69"  pdf_field_name="IMG_SIGNATURE_9_OF_11"   if_blank=" "/>
+    <field db_field_name="IMG_SIGNATURE_8_OF_11"       pdf_field_index="70"  pdf_field_name="IMG_SIGNATURE_8_OF_11"   if_blank=" "/>
+    <field db_field_name="CHK_CONDITION_WARESENING_7_OF_11"       pdf_field_index="71"  pdf_field_name="CHK_CONDITION_WARESENING_7_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_RESIDUAL_IMPROVEMENT_4_OF_11"       pdf_field_index="72"  pdf_field_name="CHK_RESIDUAL_IMPROVEMENT_4_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_RESIDUAL_IMPROVEMENT_3_OF_11"       pdf_field_index="73"  pdf_field_name="CHK_RESIDUAL_IMPROVEMENT_3_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CONDITION_WARESENING_11_OF_11"       pdf_field_index="74"  pdf_field_name="CHK_CONDITION_WARESENING_11_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LITTLE_IMPROVEMENT_11_OF_11"       pdf_field_index="75"  pdf_field_name="CHK_LITTLE_IMPROVEMENT_11_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CONDITION_WARESENING_8_OF_11"       pdf_field_index="76"  pdf_field_name="CHK_CONDITION_WARESENING_8_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_RESIDUAL_IMPROVEMENT_5_OF_11"       pdf_field_index="77"  pdf_field_name="CHK_RESIDUAL_IMPROVEMENT_5_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_DOCTOR_NAME"       pdf_field_index="78"  pdf_field_name="TXT_DOCTOR_NAME"   if_blank=" "/>
+    <field db_field_name="CHK_CONDITION_WARESENING_9_OF_11"       pdf_field_index="79"  pdf_field_name="CHK_CONDITION_WARESENING_9_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_RESIDUAL_IMPROVEMENT_7_OF_11"       pdf_field_index="80"  pdf_field_name="CHK_RESIDUAL_IMPROVEMENT_7_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_RESIDUAL_IMPROVEMENT_6_OF_11"       pdf_field_index="81"  pdf_field_name="CHK_RESIDUAL_IMPROVEMENT_6_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_NO_CHANGE_1_OF_11"       pdf_field_index="82"  pdf_field_name="CHK_NO_CHANGE_1_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_RESIDUAL_IMPROVEMENT_8_OF_11"       pdf_field_index="83"  pdf_field_name="CHK_RESIDUAL_IMPROVEMENT_8_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_NO_CHANGE_3_OF_11"       pdf_field_index="84"  pdf_field_name="CHK_NO_CHANGE_3_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_NO_CHANGE_2_OF_11"       pdf_field_index="85"  pdf_field_name="CHK_NO_CHANGE_2_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_RESIDUAL_IMPROVEMENT_9_OF_11"       pdf_field_index="86"  pdf_field_name="CHK_RESIDUAL_IMPROVEMENT_9_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_NO_CHANGE_4_OF_11"       pdf_field_index="87"  pdf_field_name="CHK_NO_CHANGE_4_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_PROVIDER_FAX"       pdf_field_index="88"  pdf_field_name="TXT_PROVIDER_FAX"   if_blank=" "/>
+    <field db_field_name="TXT_PROVIDER_PHONE"       pdf_field_index="89"  pdf_field_name="TXT_PROVIDER_PHONE"   if_blank=" "/>
+    <field db_field_name="CHK_NO_CHANGE_6_OF_11"       pdf_field_index="90"  pdf_field_name="CHK_NO_CHANGE_6_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_NO_CHANGE_5_OF_11"       pdf_field_index="91"  pdf_field_name="CHK_NO_CHANGE_5_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_RESIDUAL_IMPROVEMENT_10_OF_11"       pdf_field_index="92"  pdf_field_name="CHK_RESIDUAL_IMPROVEMENT_10_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_NO_CHANGE_7_OF_11"       pdf_field_index="93"  pdf_field_name="CHK_NO_CHANGE_7_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_DOA"       pdf_field_index="94"  pdf_field_name="TXT_DOA"   if_blank=" "/>
+    <field db_field_name="TXT_PROVIDER_CITY"       pdf_field_index="95"  pdf_field_name="TXT_PROVIDER_CITY"   if_blank=" "/>
+    <field db_field_name="TXT_DOCTOR_SIGNATURE"       pdf_field_index="96"  pdf_field_name="TXT_DOCTOR_SIGNATURE"   if_blank=" " isImage="1"/>
+    <field db_field_name="CHK_RESIDUAL_IMPROVEMENT_11_OF_11"       pdf_field_index="97"  pdf_field_name="CHK_RESIDUAL_IMPROVEMENT_11_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_NO_CHANGE_9_OF_11"       pdf_field_index="98"  pdf_field_name="CHK_NO_CHANGE_9_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_NO_CHANGE_8_OF_11"       pdf_field_index="99"  pdf_field_name="CHK_NO_CHANGE_8_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_TREATMENT_DATE_10_OF_11"       pdf_field_index="100"  pdf_field_name="TXT_TREATMENT_DATE_10_OF_11"   if_blank=" "/>
+    <field db_field_name="CHK_NEW_AILMENT_2_OF_11"       pdf_field_index="101"  pdf_field_name="CHK_NEW_AILMENT_2_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MASS_IMPROVEMENTS_2_OF_11"       pdf_field_index="102"  pdf_field_name="CHK_MASS_IMPROVEMENTS_2_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_NEW_AILMENT_1_OF_11"       pdf_field_index="103"  pdf_field_name="CHK_NEW_AILMENT_1_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MASS_IMPROVEMENTS_1_OF_11"       pdf_field_index="104"  pdf_field_name="CHK_MASS_IMPROVEMENTS_1_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_PROVIDER_ZIP"       pdf_field_index="105"  pdf_field_name="TXT_PROVIDER_ZIP"   if_blank=" "/>
+    <field db_field_name="TXT_PROVIDER_NAME"       pdf_field_index="106"  pdf_field_name="TXT_PROVIDER_NAME"   if_blank=" "/>
+    <field db_field_name="TXT_TREATMENT_DATE_11_OF_11"       pdf_field_index="107"  pdf_field_name="TXT_TREATMENT_DATE_11_OF_11"   if_blank=" "/>
+    <field db_field_name="CHK_NEW_AILMENT_10_OF_11"       pdf_field_index="108"  pdf_field_name="CHK_NEW_AILMENT_10_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_NEW_AILMENT_3_OF_11"       pdf_field_index="109"  pdf_field_name="CHK_NEW_AILMENT_3_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MASS_IMPROVEMENTS_3_OF_11"       pdf_field_index="110"  pdf_field_name="CHK_MASS_IMPROVEMENTS_3_OF_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_PROVIDER_STATE"       pdf_field_index="111"  pdf_field_name="TXT_PROVIDER_STATE"   if_blank=" "/>
+  </document>
+</root>

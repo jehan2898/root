@@ -1,0 +1,61 @@
+/* CSS Document */
+
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+a:active {
+	text-decoration: none;
+}
+
+.red11arial{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #CE0205;
+}
+
+.white11arial{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFF;
+	padding-left: 10px;
+}
+
+.white12arial{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFF;
+}
+
+.black11arial{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000;
+	padding-left: 10px;
+}
+
+.textfield{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	border: thin solid #19456D;
+	background-color: #EFEFEF;
+}
+
+
+.copyrights{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #666;
+}

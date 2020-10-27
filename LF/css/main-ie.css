@@ -1,0 +1,229 @@
+﻿* {
+    padding: 0; 
+    margin: 0; 
+}
+body {
+	font: 11px Tahoma;
+	background-color: #F7F7E9;
+}
+h1 {
+    font: bold 32px Times;
+	color: #666;
+	text-align: center;
+	padding: 20px 0;    
+}
+#container {
+    width: 700px;
+    margin: 10px auto;
+}
+
+.page-body
+{
+	background-color:White;
+	text-align:center;
+	margin-top:2px;
+}
+
+.page-div
+{
+    background-color:#FFFFFF;
+    border: solid 0px #F1F1F1; /* Change the width thickness here so that the outer DIV border varies */
+    width: 95%;
+    text-align:center;
+    margin-top:2px;
+    margin-left:35px;
+    height: 80%;
+}
+
+.strip-header
+{
+	width:100%;
+	padding: 0 0 0 0 auto;
+	vertical-align:top;
+	padding-bottom: -1;	
+	/*background-color:#F1F2F3;*/
+}
+
+.strip-header table#table-logo
+{
+	width:100%;
+	border: 1px;
+	vertical-align:top;
+	height:10px;
+	border-collapse:collapse;
+}
+
+.strip-header td#td-strip-header-logo
+{
+	font-family: "Arial Rounded MT Bold";
+	font-size: 14px;
+	font-weight: bold;
+	color: #4FA600;	
+	width:15%;
+	text-align:left;
+	vertical-align:top;	
+	text-decoration: none;
+}
+
+.strip-header td#td-strip-header-right
+{
+	width:20%;
+	text-align:left;
+	vertical-align:top;
+}
+
+.strip-header td#td-strip-header-extra-links
+{
+	width:auto;
+	text-align:right;
+	vertical-align:top;
+}
+
+.account-diplay
+{
+	width:100%;
+	padding: 0 0 0 0 auto;
+	margin: -2px 0 0 0;
+}
+
+.account-diplay table#table-account-diplay
+{
+	width:100%;
+	border: 1px;
+	vertical-align:top;
+	height:30px;
+	padding-top: -1;
+}
+
+.account-diplay td#td-strip-header-logo
+{
+	width:15%;
+	text-align:left;
+	background-color:Aqua;
+	vertical-align:top;
+}
+
+.menu-diplay
+{
+	width:100%;
+	padding: 0 0 0 0 auto;
+	margin: -2px 0 0 0;
+}
+
+.menu-diplay table#table-menu-diplay
+{
+	width:100%;
+	border: 1px;
+	vertical-align:top;
+	height:25px;
+	padding-top: -1;
+}
+
+.menu-diplay table#table-inner-menu-diplay
+{
+	width:100%;
+	border: 1px;
+	vertical-align:top;
+	height:25px;
+	padding-top: -1;
+}
+
+.psearch-search
+{
+	width:100%;
+	padding: 0 0 0 0 auto;
+	margin: -2px 0 0 0;
+}
+
+.psearch-list
+{
+	width:100%;
+	padding: 0 0 0 0 auto;
+	margin: -2px 0 0 0;
+}
+
+.td-widget-lf-desc-ch{
+	padding:3px;
+	width:120px;
+	text-align:left;
+	vertical-align:top;
+	font-family:Verdana;
+	font-weight:bold;
+	font-size:1.00em;
+	border-bottom: 1px solid #e1e1e1;
+}
+
+.td-widget-lf-data-ch{
+    padding:3px;
+    width:200px;
+    text-align:right;
+    vertical-align:top;
+    font-family:Verdana;
+    font-weight:normal;
+    font-size:1.00em;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.td-widget-lf-holder-ch{
+	width:100%;
+	vertical-align:top;
+	margin:0;
+}
+
+.td-widget-lf-top-holder-ch
+{
+	width:100%;
+	border:0px solid black;
+	vertical-align:top;
+	margin:0;
+}
+
+.td-widget-lf-top-holder-division-ch
+{
+	width:450px;
+	border:0px solid black;
+	padding:2px;
+	vertical-align:text-top;
+	vertical-align:top;
+	margin:0;
+}
+
+.td-widget-lf-division-rightmost
+{
+	width:400px;
+	border:0px solid black;
+}
+
+.mGrid { width: 100%; background-color: #fff; margin: 5px 0 10px 0; border-collapse:collapse; }
+/*.mGrid td { padding: 2px; border: solid 1px #c1c1c1; color: #000000; font-size: 0.95em;}*/
+.mGrid td { padding: 2px; border: solid 1px #c1c1c1; color: #000000; font-size: 1.15em;}
+.mGrid th { padding: 4px 2px; color: #000000; background: #B4DD82; font-size: 0.9em;  border:1px solid #B4DD82;}
+.mGrid .alt { background: #fcfcfc url(grd_alt.png) repeat-x top; }
+.mGrid .pgr {background: #B4DD82 }
+.mGrid .pgr table { margin: 5px 0; }
+.mGrid .pgr td { border-width: 0; padding: 0 6px; border-left: solid 1px #666; font-weight: bold; color: #000000; line-height: 12px; }   
+.mGrid .pgr a { color: #FFFFFF; text-decoration: none; }
+.mGrid .pgr a:hover { color: #000; text-decoration: none; }
+
+tr.GridViewHeader
+{
+	font-size: 1.0em;
+	color:Black;
+	text-decoration:none;
+	text-align:left;
+	height:16px;
+}
+
+tr.GridViewHeader a:visited
+{
+	font-size: 1.0em;
+	color:Black;
+	text-decoration:underline;
+}
+
+tr.GridViewHeader a:link
+{
+	font-size: 1.0em;
+	color:Black;
+	text-decoration:underline;
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="abc">
+  <Field Name="SZ_COMPANY_ID" DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox" ControlID="utxtCompanyID"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PATIENT_NAME" DataType="NVarChar"    Size="100"     Null="False"   Control="TextBox" ControlID="utxtPatientName"            Editable="True"  Visible="True" ></Field>
+ <Field Name="DT_ACCIDENT_DATE" DataType="NVarChar"    Size="100"     Null="False"   Control="TextBox" ControlID="utxtDateofAccident"            Editable="True"  Visible="True" ></Field>
+  <Field Name="DT_OF_BIRTH" DataType="NVarChar"    Size="100"     Null="False"   Control="TextBox" ControlID="utxtDateofBirth"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_CLAIM_NUMBER" DataType="NVarChar"    Size="100"     Null="False"   Control="TextBox" ControlID="utxtClaimNumber"            Editable="True"  Visible="True" ></Field>
+  
+  <Field Name="SZ_CASE_TYPE" DataType="NVarChar"    Size="100"     Null="False"   Control="TextBox" ControlID="utxtCaseType"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_CASE_STATUS" DataType="NVarChar"    Size="100"     Null="False"   Control="TextBox" ControlID="utxtCaseStatus"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_INSURANCE_ID" DataType="NVarChar"    Size="100"     Null="False"   Control="TextBox" ControlID="utxtInsuranceName"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_LOCATION_ID" DataType="NVarChar"    Size="100"     Null="False"   Control="TextBox" ControlID="utxtLocation"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_SSNO" DataType="NVarChar"    Size="100"     Null="False"   Control="TextBox" ControlID="utxtSSNNo"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_CASEID" DataType="NVarChar"    Size="4000"     Null="False"   Control="TextBox" ControlID="utxtCaseId"            Editable="True"  Visible="True" ></Field>
+
+  <Field Name="SZ_CASE_NO" DataType="NVarChar"    Size="100"     Null="False"   Control="TextBox" ControlID="utxtCaseNo"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_CHART_NO" DataType="NVarChar"    Size="100"     Null="False"   Control="TextBox" ControlID="utxtChartNo"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_USER_ID" DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox" ControlID="utxtUserId"            Editable="True"  Visible="True" ></Field>
+
+  <Field Name="SZ_NO_REC" DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox" ControlID="txtNORec"            Editable="True"  Visible="True" ></Field>
+  <Field Name="VIEW_LASTEST" DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox" ControlID="txtViewLast"            Editable="True"  Visible="True" ></Field>
+
+
+
+  <StoreProcedure name="SP_GET_PATIENTLIST"></StoreProcedure>
+  <ListControl name="grdPatientList"></ListControl>
+</Table>
+
+
+

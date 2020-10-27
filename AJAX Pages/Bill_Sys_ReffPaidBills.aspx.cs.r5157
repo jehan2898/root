@@ -1,0 +1,3135 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using PDFValueReplacement;
+using System.IO;
+using System.Text;
+using PDFValueReplacement;
+using mbs.LienBills;
+using iTextSharp.text.pdf;
+using System.Data.SqlClient;
+using mbs.bill;
+
+
+public partial class AJAX_Pages_Bill_Sys_ReffPaidBills : System.Web.UI.Page
+{
+    string PopUpFlag;
+    private Bill_Sys_BillTransaction_BO _bill_Sys_BillTransaction;
+    private Bill_Sys_BillingCompanyDetails_BO _bill_Sys_BillingCompanyDetails_BO;
+    Bill_Sys_ProcedureCode_BO _bill_Sys_ProcedureCode_BO;
+    public DAO_NOTES_EO _DAO_NOTES_EO;
+    private DAO_NOTES_BO _DAO_NOTES_BO;
+    MUVGenerateFunction _MUVGenerateFunction;
+    Bill_Sys_NF3_Template objNF3Template;
+    PDFValueReplacement.PDFValueReplacement objPDFReplacement;
+    string bt_include;
+    String str_1500;
+    private string SESSION_checks = "SESSION_Checked";
+    private Bill_Sys_Menu _bill_Sys_Menu;
+    private Bill_Sys_InsertDefaultValues objDefaultValue;
+    CaseDetailsBO objCaseDetailsBO;
+    private Bill_Sys_DigosisCodeBO _digosisCodeBO;
+    StringBuilder szExportoExcelColumname = new StringBuilder();
+    StringBuilder szExportoExcelField = new StringBuilder();
+    private static log4net.ILog log = log4net.LogManager.GetLogger("AddBillDiffCase()");
+
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        this.con.SourceGrid = grdAllReports;
+        this.txtSearchBox.SourceGrid = grdAllReports;
+        this.grdAllReports.Page = this.Page;
+        this.grdAllReports.PageNumberList = this.con;
+
+        try
+        {
+            //ajAutoIns.ContextKey = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+            PopUpFlag = "true";
+            btnPerPatient.Attributes.Add("onclick", "return SetValues();");
+            btnRevert.Attributes.Add("onclick", "return isRecordsselected();");
+            btnSelectedBill.Attributes.Add("onclick", "return isRecordsselected();");
+            txtUpdate3.Attributes.Add("onclick", "javascript:ClosePopup();");
+            if (!IsPostBack)
+            {
+                hDnl.Value = "";
+
+
+                Bill_Sys_ReportBO objreport = new Bill_Sys_ReportBO();
+                txtCompanyID.Text = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+                txtRefCompanyID.Text = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+                extddlCaseType.Flag_ID = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+                extddlCaseType.Text = objreport.GetNoFaultId(((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID);
+                //extddlInsuranceCompany.Flag_ID = txtCompanyID.Text.ToString();
+
+                txtCaseType.Text = extddlCaseType.Text;
+                txtBillDate.Text = DateTime.Now.Date.ToShortDateString();
+                Session["RefGridData"] = null;
+                if (((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY == true)
+                {
+                    grdAllReports.XGridBindSearch();
+                    Session[SESSION_checks] = null;
+                    if (((Bill_Sys_SystemObject)Session["SYSTEM_OBJECT"]).SZ_CHART_NO == "0")
+                    {
+                        grdAllReports.Columns[3].Visible = false;
+
+
+
+                    }
+
+                    if (((Bill_Sys_SystemObject)Session["SYSTEM_OBJECT"]).SZ_SHOW_PROCEDURE_CODE_ON_INTEGRATION == "1")
+                    {
+                        grdAllReports.Columns[12].Visible = true;
+                        grdAllReports.Columns[11].Visible = false;
+                    }
+                    else
+                    {
+                        grdAllReports.Columns[12].Visible = false;
+                        grdAllReports.Columns[11].Visible = true;
+                    }
+                }
+
+                // setLabels();
+            }
+
+        }
+        catch (Exception ex)
+        {
+            usrMessage.PutMessage(ex.ToString());
+            usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_ErrorMessage);
+            usrMessage.Show();
+        }
+    }
+    #region "Bind Label For Dash Board"
+    protected void setLabels()
+    {
+        DashBoardBO _obj = new DashBoardBO();
+        Bill_Sys_BillTransaction_BO _billTransactionBO = new Bill_Sys_BillTransaction_BO();
+        try
+        {
+            DayOfWeek day = Convert.ToDateTime(System.DateTime.Today.ToString()).DayOfWeek;
+            int days = day - DayOfWeek.Sunday;
+
+            DateTime start = Convert.ToDateTime(System.DateTime.Today.ToString()).AddDays(-days);
+            DateTime end = start.AddDays(6);
+
+            lblAppointmentToday.Text = _obj.getAppoinmentCount(System.DateTime.Today.ToString(), System.DateTime.Today.ToString(), txtCompanyID.Text, "GET_APPOINTMENT");
+            lblAppointmentWeek.Text = _obj.getAppoinmentCount(start.ToString(), end.ToString(), txtCompanyID.Text, "GET_APPOINTMENT");
+
+            lblBillStatus.Text = "<ul style=\"list-style-type:disc;padding-left:60px;\"> <li><a href='../Ajax%20Pages/Bill_Sys_ReffPaidBills.aspx?Flag=Paid' onclick=\"javascript:OpenPage('Paid');\" > " + _billTransactionBO.GetCaseCount("SP_MST_CASE_MASTER", "GET_PAID_LIST_COUNT", txtCompanyID.Text) + "</a>";
+            lblBillStatus.Text += " Paid Bills  </li>  <li> <a href='../Ajax%20Pages/Bill_Sys_ReffPaidBills.aspx?Flag=UnPaid' onclick=\"javascript:OpenPage('UnPaid');\" > " + _billTransactionBO.GetCaseCount("SP_MST_CASE_MASTER", "GET_UNPAID_LIST_COUNT", txtCompanyID.Text) + "</a> Un-Paid Bills </li></ul>";
+
+            lblDesk.Text = "<ul style=\"list-style-type:disc;padding-left:60px;\"> <li><a href='Bill_Sys_LitigationDesk.aspx?Type=Litigation' onclick=\"javascript:OpenPage('Litigation');\" > " + _billTransactionBO.GetCaseCount("SP_LITIGATION_WRITEOFF_DESK", "GET_LETIGATION_COUNT", txtCompanyID.Text) + "</a>" + " bills due for litigation";
+
+            //lblMissingInformation.Text = "<ul style=\"list-style-type:disc;padding-left:60px;\"> <li><a href='Bill_Sys_PaidBills.aspx?Flag=MissingProvider' onclick=\"javascript:OpenPage('MissingProvider');\" > " + _obj.getAppoinmentCount(System.DateTime.Today.ToString(), System.DateTime.Today.ToString(), txtCompanyID.Text, "MISSING_PROVIDER") + "</a>";
+            //lblMissingInformation.Text += " provider information missing  </li>  <li> <a href='Bill_Sys_PaidBills.aspx?Flag=MissingInsuranceCompany' onclick=\"javascript:OpenPage('MissingInsuranceCompany');\" > " + _obj.getAppoinmentCount(System.DateTime.Today.ToString(), System.DateTime.Today.ToString(), txtCompanyID.Text, "MISSING_INSURANCE_COMPANY") + "</a> ";
+            lblMissingInformation.Text = "<ul style=\"list-style-type:disc;padding-left:60px;\"> <li> <a href='../Ajax%20Pages/Bill_Sys_ReffPaidBills.aspx?Flag=MissingInsuranceCompany' onclick=\"javascript:OpenPage('MissingInsuranceCompany');\" > " + _obj.getAppoinmentCount(System.DateTime.Today.ToString(), System.DateTime.Today.ToString(), txtCompanyID.Text, "MISSING_INSURANCE_COMPANY") + "</a> ";
+            lblMissingInformation.Text += " insurance company missing </li>  <li> <a href=../Ajax%20Pages/Bill_Sys_ReffPaidBills.aspx?Flag=MissingAttorney' onclick=\"javascript:OpenPage('MissingAttorney');\" > " + _obj.getAppoinmentCount(System.DateTime.Today.ToString(), System.DateTime.Today.ToString(), txtCompanyID.Text, "MISSING_ATTORNEY") + "</a>";
+            lblMissingInformation.Text += " attorney missing </li>  <li> <a href='../Ajax%20Pages/Bill_Sys_ReffPaidBills.aspx?Flag=MissingClaimNumber' onclick=\"javascript:OpenPage('MissingClaimNumber');\" > " + _obj.getAppoinmentCount(System.DateTime.Today.ToString(), System.DateTime.Today.ToString(), txtCompanyID.Text, "MISSING_CLAIM_NUMBER") + "</a> claim number missing </li>";
+            lblMissingInformation.Text += "<li> <a href='../Ajax%20Pages/Bill_Sys_ReffPaidBills.aspx?Flag=MissingReportNumber' onclick=\"javascript:OpenPage('MissingReportNumber');\" > " + _obj.getAppoinmentCount(System.DateTime.Today.ToString(), System.DateTime.Today.ToString(), txtCompanyID.Text, "MISSING_REPORT_NUMBER") + "</a> report number missing </li>";
+            lblMissingInformation.Text += "<li> <a href='../Ajax%20Pages/Bill_Sys_ReffPaidBills.aspx?Flag=MissingPolicyHolder'> " + _obj.getAppoinmentCount(System.DateTime.Today.ToString(), System.DateTime.Today.ToString(), txtCompanyID.Text, "MISSING_POLICY_HOLDER") + "</a> policy holder missing </li>";
+            lblMissingInformation.Text += "<li> <a href='Bill_Sys_ShowUnSentNF2.aspx' > " + _obj.getAppoinmentCount(System.DateTime.Today.ToString(), System.DateTime.Today.ToString(), txtCompanyID.Text, "UNSENTNF2") + "</a> unsent NF2 </li></ul>";
+
+
+
+            // lblReport.Text = "<ul style=\"list-style-type:disc;padding-left:60px;\"> <li><a href='Bill_Sys_PaidBills.aspx?Flag=report&Type=R' onclick=\"javascript:OpenPage('Litigation');\" > " + _obj.getAppoinmentCount(System.DateTime.Today.ToString(), System.DateTime.Today.ToString(), txtCompanyID.Text, "DOCUMENT_RECEIVED_COUNT") + "</a>" + " Received Report";
+            lblReport.Text = "<ul style=\"list-style-type:disc;padding-left:60px;\"> <li><a href='Bill_Sys_ReffPaidBills.aspx' onclick=\"javascript:OpenPage('Litigation');\" > " + _obj.getAppoinmentCount(System.DateTime.Today.ToString(), System.DateTime.Today.ToString(), txtCompanyID.Text, "DOCUMENT_RECEIVED_COUNT") + "</a>" + " Received Report";
+            lblReport.Text += "</li>  <li> <a href='Bill_Sys_PaidBills.aspx?Flag=report&Type=P' onclick=\"javascript:OpenPage('MissingInsuranceCompany');\" > " + _obj.getAppoinmentCount(System.DateTime.Today.ToString(), System.DateTime.Today.ToString(), txtCompanyID.Text, "DOCUMENT_PENDING_COUNT") + "</a> Pending Report </li></ul>";
+
+            lblProcedureStatus.Text = "<ul style=\"list-style-type:disc;padding-left:60px;\"> <li>" + _obj.getBilledUnbilledProcCode(txtCompanyID.Text, "GET_BILLEDPROC") + " billed procedure codes";
+            lblProcedureStatus.Text += "</li>  <li>" + _obj.getBilledUnbilledProcCode(txtCompanyID.Text, "GET_UNBILLEDPROC") + " Un-billed procedure codes </li></ul>";
+
+
+            //lblVisits.Text = "<ul style=\"list-style-type:disc;padding-left:60px;\"> <li><a id='hlnkTotalVisit' href='#' onclick='javascript:OpenTotalVisitPopup();'>" + _obj.getTotalVisits(txtCompanyID.Text, "GET_VISIT_COUNT") + " </a> Visits</li>";
+            //lblVisits.Text += "<li><a id='hlnkVisit' href='#' onclick='javascript:OpenVisitPopup();'>" + _obj.getTotalVisits(txtCompanyID.Text, "GET_BILLED_VISIT_COUNT") + " </a>Billed visits </li>";
+            //lblVisits.Text += "<li><a id='hlnkUnVisit' href='#' onclick='javascript:OpenUnVisitPopup();'>" + _obj.getTotalVisits(txtCompanyID.Text, "GET_UNBILLED_VISIT_COUNT") + "</a> Un-billed visits </a></li></ul>";
+
+            lblTotalVisit.Text = _obj.getTotalVisits(txtCompanyID.Text, "GET_VISIT_COUNT");
+            lblBilledVisit.Text = _obj.getTotalVisits(txtCompanyID.Text, "GET_BILLED_VISIT_COUNT");
+            lblUnBilledVisit.Text = _obj.getTotalVisits(txtCompanyID.Text, "GET_UNBILLED_VISIT_COUNT");
+
+            // 8 April - add patient visit status block on page - sachin
+            lblPatientVisitStatus.Text = "<ul style=\"list-style-type:disc;padding-left:60px;\"> <li> <a href='Bill_Sys_ShowPatientVisitStatus.aspx?Flag=patientscheduled' onclick=\"javascript:OpenPage('PatientScheduled');\" > " + _obj.getPatientVisitStatusCount(txtCompanyID.Text, "GET_PATIENT_VISIT_SCHEDULED_COUNT") + "</a> ";
+            lblPatientVisitStatus.Text += " Patient Scheduled </li>  <li> <a href='Bill_Sys_ShowPatientVisitStatus.aspx?Flag=patientnoshows' onclick=\"javascript:OpenPage('PatientNoShows');\" > " + _obj.getPatientVisitStatusCount(txtCompanyID.Text, "GET_PATIENT_VISIT_NO_SHOWS") + "</a>";
+            lblPatientVisitStatus.Text += " Patient No Shows </li>  <li> <a href='Bill_Sys_ShowPatientVisitStatus.aspx?Flag=patientrescheduled' onclick=\"javascript:OpenPage('PatientRescheduled');\" > " + _obj.getPatientVisitStatusCount(txtCompanyID.Text, "GET_PATIENT_VISIT_RESCHEDULED") + "</a>";
+            lblPatientVisitStatus.Text += " Patient Rescheduled </li>  <li> <a href='Bill_Sys_ShowPatientVisitStatus.aspx?Flag=patientvisitcompleted' onclick=\"javascript:OpenPage('PatientVisitcompleted');\" > " + _obj.getPatientVisitStatusCount(txtCompanyID.Text, "GET_PATIENT_VISIT_COMPLETED") + "</a>Patient Visit completed </li></ul>";
+
+            ConfigDashBoard();
+
+        }
+        catch (Exception ex)
+        {
+            usrMessage.PutMessage(ex.ToString());
+            usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_ErrorMessage);
+            usrMessage.Show();
+        }
+    }
+    private void ConfigDashBoard()
+    {
+        DashBoardBO _objDashBoardBO = new DashBoardBO();
+        try
+        {
+
+            DataTable dt = _objDashBoardBO.GetConfigDashBoard(((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_ROLE);
+            foreach (DataRow dr in dt.Rows)
+            {
+                switch (dr[0].ToString())
+                {
+                    case "Daily Appointment":
+                        tblDailyAppointment.Visible = true;
+                        break;
+                    case "Weekly Appointment":
+                        tblWeeklyAppointment.Visible = true;
+                        break;
+                    case "Bill Status":
+                        tblBillStatus.Visible = true;
+                        break;
+                    case "Desk":
+                        tblDesk.Visible = true;
+                        break;
+                    case "Missing Information":
+                        tblMissingInfo.Visible = true;
+                        break;
+                    case "Report Section":
+                        tblReportSection.Visible = true;
+                        break;
+                    case "Procedure Status":
+                        tblBilledUnbilledProcCode.Visible = true;
+                        break;
+                    case "Visits":
+                        tblVisits.Visible = true;
+                        grdTotalVisit.DataSource = _objDashBoardBO.getVisitDetails(txtCompanyID.Text, "TOTALCOUNT");
+                        grdTotalVisit.DataBind();
+                        grdVisit.DataSource = _objDashBoardBO.getVisitDetails(txtCompanyID.Text, "BILLEDVISIT");
+                        grdVisit.DataBind();
+                        grdUnVisit.DataSource = _objDashBoardBO.getVisitDetails(txtCompanyID.Text, "UNBILLEDVISIT");
+                        grdUnVisit.DataBind();
+                        break;
+                    case "Missing Speciality":
+                        tblMissingSpeciality.Visible = true;
+                        break;
+                    case "Patient Visit Status":
+                        tblPatientVisitStatus.Visible = true;
+                        break;
+
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            usrMessage.PutMessage(ex.ToString());
+            usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_ErrorMessage);
+            usrMessage.Show();
+        }
+    }
+    protected void txtUpdate_Click(object sender, EventArgs e)
+    {
+        grdAllReports.XGridBindSearch();
+    }
+    #endregion
+    protected void btnSearch_Click(object sender, EventArgs e)
+    {
+        txtCaseType.Text = extddlCaseType.Text;
+        // BindReffGrid();
+        if (((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY == true)
+        {
+            grdAllReports.XGridBindSearch();
+        }
+    }
+    protected void btnRevert_Click(object sender, EventArgs e)
+    {  ///revert the recored 
+        ///
+
+        for (int j = 0; j < grdAllReports.Rows.Count; j++)
+        {
+
+            CheckBox chkDelete1 = (CheckBox)grdAllReports.Rows[j].FindControl("chkSelect");
+            if (chkDelete1.Checked)
+            {
+                Bill_Sys_ReportBO objUpdateReport = new Bill_Sys_ReportBO();
+                objUpdateReport.RevertReport(Convert.ToInt32(grdAllReports.DataKeys[j]["SZ_PATIENT_TREATMENT_ID"].ToString()));
+
+                objUpdateReport.DeleteAddedEventProcId(grdAllReports.DataKeys[j]["SZ_PATIENT_TREATMENT_ID"].ToString());
+
+                usrMessage.PutMessage("Report Reverted Successfully");
+                usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_UserMessage);
+                usrMessage.Show();
+            }
+        }
+        grdAllReports.XGridBindSearch();
+        //  setLabels();
+    }
+
+
+    protected void btnPerPatient_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            log.Debug("Call btnPerPatient_Click");
+            Session["PER_PATIENT"] = "YES";
+            ArrayList arrlst = new ArrayList();
+            ArrayList arrDtAccident = new ArrayList();
+            ArrayList arrlstBill = new ArrayList();
+            ArrayList arrlstBillfordetails = new ArrayList();
+            ArrayList arrlstBillforinsurance = new ArrayList();
+            ArrayList arrlstBillforcasetype = new ArrayList();
+            ArrayList arrRefDocMandetory = new ArrayList();
+            ArrayList arrPatientPhMandetory = new ArrayList();
+            ArrayList arrLocationMandetory = new ArrayList();
+
+            DataSet dsMandatoryField = new DataSet();
+            string strconfigurationType = "MANDATORY_CHECK";
+            string strMandatoryField = "";
+            bool blnCheckForMissingAccidentDate = false;
+            DataSet dsExcludeBillInfo = new DataSet();
+            DataSet dsRefDocInfo = new DataSet();
+            Bill_Sys_BillTransaction_BO _Bill_Sys_BillTransaction_BO = new Bill_Sys_BillTransaction_BO();
+            dsExcludeBillInfo = _Bill_Sys_BillTransaction_BO.GetExcludeBillInformation(txtCompanyID.Text);
+
+
+            WC_Configuration objBillConfig = new WC_Configuration(); // Remove WC and Make it bill ... Bill_Configuration
+            dsMandatoryField = objBillConfig.GetBillConfigurationForMandatoryField(txtCompanyID.Text, strconfigurationType); // GetBillConfigurationForMandatoryFields
+
+            /***
+             *  CHECK IF THE INSURANCE COMPANY IS AVAILABLE FOR THE CASE. IF NOT PRESENT HALT BILLING
+             */
+
+            for (int n = 0; n < grdAllReports.Rows.Count; n++)
+            {
+                CheckBox chkDel = (CheckBox)grdAllReports.Rows[n].FindControl("chkSelect");
+                if (chkDel.Checked == true)
+                {
+                    string strCoSigned = grdAllReports.DataKeys[n]["SZ_CO_SIGNED_BY"].ToString();
+                    if (strCoSigned == "" || strCoSigned == null || strCoSigned == "&nbsp")
+                    {
+                        dsRefDocInfo = _Bill_Sys_BillTransaction_BO.GetReferringDoctorMandetoryInfo(txtCompanyID.Text, grdAllReports.DataKeys[n]["SZ_CASE_TYPE"].ToString());
+                        if (dsRefDocInfo != null)
+                        {
+                            if (dsRefDocInfo.Tables[0].Rows.Count > 0)
+                            {
+                                for (int p = 0; p < dsRefDocInfo.Tables[0].Rows.Count; p++)
+                                {
+                                    string szNPI, szLicenceNo, szWCBAuth, szWCBRating = "";
+                                    szNPI = dsRefDocInfo.Tables[0].Rows[0][0].ToString();
+                                    szLicenceNo = dsRefDocInfo.Tables[0].Rows[0][1].ToString();
+                                    szWCBAuth = dsRefDocInfo.Tables[0].Rows[0][2].ToString();
+                                    szWCBRating = dsRefDocInfo.Tables[0].Rows[0][3].ToString();
+                                    if (szNPI.ToLower() == "true")
+                                    {
+                                        if (grdAllReports.DataKeys[n]["SZ_NPI"].ToString() == "" || grdAllReports.DataKeys[n]["SZ_NPI"].ToString() == "&nbsp" || grdAllReports.DataKeys[n]["SZ_NPI"].ToString() == null)
+                                        {
+                                            arrRefDocMandetory.Add(grdAllReports.DataKeys[n]["CASE_NO"].ToString());
+                                        }
+                                    }
+                                    if (szLicenceNo.ToLower() == "true")
+                                    {
+                                        if (grdAllReports.DataKeys[n]["SZ_DOCTOR_LICENSE_NUMBER"].ToString() == "" || grdAllReports.DataKeys[n]["SZ_DOCTOR_LICENSE_NUMBER"].ToString() == "&nbsp" || grdAllReports.DataKeys[n]["SZ_DOCTOR_LICENSE_NUMBER"].ToString() == null)
+                                        {
+                                            arrRefDocMandetory.Add(grdAllReports.DataKeys[n]["CASE_NO"].ToString());
+                                        }
+                                    }
+                                    if (szWCBAuth.ToLower() == "true")
+                                    {
+                                        if (grdAllReports.DataKeys[n]["SZ_WCB_AUTHORIZATION"].ToString() == "" || grdAllReports.DataKeys[n]["SZ_WCB_AUTHORIZATION"].ToString() == "&nbsp" || grdAllReports.DataKeys[n]["SZ_WCB_AUTHORIZATION"].ToString() == null)
+                                        {
+                                            arrRefDocMandetory.Add(grdAllReports.DataKeys[n]["CASE_NO"].ToString());
+                                        }
+                                    }
+                                    if (szWCBRating.ToLower() == "true")
+                                    {
+                                        if (grdAllReports.DataKeys[n]["SZ_WCB_RATING_CODE"].ToString() == "" || grdAllReports.DataKeys[n]["SZ_WCB_RATING_CODE"].ToString() == "&nbsp" || grdAllReports.DataKeys[n]["SZ_WCB_RATING_CODE"].ToString() == null)
+                                        {
+                                            arrRefDocMandetory.Add(grdAllReports.DataKeys[n]["CASE_NO"].ToString());
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            if (arrRefDocMandetory.Count > 0)
+            {
+                usrMessage.PutMessage("Please assign mandatory information to Reading Doctor..");
+                usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_UserMessage);
+                usrMessage.Show();
+                usrMessage.Focus();
+            }
+
+            if (dsExcludeBillInfo != null)
+            {
+                if (dsExcludeBillInfo.Tables[0].Rows.Count > 0)
+                {
+                    for (int m = 0; m < dsExcludeBillInfo.Tables[0].Rows.Count; m++)
+                    {
+                        for (int j = 0; j < grdAllReports.Rows.Count; j++)
+                        {
+                            CheckBox chkDelete1 = (CheckBox)grdAllReports.Rows[j].FindControl("chkSelect");
+                            if (chkDelete1.Checked == true)
+                            {
+                                if (grdAllReports.DataKeys[j]["Insurance_Company"].ToString() == dsExcludeBillInfo.Tables[0].Rows[m]["SZ_INSURANCE_ID"].ToString() && grdAllReports.DataKeys[j]["DOCTOR_ID"].ToString() == dsExcludeBillInfo.Tables[0].Rows[m]["SZ_READING_DOCTOR_ID"].ToString() && grdAllReports.DataKeys[j]["SZ_CASE_TYPE"].ToString() == dsExcludeBillInfo.Tables[0].Rows[m]["SZ_CASE_TYPE_ID"].ToString())
+                                {
+                                    arrlstBill.Add(grdAllReports.DataKeys[j]["CASE_NO"].ToString());
+                                    arrlstBillfordetails.Add(grdAllReports.DataKeys[j]["SZ_DOCTOR_NAME"].ToString());
+                                    arrlstBillforinsurance.Add(grdAllReports.DataKeys[j]["SZ_INSURANCE_COMPANY_NAME"].ToString());
+                                    arrlstBillforcasetype.Add(grdAllReports.DataKeys[j]["SZ_CASE_TYPE_NAME"].ToString());
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            int iBillFlag = 0;
+            for (int j = 0; j < grdAllReports.Rows.Count; j++)
+            {
+                CheckBox chkDelete1 = (CheckBox)grdAllReports.Rows[j].FindControl("chkSelect");
+                if (chkDelete1.Checked == true)
+                {
+                    if (grdAllReports.DataKeys[j]["Insurance_Company"].ToString() == "&nbsp;" || grdAllReports.DataKeys[j]["Insurance_Company"].ToString() == "" || grdAllReports.DataKeys[j]["Insurance_Address"].ToString() == "" || grdAllReports.DataKeys[j]["Insurance_Address"].ToString() == "&nbsp;" || grdAllReports.DataKeys[j]["CLAIM_NO"].ToString() == "&nbsp;" || grdAllReports.DataKeys[j]["CLAIM_NO"].ToString() == "")
+                    {
+                        arrlst.Add(grdAllReports.DataKeys[j]["CASE_NO"].ToString());
+                    }
+
+                    if (grdAllReports.DataKeys[j]["BT_DO_NOT_ALLOW_BILL"].ToString().ToLower() == "true")
+                    {
+                        iBillFlag = 1;
+                    }
+                }
+            }
+            if (iBillFlag == 1)
+            {
+                usrMessage.PutMessage("You Can not Create Bill For First Cardinal Corporation and New York Law Department insurance");
+                usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_UserMessage);
+                usrMessage.Show();
+                usrMessage.Focus();
+                return;
+
+            }
+            //check if BT_BILL is 0 for reading doctor id ,insurance company and case type  same entry in txn_calendar_evet so you cannot create the bill--sunil
+            string patientcntbill = "";
+            string repeatbill = "";
+            string szdoctorname = "";
+            string szinsurancecompanyname = "";
+            string szcaseetypename = "";
+            //for (int l = 0; l < grdAllReports.Rows.Count; l++)
+            //{
+            //    CheckBox chkDelete1 = (CheckBox)grdAllReports.Rows[l].FindControl("chkSelect");
+            //    if (chkDelete1.Checked == true)
+            //    {
+            //        if (grdAllReports.DataKeys[l]["BT_BILL"].ToString().Trim() == "0")
+            //        {
+            //            arrlstBill.Add(grdAllReports.DataKeys[l]["CASE_NO"].ToString());
+            //            arrlstBillfordetails.Add(grdAllReports.DataKeys[l]["SZ_DOCTOR_NAME"].ToString());
+            //            arrlstBillforinsurance.Add(grdAllReports.DataKeys[l]["SZ_INSURANCE_COMPANY_NAME"].ToString());
+            //            arrlstBillforcasetype.Add(grdAllReports.DataKeys[l]["SZ_CASE_TYPE_NAME"].ToString());
+            //        }
+            //    }
+            //}
+
+            if (arrlstBill.Count > 0)
+            {
+                for (int i = 0; i < arrlstBill.Count; i++)
+                {
+                    int cntbill = 0;
+                    repeatbill = arrlstBill[i].ToString();
+                    patientcntbill += arrlstBill[i].ToString() + ",";
+                    for (int j = 0; j < arrlst.Count; j++)
+                    {
+                        if (repeatbill == arrlstBill[j].ToString())
+                        {
+                            cntbill++;
+                        }
+                    }
+                    if (cntbill > 1)
+                    {
+                        i += cntbill - 1;
+                    }
+                }
+                for (int a = 0; a < arrlstBillfordetails.Count; a++)
+                {
+                    szdoctorname += arrlstBillfordetails[a].ToString() + ",";
+
+                }
+                for (int q = 0; q < arrlstBillforinsurance.Count; q++)
+                {
+                    szinsurancecompanyname += arrlstBillforinsurance[q].ToString() + ",";
+                }
+                for (int s = 0; s < arrlstBillforcasetype.Count; s++)
+                {
+                    szcaseetypename += arrlstBillforcasetype[s].ToString() + ",";
+                }
+                usrMessage.PutMessage("Visit Cannot be billed to these Case NO: '" + patientcntbill + "' as Reading doctor '" + szdoctorname + "' insurance company is '" + szinsurancecompanyname + "' and Casetype is '" + szcaseetypename + "' ");
+                usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_UserMessage);
+                usrMessage.Show();
+                usrMessage.Focus();
+            }
+
+            //end
+
+            /***
+             *  CHECK IF THE MANDATORY FIELDS ARE SET FROM BILL CONFIGURATION. IF YES HALT BILL CREATION
+             */
+
+            if (dsMandatoryField != null)
+            {
+                if (dsMandatoryField.Tables[0] != null)
+                {
+                    for (int i = 0; i < dsMandatoryField.Tables[0].Rows.Count; i++)
+                    {
+                        strMandatoryField = dsMandatoryField.Tables[0].Rows[i][0].ToString();
+                        if (strMandatoryField.ToLower().Trim().Equals("acdt"))
+                        {
+                            blnCheckForMissingAccidentDate = true;
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    blnCheckForMissingAccidentDate = false;
+                }
+            }
+
+            if (blnCheckForMissingAccidentDate)
+            {
+                for (int j = 0; j < grdAllReports.Rows.Count; j++)
+                {
+                    CheckBox chkDelete1 = (CheckBox)grdAllReports.Rows[j].FindControl("chkSelect");
+                    if (chkDelete1.Checked == true)
+                    {
+                        if (grdAllReports.Rows[j].Cells[29].Text.ToString() == "&nbsp;" || grdAllReports.Rows[j].Cells[29].Text.ToString() == "" || grdAllReports.Rows[j].Cells[29].Text.ToString() == "NA" || grdAllReports.Rows[j].Cells[29].Text.ToString() == "missing")
+                        {
+                            arrDtAccident.Add(grdAllReports.DataKeys[j]["CASE_NO"].ToString());
+                        }
+                    }
+                }
+            }
+
+            string patientcnt = "";
+            string repeat = "";
+            string repeat1 = "";
+            string repeat2 = "";
+            string repeat3 = "";
+            string patientphcnt = "";
+            string locationcnt = "";
+
+            if (arrlst.Count > 0)
+            {
+                for (int i = 0; i < arrlst.Count; i++)
+                {
+                    int cnt = 0;
+                    repeat = arrlst[i].ToString();
+                    patientcnt += arrlst[i].ToString() + ",";
+                    for (int j = 0; j < arrlst.Count; j++)
+                    {
+                        if (repeat == arrlst[j].ToString())
+                        {
+                            cnt++;
+                        }
+                    }
+                    if (cnt > 1)
+                    {
+                        i += cnt - 1;
+                    }
+                }
+                usrMessage.PutMessage("You do not have an insurance company or an insurance company address added to these Case NO: '" + patientcnt + "'.You cannot bill without an carrier data for this patient");
+                usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_UserMessage);
+                usrMessage.Show();
+                usrMessage.Focus();
+                // ScriptManager.RegisterClientScriptBlock(this, GetType(), "Done", "alert('You do not have an insurance company or an insurance company address added to these Case NO: '" + patientcnt + "'.You cannot bill without an carrier data for this patient');", true);
+                //popupmsg.InnerHtml = "You do not have an insurance company or an insurance company address added to these Case NO: '" + patientcnt + "'.You cannot bill without an carrier data for this patient";
+                //Page.RegisterStartupScript("mm", "<script language='javascript'>openExistsPage1();</script>");
+            }
+
+            if (arrDtAccident.Count > 0)
+            {
+                for (int i = 0; i < arrDtAccident.Count; i++)
+                {
+                    int cnt = 0;
+                    repeat1 = arrDtAccident[i].ToString();
+                    patientcnt += arrDtAccident[i].ToString() + ",";
+                    for (int j = 0; j < arrDtAccident.Count; j++)
+                    {
+                        if (repeat1 == arrDtAccident[j].ToString())
+                        {
+                            cnt++;
+                        }
+                    }
+                    if (cnt > 1)
+                    {
+                        i += cnt - 1;
+                    }
+                }
+                ScriptManager.RegisterClientScriptBlock(this, GetType(), "Done", "alert('Your account does not allow to create bills without accident dates. Update the date of accident for the below cases and continue. :" + patientcnt + "');", true);
+            }
+
+            if (((Bill_Sys_SystemObject)Session["SYSTEM_OBJECT"]).DONOT_ALLOW_TO_CREATE_BILL_WITHOUT_PATIENT_PHONE == "1")
+            {
+                for (int k = 0; k < grdAllReports.Rows.Count; k++)
+                {
+                    CheckBox chkDelete1 = (CheckBox)grdAllReports.Rows[k].FindControl("chkSelect");
+                    if (chkDelete1.Checked == true)
+                    {
+                        if (grdAllReports.DataKeys[k]["SZ_PATIENT_PHONE"].ToString() == "&nbsp;" || grdAllReports.DataKeys[k]["SZ_PATIENT_PHONE"].ToString() == "" || grdAllReports.DataKeys[k]["SZ_PATIENT_PHONE"].ToString() == "NA" || grdAllReports.DataKeys[k]["SZ_PATIENT_PHONE"].ToString() == "missing")
+                        {
+                            arrPatientPhMandetory.Add(grdAllReports.DataKeys[k]["CASE_NO"].ToString());
+                        }
+                    }
+                }
+            }
+            if (((Bill_Sys_SystemObject)Session["SYSTEM_OBJECT"]).DONOT_ALLOW_TO_CREATE_BILL_WITHOUT_LOCATION == "1")
+            {
+                for (int p = 0; p < grdAllReports.Rows.Count; p++)
+                {
+                    CheckBox chkDelete1 = (CheckBox)grdAllReports.Rows[p].FindControl("chkSelect");
+                    if (chkDelete1.Checked == true)
+                    {
+                        if (grdAllReports.DataKeys[p]["SZ_LOCATIONID"].ToString() == "&nbsp;" || grdAllReports.DataKeys[p]["SZ_LOCATIONID"].ToString() == "" || grdAllReports.DataKeys[p]["SZ_LOCATIONID"].ToString() == "NA" || grdAllReports.DataKeys[p]["SZ_LOCATIONID"].ToString() == "missing")
+                        {
+                            arrLocationMandetory.Add(grdAllReports.DataKeys[p]["CASE_NO"].ToString());
+                        }
+                    }
+                }
+            }
+
+
+            if (arrPatientPhMandetory.Count > 0)
+            {
+                for (int i = 0; i < arrPatientPhMandetory.Count; i++)
+                {
+                    int cnt = 0;
+                    repeat2 = arrPatientPhMandetory[i].ToString();
+                    patientphcnt += arrPatientPhMandetory[i].ToString() + ",";
+                    for (int j = 0; j < arrPatientPhMandetory.Count; j++)
+                    {
+                        if (repeat2 == arrPatientPhMandetory[j].ToString())
+                        {
+                            cnt++;
+                        }
+                    }
+                    if (cnt > 1)
+                    {
+                        i += cnt - 1;
+                    }
+                }
+                ScriptManager.RegisterClientScriptBlock(this, GetType(), "Done", "alert('Your account does not allow to create bills without patient phone. Update the patient phone for the below cases and continue. :" + patientphcnt + "');", true);
+            }
+            if (arrLocationMandetory.Count > 0)
+            {
+                for (int i = 0; i < arrLocationMandetory.Count; i++)
+                {
+                    int cnt = 0;
+                    repeat3 = arrLocationMandetory[i].ToString();
+                    locationcnt += arrLocationMandetory[i].ToString() + ",";
+                    for (int j = 0; j < arrLocationMandetory.Count; j++)
+                    {
+                        if (repeat3 == arrLocationMandetory[j].ToString())
+                        {
+                            cnt++;
+                        }
+                    }
+                    if (cnt > 1)
+                    {
+                        i += cnt - 1;
+                    }
+                }
+                ScriptManager.RegisterClientScriptBlock(this, GetType(), "Done", "alert('Your account does not allow to create bills without Location. Update the Location for the below cases and continue. :" + locationcnt + "');", true);
+            }
+
+
+
+            if (arrDtAccident.Count > 0 || arrlst.Count > 0 || arrlstBill.Count > 0 || arrRefDocMandetory.Count > 0 || arrPatientPhMandetory.Count > 0 || arrLocationMandetory.Count > 0)
+            {
+                return;
+            }
+            else
+            {
+                Page.RegisterStartupScript("ss", "<script language='javascript'>openExistsPage();</script>");
+                ArrayList arrClaim = new ArrayList();
+
+                for (int j = 0; j < grdAllReports.Rows.Count; j++)
+                {
+                    CheckBox chkDelete1 = (CheckBox)grdAllReports.Rows[j].FindControl("chkSelect");
+                    if (chkDelete1.Checked == true)
+                    {
+                        if (grdAllReports.DataKeys[j]["CLAIM_NO"].ToString() == "&nbsp;" || grdAllReports.DataKeys[j]["CLAIM_NO"].ToString() == "")
+                        {
+                            arrClaim.Add(grdAllReports.DataKeys[j]["CASE_NO"].ToString());
+                        }
+                    }
+                }
+
+                if (arrClaim.Count > 0)
+                {
+                    for (int i = 0; i < arrClaim.Count; i++)
+                    {
+                        int cnt = 0;
+                        repeat1 = arrClaim[i].ToString();
+                        patientcnt += arrClaim[i].ToString() + ",";
+                        for (int j = 0; j < arrClaim.Count; j++)
+                        {
+                            if (repeat1 == arrClaim[j].ToString())
+                            {
+                                cnt++;
+                            }
+                        }
+                        if (cnt > 1)
+                        {
+                            i += cnt - 1;
+                        }
+                    }
+                    lblmodal.Text = "You do not have a claim number for the below case number: '" + patientcnt + "'.Do you want to proceed further and create the bill(s)?";
+                    ModalPopupExtender2.Show();
+                }
+                else
+                {
+                    log.Debug("Calling AddBillDiffCase()btnPerPatientClick");
+                    AddBillDiffCase();
+                    grdAllReports.XGridBindSearch();
+                    log.Debug("CallEnding to AddBillDiffCase() btn PerPatientClick");
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            usrMessage.PutMessage(ex.ToString());
+            usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_ErrorMessage);
+            usrMessage.Show();
+        }
+        finally
+        {
+            ScriptManager.RegisterClientScriptBlock(this, GetType(), "mmopen", "SetDefaultValues();", true);
+            Session["Procedure_Code"] = null;
+        }
+
+    }
+    protected void btnYes_Click(object sender, EventArgs e)
+    {
+
+        try
+        {
+            if (Session["PER_PATIENT"] != null)
+            {
+                if (Session["PER_PATIENT"].ToString() == "YES")
+                {
+                    log.Debug("Calling AddBillDiffCase() btnYes_Click");
+                    AddBillDiffCase();
+                    log.Debug("CallEnding AddBillDiffCase() btnYes_Click");
+                    Session["PER_PATIENT"] = null;
+                    Session["PERPROC_PATIENT"] = null;
+
+                }
+
+            }
+            if (Session["PERPROC_PATIENT"] != null)
+            {
+                if (Session["PERPROC_PATIENT"].ToString() == "YES")
+                {
+                    AddBillSameCase();
+                    Session["PERPROC_PATIENT"] = null;
+                    Session["PER_PATIENT"] = null;
+                }
+            }
+
+
+            grdAllReports.XGridBindSearch();
+
+
+        }
+        catch (Exception ex)
+        {
+            usrMessage.PutMessage(ex.ToString());
+            usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_ErrorMessage);
+            usrMessage.Show();
+        }
+        finally
+        {
+
+        }
+
+
+    }
+
+    public void AddBillDiffCase()
+    {
+        try
+        {
+            log.Debug("Starting Add BillDiffCase()");
+            //lblMsg.Visible = true;
+            DataSet dset0;
+            DataSet dset1;
+
+            ArrayList arrdiag = new ArrayList();
+            ArrayList arrbill = new ArrayList();
+            ArrayList arrlst;
+            ArrayList objArr;
+            ArrayList _arraylist;
+
+            string sz_compID = "";
+            Bill_Sys_ReportBO objreport;
+            DataTable dtble = new DataTable();
+            string patientID = "";
+            int flag = 0;
+            int _insertFlag = 0;
+            string billno = "";
+            string PatientTreatmentID = "";
+            int cnt = 0; // 
+            Bill_Sys_AssociateDiagnosisCodeBO _bill_Sys_AssociateDiagnosisCodeBO = new Bill_Sys_AssociateDiagnosisCodeBO();
+
+            DataTable dt = new DataTable();
+            dt.Columns.Add("SZ_CASE_ID");
+            dt.Columns.Add("SZ_PATIENT_ID");
+            dt.Columns.Add("CHART NO");
+            dt.Columns.Add("PATIENT NAME");
+            dt.Columns.Add("DATE OF SERVICE");
+            dt.Columns.Add("Patient name");
+            dt.Columns.Add("Date Of Service");
+            dt.Columns.Add("Procedure code");
+            dt.Columns.Add("Description");
+            dt.Columns.Add("Status");
+            dt.Columns.Add("Code ID");
+            dt.Columns.Add("EVENT ID");
+            dt.Columns.Add("Doctor ID");
+            dt.Columns.Add("CASE NO");
+            dt.Columns.Add("Company ID");
+            dt.Columns.Add("SZ_PATIENT_TREATMENT_ID");
+            //
+            dt.Columns.Add("SZ_PROCEDURE_GROUP_ID");
+            //
+            dt.Columns.Add("SZ_STUDY_NUMBER");
+            dt.Columns.Add("SZ_INS_ID");
+            dt.Columns.Add("SZ_CLAIM_NO");
+            dt.Columns.Add("SZ_POLICYNO");
+            DataRow dr;
+
+            objreport = new Bill_Sys_ReportBO();
+            // 
+            dtble = objreport.GetDoctorID(txtCompanyID.Text);
+            for (int j = 0; j < grdAllReports.Rows.Count; j++)
+            {
+
+                CheckBox chkDelete1 = (CheckBox)grdAllReports.Rows[j].FindControl("chkSelect");
+                if (chkDelete1.Checked == true)
+                {
+                    dr = dt.NewRow();
+                    dr["SZ_CASE_ID"] = grdAllReports.DataKeys[j]["SZ_CASE_ID"].ToString();
+                    dr["SZ_PATIENT_ID"] = grdAllReports.DataKeys[j]["SZ_PATIENT_ID"].ToString();
+                    dr["CHART NO"] = grdAllReports.Rows[j].Cells[3].Text.ToString();
+                    dr["PATIENT NAME"] = grdAllReports.Rows[j].Cells[6].Text.ToString();
+                    dr["DATE OF SERVICE"] = grdAllReports.DataKeys[j]["DT_DATE_OF_SERVICE"].ToString();
+                    dr["Patient name"] = grdAllReports.Rows[j].Cells[7].Text.ToString();
+                    dr["Date Of Service"] = grdAllReports.DataKeys[j]["DT_DATE_OF_SERVICE"].ToString();
+                    dr["Procedure code"] = grdAllReports.Rows[j].Cells[9].Text.ToString();
+                    dr["Description"] = grdAllReports.Rows[j].Cells[10].Text.ToString();
+                    dr["Status"] = grdAllReports.Rows[j].Cells[14].Text.ToString();
+                    dr["Code ID"] = grdAllReports.DataKeys[j]["SZ_CODE_ID"].ToString();
+                    dr["EVENT ID"] = grdAllReports.DataKeys[j]["SZ_EVENT_ID"].ToString();
+                    dr["Doctor ID"] = grdAllReports.DataKeys[j]["DOCTOR_ID"].ToString();
+                    dr["CASE NO"] = grdAllReports.DataKeys[j]["CASE_NO"].ToString();
+                    dr["Company ID"] = grdAllReports.DataKeys[j]["Company_ID"].ToString();
+                    dr["SZ_PATIENT_TREATMENT_ID"] = grdAllReports.DataKeys[j]["SZ_PATIENT_TREATMENT_ID"].ToString();
+                    //
+                    dr["SZ_PROCEDURE_GROUP_ID"] = grdAllReports.DataKeys[j]["SZ_PROCEDURE_GROUP_ID"].ToString();
+                    dr["SZ_STUDY_NUMBER"] = grdAllReports.Rows[j].Cells[28].Text.ToString();
+                    dr["SZ_INS_ID"] = grdAllReports.DataKeys[j]["Insurance_Company"].ToString();
+                    dr["SZ_CLAIM_NO"] = grdAllReports.DataKeys[j]["CLAIM_NO"].ToString();
+                    dr["SZ_POLICYNO"] = grdAllReports.DataKeys[j]["SZ_POLICY_NUMBER"].ToString();
+
+
+
+                    //
+                    dt.Rows.Add(dr);
+                }
+            }
+            mbs.bill.mbs_bill_services objBillGeneration = new mbs_bill_services();
+            string szCompanyId = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+            string szCompanyName = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_NAME;
+            string szUserID = ((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_ID;
+            string szUserName = ((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_NAME;
+            string btReffFaclilityBit = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY.ToString();
+            string szEMG = ((Bill_Sys_SystemObject)Session["SYSTEM_OBJECT"]).SZ_EMG_BILL;
+            ArrayList szretuncasetype = new ArrayList();
+            szretuncasetype = objBillGeneration.SaveTrascation(dt, szCompanyId, szUserID, szEMG, btReffFaclilityBit, szCompanyName, szUserName);
+            string szError = "";
+            string szSuccess = "";
+            for (int i = 0; i < szretuncasetype.Count; i++)
+            {
+                mbs.bill.Result objResult = new mbs.bill.Result();
+                objResult = (mbs.bill.Result)szretuncasetype[i];
+
+                if (objResult.msg_code == "404")
+                {
+                    if (szError == "")
+                    {
+                        szError = objResult.msg + "for case" + objResult.bill_no;
+                    }
+                    else
+                    {
+                        szError = szError + "/n ," + objResult.msg + "for case" + objResult.bill_no;
+                    }
+                }
+                else
+                {
+                    string path = "";
+                    path = objResult.msg;
+                    ScriptManager.RegisterClientScriptBlock(this, GetType(), "mm" + i.ToString(), " window.open('" + path.Trim() + "');", true);
+                }
+
+            }
+
+            if (szError != "")
+            {
+                usrMessage.PutMessage(szError);
+                usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_UserMessage);
+                usrMessage.Show();
+                usrMessage.Focus();
+            }
+            //if (szSuccess != "")
+            //{
+            //    //   Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "mm", "<script language='javascript'>alert('" + szSuccess + "');</script>");
+            //    ScriptManager.RegisterClientScriptBlock(this, GetType(), "Done", "alert('" + szSuccess + "');", true);
+            //}
+
+            return;
+            log.Debug("dt.rows.count -" + dt.Rows.Count.ToString());
+            dt.DefaultView.Sort = "SZ_CASE_ID ASC";
+            //Session["test"] = dt;
+            objreport = new Bill_Sys_ReportBO();
+            dtble = objreport.GetDoctorID(txtCompanyID.Text);
+            int c = 0;
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                log.Debug("for loop i value -" + i.ToString());
+                log.Debug("dt.Rows[i][SZ_CASE_ID]-" + dt.Rows[i]["SZ_CASE_ID"].ToString());
+                log.Debug("dt.Rows[i][SZ_PATIENT_ID]-" + dt.Rows[i]["SZ_PATIENT_ID"].ToString());
+                log.Debug("dt.Rows[i][CHART NO]-" + dt.Rows[i]["CHART NO"].ToString());
+                log.Debug("dt.Rows[i][PATIENT NAME]-" + dt.Rows[i]["PATIENT NAME"].ToString());
+                log.Debug("dt.Rows[i][Patient name]-" + dt.Rows[i]["Patient name"].ToString());
+                log.Debug("dt.Rows[i][Date Of Service]-" + dt.Rows[i]["Date Of Service"].ToString());
+                log.Debug("dt.Rows[i][Procedure code]-" + dt.Rows[i]["Procedure code"].ToString());
+                log.Debug("dt.Rows[i][Description]-" + dt.Rows[i]["Description"].ToString());
+                log.Debug("dt.Rows[i][Status]-" + dt.Rows[i]["Status"].ToString());
+                log.Debug("dt.Rows[i][Code ID]-" + dt.Rows[i]["Code ID"].ToString());
+                log.Debug("dt.Rows[i][EVENT ID]-" + dt.Rows[i]["EVENT ID"].ToString());
+                log.Debug("dt.Rows[i][Doctor ID]-" + dt.Rows[i]["Doctor ID"].ToString());
+                log.Debug("dt.Rows[i][CASE NO]-" + dt.Rows[i]["CASE NO"].ToString());
+                log.Debug("dt.Rows[i][Company ID]-" + dt.Rows[i]["Company ID"].ToString());
+                log.Debug("dt.Rows[i][SZ_PATIENT_TREATMENT_ID]-" + dt.Rows[i]["SZ_PATIENT_TREATMENT_ID"].ToString());
+                log.Debug("dt.Rows[i][SZ_PROCEDURE_GROUP_ID]-" + dt.Rows[i]["SZ_PROCEDURE_GROUP_ID"].ToString());
+                log.Debug("dt.Rows[i][SZ_STUDY_NUMBER]-" + dt.Rows[i]["SZ_STUDY_NUMBER"].ToString());
+
+                //ssss
+                Session["Procedure_Code"] = dt.Rows[i]["SZ_PROCEDURE_GROUP_ID"].ToString(); ;
+                //
+                cnt = 0;
+                string Pid = dt.Rows[i]["SZ_PATIENT_ID"].ToString();
+                String szSpecialityID = dt.Rows[i]["SZ_PROCEDURE_GROUP_ID"].ToString();
+                foreach (DataRow drow in dt.Rows)
+                {
+                    if (Pid == drow["SZ_PATIENT_ID"].ToString() && szSpecialityID == drow["SZ_PROCEDURE_GROUP_ID"].ToString())
+                    {
+                        cnt++;
+                    }
+                }
+                log.Debug("cnt -" + cnt.ToString());
+                if (cnt == 1)
+                {
+                    log.Debug("entering cnt =1" + cnt.ToString());
+                    txtCaseID.Text = dt.Rows[i]["SZ_CASE_ID"].ToString();
+                    txtReadingDocID.Text = dt.Rows[i]["Doctor ID"].ToString();
+                    txtPatientID.Text = dt.Rows[i]["SZ_PATIENT_ID"].ToString();
+                    txtCaseNo.Text = dt.Rows[i]["CASE NO"].ToString();
+                    sz_compID = dt.Rows[i]["Company ID"].ToString();
+
+                    Bill_Sys_CaseObject obj1 = new Bill_Sys_CaseObject();
+                    obj1.SZ_CASE_ID = txtCaseID.Text;
+                    obj1.SZ_COMAPNY_ID = sz_compID;
+                    obj1.SZ_CASE_NO = txtCaseNo.Text;
+                    obj1.SZ_PATIENT_ID = txtPatientID.Text;
+                    Session["CASE_OBJECT"] = obj1;
+
+                    if (((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY == true && ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID != ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID)
+                    {
+                        txtRefCompanyID.Text = ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID;
+                    }
+                    else
+                    {
+                        txtRefCompanyID.Text = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+                    }
+
+
+                    dset0 = new DataSet();
+                    dset0 = _bill_Sys_AssociateDiagnosisCodeBO.GetDoctorDiagnosisCode(szSpecialityID, txtCaseID.Text, "GET_DOCTOR_DIAGNOSIS_CODE");
+                    if (dset0.Tables[0].Rows.Count > 0)
+                    {
+                        //arrlst = new ArrayList();
+                        //_bill_Sys_BillTransaction = new Bill_Sys_BillTransaction_BO();
+                        //objreport = new Bill_Sys_ReportBO();
+                        //arrlst.Add(txtCaseID.Text);
+                        //arrlst.Add(txtBillDate.Text);
+                        //arrlst.Add(txtCompanyID.Text);
+                        //arrlst.Add(dtble.Rows[0]["CODE"].ToString());
+                        //arrlst.Add("0");
+                        //arrlst.Add(txtReadingDocID.Text);
+                        //arrlst.Add(txtRefCompanyID.Text);
+                        //arrlst.Add(((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_ID);
+                        ////TUSHAR:- To Save Procedure Group Id In Txn_Bill_Transaction Table
+                        //arrlst.Add(Session["Procedure_Code"].ToString());
+                        ////End
+                        // objreport.InsertBillTransactionData(arrlst);-----CALL
+
+                        BillTransactionEO p_objBillTranEO = new BillTransactionEO();
+                        p_objBillTranEO.SZ_CASE_ID = txtCaseID.Text;
+                        p_objBillTranEO.DT_BILL_DATE = Convert.ToDateTime(txtBillDate.Text);
+                        p_objBillTranEO.SZ_COMPANY_ID = txtCompanyID.Text;
+                        p_objBillTranEO.SZ_DOCTOR_ID = dtble.Rows[0]["CODE"].ToString();
+                        p_objBillTranEO.SZ_TYPE = "0";
+                        p_objBillTranEO.SZ_READING_DOCTOR_ID = txtReadingDocID.Text;
+                        p_objBillTranEO.SZ_Referring_Company_Id = txtRefCompanyID.Text;
+                        p_objBillTranEO.SZ_USER_ID = ((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_ID;
+                        p_objBillTranEO.SZ_PROCEDURE_GROUP_ID = Session["Procedure_Code"].ToString();
+
+
+                        //_bill_Sys_BillingCompanyDetails_BO = new Bill_Sys_BillingCompanyDetails_BO();
+                        //billno = _bill_Sys_BillingCompanyDetails_BO.GetLatestBillID(txtCompanyID.Text.ToString()); --CALL
+
+                        _DAO_NOTES_EO = new DAO_NOTES_EO();
+                        _DAO_NOTES_EO.SZ_MESSAGE_TITLE = "BILL_CREATED";
+                        _DAO_NOTES_EO.SZ_ACTIVITY_DESC = billno;
+                        log.Debug("Bill Created -" + billno.ToString());
+                        _DAO_NOTES_BO = new DAO_NOTES_BO();
+                        _DAO_NOTES_EO.SZ_USER_ID = ((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_ID;
+                        _DAO_NOTES_EO.SZ_CASE_ID = txtCaseID.Text;
+                        _DAO_NOTES_EO.SZ_COMPANY_ID = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+                        // _DAO_NOTES_BO.SaveActivityNotes(_DAO_NOTES_EO);--CALL
+
+                        objreport = new Bill_Sys_ReportBO();
+                        arrlst = new ArrayList();
+                        arrlst.Add(txtPatientID.Text);
+                        arrlst.Add(dt.Rows[i]["Code ID"].ToString());
+                        arrlst.Add(txtCompanyID.Text);
+                        arrlst.Add(dtble.Rows[0]["CODE"].ToString());
+                        // PatientTreatmentID = objreport.GetTreatmentID(arrlst);  --CALL
+
+
+                        //-------------------------------------------------------------------------------------------------------------------------------
+                        objArr = new ArrayList();
+                        objArr.Add(dt.Rows[i]["Procedure code"].ToString());
+                        string sz_description2 = dt.Rows[i]["Description"].ToString();
+                        if (sz_description2.Contains("&quot;"))
+                        {
+                            sz_description2 = sz_description2.Replace("&quot;", "\"");
+                        } if (sz_description2.Contains("&amp;"))
+                        {
+                            sz_description2 = sz_description2.Replace("&amp;", "&");
+                        }
+                        objArr.Add(sz_description2);
+                        objArr.Add(txtCompanyID.Text);
+                        objreport = new Bill_Sys_ReportBO();
+                        dset1 = new DataSet();
+                        dset1 = objreport.GetProcCodeDetails(objArr);
+
+
+                        //---------------------------------------------------------------------------------------------------------------------------------------------
+
+                        ArrayList _objALBillProcedureCodeEO = new ArrayList();
+                        BillProcedureCodeEO objBillProcedureCodeEO = new BillProcedureCodeEO();
+                        objBillProcedureCodeEO.SZ_PROCEDURE_ID = dset1.Tables[0].Rows[0]["PROC_ID"].ToString();
+                        objBillProcedureCodeEO.FL_AMOUNT = dset1.Tables[0].Rows[0]["AMT"].ToString();
+                        objBillProcedureCodeEO.SZ_BILL_NUMBER = billno;
+                        objBillProcedureCodeEO.DT_DATE_OF_SERVICE = Convert.ToDateTime(dt.Rows[i]["DATE OF SERVICE"].ToString());
+                        objBillProcedureCodeEO.SZ_COMPANY_ID = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+
+                        //_arraylist = new ArrayList();
+                        //  _arraylist.Add(dset1.Tables[0].Rows[0]["PROC_ID"].ToString());
+                        // _arraylist.Add(dset1.Tables[0].Rows[0]["AMT"].ToString());
+                        // _arraylist.Add(billno);
+                        // _arraylist.Add(dt.Rows[i]["DATE OF SERVICE"].ToString());
+                        //  _arraylist.Add(((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID);
+                        //atul
+                        if (((Bill_Sys_SystemObject)Session["SYSTEM_OBJECT"]).SZ_EMG_BILL == "True")
+                        {
+                            if (dt.Rows[i]["SZ_STUDY_NUMBER"].ToString() == "" || dt.Rows[i]["SZ_STUDY_NUMBER"].ToString() == null || dt.Rows[i]["SZ_STUDY_NUMBER"].ToString() == "&nbsp;")
+                            {
+                                // _arraylist.Add("1");
+                                objBillProcedureCodeEO.I_UNIT = "1";
+                            }
+                            else
+                            {
+                                //_arraylist.Add(dt.Rows[i]["SZ_STUDY_NUMBER"].ToString());
+
+                                objBillProcedureCodeEO.I_UNIT = dt.Rows[i]["SZ_STUDY_NUMBER"].ToString();
+                            }
+                        }
+                        else
+                        {
+                            objBillProcedureCodeEO.I_UNIT = "1";
+                        }
+                        // _arraylist.Add(dset1.Tables[0].Rows[0]["AMT"].ToString());
+                        objBillProcedureCodeEO.FLT_PRICE = dset1.Tables[0].Rows[0]["AMT"].ToString();
+                        //_arraylist.Add("1");
+                        objBillProcedureCodeEO.FLT_FACTOR = "1";
+                        //_arraylist.Add(dset1.Tables[0].Rows[0]["AMT"].ToString());
+                        objBillProcedureCodeEO.DOCT_AMOUNT = dset1.Tables[0].Rows[0]["AMT"].ToString();
+
+                        //_arraylist.Add(dset1.Tables[0].Rows[0]["AMT"].ToString());
+                        objBillProcedureCodeEO.PROC_AMOUNT = dset1.Tables[0].Rows[0]["AMT"].ToString();
+
+                        //_arraylist.Add(dtble.Rows[0]["CODE"].ToString());
+
+                        objBillProcedureCodeEO.SZ_DOCTOR_ID = dtble.Rows[0]["CODE"].ToString();
+
+                        //_arraylist.Add(dt.Rows[i]["SZ_CASE_ID"].ToString());
+                        objBillProcedureCodeEO.SZ_CASE_ID = dt.Rows[i]["SZ_CASE_ID"].ToString();
+
+                        //_arraylist.Add(dt.Rows[i]["Code ID"].ToString());
+                        objBillProcedureCodeEO.SZ_TYPE_CODE_ID = dt.Rows[i]["Code ID"].ToString();
+
+                        //  _arraylist.Add("");
+                        objBillProcedureCodeEO.I_GROUP_AMOUNT_ID = "";
+                        //_arraylist.Add("");
+                        objBillProcedureCodeEO.FLT_GROUP_AMOUNT = "";
+
+                        //_arraylist.Add(dt.Rows[i]["SZ_PATIENT_TREATMENT_ID"].ToString());
+                        objBillProcedureCodeEO.SZ_PATIENT_TREATMENT_ID = dt.Rows[i]["SZ_PATIENT_TREATMENT_ID"].ToString();
+
+                        //_bill_Sys_BillTransaction.SaveTransactionData(_arraylist);--CALL
+                        _objALBillProcedureCodeEO.Add(objBillProcedureCodeEO);
+
+
+                        //_bill_Sys_BillTransaction = new Bill_Sys_BillTransaction_BO();
+                        //  _bill_Sys_BillTransaction.DeleteTransactionDiagnosis(billno);//CALL
+
+
+
+                        ArrayList objALBillDiagnosisCodeEO = new ArrayList();
+                        if (dset0.Tables[0].Rows.Count > 0)
+                        {
+                            for (int j = 0; j < dset0.Tables[0].Rows.Count; j++)
+                            {
+                                //_bill_Sys_BillTransaction = new Bill_Sys_BillTransaction_BO();
+                                //  _arraylist = new ArrayList();
+                                // _arraylist.Add(dset0.Tables[0].Rows[j]["CODE"].ToString());
+                                //  _arraylist.Add(billno);
+
+                                BillDiagnosisCodeEO objBillDiagnosisCodeEO = new BillDiagnosisCodeEO();
+                                objBillDiagnosisCodeEO.SZ_DIAGNOSIS_CODE_ID = dset0.Tables[0].Rows[j]["CODE"].ToString();
+                                objALBillDiagnosisCodeEO.Add(objBillDiagnosisCodeEO);
+                                //_bill_Sys_BillTransaction.SaveTransactionDiagnosis(_arraylist);
+                            }
+                        }
+                        BillTransactionDAO objBT_DAO = new BillTransactionDAO();
+                        Result objResult = new Result();
+                        objResult = objBT_DAO.AddBillTransaction(p_objBillTranEO, _DAO_NOTES_EO, _objALBillProcedureCodeEO, objALBillDiagnosisCodeEO);
+                        if (objResult.msg_code == "ERR")
+                        {
+                            Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "mm", "<script language='javascript'>alert('" + objResult.msg + "');</script>");
+                        }
+                        else
+                        {
+                            billno = objResult.bill_no;
+
+                            if (((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY == true && ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID != ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID)
+                            {
+                                _bill_Sys_BillTransaction = new Bill_Sys_BillTransaction_BO();
+                                string sz_speciality = _bill_Sys_BillTransaction.GetDocSpeciality(billno);
+                                //GenerateAddedBillPDF(billno, _bill_Sys_BillTransaction.GetDoctorSpeciality(billno, ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID));
+                                GenerateAddedBillPDF(billno, sz_speciality);
+                                arrbill.Add(dt.Rows[i]["CASE NO"].ToString());
+                            }
+                            else
+                            {
+                                _bill_Sys_BillTransaction = new Bill_Sys_BillTransaction_BO();
+                                string sz_speciality = _bill_Sys_BillTransaction.GetDocSpeciality(billno);
+                                //GenerateAddedBillPDF(billno, _bill_Sys_BillTransaction.GetDoctorSpeciality(billno, ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID));
+                                GenerateAddedBillPDF(billno, sz_speciality);
+                                arrbill.Add(dt.Rows[i]["CASE NO"].ToString());
+                            }
+                        }
+                    }
+                    else
+                    {
+
+                        //objArr = new ArrayList();
+                        arrdiag.Add(dt.Rows[i]["CASE NO"].ToString());
+                        //Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "mm", "<script language='javascript'>alert('No diagnosis code assign for the patient');</script>");
+                    }
+                }
+                else if (cnt > 1)
+                {
+                    log.Debug("entering cnt>1 -" + cnt.ToString());
+                    txtCaseID.Text = dt.Rows[i]["SZ_CASE_ID"].ToString();
+                    txtReadingDocID.Text = dt.Rows[i]["Doctor ID"].ToString();
+                    txtPatientID.Text = dt.Rows[i]["SZ_PATIENT_ID"].ToString();
+                    txtCaseNo.Text = dt.Rows[i]["CASE NO"].ToString();
+                    sz_compID = dt.Rows[i]["Company ID"].ToString();
+
+                    Bill_Sys_CaseObject obj1 = new Bill_Sys_CaseObject();
+                    obj1.SZ_CASE_ID = txtCaseID.Text;
+                    obj1.SZ_COMAPNY_ID = sz_compID;
+                    obj1.SZ_CASE_NO = txtCaseNo.Text;
+                    obj1.SZ_PATIENT_ID = txtPatientID.Text;
+                    Session["CASE_OBJECT"] = obj1;
+
+                    if (((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY == true && ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID != ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID)
+                    {
+                        txtRefCompanyID.Text = ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID;
+                    }
+                    else
+                    {
+                        txtRefCompanyID.Text = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+                    }
+
+
+                    dset0 = new DataSet();
+                    dset0 = _bill_Sys_AssociateDiagnosisCodeBO.GetDoctorDiagnosisCode(dt.Rows[i]["SZ_PROCEDURE_GROUP_ID"].ToString(), txtCaseID.Text, "GET_DOCTOR_DIAGNOSIS_CODE");
+                    if (dset0.Tables[0].Rows.Count > 0)
+                    {
+                        //arrlst = new ArrayList();
+                        //_bill_Sys_BillTransaction = new Bill_Sys_BillTransaction_BO();
+                        //objreport = new Bill_Sys_ReportBO();
+                        //arrlst.Add(txtCaseID.Text);
+                        //arrlst.Add(txtBillDate.Text);
+                        //arrlst.Add(txtCompanyID.Text);
+                        //arrlst.Add(dtble.Rows[0]["CODE"].ToString());
+                        //arrlst.Add("0");
+                        //arrlst.Add(txtReadingDocID.Text);
+                        //arrlst.Add(txtRefCompanyID.Text);
+                        //arrlst.Add(((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_ID);
+                        ////TUSHAR:- To Save Procedure Group Id In Txn_Bill_Transaction Table
+                        //arrlst.Add(Session["Procedure_Code"].ToString());
+                        ////End
+                        //objreport.InsertBillTransactionData(arrlst);--CALL
+
+
+                        BillTransactionEO p_objBillTranEO = new BillTransactionEO();
+                        p_objBillTranEO.SZ_CASE_ID = txtCaseID.Text;
+                        p_objBillTranEO.DT_BILL_DATE = Convert.ToDateTime(txtBillDate.Text);
+                        p_objBillTranEO.SZ_COMPANY_ID = txtCompanyID.Text;
+                        p_objBillTranEO.SZ_DOCTOR_ID = dtble.Rows[0]["CODE"].ToString();
+                        p_objBillTranEO.SZ_TYPE = "0";
+                        p_objBillTranEO.SZ_READING_DOCTOR_ID = txtReadingDocID.Text;
+                        p_objBillTranEO.SZ_Referring_Company_Id = txtRefCompanyID.Text;
+                        p_objBillTranEO.SZ_USER_ID = ((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_ID;
+                        p_objBillTranEO.SZ_PROCEDURE_GROUP_ID = Session["Procedure_Code"].ToString();
+
+
+
+
+                        //_bill_Sys_BillingCompanyDetails_BO = new Bill_Sys_BillingCompanyDetails_BO();
+                        //billno = _bill_Sys_BillingCompanyDetails_BO.GetLatestBillID(txtCompanyID.Text.ToString());
+
+                        _DAO_NOTES_EO = new DAO_NOTES_EO();
+                        _DAO_NOTES_EO.SZ_MESSAGE_TITLE = "BILL_CREATED";
+                        _DAO_NOTES_EO.SZ_ACTIVITY_DESC = billno;
+                        log.Debug("Bill Created - " + billno.ToString());
+                        _DAO_NOTES_BO = new DAO_NOTES_BO();
+                        _DAO_NOTES_EO.SZ_USER_ID = ((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_ID;
+                        _DAO_NOTES_EO.SZ_CASE_ID = txtCaseID.Text;
+                        _DAO_NOTES_EO.SZ_COMPANY_ID = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+                        //  _DAO_NOTES_BO.SaveActivityNotes(_DAO_NOTES_EO);--CALL
+
+                        objreport = new Bill_Sys_ReportBO();
+                        arrlst = new ArrayList();
+                        arrlst.Add(txtPatientID.Text);
+                        arrlst.Add(dt.Rows[i]["Code ID"].ToString());
+                        arrlst.Add(txtCompanyID.Text);
+                        arrlst.Add(dtble.Rows[0]["CODE"].ToString());
+                        // PatientTreatmentID = objreport.GetTreatmentID(arrlst);
+
+                        objArr = new ArrayList();
+                        objArr.Add(dt.Rows[i]["Procedure code"].ToString());
+                        string sz_description3 = dt.Rows[i]["Description"].ToString();
+                        if (sz_description3.Contains("&quot;"))
+                        {
+                            sz_description3 = sz_description3.Replace("&quot;", "\"");
+                        } if (sz_description3.Contains("&amp;"))
+                        {
+                            sz_description3 = sz_description3.Replace("&amp;", "&");
+                        }
+                        objArr.Add(sz_description3);
+                        objArr.Add(txtCompanyID.Text);
+                        objreport = new Bill_Sys_ReportBO();
+                        dset1 = new DataSet();
+                        dset1 = objreport.GetProcCodeDetails(objArr);
+                        ArrayList _objALBillProcedureCodeEO = new ArrayList();
+                        for (int k = 0; k < cnt; k++)
+                        {
+                            //
+                            //if ((k + i) < cnt)
+                            //{
+                            //    if (dt.Rows[k + i]["SZ_PROCEDURE_GROUP_ID"].ToString() == Session["Procedure_Code"].ToString())
+                            //    {
+                            //
+                            objArr = new ArrayList();
+                            objArr.Add(dt.Rows[k + i]["Procedure code"].ToString());
+                            string sz_Description = dt.Rows[k + i]["Description"].ToString();
+                            if (sz_Description.Contains("&quot;"))
+                            {
+                                sz_Description = sz_Description.Replace("&quot;", "\"");
+                            } if (sz_Description.Contains("&amp;"))
+                            {
+                                sz_Description = sz_Description.Replace("&amp;", "&");
+                            }
+
+                            objArr.Add(sz_Description);
+                            objArr.Add(txtCompanyID.Text);
+                            objreport = new Bill_Sys_ReportBO();
+                            dset1 = new DataSet();
+                            dset1 = objreport.GetProcCodeDetails(objArr);
+                            BillProcedureCodeEO objBillProcedureCodeEO = new BillProcedureCodeEO();
+
+
+                            //  _arraylist = new ArrayList();
+                            // _arraylist.Add(dset1.Tables[0].Rows[0]["PROC_ID"].ToString());
+                            objBillProcedureCodeEO.SZ_PROCEDURE_ID = dset1.Tables[0].Rows[0]["PROC_ID"].ToString();
+
+                            // _arraylist.Add(dset1.Tables[0].Rows[0]["AMT"].ToString());
+                            objBillProcedureCodeEO.FL_AMOUNT = dset1.Tables[0].Rows[0]["AMT"].ToString();
+                            //_arraylist.Add(billno);
+                            objBillProcedureCodeEO.SZ_BILL_NUMBER = billno;
+
+                            //_arraylist.Add(dt.Rows[k + i]["DATE OF SERVICE"].ToString());
+                            objBillProcedureCodeEO.DT_DATE_OF_SERVICE = Convert.ToDateTime(dt.Rows[k + i]["DATE OF SERVICE"].ToString());
+
+                            //  _arraylist.Add(((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID);
+                            objBillProcedureCodeEO.SZ_COMPANY_ID = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+
+
+                            if (((Bill_Sys_SystemObject)Session["SYSTEM_OBJECT"]).SZ_EMG_BILL == "True")
+                            {
+                                if (dt.Rows[k + i]["SZ_STUDY_NUMBER"].ToString() == "" || dt.Rows[k + i]["SZ_STUDY_NUMBER"].ToString() == null || dt.Rows[k + i]["SZ_STUDY_NUMBER"].ToString() == "&nbsp;")
+                                {
+                                    //_arraylist.Add("1");
+                                    objBillProcedureCodeEO.I_UNIT = "1";
+                                }
+                                else
+                                {
+
+                                    // _arraylist.Add(dt.Rows[k + i]["SZ_STUDY_NUMBER"].ToString());
+                                    objBillProcedureCodeEO.I_UNIT = dt.Rows[k + i]["SZ_STUDY_NUMBER"].ToString();
+                                }
+
+                            }
+                            else
+                            {
+                                //  _arraylist.Add("1");
+                                objBillProcedureCodeEO.I_UNIT = "1";
+                            }
+
+                            //_arraylist.Add(dset1.Tables[0].Rows[0]["AMT"].ToString());
+                            objBillProcedureCodeEO.FLT_PRICE = dset1.Tables[0].Rows[0]["AMT"].ToString();
+
+                            //   _arraylist.Add("1");
+                            objBillProcedureCodeEO.FLT_FACTOR = "1";
+
+                            //_arraylist.Add(dset1.Tables[0].Rows[0]["AMT"].ToString());
+                            objBillProcedureCodeEO.DOCT_AMOUNT = dset1.Tables[0].Rows[0]["AMT"].ToString();
+
+                            //   _arraylist.Add(dset1.Tables[0].Rows[0]["AMT"].ToString());
+                            objBillProcedureCodeEO.PROC_AMOUNT = dset1.Tables[0].Rows[0]["AMT"].ToString();
+
+                            //_arraylist.Add(dtble.Rows[0]["CODE"].ToString());
+                            objBillProcedureCodeEO.SZ_DOCTOR_ID = dtble.Rows[0]["CODE"].ToString();
+
+                            //_arraylist.Add(dt.Rows[k + i]["SZ_CASE_ID"].ToString());
+                            objBillProcedureCodeEO.SZ_CASE_ID = dt.Rows[k + i]["SZ_CASE_ID"].ToString();
+
+                            //_arraylist.Add(dt.Rows[k + i]["Code ID"].ToString());
+                            objBillProcedureCodeEO.SZ_TYPE_CODE_ID = dt.Rows[k + i]["Code ID"].ToString();
+
+                            //_arraylist.Add("");
+                            objBillProcedureCodeEO.I_GROUP_AMOUNT_ID = "";
+
+                            //  _arraylist.Add("");
+                            objBillProcedureCodeEO.FLT_GROUP_AMOUNT = "";
+
+                            //_arraylist.Add(PatientTreatmentID);
+                            //_arraylist.Add(dt.Rows[k + i]["SZ_PATIENT_TREATMENT_ID"].ToString());
+                            objBillProcedureCodeEO.SZ_PATIENT_TREATMENT_ID = dt.Rows[k + i]["SZ_PATIENT_TREATMENT_ID"].ToString();
+
+                            // _bill_Sys_BillTransaction.SaveTransactionData(_arraylist); --CAll
+                            // c = c + 1;
+                            //    }
+                            //}
+                            _objALBillProcedureCodeEO.Add(objBillProcedureCodeEO);
+                        }
+
+                        //_bill_Sys_BillTransaction = new Bill_Sys_BillTransaction_BO();
+                        //_bill_Sys_BillTransaction.DeleteTransactionDiagnosis(billno); --CALL
+                        ArrayList objALBillDiagnosisCodeEO = new ArrayList();
+                        if (dset0.Tables[0].Rows.Count > 0)
+                        {
+                            for (int j = 0; j < dset0.Tables[0].Rows.Count; j++)
+                            {
+                                //_bill_Sys_BillTransaction = new Bill_Sys_BillTransaction_BO();
+                                //_arraylist = new ArrayList();
+                                //_arraylist.Add(dset0.Tables[0].Rows[j]["CODE"].ToString());
+                                //_arraylist.Add(billno);
+
+                                BillDiagnosisCodeEO objBillDiagnosisCodeEO = new BillDiagnosisCodeEO();
+                                objBillDiagnosisCodeEO.SZ_DIAGNOSIS_CODE_ID = dset0.Tables[0].Rows[j]["CODE"].ToString();
+                                objALBillDiagnosisCodeEO.Add(objBillDiagnosisCodeEO);
+                                //_bill_Sys_BillTransaction.SaveTransactionDiagnosis(_arraylist); --Call
+                            }
+                        }
+                        BillTransactionDAO objBT_DAO = new BillTransactionDAO();
+                        Result objResult = new Result();
+                        objResult = objBT_DAO.AddBillTransaction(p_objBillTranEO, _DAO_NOTES_EO, _objALBillProcedureCodeEO, objALBillDiagnosisCodeEO);
+                        if (objResult.msg_code == "ERR")
+                        {
+                            Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "mm", "<script language='javascript'>alert('" + objResult.msg + "');</script>");
+                        }
+                        else
+                        {
+                            billno = objResult.bill_no;
+                            if (((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY == true && ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID != ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID)
+                            {
+                                _bill_Sys_BillTransaction = new Bill_Sys_BillTransaction_BO();
+                                string sz_speciality = _bill_Sys_BillTransaction.GetDocSpeciality(billno);
+                                //GenerateAddedBillPDF(billno, _bill_Sys_BillTransaction.GetDoctorSpeciality(billno, ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID));
+                                GenerateAddedBillPDF(billno, sz_speciality);
+                                arrbill.Add(dt.Rows[i]["CASE NO"].ToString());
+                            }
+                            else
+                            {
+                                _bill_Sys_BillTransaction = new Bill_Sys_BillTransaction_BO();
+                                string sz_speciality = _bill_Sys_BillTransaction.GetDocSpeciality(billno);
+                                //GenerateAddedBillPDF(billno, _bill_Sys_BillTransaction.GetDoctorSpeciality(billno, ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID));
+                                GenerateAddedBillPDF(billno, sz_speciality);
+                                arrbill.Add(dt.Rows[i]["CASE NO"].ToString());
+                            }
+                        }
+
+                    }
+                    else
+                    {
+
+                        //objArr = new ArrayList();
+                        arrdiag.Add(dt.Rows[i]["CASE NO"].ToString());
+                        //Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "mm", "<script language='javascript'>alert('No diagnosis code assign for the patient');</script>");
+                    }
+                    // i = cnt - 1;
+                    i += cnt - 1;
+
+                }
+
+            }
+            string Billno = "";
+            if (arrbill.Count > 0)
+            {
+
+                for (int l = 0; l < arrbill.Count; l++)
+                {
+                    if (l == arrbill.Count - 1)
+                    {
+                        Billno += arrbill[l].ToString();
+                    }
+                    else
+                    {
+                        Billno += arrbill[l].ToString() + ", ";
+                    }
+
+                }
+                // Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "mm", "<script language='javascript'>alert(' create bill for  case id');</script>"); 
+                Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "mm", "<script language='javascript'>alert('Bill Created Successfully For " + Billno + " CaseNo');</script>");
+
+            }
+            string patientcnt = "";
+            if (arrdiag.Count > 0)
+            {
+                for (int l = 0; l < arrdiag.Count; l++)
+                {
+                    patientcnt += arrdiag[l].ToString() + ", ";
+                }
+
+                //lblMsg.Text = "Cannot create bill for '" + patientcnt + "' as no diagnosis code assign for the patient";
+                //lblMsg.Visible = true;
+                usrMessage.PutMessage("Cannot create bill for '" + patientcnt + "' as no diagnosis code assign for the patient");
+                usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_UserMessage);
+                usrMessage.Show();
+                //Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "mm", "<script language='javascript'>alert('Cannot create bill for '" + patientcnt + "' as no diagnosis code assign for the patient');</script>");
+            }
+            log.Debug("exiting AddBillDiffCase() -");
+            grdAllReports.XGridBindSearch();
+        }
+        catch (Exception ex)
+        {
+            log.Debug("error AddBillDiffCase() -" + ex.ToString());
+            usrMessage.PutMessage(ex.ToString());
+            usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_ErrorMessage);
+            usrMessage.Show();
+        }
+    }
+    protected void btnSelectedBill_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            Session["PERPROC_PATIENT"] = "YES";
+            ArrayList arrlst = new ArrayList();
+
+            for (int j = 0; j < grdAllReports.Rows.Count; j++)
+            {
+
+                CheckBox chkDelete1 = (CheckBox)grdAllReports.Rows[j].FindControl("chkSelect");
+                if (chkDelete1.Checked == true)
+                {
+                    if (grdAllReports.DataKeys[j]["Insurance_Company"].ToString() == "&nbsp;" || grdAllReports.DataKeys[j]["Insurance_Company"].ToString() == "" || grdAllReports.DataKeys[j]["Insurance_Address"].ToString() == "&nbsp;" || grdAllReports.DataKeys[j]["Insurance_Address"].ToString() == "")
+                    // if (item.Cells[20].Text == "&nbsp;" || item.Cells[21].Text == "&nbsp;" || item.Cells[22].Text == "&nbsp;")
+                    {
+                        arrlst.Add(grdAllReports.DataKeys[j]["CASE_NO"].ToString());
+                    }
+                }
+            }
+            string patientcnt = "";
+            string repeat = "";
+            string repeat1 = "";
+            if (arrlst.Count > 0)
+            {
+                for (int i = 0; i < arrlst.Count; i++)
+                {
+                    int cnt = 0;
+                    repeat = arrlst[i].ToString();
+                    patientcnt += arrlst[i].ToString() + ",";
+                    for (int j = 0; j < arrlst.Count; j++)
+                    {
+                        if (repeat == arrlst[j].ToString())
+                        {
+                            cnt++;
+                        }
+                    }
+                    if (cnt > 1)
+                    {
+                        i += cnt - 1;
+                    }
+                }
+                usrMessage.PutMessage("You do not have  an insurance company or an insurance company address added to these Case NO: '" + patientcnt + "'.You cannot proceed furher");
+                usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_UserMessage);
+                usrMessage.Show();
+                //ScriptManager.RegisterClientScriptBlock(this, GetType(), "Done", "alert('You do not have  an insurance company or an insurance company address added to these Case NO: '" + patientcnt + "'.You cannot proceed furher');", true);
+                //popupmsg.InnerHtml = "You do not have  an insurance company or an insurance company address added to these Case NO: '" + patientcnt + "'.You cannot proceed furher";
+                //Page.RegisterStartupScript("mm", "<script language='javascript'>openExistsPage1();</script>");
+            }
+            else
+            {
+                Page.RegisterStartupScript("ss", "<script language='javascript'>openExistsPage();</script>");
+                ArrayList arrClaim = new ArrayList();
+                for (int j = 0; j < grdAllReports.Rows.Count; j++)
+                {
+
+                    CheckBox chkDelete1 = (CheckBox)grdAllReports.Rows[j].FindControl("chkSelect");
+                    if (chkDelete1.Checked == true)
+                    {
+                        if (grdAllReports.DataKeys[j]["CLAIM_NO"].ToString() == "&nbsp;" || grdAllReports.DataKeys[j]["CLAIM_NO"].ToString() == "")
+                        {
+                            arrClaim.Add(grdAllReports.DataKeys[j]["CASE_NO"].ToString());
+                        }
+                    }
+                }
+                if (arrClaim.Count > 0)
+                {
+                    for (int i = 0; i < arrClaim.Count; i++)
+                    {
+                        int cnt = 0;
+                        repeat1 = arrClaim[i].ToString();
+                        patientcnt += arrClaim[i].ToString() + ",";
+                        for (int j = 0; j < arrClaim.Count; j++)
+                        {
+                            if (repeat1 == arrClaim[j].ToString())
+                            {
+                                cnt++;
+                            }
+                        }
+                        if (cnt > 1)
+                        {
+                            i += cnt - 1;
+                        }
+                    }
+                    lblmodal.Text = "You do not have a claim number to these Case NO: '" + patientcnt + "'.Do You want to proceed furher";
+                    ModalPopupExtender2.Show();
+                }
+                else
+                {
+                    AddBillSameCase();
+                    grdAllReports.XGridBindSearch();
+                }
+
+            }
+
+
+
+            //AddBillSameCase();
+            //grdAllReports.XGridBindSearch();
+        }
+        catch (Exception ex)
+        {
+            usrMessage.PutMessage(ex.ToString());
+            usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_ErrorMessage);
+            usrMessage.Show();
+        }
+        finally
+        {
+            Session["Procedure_Code"] = null;
+        }
+    }
+    public void AddBillSameCase()
+    {
+        try
+        {
+            //lblMsg.Visible = false;
+            //lblMsg.Text = "";
+            string sz_compID = "";
+            DataSet dset0;
+            DataSet dset1;
+            ArrayList arrbill = new ArrayList();
+            ArrayList arrlst;
+            ArrayList objArr;
+            ArrayList _arraylist;
+            Bill_Sys_ReportBO objreport;
+            DataTable dtble = new DataTable();
+            string patientID = "";
+            int flag = 0;
+            int _insertFlag = 0;
+            string billno = "";
+            string PatientTreatmentID = "";
+
+            //Added Flag And Procedure Group :-Tushar
+            int flag1 = 0;
+            string Proc_Group_Id = "";
+            //end
+
+            for (int i = 0; i < grdAllReports.Rows.Count; i++)
+            {
+
+                CheckBox chkDelete1 = (CheckBox)grdAllReports.Rows[i].FindControl("chkSelect");
+                if (chkDelete1.Checked)
+                {
+                    patientID = grdAllReports.DataKeys[i]["SZ_PATIENT_ID"].ToString();
+                }
+            }
+
+
+            for (int j = 0; j < grdAllReports.Rows.Count; j++)
+            {
+
+                CheckBox chkDelete1 = (CheckBox)grdAllReports.Rows[j].FindControl("chkSelect");
+                if (chkDelete1.Checked)
+                {
+                    if (patientID == grdAllReports.DataKeys[j]["SZ_PATIENT_ID"].ToString())
+                    {
+                        flag = 1;
+                    }
+                    else
+                    {
+                        flag = 2;
+                        break;
+                    }
+                }
+            }
+            if (flag == 2)
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "mm", "<script language='javascript'>alert('Select visits for same patient');</script>");
+                //lblMsg.Text = "Select visits for same patient";
+                //lblMsg.Visible = false;
+                usrMessage.PutMessage("Select visits for same patient");
+                usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_UserMessage);
+                usrMessage.Show();
+
+            }
+            else if (flag == 1)
+            {
+                ArrayList arrlst1 = new ArrayList();
+                for (int i = 0; i < grdAllReports.Rows.Count; i++)
+                {
+
+                    CheckBox chkDelete1 = (CheckBox)grdAllReports.Rows[i].FindControl("chkSelect");
+                    if (chkDelete1.Checked)
+                    {
+
+                        if ((grdAllReports.DataKeys[i]["Insurance_Company"].ToString() == "&nbsp;") || (grdAllReports.DataKeys[i]["Insurance_Address"].ToString() == "&nbsp;") || (grdAllReports.DataKeys[i]["CLAIM_NO"].ToString() == "&nbsp;"))
+                        {
+                            arrlst1.Add(grdAllReports.DataKeys[i]["CASE_NO"].ToString());
+                        }
+
+                    }
+                }
+                string patientcnt = "";
+                string repeat = "";
+                if (arrlst1.Count > 0 && PopUpFlag == "true")
+                {
+                    for (int i = 0; i < arrlst1.Count; i++)
+                    {
+                        int cnt = 0;
+                        repeat = arrlst1[i].ToString();
+                        patientcnt += arrlst1[i].ToString() + ",";
+                        for (int j = 0; j < arrlst1.Count; j++)
+                        {
+                            if (repeat == arrlst1[j].ToString())
+                            {
+                                cnt++;
+                            }
+                        }
+                        if (cnt > 1)
+                        {
+                            i += cnt - 1;
+                        }
+                    }
+                    msgPatientExists.InnerText = "You do not have a claim number or an insurance company or an insurance company address added to these Case NO '" + patientcnt + "'. You cannot proceed furher.";
+                    Page.RegisterStartupScript("mm", "<script language='javascript'>openExistsPage();</script>");
+                    //lblMsg.Text = "You do not have a claim number";
+                    //lblMsg.Visible = false;
+                    usrMessage.PutMessage("You do not have a claim number");
+                    usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_UserMessage);
+                    usrMessage.Show();
+                }
+                else
+                {
+                    PopUpFlag = "true";
+                    //to check weather procedure group is same or not:-Tushar
+                    for (int i = 0; i < grdAllReports.Rows.Count; i++)
+                    {
+
+                        CheckBox chkDelete1 = (CheckBox)grdAllReports.Rows[i].FindControl("chkSelect");
+                        if (chkDelete1.Checked)
+                        {
+                            Proc_Group_Id = grdAllReports.DataKeys[i]["SZ_PROCEDURE_GROUP_ID"].ToString();
+                            Session["Procedure_Code"] = Proc_Group_Id;
+                        }
+                    }
+
+                    for (int j = 0; j < grdAllReports.Rows.Count; j++)
+                    {
+                        CheckBox chkSelect = (CheckBox)grdAllReports.Rows[j].FindControl("chkSelect");
+                        if (chkSelect.Checked == true)
+                        {
+                            if (Proc_Group_Id == grdAllReports.DataKeys[j]["SZ_PROCEDURE_GROUP_ID"].ToString())
+                            {
+                                flag1 = 1;
+                            }
+                            else
+                            {
+                                flag1 = 2;
+                                break;
+                            }
+                        }
+                    }
+
+                    if (flag1 == 2)
+                    {
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "mm", "<script language='javascript'>alert('Select visits for same Speciality');</script>");
+                        //lblMsg.Text = "Select visits for same Speciality";
+                        //lblMsg.Visible = false;
+                        usrMessage.PutMessage("Select visits for same Speciality");
+                        usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_UserMessage);
+                        usrMessage.Show();
+                    }
+
+                    else
+                    {
+                        //end Of Code
+
+                        objreport = new Bill_Sys_ReportBO();
+                        dtble = objreport.GetDoctorID(txtCompanyID.Text);
+                        Bill_Sys_AssociateDiagnosisCodeBO _bill_Sys_AssociateDiagnosisCodeBO = new Bill_Sys_AssociateDiagnosisCodeBO();
+
+                        //if (((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY == true)
+                        //{
+                        //    txtRefCompanyID.Text = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+                        //}
+
+                        for (int i = 0; i < grdAllReports.Rows.Count; i++)
+                        {
+                            CheckBox chkSelect = (CheckBox)grdAllReports.Rows[i].FindControl("chkSelect");
+                            if (chkSelect.Checked == true)
+                            {
+
+                                _insertFlag = 1;
+                                txtCaseID.Text = grdAllReports.DataKeys[i]["SZ_CASE_ID"].ToString();
+                                txtReadingDocID.Text = grdAllReports.DataKeys[i]["DOCTOR_ID"].ToString();
+                                txtPatientID.Text = grdAllReports.DataKeys[i]["SZ_PATIENT_ID"].ToString();
+                                txtCaseNo.Text = grdAllReports.DataKeys[i]["CASE_NO"].ToString();
+                                sz_compID = grdAllReports.DataKeys[i]["Company_ID"].ToString();
+                                //txtTypeCodeID.Text = ditem.Cells[11].Text;
+                                //objArr = new ArrayList();
+                                //objArr.Add(ditem.Cells[8].Text);
+                                //objArr.Add(ditem.Cells[9].Text);
+                                //objArr.Add(txtCompanyID.Text);
+                                //objreport = new Bill_Sys_ReportBO();
+                                //dset1 = new DataSet();
+                                //dset1 = objreport.GetProcCodeDetails(objArr);
+
+                                //_arraylist = new ArrayList();
+                                //_arraylist.Add(dset1.Tables[0].Rows[0]["PROC_ID"].ToString());
+                                //_arraylist.Add(dset1.Tables[0].Rows[0]["AMT"].ToString());
+                                //_arraylist.Add(billno);
+                                //_arraylist.Add(ditem.Cells[5].Text);
+                                //_arraylist.Add(txtCompanyID.Text);
+                                //_arraylist.Add("1");
+                                //_arraylist.Add(dset1.Tables[0].Rows[0]["AMT"].ToString());
+                                //_arraylist.Add("1");
+                                //_arraylist.Add(dset1.Tables[0].Rows[0]["AMT"].ToString());
+                                //_arraylist.Add(dset1.Tables[0].Rows[0]["AMT"].ToString());
+                                //_arraylist.Add(dtble.Rows[0]["CODE"].ToString());
+                                //_arraylist.Add(ditem.Cells[1].Text);
+                                //_arraylist.Add(ditem.Cells[11].Text);
+                                //_arraylist.Add("");
+                                //_arraylist.Add("");
+                                //_bill_Sys_BillTransaction.SaveTransactionData(_arrayList);
+                            }
+                        }
+
+                        Bill_Sys_CaseObject obj1 = new Bill_Sys_CaseObject();
+                        obj1.SZ_CASE_ID = txtCaseID.Text;
+                        obj1.SZ_COMAPNY_ID = sz_compID;
+                        obj1.SZ_CASE_NO = txtCaseNo.Text;
+                        obj1.SZ_PATIENT_ID = txtPatientID.Text;
+                        Session["CASE_OBJECT"] = obj1;
+
+                        if (((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY == true && ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID != ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID)
+                        {
+                            txtRefCompanyID.Text = ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID;
+                        }
+                        else
+                        {
+                            txtRefCompanyID.Text = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+                        }
+
+                        if (_insertFlag == 1)
+                        {
+                            dset0 = new DataSet();
+
+                            dset0 = _bill_Sys_AssociateDiagnosisCodeBO.GetDoctorDiagnosisCode(Proc_Group_Id, txtCaseID.Text, "GET_DOCTOR_DIAGNOSIS_CODE");
+                            if (dset0.Tables[0].Rows.Count > 0)
+                            {
+                                arrlst = new ArrayList();
+                                _bill_Sys_BillTransaction = new Bill_Sys_BillTransaction_BO();
+                                objreport = new Bill_Sys_ReportBO();
+                                arrlst.Add(txtCaseID.Text);
+                                arrlst.Add(txtBillDate.Text);
+                                arrlst.Add(txtCompanyID.Text);
+                                arrlst.Add(dtble.Rows[0]["CODE"].ToString());
+                                arrlst.Add("0");
+                                arrlst.Add(txtReadingDocID.Text);
+                                arrlst.Add(txtRefCompanyID.Text);
+                                arrlst.Add(((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_ID);
+                                //TUSHAR:- To Save Procedure Group Id In Txn_Bill_Transaction Table
+                                arrlst.Add(Session["Procedure_Code"].ToString());
+                                //End
+                                objreport.InsertBillTransactionData(arrlst);
+
+
+                                _bill_Sys_BillingCompanyDetails_BO = new Bill_Sys_BillingCompanyDetails_BO();
+                                billno = _bill_Sys_BillingCompanyDetails_BO.GetLatestBillID(txtCompanyID.Text.ToString());
+
+                                _DAO_NOTES_EO = new DAO_NOTES_EO();
+                                _DAO_NOTES_EO.SZ_MESSAGE_TITLE = "BILL_CREATED";
+                                _DAO_NOTES_EO.SZ_ACTIVITY_DESC = billno;
+
+                                _DAO_NOTES_BO = new DAO_NOTES_BO();
+                                _DAO_NOTES_EO.SZ_USER_ID = ((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_ID;
+                                _DAO_NOTES_EO.SZ_CASE_ID = ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_CASE_ID;
+                                _DAO_NOTES_EO.SZ_COMPANY_ID = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+                                _DAO_NOTES_BO.SaveActivityNotes(_DAO_NOTES_EO);
+
+                                for (int i = 0; i < grdAllReports.Rows.Count; i++)
+                                {
+                                    PatientTreatmentID = "";
+                                    arrlst = new ArrayList();
+                                    CheckBox chkSelect = (CheckBox)grdAllReports.Rows[i].FindControl("chkSelect");
+                                    if (chkSelect.Checked == true)
+                                    {
+
+                                        objreport = new Bill_Sys_ReportBO();
+                                        arrlst = new ArrayList();
+                                        arrlst.Add(txtPatientID.Text);
+                                        arrlst.Add(grdAllReports.DataKeys[i]["SZ_CODE_ID"].ToString());
+                                        arrlst.Add(txtCompanyID.Text);
+                                        arrlst.Add(dtble.Rows[0]["CODE"].ToString());
+                                        PatientTreatmentID = objreport.GetTreatmentID(arrlst);
+
+                                        objArr = new ArrayList();
+
+                                        objArr.Add(grdAllReports.Rows[i].Cells[9].Text.ToString());
+                                        string sz_description1 = grdAllReports.Rows[i].Cells[10].Text.ToString();
+                                        if (sz_description1.Contains("&quot;"))
+                                        {
+                                            sz_description1 = sz_description1.Replace("&quot;", "\"");
+                                        } if (sz_description1.Contains("&amp;"))
+                                        {
+                                            sz_description1 = sz_description1.Replace("&amp;", "&");
+                                        }
+                                        objArr.Add(sz_description1);
+                                        objArr.Add(txtCompanyID.Text);
+                                        objreport = new Bill_Sys_ReportBO();
+                                        dset1 = new DataSet();
+                                        dset1 = objreport.GetProcCodeDetails(objArr);
+
+                                        _arraylist = new ArrayList();
+                                        _arraylist.Add(dset1.Tables[0].Rows[0]["PROC_ID"].ToString());
+                                        _arraylist.Add(dset1.Tables[0].Rows[0]["AMT"].ToString());
+                                        _arraylist.Add(billno);
+                                        _arraylist.Add(grdAllReports.DataKeys[i]["DT_DATE_OF_SERVICE"].ToString());
+                                        _arraylist.Add(((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID);
+                                        if (((Bill_Sys_SystemObject)Session["SYSTEM_OBJECT"]).SZ_EMG_BILL == "True")
+                                        {
+
+                                            //if (ditem1.Cells[27].Text.ToString() == "" || ditem1.Cells[27].Text.ToString() == null || ditem1.Cells[27].Text.ToString() == "&nbsp;")
+                                            if ((grdAllReports.DataKeys[i]["SZ_STUDY_NUMBER"].ToString() == "") || (grdAllReports.DataKeys[i]["SZ_STUDY_NUMBER"].ToString() == null) || (grdAllReports.DataKeys[i]["SZ_STUDY_NUMBER"].ToString() == "&nbsp;"))
+                                            {
+                                                _arraylist.Add("1");
+                                            }
+                                            else
+                                            {
+                                                _arraylist.Add(grdAllReports.DataKeys[i]["SZ_STUDY_NUMBER"].ToString());
+                                            }
+
+                                        }
+                                        else
+                                        {
+                                            _arraylist.Add("1");
+                                        }
+                                        _arraylist.Add(dset1.Tables[0].Rows[0]["AMT"].ToString());
+                                        _arraylist.Add("1");
+                                        _arraylist.Add(dset1.Tables[0].Rows[0]["AMT"].ToString());
+                                        _arraylist.Add(dset1.Tables[0].Rows[0]["AMT"].ToString());
+                                        _arraylist.Add(dtble.Rows[0]["CODE"].ToString());
+                                        _arraylist.Add(grdAllReports.DataKeys[i]["SZ_CASE_ID"].ToString());
+                                        _arraylist.Add(grdAllReports.DataKeys[i]["SZ_CODE_ID"].ToString());
+                                        _arraylist.Add("");
+                                        _arraylist.Add("");
+                                        //_arraylist.Add(PatientTreatmentID);
+                                        _arraylist.Add(grdAllReports.DataKeys[i]["SZ_PATIENT_TREATMENT_ID"].ToString());
+                                        _bill_Sys_BillTransaction.SaveTransactionData(_arraylist);
+                                    }
+                                }
+
+                                _bill_Sys_BillTransaction = new Bill_Sys_BillTransaction_BO();
+                                _bill_Sys_BillTransaction.DeleteTransactionDiagnosis(billno);
+                                if (dset0.Tables[0].Rows.Count > 0)
+                                {
+                                    for (int i = 0; i < dset0.Tables[0].Rows.Count; i++)
+                                    {
+                                        _bill_Sys_BillTransaction = new Bill_Sys_BillTransaction_BO();
+                                        _arraylist = new ArrayList();
+                                        _arraylist.Add(dset0.Tables[0].Rows[i]["CODE"].ToString());
+                                        _arraylist.Add(billno);
+                                        _bill_Sys_BillTransaction.SaveTransactionDiagnosis(_arraylist);
+                                    }
+                                }
+
+                                if (((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY == true && ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID != ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID)
+                                {
+                                    _bill_Sys_BillTransaction = new Bill_Sys_BillTransaction_BO();
+                                    string sz_speciality = _bill_Sys_BillTransaction.GetDocSpeciality(billno);
+                                    //GenerateAddedBillPDF(billno, _bill_Sys_BillTransaction.GetDoctorSpeciality(billno, ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID));
+                                    GenerateAddedBillPDF(billno, sz_speciality);
+                                    arrbill.Add(txtCaseNo.Text);
+                                }
+                                else
+                                {
+                                    _bill_Sys_BillTransaction = new Bill_Sys_BillTransaction_BO();
+                                    string sz_speciality = _bill_Sys_BillTransaction.GetDocSpeciality(billno);
+                                    //GenerateAddedBillPDF(billno, _bill_Sys_BillTransaction.GetDoctorSpeciality(billno, ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID));
+                                    GenerateAddedBillPDF(billno, sz_speciality);
+                                    arrbill.Add(txtCaseNo.Text);
+                                }
+                            }
+                            else
+                            {
+                                Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "mm", "<script language='javascript'>alert('No diagnosis code assign for the patient');</script>");
+                                //lblMsg.Text = "No diagnosis code assign for th";
+                                //lblMsg.Visible = false;
+                                usrMessage.PutMessage("No diagnosis code assign for th");
+                                usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_UserMessage);
+                                usrMessage.Show();
+
+                            }
+                        }
+                    }
+
+                    if (arrbill.Count > 0)
+                    {
+                        string caseno = arrbill[0].ToString();
+                        Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "mm", "<script language='javascript'>alert('Bill Created Successfully For " + caseno + " CaseNo');</script>");
+                    }
+                    grdAllReports.XGridBindSearch();
+                    //  setLabels();
+
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            usrMessage.PutMessage(ex.ToString());
+            usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_ErrorMessage);
+            usrMessage.Show();
+        }
+    }
+    private void GenerateAddedBillPDF(string p_szBillNumber, string p_szSpeciality)
+    //private void GenerateAddedBillPDF(string p_szBillNumber)
+    {
+        try
+        {
+            _MUVGenerateFunction = new MUVGenerateFunction();
+            String szSpecility = p_szSpeciality;
+            //String szSpecility = "MRI";
+            //Session["TM_SZ_CASE_ID"] = ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_CASE_ID;
+            Session["TM_SZ_CASE_ID"] = txtCaseID.Text;
+            Session["TM_SZ_BILL_ID"] = p_szBillNumber;
+
+            objNF3Template = new Bill_Sys_NF3_Template();
+
+            // changes for Doc Manager for Bill path-- pravin
+            Bill_Sys_Verification_Desc objVerification_Desc = new Bill_Sys_Verification_Desc();
+
+            objVerification_Desc.sz_bill_no = p_szBillNumber;
+            objVerification_Desc.sz_company_id = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+            objVerification_Desc.sz_flag = "BILL";
+
+            ArrayList arrNf_Param = new ArrayList();
+            ArrayList arrNf_NodeType = new ArrayList();
+            string sz_Type = "";
+            String szDestinationDir = "";
+
+            arrNf_Param.Add(objVerification_Desc);
+
+            arrNf_NodeType = _bill_Sys_BillTransaction.Get_Node_Type(arrNf_Param);
+            if (arrNf_NodeType.Contains("NFVER"))
+            {
+                sz_Type = "OLD";
+                //szDestinationDir = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_NAME + "/" + Session["TM_SZ_CASE_ID"].ToString() + "/No Fault File/Bills/" + szSpecility + "/";
+                if (((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY == true && ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID != ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID)
+                {
+                    Bill_Sys_NF3_Template _objCompanyname = new Bill_Sys_NF3_Template();
+                    szDestinationDir = _objCompanyname.GetCompanyName(((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID) + "/" + Session["TM_SZ_CASE_ID"].ToString() + "/No Fault File/Bills/" + szSpecility + "/";
+                    //szDestinationDir = _objCompanyname.GetCompanyName(((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID) + "/" + Session["TM_SZ_CASE_ID"].ToString() + "/No Fault File/Bills/";
+
+                }
+                else
+                {
+                    szDestinationDir = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_NAME + "/" + Session["TM_SZ_CASE_ID"].ToString() + "/No Fault File/Bills/" + szSpecility + "/";
+                    //szDestinationDir = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_NAME + "/" + Session["TM_SZ_CASE_ID"].ToString() + "/No Fault File/Bills/";
+
+                }
+            }
+            else
+            {
+                sz_Type = "NEW";
+
+                if (((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY == true && ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID != ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID)
+                {
+                    Bill_Sys_NF3_Template _objCompanyname = new Bill_Sys_NF3_Template();
+                    szDestinationDir = _objCompanyname.GetCompanyName(((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID) + "/" + Session["TM_SZ_CASE_ID"].ToString() + "/No Fault File/Medicals/" + szSpecility + "/" + "Bills/";
+                    //szDestinationDir = _objCompanyname.GetCompanyName(((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID) + "/" + Session["TM_SZ_CASE_ID"].ToString() + "/No Fault File/Bills/";
+
+                }
+                else
+                {
+                    szDestinationDir = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_NAME + "/" + Session["TM_SZ_CASE_ID"].ToString() + "/No Fault File/Medicals/" + szSpecility + "/" + "Bills/";
+                    //szDestinationDir = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_NAME + "/" + Session["TM_SZ_CASE_ID"].ToString() + "/No Fault File/Bills/";
+
+                }
+            }
+
+            CaseDetailsBO objCaseDetails = new CaseDetailsBO();
+            String szCompanyID = "";
+            if (((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY == true && ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID != ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID)
+            {
+                szCompanyID = ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID;
+            }
+            else
+            {
+                szCompanyID = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+            }
+
+            if (objCaseDetails.GetCaseType(Session["TM_SZ_BILL_ID"].ToString()) == "WC000000000000000002")
+            {
+                String szDefaultPath = "";
+                if (((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY == true && ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID != ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID)
+                {
+                    Bill_Sys_NF3_Template _objCompanyname = new Bill_Sys_NF3_Template();
+                    szDefaultPath = _objCompanyname.GetCompanyName(((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID) + "/" + Session["TM_SZ_CASE_ID"].ToString() + "/Packet Document/";
+                }
+                else
+                {
+                    szDefaultPath = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_NAME + "/" + Session["TM_SZ_CASE_ID"].ToString() + "/Packet Document/";
+                }
+
+                String szSourceDir = "";
+                if (((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY == true && ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID != ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID)
+                {
+                    Bill_Sys_NF3_Template _objCompanyname = new Bill_Sys_NF3_Template();
+                    szSourceDir = _objCompanyname.GetCompanyName(((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID) + "/" + Session["TM_SZ_CASE_ID"].ToString() + "/Packet Document/";
+                }
+                else
+                {
+                    szSourceDir = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_NAME + "/" + Session["TM_SZ_CASE_ID"].ToString() + "/Packet Document/";
+                }
+
+                //String szDestinationDir = "";
+                //if (((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY == true && ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID != ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID)
+                //{
+                //    Bill_Sys_NF3_Template _objCompanyname = new Bill_Sys_NF3_Template();
+                //    szDestinationDir = _objCompanyname.GetCompanyName(((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID) + "/" + Session["TM_SZ_CASE_ID"].ToString() + "/No Fault File/Bills/" + szSpecility + "/";
+                //    //szDestinationDir = _objCompanyname.GetCompanyName(((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID) + "/" + Session["TM_SZ_CASE_ID"].ToString() + "/No Fault File/Bills/";
+
+                //}
+                //else
+                //{
+                //    szDestinationDir = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_NAME + "/" + Session["TM_SZ_CASE_ID"].ToString() + "/No Fault File/Bills/" + szSpecility + "/";
+                //    //szDestinationDir = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_NAME + "/" + Session["TM_SZ_CASE_ID"].ToString() + "/No Fault File/Bills/";
+
+                //}
+
+                string strPath = ConfigurationManager.AppSettings["DefaultTemplateName"].ToString();
+
+                string strNextDiagFileName = ConfigurationManager.AppSettings["NextDiagnosisTemplate"].ToString();
+                String szFile3 = ConfigurationSettings.AppSettings["NF3_PAGE3"].ToString();
+                String szFile4 = ConfigurationSettings.AppSettings["NF3_PAGE4"].ToString();
+                String szPDFPage1 = "";
+                String szXMLFileName;
+                String szOriginalPDFFileName;
+                String szLastXMLFileName;
+                String szLastOriginalPDFFileName;
+                String sz3and4Page = "";
+                Bill_Sys_Configuration objConfiguration = new Bill_Sys_Configuration();
+                String szDiagPDFFilePosition = objConfiguration.getConfigurationSettings(szCompanyID, "GET_DIAG_PAGE_POSITION");
+                String szGenerateNextDiagPage = objConfiguration.getConfigurationSettings(szCompanyID, "DIAG_PAGE");
+
+                szXMLFileName = ConfigurationManager.AppSettings["NF3_XML_FILE"].ToString();
+                szOriginalPDFFileName = ConfigurationManager.AppSettings["NF3_PDF_FILE"].ToString();
+                szLastXMLFileName = ConfigurationManager.AppSettings["NF33_XML_FILE"].ToString();
+                szLastOriginalPDFFileName = ConfigurationManager.AppSettings["NF3_PAGE3"].ToString();
+
+
+                Boolean fAddDiag = true;
+
+                GeneratePDFFile.GenerateNF3PDF objGeneratePDF = new GeneratePDFFile.GenerateNF3PDF();
+                objPDFReplacement = new PDFValueReplacement.PDFValueReplacement();
+
+                String szPDFFileName = "";
+                if (((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY == true && ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID != ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID)
+                {
+                    Bill_Sys_NF3_Template _objCompanyname = new Bill_Sys_NF3_Template();
+                    // Note : Generate PDF with Billing Information table. **** II
+                    szPDFFileName = objGeneratePDF.GeneratePDF(((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID, _objCompanyname.GetCompanyName(((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID), ((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_ID, ((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_NAME, Session["TM_SZ_CASE_ID"].ToString(), Session["TM_SZ_BILL_ID"].ToString(), "", strPath);
+                    //log.Debug("Bill Details PDF File : " + szPDFFileName);
+                }
+                //error
+                else
+                {
+                    // Note : Generate PDF with Billing Information table. **** II
+                    szPDFFileName = objGeneratePDF.GeneratePDF(((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID, ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_NAME, ((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_ID, ((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_NAME, Session["TM_SZ_CASE_ID"].ToString(), Session["TM_SZ_BILL_ID"].ToString(), "", strPath);
+                    //log.Debug("Bill Details PDF File : " + szPDFFileName);
+                }
+
+
+                sz3and4Page = szFile3;//""objPDFReplacement.Merge3and4Page(((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID, ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_NAME, Session["TM_SZ_CASE_ID"].ToString(), Session["TM_SZ_BILL_ID"].ToString(), szFile3, szFile4);
+
+                if (((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY == true && ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID != ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID)
+                {
+                    Bill_Sys_NF3_Template _objCompanyname = new Bill_Sys_NF3_Template();
+                    szPDFPage1 = objPDFReplacement.ReplacePDFvalues(szXMLFileName, szOriginalPDFFileName, Session["TM_SZ_BILL_ID"].ToString(), _objCompanyname.GetCompanyName(((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID), Session["TM_SZ_CASE_ID"].ToString());
+                }
+                else
+                {
+                    szPDFPage1 = objPDFReplacement.ReplacePDFvalues(szXMLFileName, szOriginalPDFFileName, Session["TM_SZ_BILL_ID"].ToString(), ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_NAME, Session["TM_SZ_CASE_ID"].ToString());
+                }
+
+
+                //log.Debug("Page1 : " + szPDFPage1);
+
+
+                // Merge **** I AND **** II
+                String szPDF_1_3 = "";
+                if (((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY == true && ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID != ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID)
+                {
+                    Bill_Sys_NF3_Template _objCompanyname = new Bill_Sys_NF3_Template();
+                    // (                                                string p_szCompanyID,                                                           string p_szCompanyName,                                                             string p_szCaseID,                  string p_szBillID,              string p_szFile1, string p_szFile2)
+                    szPDF_1_3 = objPDFReplacement.MergePDFFiles(((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID, _objCompanyname.GetCompanyName(((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID), Session["TM_SZ_CASE_ID"].ToString(), Session["TM_SZ_BILL_ID"].ToString(), szPDFPage1, szPDFFileName);
+                }
+                else
+                {
+                    // (                                                string p_szCompanyID,                                                           string p_szCompanyName,                                                             string p_szCaseID,                  string p_szBillID,              string p_szFile1, string p_szFile2)
+                    szPDF_1_3 = objPDFReplacement.MergePDFFiles(((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID, ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_NAME, Session["TM_SZ_CASE_ID"].ToString(), Session["TM_SZ_BILL_ID"].ToString(), szPDFPage1, szPDFFileName);
+                }
+
+
+
+                String szLastPDFFileName = "";
+                String szPDFPage3 = "";
+                if (((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY == true && ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID != ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID)
+                {
+                    Bill_Sys_NF3_Template _objCompanyname = new Bill_Sys_NF3_Template();
+                    szPDFPage3 = objPDFReplacement.ReplacePDFvalues(szLastXMLFileName, szLastOriginalPDFFileName, Session["TM_SZ_BILL_ID"].ToString(), _objCompanyname.GetCompanyName(((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID), Session["TM_SZ_CASE_ID"].ToString());
+                }
+                else
+                {
+                    szPDFPage3 = objPDFReplacement.ReplacePDFvalues(szLastXMLFileName, szLastOriginalPDFFileName, Session["TM_SZ_BILL_ID"].ToString(), ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_NAME, Session["TM_SZ_CASE_ID"].ToString());
+                }
+
+
+                //Tushar
+                string bt_CaseType;
+                string strComp = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+                bt_include = _MUVGenerateFunction.get_bt_include(strComp, szSpecility, "", "Speciality");
+                bt_CaseType = _MUVGenerateFunction.get_bt_include(strComp, "", "WC000000000000000002", "CaseType");
+                if (bt_include == "True" && bt_CaseType == "True")
+                {
+                    str_1500 = _MUVGenerateFunction.FillPdf(Session["TM_SZ_BILL_ID"].ToString());
+                }
+
+
+                lfnMergePDF(objNF3Template.getPhysicalPath() + szDefaultPath + szPDF_1_3, objNF3Template.getPhysicalPath() + szDefaultPath + szPDFPage3, objNF3Template.getPhysicalPath() + szDefaultPath + szPDFPage3.Replace(".pdf", "_MER.pdf"));
+
+                szLastPDFFileName = szPDFPage3.Replace(".pdf", "_MER.pdf");// objPDFReplacement.MergePDFFiles(((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID, ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_NAME, Session["TM_SZ_CASE_ID"].ToString(), Session["TM_SZ_BILL_ID"].ToString(), szPDF_1_3, szPDFPage3);
+
+
+                //Tushar
+                if (bt_include == "True" && bt_CaseType == "True")
+                {
+                    lfnMergePDF(objNF3Template.getPhysicalPath() + szDefaultPath + szLastPDFFileName, objNF3Template.getPhysicalPath() + szDefaultPath + str_1500, objNF3Template.getPhysicalPath() + szDefaultPath + str_1500.Replace(".pdf", "_MER.pdf"));
+                    szLastPDFFileName = str_1500.Replace(".pdf", "_MER.pdf");
+                }
+                //
+
+
+                //szLastPDFFileName = objPDFReplacement.ReplacePDFvalues(szLastXMLFileName, ConfigurationSettings.AppSettings["DocumentManagerURL"].ToString() + szDefaultPath + szLastPDFFileName, Session["TM_SZ_BILL_ID"].ToString(), ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_NAME, Session["TM_SZ_CASE_ID"].ToString());
+                String szGenereatedFileName = "";
+                szGenereatedFileName = szDefaultPath + szLastPDFFileName;
+                //log.Debug("GenereatedFileName : " + szGenereatedFileName);
+
+
+                String szOpenFilePath = "";
+                szOpenFilePath = ConfigurationSettings.AppSettings["DocumentManagerURL"].ToString() + szGenereatedFileName;
+                //szOpenFilePath = "C:\\LawAllies\\MBSUpload\\" + szGenereatedFileName;
+
+                string szFileNameWithFullPath = objNF3Template.getPhysicalPath() + "/" + szGenereatedFileName;
+
+
+                CUTEFORMCOLib.CutePDFDocumentClass objMyForm = new CUTEFORMCOLib.CutePDFDocumentClass();
+                string newPdfFilename = "";
+                string KeyForCutePDF = ConfigurationSettings.AppSettings["CutePDFSerialKey"].ToString();
+                objMyForm.initialize(KeyForCutePDF);
+
+                if (objMyForm == null)
+                {
+                    // Response.Write("objMyForm not initialized");
+                }
+                else
+                {
+                    if (System.IO.File.Exists(szFileNameWithFullPath))
+                    {
+                        //    objMyForm.mergePDF(szFileNameWithFullPath, szFileNameWithFullPath.Replace(".pdf", "_Temp.pdf").ToString(), szFileNameWithFullPath.Replace(".pdf", "_New.pdf").ToString());
+
+                        if (szGenerateNextDiagPage != Bill_Sys_Constant.constGenerateNextDiagPage && objNF3Template.getDiagnosisCodeCount(Session["TM_SZ_BILL_ID"].ToString()) >= 5 && szDiagPDFFilePosition == Bill_Sys_Constant.constAT_THE_END)
+                        {
+                            if (szGenerateNextDiagPage == "CI_0000004" && objNF3Template.getDiagnosisCodeCount(Session["TM_SZ_BILL_ID"].ToString()) == 5)
+                            {
+                            }
+                            else
+                            {
+                                //lfnMergePDF(szFileNameWithFullPath, objNF3Template.getPhysicalPath() + szDefaultPath + szNextDiagPDFFileName, szFileNameWithFullPath.Replace(".pdf", "_NewMerge.pdf").ToString());
+                                szPDFFileName = szFileNameWithFullPath.Replace(".pdf", "_NewMerge.pdf");
+                            }
+                        }
+
+                    }
+
+                }
+
+                // End Logic
+
+                string szFileNameForSaving = "";
+
+                // Save Entry in Table
+                if (System.IO.File.Exists(szFileNameWithFullPath) && System.IO.File.Exists(szFileNameWithFullPath.Replace(".pdf", "_New.pdf").ToString()))
+                {
+                    szGenereatedFileName = szFileNameWithFullPath.Replace(".pdf", "_New.pdf").ToString();
+                }
+
+                // End
+
+                if (System.IO.File.Exists(szFileNameWithFullPath) && System.IO.File.Exists(szFileNameWithFullPath.Replace(".pdf", "_NewMerge.pdf").ToString()))
+                {
+                    szFileNameForSaving = szOpenFilePath.Replace(".pdf", "_NewMerge.pdf").ToString();
+                    //Page.ClientScript.RegisterClientScriptBlock(typeof(GridView), "Msg", "window.open('" + szOpenFilePath.Replace(".pdf", "_NewMerge.pdf").ToString() + "'); ", true);
+                }
+                else
+                {
+                    if (System.IO.File.Exists(szFileNameWithFullPath) && System.IO.File.Exists(szFileNameWithFullPath.Replace(".pdf", "_New.pdf").ToString()))
+                    {
+                        szFileNameForSaving = szOpenFilePath.Replace(".pdf", "_New.pdf").ToString();
+                        //Page.ClientScript.RegisterClientScriptBlock(typeof(GridView), "Msg", "window.open('" + szOpenFilePath.Replace(".pdf", "_New.pdf").ToString() + "'); ", true);
+                    }
+                    else
+                    {
+                        szFileNameForSaving = szOpenFilePath.ToString();
+                        //Page.ClientScript.RegisterClientScriptBlock(typeof(GridView), "Msg", "window.open('" + szOpenFilePath.ToString() + "'); ", true);
+                    }
+                }
+                String[] szTemp;
+                string szBillName = "";
+                szTemp = szFileNameForSaving.Split('/');
+                ArrayList objAL = new ArrayList();
+                szFileNameForSaving = szFileNameForSaving.Remove(0, ConfigurationSettings.AppSettings["DocumentManagerURL"].ToString().Length);
+                szBillName = szTemp[szTemp.Length - 1].ToString();
+
+                if (File.Exists(objNF3Template.getPhysicalPath() + szSourceDir + szBillName))
+                {
+                    if (!Directory.Exists(objNF3Template.getPhysicalPath() + szDestinationDir))
+                    {
+                        Directory.CreateDirectory(objNF3Template.getPhysicalPath() + szDestinationDir);
+                    }
+                    File.Copy(objNF3Template.getPhysicalPath() + szSourceDir + szBillName, objNF3Template.getPhysicalPath() + szDestinationDir + szBillName);
+                }
+
+
+                if (sz_Type == "OLD")
+                {
+                    objAL.Add(Session["TM_SZ_BILL_ID"].ToString());
+                    objAL.Add(szDestinationDir + szBillName);
+                    if (((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY == true && ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID != ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID)
+                    {
+                        objAL.Add(((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID);
+                    }
+                    else
+                    {
+                        objAL.Add(((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID);
+                    }
+                    objAL.Add(Session["TM_SZ_CASE_ID"]);
+                    objAL.Add(szTemp[szTemp.Length - 1].ToString());
+                    objAL.Add(szDestinationDir);
+                    objAL.Add(((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_NAME);
+                    objAL.Add(szSpecility);
+                    //objAL.Add("");
+                    objAL.Add("NF");
+                    objAL.Add(((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_CASE_NO);
+                    //objAL.Add(txtCaseNo.Text);
+                    objNF3Template.saveGeneratedBillPath(objAL);
+                }
+                else
+                {
+                    objAL.Add(Session["TM_SZ_BILL_ID"].ToString());
+                    objAL.Add(szDestinationDir + szBillName);
+                    if (((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY == true && ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID != ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID)
+                    {
+                        objAL.Add(((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID);
+                    }
+                    else
+                    {
+                        objAL.Add(((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID);
+                    }
+                    objAL.Add(Session["TM_SZ_CASE_ID"]);
+                    objAL.Add(szTemp[szTemp.Length - 1].ToString());
+                    objAL.Add(szDestinationDir);
+                    objAL.Add(((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_NAME);
+                    objAL.Add(szSpecility);
+                    //objAL.Add("");
+                    objAL.Add("NF");
+                    objAL.Add(((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_CASE_NO);
+                    objAL.Add(arrNf_NodeType[0].ToString());
+                    objNF3Template.saveGeneratedBillPath_New(objAL);
+                }
+
+
+
+
+                // Start : Save Notes for Bill.
+
+                _DAO_NOTES_EO = new DAO_NOTES_EO();
+                _DAO_NOTES_EO.SZ_MESSAGE_TITLE = "BILL_GENERATED";
+                _DAO_NOTES_EO.SZ_ACTIVITY_DESC = szBillName;
+
+                _DAO_NOTES_BO = new DAO_NOTES_BO();
+                _DAO_NOTES_EO.SZ_USER_ID = ((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_ID;
+                _DAO_NOTES_EO.SZ_CASE_ID = ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_CASE_ID;
+                _DAO_NOTES_EO.SZ_CASE_ID = txtCaseID.Text;
+                if (((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY == true && ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID != ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID)
+                {
+                    _DAO_NOTES_EO.SZ_COMPANY_ID = ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID;
+                }
+                else
+                {
+                    _DAO_NOTES_EO.SZ_COMPANY_ID = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+                }
+
+                _DAO_NOTES_BO.SaveActivityNotes(_DAO_NOTES_EO);
+
+                //BindLatestTransaction();
+
+                // End 
+
+
+            }
+            else if (objCaseDetails.GetCaseType(Session["TM_SZ_BILL_ID"].ToString()) == "WC000000000000000003")
+            {
+                Bill_Sys_PVT_Template _objPvtBill;
+                _objPvtBill = new Bill_Sys_PVT_Template();
+                bool isReferingFacility = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY;
+                string szCompanyId;
+                string szCaseId = Session["TM_SZ_CASE_ID"].ToString();
+                // string szSpecility ;
+                string szCompanyName;
+                string szBillId = Session["TM_SZ_BILL_ID"].ToString();
+                string szUserName = ((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_NAME;
+                string szUserId = ((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_ID;
+                if (((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY == true && ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID != ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID)
+                {
+                    Bill_Sys_NF3_Template _objCompanyname = new Bill_Sys_NF3_Template();
+                    szCompanyName = _objCompanyname.GetCompanyName(((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID);
+                    szCompanyId = ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID;
+                }
+                else
+                {
+                    szCompanyName = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_NAME;
+                    szCompanyId = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+                }
+                _objPvtBill.GeneratePVTBill(isReferingFacility, szCompanyId, szCaseId, szSpecility, szCompanyName, szBillId, szUserName, szUserId);
+
+                #region Generate Bill For Private cases
+                //String szDefaultPath = "";
+                //String szLastPDFFileName = "";
+                //String szDestinationDir = "";
+                //if (((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY == true && ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID != ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID)
+                //{
+                //    Bill_Sys_NF3_Template _objCompanyname = new Bill_Sys_NF3_Template();
+                //    szDestinationDir = _objCompanyname.GetCompanyName(((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID) + "/" + Session["TM_SZ_CASE_ID"].ToString() + "/No Fault File/Bills/" + szSpecility + "/";
+                //    //szDestinationDir = _objCompanyname.GetCompanyName(((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID) + "/" + Session["TM_SZ_CASE_ID"].ToString() + "/No Fault File/Bills/";
+                //}
+                //else
+                //{
+                //    szDestinationDir = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_NAME + "/" + Session["TM_SZ_CASE_ID"].ToString() + "/No Fault File/Bills/" + szSpecility + "/";
+                //    //szDestinationDir = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_NAME + "/" + Session["TM_SZ_CASE_ID"].ToString() + "/No Fault File/Bills/";
+                //}
+                //String szSourceDir = "";
+                //if (((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY == true && ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID != ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID)
+                //{
+                //    Bill_Sys_NF3_Template _objCompanyname = new Bill_Sys_NF3_Template();
+                //    szSourceDir = _objCompanyname.GetCompanyName(((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID) + "/" + Session["TM_SZ_CASE_ID"].ToString() + "/Packet Document/";
+                //}
+                //else
+                //{
+                //    szSourceDir = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_NAME + "/" + Session["TM_SZ_CASE_ID"].ToString() + "/Packet Document/";
+                //}
+                //String szGenereatedFileName = "";
+
+
+
+                //objPDFReplacement = new PDFValueReplacement.PDFValueReplacement();
+                //string szXMLFileName;
+                //string szOriginalPDFFileName;
+                //szXMLFileName = ConfigurationManager.AppSettings["HCFA1500_XML_FILE"].ToString();
+                //szOriginalPDFFileName = ConfigurationManager.AppSettings["HCFA1500_PDF_FILE"].ToString();
+                //String szPDFPage = "";
+                //szPDFPage = objPDFReplacement.ReplacePDFvalues(szXMLFileName, szOriginalPDFFileName, Session["TM_SZ_BILL_ID"].ToString(), ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_NAME, Session["TM_SZ_CASE_ID"].ToString());
+
+
+                //#region File saving logic
+                //String szOpenFilePath = "";
+                //szGenereatedFileName =szDestinationDir + szPDFPage;
+                //szOpenFilePath = ConfigurationSettings.AppSettings["DocumentManagerURL"].ToString() + szGenereatedFileName;                               
+                //string szFileNameWithFullPath = objNF3Template.getPhysicalPath() + "/" + szGenereatedFileName;
+                //string szFileNameForSaving = "";
+
+                //// Save Entry in Table
+                //if (System.IO.File.Exists(szFileNameWithFullPath) && System.IO.File.Exists(szFileNameWithFullPath.Replace(".pdf", "_New.pdf").ToString()))
+                //{
+                //    szGenereatedFileName = szFileNameWithFullPath.Replace(".pdf", "_New.pdf").ToString();
+                //}
+                //// End
+
+                //if (System.IO.File.Exists(szFileNameWithFullPath) && System.IO.File.Exists(szFileNameWithFullPath.Replace(".pdf", "_NewMerge.pdf").ToString()))
+                //{
+                //    szFileNameForSaving = szOpenFilePath.Replace(".pdf", "_NewMerge.pdf").ToString();
+                //    //Page.ClientScript.RegisterClientScriptBlock(typeof(GridView), "Msg", "window.open('" + szOpenFilePath.Replace(".pdf", "_NewMerge.pdf").ToString() + "'); ", true);
+                //}
+                //else
+                //{
+                //    if (System.IO.File.Exists(szFileNameWithFullPath) && System.IO.File.Exists(szFileNameWithFullPath.Replace(".pdf", "_New.pdf").ToString()))
+                //    {
+                //        szFileNameForSaving = szOpenFilePath.Replace(".pdf", "_New.pdf").ToString();
+                //        //Page.ClientScript.RegisterClientScriptBlock(typeof(GridView), "Msg", "window.open('" + szOpenFilePath.Replace(".pdf", "_New.pdf").ToString() + "'); ", true);
+                //    }
+                //    else
+                //    {
+                //        szFileNameForSaving = szOpenFilePath.ToString();
+                //        //Page.ClientScript.RegisterClientScriptBlock(typeof(GridView), "Msg", "window.open('" + szOpenFilePath.ToString() + "'); ", true);
+                //    }
+                //}
+                //String[] szTemp;
+                //string szBillName = "";
+                //szTemp = szFileNameForSaving.Split('/');
+                //ArrayList objAL = new ArrayList();
+                //szFileNameForSaving = szFileNameForSaving.Remove(0, ConfigurationSettings.AppSettings["DocumentManagerURL"].ToString().Length);
+                //szBillName = szTemp[szTemp.Length - 1].ToString();
+
+                //if (File.Exists(objNF3Template.getPhysicalPath() + szSourceDir + szBillName))
+                //{
+                //    if (!Directory.Exists(objNF3Template.getPhysicalPath() + szDestinationDir))
+                //    {
+                //        Directory.CreateDirectory(objNF3Template.getPhysicalPath() + szDestinationDir);
+                //    }
+                //    File.Copy(objNF3Template.getPhysicalPath() + szSourceDir + szBillName, objNF3Template.getPhysicalPath() + szDestinationDir + szBillName);
+                //}
+
+                //objAL.Add(Session["TM_SZ_BILL_ID"].ToString());
+                //objAL.Add(szDestinationDir + szBillName);
+                //if (((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY == true && ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID != ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID)
+                //{
+                //    objAL.Add(((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID);
+                //}
+                //else
+                //{
+                //    objAL.Add(((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID);
+                //}
+                //objAL.Add(Session["TM_SZ_CASE_ID"]);
+                //objAL.Add(szTemp[szTemp.Length - 1].ToString());
+                //objAL.Add(szDestinationDir);
+                //objAL.Add(((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_NAME);
+                //objAL.Add(szSpecility);
+                ////objAL.Add("");
+                //objAL.Add("PVT");
+                //objAL.Add(((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_CASE_ID);
+                ////objAL.Add(txtCaseNo.Text);
+                //objNF3Template.saveGeneratedBillPath(objAL);
+
+                //// Start : Save Notes for Bill.
+
+                //_DAO_NOTES_EO = new DAO_NOTES_EO();
+                //_DAO_NOTES_EO.SZ_MESSAGE_TITLE = "BILL_GENERATED";
+                //_DAO_NOTES_EO.SZ_ACTIVITY_DESC = szBillName;
+
+                //_DAO_NOTES_BO = new DAO_NOTES_BO();
+                //_DAO_NOTES_EO.SZ_USER_ID = ((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_ID;
+                //_DAO_NOTES_EO.SZ_CASE_ID = ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_CASE_ID;
+                //_DAO_NOTES_EO.SZ_CASE_ID = txtCaseID.Text;
+                //if (((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY == true && ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID != ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID)
+                //{
+                //    _DAO_NOTES_EO.SZ_COMPANY_ID = ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID;
+                //}
+                //else
+                //{
+                //    _DAO_NOTES_EO.SZ_COMPANY_ID = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+                //}
+
+                //_DAO_NOTES_BO.SaveActivityNotes(_DAO_NOTES_EO);
+                //#endregion
+
+                ////Page.ClientScript.RegisterClientScriptBlock(typeof(GridView), "Msg", "window.open('" + ConfigurationSettings.AppSettings["DocumentManagerURL"].ToString() + szPDFPage + "'); ", true);
+
+                #endregion
+            }
+            else if (objCaseDetails.GetCaseType(Session["TM_SZ_BILL_ID"].ToString()) == "WC000000000000000004")
+            {
+                //String szDestinationDir = "";
+                //if (((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY == true && ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID != ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID)
+                //{
+                //    Bill_Sys_NF3_Template _objCompanyname = new Bill_Sys_NF3_Template();
+                //    szDestinationDir = _objCompanyname.GetCompanyName(((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID) + "/" + Session["TM_SZ_CASE_ID"].ToString() + "/No Fault File/Bills/" + szSpecility + "/";
+                //    //szDestinationDir = _objCompanyname.GetCompanyName(((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID) + "/" + Session["TM_SZ_CASE_ID"].ToString() + "/No Fault File/Bills/";
+
+                //}
+                //else
+                //{
+                //    szDestinationDir = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_NAME + "/" + Session["TM_SZ_CASE_ID"].ToString() + "/No Fault File/Bills/" + szSpecility + "/";
+                //    //szDestinationDir = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_NAME + "/" + Session["TM_SZ_CASE_ID"].ToString() + "/No Fault File/Bills/";
+
+                //}
+                String szDefaultPath = "";
+                if (((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY == true && ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID != ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID)
+                {
+                    Bill_Sys_NF3_Template _objCompanyname = new Bill_Sys_NF3_Template();
+                    szDefaultPath = _objCompanyname.GetCompanyName(((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID) + "/" + Session["TM_SZ_CASE_ID"].ToString() + "/Packet Document/";
+                }
+                else
+                {
+                    szDefaultPath = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_NAME + "/" + Session["TM_SZ_CASE_ID"].ToString() + "/Packet Document/";
+                }
+
+                Bill_Sys_PVT_Template _objPvtBill;
+                _objPvtBill = new Bill_Sys_PVT_Template();
+                bool isReferingFacility = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY;
+                string szCompanyId;
+                string szCaseId = Session["TM_SZ_CASE_ID"].ToString();
+                // string szSpecility ;
+                string szCompanyName;
+                string szBillId = Session["TM_SZ_BILL_ID"].ToString();
+                string szUserName = ((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_NAME;
+                string szUserId = ((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_ID;
+
+                if (((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY == true && ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID != ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID)
+                {
+                    Bill_Sys_NF3_Template _objCompanyname = new Bill_Sys_NF3_Template();
+                    szCompanyName = _objCompanyname.GetCompanyName(((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID);
+                    szCompanyId = ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_COMAPNY_ID;
+                }
+                else
+                {
+                    szCompanyName = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_NAME;
+                    szCompanyId = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+                }
+                mbs.LienBills.Lien obj = new Lien();
+                _MUVGenerateFunction = new MUVGenerateFunction();
+                objNF3Template = new Bill_Sys_NF3_Template();
+                string path;
+                //Tushar
+                string bt_CaseType;
+                string strComp = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+                bt_include = _MUVGenerateFunction.get_bt_include(strComp, szSpecility, "", "Speciality");
+                bt_CaseType = _MUVGenerateFunction.get_bt_include(strComp, "", "WC000000000000000004", "CaseType");
+                if (bt_include == "True" && bt_CaseType == "True")
+                {
+                    str_1500 = _MUVGenerateFunction.FillPdf(Session["TM_SZ_BILL_ID"].ToString());
+                    String FileName;
+                    FileName = obj.GenratePdfForLienWithMuv(szCompanyId, szBillId, szSpecility, ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_CASE_ID, szUserName, ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_CASE_NO, szUserId);
+                    lfnMergePDF(objNF3Template.getPhysicalPath() + szDestinationDir + FileName, objNF3Template.getPhysicalPath() + szDefaultPath + str_1500, objNF3Template.getPhysicalPath() + szDestinationDir + str_1500.Replace(".pdf", "_MER.pdf"));
+                    path = ConfigurationSettings.AppSettings["DocumentManagerURL"].ToString() + szDestinationDir + str_1500.Replace(".pdf", "_MER.pdf");
+
+                    ArrayList objAL = new ArrayList();
+                    objAL.Add(Session["TM_SZ_BILL_ID"].ToString());
+                    objAL.Add(szDestinationDir + str_1500.Replace(".pdf", "_MER.pdf"));
+                    objAL.Add(((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID);
+                    objAL.Add(Session["TM_SZ_CASE_ID"]);
+                    objAL.Add(str_1500.Replace(".pdf", "_MER.pdf"));
+                    objAL.Add(szDestinationDir);
+                    objAL.Add(((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_NAME);
+                    objAL.Add(szSpecility);
+                    objAL.Add("NF");
+                    objAL.Add(((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_CASE_NO);
+                    objNF3Template.saveGeneratedBillPath(objAL);
+
+                    // Start : Save Notes for Bill.
+
+                    _DAO_NOTES_EO = new DAO_NOTES_EO();
+                    _DAO_NOTES_EO.SZ_MESSAGE_TITLE = "BILL_GENERATED";
+                    _DAO_NOTES_EO.SZ_ACTIVITY_DESC = str_1500;
+
+                    _DAO_NOTES_BO = new DAO_NOTES_BO();
+                    _DAO_NOTES_EO.SZ_USER_ID = ((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_ID;
+                    _DAO_NOTES_EO.SZ_CASE_ID = ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_CASE_ID;
+                    _DAO_NOTES_EO.SZ_COMPANY_ID = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+                    _DAO_NOTES_BO.SaveActivityNotes(_DAO_NOTES_EO);
+                }
+                else
+                {
+                    path = obj.GenratePdfForLien(szCompanyId, szBillId, szSpecility, szCaseId, szUserName, ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_CASE_NO, szUserId);
+                }
+                ScriptManager.RegisterClientScriptBlock(this, GetType(), "Done", "window.open('" + path + "');", true);
+            }
+            else if (objCaseDetails.GetCaseType(Session["TM_SZ_BILL_ID"].ToString()) == "WC000000000000000001")
+            {
+                if (((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY == true)
+                {
+                    string UserId = ((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_ID;
+                    string UserName = ((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_NAME;
+                    string CmpName = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_NAME;
+                    string CaseId = ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_CASE_ID;
+                    szCompanyID = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+                    string CaseNO = ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_CASE_NO;
+                    // string speciality = Session["WC_Speciality"].ToString();
+                    WC_Bill_Generation _objNFBill = new WC_Bill_Generation();
+
+                    //string szFinalPath = _objNFBill.GeneratePDFForWorkerComp(hdnWCPDFBillNumber.Value.ToString(), ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_CASE_ID, rdbListPDFType.SelectedValue, szCompanyID, CmpName, UserId, UserName, CaseNO, hdnSpeciality.Value.ToString(), 1);
+                    string szFinalPath = _objNFBill.GeneratePDFForReferalWorkerComp((string)Session["TM_SZ_BILL_ID"], ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_CASE_ID, szCompanyID, CmpName, UserId, UserName, p_szSpeciality);
+                    ScriptManager.RegisterClientScriptBlock(this, GetType(), "Done", "window.open('" + szFinalPath + "');", true);
+
+                }
+                else
+                {
+                    Page.ClientScript.RegisterClientScriptBlock(typeof(GridView), "Msg", "window.open('Bill_Sys_SelectBillType.aspx'); ", true);
+                }
+            }
+            Bill_Sys_BillTransaction_BO _obj = new Bill_Sys_BillTransaction_BO();
+        }
+        catch (Exception ex)
+        {
+
+            throw;
+        }
+    }
+    private string lfnMergePDF(string p_szSource1, string p_szSource2, string p_szDestinationFileName)
+    {
+        try
+        {
+            CUTEFORMCOLib.CutePDFDocumentClass objMyForm = new CUTEFORMCOLib.CutePDFDocumentClass();
+            int iResult = 0;
+            string KeyForCutePDF = ConfigurationSettings.AppSettings["CutePDFSerialKey"].ToString();
+            objMyForm.initialize(KeyForCutePDF);
+
+            if (objMyForm == null)
+            {
+
+            }
+            else
+            {
+                if (System.IO.File.Exists(p_szSource1) && System.IO.File.Exists(p_szSource2))
+                {
+                    iResult = objMyForm.mergePDF(p_szSource1, p_szSource2, p_szDestinationFileName);
+                    //     iResult = objMyForm.mergePDF("D:/1.pdf", "D:/2.pdf", "D:/3.pdf");
+                }
+            }
+            if (iResult == 0)
+                return "FAIL";
+            else
+                return "SUCCESS";
+        }
+        catch (Exception ex)
+        {
+
+            throw;
+        }
+    }
+
+    protected void btnExportToExcel_Click(object sender, EventArgs e)
+    {
+        //try
+        //{
+        //    lblMsg.Visible = false;
+        //    ExportToExcel();
+        //}
+        //catch (Exception ex)
+        //{
+        //    usrMessage.PutMessage(ex.ToString());
+        //    usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_ErrorMessage);
+        //    usrMessage.Show();
+        //}
+        if (((Bill_Sys_SystemObject)Session["SYSTEM_OBJECT"]).SZ_CHART_NO == "1")
+        {
+            szExportoExcelColumname.Append("Chart No,");
+            szExportoExcelField.Append("SZ_CHART_NO,");
+        }
+        if (((Bill_Sys_SystemObject)Session["SYSTEM_OBJECT"]).SZ_SHOW_PROCEDURE_CODE_ON_INTEGRATION.ToString() != "1")
+        {
+            szExportoExcelColumname.Append("Case #,Patient Name,Case Type,Procedure Code,Description,Referring Docotor,Date of Service,Status,Insurance Company,Reading Doctor");
+            szExportoExcelField.Append("CASE_NO,PATIENT_NAME,SZ_CASE_TYPE_NAME,SZ_CODE,SZ_CODE_DESCRIPTION,DOC_NAME,DATE_SORT,SZ_STATUS,SZ_INSURANCE_COMPANY_NAME,SZ_DOCTOR_NAME");
+        }
+        else
+        {
+            szExportoExcelColumname.Append("Case #,Patient Name,Case Type,Procedure Code,Description,Referring Docotor,Date of Service,Status,Insurance Company,Patient ID,Reading Doctor");
+            szExportoExcelField.Append("CASE_NO,PATIENT_NAME,SZ_CASE_TYPE_NAME,SZ_CODE,SZ_CODE_DESCRIPTION,DOC_NAME,DATE_SORT,SZ_STATUS,SZ_INSURANCE_COMPANY_NAME,sz_remote_case_id,SZ_DOCTOR_NAME");
+        }
+        grdAllReports.ExportToExcelColumnNames = szExportoExcelColumname.ToString();
+        grdAllReports.ExportToExcelFields = szExportoExcelField.ToString();
+
+        ScriptManager.RegisterClientScriptBlock(this, GetType(), "mm", " window.location.href ='" + ConfigurationManager.AppSettings["FETCHEXCEL_SHEET"].ToString() + grdAllReports.ExportToExcel(ConfigurationManager.AppSettings["EXCEL_SHEET"].ToString()) + "';", true);
+    }
+
+    //private void ExportToExcel()
+    //{
+    //    try
+    //    {
+    //        StringBuilder strHtml = new StringBuilder();
+    //        strHtml.Append("<table border='1px'>");
+
+    //        for (int icount = 0; icount < grdAllReports.Rows.Count; icount++)
+    //        {
+    //            if (icount == 0)
+    //            {
+    //                strHtml.Append("<tr>");
+    //                for (int i = 0; i < grdAllReports.Columns.Count; i++)
+    //                {
+    //                    if (grdAllReports.Columns[i].Visible == true)
+    //                    {
+    //                        strHtml.Append("<td>");
+    //                        strHtml.Append(grdAllReports.Columns[i].HeaderText);
+    //                        strHtml.Append("</td>");
+    //                    }
+    //                }
+
+    //                strHtml.Append("</tr>");
+    //            }
+
+    //            strHtml.Append("<tr>");
+    //            for (int j = 0; j < grdAllReports.Columns.Count; j++)
+    //            {
+    //                if (grdAllReports.Columns[j].Visible == true)
+    //                {
+    //                    strHtml.Append("<td>");
+    //                    strHtml.Append(grdAllReports.Rows[icount].Cells[j].ToString());
+    //                    strHtml.Append("</td>");
+    //                }
+    //            }
+    //            strHtml.Append("</tr>");
+
+    //        }
+    //        strHtml.Append("</table>");
+    //        string filename = getFileName("EXCEL") + ".xls";
+    //        StreamWriter sw = new StreamWriter(ConfigurationManager.AppSettings["EXCEL_SHEET"] + filename);
+    //        sw.Write(strHtml);
+    //        sw.Close();
+
+    //        Response.Redirect(ConfigurationManager.AppSettings["FETCHEXCEL_SHEET"] + filename, false);
+
+
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        usrMessage.PutMessage(ex.ToString());
+    //        usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_ErrorMessage);
+    //        usrMessage.Show();
+    //    }
+    // }
+    private string getFileName(string p_szBillNumber)
+    {
+        String szBillNumber = "";
+        szBillNumber = p_szBillNumber;
+        String szFileName;
+        DateTime currentDate;
+        currentDate = DateTime.Now;
+        szFileName = p_szBillNumber + "_" + getRandomNumber() + "_" + currentDate.ToString("yyyyMMddHHmmssms");
+        return szFileName;
+    }
+    private string getRandomNumber()
+    {
+        System.Random objRandom = new Random();
+        return objRandom.Next(1, 10000).ToString();
+    }
+
+
+    protected void grdAllReports_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        //Code To Open Popup Received Report Popup
+        _bill_Sys_BillingCompanyDetails_BO = new Bill_Sys_BillingCompanyDetails_BO();
+        if (e.CommandName.ToString() == "Edit")
+        {
+
+            int i = Convert.ToInt32(e.CommandArgument.ToString());
+            bool _ischeck = false;
+            string _caseID = "";
+            int _isSameCaseID = 0;
+            try
+            {
+                Bil_Sys_Associate_Diagnosis _dianosis_Association = new Bil_Sys_Associate_Diagnosis();
+
+                _dianosis_Association.EventProcID = grdAllReports.DataKeys[i]["SZ_PATIENT_TREATMENT_ID"].ToString();
+                _dianosis_Association.DoctorID = grdAllReports.DataKeys[i]["DOCTOR_ID"].ToString();
+                _dianosis_Association.CaseID = grdAllReports.DataKeys[i]["SZ_CASE_ID"].ToString();
+                _dianosis_Association.ProceuderGroupId = grdAllReports.DataKeys[i]["SZ_PROCEDURE_GROUP_ID"].ToString();
+                Session["I_Event_ID"] = grdAllReports.DataKeys[i]["SZ_EVENT_ID"].ToString();
+                Session["DIAGNOS_ASSOCIATION"] = _dianosis_Association;
+                ScriptManager.RegisterClientScriptBlock(this, GetType(), "mmopen", "showReceiveDocumentPopup();", true);
+            }
+            catch
+            {
+
+            }
+        }
+        else if (e.CommandName.ToString() == "PatientClick")
+        {
+
+            CaseDetailsBO _caseDetailsBO = new CaseDetailsBO();
+            Bill_Sys_CaseObject _bill_Sys_CaseObject = new Bill_Sys_CaseObject();
+            int i = Convert.ToInt32(e.CommandArgument.ToString());
+            _bill_Sys_CaseObject.SZ_PATIENT_ID = grdAllReports.DataKeys[i]["SZ_PATIENT_ID"].ToString();
+            _bill_Sys_CaseObject.SZ_CASE_ID = grdAllReports.DataKeys[i]["SZ_CASE_ID"].ToString();
+            _bill_Sys_CaseObject.SZ_CASE_NO = grdAllReports.DataKeys[i]["CASE_NO"].ToString();
+            _bill_Sys_CaseObject.SZ_PATIENT_NAME = grdAllReports.DataKeys[i]["PATIENT_NAME"].ToString();
+            _bill_Sys_CaseObject.SZ_COMAPNY_ID = ((Bill_Sys_BillingCompanyObject)_bill_Sys_BillingCompanyDetails_BO.getCompanyDetailsOfCase(grdAllReports.DataKeys[i]["SZ_CASE_ID"].ToString())).SZ_COMPANY_ID; // COMPANY ID
+            Session["CASE_OBJECT"] = _bill_Sys_CaseObject;
+
+            Bill_Sys_Case _bill_Sys_Case = new Bill_Sys_Case();
+            _bill_Sys_Case.SZ_CASE_ID = grdAllReports.DataKeys[i]["SZ_CASE_ID"].ToString();
+
+            Session["CASEINFO"] = _bill_Sys_Case;
+            Response.Redirect("Bill_Sys_ReCaseDetails.aspx", false);
+        }
+
+        if (e.CommandName.ToString() == "Insurance")
+        {
+            int iIndex = Convert.ToInt32(e.CommandArgument.ToString());
+            string szInsuranceCompany = grdAllReports.DataKeys[iIndex]["SZ_INSURANCE_COMPANY_NAME"].ToString();
+            string szInsuranceId = grdAllReports.DataKeys[iIndex]["Insurance_Company"].ToString();
+            string szInsuranceaddId = grdAllReports.DataKeys[iIndex]["Insurance_Address"].ToString();
+            string szeventid = grdAllReports.DataKeys[iIndex]["SZ_EVENT_ID"].ToString();
+            string szcaseid = grdAllReports.DataKeys[iIndex]["SZ_CASE_ID"].ToString();
+            string szclaimno = grdAllReports.DataKeys[iIndex]["CLAIM_NO"].ToString();
+            string szpolicyno = grdAllReports.DataKeys[iIndex]["SZ_POLICY_NUMBER"].ToString();
+            string szcasetype = grdAllReports.DataKeys[iIndex]["SZ_CASE_TYPE"].ToString();
+            string szpolicyholder = grdAllReports.DataKeys[iIndex]["SZ_POLICY_HOLDER"].ToString();
+            string dateofaccident = grdAllReports.DataKeys[iIndex]["DT_DATE_OF_ACCIDENT"].ToString();
+
+            //txtpoliccyno.Text = szpolicyno;
+            //txtclaimno.Text = szclaimno;
+            txtCaseID.Text = szcaseid;
+            txteventid.Text = szeventid;
+            //txtInsuranceCompany.Text = szInsuranceCompany;
+            txtInsuranceid.Text = szInsuranceId;
+            txtInsuranceaddid.Text = szInsuranceaddId;
+            ScriptManager.RegisterClientScriptBlock(this, GetType(), "mmupdateproc", "showInsurancePopup('" + szInsuranceCompany + "','" + szInsuranceId + "','" + szInsuranceaddId + "','" + szeventid + "','" + szcaseid + "','" + szclaimno + "','" + szpolicyno + "','" + szcasetype + "','" + szpolicyholder + "','" + dateofaccident + "');", true);
+
+            //if (txtInsuranceCompany.Text != "")
+            //{
+            //    if (szInsuranceId != "0")
+            //    {
+            //        try
+            //        {
+            //            ClearInsurancecontrol();
+            //            Bill_Sys_PatientBO _bill_Sys_PatientBO = new Bill_Sys_PatientBO();
+            //            lstInsuranceCompanyAddress.DataSource = _bill_Sys_PatientBO.GetInsuranceCompanyAddress(szInsuranceId);
+            //            lstInsuranceCompanyAddress.DataTextField = "DESCRIPTION";
+            //            lstInsuranceCompanyAddress.DataValueField = "CODE";
+            //            lstInsuranceCompanyAddress.DataBind();
+            //            for (int i = 0; i < lstInsuranceCompanyAddress.Items.Count; i++)
+            //            {
+            //                if (lstInsuranceCompanyAddress.Items[i].Value == szInsuranceaddId)
+            //                {
+            //                    lstInsuranceCompanyAddress.SelectedIndex = i;
+            //                    lstInsuranceCompanyAddress_SelectedIndexChanged(sender, e);
+            //                    break;
+            //                }
+
+            //            }
+            //            Page.MaintainScrollPositionOnPostBack = true;
+            //            ModalPopupExtender1.Show();
+
+            //        }
+            //        catch (Exception ex)
+            //        {
+            //            usrMessage.PutMessage(ex.ToString());
+            //            usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_ErrorMessage);
+            //            usrMessage.Show();
+            //        }
+            //    }
+            //    else
+            //    {
+            //        lstInsuranceCompanyAddress.Items.Clear();
+            //        hdninsurancecode.Value = "";
+            //    }
+            //}
+            //else
+            //{
+            //    lstInsuranceCompanyAddress.Items.Clear();
+            //    txtInsuranceAddress.Text = "";
+            //    txtInsuranceAddress.Text = "";
+            //    txtInsCity.Text = "";
+            //    txtInsState.Text = "";
+            //    txtInsZip.Text = "";
+            //    txtInsPhone.Text = "";
+            //    txtInsFax.Text = "";
+            //    hdninsurancecode.Value = "";
+            //    Page.MaintainScrollPositionOnPostBack = true;
+            //}
+
+            //grdAllReports.XGridBindSearch();
+            //ModalPopupExtender1.Show();
+        }
+
+    }
+    protected void grdAllReports_RowEditing(object sender, GridViewEditEventArgs e)
+    {
+
+    }
+    //protected void btnUpdate_Click(object sender, EventArgs e)
+    //{
+    //    try
+    //    {
+
+    //        Bill_Sys_PatientBO _bill_Sys_PatientBO = new Bill_Sys_PatientBO();
+
+    //        _bill_Sys_PatientBO.UpdateInsuranceInfoevent(txtCompanyID.Text, txtInsuranceid.Text, txtInsuranceaddid.Text, txteventid.Text, txtCaseID.Text, txtclaimno.Text, txtpoliccyno.Text);
+
+    //        grdAllReports.XGridBindSearch();
+    //        usrMessage.PutMessage("Update Successfully");
+    //        usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_UserMessage);
+    //        usrMessage.Show();
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        usrMessage.PutMessage(ex.ToString());
+    //        usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_ErrorMessage);
+    //        usrMessage.Show();
+    //    }
+
+
+
+    //}
+    //protected void extddlInsuranceCompany_extendDropDown_SelectedIndexChanged(object sender, EventArgs e)
+    //{
+    //    ModalPopupExtender1.Show();
+    //    extddlInsuranceCompanyAddress.Flag_ID = txtCompanyID.Text.ToString();
+    //}
+    //protected void txtInsuranceCompany_TextChanged(object sender, EventArgs args)
+    //{
+    //    string strInsuranceID = hdninsurancecode.Value;
+    //    txtInsuranceid.Text = hdninsurancecode.Value;
+    //    if (txtInsuranceCompany.Text != "")
+    //    {
+    //        if (strInsuranceID != "0")
+    //        {
+    //            try
+    //            {
+    //                ClearInsurancecontrol();
+    //                 Bill_Sys_PatientBO _bill_Sys_PatientBO = new Bill_Sys_PatientBO();
+    //                 lstInsuranceCompanyAddress.DataSource = _bill_Sys_PatientBO.GetInsuranceCompanyAddress(txtInsuranceid.Text);
+    //                lstInsuranceCompanyAddress.DataTextField = "DESCRIPTION";
+    //                lstInsuranceCompanyAddress.DataValueField = "CODE";
+    //                lstInsuranceCompanyAddress.DataBind();
+    //                Page.MaintainScrollPositionOnPostBack = true;
+    //                ModalPopupExtender1.Show();
+
+    //            }
+    //            catch (Exception ex)
+    //            {
+    //                usrMessage.PutMessage(ex.ToString());
+    //                usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_ErrorMessage);
+    //                usrMessage.Show();
+    //            }
+    //        }
+    //        else
+    //        {
+    //            lstInsuranceCompanyAddress.Items.Clear();
+    //            hdninsurancecode.Value = "";
+    //        }
+    //    }
+    //    else
+    //    {
+    //        lstInsuranceCompanyAddress.Items.Clear();
+    //        txtInsuranceAddress.Text = "";
+    //        txtInsuranceAddress.Text = "";
+    //        txtInsCity.Text = "";
+    //        txtInsState.Text = "";
+    //        txtInsZip.Text = "";
+    //        txtInsPhone.Text = "";
+    //        txtInsFax.Text = "";
+    //        hdninsurancecode.Value = "";
+    //        txtInsuranceid.Text = "";
+    //        Page.MaintainScrollPositionOnPostBack = true;
+    //    }
+    //}
+
+    //protected void extddlInsuranceCompany_extendDropDown_SelectedIndexChanged(object sender, EventArgs e)
+    //{
+    //    try
+    //    {
+    //        ClearInsurancecontrol();
+    //        Bill_Sys_PatientBO _bill_Sys_PatientBO = new Bill_Sys_PatientBO();
+    //        lstInsuranceCompanyAddress.DataSource = _bill_Sys_PatientBO.GetInsuranceCompanyAddress(extddlInsuranceCompany.Text);
+    //        lstInsuranceCompanyAddress.DataTextField = "DESCRIPTION";
+    //        lstInsuranceCompanyAddress.DataValueField = "CODE";
+    //        lstInsuranceCompanyAddress.DataBind();
+    //        Page.MaintainScrollPositionOnPostBack = true;
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        usrMessage.PutMessage(ex.ToString());
+    //        usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_ErrorMessage);
+    //        usrMessage.Show();
+    //    }
+    //}
+    //protected void lstInsuranceCompanyAddress_SelectedIndexChanged(object sender, EventArgs e)
+    //{
+
+    //    Bill_Sys_PatientBO _bill_Sys_PatientBO = new Bill_Sys_PatientBO();
+    //    try
+    //    {
+    //        ArrayList _arraylist = _bill_Sys_PatientBO.GetInsuranceAddressDetail(lstInsuranceCompanyAddress.SelectedValue);
+    //        txtInsuranceaddid.Text = lstInsuranceCompanyAddress.SelectedValue;
+    //        txtInsuranceAddress.Text = _arraylist[2].ToString();
+    //        txtInsCity.Text = _arraylist[3].ToString();
+    //        txtInsState.Text = _arraylist[4].ToString();
+    //        txtInsZip.Text = _arraylist[5].ToString();
+    //        txtInsFax.Text = _arraylist[9].ToString();
+    //        txtInsPhone.Text = _arraylist[10].ToString();
+    //        Page.MaintainScrollPositionOnPostBack = true;
+    //        ModalPopupExtender1.Show();
+    //    }
+
+    //    catch (Exception ex)
+    //    {
+    //        usrMessage.PutMessage(ex.ToString());
+    //        usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_ErrorMessage);
+    //        usrMessage.Show();
+    //    }
+    //}
+    //private void ClearInsurancecontrol()
+    //{
+    //    try
+    //    {
+    //        txtInsuranceAddress.Text = "";
+    //        txtInsCity.Text = "";
+    //        txtInsState.Text = "";
+    //        txtInsZip.Text = "";
+    //        txtInsPhone.Text = "";
+    //        txtInsFax.Text = "";
+
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        usrMessage.PutMessage(ex.ToString());
+    //        usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_ErrorMessage);
+    //        usrMessage.Show();
+    //    }
+    //}
+
+    protected void txtUpdatepopup_Click(object sender, EventArgs e)
+    {
+        if (Session["Refresh"] != null)
+        {
+            if (Session["Refresh"].ToString() == "1")
+            {
+                int Page_index = grdAllReports.PageNumberList.SelectedIndex;
+                grdAllReports.PageIndex = Page_index;
+                grdAllReports.XGridBind();
+                if (grdAllReports.Rows.Count > 0)
+                {
+                    con.SelectedIndex = Page_index;
+                }
+            }
+        }
+        Session["Refresh"] = null;
+    }
+    protected void Page_PreRender(object sender, EventArgs e)
+    {
+        Bill_Sys_Visit_BO objGet_PeffPaidBill_Info = new Bill_Sys_Visit_BO();
+
+        DataSet ds_PeffPaidBill = new DataSet();
+        try
+        {
+            ds_PeffPaidBill = objGet_PeffPaidBill_Info.GetBlockInsurance_Company(txtCompanyID.Text);
+            if (ds_PeffPaidBill.Tables.Count > 0)
+            {
+                if (ds_PeffPaidBill.Tables[0].Rows.Count > 0)
+                {
+                    for (int i = 0; i < ds_PeffPaidBill.Tables[0].Rows.Count; i++)
+                    {
+
+
+                        string InsuranceID = ds_PeffPaidBill.Tables[0].Rows[i]["sz_insurance_id"].ToString();
+                        for (int j = 0; j < grdAllReports.Rows.Count; j++)
+                        {
+                            CheckBox chkDelete1 = (CheckBox)grdAllReports.Rows[j].FindControl("chkSelect");
+                            if (grdAllReports.DataKeys[j]["Insurance_Company"].ToString() == InsuranceID)
+                            {
+
+                                chkDelete1.Checked = false;
+                                chkDelete1.Enabled = false;//SZ_INSURANCE_COMPANY_NAME
+                                string insurance_company = grdAllReports.DataKeys[j]["SZ_INSURANCE_COMPANY_NAME"].ToString();
+                                insurance_company = insurance_company + "     [Blocked Billing]";
+                                grdAllReports.Rows[j].Cells[26].Text = insurance_company;
+                                chkDelete1.Enabled = false;
+
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            usrMessage.PutMessage(ex.ToString());
+            usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_ErrorMessage);
+            usrMessage.Show();
+        }
+    }
+
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_CM_INITIAL_EVAL">
+  <Field Name="I_EVENT_ID" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtEventID" Editable="True" Visible="True"></Field>
+
+ 
+  <Field Name="SZ_WHERE_HOW_INJURY_HAPPEN" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="TXT_WHERE_HOW_INJURY_HAPPEN" Editable="True" Visible="True"></Field>
+  <Field Name="I_INJURY_FROM_PATIENT" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtRDO_INJURY_FROM" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_INJURY_FROM_OTHERS" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtOtherSpecify" Editable="True" Visible="True"></Field>
+
+  <Field Name="I_TREAT_INJURY" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtRDO_TREAT_INJURY" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_ANOTHER_HEALTH_PROVIDER_TREATED_DETAILS" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="TXT_ANOTHER_HEALTH_PROVIDER_TREATED_DETAILS" Editable="True" Visible="True"></Field>
+
+  <Field Name="I_PREVIOUSLY_TREATED" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtRDO_PREVIOUSLY_TREATED_No" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PREVIOUS_TREATMENT_WORK_RELATED_INJURY" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="TXT_PREVIOUS_TREATMENT_WORK_RELATED_INJURY" Editable="True" Visible="True"></Field>
+
+
+
+  <!--<Field Name="BT_TREATMENT_99241" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_TREATMENT_99201_99241" Editable="True" Visible="True"></Field>
+  <Field Name="BT_TREATMENT_99244" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_TREATMENT_99204_99244" Editable="True" Visible="True"></Field>
+  <Field Name="BT_TREATMENT_99242" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_TREATMENT_99202_99242" Editable="True" Visible="True"></Field>
+  <Field Name="BT_TREATMENT_99245" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_TREATMENT_99205_99245" Editable="True" Visible="True"></Field>
+  <Field Name="BT_TREATMENT_99243" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_TREATMENT_99203_99243" Editable="True" Visible="True"></Field>-->
+
+  <StoreProcedure name="SP_CM_INITIAL_EVAL_HISTORY_OF_PRESENT_ILLNESS" />
+</Table>
+
+
+
+
+
+

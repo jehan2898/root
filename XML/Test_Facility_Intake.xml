@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_TEST_FACILITY_INTAKE">
+
+  <Field Name="I_EVENT_ID" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtId" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_DOCTOR_NAME" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtDoctorName" Editable="True" Visible="True"></Field>
+  <Field Name="I_PRGNENT" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtPregnant" Editable="True" Visible="True"></Field>
+
+  <Field Name="SZ_EXPLAIN_PROBLEM" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtExplainProblem" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PROBLEM_YEAR" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtProblemYear" Editable="True" Visible="True"></Field>
+  <Field Name="DT_PROBLEM_DATE" DataType="DateTime" Size="500" Null="False" Control="TextBox" ControlID="txtProblemDate" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_MEDICAL_ILLNESS" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtmedicalillness" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_DIAGNOSED" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtDiagnosed" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_LIST_PREVIOUS_SERGERIES" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtListPreviousSurgeries" Editable="True" Visible="True"></Field>
+  <Field Name="I_IVCONTRAST" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtIvContrast" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_IVCONTRAST" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtIvContrast1" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_IVCONTRAST2" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtIvContrast2" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PREVIOUS_DOCTOR" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtDR" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PROBLREM_RESULT" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtResultOf" Editable="True" Visible="True"></Field>
+   
+  <Field Name="DT_DATE" DataType="DateTime" Size="" Null="False" Control="TextBox" ControlID="txtDate" Editable="True" Visible="True"></Field>
+ 
+  <Field Name="SZ_MRI" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtMriOf" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_TECH" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtTech" Editable="True" Visible="True"></Field>
+
+  <Field Name="SZ_GARDIAN_NAME" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtGardianName" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_RELATION" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtRelation" Editable="True" Visible="True"></Field>
+
+  <StoreProcedure name="SP_TEST_FACILITY_INTAKE" />
+</Table>

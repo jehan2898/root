@@ -1,0 +1,114 @@
+﻿<%@ master language="C#" AutoEventWireup="true" CodeFile="~/RP/ProviderMasterPage.master.cs" inherits="Refering_provider_ProviderMasterPage" %>
+<%@ Register Assembly="System.Web.Extensions, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
+    Namespace="System.Web.UI" TagPrefix="asp" %>
+<%@ Register Assembly="DevExpress.Web.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web" TagPrefix="dxe" %>
+<%@ Register Assembly="DevExpress.Web.ASPxScheduler.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web.ASPxScheduler.Controls" TagPrefix="dxsc" %>
+<%@ Register Assembly="DevExpress.Web.ASPxScheduler.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web.ASPxScheduler" TagPrefix="dxwschs" %>
+<%@ Register Assembly="DevExpress.Web.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web" TagPrefix="dxcp" %>
+<%@ Register Assembly="DevExpress.Web.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web" TagPrefix="dx" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <meta name="robots" content="noindex" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+  
+    <style type="text/css">
+        html
+        {
+            background: url(images/matte-gray.jpg) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        
+        #page-wrap
+        {
+            width: 95%;
+            height: auto;
+            margin: 15px auto;
+            padding: 10px;
+            background: white;
+            -moz-box-shadow: 0 0 20px black;
+            -webkit-box-shadow: 0 0 20px black;
+            box-shadow: 0 0 20px black;
+            vertical-align: top;
+        }
+        p
+        {
+            font: 15px/2 Georgia, Serif;
+            margin: 0 0 30px 0;
+            text-indent: 40px;
+        }
+        .style1
+        {
+            width: 27%;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <table>
+    </table>
+    <table id="page-wrap" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+            <td style="width:20%;font-family:Calibri;font-size:32px;font-weight:bold;font-style:italic;color:#208A0D">
+                GreenYourBills
+            </td>
+        </tr>
+        <tr>
+            <td style="width:80%;text-align:right;vertical-align: top; padding: 0; padding-bottom:5px margin: 0;font-family:Calibri;font-size:14px;font-weight:bold; ">
+                Welcome, <%=((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_NAME %> 
+            </td>
+        </tr>
+        <tr>
+            <td style="vertical-align: top; padding: 0; margin: 0; width:100%;background-color:#F0F0F0">
+                <table>
+                    <tr>
+                        <td>
+                            <dx:ASPxMenu 
+                                ID="ASPxMenu1" 
+                                runat="server" 
+                                Border-BorderColor="#F0F0F0"
+                                SkinID="ASPxMenu"
+                                Width="40%">
+                                <Items>
+                                    <dx:MenuItem Text="Desks">
+                                        <Items>
+                                            <dx:MenuItem Text="Patient Desk" NavigateUrl="PatientDesk.aspx" />
+                                            <dx:MenuItem Text="Visit Desk" NavigateUrl="VisitDesk.aspx" />
+                                            <dx:MenuItem Text="Bill Desk" NavigateUrl="BillDesk.aspx" />
+                                        </Items>
+                                    </dx:MenuItem>
+
+                                    <dx:MenuItem Text="Session">
+                                        <Items>
+                                            <dx:MenuItem Text="Logout" NavigateUrl="Logout.aspx" />
+                                        </Items>
+                                    </dx:MenuItem>
+                                  </Items>  
+                            </dx:ASPxMenu>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>                                   
+        <tr>
+          <td style="vertical-align: top; width: 100%" >
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+            </asp:ContentPlaceHolder>
+         </td>
+       </tr>
+    </table>
+  </form>
+</body>
+</html>

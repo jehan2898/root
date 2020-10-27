@@ -1,0 +1,232 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="attorney.master.cs" Inherits="attorney" %>
+
+<%@ Register TagPrefix="osm" Namespace="OboutInc.SlideMenu" Assembly="obout_SlideMenu3_Pro_Net" %>
+<%@ Register Src="~/UserControl/CheckPageAutharizationAttorney.ascx" TagName="LoginDetails"
+    TagPrefix="LD" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server" id="masterhead">
+<meta name="robots" content="noindex" />
+</head>
+<body>
+
+    <script language="javascript" type="text/javascript">
+
+        function GoToNextPage(objNode) {
+            document.getElementById("frameContent").src = objNode;
+        }
+
+        function OpenTicket() {
+            window.open('Bill_sys_Ticket.aspx', 'SupportMail', 'channelmode=no,location=no,toolbar=no,menubar=0,resizable=0,status=no,scrollbars=0, width=430,height=365');
+        }
+
+        function OpenAjaxTicket() {
+            window.open('../Bill_sys_Ticket.aspx', 'SupportMail', 'channelmode=no,location=no,toolbar=no,menubar=0,resizable=0,status=no,scrollbars=0, width=430,height=365');
+        }
+
+        function OnSupportClick(s, e) {
+            if (e.item.name == 'NewTicket') {
+                var url = '../NewTicket.aspx';
+                IFrame_NewTicket.SetContentUrl(url);
+                IFrame_NewTicket.Show();
+                return false;
+            } else {
+                if (e.item.name == 'ViewTickets') {
+                    var url = '../ViewTickets.aspx';
+                    IFrame_ViewTickets.SetContentUrl(url);
+                    IFrame_ViewTickets.Show();
+                    return false;
+                }
+            }
+        }
+        function OnReportingClick(s, e) {
+            if (e.item.name == 'Reports') {
+                var url = '../WebReporting/ReportsHome.aspx';
+                IFrame_NewTicket.SetContentUrl(url);
+                IFrame_NewTicket.Show();
+                return false;
+            }
+        }
+
+    </script>
+ <style>
+    .logocss
+    {
+        border-radius:10px;
+        
+        }
+    </style>
+
+    <form id="form1" runat="server">
+        <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse"
+            width="100%" height="100%">
+            <tr>
+                <td width="100%" height="7%" valign="top">
+                    <table width="100%; height:100%" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td width="250" height="80" align="left" valign="top" scope="row">
+                                <table width="250" height="80" border="0" cellpadding="0" cellspacing="0" background="images/top-bg.jpg">
+                                    <tr>
+                                        <td align="left" valign="bottom" class="frame-1" scope="row" width="100%">
+                                            <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Images/GREENLOGO2.JPG"
+                                                Width="250px" Height="64px"  PostBackUrl="~/AJAX Pages/Bill_Sys_DashBoard.aspx" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td align="left" valign="top">
+                                <table width="100%" height="80" border="0" cellpadding="0" cellspacing="0" background="images/top-bg.jpg">
+                                    <tr>
+                                        <td valign="top" scope="row" width="100%">
+                                            <table width="100%">
+                                                <tr>
+                                                    <td>
+                                                        &nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="70%" align="left" valign="top">
+                                                        <table class="UserTable" style="height: 100%; padding-top: 10px;" width="100%">
+                                                            <tr>
+                                                                <td align="right" valign="middle" style="padding-top: 5px">
+                                                                    <a id="lnkDesks" runat="server" href="AJAX Pages/Bill_Sys_LitigationDesk.aspx" visible="false">
+                                                                        Desks</a>
+                                                                    <a id="lnkDataEntry" runat="server" href="Bill_Sys_Patient.aspx" visible="false">Data
+                                                                        Entry</a>
+                                                                    <a id="lnkQuickSearch" runat="server" href="AJAX Pages/Bill_Sys_SearchCase.aspx?type=Quick"
+                                                                        visible="false">Quick Bill Entry</a>
+                                                                    <a id="lnkReports" runat="server" href="Bill_Sys_AllReports.aspx?name=Unbilled" visible="false">
+                                                                        Reports</a>
+                                                                    <a id="lnkBillingReport" runat="server" href="Bill_Sys_AllReportsBilling.aspx?name=Unbilled"
+                                                                        visible="false">Billing</a>
+                                                                    <a id="A2" runat="server" href="AJAX Pages/Bill_Sys_Connections.aspx" visible="false">
+                                                                        My Connections</a>
+                                                                    <a id="lnkshedulevisits" runat="server" href="AJAX Pages/Bill_Sys_Calendar.aspx" visible="false">Scheduling</a>&nbsp;
+                                                                  
+                                                                </td>
+                                                               <td align="right" valign="middle" style="padding-top: 5px">
+                                                                   <a id="lnkHome" runat="server" href="AJAX Pages/Bill_Sys_SearchCase.aspx?type=home"
+                                                                        visible="true">Patient List</a>
+                                                                   
+                                                               </td>
+                                                               <td align="right" valign="middle" style="padding-top: 5px">
+                                                                   <a id="lnkLogOut" runat="server" href="Bill_Sys_Logout.aspx">Logout</a>
+                                                                </td>
+                                                                <td align="center" valign="middle" style="padding-top: 5px">
+                                                                    <dx:ASPxMenu ID="ASPxMenu1" runat="server" Border-BorderColor="#3A7ABA" BackColor="#3A7ABA"
+                                                                        SkinID="ASPxMenu">
+                                                                            <Items>
+                                                                                <dx:MenuItem Text="Support">
+                                                                                    <Items>
+                                                                                        <dx:MenuItem Name="NewTicket" Text="New Ticket"></dx:MenuItem>
+                                                                                        <dx:MenuItem Name="ViewTickets" Text="View Tickets"></dx:MenuItem>
+                                                                                    </Items>
+                                                                                </dx:MenuItem>
+                                                                            </Items>
+                                                                            <ClientSideEvents ItemClick="OnSupportClick" />
+                                                                        </dx:ASPxMenu>
+
+                                                                </td>
+                                                                
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td width="30%" valign="top">
+                                                        <LD:LoginDetails ID="LD1" runat="server"></LD:LoginDetails>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td width="4" align="right" valign="top" scope="row">
+                                            <img src="images/top-corn-rght.jpg" width="7" height="80" /></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="100%" height="79%" valign="top">
+                    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse"
+                        bordercolor="#111111" width="100%" height="100%">
+                        <tr>
+                            <td width="15%" valign="top" height="100%" style="background-color: #dbe6fa">
+                                <osm:SlideMenu ID="problue" runat="server" StyleFolder="styles/xp_blue" AutoPostBack="true"
+                                    SelectedId="viewsysinfo" CSSChildrenBox="SMChildrenBox" Height="430">
+                                </osm:SlideMenu>
+                            </td>
+                            <td width="85%" valign="top">
+                                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                </asp:ContentPlaceHolder>
+                                <%-- <iframe id="frameContent" runat="server" src="Content.aspx" frameborder="0"
+                                        style="width: 100%; height: 100%"></iframe>--%>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="100%" height="4%" valign="top">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="background-image: url(images/footer-bg.jpg);
+                        height: 35px; width: 100%;">
+                        <tr>
+                            <td width="200" align="left" valign="top" scope="row">
+                            </td>
+                            <td align="left" valign="top">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr align="left" valign="middle">
+                                        <td height="35" class="space" scope="row">
+                                            &nbsp;</td>
+                                        <td width="5">
+                                            <img src="images/sp.gif" width="1" height="1" /></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+         <div>
+        <dx:ASPxPopupControl 
+            ID="IFrame_NewTicket" runat="server" CloseAction="CloseButton"
+            Modal="true" PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter"
+            ClientInstanceName="IFrame_NewTicket" 
+            HeaderText="Open New Ticket"
+            HeaderStyle-HorizontalAlign="Left"
+            HeaderStyle-ForeColor="White"
+            HeaderStyle-BackColor="#000000" 
+            AllowDragging="True" 
+            EnableAnimation="False"
+            EnableViewState="True" Width="800px" ToolTip="Open New Ticket" PopupHorizontalOffset="0"
+            PopupVerticalOffset="0"  AutoUpdatePosition="true" ScrollBars="Auto"
+            RenderIFrameForPopupElements="Default" Height="500px">
+            <ContentStyle>
+                <Paddings PaddingBottom="5px" />
+            </ContentStyle>
+        </dx:ASPxPopupControl>
+
+        <dx:ASPxPopupControl 
+            ID="IFrame_ViewTickets" runat="server" CloseAction="CloseButton"
+            Modal="true" PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter"
+            ClientInstanceName="IFrame_ViewTickets" 
+            HeaderText="View Tickets"
+            HeaderStyle-HorizontalAlign="Left"
+            HeaderStyle-ForeColor="White"
+            HeaderStyle-BackColor="#000000" 
+            AllowDragging="True" 
+            EnableAnimation="False"
+            EnableViewState="True" Width="800px" ToolTip="Open New Ticket" PopupHorizontalOffset="0"
+            PopupVerticalOffset="0"   AutoUpdatePosition="true" ScrollBars="Auto"
+            RenderIFrameForPopupElements="Default" Height="500px">
+            <ContentStyle>
+                <Paddings PaddingBottom="5px" />
+            </ContentStyle>
+        </dx:ASPxPopupControl>
+    </div>
+    </form>
+</body>
+</html>
+

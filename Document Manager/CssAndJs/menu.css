@@ -1,0 +1,86 @@
+/* --- menu styles ---
+note:
+	not all browsers render styles the same way so try out your style sheet
+	on different browsers before publishing;
+*/
+/* level 0 inner */
+.m0l0iout 
+{
+	/*
+	font-family: verdana,Arial, Helvetica;
+	font-size: 10px;
+	text-decoration: none;
+	padding: 4px;
+	color: #FFF;
+	font-weight:bold;*/
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #FFF;
+	text-decoration: none;
+	padding-left: 4px;
+	font-weight:bold;
+	padding-top: 6px;
+}
+.m0l0iover 
+{
+	/*
+	font: 10px Verdana, Geneva, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	padding: 4px;
+	color: white;
+*/
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #FFF;
+	text-decoration: none;
+	padding-left: 4px;
+	font-weight:bold;
+	padding-top: 6px;
+}
+
+/* level 0 outer */
+.m0l0oout {
+	text-decoration : none;
+	border : 1px #FFFFFF;
+	background: #2B6394;
+	background-image: url(../images/left_button_div.jpg)
+}
+
+.m0l0oover {
+	text-decoration : none;
+	/*border : 1px solid #FFFFFF;*/
+	background: #78A0C3;
+}
+
+/* level 1 inner */
+.m0l1iout {
+	font: 10px Verdana, Geneva, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	padding: 4px;
+	color: black;
+}
+.m0l1iover {
+	font: 10px Verdana, Geneva, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	border : 0px solid #FFFFFF;
+	padding: 4px;
+	color: white;
+
+}
+
+
+/* level 1 outer */
+.m0l1oout 
+{
+	text-decoration : none;
+	border : 1px solid #30617C;
+	background: #dbe2e8;
+	padding-top: 2px;
+}
+.m0l1oover {
+	text-decoration : none;
+	border : 1px solid #30617C;
+	background: #30617C;
+	padding-top: 2px;
+	color: #FFF;
+}

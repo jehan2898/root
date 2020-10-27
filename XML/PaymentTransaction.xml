@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="TXN_PAYMENT_TRANSACTIONS">
+  <Field Name="SZ_PAYMENT_ID"       DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"  ControlID=""                 Editable="False"  Visible="False"></Field>
+   <Field Name="SZ_CHECK_NUMBER"     DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"  ControlID="txtChequeNumber"  Editable="True"   Visible="True" ></Field>
+  <Field Name="DT_CHECK_DATE"       DataType="DateTime"    Size=""       Null="False"   Control="TextBox"  ControlID="txtChequeDate"    Editable="True"  Visible="True" ></Field>
+  <Field Name="FLT_CHECK_AMOUNT"    DataType="Float"       Size=""       Null="False"   Control="TextBox"  ControlID="txtChequeAmount"  Editable="True"  Visible="True" ></Field>
+  <Field Name="I_PAYMENT_STATE"    DataType="Int"    Size=""      Null="False"   Control="TextBox"  ControlID="txtPaymentType"   Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_COMPANY_ID"       DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"  ControlID="txtCompanyID"     Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_BILL_ID"       DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"  ControlID="txtBillNo"     Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_COMMENT"       DataType="NVarChar"    Size="255"     Null="False"   Control="TextBox"  ControlID="txtComment"     Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_USER_ID"       DataType="NVarChar"    Size="255"     Null="False"   Control="TextBox"  ControlID="txtUserId"     Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PAYMENT_DOCUMENT_LINK"       DataType="NVarChar"    Size="4000"     Null="False"   Control="TextBox"  ControlID=""     Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_BILL_STATUS_ID"       DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"  ControlID="txtBillStatusId"     Editable="True"  Visible="True" ></Field>
+  <StoreProcedure name="SP_TXN_PAYMENT_TRANSACTIONS"></StoreProcedure>
+  <ListControl name="grdPaymentTransaction"></ListControl>
+</Table>

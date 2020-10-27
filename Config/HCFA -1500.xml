@@ -1,0 +1,169 @@
+<root>
+<document type= "Temp_GoGyb" description="LSC Payoff letter template" lastmodified="June 22 2009 15:35" procedure_name="SP_GET_PRIVATE_BILL" >
+<field db_field_name="ACCIDENT_DATE"       pdf_field_index="1"  pdf_field_name="ACCIDENT_DATE"   if_blank=" "/>
+<field db_field_name="Unit5"       pdf_field_index="2"  pdf_field_name="Unit5"   if_blank=" "/>
+<field db_field_name="Treatmentcode5"       pdf_field_index="3"  pdf_field_name="Treatmentcode5"   if_blank=" "/>
+<field db_field_name="sg_p1_emg_2[3]"       pdf_field_index="4"  pdf_field_name="sg_p1_emg_2[3]"   if_blank=" "/>
+<field db_field_name="sg_p1_pin[0]"       pdf_field_index="5"  pdf_field_name="sg_p1_pin[0]"   if_blank=" "/>
+<field db_field_name="radYN0_p1_27[0]"       pdf_field_index="6"  pdf_field_name="radYN0_p1_27[0]"   if_blank=" "/>
+<field db_field_name="sg_tos_5[0]"       pdf_field_index="7"  pdf_field_name="sg_tos_5[0]"   if_blank=" "/>
+<field db_field_name="sg_p1_ch_4[0]"       pdf_field_index="8"  pdf_field_name="sg_p1_ch_4[0]"   if_blank=" "/>
+<field db_field_name="dt_dos_4[0]"       pdf_field_index="9"  pdf_field_name="dt_dos_4[0]"   if_blank=" "/>
+<field db_field_name="dt_p1_18[0]"       pdf_field_index="10"  pdf_field_name="dt_p1_18[0]"   if_blank=" "/>
+<field db_field_name="chkAutoAcc"       pdf_field_index="11"  pdf_field_name="chkAutoAcc"   if_blank=" "/>
+<field db_field_name="nam3_p1_M_2i[0]"       pdf_field_index="12"  pdf_field_name="nam3_p1_M_2i[0]"   if_blank=" "/>
+<field db_field_name="sg_p1_iid[0]"       pdf_field_index="13"  pdf_field_name="sg_p1_iid[0]"   if_blank=" "/>
+<field db_field_name="SZ_INSURANCE_ADDRESS"       pdf_field_index="14"  pdf_field_name="SZ_INSURANCE_ADDRESS"   if_blank=" "/>
+<field db_field_name="BILLING_LOCATION_ZIP"       pdf_field_index="15"  pdf_field_name="BILLING_LOCATION_ZIP"   if_blank=" "/>
+<field db_field_name="Unit6"       pdf_field_index="16"  pdf_field_name="Unit6"   if_blank=" "/>
+<field db_field_name="Treatmentcode6"       pdf_field_index="17"  pdf_field_name="Treatmentcode6"   if_blank=" "/>
+<field db_field_name="Diagnosis1"       pdf_field_index="18"  pdf_field_name="Diagnosis1"   if_blank=" "/>
+<field db_field_name="adr_p1_st_7[0]"       pdf_field_index="19"  pdf_field_name="adr_p1_st_7[0]"   if_blank=" "/>
+<field db_field_name="sg_p1_rol_2[9]"       pdf_field_index="20"  pdf_field_name="sg_p1_rol_2[9]"   if_blank=" "/>
+<field db_field_name="sg_p1_emg_2[2]"       pdf_field_index="21"  pdf_field_name="sg_p1_emg_2[2]"   if_blank=" "/>
+<field db_field_name="sg_tos_4[0]"       pdf_field_index="22"  pdf_field_name="sg_tos_4[0]"   if_blank=" "/>
+<field db_field_name="sg_p1_ch_3[0]"       pdf_field_index="23"  pdf_field_name="sg_p1_ch_3[0]"   if_blank=" "/>
+<field db_field_name="dt_dos_3[0]"       pdf_field_index="24"  pdf_field_name="dt_dos_3[0]"   if_blank=" "/>
+<field db_field_name="chkPatRelChild"       pdf_field_index="25"  pdf_field_name="chkPatRelChild"   if_blank=" " is_check_box = "1" is_bit="0"/>
+<field db_field_name="TAXIDTYPE1"       pdf_field_index="26"  pdf_field_name="TAXIDTYPE1"   if_blank=" " is_check_box = "1" is_bit="0"/>
+<field db_field_name="Diagnosis2"       pdf_field_index="27"  pdf_field_name="Diagnosis2"   if_blank=" "/>
+<field db_field_name="SZ_PATIENT_ZIP"       pdf_field_index="28"  pdf_field_name="SZ_PATIENT_ZIP"   if_blank=" "/>
+<field db_field_name="sg_p1_rol_2[8]"       pdf_field_index="29"  pdf_field_name="sg_p1_rol_2[8]"   if_blank=" "/>
+<field db_field_name="sg_p1_emg_2[1]"       pdf_field_index="30"  pdf_field_name="sg_p1_emg_2[1]"   if_blank=" "/>
+<field db_field_name="sg_p1_pacno[0]"       pdf_field_index="31"  pdf_field_name="sg_p1_pacno[0]"   if_blank=" "/>
+<field db_field_name="sg_tos_3[0]"       pdf_field_index="32"  pdf_field_name="sg_tos_3[0]"   if_blank=" "/>
+<field db_field_name="sg_p1_ch_2[0]"       pdf_field_index="33"  pdf_field_name="sg_p1_ch_2[0]"   if_blank=" "/>
+<field db_field_name="dt_dos_2[0]"       pdf_field_index="34"  pdf_field_name="dt_dos_2[0]"   if_blank=" "/>
+<field db_field_name="radYN0_p1_20[0]"       pdf_field_index="35"  pdf_field_name="radYN0_p1_20[0]"   if_blank=" "/>
+<field db_field_name="dt_p1_16[0]"       pdf_field_index="36"  pdf_field_name="dt_p1_16[0]"   if_blank=" "/>
+<field db_field_name="ChkAutoAccNo"       pdf_field_index="37"  pdf_field_name="ChkAutoAccNo"   if_blank=" " is_check_box = "1" is_bit="0"/>
+<field db_field_name="nam3_p1_F_9[0]"       pdf_field_index="38"  pdf_field_name="nam3_p1_F_9[0]"   if_blank=" "/>
+<field db_field_name="radYN0_p1_8[0]"       pdf_field_index="39"  pdf_field_name="radYN0_p1_8[0]"   if_blank=" "/>
+<field db_field_name="SZ_INSURANCE_PHONE"       pdf_field_index="40"  pdf_field_name="SZ_INSURANCE_PHONE"   if_blank=" "/>
+<field db_field_name="TAXIDTYPE2"       pdf_field_index="41"  pdf_field_name="TAXIDTYPE2"   if_blank=" " is_check_box = "1" is_bit="0"/>
+<field db_field_name="BILLING_LOCATION_ADDRESS"       pdf_field_index="42"  pdf_field_name="BILLING_LOCATION_ADDRESS"   if_blank=" "/>
+<field db_field_name="ACCEPT_ASSIGNMENT"       pdf_field_index="43"  pdf_field_name="ACCEPT_ASSIGNMENT"   if_blank=" " is_check_box = "1" is_bit="0"/>
+<field db_field_name="SZ_PATIENT_CITY"       pdf_field_index="44"  pdf_field_name="SZ_PATIENT_CITY"   if_blank=" "/>
+<field db_field_name="Diagnosis3"       pdf_field_index="45"  pdf_field_name="Diagnosis3"   if_blank=" "/>
+<field db_field_name="SZ_EMPLOYER_NAME"       pdf_field_index="46"  pdf_field_name="SZ_EMPLOYER_NAME"   if_blank=" "/>
+<field db_field_name="sg_p1_rol_2[7]"       pdf_field_index="47"  pdf_field_name="sg_p1_rol_2[7]"   if_blank=" "/>
+<field db_field_name="sg_p1_emg_2[0]"       pdf_field_index="48"  pdf_field_name="sg_p1_emg_2[0]"   if_blank=" "/>
+<field db_field_name="sg_tos_2[0]"       pdf_field_index="49"  pdf_field_name="sg_tos_2[0]"   if_blank=" "/>
+<field db_field_name="sg_p1_ch_1[0]"       pdf_field_index="50"  pdf_field_name="sg_p1_ch_1[0]"   if_blank=" "/>
+<field db_field_name="dt_dos_1[0]"       pdf_field_index="51"  pdf_field_name="dt_dos_1[0]"   if_blank=" "/>
+<field db_field_name="dt_p1_18to[0]"       pdf_field_index="52"  pdf_field_name="dt_p1_18to[0]"   if_blank=" "/>
+<field db_field_name="dt_p1_15[0]"       pdf_field_index="53"  pdf_field_name="dt_p1_15[0]"   if_blank=" "/>
+<field db_field_name="ChkEmpNO"       pdf_field_index="54"  pdf_field_name="ChkEmpNO"   if_blank=" " is_check_box = "1" is_bit="0"/>
+<field db_field_name="Diagnosis4"       pdf_field_index="55"  pdf_field_name="Diagnosis4"   if_blank=" "/>
+<field db_field_name="MEDICAID"       pdf_field_index="56"  pdf_field_name="MEDICAID"   if_blank=" " is_check_box = "1" is_bit="0"/>
+<field db_field_name="PrintButton1[0]"       pdf_field_index="57"  pdf_field_name="PrintButton1[0]"   if_blank=" "/>
+<field db_field_name="sg_p1_rol_2[6]"       pdf_field_index="58"  pdf_field_name="sg_p1_rol_2[6]"   if_blank=" "/>
+<field db_field_name="sg_p1_emg_1[0]"       pdf_field_index="59"  pdf_field_name="sg_p1_emg_1[0]"   if_blank=" "/>
+<field db_field_name="sg_tos_1[0]"       pdf_field_index="60"  pdf_field_name="sg_tos_1[0]"   if_blank=" "/>
+<field db_field_name="sg_p1_19[0]"       pdf_field_index="61"  pdf_field_name="sg_p1_19[0]"   if_blank=" "/>
+<field db_field_name="chkPatRelOther"       pdf_field_index="62"  pdf_field_name="chkPatRelOther"   if_blank=" " is_check_box = "1" is_bit="0"/>
+<field db_field_name="chkPatRelSpous"       pdf_field_index="63"  pdf_field_name="chkPatRelSpous"   if_blank=" " is_check_box = "1" is_bit="0"/>
+<field db_field_name="CHAMPVA"       pdf_field_index="64"  pdf_field_name="CHAMPVA"   if_blank=" " is_check_box = "1" is_bit="0"/>
+<field db_field_name="GROUP_HEALTH_PLAN"       pdf_field_index="65"  pdf_field_name="GROUP_HEALTH_PLAN"   if_blank=" " is_check_box = "1" is_bit="0"/>
+<field db_field_name="sg_p1_rol_2[5]"       pdf_field_index="66"  pdf_field_name="sg_p1_rol_2[5]"   if_blank=" "/>
+<field db_field_name="dt_p1_16to[0]"       pdf_field_index="67"  pdf_field_name="dt_p1_16to[0]"   if_blank=" "/>
+<field db_field_name="sg_p1_grpno_1[0]"       pdf_field_index="68"  pdf_field_name="sg_p1_grpno_1[0]"   if_blank=" "/>
+<field db_field_name="SZ_PATIENT_NAME"       pdf_field_index="69"  pdf_field_name="SZ_PATIENT_NAME"   if_blank=" "/>
+<field db_field_name="SZ_INSURANCE_CITY"       pdf_field_index="70"  pdf_field_name="SZ_INSURANCE_CITY"   if_blank=" "/>
+<field db_field_name="adrn_p1_N_32[2]"       pdf_field_index="71"  pdf_field_name="adrn_p1_N_32[2]"   if_blank=" "/>
+<field db_field_name="sg_p1_rol_2[4]"       pdf_field_index="72"  pdf_field_name="sg_p1_rol_2[4]"   if_blank=" "/>
+<field db_field_name="SZ_DOCTOR_NPI"       pdf_field_index="73"  pdf_field_name="SZ_DOCTOR_NPI"   if_blank=" "/>
+<field db_field_name="dt_p1_idob[0]"       pdf_field_index="74"  pdf_field_name="dt_p1_idob[0]"   if_blank=" "/>
+<field db_field_name="BILLING_LOCATION_CITY"       pdf_field_index="75"  pdf_field_name="BILLING_LOCATION_CITY"   if_blank=" "/>
+<field db_field_name="SZ_FEDERAL_TAX_ID"       pdf_field_index="76"  pdf_field_name="SZ_FEDERAL_TAX_ID"   if_blank=" "/>
+<field db_field_name="adrn_p1_N_32[1]"       pdf_field_index="77"  pdf_field_name="adrn_p1_N_32[1]"   if_blank=" "/>
+<field db_field_name="sg_p1_rol_2[3]"       pdf_field_index="78"  pdf_field_name="sg_p1_rol_2[3]"   if_blank=" "/>
+<field db_field_name="sg_p1_flypl_6[0]"       pdf_field_index="79"  pdf_field_name="sg_p1_flypl_6[0]"   if_blank=" "/>
+<field db_field_name="sg_p1_mcode[0]"       pdf_field_index="80"  pdf_field_name="sg_p1_mcode[0]"   if_blank=" "/>
+<field db_field_name="SZ_PATIENT_PHONE"       pdf_field_index="81"  pdf_field_name="SZ_PATIENT_PHONE"   if_blank=" "/>
+<field db_field_name="adr_p1_staddr_7[0]"       pdf_field_index="82"  pdf_field_name="adr_p1_staddr_7[0]"   if_blank=" "/>
+<field db_field_name="DTService1"       pdf_field_index="83"  pdf_field_name="DTService1"   if_blank=" "/>
+<field db_field_name="ResetButton1[0]"       pdf_field_index="84"  pdf_field_name="ResetButton1[0]"   if_blank=" "/>
+<field db_field_name="sg_p1_rol_2[2]"       pdf_field_index="85"  pdf_field_name="sg_p1_rol_2[2]"   if_blank=" "/>
+<field db_field_name="sg_p1_flypl_5[0]"       pdf_field_index="86"  pdf_field_name="sg_p1_flypl_5[0]"   if_blank=" "/>
+<field db_field_name="SZ_INSURANCE_NAME"       pdf_field_index="87"  pdf_field_name="SZ_INSURANCE_NAME"   if_blank=" "/>
+<field db_field_name="chkPatRelSelf"       pdf_field_index="88"  pdf_field_name="chkPatRelSelf"   if_blank=" " is_check_box = "1" is_bit="0"/>
+<field db_field_name="BILLING_LOCATION_STATE"       pdf_field_index="89"  pdf_field_name="BILLING_LOCATION_STATE"   if_blank=" "/>
+<field db_field_name="DTService2"       pdf_field_index="90"  pdf_field_name="DTService2"   if_blank=" "/>
+<field db_field_name="sg_p1_rol_2[1]"       pdf_field_index="91"  pdf_field_name="sg_p1_rol_2[1]"   if_blank=" "/>
+<field db_field_name="sg_p1_flypl_4[0]"       pdf_field_index="92"  pdf_field_name="sg_p1_flypl_4[0]"   if_blank=" "/>
+<field db_field_name="sg_p1_pan[0]"       pdf_field_index="93"  pdf_field_name="sg_p1_pan[0]"   if_blank=" "/>
+<field db_field_name="nam3_p1_L_11b[0]"       pdf_field_index="94"  pdf_field_name="nam3_p1_L_11b[0]"   if_blank=" "/>
+<field db_field_name="SZ_POLICY_NO"       pdf_field_index="95"  pdf_field_name="SZ_POLICY_NO"   if_blank=" "/>
+<field db_field_name="DTService3"       pdf_field_index="96"  pdf_field_name="DTService3"   if_blank=" "/>
+<field db_field_name="PlaceOfService"       pdf_field_index="97"  pdf_field_name="PlaceOfService"   if_blank=" "/>
+<field db_field_name="BIRTH_DATE"       pdf_field_index="98"  pdf_field_name="BIRTH_DATE"   if_blank=" "/>
+<field db_field_name="adr_p1_st_10[0]"       pdf_field_index="99"  pdf_field_name="adr_p1_st_10[0]"   if_blank=" "/>
+<field db_field_name="sg_p1_rol_1[1]"       pdf_field_index="100"  pdf_field_name="sg_p1_rol_1[1]"   if_blank=" "/>
+<field db_field_name="sg_p1_flypl_3[0]"       pdf_field_index="101"  pdf_field_name="sg_p1_flypl_3[0]"   if_blank=" "/>
+<field db_field_name="sg_p1_rol_2[0]"       pdf_field_index="102"  pdf_field_name="sg_p1_rol_2[0]"   if_blank=" "/>
+<field db_field_name="SZ_GENDER1"       pdf_field_index="103"  pdf_field_name="SZ_GENDER1"   if_blank=" " is_check_box = "1" is_bit="0"/>
+<field db_field_name="SIGNATURE"       pdf_field_index="104"  pdf_field_name="SIGNATURE"   if_blank=" "/>
+<field db_field_name="DTService4"       pdf_field_index="105"  pdf_field_name="DTService4"   if_blank=" "/>
+<field db_field_name="charges1"       pdf_field_index="106"  pdf_field_name="charges1"   if_blank=" "/>
+<field db_field_name="sg_p1_flypl_2[0]"       pdf_field_index="107"  pdf_field_name="sg_p1_flypl_2[0]"   if_blank=" "/>
+<field db_field_name="sg_p1_rol_1[0]"       pdf_field_index="108"  pdf_field_name="sg_p1_rol_1[0]"   if_blank=" "/>
+<field db_field_name="nam3_p1_F_17[0]"       pdf_field_index="109"  pdf_field_name="nam3_p1_F_17[0]"   if_blank=" "/>
+<field db_field_name="radYN0_p1_11d[0]"       pdf_field_index="110"  pdf_field_name="radYN0_p1_11d[0]"   if_blank=" "/>
+<field db_field_name="SZ_GENDER2"       pdf_field_index="111"  pdf_field_name="SZ_GENDER2"   if_blank=" " is_check_box = "1" is_bit="0"/>
+<field db_field_name="sg_p1_rlu[0]"       pdf_field_index="112"  pdf_field_name="sg_p1_rlu[0]"   if_blank=" "/>
+<field db_field_name="radYN0_p1_10c[0]"       pdf_field_index="113"  pdf_field_name="radYN0_p1_10c[0]"   if_blank=" "/>
+<field db_field_name="adr_p1_cty_7[0]"       pdf_field_index="114"  pdf_field_name="adr_p1_cty_7[0]"   if_blank=" "/>
+<field db_field_name="OTHER"       pdf_field_index="115"  pdf_field_name="OTHER"   if_blank=" " is_check_box = "1" is_bit="0"/>
+<field db_field_name="SERVICE_LOCATION_ADDRESS_Line2"       pdf_field_index="116"  pdf_field_name="SERVICE_LOCATION_ADDRESS_Line2"   if_blank=" "/>
+<field db_field_name="SERVICE_LOCATION_ADDRESS"       pdf_field_index="117"  pdf_field_name="SERVICE_LOCATION_ADDRESS"   if_blank=" "/>
+<field db_field_name="charges2"       pdf_field_index="118"  pdf_field_name="charges2"   if_blank=" "/>
+<field db_field_name="DTService5"       pdf_field_index="119"  pdf_field_name="DTService5"   if_blank=" "/>
+<field db_field_name="SZ_PATIENT_STATE"       pdf_field_index="120"  pdf_field_name="SZ_PATIENT_STATE"   if_blank=" "/>
+<field db_field_name="sg_p1_flypl_1[0]"       pdf_field_index="121"  pdf_field_name="sg_p1_flypl_1[0]"   if_blank=" "/>
+<field db_field_name="nam3_p1_M_9[0]"       pdf_field_index="122"  pdf_field_name="nam3_p1_M_9[0]"   if_blank=" "/>
+<field db_field_name="Unit1"       pdf_field_index="123"  pdf_field_name="Unit1"   if_blank=" "/>
+<field db_field_name="Treatmentcode1"       pdf_field_index="124"  pdf_field_name="Treatmentcode1"   if_blank=" "/>
+<field db_field_name="charges3"       pdf_field_index="125"  pdf_field_name="charges3"   if_blank=" "/>
+<field db_field_name="DTService6"       pdf_field_index="126"  pdf_field_name="DTService6"   if_blank=" "/>
+<field db_field_name="MEDICARE"       pdf_field_index="127"  pdf_field_name="MEDICARE"   if_blank=" " is_check_box = "1" is_bit="0"/>
+<field db_field_name="sg_p1_grpno[1]"       pdf_field_index="128"  pdf_field_name="sg_p1_grpno[1]"   if_blank=" "/>
+<field db_field_name="nf2__p1_amtpd[0]"       pdf_field_index="129"  pdf_field_name="nf2__p1_amtpd[0]"   if_blank=" "/>
+<field db_field_name="chkOtherAccYes"       pdf_field_index="130"  pdf_field_name="chkOtherAccYes"   if_blank=" " is_check_box = "1" is_bit="0"/>
+<field db_field_name="ChkEmpYes"       pdf_field_index="131"  pdf_field_name="ChkEmpYes"   if_blank=" "/>
+<field db_field_name="radMF0_p1_9b[0]"       pdf_field_index="132"  pdf_field_name="radMF0_p1_9b[0]"   if_blank=" "/>
+<field db_field_name="nam3_p1_F_2i[0]"       pdf_field_index="133"  pdf_field_name="nam3_p1_F_2i[0]"   if_blank=" "/>
+<field db_field_name="FECA"       pdf_field_index="134"  pdf_field_name="FECA"   if_blank=" " is_check_box = "1" is_bit="0"/>
+<field db_field_name="Unit2"       pdf_field_index="135"  pdf_field_name="Unit2"   if_blank=" "/>
+<field db_field_name="Treatmentcode2"       pdf_field_index="136"  pdf_field_name="Treatmentcode2"   if_blank=" "/>
+<field db_field_name="charges4"       pdf_field_index="137"  pdf_field_name="charges4"   if_blank=" "/>
+<field db_field_name="sg_p1_grpno[0]"       pdf_field_index="138"  pdf_field_name="sg_p1_grpno[0]"   if_blank=" "/>
+<field db_field_name="sg_p1_refno[0]"       pdf_field_index="139"  pdf_field_name="sg_p1_refno[0]"   if_blank=" "/>
+<field db_field_name="sg_p1_iplnm[0]"       pdf_field_index="140"  pdf_field_name="sg_p1_iplnm[0]"   if_blank=" "/>
+<field db_field_name="BILL_DATE"       pdf_field_index="141"  pdf_field_name="BILL_DATE"   if_blank=" "/>
+<field db_field_name="DiagnosisPointer"       pdf_field_index="142"  pdf_field_name="DiagnosisPointer"   if_blank=" "/>
+<field db_field_name="TOTAL"       pdf_field_index="143"  pdf_field_name="TOTAL"   if_blank=" "/>
+<field db_field_name="Unit3"       pdf_field_index="144"  pdf_field_name="Unit3"   if_blank=" "/>
+<field db_field_name="Treatmentcode3"       pdf_field_index="145"  pdf_field_name="Treatmentcode3"   if_blank=" "/>
+<field db_field_name="charges5"       pdf_field_index="146"  pdf_field_name="charges5"   if_blank=" "/>
+<field db_field_name="TICARE_CAMPUS"       pdf_field_index="147"  pdf_field_name="TICARE_CAMPUS"   if_blank=" " is_check_box = "1" is_bit="0"/>
+<field db_field_name="SZ_PATIENT_ADDRESS"       pdf_field_index="148"  pdf_field_name="SZ_PATIENT_ADDRESS"   if_blank=" "/>
+<field db_field_name="sg_p1_ch_6[0]"       pdf_field_index="149"  pdf_field_name="sg_p1_ch_6[0]"   if_blank=" "/>
+<field db_field_name="dt_dos_6[0]"       pdf_field_index="150"  pdf_field_name="dt_dos_6[0]"   if_blank=" "/>
+<field db_field_name="nf2__p1_chg[0]"       pdf_field_index="151"  pdf_field_name="nf2__p1_chg[0]"   if_blank=" "/>
+<field db_field_name="nam3_p1_M_17[0]"       pdf_field_index="152"  pdf_field_name="nam3_p1_M_17[0]"   if_blank=" "/>
+<field db_field_name="nam3_p1_L_17[0]"       pdf_field_index="153"  pdf_field_name="nam3_p1_L_17[0]"   if_blank=" "/>
+<field db_field_name="dt_p1_idob_11a[0]"       pdf_field_index="154"  pdf_field_name="dt_p1_idob_11a[0]"   if_blank=" "/>
+<field db_field_name="SZ_INSURED_NAME"       pdf_field_index="155"  pdf_field_name="SZ_INSURED_NAME"   if_blank=" "/>
+<field db_field_name="Unit4"       pdf_field_index="156"  pdf_field_name="Unit4"   if_blank=" "/>
+<field db_field_name="Treatmentcode4"       pdf_field_index="157"  pdf_field_name="Treatmentcode4"   if_blank=" "/>
+<field db_field_name="charges6"       pdf_field_index="158"  pdf_field_name="charges6"   if_blank=" "/>
+<field db_field_name="sg_p1_pin[1]"       pdf_field_index="159"  pdf_field_name="sg_p1_pin[1]"   if_blank=" "/>
+<field db_field_name="sg_p1_emg_2[4]"       pdf_field_index="160"  pdf_field_name="sg_p1_emg_2[4]"   if_blank=" "/>
+<field db_field_name="sg_p1_id[1]"       pdf_field_index="161"  pdf_field_name="sg_p1_id[1]"   if_blank=" "/>
+<field db_field_name="sg_tos_6[0]"       pdf_field_index="162"  pdf_field_name="sg_tos_6[0]"   if_blank=" "/>
+<field db_field_name="sg_p1_ch_5[0]"       pdf_field_index="163"  pdf_field_name="sg_p1_ch_5[0]"   if_blank=" "/>
+<field db_field_name="dt_dos_5[0]"       pdf_field_index="164"  pdf_field_name="dt_dos_5[0]"   if_blank=" "/>
+<field db_field_name="radYN0_p1_8_1[0]"       pdf_field_index="165"  pdf_field_name="radYN0_p1_8_1[0]"   if_blank=" "/>
+<field db_field_name="adr_p1_zip_7[0]"       pdf_field_index="166"  pdf_field_name="adr_p1_zip_7[0]"   if_blank=" "/>
+ </document></root>

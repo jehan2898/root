@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Table name="MST_ROM_FORM">
+  <Field Name="I_ROM_ID" DataType="Int" Size="" Null="True" Control="TextBox" ControlID="txt_ROM_ID" Editable="True" Visible="True"></Field>
+  <!--<Field Name="SZ_NAME" DataType="NVarChar" Size="500" Null="True" Control="TextBox" ControlID="txtName" Editable="True" Visible="True"></Field>
+  <Field Name="DT_DOA" DataType="DateTime" Size="" Null="True" Control="TextBox" ControlID="txtDao" Editable="True" Visible="True"></Field>-->
+  <Field Name="BT_ROM_CERVICAL_SPINE" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="chkRomCervicalSpine" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_ROM_CERVICAL_SPINE" DataType="NVarChar" Size="500" Null="True" Control="TextBox" ControlID="txtRomCervicalSpine" Editable="True" Visible="True"></Field>
+  <Field Name="BT_ROM_THORACIC_SPINE" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="chkRomThoracicSpine" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_ROM_THORACIC_SPINE" DataType="NVarChar" Size="500" Null="True" Control="TextBox" ControlID="txtRomThoracicSpine" Editable="True" Visible="True"></Field>
+  <Field Name="BT_ROM_LUMBAR_SPINE" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="chkRomLumbarSpine" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_ROM_LUMBAR_SPINE" DataType="NVarChar" Size="500" Null="True" Control="TextBox" ControlID="txtRomLumbarSpine" Editable="True" Visible="True"></Field>
+  <Field Name="BT_ROM_SHOULDER" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="chkRomShoulder" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_ROM_SHOULDER" DataType="NVarChar" Size="500" Null="True" Control="TextBox" ControlID="txtRomShoulder" Editable="True" Visible="True"></Field>
+  <Field Name="BT_ROM_ELBOW" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="chkRomElbow" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_ROM_ELBOW" DataType="NVarChar" Size="500" Null="True" Control="TextBox" ControlID="txtRomElbow" Editable="True" Visible="True"></Field>
+  <Field Name="BT_ROM_HIP" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="chkRomHip" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_ROM_HIP" DataType="NVarChar" Size="500" Null="True" Control="TextBox" ControlID="txtRomHip" Editable="True" Visible="True"></Field>
+  <Field Name="BT_ROM_KNEE" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="chkRomKnee" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_ROM_KNEE" DataType="NVarChar" Size="500" Null="True" Control="TextBox" ControlID="txtRomKnee" Editable="True" Visible="True"></Field>
+  <Field Name="BT_ROM_ANKLE" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="chkRomAnkle" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_ROM_ANKLE" DataType="NVarChar" Size="500" Null="True" Control="TextBox" ControlID="txtRomAnkle" Editable="True" Visible="True"></Field>
+  <Field Name="DT_DATE" DataType="DateTime" Size="" Null="True" Control="TextBox" ControlID="txtRomDate" Editable="True" Visible="True"></Field>
+
+  <!--<Field Name="SZ_DOCTOR_NAME" DataType="NVarChar" Size="500" Null="True" Control="TextBox" ControlID="" Editable="True" Visible="True"></Field> 
+
+  <Field Name="SZ_DOCTOR_SIGNATURE" DataType="NVarChar" Size="500" Null="True" Control="TextBox" ControlID="" Editable="True" Visible="True"></Field>-->
+  
+  
+  <StoreProcedure name="SP_ROM_FORM" ></StoreProcedure>
+
+</Table>
+
+
+
+
+

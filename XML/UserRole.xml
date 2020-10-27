@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_USER_ROLES">
+  <Field Name="SZ_USER_ROLE_ID"    DataType="NVarChar"    Size="20"     Null="False"  Control="TextBox"   ControlID=""          Editable="False" Visible="False"></Field>
+  <Field Name="SZ_USER_ROLE"       DataType="NVarChar"    Size="50"     Null="False"  Control="TextBox"   ControlID="txtUserRole"        Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_COMPANY_ID"      DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"   ControlID="txtCompanyID"        Editable="True"  Visible="True" ></Field>
+  <StoreProcedure name="SP_MST_USER_ROLES"></StoreProcedure>
+  <ListControl name="grdUserRoleList"></ListControl>
+</Table>

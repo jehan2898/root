@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_ADJUSTER">
+  <Field Name="SZ_ADJUSTER_ID"      DataType="NVarChar"    Size="20"     Null="False"  Control="TextBox"  ControlID=""                  Editable="False" Visible="False"></Field>
+  <Field Name="SZ_ADJUSTER_NAME"    DataType="NVarChar"    Size="150"    Null="False"  Control="TextBox"  ControlID="txtAdjusterName"   Editable="True"  Visible="True" ></Field>
+
+  <Field Name="SZ_PHONE"    DataType="NVarChar"    Size="150"    Null="False"  Control="TextBox"  ControlID="txtPhone"   Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_EXTENSION"    DataType="NVarChar"    Size="150"    Null="False"  Control="TextBox"  ControlID="txtExtension"   Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_FAX"    DataType="NVarChar"    Size="150"    Null="False"  Control="TextBox"  ControlID="txtFax"   Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_EMAIL"    DataType="NVarChar"    Size="150"    Null="False"  Control="TextBox"  ControlID="txtEmail"   Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_COMPANY_ID"       DataType="NVarChar"    Size="20"     Null="False"  Control="TextBox"  ControlID="txtCompanyID"      Editable="True"  Visible="True" ></Field>
+
+  <StoreProcedure name="SP_MST_ADJUSTER"></StoreProcedure>
+  <ListControl name="grdAdjuster"></ListControl>
+</Table>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_TRANSPOTATION">
+  <Field Name="I_TARNSPOTATION_ID" DataType="Int"  Null="True" Control="TextBox"  ControlID="txtTraspotationID" Editable="True"  Visible="False" ></Field>
+  <Field Name="SZ_TARNSPOTATION_COMPANY_NAME" DataType="NVarChar" Size="100" Null="True" Control="TextBox"  ControlID="txtName" Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_TARNSPOTATION_COMPANY_ADDRESS" DataType="NVarChar" Size="50" Null="True" Control="TextBox"  ControlID="txtAddress" Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_TARNSPOTATION_COMPANY_CITY" DataType="NVarChar" Size="50" Null="True" Control="TextBox"  ControlID="txtCity" Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_TARNSPOTATION_COMPANY_STATE_ID" DataType="NVarChar" Size="50" Null="True" Control="ExtendedDropDownList"  ControlID="extddlState" Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_TARNSPOTATION_COMPANY_ZIP" DataType="NVarChar" Size="50" Null="True" Control="TextBox"  ControlID="txtZip" Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_TARNSPOTATION_COMPANY_PHONE" DataType="NVarChar" Size="50" Null="True" Control="TextBox"  ControlID="txtPhoneNo" Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_TARNSPOTATION_COMPANY_FAX" DataType="NVarChar" Size="50" Null="True" Control="TextBox"  ControlID="txtFax" Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_TARNSPOTATION_COMPANY_EMAIL" DataType="NVarChar" Size="50" Null="True" Control="TextBox"  ControlID="txtEmailID" Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_COMPANY_ID" DataType="NVarChar" Size="50" Null="True"  Control="TextBox" ControlID="txtCompanyID"   Editable="True"  Visible="True" ></Field>
+   <StoreProcedure name="SP_MST_TRANSPOTATION"></StoreProcedure>
+  <ListControl name="grdTranspotaion"></ListControl>
+
+</Table>

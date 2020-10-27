@@ -1,0 +1,27 @@
+.text-box {
+	BORDER-RIGHT: #d1c7ac 1px solid; BORDER-TOP: #d1c7ac 1px solid; FLOAT: left; BORDER-LEFT: #d1c7ac 1px solid; PADDING-TOP: 3px; BORDER-BOTTOM: #d1c7ac 1px solid; BACKGROUND-COLOR: #f9f8f2
+}
+.td-page-bar{
+	font:Arial, Helvetica, sans-serif;
+	font-size:22px;
+	color:#FFFFFF;
+	background-color: #000099;
+}
+.button{
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size: 11px; 
+    font-weight: bold;
+    color: #FFFFFF; 
+    background-color: #996633; 
+    border: 1px solid #FFFFFF;
+	height: 25px;
+}
+.tb-border{
+	BORDER-RIGHT: #336699 1px solid; BORDER-TOP: #336699 1px solid; BORDER-LEFT: #336699 1px solid; WIDTH: 230px; BORDER-BOTTOM: #336699 1px solid
+}
+.td-page-menu{
+	font:Arial, Helvetica, sans-serif;
+	font-size:16px;
+	color:#FF6600;
+	background-color: #000099;
+}

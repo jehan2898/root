@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+
+	<config id="patient_data" description="Show all missing fields from the patient's demographic, employer, insurance, attorney, accident details" database_object_name="SP_MST_PATIENT" parameters="@FLAG='{0}',@SZ_COMPANY_ID='{1}'">
+		<field display_name="Patient's street address" data_field="SZ_PATIENT_STREET" if_blank="is blank" if_null="Not entered"> </field>
+		<field display_name="Patient's zip code" data_field="SZ_PATIENT_ZIP" if_blank="is blank" if_null="Not entered"> </field>
+	</config>
+
+	<config id="test_data" description="Show all missing fields from the patient's demographic, employer, insurance, attorney, accident details" database_object_name="SP_MST_PATIENT" parameters="@FLAG='{0}',@SZ_COMPANY_ID='{1}'">
+		<field display_name="Patient's street address" data_field="SZ_PATIENT_STREET_1" if_blank="is blank" if_null="Not entered"> </field>
+		<field display_name="Patient's zip code" data_field="SZ_PATIENT_ZIP_1" if_blank="is blank" if_null="Not entered"> </field>
+	</config>
+</configuration>

@@ -1,0 +1,170 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFValueReplacement", "..\PDFValueReplacement\PDFValueReplacement.csproj", "{0A38A60C-69E9-47C0-86E4-39F97EBBE355}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneratePDFFile", "..\GeneratePDFFile\GeneratePDFFile.csproj", "{054270BE-E01B-477C-B2F2-68F5230AAC1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GYBReportingLib", "..\GYBReportingLib\GYBReportingLib.csproj", "{39B7AA47-14CB-4C24-8FC8-C4105E3BDA91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HP1", "..\HP1\HP1.csproj", "{E68463C3-2459-46BC-8235-B7EF8EF9200F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntakePDFs", "..\IntakePDFs\IntakePDFs.csproj", "{6C644BA7-4D65-457B-8C6B-2C6E7950FB5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mbs.bl", "..\mbs.bl\mbs.bl.csproj", "{DFA4A356-ECE2-46E9-A48D-FD67D1F69E8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mbs.lawfirm", "..\mbs.lawfirm\mbs.lawfirm.csproj", "{23CA201F-EFDB-4A45-869A-E6589BF4743D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mbs.LienBills", "..\mbs.LienBills\mbs.LienBills.csproj", "{25A93B21-0F33-477A-83AB-AD3EB2A5DA11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MG2", "..\MG2\MG2.csproj", "{4E59F26C-4A76-4784-81EF-9F0BACEBFD20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFGenerationHelperClass", "..\PDFGenerationHelperClass\PDFGenerationHelperClass.csproj", "{F1078384-8258-47A9-A468-12ABB9B101C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFgenerator", "..\PDFgenerator\PDFgenerator.csproj", "{C2459D1B-DA72-4999-BD54-91ECC10338B7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{01E9E562-7991-4490-AD27-8B80B642ADAF}"
+	ProjectSection(SolutionItems) = preProject
+		..\Solution Items\BouncyCastle.Crypto.dll = ..\Solution Items\BouncyCastle.Crypto.dll
+		..\Solution Items\DevExpress.CodeParser.v16.2.dll = ..\Solution Items\DevExpress.CodeParser.v16.2.dll
+		..\Solution Items\DevExpress.Data.v16.2.dll = ..\Solution Items\DevExpress.Data.v16.2.dll
+		..\Solution Items\DevExpress.PivotGrid.v16.2.Core.dll = ..\Solution Items\DevExpress.PivotGrid.v16.2.Core.dll
+		..\Solution Items\DevExpress.RichEdit.v16.2.Core.dll = ..\Solution Items\DevExpress.RichEdit.v16.2.Core.dll
+		..\Solution Items\DevExpress.Utils.v16.2.dll = ..\Solution Items\DevExpress.Utils.v16.2.dll
+		..\Solution Items\DevExpress.Web.ASPxPivotGrid.v16.2.dll = ..\Solution Items\DevExpress.Web.ASPxPivotGrid.v16.2.dll
+		..\Solution Items\DevExpress.Web.ASPxScheduler.v16.2.dll = ..\Solution Items\DevExpress.Web.ASPxScheduler.v16.2.dll
+		..\Solution Items\DevExpress.Web.ASPxThemes.v16.2.dll = ..\Solution Items\DevExpress.Web.ASPxThemes.v16.2.dll
+		..\Solution Items\DevExpress.Web.Resources.v16.2.dll = ..\Solution Items\DevExpress.Web.Resources.v16.2.dll
+		..\Solution Items\DevExpress.Web.v16.2.dll = ..\Solution Items\DevExpress.Web.v16.2.dll
+		..\Solution Items\DevExpress.Web.v16.2.resources.dll = ..\Solution Items\DevExpress.Web.v16.2.resources.dll
+		..\Solution Items\DevExpress.Xpo.v16.2.dll = ..\Solution Items\DevExpress.Xpo.v16.2.dll
+		..\Solution Items\DevExpress.XtraCharts.v16.2.dll = ..\Solution Items\DevExpress.XtraCharts.v16.2.dll
+		..\Solution Items\DevExpress.XtraCharts.v16.2.Web.Design.dll = ..\Solution Items\DevExpress.XtraCharts.v16.2.Web.Design.dll
+		..\Solution Items\DevExpress.XtraCharts.v16.2.Web.dll = ..\Solution Items\DevExpress.XtraCharts.v16.2.Web.dll
+		..\Solution Items\DevExpress.XtraReports.v16.2.dll = ..\Solution Items\DevExpress.XtraReports.v16.2.dll
+		..\Solution Items\DevExpress.XtraReports.v16.2.Web.dll = ..\Solution Items\DevExpress.XtraReports.v16.2.Web.dll
+		..\Solution Items\DevExpress.XtraScheduler.v16.2.Core.dll = ..\Solution Items\DevExpress.XtraScheduler.v16.2.Core.dll
+		..\Solution Items\DevExpress.XtraScheduler.v16.2.dll = ..\Solution Items\DevExpress.XtraScheduler.v16.2.dll
+		..\Solution Items\DevExpress.XtraScheduler.v16.2.Reporting.dll = ..\Solution Items\DevExpress.XtraScheduler.v16.2.Reporting.dll
+		..\Solution Items\Gnostice.PDFOne.dll = ..\Solution Items\Gnostice.PDFOne.dll
+		..\Solution Items\Gnostice.XtremeFontEngine.4.0.dll = ..\Solution Items\Gnostice.XtremeFontEngine.4.0.dll
+		..\Solution Items\Gnostice.XtremeImageEngine.4.0.dll = ..\Solution Items\Gnostice.XtremeImageEngine.4.0.dll
+		..\Solution Items\Interop.CUTEFORMCOLib.dll = ..\Solution Items\Interop.CUTEFORMCOLib.dll
+		..\Solution Items\Ionic.Zip.dll = ..\Solution Items\Ionic.Zip.dll
+		..\Solution Items\Ionic.Zlib.dll = ..\Solution Items\Ionic.Zlib.dll
+		..\Solution Items\itextsharp.dll = ..\Solution Items\itextsharp.dll
+		..\Solution Items\log4net.dll = ..\Solution Items\log4net.dll
+		..\Solution Items\mbs.ApplicationSettings.dll = ..\Solution Items\mbs.ApplicationSettings.dll
+		..\Solution Items\PDFConverter.dll = ..\Solution Items\PDFConverter.dll
+		..\Solution Items\PdfMetamorphosis.dll = ..\Solution Items\PdfMetamorphosis.dll
+		..\Solution Items\URLIntegrationSecurity.dll = ..\Solution Items\URLIntegrationSecurity.dll
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "root", ".", "{D5F2BD4E-C196-4EBB-8124-FF8C0C54B897}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		ProjectReferences = "{054270be-e01b-477c-b2f2-68f5230aac1a}|GeneratePDFFIle.dll;{39b7aa47-14cb-4c24-8fc8-c4105e3bda91}|GYBReportingLib.dll;{e68463c3-2459-46bc-8235-b7ef8ef9200f}|HP1.dll;{6c644ba7-4d65-457b-8c6b-2c6e7950fb5a}|IntakePDFs.dll;{dfa4a356-ece2-46e9-a48d-fd67d1f69e8e}|mbs.bl.dll;{23ca201f-efdb-4a45-869a-e6589bf4743d}|mbs.lawfirm.dll;{25a93b21-0f33-477a-83ab-ad3eb2a5da11}|mbs.LienBills.dll;{4e59f26c-4a76-4784-81ef-9f0bacebfd20}|MG2.dll;{F1078384-8258-47A9-A468-12ABB9B101C3}|PDFGenerationHelperClass.dll;{c2459d1b-da72-4999-bd54-91ecc10338b7}|PDFgenerator.dll;{0a38a60c-69e9-47c0-86e4-39f97ebbe355}|PDFValueReplacement.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_55387"
+		Debug.AspNetCompiler.PhysicalPath = "..\root\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55387\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_55387"
+		Release.AspNetCompiler.PhysicalPath = "..\root\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55387\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "55387"
+		SlnRelativePath = "..\root\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		GoGreen4.5.Deploy|Any CPU = GoGreen4.5.Deploy|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A38A60C-69E9-47C0-86E4-39F97EBBE355}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A38A60C-69E9-47C0-86E4-39F97EBBE355}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A38A60C-69E9-47C0-86E4-39F97EBBE355}.GoGreen4.5.Deploy|Any CPU.ActiveCfg = Release|Any CPU
+		{0A38A60C-69E9-47C0-86E4-39F97EBBE355}.GoGreen4.5.Deploy|Any CPU.Build.0 = Release|Any CPU
+		{0A38A60C-69E9-47C0-86E4-39F97EBBE355}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A38A60C-69E9-47C0-86E4-39F97EBBE355}.Release|Any CPU.Build.0 = Release|Any CPU
+		{054270BE-E01B-477C-B2F2-68F5230AAC1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{054270BE-E01B-477C-B2F2-68F5230AAC1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{054270BE-E01B-477C-B2F2-68F5230AAC1A}.GoGreen4.5.Deploy|Any CPU.ActiveCfg = Release|Any CPU
+		{054270BE-E01B-477C-B2F2-68F5230AAC1A}.GoGreen4.5.Deploy|Any CPU.Build.0 = Release|Any CPU
+		{054270BE-E01B-477C-B2F2-68F5230AAC1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{054270BE-E01B-477C-B2F2-68F5230AAC1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39B7AA47-14CB-4C24-8FC8-C4105E3BDA91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39B7AA47-14CB-4C24-8FC8-C4105E3BDA91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39B7AA47-14CB-4C24-8FC8-C4105E3BDA91}.GoGreen4.5.Deploy|Any CPU.ActiveCfg = Release|Any CPU
+		{39B7AA47-14CB-4C24-8FC8-C4105E3BDA91}.GoGreen4.5.Deploy|Any CPU.Build.0 = Release|Any CPU
+		{39B7AA47-14CB-4C24-8FC8-C4105E3BDA91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39B7AA47-14CB-4C24-8FC8-C4105E3BDA91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E68463C3-2459-46BC-8235-B7EF8EF9200F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E68463C3-2459-46BC-8235-B7EF8EF9200F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E68463C3-2459-46BC-8235-B7EF8EF9200F}.GoGreen4.5.Deploy|Any CPU.ActiveCfg = Release|Any CPU
+		{E68463C3-2459-46BC-8235-B7EF8EF9200F}.GoGreen4.5.Deploy|Any CPU.Build.0 = Release|Any CPU
+		{E68463C3-2459-46BC-8235-B7EF8EF9200F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E68463C3-2459-46BC-8235-B7EF8EF9200F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C644BA7-4D65-457B-8C6B-2C6E7950FB5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C644BA7-4D65-457B-8C6B-2C6E7950FB5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C644BA7-4D65-457B-8C6B-2C6E7950FB5A}.GoGreen4.5.Deploy|Any CPU.ActiveCfg = Release|Any CPU
+		{6C644BA7-4D65-457B-8C6B-2C6E7950FB5A}.GoGreen4.5.Deploy|Any CPU.Build.0 = Release|Any CPU
+		{6C644BA7-4D65-457B-8C6B-2C6E7950FB5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C644BA7-4D65-457B-8C6B-2C6E7950FB5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFA4A356-ECE2-46E9-A48D-FD67D1F69E8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFA4A356-ECE2-46E9-A48D-FD67D1F69E8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFA4A356-ECE2-46E9-A48D-FD67D1F69E8E}.GoGreen4.5.Deploy|Any CPU.ActiveCfg = Release|Any CPU
+		{DFA4A356-ECE2-46E9-A48D-FD67D1F69E8E}.GoGreen4.5.Deploy|Any CPU.Build.0 = Release|Any CPU
+		{DFA4A356-ECE2-46E9-A48D-FD67D1F69E8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFA4A356-ECE2-46E9-A48D-FD67D1F69E8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23CA201F-EFDB-4A45-869A-E6589BF4743D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23CA201F-EFDB-4A45-869A-E6589BF4743D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23CA201F-EFDB-4A45-869A-E6589BF4743D}.GoGreen4.5.Deploy|Any CPU.ActiveCfg = Release|Any CPU
+		{23CA201F-EFDB-4A45-869A-E6589BF4743D}.GoGreen4.5.Deploy|Any CPU.Build.0 = Release|Any CPU
+		{23CA201F-EFDB-4A45-869A-E6589BF4743D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23CA201F-EFDB-4A45-869A-E6589BF4743D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25A93B21-0F33-477A-83AB-AD3EB2A5DA11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25A93B21-0F33-477A-83AB-AD3EB2A5DA11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25A93B21-0F33-477A-83AB-AD3EB2A5DA11}.GoGreen4.5.Deploy|Any CPU.ActiveCfg = Release|Any CPU
+		{25A93B21-0F33-477A-83AB-AD3EB2A5DA11}.GoGreen4.5.Deploy|Any CPU.Build.0 = Release|Any CPU
+		{25A93B21-0F33-477A-83AB-AD3EB2A5DA11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25A93B21-0F33-477A-83AB-AD3EB2A5DA11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E59F26C-4A76-4784-81EF-9F0BACEBFD20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E59F26C-4A76-4784-81EF-9F0BACEBFD20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E59F26C-4A76-4784-81EF-9F0BACEBFD20}.GoGreen4.5.Deploy|Any CPU.ActiveCfg = Release|Any CPU
+		{4E59F26C-4A76-4784-81EF-9F0BACEBFD20}.GoGreen4.5.Deploy|Any CPU.Build.0 = Release|Any CPU
+		{4E59F26C-4A76-4784-81EF-9F0BACEBFD20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E59F26C-4A76-4784-81EF-9F0BACEBFD20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1078384-8258-47A9-A468-12ABB9B101C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1078384-8258-47A9-A468-12ABB9B101C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1078384-8258-47A9-A468-12ABB9B101C3}.GoGreen4.5.Deploy|Any CPU.ActiveCfg = Release|Any CPU
+		{F1078384-8258-47A9-A468-12ABB9B101C3}.GoGreen4.5.Deploy|Any CPU.Build.0 = Release|Any CPU
+		{F1078384-8258-47A9-A468-12ABB9B101C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1078384-8258-47A9-A468-12ABB9B101C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2459D1B-DA72-4999-BD54-91ECC10338B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2459D1B-DA72-4999-BD54-91ECC10338B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2459D1B-DA72-4999-BD54-91ECC10338B7}.GoGreen4.5.Deploy|Any CPU.ActiveCfg = Release|Any CPU
+		{C2459D1B-DA72-4999-BD54-91ECC10338B7}.GoGreen4.5.Deploy|Any CPU.Build.0 = Release|Any CPU
+		{C2459D1B-DA72-4999-BD54-91ECC10338B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2459D1B-DA72-4999-BD54-91ECC10338B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5F2BD4E-C196-4EBB-8124-FF8C0C54B897}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5F2BD4E-C196-4EBB-8124-FF8C0C54B897}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5F2BD4E-C196-4EBB-8124-FF8C0C54B897}.GoGreen4.5.Deploy|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5F2BD4E-C196-4EBB-8124-FF8C0C54B897}.GoGreen4.5.Deploy|Any CPU.Build.0 = Debug|Any CPU
+		{D5F2BD4E-C196-4EBB-8124-FF8C0C54B897}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5F2BD4E-C196-4EBB-8124-FF8C0C54B897}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_INITIAL_EXAMINATION">
+  <Field Name="I_EVENT_ID" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtEventID" Editable="True" Visible="True"/>
+  <!--<Field Name="I_MEDICAL_HISTORY_AFFECT_TREATMENT" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="rdlMedicalHistoryAffectTreatnent" Editable="True" Visible="True" />-->
+  
+  <Field Name="I_MEDICAL_HISTORY_AFFECT_TREATMENT" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtrdlMedicalHistoryAffectTreatnent" Editable="True" Visible="True" />
+  <Field Name="SZ_MEDICAL_HISTORY_AFFECT_TREATMENT_DESCRIBE" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtMedicalHistoryAffectTreatnentdescribe" Editable="True" Visible="True" />
+  <Field Name="SZ_MEDICAL_NONE" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtMedicalNone" Editable="True" Visible="True" />
+  <Field Name="SZ_MEDICAL_HEART_ATTACK" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtMedicalHeartAttack" Editable="True" Visible="True" />
+  <Field Name="SZ_MEDICAL_SEIZURES" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtMedicalSeizures" Editable="True" Visible="True" />
+  <Field Name="SZ_MEDICAL_HIGH_BLOOD_PRESSURE" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtMedicalHighBloodPressure" Editable="True" Visible="True" />
+  <Field Name="SZ_MEDICAL_DIABETES1" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtMedicalDiabetes" Editable="True" Visible="True" />
+  <Field Name="SZ_MEDICAL_ANGINA_CHEST_PAIN" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtMedicalAnginaChestPain" Editable="True" Visible="True" />
+  <Field Name="SZ_MEDICAL_PHLEBITIS" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtMedicalPhlebitis" Editable="True" Visible="True" />
+  <Field Name="SZ_MEDICAL_MITRAL_VALVE_PROLAPSE" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtMedicalMitralValveProlapse" Editable="True" Visible="True" />
+  <Field Name="SZ_MEDICAL_ANGIOPLASTY" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtMedicalAngioplasty" Editable="True" Visible="True" />
+  <Field Name="SZ_MEDICAL_HEPATITIS" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtMedicalHepatitis" Editable="True" Visible="True" />
+  <Field Name="SZ_MEDICAL_BLEEDING_DISORDER" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtMedicalBleedingDisorder" Editable="True" Visible="True" />
+  <Field Name="SZ_MEDICAL_STROKE_TIA" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtMedicalStrokeTIA" Editable="True" Visible="True" />
+  <Field Name="SZ_MEDICAL_ULCERS" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtMedicalUlcers" Editable="True" Visible="True" />
+  <Field Name="SZ_MEDICAL_CIRCULATION_DISORDER" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtMedicaCirculationDisorder" Editable="True" Visible="True" />
+  <Field Name="SZ_MEDICAL_ANEMIA" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtMedicalAnemia" Editable="True" Visible="True" />
+  <Field Name="SZ_MEDICAL_HIATAL_HERNIA" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtMedicalHiatalHernia" Editable="True" Visible="True" />
+  <Field Name="SZ_MEDICAL_BACK_PAIN" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtMedicalBackPain" Editable="True" Visible="True" />
+  <Field Name="SZ_MEDICAL_ARTHRITIS" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtMedicalArthritis" Editable="True" Visible="True" />
+  <Field Name="SZ_MEDICAL_OSTEOPOROSIS" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtMedicalOsteoporosis" Editable="True" Visible="True" />
+  <Field Name="SZ_MEDICAL_SCAR_FORMER" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtMedicalScarFormer" Editable="True" Visible="True" />  
+   <Field Name="SZ_MEDICAL_THYROID_DISORDER" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtMedicalThyroidDisorder" Editable="True" Visible="True" />
+  <Field Name="SZ_MEDICAL_ASTHMA" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtMedicalAsthma" Editable="True" Visible="True" />
+  <Field Name="SZ_MEDICAL_KIDNEY_DISORDER" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtMedicalKidneyDisorder" Editable="True" Visible="True" />
+  <Field Name="SZ_MEDICAL_CIRRHOSIS" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtMedicalCirrhosis" Editable="True" Visible="True" />
+  <Field Name="SZ_MEDICAL_CANCER" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtMedicalCancer" Editable="True" Visible="True" />
+  
+  <Field Name="BT_ALLERGIES_NONE" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkAllergiesNone" Editable="True" Visible="True" />
+  <Field Name="BT_ALLERGIES_PENICILLIN" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkAllergiesPenicillin" Editable="True" Visible="True" />
+  <Field Name="BT_ALLERGIES_ASPIRIN" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkAllergiesAspirin" Editable="True" Visible="True" />
+   
+  
+  <Field Name="BT_ALLERGIES_CODEINE" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkAllergiesCodeine" Editable="True" Visible="True" />
+  <Field Name="BT_ALLERGIES_NOVOCAINE" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkAllergiesNovocaine" Editable="True" Visible="True" />
+  <Field Name="BT_ALLERGIES_IODINE" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkAllergiesIodine" Editable="True" Visible="True" />
+  <Field Name="BT_ALLERGIES_Tape" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkAllergiesTape" Editable="True" Visible="True" />
+   <Field Name="BT_ALLERGIES_OTHER" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkAllergiesOther" Editable="True" Visible="True" />
+ 
+  <Field Name="SZ_MEDICATIONS_1" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtMedications1" Editable="True" Visible="True" />
+  <Field Name="SZ_MEDICATIONS_2" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtMedications2" Editable="True" Visible="True" />
+  <Field Name="SZ_MEDICATIONS_3" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtMedications3" Editable="True" Visible="True" />
+  <Field Name="SZ_MEDICATIONS_4" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtMedications4" Editable="True" Visible="True" />
+  <Field Name="SZ_MEDICATIONS_5" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtMedications5" Editable="True" Visible="True" />
+  <Field Name="SZ_MEDICATIONS_6" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtMedications6" Editable="True" Visible="True" />
+  
+  <Field Name="SZ_PREVIOUS_SURGERIES_1" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtPreviousSurgrerise1" Editable="True" Visible="True" />
+  <Field Name="SZ_PREVIOUS_SURGERIES_2" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtPreviousSurgrerise2" Editable="True" Visible="True" />
+  <Field Name="SZ_PREVIOUS_SURGERIES_3" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtPreviousSurgrerise3" Editable="True" Visible="True" />
+  <Field Name="SZ_PREVIOUS_SURGERIES_4" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtPreviousSurgrerise4" Editable="True" Visible="True" />
+  <Field Name="SZ_PREVIOUS_SURGERIES_5" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtPreviousSurgrerise5" Editable="True" Visible="True" />
+  <Field Name="SZ_PREVIOUS_SURGERIES_6" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtPreviousSurgrerise6" Editable="True" Visible="True" />
+  
+  
+  <Field Name="SZ_FAMILY_NONE" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtFamilyNone" Editable="True" Visible="True" />
+  <Field Name="SZ_FAMILY_DIABETES" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtFamilyDiabetes" Editable="True" Visible="True" />
+  <Field Name="SZ_FAMILY_BLOOD_PRESSURE" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtFamilyBloodPressure" Editable="True" Visible="True" />
+  <Field Name="SZ_FAMILY_BLEEDING_TENDENCIES" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtFamilyBleedingTendencies" Editable="True" Visible="True" />
+  <Field Name="SZ_FAMILY_CANCER" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtFamilyCancer" Editable="True" Visible="True" />
+  <Field Name="SZ_FAMILY_ORTHOPEDICS_DISEASE" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtFamilyOrthopedicsDisease" Editable="True" Visible="True" />
+  <Field Name="SZ_FAMILY_BONE_JOINT_PROBLEMS" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtFamilyBoneJointProblems" Editable="True" Visible="True" />
+  
+  
+  <Field Name="BT_SMOKING" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkSmoking" Editable="True" Visible="True" />
+  <Field Name="SZ_SMOKING_PACKS_PER_DAY" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtSmokingPacksPerDay" Editable="True" Visible="True" />
+  <Field Name="SZ_QUIT_SMOKING_THIS_YEAR" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtOuitSmokingThisYear" Editable="True" Visible="True" />
+  
+  <Field Name="BT_QUIT_SMOKING" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkQuitSmoking" Editable="True" Visible="True" />
+  <Field Name="BT_QUIT_SMOKING_THIS_YEAR" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkQuitSmokingThisYear" Editable="True" Visible="True" />
+  <Field Name="BT_QUIT_SMOKING_1_5_YEARS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkQuitSmoking1_5Year" Editable="True" Visible="True" />
+  <Field Name="BT_QUIT_SMOKING_GREATER_THAN_10_YEARS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkQuitSmokingGreterThan10Years" Editable="True" Visible="True" />
+  
+  <Field Name="BT_ALCOHOL" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkAlcohol" Editable="True" Visible="True" />
+  <Field Name="BT_ALCOHOL_DAILY" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkAlcoholDaily" Editable="True" Visible="True" />
+  <Field Name="BT_ALCOHOL_1_2WEEK" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkAlcohol1_2Week" Editable="True" Visible="True" />
+  <Field Name="BT_ALCOHOL_1_2MONTH" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkAlcohol1_2Month" Editable="True" Visible="True" />
+  <Field Name="BT_ALCOHOL_1_2YEAR" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkAlcohol1_2Year" Editable="True" Visible="True" />
+  <Field Name="SZ_ALCOHOL_QUANTITY" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtQuantityAlcohol" Editable="True" Visible="True" />
+ 
+  <Field Name="BT_Recreational_Drugs" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkRecreationaldrugs" Editable="True" Visible="True" />
+  <Field Name="SZ_RECREATIONAL_DRUGS_WHAT" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtRecreationaldrugs" Editable="True" Visible="True" />
+  <Field Name="SZ_VITAL_SIGNS_PULSE" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtVitalSignsPulse" Editable="True" Visible="True" />
+
+  <Field Name="SZ_VITAL_SIGNS_HEIGHT" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtVitalSignsHeight" Editable="True" Visible="True" />
+  <Field Name="SZ_VITAL_SIGNS_BLOOD_PRESSURE" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtVitalSignsBloodPressure" Editable="True" Visible="True" />
+  <Field Name="SZ_VITAL_SIGNS_WEIGHT" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtVitalSignsWeight" Editable="True" Visible="True" />
+  
+  <StoreProcedure name="SP_IM_MedicalHistory"/>
+</Table>
+
+
+
+
+
+
+
+
+
+

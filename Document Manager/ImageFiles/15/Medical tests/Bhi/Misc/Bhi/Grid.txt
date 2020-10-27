@@ -1,0 +1,482 @@
+<%@ Page language="c#" CodeFile="ImageAssociation.aspx.cs" AutoEventWireup="false" Inherits="ImageAssociation" %>
+
+<%@ Register Assembly="BusyBoxDotNet" Namespace="BusyBoxDotNet" TagPrefix="busyboxdotnet" %>
+<%@ Register TagPrefix="ComponentArt" Namespace="ComponentArt.Web.UI" Assembly="ComponentArt.Web.UI" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="EN">
+  <head>
+    <title>ComboBox Integration: Grid Editing</title>
+    <link href="../css/demos.css" type="text/css" rel="stylesheet" />
+    <link href="../CSS/gridStyle.css" type="text/css" rel="stylesheet" />
+    <link href="../css/combobox.css" type="text/css" rel="stylesheet" />
+    <link href="../css/calendarStyle.css" type="text/css" rel="stylesheet" />
+  </head>
+  <script type="text/javascript">
+  
+      function scandateChange(sender, eventArgs)
+      {
+        Show_BusyBox1();
+        //ddlDocType.disable();
+        ddlDocType.set_text("");
+        ddlDocType.filter(sender.getSelectedItem().get_value());
+        
+      }
+
+      function filterComplete(sender, eventArgs)
+      {
+        //ddlDocType.enable();
+        Hide_BusyBox1();
+      }
+
+      function doctypeChange(sender, eventArgs)
+      {
+        Show_BusyBox1();
+        ddlRecordDescriptor.set_text("");
+        //ddlRecordDescriptor.disable();
+        //alert(ddlScanDate.getSelectedItem().get_value());
+        ddlRecordDescriptor.filter(sender.getSelectedItem().get_value()+ "|" + ddlScanDate.getSelectedItem().get_value());
+      }
+
+      function docTypefilterComplete(sender, eventArgs)
+      {
+        Hide_BusyBox1();
+        //ddlRecordDescriptor.enable();
+      }
+
+
+
+
+    //<![CDATA[
+    function TreeView1_onNodeSelect(sender, eventArgs)
+    {
+      ComboBox1.set_text(eventArgs.get_node().get_text());
+      ComboBox1.collapse();
+    }
+    //]]>
+    
+  function getCategory()
+  {
+    return ComboBox1.getSelectedItem().get_text();
+  }
+
+  function setCategory(DataItem)
+  {
+    
+  	ComboBox1.beginUpdate();
+
+    for(var i = 0; i < ComboBox1.get_itemCount(); i++)
+    {
+      var item = ComboBox1.getItem(i);
+     
+      if(item.get_text() == DataItem.getMember('DocumentID').get_text())
+      {
+        ComboBox1.selectItem(item);
+        break;
+      }
+    }
+
+    ComboBox1.endUpdate();
+  }
+
+  function getValue()
+  {
+    var selectedDate = Grid1_EditTemplate_0_3_Picker1.getSelectedDate();
+    var formattedDate = Grid1_EditTemplate_0_3_Picker1.formatDate(selectedDate, 'MM/dd/yyyy');
+    return [selectedDate, formattedDate];
+  }
+
+  function setValue(DataItem)
+  {
+    var selectedDate = DataItem.getMember('ScanDate').get_object();
+    Grid1_EditTemplate_0_3_Picker1.setSelectedDate(selectedDate);
+  }
+
+  function editGrid(rowId)
+  {
+    Grid1.edit(Grid1.getItemFromClientId(rowId));
+  }
+
+  function editRow()
+  {
+    Grid1.editComplete();
+  }
+
+  function insertRow()
+  {
+    Grid1.editComplete();
+  }
+
+  function deleteRow(rowId)
+  {
+    Grid1.deleteItem(Grid1.getItemFromClientId(rowId));
+  }
+
+  function Picker1_OnDateChange()
+  {
+    var fromDate = Grid1_EditTemplate_0_3_Picker1.getSelectedDate();
+    Grid1_EditTemplate_0_3_Calendar1.setSelectedDate(fromDate);
+  }
+
+  function Calendar1_OnChange()
+  {
+    var fromDate = Grid1_EditTemplate_0_3_Calendar1.getSelectedDate();
+    Grid1_EditTemplate_0_3_Picker1.setSelectedDate(fromDate);
+  }
+
+  function Button_OnClick(button)
+  {
+    if (Grid1_EditTemplate_0_3_Calendar1.get_popUpShowing())
+    {
+      Grid1_EditTemplate_0_3_Calendar1.hide();
+    }
+    else
+    {
+      var date = Grid1_EditTemplate_0_3_Picker1.getSelectedDate();
+      Grid1_EditTemplate_0_3_Calendar1.setSelectedDate(date);
+      Grid1_EditTemplate_0_3_Calendar1.show(button);
+    }
+  }
+
+  function Button_OnMouseUp()
+  {
+    if (Grid1_EditTemplate_0_3_Calendar1.get_popUpShowing())
+    {
+      event.cancelBubble=true;
+      event.returnValue=false;
+      return false;
+    }
+    else
+    {
+      return true;
+    }
+  }
+  
+    function openfile(rowId)
+    {
+        var dataItem=Grid1.getItemFromClientId(rowId);
+        var fileName=dataItem.getMember('ImagePath').get_text()
+        window.open(fileName,"MyFile","_taget='blank'");
+    }
+
+  </script>
+
+  <body>
+    <form id="Form1" method="post" runat="server">
+    <div class="DemoArea">
+        &nbsp;<br />
+        <table style="width: 90%">
+            <tr id="Tr1" runat="server">
+                <td style="width: 124px" valign="top">
+                    Scan Date</td>
+                <td colspan="3" style="width: 866px" valign="top">
+                    <ComponentArt:ComboBox id="ddlScanDate" runat="server"
+                        AutoHighlight="false"
+                        AutoComplete="true"
+                        AutoFilter="true"
+                        DataTextField="Date"
+                        DataValueField="Date"
+                        CssClass="comboBox"
+                        HoverCssClass="comboBoxHover"
+                        FocusedCssClass="comboBoxHover"
+                        TextBoxCssClass="comboTextBox"
+                        DropDownCssClass="comboDropDown"
+                        ItemCssClass="comboItem"
+                        ItemHoverCssClass="comboItemHover"
+                        SelectedItemCssClass="comboItemHover"
+                        DropDownResizingMode="Corner"
+                        DropHoverImageUrl="images/drop_hover.gif"
+                        DropImageUrl="images/drop.gif"
+                        Width="200">
+                        <ClientEvents>
+                         <Change EventHandler="scandateChange" />
+                        </ClientEvents>
+                      </ComponentArt:ComboBox>
+                    <busyboxdotnet:busybox id="BusyBox1" runat="server"></busyboxdotnet:busybox>
+
+                    
+                    </td>
+            </tr>
+            <tr id="Tr2" runat="server">
+                <td style="width: 124px" valign="top">
+                    Document Type:-</td>
+                <td colspan="3" style="width: 866px" valign="top">
+                    <ComponentArt:ComboBox id="ddlDocType" runat="server"
+                        Enabled="true"
+                        FilterCacheSize="0"
+                        AutoHighlight="true"
+                        AutoComplete="true"
+                        AutoFilter="false"
+                        RunningMode="Callback"
+                        DataTextField="Image_Type"
+                        DataValueField="Image_ID"
+                        CssClass="comboBox"
+                        HoverCssClass="comboBoxHover"
+                        FocusedCssClass="comboBoxHover"
+                        TextBoxCssClass="comboTextBox"
+                        DropDownCssClass="comboDropDown"
+                        ItemCssClass="comboItem"
+                        ItemHoverCssClass="comboItemHover"
+                        SelectedItemCssClass="comboItemHover"
+                        DropDownResizingMode="Corner"
+                        DropHoverImageUrl="images/drop_hover.gif"
+                        DropImageUrl="images/drop.gif"
+                        Width="200">
+                        <ClientEvents>
+                          <Change EventHandler="doctypeChange" />
+                         <CallbackComplete EventHandler="filterComplete" />
+                        </ClientEvents>
+                      </ComponentArt:ComboBox>
+                   
+                    </td>
+            </tr>
+            <tr id="Tr3" runat="server">
+                <td style="width: 124px; height: 24px" valign="top">
+                    Record Descriptor :-</td>
+                <td colspan="3" style="width: 866px; height: 24px" valign="top">
+                    <ComponentArt:ComboBox id="ddlRecordDescriptor" runat="server"
+                        Enabled="true"
+                        FilterCacheSize="0"
+                        AutoHighlight="true"
+                        AutoComplete="true"
+                        AutoFilter="false"
+                        RunningMode="Callback"
+                        DataTextField="RecordDesc"
+                        DataValueField="RecordDesc"
+                        CssClass="comboBox"
+                        HoverCssClass="comboBoxHover"
+                        FocusedCssClass="comboBoxHover"
+                        TextBoxCssClass="comboTextBox"
+                        DropDownCssClass="comboDropDown"
+                        ItemCssClass="comboItem"
+                        ItemHoverCssClass="comboItemHover"
+                        SelectedItemCssClass="comboItemHover"
+                        DropDownResizingMode="Corner"
+                        DropHoverImageUrl="images/drop_hover.gif"
+                        DropImageUrl="images/drop.gif"
+                        Width="200">
+                        <ClientEvents>
+                         <CallbackComplete EventHandler="docTypefilterComplete" />
+                        </ClientEvents>
+                      </ComponentArt:ComboBox>
+                    
+                    </td>
+            </tr>
+            <tr id="Tr4" runat="server">
+                <td style="width: 124px; height: 24px" valign="top">
+                </td>
+                <td align="left" colspan="3" style="width: 866px; height: 24px" valign="top">
+                    <input id="btnSearch" runat="server" accesskey="13" causesvalidation="true" class="box"
+                        enableviewstate="true" style="width: 63px; height: 20px" type="submit" value="Search" onserverclick="btnSearch_ServerClick" /></td>
+            </tr>
+            <tr id="Tr5" runat="server">
+                <td style="width: 124px" valign="top">
+                </td>
+                <td align="left" colspan="3" style="width: 866px" valign="top">
+                </td>
+            </tr>
+            <tr id="rowSubmit" runat="Server">
+                <td align="left" colspan="4">
+
+      <ComponentArt:Grid id="Grid1"
+        EnableViewState="true"
+        EditOnClickSelectedItem="false"
+        AllowEditing="true"
+        ShowHeader="False"
+        CssClass="Grid"
+        KeyboardEnabled="false"
+        FooterCssClass="GridFooter"
+        RunningMode="Client"
+        PagerStyle="Numbered"
+        PagerTextCssClass="PagerText"
+        PageSize="15"
+        ImagesBaseUrl="images/"
+        width="100%" Height="100%"
+        LoadingPanelClientTemplateId="LoadingFeedbackTemplate"
+        LoadingPanelPosition="MiddleCenter"
+        runat="server">
+        <Levels>
+          <ComponentArt:GridLevel
+            DataKeyField="ImageID"
+            ShowTableHeading="false"
+            ShowSelectorCells="true"
+            SelectorCellCssClass="SelectorCell"
+            SelectorCellWidth="18"
+            SelectorImageUrl="selector.gif"
+            SelectorImageWidth="17"
+            SelectorImageHeight="15"
+            HeadingSelectorCellCssClass="SelectorCell"
+            HeadingCellCssClass="HeadingCell"
+            HeadingRowCssClass="HeadingRow"
+            HeadingTextCssClass="HeadingCellText"
+            DataCellCssClass="DataCell"
+            RowCssClass="Row"
+            SelectedRowCssClass="SelectedRow"
+            SortAscendingImageUrl="asc.gif"
+            SortDescendingImageUrl="desc.gif"
+            SortImageWidth="10"
+            SortImageHeight="10"
+            EditCellCssClass="EditDataCell"
+            EditFieldCssClass="EditDataField"
+            EditCommandClientTemplateId="EditCommandTemplate"
+            InsertCommandClientTemplateId="InsertCommandTemplate"
+            >
+            <Columns>
+              <ComponentArt:GridColumn AllowEditing="false" DataField="ImageID" />
+              <ComponentArt:GridColumn AllowEditing="false" DataField="ImagePath" />
+              <ComponentArt:GridColumn AllowEditing="false" DataField="ScanDate" />
+              <ComponentArt:GridColumn DataField="DocumentID" HeadingText="DocumentID" ForeignTable="DocumentTypes" ForeignDataKeyField="ID" ForeignDisplayField="TypeName" EditControlType="Custom" EditCellServerTemplateId="ComboBoxTemplate" CustomEditSetExpression="setCategory(DataItem)" CustomEditGetExpression="getCategory()" Width="120" />
+              <ComponentArt:GridColumn DataField="Case_ID" />
+              <ComponentArt:GridColumn AllowSorting="false" HeadingText="View" DataCellClientTemplateId="ViewTemplate" Width="100" Align="Center" />
+              <ComponentArt:GridColumn AllowSorting="false" HeadingText="Edit Command" DataCellClientTemplateId="EditTemplate" EditControlType="EditCommand" Width="100" Align="Center" />
+            </Columns>
+          </ComponentArt:GridLevel>
+        </Levels>
+        <ClientTemplates>
+            <ComponentArt:ClientTemplate Id="ViewTemplate">
+                <a href="javascript:openfile('## DataItem.ClientId ##');">View</a>
+            </ComponentArt:ClientTemplate>
+            
+          <ComponentArt:ClientTemplate Id="EditTemplate">
+            <a href="javascript:editGrid('## DataItem.ClientId ##');">Edit</a> | <a href="javascript:deleteRow('## DataItem.ClientId ##')">Delete</a>
+          </ComponentArt:ClientTemplate>
+          <ComponentArt:ClientTemplate Id="EditCommandTemplate">
+            <a href="javascript:editRow();">Update</a> | <a href="javascript:Grid1.EditCancel();">Cancel</a>
+          </ComponentArt:ClientTemplate>
+          <ComponentArt:ClientTemplate Id="InsertCommandTemplate">
+            <a href="javascript:insertRow();">Insert</a> | <a href="javascript:Grid1.EditCancel();">Cancel</a>
+          </ComponentArt:ClientTemplate>
+          <ComponentArt:ClientTemplate Id="LoadingFeedbackTemplate">
+          <table cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td style="font-size:10px;">Loading...&nbsp;</td>
+            <td><img src="images/spinner.gif" width="16" height="16" border="0"></td>
+          </tr>
+          </table>
+          </ComponentArt:ClientTemplate>
+        </ClientTemplates>
+        <ServerTemplates>
+          <ComponentArt:GridServerTemplate Id="ComboBoxTemplate">
+            <Template>
+    <ComponentArt:ComboBox id="ComboBox1" runat="server"
+      KeyboardEnabled="false"
+      AutoFilter="false"
+      AutoHighlight="false"
+      AutoComplete="false"
+      CssClass="comboBox"
+      HoverCssClass="comboBoxHover"
+      FocusedCssClass="comboBoxHover"
+      TextBoxCssClass="comboTextBox"
+      DropDownCssClass="comboDropDown"
+      ItemCssClass="comboItem"
+      ItemHoverCssClass="comboItemHover"
+      SelectedItemCssClass="comboItemHover"
+      DropHoverImageUrl="images/drop_hover.gif"
+      DropImageUrl="images/drop.gif"
+      Width="120"
+      DropDownHeight="297"
+      DropDownWidth="216"
+      >
+      <DropdownContent>
+          <ComponentArt:TreeView id="TreeView1" Height="297" Width="216"
+            DragAndDropEnabled="false"
+            NodeEditingEnabled="false"
+            KeyboardEnabled="true"
+            CssClass="TreeView"
+            NodeCssClass="TreeNode"
+            SelectedNodeCssClass="SelectedTreeNode"
+            HoverNodeCssClass="HoverTreeNode"
+            NodeEditCssClass="NodeEdit"
+            LineImageWidth="19"
+            LineImageHeight="20"
+            DefaultImageWidth="16"
+            DefaultImageHeight="16"
+            ItemSpacing="0"
+            NodeLabelPadding="3"
+            ImagesBaseUrl="images/treeview/"
+            LineImagesFolderUrl="images/treeview/lines/"
+            ParentNodeImageUrl="folders.gif"
+            LeafNodeImageUrl="folder.gif"
+            ShowLines="true"
+            EnableViewState="false"
+            runat="server" >
+          <ClientEvents>
+            <NodeSelect EventHandler="TreeView1_onNodeSelect" />
+          </ClientEvents>
+          </ComponentArt:TreeView>
+      </DropdownContent>
+    </ComponentArt:ComboBox>
+            </Template>
+          </ComponentArt:GridServerTemplate>
+          <ComponentArt:GridServerTemplate Id="PickerTemplate">
+            <Template>
+
+ 	   <table cellspacing="0" cellpadding="0" border="0">
+	    <tr>
+	      <td onmouseup="Button_OnMouseUp()"><ComponentArt:Calendar id="Picker1"
+	          runat="server"
+	          PickerFormat="Custom"
+	          PickerCustomFormat="MMMM d yyyy"
+	          ControlType="Picker"
+	          SelectedDate="2005-9-13"
+	          ClientSideOnSelectionChanged="Picker1_OnDateChange"
+	          PickerCssClass="picker" /></td>
+	      <td style="font-size:10px;">&nbsp;</td>
+	      <td><img id="calendar_from_button" alt="" onclick="Button_OnClick(this)" onmouseup="Button_OnMouseUp()" class="calendar_button" src="images/btn_calendar.gif" /></td>
+	    </tr>
+	    </table>
+
+		<ComponentArt:Calendar runat="server"
+		      id="Calendar1"
+		      AllowMultipleSelection="false"
+		      AllowWeekSelection="false"
+		      AllowMonthSelection="false"
+		      ControlType="Calendar"
+		      PopUp="Custom"
+		      PopUpExpandControlId="calendar_from_button"
+		      CalendarTitleCssClass="title"
+		      SelectedDate="2005-9-13"
+		      VisibleDate="2005-9-13"
+		      ClientSideOnSelectionChanged="Calendar1_OnChange"
+		      DayHeaderCssClass="dayheader"
+		      DayCssClass="day"
+		      DayHoverCssClass="dayhover"
+		      OtherMonthDayCssClass="othermonthday"
+		      SelectedDayCssClass="selectedday"
+		      CalendarCssClass="calendar"
+		      NextPrevCssClass="nextprev"
+		      MonthCssClass="month"
+		      SwapSlide="Linear"
+		      SwapDuration="300"
+		      DayNameFormat="FirstTwoLetters"
+		      PrevImageUrl="images/cal_prevMonth.gif"
+  		      NextImageUrl="images/cal_nextMonth.gif"
+    			/>
+
+            </Template>
+          </ComponentArt:GridServerTemplate>
+        </ServerTemplates>
+      </ComponentArt:Grid>
+                    &nbsp;
+                    <asp:Label ID="lblMessages" runat="server" Font-Italic="True" ForeColor="#FF8080"
+                        Visible="False" Width="758px"></asp:Label></td>
+            </tr>
+            <tr id="Tr6" runat="server">
+                <td align="right" colspan="4" valign="top">
+                    &nbsp;<asp:Button ID="btnUpdate" runat="server" CausesValidation="true" CssClass="box"
+                        Text="Update" Visible="False" OnClick="btnUpdate_Click" /></td>
+            </tr>
+        </table>
+        <br /><br /><br /><br /><br /><br /><br /><br />
+
+    </div>
+
+
+    </form>
+
+  </body>
+</html>
+
+
+
+

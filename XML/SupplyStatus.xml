@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_SUPPLIES">
+  <Field Name="I_SUPPLIES_ID"          DataType="Int"    Size=""     Null="False"  Control="TextBox"   ControlID=""          Editable="False" Visible="False"></Field>
+  <Field Name="SZ_SUPPLIES_NAME"  DataType="NVarChar"    Size="50"     Null="False"  Control="TextBox"   ControlID="txtCaseStatus"        Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_COMPANY_ID" DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"   ControlID="txtCompanyID"        Editable="True"  Visible="True" ></Field>
+  <StoreProcedure name="SP_MST_SUPPLIES"></StoreProcedure>
+  <ListControl name="grdCaseStatusList"></ListControl>
+</Table>

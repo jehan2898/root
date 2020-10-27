@@ -1,0 +1,2 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Bill_Sys_ReportSection.ascx.cs" Inherits="Bill_Sys_DashboardWidgets_ReportSection" %>
+You have &nbsp;<asp:Label ID="lblReport" runat="server"></asp:Label>

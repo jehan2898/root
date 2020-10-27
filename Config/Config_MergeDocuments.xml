@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+
+	<config id="litigation" description="Generate NF3 and merge the documents under AOB, EOB and Denail to create a packet" database_object_name="SP_TXN_MERGE_DOCUMENT_LIST" parameters="@SZ_CASE_ID='{0}',@SZ_BILLING_COMPANY_ID='{1}',@SZ_NODE_NAME='{2}'">
+		<node display_name="Assignment of Benefits" node_name="AOB"> </node>
+		<node display_name="EOB" node_name="EOB"> </node>
+		<node display_name="Denials" node_name="Denials"></node>
+	</config>
+
+	<!-- arbitration entry below is a dummy entry for testing -->
+	<config id="arbitration" description="Generate NF3 and merge the documents under AOB, EOB and Denail to create a packet" database_object_name="SP_TXN_MERGE_DOCUMENT_LIST" parameters="@SZ_CASE_ID='{0}',@SZ_BILLING_COMPANY_ID='{1}',@SZ_NODE_NAME='{2}'">
+		<node display_name="Assignment of Benefits" node_name="AOB"> </node>
+		<node display_name="EOB" node_name="EOB"> </node>
+		<node display_name="Denials" node_name="Denials"></node>
+	</config>
+</configuration>

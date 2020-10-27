@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_CASE_MASTER">
+  <Field Name="SZ_CASE_ID"         DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"                ControlID="txtCaseID"               Editable="True" Visible="True"></Field>
+  <Field Name="SZ_CASE_NAME"       DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"                ControlID="txtCaseName"             Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_CASE_TYPE_ID"    DataType="NVarChar"    Size="20"     Null="False"   Control="ExtendedDropDownList"   ControlID="extddlCaseType"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PROVIDER_ID"     DataType="NVarChar"    Size="20"     Null="False"   Control="ExtendedDropDownList"   ControlID="extddlProvider"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_INSURANCE_ID"    DataType="NVarChar"    Size="20"     Null="False"   Control="ExtendedDropDownList"   ControlID="extddlInsurance"         Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_CASE_STATUS_ID"  DataType="NVarChar"    Size="20"     Null="False"   Control="ExtendedDropDownList"   ControlID="extddlCaseStatus"        Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PATIENT_ID"      DataType="NVarChar"    Size="20"     Null="False"   Control="ExtendedDropDownList"   ControlID="extddlPatient"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_COMPANY_ID"      DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"                ControlID="txtCompanyID"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_CLAIM_NUMBER"     DataType="NVarChar"    Size="20"    Null="False"   Control="TextBox"                ControlID="txtClaimNumber"            Editable="True"  Visible="True" ></Field>  
+  <Field Name="DT_DATE_OF_ACCIDENT" DataType="DateTime"    Size=""      Null="False"   Control="TextBox"                ControlID="txtDateofAccident"            Editable="True"  Visible="True" ></Field>
+  <Field Name="DT_DOB"             DataType="DateTime"    Size=""      Null="False"   Control="TextBox"                ControlID="txtDateofBirth"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_SOCIAL_SECURITY_NO"     DataType="NVarChar"    Size="20"    Null="False"   Control="TextBox"                ControlID="txtSSNNo"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_OFFICE_ID"  DataType="NVarChar"    Size="20"     Null="False"   Control="ExtendedDropDownList"   ControlID="extddlOffice"        Editable="True"  Visible="True" ></Field>
+  
+  <Field Name="SZ_SEARCH_CHART_NO"       DataType="NVarChar"   Size="20"     Null="False"    Control="TextBox"    ControlID="txtChartSearch" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_SEARCH_CASE_ID"       DataType="NVarChar"   Size="20"     Null="False"    Control="TextBox"    ControlID="txtCaseIDSearch" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PATIENT_LAST_NAME"       DataType="NVarChar"   Size="20"     Null="False"    Control="TextBox"    ControlID="txtPatientLNameSearch" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PATIENT_FIRST_NAME"       DataType="NVarChar"   Size="20"     Null="False"    Control="TextBox"    ControlID="txtPatientFNameSearch" Editable="True" Visible="True"></Field>
+  <Field Name="SORT_EXPRESSION"       DataType="NVarChar"   Size="20"     Null="False"    Control="TextBox"    ControlID="txtSearchOrder" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_LOCATION_ID"  DataType="NVarChar" Size="20" Null="False" Control="ExtendedDropDownList" ControlID="extddlLocation" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_STATUS_FLAG"       DataType="NVarChar"   Size="20"     Null="False"    Control="TextBox"    ControlID="txtIsActivePatient" Editable="True" Visible="True"></Field>
+  <Field Name="I_PATIENT_TYPE"       DataType="Int"      Null="False"    Control="TextBox"    ControlID="txtPatientType" Editable="True" Visible="True"></Field>
+  
+  <StoreProcedure name="SP_MST_CASE_MASTER"></StoreProcedure>
+  <ListControl name="grdCaseMaster"></ListControl>
+</Table>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="abc">
+   <Field Name="I_PAYMENT_ID" DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox" ControlID="txtpaymetID"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_INVOICE_ID" DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox" ControlID="txtinvoiceid"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_COMMPANY_ID" DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox" ControlID="txtCompnyID"            Editable="True"  Visible="True" ></Field>
+  <StoreProcedure name="proc_view_invoce_payment_file"></StoreProcedure>
+  <ListControl name="grdViewDoc"></ListControl>
+</Table>

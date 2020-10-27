@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_EXAM_INFORMATION_NEW">
+  <Field Name="SZ_BILL_NUMBER"                                   DataType="NVarChar"     Size="20"     Null="False"   Control="TextBox"             ControlID="txtBillNumber"             Editable="True"  Visible="True" ></Field>
+  <Field Name="I_EXAM_INFORAMATION_ID"                         DataType="NVarChar"     Size="20"     Null="False"   Control="TextBox"             ControlID=""                         Editable="False" Visible="False"></Field>
+  <Field Name="DT_DATE_OF_EXAMINATION"                          DataType="DateTime"     Size=""       Null="False"   Control="TextBox"             ControlID="txtDateOfExam"            Editable="True"  Visible="True" ></Field>
+  <Field Name="DT_DATE_INJURY_ONSET"                            DataType="DateTime"     Size=""       Null="False"   Control="TextBox"             ControlID="txtDateOfExam"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_DIAGNOSTIC_TEST"                              DataType="NVarChar"     Size="250"    Null="False"   Control="TextBox"             ControlID="txtDiagnosticTest"        Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_TREATMENT"                                    DataType="NVarChar"        Size="250"    Null="False"   Control="TextBox"             ControlID="txtTreatment"             Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PROGNOSIS_RECOVERY"                           DataType="NVarChar"     Size="250"    Null="False"   Control="TextBox"             ControlID="txtPrognosis"             Editable="True"  Visible="True" ></Field>
+  <Field Name="BT_IS_AFFECT_TREATMENT_PROGNOSIS"                DataType="Int"          Size=""       Null="False"   Control="RadioButtonList"        ControlID="rdlistExamInfo"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_AFFECT_TREATMENT_PROGNOSIS_DESCRIPTION"       DataType="NVarChar"     Size="250"    Null="False"   Control="TextBox"             ControlID="txtExamInfo"              Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PATIENT_ID"                                   DataType="NVarChar"     Size="20"     Null="False"   Control="TextBox"             ControlID="txtPatientID"             Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_COMPANY_ID"                                   DataType="NVarChar"     Size="20"     Null="False"   Control="TextBox"             ControlID="txtCompanyID"             Editable="True"  Visible="True" ></Field>
+ 
+
+  <StoreProcedure name="SP_MST_EXAM_INFORMATION_NEW"></StoreProcedure>
+</Table>

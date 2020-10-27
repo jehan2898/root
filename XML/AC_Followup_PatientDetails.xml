@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="TXN_CALENDAR_EVENT">
+  <Field Name="I_EVENT_ID" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_EVENT_ID" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PATIENT_FIRST_NAME" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="TXT_PATIENT_FIRST_NAME" Editable="False" Visible="True"></Field>
+  <Field Name="SZ_PATIENT_LAST_NAME" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="TXT_PATIENT_LAST_NAME" Editable="False" Visible="True"></Field>
+  <Field Name="DT_DATE_OF_ACCIDENT" DataType="DateTime" Size="" Null="False" Control="TextBox" ControlID="TXT_DOA" Editable="False" Visible="True"></Field>
+  <StoreProcedure name="SP_ACCU_FOLLOWUP_GET_PATIENT_DETAIL" />
+</Table>

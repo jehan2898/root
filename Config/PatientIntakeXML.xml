@@ -1,0 +1,269 @@
+<root>
+  <document type= "FUNDING_SYSTEM" description="LSC Payoff letter template" lastmodified="June 22 2009 15:35" procedure_name="SP_GET_PATIENT INTAKE_DETAILS" >
+    <field db_field_name="TXT_MOTHER_OTHER CONDITION"       pdf_field_index="1"  pdf_field_name="TXT_MOTHER_OTHER CONDITION"   if_blank=" "/>
+    <field db_field_name="CHK_FATHER_DIABETES"       pdf_field_index="2"  pdf_field_name="CHK_FATHER_DIABETES"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MOTHER_BACK"       pdf_field_index="3"  pdf_field_name="CHK_MOTHER_BACK"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="RDO_DO_YOU_SMOKE"       pdf_field_index="4"  pdf_field_name="RDO_DO_YOU_SMOKE"   if_blank=" "/>
+    <field db_field_name="TXT_SUFFER_ALLERGIES"       pdf_field_index="5"  pdf_field_name="TXT_SUFFER_ALLERGIES"   if_blank=" "/>
+    <field db_field_name="TXT_ALLERGIC_TO_DRUGS"       pdf_field_index="6"  pdf_field_name="TXT_ALLERGIC_TO_DRUGS"   if_blank=" "/>
+    <field db_field_name="CHK_MAKES_BETTER_LYING_DOWN"       pdf_field_index="7"  pdf_field_name="CHK_MAKES_BETTER_LYING_DOWN"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_TREATMENT_CHIROPRACTIC"       pdf_field_index="8"  pdf_field_name="CHK_TREATMENT_CHIROPRACTIC"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_TREATMENT_XRAY_ACUPUNCTURE"       pdf_field_index="9"  pdf_field_name="CHK_TREATMENT_XRAY_ACUPUNCTURE"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_TREATMENT_OTHER"       pdf_field_index="10"  pdf_field_name="CHK_TREATMENT_OTHER"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PAIN_TINGLING"       pdf_field_index="11"  pdf_field_name="CHK_PAIN_TINGLING"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PAIN_BURNING"       pdf_field_index="12"  pdf_field_name="CHK_PAIN_BURNING"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_HIGH_BLOOD_PRESSURE_PRESENT"       pdf_field_index="13"  pdf_field_name="CHK_HIGH_BLOOD_PRESSURE_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_ABDOMINAL_PAIN_PRESENT"       pdf_field_index="14"  pdf_field_name="CHK_ABDOMINAL_PAIN_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_TINNITUS_EAR_NOISES_PAST"       pdf_field_index="15"  pdf_field_name="CHK_TINNITUS_EAR_NOISES_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LOW_BACK_PAIN_PAST"       pdf_field_index="16"  pdf_field_name="CHK_LOW_BACK_PAIN_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_TINNITUS_EAR_NOISES_PRESENT"       pdf_field_index="17"  pdf_field_name="CHK_TINNITUS_EAR_NOISES_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_POLICY_NUMBER"       pdf_field_index="18"  pdf_field_name="TXT_POLICY_NUMBER"   if_blank=" "/>
+    <field db_field_name="TXT_SPOUSE_SOC_SEC"       pdf_field_index="19"  pdf_field_name="TXT_SPOUSE_SOC_SEC"   if_blank=" "/>
+    <field db_field_name="TXT_PATIENT_NAME"       pdf_field_index="20"  pdf_field_name="TXT_PATIENT_NAME"   if_blank=" "/>
+    <field db_field_name="TXT_SISTER_OTHER CONDITION"       pdf_field_index="21"  pdf_field_name="TXT_SISTER_OTHER CONDITION"   if_blank=" "/>
+    <field db_field_name="CHK_BROTHER_BACK"       pdf_field_index="22"  pdf_field_name="CHK_BROTHER_BACK"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="RDO_HAD_SURGERY"       pdf_field_index="23"  pdf_field_name="RDO_HAD_SURGERY"   if_blank=" "/>
+    <field db_field_name="RDO_TAKING_MEDICATION"       pdf_field_index="24"  pdf_field_name="RDO_TAKING_MEDICATION"   if_blank=" "/>
+    <field db_field_name="CHK_MAKES_WORSE_NOTHING"       pdf_field_index="25"  pdf_field_name="CHK_MAKES_WORSE_NOTHING"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DIFFICULTY_IN_SWALLOWING_PAST"       pdf_field_index="26"  pdf_field_name="CHK_DIFFICULTY_IN_SWALLOWING_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CHRONIC_SINUSITIS_PAST"       pdf_field_index="27"  pdf_field_name="CHK_CHRONIC_SINUSITIS_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_STROKE_PRESENT"       pdf_field_index="28"  pdf_field_name="CHK_STROKE_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CHRONIC_COUGH_PRESENT"       pdf_field_index="29"  pdf_field_name="CHK_CHRONIC_COUGH_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PAIN_IN_ANKLE_OR_FOOT_PAST"       pdf_field_index="30"  pdf_field_name="CHK_PAIN_IN_ANKLE_OR_FOOT_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PAIN_IN_LOWER_LEG_OR_KNEE_PAST"       pdf_field_index="31"  pdf_field_name="CHK_PAIN_IN_LOWER_LEG_OR_KNEE_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_SECONDARY_INSURANCE_PHONE"       pdf_field_index="32"  pdf_field_name="TXT_SECONDARY_INSURANCE_PHONE"   if_blank=" "/>
+    <field db_field_name="TXT_ATTORNEY_NAME"       pdf_field_index="33"  pdf_field_name="TXT_ATTORNEY_NAME"   if_blank=" "/>
+    <field db_field_name="RDO_AUTO_INJURY_ROLE"       pdf_field_index="34"  pdf_field_name="RDO_AUTO_INJURY_ROLE"   if_blank=" "/>
+    <field db_field_name="TXT_FAX"       pdf_field_index="35"  pdf_field_name="TXT_FAX"   if_blank=" "/>
+    <field db_field_name="CHK_BROTHER_KIDNEY"       pdf_field_index="36"  pdf_field_name="CHK_BROTHER_KIDNEY"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MOTHER_DIABETES"       pdf_field_index="37"  pdf_field_name="CHK_MOTHER_DIABETES"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MOTHER_CANCER"       pdf_field_index="38"  pdf_field_name="CHK_MOTHER_CANCER"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_PATIENT_INITIAL"       pdf_field_index="39"  pdf_field_name="TXT_PATIENT_INITIAL"   if_blank=" "/>
+    <field db_field_name="CHK_COMPLAINT_AFFECT_LIMITED_ASSISTANCE"       pdf_field_index="40"  pdf_field_name="CHK_COMPLAINT_AFFECT_LIMITED_ASSISTANCE"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_WORK_OTHER"       pdf_field_index="41"  pdf_field_name="TXT_WORK_OTHER"   if_blank=" "/>
+    <field db_field_name="CHK_WORK_LIGHT_MANUAL_LABOR"       pdf_field_index="42"  pdf_field_name="CHK_WORK_LIGHT_MANUAL_LABOR"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_TREATED_PREVIOUSLY_BY_MD"       pdf_field_index="43"  pdf_field_name="CHK_TREATED_PREVIOUSLY_BY_MD"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_TREATED_PREVIOUSLY_OTHER"       pdf_field_index="44"  pdf_field_name="TXT_TREATED_PREVIOUSLY_OTHER"   if_blank=" "/>
+    <field db_field_name="CHK_PROBLEM_BEGIN_ACCIDENT"       pdf_field_index="45"  pdf_field_name="CHK_PROBLEM_BEGIN_ACCIDENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PAIN_THROBBING_GNAWING"       pdf_field_index="46"  pdf_field_name="CHK_PAIN_THROBBING_GNAWING"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_ASTHMA_PRESENT"       pdf_field_index="47"  pdf_field_name="CHK_ASTHMA_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PAIN_IN_LOWER_LEG_OR_KNEE_PRESENT"       pdf_field_index="48"  pdf_field_name="CHK_PAIN_IN_LOWER_LEG_OR_KNEE_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DIZZINESS_PRESENT"       pdf_field_index="49"  pdf_field_name="CHK_DIZZINESS_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_INSURANCE_COMPANY_NAME"       pdf_field_index="50"  pdf_field_name="TXT_INSURANCE_COMPANY_NAME"   if_blank=" "/>
+    <field db_field_name="TXT_STATE"       pdf_field_index="51"  pdf_field_name="TXT_STATE"   if_blank=" "/>
+    <field db_field_name="TXT_FATHER_OTHER CONDITION"       pdf_field_index="52"  pdf_field_name="TXT_FATHER_OTHER CONDITION"   if_blank=" "/>
+    <field db_field_name="CHK_FATHER_BACK"       pdf_field_index="53"  pdf_field_name="CHK_FATHER_BACK"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MOTHER_HEART_ATTACK"       pdf_field_index="54"  pdf_field_name="CHK_MOTHER_HEART_ATTACK"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MAKES_BETTER_SITTING"       pdf_field_index="55"  pdf_field_name="CHK_MAKES_BETTER_SITTING"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PAIN_NUMBNESS"       pdf_field_index="56"  pdf_field_name="CHK_PAIN_NUMBNESS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_ASTHMA_PAST"       pdf_field_index="57"  pdf_field_name="CHK_ASTHMA_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PAIN_IN_UPPER_ARMS_OR_ELBOWS_PRESENT"       pdf_field_index="58"  pdf_field_name="CHK_PAIN_IN_UPPER_ARMS_OR_ELBOWS_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_HOSPITALIZED_WHERE"       pdf_field_index="59"  pdf_field_name="TXT_HOSPITALIZED_WHERE"   if_blank=" "/>
+    <field db_field_name="PATIENT_HOME_PHONE"       pdf_field_index="60"  pdf_field_name="PATIENT_HOME_PHONE"   if_blank=" "/>
+    <field db_field_name="PATIENT_TITLE"       pdf_field_index="61"  pdf_field_name="PATIENT_TITLE"   if_blank=" "/>
+    <field db_field_name="TXT_DATE"       pdf_field_index="62"  pdf_field_name="TXT_DATE"   if_blank=" "/>
+    <field db_field_name="CHK_SISTER_CANCER"       pdf_field_index="63"  pdf_field_name="CHK_SISTER_CANCER"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="RDO_DO_YOU_WORK"       pdf_field_index="64"  pdf_field_name="RDO_DO_YOU_WORK"   if_blank=" "/>
+    <field db_field_name="TXT_TREATMENT_OTHER"       pdf_field_index="65"  pdf_field_name="TXT_TREATMENT_OTHER"   if_blank=" "/>
+    <field db_field_name="CHK_PAIN_DULL"       pdf_field_index="66"  pdf_field_name="CHK_PAIN_DULL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_STROKE_PAST"       pdf_field_index="67"  pdf_field_name="CHK_STROKE_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_EXCESSIVE_THIRST_PAST"       pdf_field_index="68"  pdf_field_name="CHK_EXCESSIVE_THIRST_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_ARTHRITIS_PRESENT"       pdf_field_index="69"  pdf_field_name="CHK_ARTHRITIS_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CHRONIC_SINUSITIS_PRESENT"       pdf_field_index="70"  pdf_field_name="CHK_CHRONIC_SINUSITIS_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_EXCESSIVE_THIRST_PRESENT"       pdf_field_index="71"  pdf_field_name="CHK_EXCESSIVE_THIRST_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_RAPID_HEART_BEAT_PAST"       pdf_field_index="72"  pdf_field_name="CHK_RAPID_HEART_BEAT_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_NECK_PAIN_PRESENT"       pdf_field_index="73"  pdf_field_name="CHK_NECK_PAIN_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_ATTORNEY_PHONE"       pdf_field_index="74"  pdf_field_name="TXT_ATTORNEY_PHONE"   if_blank=" "/>
+    <field db_field_name="TXT_PATIENT_RELATIONSHIP_TO_INSURED_OTHER"       pdf_field_index="75"  pdf_field_name="TXT_PATIENT_RELATIONSHIP_TO_INSURED_OTHER"   if_blank=" "/>
+    <field db_field_name="PATIENT_MI"       pdf_field_index="76"  pdf_field_name="PATIENT_MI"   if_blank=" "/>
+    <field db_field_name="CHK_COMPLAINT_AFFECT_NEED_ASSISTANCE"       pdf_field_index="77"  pdf_field_name="CHK_COMPLAINT_AFFECT_NEED_ASSISTANCE"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MAKES_BETTER_NOTHING"       pdf_field_index="78"  pdf_field_name="CHK_MAKES_BETTER_NOTHING"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DIABETES_PAST"       pdf_field_index="79"  pdf_field_name="CHK_DIABETES_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_EMPHYSEMIA_LUNG_DISORDER_PRESENT"       pdf_field_index="80"  pdf_field_name="CHK_EMPHYSEMIA_LUNG_DISORDER_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CANCER_PRESENT"       pdf_field_index="81"  pdf_field_name="CHK_CANCER_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CHEST_PAIN_PAST"       pdf_field_index="82"  pdf_field_name="CHK_CHEST_PAIN_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MUSCULAR_IN_COORDINATION_PAST"       pdf_field_index="83"  pdf_field_name="CHK_MUSCULAR_IN_COORDINATION_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_SWELLING_STIFFNESS_OF_JOINTS_PRESENT"       pdf_field_index="84"  pdf_field_name="CHK_SWELLING_STIFFNESS_OF_JOINTS_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MIDDLE_BACK_PAIN_PRESENT"       pdf_field_index="85"  pdf_field_name="CHK_MIDDLE_BACK_PAIN_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_INSURED_NAME"       pdf_field_index="86"  pdf_field_name="TXT_INSURED_NAME"   if_blank=" "/>
+    <field db_field_name="TXT_ZIP"       pdf_field_index="87"  pdf_field_name="TXT_ZIP"   if_blank=" "/>
+    <field db_field_name="TXT_ADDRESS"       pdf_field_index="88"  pdf_field_name="TXT_ADDRESS"   if_blank=" "/>
+    <field db_field_name="PATIENT_ADDRESS"       pdf_field_index="89"  pdf_field_name="PATIENT_ADDRESS"   if_blank=" "/>
+    <field db_field_name="IMG_PATIENT_SIGNATURE"       pdf_field_index="90"  pdf_field_name="IMG_PATIENT_SIGNATURE"   if_blank=" "  isImage="1"  flip_index=""/>
+    <field db_field_name="CHK_MAKES_BETTER_OTHER"       pdf_field_index="91"  pdf_field_name="CHK_MAKES_BETTER_OTHER"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PAIN_ACHES"       pdf_field_index="92"  pdf_field_name="CHK_PAIN_ACHES"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PAIN_SHARP_SHOOTING"       pdf_field_index="93"  pdf_field_name="CHK_PAIN_SHARP_SHOOTING"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CANCER_PAST"       pdf_field_index="94"  pdf_field_name="CHK_CANCER_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_SWELLING_STIFFNESS_OF_JOINTS_PAST"       pdf_field_index="95"  pdf_field_name="CHK_SWELLING_STIFFNESS_OF_JOINTS_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PAIN_IN_UPPER_LEG_OR_HIP_PAST"       pdf_field_index="96"  pdf_field_name="CHK_PAIN_IN_UPPER_LEG_OR_HIP_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LOSS_OF_APPETITE_PRESENT"       pdf_field_index="97"  pdf_field_name="CHK_LOSS_OF_APPETITE_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="RDO_REPORT_INJURY_YES_NO"       pdf_field_index="98"  pdf_field_name="RDO_REPORT_INJURY_YES_NO"   if_blank=" "/>
+    <field db_field_name="TXT_AUTO_INJURY_OTHER"       pdf_field_index="99"  pdf_field_name="TXT_AUTO_INJURY_OTHER"   if_blank=" "/>
+    <field db_field_name="TXT_INSURANCE_TYPE_OTHER"       pdf_field_index="100"  pdf_field_name="TXT_INSURANCE_TYPE_OTHER"   if_blank=" "/>
+    <field db_field_name="TXT_BUSINESS_PHONE_EXTENSION"       pdf_field_index="101"  pdf_field_name="TXT_BUSINESS_PHONE_EXTENSION"   if_blank=" "/>
+    <field db_field_name="PATIENT_AGE"       pdf_field_index="102"  pdf_field_name="PATIENT_AGE"   if_blank=" "/>
+    <field db_field_name="CHK_FATHER_KIDNEY"       pdf_field_index="103"  pdf_field_name="CHK_FATHER_KIDNEY"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_COMPLAINT_AFFECT_HAVE_INABILITY"       pdf_field_index="104"  pdf_field_name="CHK_COMPLAINT_AFFECT_HAVE_INABILITY"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_WORK_OTHER"       pdf_field_index="105"  pdf_field_name="CHK_WORK_OTHER"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_WORK_HEAVY_MANUAL_LABOR"       pdf_field_index="106"  pdf_field_name="CHK_WORK_HEAVY_MANUAL_LABOR"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MAKES_WORSE_STANDING"       pdf_field_index="107"  pdf_field_name="CHK_MAKES_WORSE_STANDING"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MAKES_WORSE_LYING_DOWN"       pdf_field_index="108"  pdf_field_name="CHK_MAKES_WORSE_LYING_DOWN"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MAKES_BETTER_INACTIVITY"       pdf_field_index="109"  pdf_field_name="CHK_MAKES_BETTER_INACTIVITY"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_TREATED_PREVIOUSLY_BY_PHYSICAL_THERAPIST"       pdf_field_index="110"  pdf_field_name="CHK_TREATED_PREVIOUSLY_BY_PHYSICAL_THERAPIST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="RDO_TREATED_PREVIOUSLY"       pdf_field_index="111"  pdf_field_name="RDO_TREATED_PREVIOUSLY"   if_blank=" "/>
+    <field db_field_name="CHK_PROBLEM_BEGIN_MULTIPLE_INCIDENT"       pdf_field_index="112"  pdf_field_name="CHK_PROBLEM_BEGIN_MULTIPLE_INCIDENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PAIN_GRIPPING_CONSTRICTING"       pdf_field_index="113"  pdf_field_name="CHK_PAIN_GRIPPING_CONSTRICTING"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_HEART_ATTACK_PAST"       pdf_field_index="114"  pdf_field_name="CHK_HEART_ATTACK_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DEPRESSION_PRESENT"       pdf_field_index="115"  pdf_field_name="CHK_DEPRESSION_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_FREQUENT_URINATION_PRESENT"       pdf_field_index="116"  pdf_field_name="CHK_FREQUENT_URINATION_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PAIN_IN_ANKLE_OR_FOOT_PRESENT"       pdf_field_index="117"  pdf_field_name="CHK_PAIN_IN_ANKLE_OR_FOOT_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_INSURANCE_POLICY_NUMBER"       pdf_field_index="118"  pdf_field_name="TXT_INSURANCE_POLICY_NUMBER"   if_blank=" "/>
+    <field db_field_name="TXT_OTHER_DOCTORS_NAME"       pdf_field_index="119"  pdf_field_name="TXT_OTHER_DOCTORS_NAME"   if_blank=" "/>
+    <field db_field_name="RDO_WERE_YOU_WORKING"       pdf_field_index="120"  pdf_field_name="RDO_WERE_YOU_WORKING"   if_blank=" "/>
+    <field db_field_name="TXT_FAX_EXTENSION"       pdf_field_index="121"  pdf_field_name="TXT_FAX_EXTENSION"   if_blank=" "/>
+    <field db_field_name="TXT_EMPLOYER"       pdf_field_index="122"  pdf_field_name="TXT_EMPLOYER"   if_blank=" "/>
+    <field db_field_name="TXT_RESPONSIBLE_BILL_OTHER"       pdf_field_index="123"  pdf_field_name="TXT_RESPONSIBLE_BILL_OTHER"   if_blank=" "/>
+    <field db_field_name="CHK_RESPONSIBLE_BILL_AUTO_INS"       pdf_field_index="124"  pdf_field_name="CHK_RESPONSIBLE_BILL_AUTO_INS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="PATIENT_DATE_OF_BIRTH"       pdf_field_index="125"  pdf_field_name="PATIENT_DATE_OF_BIRTH"   if_blank=" "/>
+    <field db_field_name="PATIENT_ZIP"       pdf_field_index="126"  pdf_field_name="PATIENT_ZIP"   if_blank=" "/>
+    <field db_field_name="CHK_BROTHER_CANCER"       pdf_field_index="127"  pdf_field_name="CHK_BROTHER_CANCER"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_SECONDARY_INSURANCE"       pdf_field_index="128"  pdf_field_name="TXT_SECONDARY_INSURANCE"   if_blank=" "/>
+    <field db_field_name="PATIENT_CITY"       pdf_field_index="129"  pdf_field_name="PATIENT_CITY"   if_blank=" "/>
+    <field db_field_name="TXT_CASE_ID"       pdf_field_index="130"  pdf_field_name="TXT_CASE_ID"   if_blank=" "/>
+    <field db_field_name="CHK_BROTHER_OTHER CONDITION"       pdf_field_index="131"  pdf_field_name="CHK_BROTHER_OTHER CONDITION"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="RDO_ARE_YOU_PREGNANT"       pdf_field_index="132"  pdf_field_name="RDO_ARE_YOU_PREGNANT"   if_blank=" "/>
+    <field db_field_name="RDO_ALLERGIC_TO_DRUGS"       pdf_field_index="133"  pdf_field_name="RDO_ALLERGIC_TO_DRUGS"   if_blank=" "/>
+    <field db_field_name="TXT_TAKING_MEDICATION"       pdf_field_index="134"  pdf_field_name="TXT_TAKING_MEDICATION"   if_blank=" "/>
+    <field db_field_name="CHK_WORK_SITTING_MORE_THAN_50_OF_WORKDAY"       pdf_field_index="135"  pdf_field_name="CHK_WORK_SITTING_MORE_THAN_50_OF_WORKDAY"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MAKES_BETTER_MOVEMENT_EXERCISE"       pdf_field_index="136"  pdf_field_name="CHK_MAKES_BETTER_MOVEMENT_EXERCISE"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PROBLEM_BEGIN_OTHER"       pdf_field_index="137"  pdf_field_name="CHK_PROBLEM_BEGIN_OTHER"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PROBLEM_BEGIN_NO_REASON"       pdf_field_index="138"  pdf_field_name="CHK_PROBLEM_BEGIN_NO_REASON"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PAIN_SHOOTING"       pdf_field_index="139"  pdf_field_name="CHK_PAIN_SHOOTING"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_BLADDER_INFECTION_PAST"       pdf_field_index="140"  pdf_field_name="CHK_BLADDER_INFECTION_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_ARTHRITIS_PAST"       pdf_field_index="141"  pdf_field_name="CHK_ARTHRITIS_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_SHOULDER_PAIN_PAST"       pdf_field_index="142"  pdf_field_name="CHK_SHOULDER_PAIN_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CONVULSIONS_PAST"       pdf_field_index="143"  pdf_field_name="CHK_CONVULSIONS_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_FAINTING_VISUAL_PRESENT"       pdf_field_index="144"  pdf_field_name="CHK_FAINTING_VISUAL_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="RDO_HOSPITALIZED_YES_NO"       pdf_field_index="145"  pdf_field_name="RDO_HOSPITALIZED_YES_NO"   if_blank=" "/>
+    <field db_field_name="CHK_INSURANCE_TYPE_AUTO"       pdf_field_index="146"  pdf_field_name="CHK_INSURANCE_TYPE_AUTO"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_OCCUPATION"       pdf_field_index="147"  pdf_field_name="TXT_OCCUPATION"   if_blank=" "/>
+    <field db_field_name="CHK_RESPONSIBLE_BILL_SELF"       pdf_field_index="148"  pdf_field_name="CHK_RESPONSIBLE_BILL_SELF"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="PATIENT_FIRST_NAME"       pdf_field_index="149"  pdf_field_name="PATIENT_FIRST_NAME"   if_blank=" "/>
+    <field db_field_name="TXT_HAD_SURGERY"       pdf_field_index="150"  pdf_field_name="TXT_HAD_SURGERY"   if_blank=" "/>
+    <field db_field_name="RDO_SUFFER_ALLERGIES"       pdf_field_index="151"  pdf_field_name="RDO_SUFFER_ALLERGIES"   if_blank=" "/>
+    <field db_field_name="TXT_DESCRIBE_PROBLEM_BEGIN"       pdf_field_index="152"  pdf_field_name="TXT_DESCRIBE_PROBLEM_BEGIN"   if_blank=" "/>
+    <field db_field_name="CHK_PAIN_SORENESS"       pdf_field_index="153"  pdf_field_name="CHK_PAIN_SORENESS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_JAW_PAIN_PRESENT"       pdf_field_index="154"  pdf_field_name="CHK_JAW_PAIN_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_SHOULDER_PAIN_PRESENT"       pdf_field_index="155"  pdf_field_name="CHK_SHOULDER_PAIN_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_MORE_COMPLAINTS"       pdf_field_index="156"  pdf_field_name="TXT_MORE_COMPLAINTS"   if_blank=" "/>
+    <field db_field_name="TXT_SECONDARY_INSURANCE_PHONE_EXTENSION"       pdf_field_index="157"  pdf_field_name="TXT_SECONDARY_INSURANCE_PHONE_EXTENSION"   if_blank=" "/>
+    <field db_field_name="CHK_INSURANCE_TYPE_PRIVATE"       pdf_field_index="158"  pdf_field_name="CHK_INSURANCE_TYPE_PRIVATE"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="RDO_PATIENT_MALE"       pdf_field_index="159"  pdf_field_name="RDO_PATIENT_MALE"   if_blank=" "/>
+    <field db_field_name="PATIENT_CELL_PHONE"       pdf_field_index="160"  pdf_field_name="PATIENT_CELL_PHONE"   if_blank=" "/>
+    <field db_field_name="TXT_HOW_MANY_PACKS"       pdf_field_index="161"  pdf_field_name="TXT_HOW_MANY_PACKS"   if_blank=" "/>
+    <field db_field_name="CHK_WORK_MANUAL_LABOR"       pdf_field_index="162"  pdf_field_name="CHK_WORK_MANUAL_LABOR"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MAKES_WORSE_WALKING"       pdf_field_index="163"  pdf_field_name="CHK_MAKES_WORSE_WALKING"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_TREATED_PREVIOUSLY_BY_OTHER"       pdf_field_index="164"  pdf_field_name="CHK_TREATED_PREVIOUSLY_BY_OTHER"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_HIGH_BLOOD_PRESSURE_PAST"       pdf_field_index="165"  pdf_field_name="CHK_HIGH_BLOOD_PRESSURE_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_FREQUENT_URINATION_PAST"       pdf_field_index="166"  pdf_field_name="CHK_FREQUENT_URINATION_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_COLITIS_PRESENT"       pdf_field_index="167"  pdf_field_name="CHK_COLITIS_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_GENERAL_FATIGUE_PRESENT"       pdf_field_index="168"  pdf_field_name="CHK_GENERAL_FATIGUE_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_BLOOD_DISORDER_PRESENT"       pdf_field_index="169"  pdf_field_name="CHK_BLOOD_DISORDER_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CONVULSIONS_PRESENT"       pdf_field_index="170"  pdf_field_name="CHK_CONVULSIONS_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_INSURANCE_PHONE"       pdf_field_index="171"  pdf_field_name="TXT_INSURANCE_PHONE"   if_blank=" "/>
+    <field db_field_name="TXT_X_RAYS_BY_WHOM"       pdf_field_index="172"  pdf_field_name="TXT_X_RAYS_BY_WHOM"   if_blank=" "/>
+    <field db_field_name="TXT_REPORT_INJURY_TO_WHOM"       pdf_field_index="173"  pdf_field_name="TXT_REPORT_INJURY_TO_WHOM"   if_blank=" "/>
+    <field db_field_name="CHK_INSURANCE_TYPE_SLIP_FALL"       pdf_field_index="174"  pdf_field_name="CHK_INSURANCE_TYPE_SLIP_FALL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MOTHER_OTHER CONDITION"       pdf_field_index="175"  pdf_field_name="CHK_MOTHER_OTHER CONDITION"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_TREATMENT_PHYSICAL_THERAPY"       pdf_field_index="176"  pdf_field_name="CHK_TREATMENT_PHYSICAL_THERAPY"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_TREATMENT_MEDICINE"       pdf_field_index="177"  pdf_field_name="CHK_TREATMENT_MEDICINE"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_TREATMENT_SURGERY"       pdf_field_index="178"  pdf_field_name="CHK_TREATMENT_SURGERY"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_ULCER_PAST"       pdf_field_index="179"  pdf_field_name="CHK_ULCER_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_ULCER_PRESENT"       pdf_field_index="180"  pdf_field_name="CHK_ULCER_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_FAINTING_VISUAL_PAST"       pdf_field_index="181"  pdf_field_name="CHK_FAINTING_VISUAL_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PAIN_IN_UPPER_LEG_OR_HIP_PRESENT"       pdf_field_index="182"  pdf_field_name="CHK_PAIN_IN_UPPER_LEG_OR_HIP_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_HEADACHE_PRESENT"       pdf_field_index="183"  pdf_field_name="CHK_HEADACHE_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_DATES_LOST_FROM_WORK"       pdf_field_index="184"  pdf_field_name="TXT_DATES_LOST_FROM_WORK"   if_blank=" "/>
+    <field db_field_name="TXT_BUSINESS_PHONE"       pdf_field_index="185"  pdf_field_name="TXT_BUSINESS_PHONE"   if_blank=" "/>
+    <field db_field_name="CHK_RESPONSIBLE_BILL_SELF_PERSONAL_HEALTH_INS"       pdf_field_index="186"  pdf_field_name="CHK_RESPONSIBLE_BILL_SELF_PERSONAL_HEALTH_INS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_SISTER_BACK"       pdf_field_index="187"  pdf_field_name="CHK_SISTER_BACK"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_BROTHER_DIABETES"       pdf_field_index="188"  pdf_field_name="CHK_BROTHER_DIABETES"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MOTHER_KIDNEY"       pdf_field_index="189"  pdf_field_name="CHK_MOTHER_KIDNEY"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_MAKES_WORSE_OTHER"       pdf_field_index="190"  pdf_field_name="TXT_MAKES_WORSE_OTHER"   if_blank=" "/>
+    <field db_field_name="TXT_MAKES_BETTER_OTHER"       pdf_field_index="191"  pdf_field_name="TXT_MAKES_BETTER_OTHER"   if_blank=" "/>
+    <field db_field_name="CHK_EMPHYSEMIA_LUNG_DISORDER_PAST"       pdf_field_index="192"  pdf_field_name="CHK_EMPHYSEMIA_LUNG_DISORDER_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_ANGINA_PAST"       pdf_field_index="193"  pdf_field_name="CHK_ANGINA_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PAINFUL_URINATION_PAST"       pdf_field_index="194"  pdf_field_name="CHK_PAINFUL_URINATION_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CHRONIC_COUGH_PAST"       pdf_field_index="195"  pdf_field_name="CHK_CHRONIC_COUGH_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_BLADDER_INFECTION_PRESENT"       pdf_field_index="196"  pdf_field_name="CHK_BLADDER_INFECTION_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_ANGINA_PRESENT"       pdf_field_index="197"  pdf_field_name="CHK_ANGINA_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LOW_BACK_PAIN_PRESENT"       pdf_field_index="198"  pdf_field_name="CHK_LOW_BACK_PAIN_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_SECONDARY_INSURANCE_ADDRESS"       pdf_field_index="199"  pdf_field_name="TXT_SECONDARY_INSURANCE_ADDRESS"   if_blank=" "/>
+    <field db_field_name="TXT_WORKERS_COMP"       pdf_field_index="200"  pdf_field_name="TXT_WORKERS_COMP"   if_blank=" "/>
+    <field db_field_name="RDO_PATIENT_RELATIONSHIP_TO_INSURED1"       pdf_field_index="201"  pdf_field_name="RDO_PATIENT_RELATIONSHIP_TO_INSURED1"   if_blank=" "/>
+    <field db_field_name="CHK_INSURANCE_TYPE_WORK"       pdf_field_index="202"  pdf_field_name="CHK_INSURANCE_TYPE_WORK"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_RESPONSIBLE_BILL_MEDICARE"       pdf_field_index="203"  pdf_field_name="CHK_RESPONSIBLE_BILL_MEDICARE"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_RESPONSIBLE_BILL_WORKERS_COMP"       pdf_field_index="204"  pdf_field_name="CHK_RESPONSIBLE_BILL_WORKERS_COMP"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_PATIENT_SOC_SEC"       pdf_field_index="205"  pdf_field_name="TXT_PATIENT_SOC_SEC"   if_blank=" "/>
+    <field db_field_name="CHK_SISTER_OTHER CONDITION"       pdf_field_index="206"  pdf_field_name="CHK_SISTER_OTHER CONDITION"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_SISTER_DIABETES"       pdf_field_index="207"  pdf_field_name="CHK_SISTER_DIABETES"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_FATHER_CANCER"       pdf_field_index="208"  pdf_field_name="CHK_FATHER_CANCER"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_COMPLAINT_AFFECT_SOME_RESTRICTION"       pdf_field_index="209"  pdf_field_name="CHK_COMPLAINT_AFFECT_SOME_RESTRICTION"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_COMPLAINT_AFFECT_CANNOT_CARE"       pdf_field_index="210"  pdf_field_name="CHK_COMPLAINT_AFFECT_CANNOT_CARE"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MAKES_WORSE_MOVEMENT_EXERCISE"       pdf_field_index="211"  pdf_field_name="CHK_MAKES_WORSE_MOVEMENT_EXERCISE"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MAKES_WORSE_INACTIVITY"       pdf_field_index="212"  pdf_field_name="CHK_MAKES_WORSE_INACTIVITY"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MAKES_BETTER_STANDING"       pdf_field_index="213"  pdf_field_name="CHK_MAKES_BETTER_STANDING"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_TREATED_PREVIOUSLY_BY_CHIROPRACTOR"       pdf_field_index="214"  pdf_field_name="CHK_TREATED_PREVIOUSLY_BY_CHIROPRACTOR"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_TREATMENT_SPINAL_INJECTIONS"       pdf_field_index="215"  pdf_field_name="CHK_TREATMENT_SPINAL_INJECTIONS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_COLITIS_PAST"       pdf_field_index="216"  pdf_field_name="CHK_COLITIS_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_GENERAL_FATIGUE_PAST"       pdf_field_index="217"  pdf_field_name="CHK_GENERAL_FATIGUE_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LOSS_OF_APPETITE_PAST"       pdf_field_index="218"  pdf_field_name="CHK_LOSS_OF_APPETITE_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DISTURBANCE_NAUSEA_PAST"       pdf_field_index="219"  pdf_field_name="CHK_DISTURBANCE_NAUSEA_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_HEADACHE_PAST"       pdf_field_index="220"  pdf_field_name="CHK_HEADACHE_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MUSCULAR_IN_COORDINATION_PRESENT"       pdf_field_index="221"  pdf_field_name="CHK_MUSCULAR_IN_COORDINATION_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DISTURBANCE_NAUSEA_PRESENT"       pdf_field_index="222"  pdf_field_name="CHK_DISTURBANCE_NAUSEA_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_SECONDARY_INSURANCE_POLICY"       pdf_field_index="223"  pdf_field_name="TXT_SECONDARY_INSURANCE_POLICY"   if_blank=" "/>
+    <field db_field_name="RDO_PATIENT_RELATIONSHIP_TO_INSURED"       pdf_field_index="224"  pdf_field_name="RDO_PATIENT_RELATIONSHIP_TO_INSURED"   if_blank=" "/>
+    <field db_field_name="TXT_HOW_INJURY_HAPPEN"       pdf_field_index="225"  pdf_field_name="TXT_HOW_INJURY_HAPPEN"   if_blank=" "/>
+    <field db_field_name="TXT_CLAIM_NUMBER"       pdf_field_index="226"  pdf_field_name="TXT_CLAIM_NUMBER"   if_blank=" "/>
+    <field db_field_name="TXT_DATE_OF_INJURY"       pdf_field_index="227"  pdf_field_name="TXT_DATE_OF_INJURY"   if_blank=" "/>
+    <field db_field_name="CHK_INSURANCE_TYPE_OTHER"       pdf_field_index="228"  pdf_field_name="CHK_INSURANCE_TYPE_OTHER"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_SPOUSE_NAME"       pdf_field_index="229"  pdf_field_name="TXT_SPOUSE_NAME"   if_blank=" "/>
+    <field db_field_name="PATIENT_LAST_NAME"       pdf_field_index="230"  pdf_field_name="PATIENT_LAST_NAME"   if_blank=" "/>
+    <field db_field_name="CHK_SISTER_KIDNEY"       pdf_field_index="231"  pdf_field_name="CHK_SISTER_KIDNEY"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_BROTHER_HEART_ATTACK"       pdf_field_index="232"  pdf_field_name="CHK_BROTHER_HEART_ATTACK"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_FATHER_OTHER CONDITION"       pdf_field_index="233"  pdf_field_name="CHK_FATHER_OTHER CONDITION"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MAKES_BETTER_WALKING"       pdf_field_index="234"  pdf_field_name="CHK_MAKES_BETTER_WALKING"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PAIN_SHARP_DULL"       pdf_field_index="235"  pdf_field_name="CHK_PAIN_SHARP_DULL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DEPRESSION_PAST"       pdf_field_index="236"  pdf_field_name="CHK_DEPRESSION_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PAINFUL_URINATION_PRESENT"       pdf_field_index="237"  pdf_field_name="CHK_PAINFUL_URINATION_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_JAW_PAIN_PAST"       pdf_field_index="238"  pdf_field_name="CHK_JAW_PAIN_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DIZZINESS_PAST"       pdf_field_index="239"  pdf_field_name="CHK_DIZZINESS_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_NECK_PAIN_PAST"       pdf_field_index="240"  pdf_field_name="CHK_NECK_PAIN_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_RAPID_HEART_BEAT_PRESENT"       pdf_field_index="241"  pdf_field_name="CHK_RAPID_HEART_BEAT_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CHEST_PAIN_PRESENT"       pdf_field_index="242"  pdf_field_name="CHK_CHEST_PAIN_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="RDO_X_RAYS_YES_NO"       pdf_field_index="243"  pdf_field_name="RDO_X_RAYS_YES_NO"   if_blank=" "/>
+    <field db_field_name="IMG_BARCODE"       pdf_field_index="244"  pdf_field_name="IMG_BARCODE"   if_blank=" "  isImage="1"  flip_index=""/>
+    <field db_field_name="PATIENT_STATE"       pdf_field_index="245"  pdf_field_name="PATIENT_STATE"   if_blank=" "/>
+    <field db_field_name="TXT_REFERRED_BY"       pdf_field_index="246"  pdf_field_name="TXT_REFERRED_BY"   if_blank=" "/>
+    <field db_field_name="TXT_BROTHER_OTHER CONDITION"       pdf_field_index="247"  pdf_field_name="TXT_BROTHER_OTHER CONDITION"   if_blank=" "/>
+    <field db_field_name="CHK_SISTER_HEART_ATTACK"       pdf_field_index="248"  pdf_field_name="CHK_SISTER_HEART_ATTACK"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_FATHER_HEART_ATTACK"       pdf_field_index="249"  pdf_field_name="CHK_FATHER_HEART_ATTACK"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_COMPLAINT_AFFECT_NO_AFFECT"       pdf_field_index="250"  pdf_field_name="CHK_COMPLAINT_AFFECT_NO_AFFECT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MAKES_WORSE_OTHER"       pdf_field_index="251"  pdf_field_name="CHK_MAKES_WORSE_OTHER"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MAKES_WORSE_SITTING"       pdf_field_index="252"  pdf_field_name="CHK_MAKES_WORSE_SITTING"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PAIN_WEAKNESS"       pdf_field_index="253"  pdf_field_name="CHK_PAIN_WEAKNESS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_ABDOMINAL_PAIN_PAST"       pdf_field_index="254"  pdf_field_name="CHK_ABDOMINAL_PAIN_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DIABETES_PRESENT"       pdf_field_index="255"  pdf_field_name="CHK_DIABETES_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_HEART_ATTACK_PRESENT"       pdf_field_index="256"  pdf_field_name="CHK_HEART_ATTACK_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DIFFICULTY_IN_SWALLOWING_PRESENT"       pdf_field_index="257"  pdf_field_name="CHK_DIFFICULTY_IN_SWALLOWING_PRESENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_BLOOD_DISORDER_PAST"       pdf_field_index="258"  pdf_field_name="CHK_BLOOD_DISORDER_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PAIN_IN_UPPER_ARMS_OR_ELBOWS_PAST"       pdf_field_index="259"  pdf_field_name="CHK_PAIN_IN_UPPER_ARMS_OR_ELBOWS_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MIDDLE_BACK_PAIN_PAST"       pdf_field_index="260"  pdf_field_name="CHK_MIDDLE_BACK_PAIN_PAST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_INSURANCE_PHONE_EXTENSION"       pdf_field_index="261"  pdf_field_name="TXT_INSURANCE_PHONE_EXTENSION"   if_blank=" "/>
+    <field db_field_name="TXT_INSURED_ADDRESS"       pdf_field_index="262"  pdf_field_name="TXT_INSURED_ADDRESS"   if_blank=" "/>
+    <field db_field_name="TXT_CITY"       pdf_field_index="263"  pdf_field_name="TXT_CITY"   if_blank=" "/>
+    <field db_field_name="RDO_PATIENT_SINGLE"       pdf_field_index="264"  pdf_field_name="RDO_PATIENT_SINGLE"   if_blank=" "/>
+  </document>
+</root>
+

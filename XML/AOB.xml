@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_AOB">
+  <Field Name ="I_EVENT_ID" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_I_EVENT" Editable="True" Visible="True"></Field>
+  <Field Name ="DT_ACCIDENT_ON_AFTER" DataType="DateTime" Size="" Null="True" Control="TextBox" ControlID="TXT_ACCIDENT_ON_AFTER" Editable="True" Visible="True"></Field>
+  <!--<Field Name ="SZ_PATIENT_NAME" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_PATIENT_NAME" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_PROVIDER_COMPANY_NAME" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_PROVIDER_COMPANY_NAME" Editable="True" Visible="True"></Field>
+  <Field Name ="DT_DOA" DataType="DateTime" Size="" Null="True" Control="TextBox" ControlID="TXT_DOA" Editable="True" Visible="True"></Field>
+  <Field Name ="DT_PATIENT_SIGNATURE_DATE" DataType="DateTime" Size="" Null="True" Control="TextBox" ControlID="TXT_PATIENT_SIGNATURE_DATE" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_PATIENT_ADDRESS" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_PATIENT_ADDRESS" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_PROVIDER_NAME" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_PROVIDER_NAME" Editable="True" Visible="True"></Field>
+  <Field Name ="DT_PROVIDER_SIGNATURE_DATE" DataType="DateTime" Size="" Null="True" Control="TextBox" ControlID="TXT_PROVIDER_SIGNATURE_DATE" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_PROVIDER_ADDRESS" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_PROVIDER_ADDRESS" Editable="True" Visible="True"></Field>-->
+  <Field Name ="SZ_OCA_OFFICIAL_FORM_NUMBER" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_OCA_OFFICIAL_FORM_NUMBER" Editable="True" Visible="True"></Field>
+  <StoreProcedure name="SP_MST_AOB"></StoreProcedure>
+</Table>
+
+
+
+
+
+
+
+
+
+
+
+

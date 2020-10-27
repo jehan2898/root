@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="txn_bill_transactions">
+  <Field Name="sz_company_id"      DataType="NVarChar"    Size="20" Null="False" Control="TextBox" ControlID="txtCompanyId" Editable="True"  Visible="True" ></Field>
+  <StoreProcedure name="sp_downlod_summary_totals"></StoreProcedure>
+  <ListControl name="grdDownloadCompanyWise"></ListControl>
+</Table>
+

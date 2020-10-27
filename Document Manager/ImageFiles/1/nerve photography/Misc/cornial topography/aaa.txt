@@ -1,0 +1,35 @@
+Issues which are to be taken care of:
+
+1. Deactivate Button isnt working				-	DONE
+
+2. Role Setup - (all / Nuthing)					-	DONE	
+
+3. AxpDataGrid - Unlicensed Copy				-	DONE
+
+4. Status Drop Down - All/Open/Close				-	DONE
+
+5. Second Case Screen - View Case if choosed 
+
+6. Amount (eg. 50.00) - Error 					-	DONE
+
+7. More then two plaintiffs 
+
+8. Name Input (eg O'Neil) gives error 				-	DONE
+
+9. Drag & Drop under View Documents doesnt work.
+
+10. Delete Cases option missing					-	DONE
+
+11. Remove Template Column					-	DONE
+
+12. Provision to add more Persons				-	
+
+13. Copy Document to Case Functionality
+
+14. Move Document/Folder
+
+
+
+http://www.c-sharpcorner.com/UploadFile/mahesh/window_service11262005045007AM/window_service.aspx
+http://www.c-sharpcorner.com/UploadFile/ajifocus/AppScheduler05262006074807AM/AppScheduler.aspx
+http://blogs.msdn.com/mswanson/articles/WPFToolsAndControls.aspx

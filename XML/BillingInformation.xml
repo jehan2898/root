@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_INSURANCE_COMPANY">
+  <Field Name="SZ_BILL_NUMBER"        DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"        ControlID=""                    Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_INSURANCE_ID"       DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"        ControlID="txtInsuranceID"      Editable="True" Visible="True"></Field>
+  <Field Name="SZ_INSURANCE_NAME"     DataType="NVarChar"    Size="150"    Null="False"   Control="TextBox"        ControlID="txtInsuranceName"    Editable="True"  Visible="True" ></Field>  
+  <Field Name="SZ_INSURANCE_STREET"   DataType="NVarChar"    Size="50"     Null="True"    Control="TextBox"        ControlID="txtInsuranceStreet"  Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_INSURANCE_CITY"     DataType="NVarChar"    Size="50"     Null="True"    Control="TextBox"        ControlID="txtInsuranceCity"    Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_INSURANCE_STATE"    DataType="NVarChar"    Size="50"     Null="True"    Control="ExtendedDropDownList"        ControlID="txtInsuranceState"   Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_INSURANCE_ZIP"      DataType="NVarChar"    Size="50"     Null="True"    Control="TextBox"        ControlID="txtInsuranceZip"     Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_COMPANY_ID"         DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"        ControlID="txtCompanyID"        Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_CARRIER_CODE"       DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"        ControlID="txtcarriercode"        Editable="True"  Visible="True" ></Field>
+  <Field Name="BT_PPO"                DataType="Bit"         Size=""       Null="False"   Control="CheckBox"       ControlID="chkPPO"              Editable="True"  Visible="True" ></Field>  
+  <StoreProcedure name="SP_TXN_BILLING_INFORMATION"></StoreProcedure>
+  <ListControl name="grdBillingInformation"></ListControl>
+</Table>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TABLE NAME="TXN_CALENDAR_EVENT">
+  <Field Name="SZ_COMPANY_ID" DataType="NVarChar" Size="20" Null="False" Control="TextBox" ControlID="txtCompanyID" Editable="False" Visible="False">
+  </Field>
+  <StoreProcedure name="SP_GET_DOCTOR_CHANGE"></StoreProcedure>
+  <ListControl name="grdDoctorChange"></ListControl>
+</TABLE>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="SP_MST_STATE">
+  <Field Name="SZ_STATE_ID"    DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"   ControlID=""               Editable="False" Visible="False"></Field>
+  <Field Name="SZ_STATE_CODE"  DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"   ControlID="txtCode"        Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_STATE_NAME"  DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"   ControlID="txtName"        Editable="True"  Visible="True" ></Field>
+  <StoreProcedure name="SP_MST_STATE"></StoreProcedure>
+  <ListControl name="grdStateList"></ListControl>
+</Table>

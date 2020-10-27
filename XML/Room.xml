@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Table Name="MST_ROOM">
+  <Field Name="SZ_ROOM_ID"     DataType="NVarChar"    Size="20"     Null="False"  Control="TextBox"   ControlID=""                 Editable="False" Visible="False"></Field>
+  <Field Name="SZ_ROOM_NAME"   DataType="NVarChar"    Size="50"     Null="False"  Control="TextBox"   ControlID="txtRoomName"    Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PROCEDURE_GROUP_ID"   DataType="NVarChar"    Size="20"     Null="False"  Control="ExtendedDropDownList"   ControlID="extddlProCodeGroup"    Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_COMPANY_ID"  DataType="NVarChar"    Size="20"     Null="False"  Control="TextBox"   ControlID="txtCompanyID"     Editable="True"  Visible="True" ></Field>
+  <Field Name="FL_START_TIME"   DataType="NVarChar"    Size="20"     Null="False"  Control="TextBox"   ControlID="txtStartTime"    Editable="True"  Visible="True" ></Field>
+  <Field Name="FL_END_TIME"   DataType="NVarChar"    Size="20"     Null="False"  Control="TextBox"   ControlID="txtEndTime"    Editable="True"  Visible="True" ></Field>
+  <StoreProcedure name="SP_MST_ROOM"></StoreProcedure>
+  <ListControl name="grdRoomList"></ListControl>
+</Table>

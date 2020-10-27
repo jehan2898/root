@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_PERMANENT_IMPAIREMENT">
+  <Field Name="SZ_PERMANANT_IMPAIREMENT_ID"         DataType="NVarChar"     Size="20"     Null="False"   Control="TextBox"             ControlID=""                                        Editable="False" Visible="False"></Field>
+  <Field Name="BT_MEDICAL_IMPROVEMENT"              DataType="Bit"          Size=""       Null="False"   Control="RadioButtonList"        ControlID="rdlstPatientMedicalImprovement"                    Editable="True"  Visible="True" ></Field>
+  <Field Name="DT_MEDICAL_IMPROVEMENT_DATE"         DataType="DateTime"     Size=""       Null="False"   Control="TextBox"        ControlID="txtPatientReachedMMI"                      Editable="True"  Visible="True" ></Field>
+  <Field Name="BT_PERMANENT_IMPAIRMENT"             DataType="Bit"          Size=""    Null="False"   Control="RadioButtonList"            ControlID="rdlstPermanentImpairement"              Editable="True"  Visible="True" ></Field>
+  
+  
+  <Field Name="I_PATIENT_WORKING"                   DataType="Int"          Size=""       Null="False"   Control="RadioButtonList"        ControlID="rdlstIsPatienWorking"            Editable="True"  Visible="True" ></Field>
+  <Field Name="BT_PATIENT_WORKING_LIMITATION"       DataType="Bit"          Size=""       Null="False"   Control="RadioButtonList"        ControlID="rdlstPatientLimitation"             Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PATIENT_WORKING_LIMITATION_DESC"   DataType="NVarChar"     Size="250"    Null="False"   Control="TextBox"             ControlID="txtQuantifyTheLimitaion"              Editable="True"  Visible="True" ></Field>
+  
+  <Field Name="I_WITH_WHOM_DISCUSS"                 DataType="Int"          Size=""       Null="False"   Control="RadioButtonList"             ControlID="rdlstDiscussPatientReturn"   Editable="True"  Visible="True" ></Field>
+  <Field Name="BT_PATIENT_BENEFIT"                  DataType="Bit"          Size="150"    Null="False"   Control="RadioButtonList"             ControlID="rdlstPatientBenefit"                 Editable="True"  Visible="True" ></Field>
+
+
+  <Field Name="SZ_PATIENT_BENEFIT_DESC"             DataType="NVarChar"     Size="150"    Null="False"   Control="TextBox"             ControlID="txtPatientBenefitDesc"                Editable="True"  Visible="True" ></Field>
+  
+  
+  <Field Name="SZ_PATIENT_ID"                       DataType="NVarChar"     Size="20"     Null="False"   Control="TextBox"             ControlID="txtPatientID"                            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_COMPANY_ID"                       DataType="NVarChar"     Size="20"     Null="False"   Control="TextBox"             ControlID="txtCompanyID"                            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_BILL_NUMBER"                      DataType="NVarChar"     Size="20"     Null="False"   Control="TextBox"             ControlID="txtBillNumber"                           Editable="True"  Visible="True" ></Field>
+
+  <Field Name="SZ_PATIENT_FIRST_NAME"  DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"        ControlID="txtPatienFirstName"     Editable="True"  Visible="True" ></Field>
+  <Field Name="MI"                     DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"        ControlID="txtPatienMiddleName"    Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PATIENT_LAST_NAME"   DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"        ControlID="txtPatienLastName"      Editable="True"  Visible="True" ></Field>
+  <Field Name="DT_INJURY"              DataType="DateTime"    Size=""       Null="True"   Control="TextBox"        ControlID="txtDateOfInjury"              Editable="True"  Visible="True" ></Field>
+  <StoreProcedure name="SP_MST_PERMANENT_IMPAIREMENT"></StoreProcedure>
+</Table>
+
+
+

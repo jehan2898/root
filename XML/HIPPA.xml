@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_HIPPA">
+  <Field Name ="I_EVENT_ID" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_I_EVENT" Editable="True" Visible="True"></Field>
+  <!--<Field Name ="SZ_PATIENT_NAME" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_PATIENT_NAME" Editable="True" Visible="True"></Field>
+  <Field Name ="DT_DOB" DataType="DateTime" Size="" Null="True" Control="TextBox" ControlID="TXT_DOB" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_SSN" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_SSN" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_PATIENT_ADDRESS" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_PATIENT_ADDRESS" Editable="True" Visible="True"></Field>-->
+  <Field Name ="DT_AUHORIZATION_DATE" DataType="DateTime" Size="" Null="True" Control="TextBox" ControlID="TXT_AUHORIZATION_DATE" Editable="True" Visible="True"></Field>
+  <!--<Field Name ="SZ_HEALTH_PROVISER_NAME_ADDRESS" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_HEALTH_PROVISER_NAME_ADDRESS" Editable="True" Visible="True"></Field>-->
+  <Field Name ="SZ_NAME_ADDRESS_OF_PERSON" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_NAME_ADDRESS_OF_PERSON" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_MEDICAL_RECORD_DATE_FROM_TO" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_MEDICAL_RECORD_DATE_FROM_TO" Editable="True" Visible="True"></Field>
+  <Field Name ="DT_MEDICAL_RECORD_FROM" DataType="DateTime" Size="" Null="True" Control="TextBox" ControlID="TXT_MEDICAL_RECORD_FROM" Editable="True" Visible="True"></Field>
+  <Field Name ="DT_MEDICAL_RECORD_TO" DataType="DateTime" Size="" Null="True" Control="TextBox" ControlID="TXT_MEDICAL_RECORD_TO" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_HEALTH_CARE_PROVIDERS" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_HEALTH_CARE_PROVIDERS" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_OTHER_PROVIDERS" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_OTHER_PROVIDERS" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_OTHER_PROVIDERS" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_OTHER_PROVIDERS" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_ALOCOHOL_DRUG_TREATMENT" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_ALOCOHOL_DRUG_TREATMENT" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_MENTAL_HEALTH_INFORMATION" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_MENTAL_HEALTH_INFORMATION" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_HIV_RELATED_INFORMATION" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_HIV_RELATED_INFORMATION" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_BY_INITILING_HERE" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_BY_INITILING_HERE" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_BY_INITILING_HERE" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_BY_INITILING_HERE" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_AUTHORIZE" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_AUTHORIZE" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_AT_REQUEST_OF_INDIVIDUAL" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_AT_REQUEST_OF_INDIVIDUAL" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_OTHER_RELEASE_INFORMATION" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_OTHER_RELEASE_INFORMATION" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_OTHER_RELEASE_INFORMATION" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_OTHER_RELEASE_INFORMATION" Editable="True" Visible="True"></Field>
+  <Field Name ="DT_AUTHORIZATION_EXPIRE_DATE_OR_EVENT" DataType="DateTime" Size="" Null="True" Control="TextBox" ControlID="TXT_AUTHORIZATION_EXPIRE_DATE_OR_EVENT" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_IF_NOT_PATIENT_NAME_OF_PERSON_SIGNING_FORM" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_IF_NOT_PATIENT_NAME_OF_PERSON_SIGNING_FORM" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_AUTHORITY_TO_SIGN_ON_BEHALF_OF_PATIENT" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_AUTHORITY_TO_SIGN_ON_BEHALF_OF_PATIENT" Editable="True" Visible="True"></Field>
+  
+  <StoreProcedure name="SP_MST_HIPPA"></StoreProcedure>
+</Table>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_CASE_MASTER">
+  <Field Name="SZ_CASE_ID"         DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"                ControlID=""                        Editable="False" Visible="False"></Field>
+  <Field Name="SZ_CASE_NAME"       DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"                ControlID="txtCaseName"             Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_CASE_TYPE_ID"    DataType="NVarChar"    Size="20"     Null="False"   Control="ExtendedDropDownList"   ControlID="extddlCaseType"          Editable="True"  Visible="True" ></Field>
+  
+  <Field Name="SZ_INSURANCE_ID"    DataType="NVarChar"    Size="20"     Null="False"   Control="ExtendedDropDownList"   ControlID="extddlInsuranceCompany"  Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_CASE_STATUS_ID"  DataType="NVarChar"    Size="20"     Null="False"   Control="ExtendedDropDownList"   ControlID="extddlCaseStatus"        Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_ATTORNEY_ID"     DataType="NVarChar"    Size="20"     Null="False"   Control="ExtendedDropDownList"   ControlID="extddlAttorney"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PATIENT_ID"      DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"                ControlID="txtPatientID"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_COMPANY_ID"      DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"                ControlID="txtCompanyID"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_CLAIM_NUMBER"     DataType="NVarChar"    Size="50"    Null="False"   Control="TextBox"                ControlID="txtClaimNumber"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_POLICY_NUMBER"    DataType="NVarChar"    Size="20"    Null="False"   Control="TextBox"                ControlID="txtPolicyNumber"            Editable="True"  Visible="True" ></Field>
+  <Field Name="DT_DATE_OF_ACCIDENT" DataType="DateTime"    Size=""      Null="False"   Control="TextBox"                ControlID="txtDateofAccident"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_ADJUSTER_ID"      DataType="NVarChar"    Size="20"     Null="False"   Control="ExtendedDropDownList"                ControlID="extddlAdjuster"          Editable="True"  Visible="True" ></Field>
+  <Field Name="BT_ASSOCIATE_DIAGNOSIS_CODE"      DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"                ControlID="txtAssociateDiagnosisCode"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_INS_ADDRESS_ID"      DataType="NVarChar"    Size="20"     Null="False"   Control="ListBox"                ControlID="lstInsuranceCompanyAddress"          Editable="True"  Visible="True" ></Field>
+  
+  <StoreProcedure name="SP_MST_CASE_MASTER"></StoreProcedure>
+</Table>
+

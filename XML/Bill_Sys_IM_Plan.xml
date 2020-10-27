@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_IM_FOLLOWING">
+  <Field Name="I_EVENT_ID" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_EVENT_ID" Editable="True" Visible="True" />
+
+
+  <Field Name="BT_TEST_CT_SCAN" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_TEST_CT_SCAN" Editable="True" Visible="True" />
+  <Field Name="BT_TEST_EMG_NCV" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_TEST_EMG_NCV" Editable="True" Visible="True" />
+  <Field Name="BT_REFERRALS_CHIROPRACTOR" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_REFERRALS_CHIROPRACTOR" Editable="True" Visible="True" />
+  <Field Name="BT_REFERRALS_INTERNIST_FAMILY_PHYSICIAN" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_REFERRALS_INTERNIST_FAMILY_PHYSICIAN" Editable="True" Visible="True" />
+  <Field Name="BT_TEST_MRI" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_TEST_MRI" Editable="True" Visible="True" />
+
+  <Field Name="SZ_TEST_MRI" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_TEST_MRI" Editable="True" Visible="True" />
+  <Field Name="BT_REFERRALS_OCCUPATIONAL_THERAPIST" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_REFERRALS_OCCUPATIONAL_THERAPIST" Editable="True" Visible="True" />
+  <Field Name="BT_TEST_LABS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_TEST_LABS" Editable="True" Visible="True" />
+
+  <Field Name="SZ_TEST_LABS" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_TEST_LABS" Editable="True" Visible="True" />
+  <Field Name="BT_REFERRALS_PHYSICAL_THERAPIST" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_REFERRALS_PHYSICAL_THERAPIST" Editable="True" Visible="True" />
+  <Field Name="BT_TEST_X_RAY" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_TEST_X_RAY" Editable="True" Visible="True" />
+
+  <Field Name="SZ_TEST_X_RAY" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_TEST_X_RAY" Editable="True" Visible="True" />
+  <Field Name="BT_REFERRALS_SPECIALIST_IN" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_REFERRALS_SPECIALIST_IN" Editable="True" Visible="True" />
+
+  <Field Name="SZ_REFERRALS_SPECIALIST" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_REFERRALS_SPECIALIST" Editable="True" Visible="True" />
+  <Field Name="BT_TEST_OTHER" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_TEST_OTHER" Editable="True" Visible="True" />
+
+  <Field Name="SZ_TEST_OTHER" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_TEST_OTHER" Editable="True" Visible="True" />
+  <Field Name="BT_REFERRALS_OTHER" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_REFERRALS_OTHER" Editable="True" Visible="True" />
+  <Field Name="SZ_REFERRALS_OTHER" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_REFERRALS_OTHER" Editable="True" Visible="True" />
+
+  <Field Name="SZ_LIST_CHANGES_OF_TREATMENT" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_LIST_CHANGES_OF_TREATMENT" Editable="True" Visible="True" />
+  <Field Name="BT_SUPPLIES_EMS_UNIT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_SUPPLIES_EMS_UNIT" Editable="True" Visible="True" />
+  <Field Name="BT_SUPPLIES_RT_LT_WRIST_SUPPORT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_SUPPLIES_RT_LT_WRIST_SUPPORT" Editable="True" Visible="True" />
+  <Field Name="BT_SUPPLIES_CERVICAL_PILLOW" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_SUPPLIES_CERVICAL_PILLOW" Editable="True" Visible="True" />
+  <Field Name="BT_SUPPLIES_RT_LT_ELBOW_SUPPORT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_SUPPLIES_RT_LT_ELBOW_SUPPORT" Editable="True" Visible="True" />
+  <Field Name="BT_SUPPLIES_LUMBOSACRAL_BACK_SUPPORT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_SUPPLIES_LUMBOSACRAL_BACK_SUPPORT" Editable="True" Visible="True" />
+  <Field Name="BT_SUPPLIES_RT_LT_ANKLE_SUPPORT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_SUPPLIES_RT_LT_ANKLE_SUPPORT" Editable="True" Visible="True" />
+  <Field Name="BT_SUPPLIES_LUMBAR_CUSHION" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_SUPPLIES_LUMBAR_CUSHION" Editable="True" Visible="True" />
+  <Field Name="BT_SUPPLIES_RT_LT_KNEE_SUPPORT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_SUPPLIES_RT_LT_KNEE_SUPPORT" Editable="True" Visible="True" />
+  <Field Name="BT_SUPPLIES_MASSAGER" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_SUPPLIES_MASSAGER" Editable="True" Visible="True" />
+  <Field Name="BT_SUPPLIES_CANE" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_SUPPLIES_CANE" Editable="True" Visible="True" />
+  <Field Name="BT_SUPPLIES_ROM_TESTING" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_SUPPLIES_ROM_TESTING" Editable="True" Visible="True" />
+  <Field Name="BT_SUPPLIES_BIOFEEDBACK_TRAINING_SESSIONS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_SUPPLIES_BIOFEEDBACK_TRAINING_SESSIONS" Editable="True" Visible="True" />
+  <Field Name="BT_PATIENT_NEXT_VISIT_WITHIN_A_WEEK" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PATIENT_NEXT_VISIT_WITHIN_A_WEEK" Editable="True" Visible="True" />
+  <Field Name="BT_PATIENT_NEXT_VISIT_1_TO_2_WKS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PATIENT_NEXT_VISIT_1_TO_2_WKS" Editable="True" Visible="True" />
+  <Field Name="BT_PATIENT_NEXT_VISIT_3_TO_4_WKS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PATIENT_NEXT_VISIT_3_TO_4_WKS" Editable="True" Visible="True" />
+  <Field Name="BT_PATIENT_NEXT_VISIT_5_TO_6_WEEKS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PATIENT_NEXT_VISIT_5_TO_6_WEEKS" Editable="True" Visible="True" />
+  <Field Name="BT_PATIENT_NEXT_VISIT_TO_7_TO_8_WKS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PATIENT_NEXT_VISIT_TO_7_TO_8_WKS" Editable="True" Visible="True" />
+  <Field Name="BT_PATIENT_NEXT_VISIT_NEEDED_MONTH" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PATIENT_NEXT_VISIT_NEEDED_MONTH" Editable="True" Visible="True" />
+
+  <Field Name="SZ_PATIENT_NEXT_VISIT_NEEDED_MONTH" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_PATIENT_NEXT_VISIT_NEEDED_MONTH" Editable="True" Visible="True" />
+  <Field Name="BT_PATIENT_AS_NEEDED" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PATIENT_AS_NEEDED" Editable="True" Visible="True" />
+
+
+  <StoreProcedure name="SP_PLAN" />
+</Table>

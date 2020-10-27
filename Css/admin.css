@@ -1,0 +1,108 @@
+﻿#registration-form
+{
+	width:30%;
+	padding-top:1%;
+	float:left;
+	text-align:right;
+	padding-right:1%;
+	font-family:Cambria;
+	font-size:18px;
+	vertical-align:top;
+}
+
+#registration-form-centers
+{
+	width:40%;
+	padding-top:1%;
+	float:left;
+	text-align:right;
+	padding-right:1%;
+	font-family:Cambria;
+	font-size:18px;
+	vertical-align:top;
+}
+
+#category-content-form
+{
+	width:100%;
+	padding-top:1%;
+	float:left;
+	text-align:right;
+	padding-right:1%;
+	font-family:Cambria;
+	font-size:18px;
+	vertical-align:top;
+}
+
+#nuser
+{
+	width:25%;
+	padding-top:1%;
+	float:left;
+	text-align:right;
+	padding-right:1%;
+	font-family:Cambria;
+	font-size:18px;
+	vertical-align:top;
+}
+
+.manage-member-lable-td
+{
+    background-color:#EFEFEF;
+    padding-right:2px;
+    height:24px;
+}
+
+.user-form-ibox
+{
+	min-height:35px;
+	height:40px;
+	width:70%;
+}
+
+.registration-form-ibox
+{
+	min-height:35px;
+	height:40px;
+	margin-left:auto;
+}
+        
+.inputBox {
+	/*width:100% !important;*/
+	height:30px !important;
+	font-size:14px !important;
+	border:1px solid #cccccc !important;
+}
+
+#manage-reg-filters
+{
+	width:40%;
+	padding-top:1%;
+	float:inherit;
+	text-align:right;
+	padding-right:1%;
+	font-family:Cambria;
+	font-size:18px;
+	vertical-align:top;
+    /*font-weight:bold;*/
+}
+
+#page-title{font-family:Cambria; font-size:small;font-weight:bold;background-color:#336699;width:100%;margin-top:20px;color:white;min-height:32px;}
+
+.listing-title{font-family:Cambria; font-size:18px;background-color:#336699; width:100%;margin-top:20px;color:White;min-height:32px;}
+
+.invalid
+{
+    font-size:14px;font-family:Calibri;font-style:italic;color:Red;
+}
+
+.ui-control-attached-text
+{
+    font-family:Calibri;font-size:12px;font-style:italic;
+}
+
+.mandatory-asterix
+{
+    color:Red;
+    font-size:16px;
+}

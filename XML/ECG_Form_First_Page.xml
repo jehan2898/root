@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_ECG_FORM">
+
+  <Field Name ="I_EVENT_ID" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_I_EVENT" Editable="True" Visible="True"></Field>
+  <Field Name ="DT_DATE_OF_SERVICE" DataType="DateTime" Size="" Null="False" Control="TextBox" ControlID="TXT_DATE_OF_SERVICE" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_REFERRING_DOCTOR" DataType="NVarChar" Size="100" Null="False" Control="TextBox" ControlID="TXT_REFERRING_DOCTOR" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_CERVICAL_NERVE_EVALUATION" DataType="Bit" Size="" Null="False" Control="CheckBox" ControlID="CHK_CERVICAL_NERVE_EVALUATION" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_LUMBAR_NERVE_EVALUATION" DataType="Bit" Size="" Null="False" Control="CheckBox" ControlID="CHK_LUMBAR_NERVE_EVALUATION" Editable="True" Visible="True"></Field>
+  
+  
+  <Field Name ="BT_NECK_PAIN" DataType="Bit" Size="" Null="False" Control="CheckBox" ControlID="CHK_NECK_PAIN" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_LOWER_BACK_PAIN" DataType="Bit" Size="" Null="False" Control="CheckBox" ControlID="CHK_LOWER_BACK_PAIN" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_UPPER_BACK_PAIN" DataType="Bit" Size="" Null="False" Control="CheckBox" ControlID="CHK_UPPER_BACK_PAIN" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_MIDDLE_BACK_PAIN" DataType="Bit" Size="" Null="False" Control="CheckBox" ControlID="CHK_MIDDLE_BACK_PAIN" Editable="True" Visible="True"></Field>
+
+
+  <Field Name ="SZ_OTHER" DataType="NVarChar" Size="50" Null="False" Control="TextBox" ControlID="TXT_OTHER" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_SPINAL" DataType="Bit" Size="" Null="False" Control="CheckBox" ControlID="CHK_SPINAL" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_SUSPECTED" DataType="Bit" Size="" Null="False" Control="CheckBox" ControlID="CHK_SUSPECTED" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_REFERRED" DataType="Bit" Size="" Null="False" Control="CheckBox" ControlID="CHK_REFERRED" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_DOCTOR_COMMENTS" DataType="NVarChar" Size="100" Null="False" Control="TextBox" ControlID="TXT_DOCTOR_COMMENTS" Editable="True" Visible="True"></Field>
+
+  <Field Name ="I_839_08_UPPER_MULTIPLE_SUBLUXATION" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_839_08_UPPER_MULTIPLE_SUBLUXATION" Editable="True" Visible="True"></Field>
+  <Field Name ="I_723_1_UPPER_CERVICALGIA" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_723_1_UPPER_CERVICALGIA" Editable="True" Visible="True"></Field>
+  <Field Name ="I_723_2_UPPER_CERVICOCRANIAL_SYNDROME" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_723_2_UPPER_CERVICOCRANIAL_SYNDROME" Editable="True" Visible="True"></Field>
+  <Field Name ="I_723_3_UPPER_CERVICOBRACHIAL_SYNDROME" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_723_3_UPPER_CERVICOBRACHIAL_SYNDROME" Editable="True" Visible="True"></Field>
+  <Field Name ="I_723_4_UPPER_CERVICAL_REDICULITIS" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_723_4_UPPER_CERVICAL_REDICULITIS" Editable="True" Visible="True"></Field>
+  <Field Name ="I_729_1_UPPER_MYALGIA_MYOSITIS" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_729_1_UPPER_MYALGIA_MYOSITIS" Editable="True" Visible="True"></Field>
+  <Field Name ="I_728_85_UPPER_MUSCLE_SPASM" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_728_85_UPPER_MUSCLE_SPASM" Editable="True" Visible="True"></Field>
+  <Field Name ="I_782_0_UPPER_NUMBNESS_TINGLING" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_782_0_UPPER_NUMBNESS_TINGLING" Editable="True" Visible="True"></Field>
+  <Field Name ="I_839_2_LOWER_LUMBER_SUBLAXATION" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_839_2_LOWER_LUMBER_SUBLAXATION" Editable="True" Visible="True"></Field>
+  <Field Name ="I_839_42_LOWER_SACROILLIAC_SUBLUXATIONS" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_839_42_LOWER_SACROILLIAC_SUBLUXATIONS" Editable="True" Visible="True"></Field>
+  <Field Name ="I_724_2_LOWER_LUMBOSACRAL_RADICULITIS" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_724_2_LOWER_LUMBOSACRAL_RADICULITIS" Editable="True" Visible="True"></Field>
+  <Field Name ="I_724_8_LOWER_LUMBAGO" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_724_8_LOWER_LUMBAGO" Editable="True" Visible="True"></Field>
+  <Field Name ="I_723_4_LOWER_LUMBAR_FACET_SYNDROME" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_723_4_LOWER_LUMBAR_FACET_SYNDROME" Editable="True" Visible="True"></Field>
+  <Field Name ="I_729_1_LOWER_MYALGIA_MYOSITIS" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_729_1_LOWER_MYALGIA_MYOSITIS" Editable="True" Visible="True"></Field>
+  <Field Name ="I_728_85_LOWER_MUSCLE_SPASM" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_728_85_LOWER_MUSCLE_SPASM" Editable="True" Visible="True"></Field>
+  <Field Name ="I_782_0_LOWER_NUMBNESS_TINGLING" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_782_0_LOWER_NUMBNESS_TINGLING" Editable="True" Visible="True"></Field>
+
+  <!--<Field Name ="SZ_REFERRING_DOCTOR" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_REFERRING_DOCTOR" Editable="True" Visible="True"></Field>-->
+
+
+
+
+
+
+
+  <StoreProcedure name="SP_ECG_FORM_ORDERING_LIST"></StoreProcedure>
+</Table>

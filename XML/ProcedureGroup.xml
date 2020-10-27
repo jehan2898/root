@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_PROCEDURE_GROUP">
+  <Field Name="SZ_PROCEDURE_GROUP_ID"      DataType="NVarChar"    Size="20"     Null="False"  Control="TextBox"  ControlID=""                  Editable="False" Visible="False"></Field>
+  <Field Name="SZ_PROCEDURE_GROUP"         DataType="NVarChar"    Size="150"    Null="False"  Control="TextBox"  ControlID="txtProcedureGroup"   Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_COMPANY_ID"              DataType="NVarChar"    Size="20"     Null="False"  Control="TextBox"  ControlID="txtCompanyID"      Editable="True"  Visible="True" ></Field>
+  <Field Name="IS_PRINTABLE"               DataType="Int"    Size=""     Null="False"  Control="CheckBox"  ControlID="chkPrintable"      Editable="True"  Visible="True" ></Field>
+  <Field Name="BT_UNIT"                    DataType="Int"    Size=""     Null="False"  Control="CheckBox"  ControlID="chkUnit"      Editable="True"  Visible="True" ></Field>
+  <Field Name="I_FOLLOWUP_REPORT"          DataType="Int"    Size=""    Null="False"  Control="TextBox"  ControlID="txtFollowUpDays"   Editable="True"  Visible="True" ></Field>
+  <Field Name="I_FOLLOWUP_TIMES"           DataType="Int"    Size=""    Null="False"  Control="TextBox"  ControlID="txtFollowUpCount"   Editable="True"  Visible="True" ></Field>
+  
+  <Field Name="I_INITIAL_FOLLOWUP"           DataType="Int"    Size=""    Null="False"  Control="TextBox"  ControlID="txtIntialFollowoupDays"   Editable="True"  Visible="True" ></Field>
+  <Field Name="I_INITIAL_FOLLOWUP_TIMES"           DataType="Int"    Size=""    Null="False"  Control="TextBox"  ControlID="txtIntialFollowupCount"   Editable="True"  Visible="True" ></Field>
+
+  <Field Name="BT_IS_IN_ORDER"                    DataType="Int"    Size=""     Null="False"  Control="CheckBox"  ControlID="chkPatientDesk"      Editable="True"  Visible="True" ></Field>
+  <Field Name="I_ORDER"           DataType="Int"    Size=""    Null="False"  Control="TextBox"  ControlID="txtorder"   Editable="True"  Visible="True" ></Field>
+  <Field Name="BT_INITIAL_EVALUATION"                    DataType="Int"    Size=""     Null="False"  Control="CheckBox"  ControlID="chkInitialEvaluation"      Editable="True"  Visible="True" ></Field>
+  <Field Name="bt_associate_to_patient"                    DataType="Int"    Size=""     Null="False"  Control="CheckBox"  ControlID="chkAutoAssociate"      Editable="True"  Visible="True" ></Field>
+  <Field Name="bt_include_1500"                    DataType="Int"    Size=""     Null="False"  Control="CheckBox"  ControlID="chkinclude_1500"      Editable="True"  Visible="True" ></Field>
+
+
+  <Field Name="mn_ie_amount"          DataType="Float"    Size=""    Null="False"  Control="TextBox"  ControlID="txtIELimit"   Editable="True"  Visible="True" ></Field>
+  <Field Name="mn_fu_amount"           DataType="Float"    Size=""    Null="False"  Control="TextBox"  ControlID="txtFULimit"   Editable="True"  Visible="True" ></Field>
+  <Field Name="mn_c_amount"           DataType="Float"    Size=""    Null="False"  Control="TextBox"  ControlID="txtCLimit"   Editable="True"  Visible="True" ></Field>
+  <Field Name="bt_diagnosis"           DataType="Int"    Size=""    Null="False"  Control="CheckBox"  ControlID="chk_Diagnosis"   Editable="True"  Visible="True" ></Field>
+
+  <Field Name="I_INITIAL_ALERT_DAYS"           DataType="Int"    Size=""    Null="False"  Control="TextBox"  ControlID="txtDaysafterInitial"   Editable="True"  Visible="True" ></Field>
+  <Field Name="I_INITIAL_ALERT_VISITS"           DataType="Int"    Size=""    Null="False"  Control="TextBox"  ControlID="txtvisitsafterInitial"   Editable="True"  Visible="True" ></Field>
+  <Field Name="I_REEVAL_ALERT_DAYS"           DataType="Int"    Size=""    Null="False"  Control="TextBox"  ControlID="txtDaysafterReeval"   Editable="True"  Visible="True" ></Field>
+  <Field Name="I_REEVAL_ALERT_VISITS"           DataType="Int"    Size=""    Null="False"  Control="TextBox"  ControlID="txtvisitsafterReeval"   Editable="True"  Visible="True" ></Field>
+  <Field Name="I_REEVAL_TIMES"           DataType="Int"    Size=""    Null="False"  Control="TextBox"  ControlID="txtReevalCount"   Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_INITIAL_CODES"              DataType="NVarChar"    Size="2000"     Null="False"  Control="TextBox"  ControlID="txtInitialCodes"      Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_REEVAL_CODES"              DataType="NVarChar"    Size="2000"     Null="False"  Control="TextBox"  ControlID="txtReevalCodes"      Editable="True"  Visible="True" ></Field>
+  <StoreProcedure name="SP_MST_PROCEDURE_GROUP"></StoreProcedure>
+  <ListControl name="grdProcedureGroup"></ListControl>
+</Table>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Table Name="MST_PATIENT">
+  <Field Name="SZ_BILL_NUMBER"         DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"         ControlID=""            Editable="False"  Visible="False" ></Field>
+  <Field Name="SZ_PATIENT_ID"          DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"         ControlID="txtPatientID"                         Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PATIENT_FIRST_NAME"  DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"         ControlID="txtPatientFirstName"     Editable="True"  Visible="True" ></Field>
+  <Field Name="MI"                     DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"         ControlID="txtPatientMiddleName"    Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PATIENT_LAST_NAME"   DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"         ControlID="txtPatientLastName"      Editable="True"  Visible="True" ></Field>
+  <Field Name="DT_INJURY"              DataType="DateTime"    Size=""       Null="True"    Control="TextBox"         ControlID="txtDateOfInjury"         Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_SOCIAL_SECURITY_NO"  DataType="NVarChar"    Size="20"     Null="True"    Control="TextBox"         ControlID="txtSocialSecurity"       Editable="True"  Visible="True" ></Field>
+
+  <Field Name="SZ_PATIENT_STREET"      DataType="NVarChar"    Size="50"     Null="True"    Control="TextBox"         ControlID="txtPatientStreet"        Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PATIENT_CITY"        DataType="NVarChar"    Size="50"     Null="True"    Control="TextBox"         ControlID="txtPatientCity"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PATIENT_STATE"       DataType="NVarChar"    Size="50"     Null="True"    Control="TextBox"         ControlID="txtPatientState"         Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PATIENT_ZIP"         DataType="NVarChar"    Size="10"     Null="True"    Control="TextBox"         ControlID="txtPatientZip"           Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_CASE_ID"             DataType="NVarChar"    Size="20"     Null="True"    Control="TextBox"         ControlID=""               Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_COMPANY_ID"          DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"         ControlID="txtCompanyID"            Editable="True"  Visible="True" ></Field>
+
+
+
+  <Field Name="SZ_CARRIER_CASE_NO"     DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"         ControlID="txtCaseCarrierNo"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_WCB_NO"              DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"         ControlID="txtWCBCaseNumber"            Editable="True"  Visible="True" ></Field>
+  <Field Name="DT_BILL_DATE"           DataType="DateTime"    Size=""       Null="False"   Control="TextBox"         ControlID="txtDateofExam"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PATIENT_ACCOUNT_NUMBER"              DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"         ControlID="txtCaseID"            Editable="True"  Visible="True" ></Field>
+
+
+
+
+
+
+
+  <StoreProcedure name="SP_MST_PATIENT_INFORMATION_CFOUR_THREE"></StoreProcedure>
+
+</Table>

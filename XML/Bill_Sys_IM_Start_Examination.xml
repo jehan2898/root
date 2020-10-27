@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+ <Table Name="MST_IM_FOLLOWING">
+
+   <Field Name="I_EVENT_ID" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_EVENT_ID" Editable="True" Visible="True" />
+   
+  
+  <Field Name="SZ_PROVIDER_NAME" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_PROVIDER_NAME" Editable="True" Visible="True" />
+  
+  <Field Name="SZ_PROVIDER_ADDRESS" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_PROVIDER_ADDRESS" Editable="True" Visible="True" />
+  
+  <Field Name="SZ_PROVIDER_CITY" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="TXT_PROVIDER_CITY" Editable="True" Visible="True" />
+ 
+  <Field Name="SZ_PROVIDER_STATE" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_PROVIDER_STATE" Editable="True" Visible="True" />
+  
+  <Field Name="SZ_PROVIDER_ZIP" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_PROVIDER_ZIP" Editable="True" Visible="True" />
+  
+  <Field Name="SZ_PROVIDER_PHONE" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_PROVIDER_PHONE" Editable="True" Visible="True" />
+  
+  <Field Name="SZ_PROVIDER_FAX" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_PROVIDER_FAX" Editable="True" Visible="True" />
+  
+  <Field Name="SZ_REVEALED_BY_RECENT_EXAMINATION" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_REVEALED_BY_RECENT_EXAMINATION" Editable="True" Visible="True" />
+  
+  <Field Name="SZ_ADDITIONAL_BODY_PARTS_AFFECTED" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_ADDITIONAL_BODY_PARTS_AFFECTED" Editable="True" Visible="True" />
+  
+  <Field Name="BT_PATIENT_ARRIVED_BUS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PATIENT_ARRIVED_BUS" Editable="True" Visible="True" />
+  
+  <Field Name="BT_PATIENT_ARRIVED_SUBWAYS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PATIENT_ARRIVED_SUBWAY" Editable="True" Visible="True" />
+  
+  <Field Name="BT_PATIENT_ARRIVED_TAXI" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PATIENT_ARRIVED_TAXI" Editable="True" Visible="True" />
+  
+  <Field Name="BT_PATIENT_ARRIVED_WALKING" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PATIENT_ARRIVED_WALKING" Editable="True" Visible="True" />
+  
+  <Field Name="BT_PATIENT_ARRIVED_AMBULATE" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PATIENT_ARRIVED_AMBULATE" Editable="True" Visible="True" />
+  
+  <Field Name="BT_PATIENT_ARRIVED_PRIVATE_CAR" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PATIENT_ARRIVED_PRIVATE_CAR" Editable="True" Visible="True" />
+  
+  <Field Name="BT_PATIENT_ARRIVED_OTHER" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PATIENT_ARRIVED_OTHER" Editable="True" Visible="True" />
+  
+  <Field Name="SZ_PATIENT_OTHER_TRANSPORT" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_PATIENT_OTHER_TRANSPORT" Editable="True" Visible="True" />
+  
+  <Field Name="BT_TREATMENT_99211" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_TREATMENT_99211" Editable="True" Visible="True" />
+  
+  <Field Name="BT_TREATMENT_99214" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_TREATMENT_99214" Editable="True" Visible="True" />
+  
+  <Field Name="BT_TREATMENT_99212" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_TREATMENT_99212" Editable="True" Visible="True" />
+  
+  <Field Name="BT_TREATMENT_99215" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_TREATMENT_99215" Editable="True" Visible="True" />
+  
+  <Field Name="BT_TREATMENT_99213" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_TREATMENT_99213" Editable="True" Visible="True" />
+  
+  <Field Name="BT_HEADACHES" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_HEADACHES" Editable="True" Visible="True" />
+  
+  <Field Name="BT_DIZZINESS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIZZINESS" Editable="True" Visible="True" />
+  
+  <Field Name="BT_JAW_PAIN" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_JAW_PAIN" Editable="True" Visible="True" />
+  
+  <Field Name="BT_NECK_PAIN_STIFFNESS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_NECK_PAIN_STIFFNESS" Editable="True" Visible="True" />
+  
+  <Field Name="BT_CHEST_PAIN" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_CHEST_PAIN" Editable="True" Visible="True" />
+  
+  <Field Name="BT_DIFFICULTY_IN_BREATHING" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIFFICULTY_IN_BREATHING" Editable="True" Visible="True" />
+    
+   <Field Name="BT_RESTRICTION_NECK_MOTION" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_RESTRICTION_NECK_MOTION" Editable="True" Visible="True" />
+  
+  <Field Name="BT_NUMBNESS_TINGLING_TOES" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_NUMBNESS_TINGLING_TOES" Editable="True" Visible="True" />
+  
+  <Field Name="BT_ANXIETY_STRESS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_ANXIETY_STRESS" Editable="True" Visible="True" />
+ 
+  <Field Name="BT_VISUAL_PROBLEMS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_VISUAL_PROBLEMS" Editable="True" Visible="True" />
+ 
+  <Field Name="BT_FATIGUE" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_FATIGUE" Editable="True" Visible="True" />
+  
+  <Field Name="BT_KNEE_PAIN" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_KNEE_PAIN" Editable="True" Visible="True" />
+  
+  <Field Name="BT_SHOULDER_PAIN" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_SHOULDER_PAIN" Editable="True" Visible="True" />
+  
+  <Field Name="BT_LOWER_BACK_PAIN_STIFFNESS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_LOWER_BACK_PAIN_STIFFNESS" Editable="True" Visible="True" />
+  
+  <Field Name="BT_UPPER_BACK_PAIN_STIFFNESS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_UPPER_BACK_PAIN_STIFFNESS" Editable="True" Visible="True" />
+  
+  <Field Name="BT_UNABLE_TO_LIFT_OBJECTS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_UNABLE_TO_LIFT_OBJECTS" Editable="True" Visible="True" />
+  
+  <Field Name="BT_SHOOTING_PAIN_LEG" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_SHOOTING_PAIN_LEG" Editable="True" Visible="True" />
+
+  <Field Name="BT_DIFFICULT_TO_WALK_AFTER_SITTING" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIFFICULT_TO_WALK_AFTER_SITTING" Editable="True" Visible="True" />
+  
+  <Field Name="BT_DIFFICULT_IN_PROLONGED_RIDING" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIFFICULT_IN_PROLONGED_RIDING" Editable="True" Visible="True" />
+  
+  <Field Name="BT_INSOMNIA" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_INSOMNIA" Editable="True" Visible="True" />
+  
+  <Field Name="BT_MEMORY_PROBLEMS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_MEMORY_PROBLEMS" Editable="True" Visible="True" />
+  
+  <Field Name="BT_CONCENTRATION_PROBLEMS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_CONCENTRATION_PROBLEMS" Editable="True" Visible="True" />
+  
+   
+  <StoreProcedure name="SP_START_EXAMINATION" />
+</Table>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_CM_ALL">
+  
+  <Field Name ="I_EVENT_ID" DataType="Int" Size="" Null="false" Control="TextBox" ControlID="TXT_I_EVENT" Editable="True" Visible="True"></Field>
+  
+   <Field Name ="SZ_MAILING_ADDR" DataType="NVarChar" Size="50" Null="False" Control="TextBox" ControlID="TXT_MAILING_ADDR" Editable="True" Visible="True"></Field>
+   <Field Name ="SZ_MARRITAL_STATUS" DataType="NVarChar" Size="50" Null="False" Control="TextBox" ControlID="TXT_MARRITAL_STATUS" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_SS" DataType="NVarChar" Size="50" Null="False" Control="TextBox" ControlID="TXT_SS" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_HOME_TEL" DataType="NVarChar" Size="50" Null="False" Control="TextBox" ControlID="TXT_HOME_TEL" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_ACCIDENT_TYPE" DataType="NVarChar" Size="50" Null="False" Control="TextBox" ControlID="TXT_ACCIDENT_TYPE" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_AUTO_WORK_OTHR" DataType="NVarChar" Size="50" Null="False" Control="TextBox" ControlID="TXT_AUTO_WORK_OTHR" Editable="True" Visible="True"></Field>
+  
+  <Field Name ="SZ_CELL" DataType="NVarChar" Size="50" Null="False" Control="TextBox" ControlID="TXT_CELL" Editable="True" Visible="True"></Field>
+   <Field Name ="SZ_PLACE_ACCIDENT" DataType="NVarChar" Size="50" Null="False" Control="TextBox" ControlID="TXT_PLACE_ACCIDENT" Editable="True" Visible="True"></Field> 
+  <Field Name ="BT_INJ_HEADACHE" DataType="Bit" Size="" Null="False" Control="CheckBox" ControlID="CHK_INJ_HEADACHE" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_INJ_NECK" DataType="Bit" Size="" Null="False" Control="CheckBox" ControlID="CHK_INJ_NECK" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_INJ_BACK" DataType="Bit" Size="" Null="False" Control="CheckBox" ControlID="CHK_INJ_BACK" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_INJ_OTHER" DataType="Bit" Size="" Null="False" Control="CheckBox" ControlID="CHK_INJ_OTHER" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_INJ_OTHER" DataType="NVarChar" Size="50" Null="False" Control="TextBox" ControlID="TXT_INJ_OTHER" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_DRIVER" DataType="Bit" Size="" Null="False" Control="CheckBox" ControlID="CHK_DRIVER" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_PASSANGER" DataType="Bit" Size="" Null="False" Control="CheckBox" ControlID="CHK_PASSANGER" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_PEDSTRIAN" DataType="Bit" Size="" Null="False" Control="CheckBox" ControlID="CHK_PEDSTRIAN" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_OTHER" DataType="Bit" Size="" Null="False" Control="CheckBox" ControlID="CHK_OTHER" Editable="True" Visible="True"></Field>
+    <Field Name ="SZ_PT_EMPLOYER" DataType="NVarChar" Size="50" Null="False" Control="TextBox" ControlID="TXT_PT_EMPLOYER" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_PHONE" DataType="NVarChar" Size="50" Null="False" Control="TextBox" ControlID="TXT_PHONE" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_OCCUPATION" DataType="NVarChar" Size="50" Null="False" Control="TextBox" ControlID="TXT_OCCUPATION" Editable="True" Visible="True"></Field>
+    <Field Name ="SZ_DRIVER_LIC" DataType="NVarChar" Size="50" Null="False" Control="TextBox" ControlID="TXT_DRIVER_LIC" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_EMP_ADDR" DataType="NVarChar" Size="100" Null="False" Control="TextBox" ControlID="TXT_EMP_ADDR" Editable="True" Visible="True"></Field>
+  
+  <Field Name ="SZ_EMERG_TEL" DataType="NVarChar" Size="50" Null="False" Control="TextBox" ControlID="TXT_EMERG_TEL" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_NAME" DataType="NVarChar" Size="50" Null="False" Control="TextBox" ControlID="TXT_NAME" Editable="True" Visible="True"></Field>
+    <Field Name ="SZ_NAME_OF_ATTORNEY_LAST" DataType="NVarChar" Size="50" Null="False" Control="TextBox" ControlID="TXT_NAME_OF_ATTORNEY_LAST" Editable="True" Visible="True"></Field>
+   
+  <Field Name ="SZ_ATTORNEY_PH" DataType="NVarChar" Size="50" Null="False" Control="TextBox" ControlID="TXT_ATTORNEY_PH" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_HEALTH_INSURANCE_PLAN" DataType="NVarChar" Size="50" Null="False" Control="TextBox" ControlID="TXT_HEALTH_INSURANCE_PLAN" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_HEALTH_INSURANCE_PLAN_PHONE" DataType="NVarChar" Size="50" Null="False" Control="TextBox" ControlID="TXT_HEALTH_INSURANCE_PLAN_PHONE" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_AUTO_INSURANCE" DataType="NVarChar" Size="50" Null="False" Control="TextBox" ControlID="TXT_AUTO_INSURANCE" Editable="True" Visible="True"></Field>
+  
+  <Field Name ="SZ_AUTO_INSURANCE_PHONE" DataType="NVarChar" Size="50" Null="False" Control="TextBox" ControlID="TXT_AUTO_INSURANCE_PHONE" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_WORKING_COMP_INS" DataType="NVarChar" Size="50" Null="False" Control="TextBox" ControlID="TXT_WORKING_COMP_INS" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_WORKING_COMP_INS_PHONE" DataType="NVarChar" Size="50" Null="False" Control="TextBox" ControlID="TXT_WORKING_COMP_INS_PHONE" Editable="True" Visible="True"></Field>
+ 
+  <Field Name ="BT_REFERRENCE_ATTORNEY" DataType="Bit" Size="" Null="False" Control="CheckBox" ControlID="CHK_REFERRENCE_ATTORNEY" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_REFERRENCE_FRIEND" DataType="Bit" Size="" Null="False" Control="CheckBox" ControlID="CHK_REFERRENCE_FRIEND" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_REFERRENCE_OTHER" DataType="Bit" Size="" Null="False" Control="CheckBox" ControlID="CHK_REFERRENCE_OTHER" Editable="True" Visible="True"></Field>
+  
+  <Field Name ="DT_DATE" DataType="DateTime" Size="" Null="False" Control="TextBox" ControlID="TXT_DATE" Editable="True" Visible="True"></Field>
+
+  <Field Name="I_ARE_YOU_PREGNANT" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_ARE_YOU_PREGNANT" Editable="True" Visible="True" />
+  <Field Name="I_FULL_PART" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_FULL_PART" Editable="True" Visible="True" />
+  <Field Name="I_LAWSUIT_PENDING" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_LAWSUIT_PENDING" Editable="True" Visible="True" />
+
+
+
+
+  <StoreProcedure name="SP_CM_ALL1"></StoreProcedure>
+
+</Table>

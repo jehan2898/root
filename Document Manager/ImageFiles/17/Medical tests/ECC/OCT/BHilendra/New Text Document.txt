@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+	<appSettings>
+		<add key="ConnectionString" value="user id=sa;password=LawAllies!@#;data source=LawAllies\SQLEXPRESS;initial catalog=DocumentManager;"/>
+		<add key ="RootFolder" value="C:/ScannedImages/"/>
+		<add key ="ExceptionFilePaths" value="C:/ImageOCRService_Exception.txt"/>
+	</appSettings>
+</configuration>
+

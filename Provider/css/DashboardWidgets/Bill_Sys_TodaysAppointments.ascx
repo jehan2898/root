@@ -1,0 +1,2 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Bill_Sys_TodaysAppointments.ascx.cs" Inherits="Bill_Sys_DashboardWidgets_TodaysAppointments" %>
+<asp:Label ID="lblAppointmentToday" runat="server" Text=""></asp:Label>

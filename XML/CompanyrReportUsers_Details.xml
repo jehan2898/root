@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_BILLING_COMPANY">
+  <Field Name="SZ_COMPANY_ID" DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox" ControlID="txtComapnyID"   Editable="True"  Visible="True" ></Field>
+  <StoreProcedure name="SP_REPORT_USERS"></StoreProcedure>
+  <ListControl name="grdCompanyUsers"></ListControl>
+</Table>

@@ -1,0 +1,156 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage_Agent.master.cs" Inherits="Agent_MasterPage_Agent" %>
+<%@ Register TagPrefix="osm" Namespace="OboutInc.SlideMenu" Assembly="obout_SlideMenu3_Pro_Net" %>
+<%@ Register Src="~/UserControl/CheckPageAutharization.ascx" TagName="LoginDetails"
+    TagPrefix="LD" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server" id="masterhead">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+   <%-- <div>
+        <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">
+        </asp:contentplaceholder>
+    </div>--%>
+    
+      <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse"
+            width="100%" height="100%">
+            <tr>
+            </tr>
+            <tr>
+                <td width="100%" height="7%" valign="top">
+                    <table width="100%; height:100%" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td width="250" height="80" align="left" valign="top" scope="row">
+                                <table width="250" height="80" border="0" cellpadding="0" cellspacing="0" background="images/top-bg.jpg">
+                                    <tr>
+                                        <td align="left" valign="bottom" class="frame-1" scope="row" width="100%">
+                                            <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Images/GREENLOGO2.JPG"
+                                                Width="250px" Height="50px" PostBackUrl="~/AJAX Pages/Bill_Sys_DashBoard.aspx" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td align="left" valign="top">
+                                <table width="100%" height="80" border="0" cellpadding="0" cellspacing="0" background="images/top-bg.jpg">
+                                    <tr>
+                                        <td valign="top" scope="row" width="100%">
+                                            <table width="100%">
+                                                <tr>
+                                                    <td>
+                                                        &nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="70%" align="left" valign="top">
+                                                        <table class="UserTable" style="height: 100%; padding-top: 10px;" width="100%">
+                                                            <tr>
+                                                                <td align="left" valign="middle" style="padding-top: 5px">
+                                                                    <a id="lnkHome" runat="server" href="~/Agent/Bill_Sys_Agent_SearchCase.aspx?type=home"
+                                                                        >Patient List</a>
+                                                                </td>
+                                                                <td align="left" valign="middle" style="padding-top: 5px">
+                                                                   <%-- <a id="lnkDesks" runat="server" href="AJAX Pages/Bill_Sys_LitigationDesk.aspx" visible="false">
+                                                                        Desks</a>--%>
+                                                                </td>
+                                                                <td align="left" valign="middle" style="padding-top: 5px">
+                                                                    <a id="lnkDataEntry" runat="server" href="Bill_Sys_Patient.aspx" visible="true">Add
+                                                                        Patient</a>
+                                                                </td>
+                                                                <td align="left" valign="middle" style="padding-top: 5px">
+                                                                    <a id="lnkScheduleReport" runat="server" href="Bill_Sys_AppointPatientEntry_Agent.aspx"
+                                                                        visible="true">Calendar</a>
+                                                                </td>
+                                                                <td align="left" valign="middle" style="padding-top: 5px">
+                                                                   <%-- <a id="lnkQuickSearch" runat="server" href="AJAX Pages/Bill_Sys_SearchCase.aspx?type=Quick"
+                                                                        visible="false">Quick Bill Entry</a>--%>
+                                                                </td>
+                                                                <td align="left" valign="middle" style="padding-top: 5px">
+                                                                   <%-- <a id="lnkReports" runat="server" href="Bill_Sys_AllReports.aspx?name=Unbilled" visible="false">
+                                                                        Reports</a>--%>
+                                                                </td>
+                                                                <%-- TUSHAR:- To Add New Tab For Billing Reports  --%>
+                                                                <td align="left" valign="middle" style="padding-top: 5px">
+                                                                   <%-- <a id="lnkBillingReport" runat="server" href="Bill_Sys_AllReportsBilling.aspx?name=Unbilled"
+                                                                        visible="false">Billing</a>--%>
+                                                                </td>
+                                                                <%-- End Of Code --%>
+                                                                <%--<td align="left" valign="middle" style="padding-top: 5px">
+                                                                    <a id="A2" runat="server" href="AJAX Pages/Bill_Sys_Connections.aspx" visible="true">
+                                                                        My Connections</a>
+                                                                </td>--%>
+                                                                <td align="left" valign="middle" style="padding-top: 5px">
+                                                                    <%--<a id="lnkshedulevisits" runat="server" href="AJAX Pages/Bill_Sys_Calendar.aspx" visible="true">Scheduling</a>--%>
+                                                                </td>
+                                                                <td align="left" valign="middle" style="padding-top: 5px">
+                                                                    <a id="lnkLogOut" runat="server" href="~/Bill_Sys_Logout.aspx">Logout</a>
+                                                                </td>
+                                                                <td align="left" valign="middle" style="padding-top: 5px">
+                                                                    <%--<a id="A1" runat="server" href="" target="_blank" title="Support">
+                                                                        <img style="border: none; width: 18px;" title="Support" src="Images/maintenance.png"
+                                                                            height="24" /></a>--%>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td width="30%" valign="top">
+                                                        <LD:LoginDetails ID="LD1" runat="server"></LD:LoginDetails>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td width="4" align="right" valign="top" scope="row">
+                                            <img src="images/top-corn-rght.jpg" width="7" height="80" /></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="100%" height="79%" valign="top">
+                    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse"
+                        bordercolor="#111111" width="100%" height="100%">
+                        <tr>
+                            <td width="15%" valign="top" height="100%" style="background-color: #dbe6fa">
+                                <osm:SlideMenu ID="problue" runat="server" StyleFolder="styles/xp_blue" AutoPostBack="true"
+                                    SelectedId="viewsysinfo" CSSChildrenBox="SMChildrenBox" Height="430">
+                                </osm:SlideMenu>
+                            </td>
+                            <td width="85%" valign="top">
+                                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                </asp:ContentPlaceHolder>
+                                <%-- <iframe id="frameContent" runat="server" src="Content.aspx" frameborder="0"
+                                        style="width: 100%; height: 100%"></iframe>--%>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="100%" height="4%" valign="top">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="background-image: url(images/footer-bg.jpg);
+                        height: 35px; width: 100%;">
+                        <tr>
+                            <td width="200" align="left" valign="top" scope="row">
+                            </td>
+                            <td align="left" valign="top">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr align="left" valign="middle">
+                                        <td height="35" class="space" scope="row">
+                                            &nbsp;</td>
+                                        <td width="5">
+                                            <img src="images/sp.gif" width="1" height="1" /></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

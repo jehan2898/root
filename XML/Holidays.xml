@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Table Name="MST_HOLIDAYS">
+  <Field Name="HOLIDAY_ID"     DataType="NVarChar"    Size="20"     Null="False"  Control="TextBox"   ControlID=""      Editable="False" Visible="False"></Field>
+  <Field Name="HOLIDAYS_DATE"   DataType="DateTime"    Size=""     Null="False"  Control="TextBox"   ControlID="txtHoliday" Editable="True"  Visible="True" ></Field>
+  <Field Name="ROOM_ID"   DataType="NVarChar"    Size="20"     Null="False"  Control="TextBox"   ControlID="txtRoomID"    Editable="True"  Visible="True" ></Field>
+   <StoreProcedure name="SP_MST_ROOM_HOLIDAY"></StoreProcedure>
+  <ListControl name="lstBoxHoliday"></ListControl>
+</Table>
+

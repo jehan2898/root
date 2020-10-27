@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="TXN_CALENDER_EVENT">
+  <Field Name="I_EVENT_ID" DataType="Int" Size="" Null="True" Control ="TextBox" ControlID="TXT_EVENT_ID" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PATIENT_NAME" DataType="NVarChar" Size="500" Null="True" Control ="TextBox" ControlID="TXT_PATIENT_NAME" Editable="True" Visible="True"></Field>
+  <Field Name="DT_DOA" DataType="DateTime" Size="" Null="True" Control ="TextBox" ControlID="TXT_DOA" Editable="True" Visible="True"></Field>
+  <Field Name="DT_DOE" DataType="DateTime" Size="" Null="True" Control ="TextBox" ControlID="TXT_DOE" Editable="True" Visible="True"></Field>
+  <Field Name="I_PATIENT_AGE" DataType="Int" Size="" Null="True" Control ="TextBox" ControlID="TXT_PATIENT_AGE" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PATIENT_SEX" DataType="Int" Size="" Null="True" Control ="TextBox" ControlID="TXT_PATIENT_SEX" Editable="True" Visible="True"></Field>
+
+  <StoreProcedure name="SP_AC_ACCU_INITIAL_PATIENT_DETAILS"></StoreProcedure>
+  
+</Table>

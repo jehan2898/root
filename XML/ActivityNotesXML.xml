@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<NOTES>
+  <FILE_UPLOAD>
+    <MESSAGE>File Uploaded successfully</MESSAGE>    
+  </FILE_UPLOAD>
+  
+  <CASE_VIEW>
+    <MESSAGE>File Viewed </MESSAGE>
+  </CASE_VIEW>
+  
+  
+  <CASE_CREATED>
+    <MESSAGE>Case Created </MESSAGE>
+  </CASE_CREATED>
+
+
+  <BILL_CREATED>
+    <MESSAGE>Bill Created </MESSAGE>
+  </BILL_CREATED>
+
+  <BILL_UPDATED>
+    <MESSAGE>Bill Updated </MESSAGE>
+  </BILL_UPDATED>
+
+  <BILL_GENERATED>
+    <MESSAGE>Bill Generated </MESSAGE>
+  </BILL_GENERATED>
+
+  <APPOINTMENT_ADDED>
+    <MESSAGE>Appointment Added</MESSAGE>
+  </APPOINTMENT_ADDED>
+
+  <APPOINTMENT_UPDATED>
+    <MESSAGE>Appointment Updated </MESSAGE>
+  </APPOINTMENT_UPDATED>
+
+  
+  <TEMPLATE_GENERATE>
+    <MESSAGE>Template Generated</MESSAGE>
+  </TEMPLATE_GENERATE>
+
+
+  <DENIED_NOTES>
+    <MESSAGE></MESSAGE>
+  </DENIED_NOTES>
+
+  <BILL_DELETED>
+    <MESSAGE>Bill Deleted </MESSAGE>
+  </BILL_DELETED>
+  <BILL_STATUS_UPDATED>
+    <MESSAGE>Bill Status Updated </MESSAGE>
+  </BILL_STATUS_UPDATED>
+  <EVENT_STATUS_UPDATED>
+    <MESSAGE>Event Status Updated </MESSAGE>
+  </EVENT_STATUS_UPDATED>
+  <ADJUSTER_ADDED>
+    <MESSAGE>Adjuster Added </MESSAGE>
+  </ADJUSTER_ADDED>
+  <PATIENT_UPDATED>
+    <MESSAGE>Patient Added </MESSAGE>
+  </PATIENT_UPDATED>
+  <EVENT_UPDATED>
+    <MESSAGE>Event Updated </MESSAGE>
+  </EVENT_UPDATED>
+  <EVENT_ADDED>
+    <MESSAGE>Event Added </MESSAGE>
+  </EVENT_ADDED>
+  <EVENT_DELETED>
+    <MESSAGE>Event Deleted </MESSAGE>
+  </EVENT_DELETED>
+  <EVENT_STATUS_UPDATED>
+    <MESSAGE>Event Status Updated </MESSAGE>
+  </EVENT_STATUS_UPDATED>
+  <EVENT_DELETED>
+    <MESSAGE>Event Deleted </MESSAGE>
+  </EVENT_DELETED>
+    <PAYMENT_SAVED>
+    <MESSAGE>Payment Saved </MESSAGE>
+  </PAYMENT_SAVED>
+  <DENIAL_ADDED>
+    <MESSAGE>Added Deniel </MESSAGE>
+  </DENIAL_ADDED>
+  <NODE_ADDED>
+    <MESSAGE>Node Added </MESSAGE>
+  </NODE_ADDED>
+  <NODE_DELETED>
+  <MESSAGE>Node Deleted </MESSAGE>
+</NODE_DELETED>
+  <DOC_DELETED>
+    <MESSAGE>Doc Deleted </MESSAGE>
+  </DOC_DELETED>
+  <REP_REVERT>
+    <MESSAGE>Report Reverted </MESSAGE>
+  </REP_REVERT>
+  <VER_RECEIVED>
+    <MESSAGE>Verifiaction Received </MESSAGE>
+  </VER_RECEIVED>
+  <VER_SENT>
+    <MESSAGE>Verifiaction Sent </MESSAGE>
+  </VER_SENT>
+  <VER_IMAGE_DELETED>
+    <MESSAGE>Verifiaction Image Deleted </MESSAGE>
+  </VER_IMAGE_DELETED>
+  <PACKET_SCHEDULED>
+    <MESSAGE>Packet Scheduled </MESSAGE>
+  </PACKET_SCHEDULED>
+  <PACKET_DOWNLOADED>
+    <MESSAGE>Packet Downloaded </MESSAGE>
+  </PACKET_DOWNLOADED>
+  <POM_GENERATED>
+    <MESSAGE>POM Generated </MESSAGE>
+  </POM_GENERATED>
+  <PACKET_REQUEUE>
+    <MESSAGE>Packet Requeue </MESSAGE>
+  </PACKET_REQUEUE>
+  <ENVLP_GENERATED>
+    <MESSAGE>Enevelop Generated </MESSAGE>
+  </ENVLP_GENERATED>
+  <DOC_UPLOADED>
+    <MESSAGE>Document Uploaded </MESSAGE>
+  </DOC_UPLOADED>
+</NOTES>

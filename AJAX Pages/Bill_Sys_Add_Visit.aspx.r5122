@@ -1,0 +1,696 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Bill_Sys_Add_Visit.aspx.cs"
+    Inherits="AJAX_Pages_Bill_Sys_Add_Visit" %>
+
+<%@ Register Assembly="ExtendedDropDownList" Namespace="ExtendedDropDownList" TagPrefix="extddl" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+<%@ Register Assembly="ExtendedDropDownList" Namespace="ExtendedDropDownList" TagPrefix="cc1" %>
+<%@ Register Namespace="CustomControls.ContextMenuScope" TagPrefix="cMenu" Assembly="XGridContextMenu" %>
+<%@ Register Src="~/UserControl/ErrorMessageControl.ascx" TagName="MessageControl"
+    TagPrefix="UserMessage" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Untitled Page</title>
+    <link href="Css/mainmaster.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript">
+    function showTrans() {
+
+
+            var chk = document.getElementById('chkTransportation');
+
+
+            if (chk.checked) {
+
+                var f = document.getElementById('divTrans');
+
+                f.style.visibility = 'visible'
+            } else {
+
+                var f = document.getElementById('divTrans');
+
+                f.style.visibility = 'hidden'
+            }
+
+        }
+        function SelectAllTrans(ival) {
+            var f = document.getElementById('grdTransport');
+            var str = 1;
+            for (var i = 0; i < f.getElementsByTagName("input").length; i++) {
+                if (f.getElementsByTagName("input").item(i).type == "checkbox") {
+
+
+
+                    if (f.getElementsByTagName("input").item(i).disabled == false) {
+                        f.getElementsByTagName("input").item(i).checked = ival;
+                    }
+
+
+
+                }
+
+
+            }
+        }
+        
+        function ValidateDelete() {
+            
+            var f = document.getElementById('grdTransport');
+            for (var i = 0; i < f.getElementsByTagName("input").length; i++) {
+                if (f.getElementsByTagName("input").item(i).type == "checkbox") {
+                    if (f.getElementsByTagName("input").item(i).checked != false) {
+
+                        if (confirm("Are you sure to continue for  delete?")) {
+                            return true;
+                        }
+
+                        else {
+                            return false;
+                        }
+
+                    }
+                }
+            }
+
+            alert('Please select Record.');
+            return false;
+        }
+        
+        function SelectAllDpctor(ival) {
+            var f = document.getElementById('grdDoctor');
+            var str = 1;
+            for (var i = 0; i < f.getElementsByTagName("input").length; i++) {
+                if (f.getElementsByTagName("input").item(i).type == "checkbox") {
+
+                    if (f.getElementsByTagName("input").item(i).disabled == false) {
+                        f.getElementsByTagName("input").item(i).checked = ival;
+                    }
+
+                }
+            }
+        }
+        
+         function Validate() {
+            var f = document.getElementById('grdDoctor');
+            var flag = 0;
+            for (var i = 0; i < f.getElementsByTagName("input").length; i++) {
+                if (f.getElementsByTagName("input").item(i).type == "checkbox") {
+                    if (f.getElementsByTagName("input").item(i).checked != false) {
+
+                        flag = 1;
+                        break;
+                    }
+                }
+            }
+
+            if (flag == 0) {
+                alert('Please select Doctor.');
+                return false;
+            } else {
+                          var d = document.getElementById('txtEventDate');
+
+                        if (d.value == "") {
+
+                            alert('Please select visit Date.');
+                            return false;
+                        } else {
+                                     var t = document.getElementById('ddlHours_event');
+                                      if (t.value == '00') {
+                                        alert('please select visit time');
+                                        return false;
+                            } else 
+                         {
+                    
+                             if(document.getElementById("extddlVisitType").value== 'NA') 
+                                {
+                                    alert('Please Select Visit Type');
+                                    return false;
+                                }
+                                else{
+                                     return true;
+                                    }
+                            }
+            }}
+        }
+          
+          
+           function ValidateDocotr (ival)
+        { 
+            var hdSeting1 = document.getElementById('hdSeting');
+          
+           if(hdSeting1.value=="1")
+           {    
+               hdEnable1 = document.getElementById('hdEnable');
+               if(hdEnable1.value=="0")
+               {  hdEnable1.value="1";
+                  var button = document.getElementById('btnCls');
+                 button.click();
+               
+                  return true;
+               }else
+               {
+                       var f = document.getElementById('grdDoctor');
+                       var str = 1;
+                       var chkval='0';
+                          for (var i = 0; i < f.getElementsByTagName("input").length; i++) 
+                          {
+                              if (f.getElementsByTagName("input").item(i).type == "checkbox") 
+                              {
+                                if(f.getElementsByTagName("input").item(i).checked)
+                                {
+                                 chkval='1';
+                                  break;
+                                }
+                              }
+                          }
+                          
+                          if(chkval=='0')
+                          {
+                            ClearGrid();
+                          }
+                return false;
+               }
+                
+            }
+        }
+        
+        
+          function ClearGrid() {
+            
+             var val = navigator.userAgent.toLowerCase();
+             if(val.indexOf("msie") > -1)
+             {
+               
+                var button1 = document.getElementById('btnClear1');
+                 button1.click();
+              
+             }else
+             {
+                 var f = document.getElementById('grdDoctor');
+                 var str = 1;
+                    for (var i = 0; i < f.getElementsByTagName("input").length; i++) {
+                        if (f.getElementsByTagName("input").item(i).type == "checkbox") {
+                            f.getElementsByTagName("input").item(i).checked = false;
+                            f.getElementsByTagName("input").item(i).disabled =  f.getElementsByTagName("input").item(i).disabled;                        
+                    
+                           }
+                        }
+              var visitype=document.getElementById("extddlVisitType");
+              visitype.disabled = false;
+              visitype.value='NA';
+                var chk = document.getElementById('chkAddToDoctor'); 
+                chk.disabled = false;
+                chk.checked=true;
+             
+              var  hdEnable1 = document.getElementById('hdEnable');
+              hdEnable1.value="0";
+              return true;
+           }   
+        }
+          
+           function checkvisittype()
+        {
+          if(document.getElementById("extddlVisitType").value== 'NA') 
+            {
+                alert('Please Select Visit Type');
+                return false;
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" AsyncPostBackTimeout="50000">
+        </asp:ScriptManager>
+        <table width="100%">
+            <tr>
+                <td colspan="2">
+                    <UserMessage:MessageControl runat="server" ID="usrMessage"></UserMessage:MessageControl>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div id="contentSearch" style="float: left; position: relative; left: 0px; top: 0px;
+                        width: 100%;">
+                        <table width="100%">
+                            <tr>
+                                <td style="width: 45%;">
+                                    <table width="100%">
+                                        <tr>
+                                            <td>
+                                                First Name :
+                                            </td>
+                                            <td>
+                                                <asp:TextBox ID="txtPatientFirstName" runat="server" Width="73%"></asp:TextBox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Last Name :
+                                            </td>
+                                            <td>
+                                                <asp:TextBox ID="txtPatientLastName" runat="server" Width="73%"></asp:TextBox>
+                                            </td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3" align="center">
+                                                <asp:Button ID="btnSearhPatientList" runat="server" Text="Search" CssClass="Buttons"
+                                                    OnClick="btnSearchPatientList_Click" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td style="width: 55%;" valign="top">
+                                    <table width="100%" class="ContentTable">
+                                        <tr>
+                                            <td class="ContentLabel" style="height: 20px; text-align: left">
+                                                <div id="griddiv" style="float: left; position: relative; left: 0px; top: 0px; width: 100%;">
+                                                    <asp:DataGrid ID="grdPatientList" runat="server" Width="100%" CssClass="GridTable"
+                                                        AutoGenerateColumns="false" AllowPaging="true" PageSize="3" PagerStyle-Mode="NumericPages"
+                                                        OnSelectedIndexChanged="grdPatientList_SelectedIndexChanged" OnPageIndexChanged="grdPatientList_PageIndexChanged">
+                                                        <HeaderStyle CssClass="GridHeader1" />
+                                                        <ItemStyle CssClass="GridRow" />
+                                                        <Columns>
+                                                            <asp:ButtonColumn CommandName="Select" Text="Select"></asp:ButtonColumn>
+                                                            <asp:BoundColumn DataField="SZ_PATIENT_ID" HeaderText="Patient ID" Visible="False"></asp:BoundColumn>
+                                                            <asp:BoundColumn DataField="SZ_PATIENT_FIRST_NAME" HeaderText="First Name"></asp:BoundColumn>
+                                                            <asp:BoundColumn DataField="SZ_PATIENT_LAST_NAME" HeaderText="Last Name"></asp:BoundColumn>
+                                                            <asp:BoundColumn DataField="I_PATIENT_AGE" HeaderText="Age" Visible="False"></asp:BoundColumn>
+                                                            <asp:BoundColumn DataField="SZ_PATIENT_ADDRESS" HeaderText="Address" Visible="False">
+                                                            </asp:BoundColumn>
+                                                            <asp:BoundColumn DataField="SZ_PATIENT_STREET" HeaderText="Street" Visible="False"></asp:BoundColumn>
+                                                            <asp:BoundColumn DataField="SZ_PATIENT_CITY" HeaderText="City" Visible="False"></asp:BoundColumn>
+                                                            <asp:BoundColumn DataField="SZ_PATIENT_ZIP" HeaderText="Zip" Visible="False"></asp:BoundColumn>
+                                                            <asp:BoundColumn DataField="SZ_PATIENT_PHONE" HeaderText="Phone" Visible="False"></asp:BoundColumn>
+                                                            <asp:BoundColumn DataField="SZ_PATIENT_EMAIL" HeaderText="Email" Visible="False"></asp:BoundColumn>
+                                                            <asp:BoundColumn DataField="MI" HeaderText="MI" Visible="False"></asp:BoundColumn>
+                                                            <asp:BoundColumn DataField="SZ_WCB_NO" HeaderText="WCB" Visible="False"></asp:BoundColumn>
+                                                            <asp:BoundColumn DataField="SZ_SOCIAL_SECURITY_NO" HeaderText="Social Security No"
+                                                                Visible="False"></asp:BoundColumn>
+                                                            <asp:BoundColumn DataField="SZ_CASE_TYPE_NAME" HeaderText="Case Type" Visible="False">
+                                                            </asp:BoundColumn>
+                                                            <asp:BoundColumn DataField="DT_DOB" HeaderText="Date Of Birth" DataFormatString="{0:MM/dd/yyyy}"
+                                                                Visible="False"></asp:BoundColumn>
+                                                            <asp:BoundColumn DataField="SZ_GENDER" HeaderText="Gender" Visible="False"></asp:BoundColumn>
+                                                            <asp:BoundColumn DataField="DT_INJURY" HeaderText="Date of Injury" DataFormatString="{0:MM/dd/yyyy}"
+                                                                Visible="False"></asp:BoundColumn>
+                                                            <asp:BoundColumn DataField="SZ_JOB_TITLE" HeaderText="Job Title" Visible="False"></asp:BoundColumn>
+                                                            <asp:BoundColumn DataField="SZ_WORK_ACTIVITIES" HeaderText="Work Activities" Visible="False">
+                                                            </asp:BoundColumn>
+                                                            <asp:BoundColumn DataField="SZ_PATIENT_STATE_NAME" HeaderText="State" Visible="False">
+                                                            </asp:BoundColumn>
+                                                            <asp:BoundColumn DataField="SZ_CARRIER_CASE_NO" HeaderText="Carrier Case No" Visible="False">
+                                                            </asp:BoundColumn>
+                                                            <asp:BoundColumn DataField="SZ_EMPLOYER_NAME" HeaderText="Employer Name" Visible="False">
+                                                            </asp:BoundColumn>
+                                                            <asp:BoundColumn DataField="SZ_EMPLOYER_PHONE" HeaderText="Employer Phone" Visible="False">
+                                                            </asp:BoundColumn>
+                                                            <asp:BoundColumn DataField="SZ_EMPLOYER_ADDRESS" HeaderText="Employer Address" Visible="False">
+                                                            </asp:BoundColumn>
+                                                            <asp:BoundColumn DataField="SZ_EMPLOYER_CITY" HeaderText="Employer City" Visible="False">
+                                                            </asp:BoundColumn>
+                                                            <asp:BoundColumn DataField="SZ_EMPLOYER_STATE" HeaderText="Employer State" Visible="False">
+                                                            </asp:BoundColumn>
+                                                            <asp:BoundColumn DataField="SZ_EMPLOYER_ZIP" HeaderText="Employer Zip" Visible="False">
+                                                            </asp:BoundColumn>
+                                                            <asp:BoundColumn DataField="SZ_WORK_PHONE" HeaderText="WORK_PHONE" Visible="False"></asp:BoundColumn>
+                                                            <asp:BoundColumn DataField="SZ_WORK_PHONE_EXTENSION" HeaderText="WORK_PHONE" Visible="False">
+                                                            </asp:BoundColumn>
+                                                            <asp:BoundColumn DataField="BT_WRONG_PHONE" HeaderText="WRONG_PHONE" Visible="False">
+                                                            </asp:BoundColumn>
+                                                            <asp:BoundColumn DataField="BT_TRANSPORTATION" HeaderText="TRANSPORTATION" Visible="False">
+                                                            </asp:BoundColumn>
+                                                        </Columns>
+                                                        <PagerStyle Mode="NumericPages" />
+                                                    </asp:DataGrid>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                        <table width="100%" id="tb1" runat="server">
+                        <tr><td colspan ="4">
+                        <asp:Label CssClass="message-text" ID="lblMsg" runat="server" Visible="false" ForeColor="red"></asp:Label>
+                        </td>
+                        </tr>
+                            <tr>
+                                <td>
+                                    First name
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txtPatientFName" runat="server" ReadOnly="true"></asp:TextBox>
+                                </td>
+                                <td>
+                                    Middle
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txtMI" runat="server" Enabled="False"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Last name
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txtPatientLName" runat="server" ReadOnly="true"></asp:TextBox>
+                                </td>
+                                <td>
+                                    Phone
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txtPatientPhone" runat="server" Enabled="False"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Address
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txtPatientAddress" runat="server" Enabled="False"></asp:TextBox>
+                                </td>
+                                <td>
+                                    City
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txtCity" runat="server" Enabled="False"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    State
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txtState" runat="server" Enabled="False"></asp:TextBox>
+                                </td>
+                                <td>
+                                    Birthdate
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txtBirthdate" runat="server" Enabled="False"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Age&nbsp;
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txtPatientAge" runat="server" Enabled="False"></asp:TextBox>
+                                </td>
+                                <td>
+                                    SS #
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txtSocialSecurityNumber" runat="server" Enabled="False"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Insurance
+                                </td>
+                                <td>
+                                    <extddl:ExtendedDropDownList ID="extddlInsuranceCompany" runat="server" Connection_Key="Connection_String"
+                                        Flag_Key_Value="INSURANCE_LIST" Procedure_Name="SP_MST_INSURANCE_COMPANY" Selected_Text="--- Select ---"
+                                        Width="150px" Enabled="False" />
+                                </td>
+                                <td>
+                                    Case Type
+                                </td>
+                                <td>
+                                    <extddl:ExtendedDropDownList ID="extddlCaseType" runat="server" Connection_Key="Connection_String"
+                                        Flag_Key_Value="CASETYPE_LIST" Procedure_Name="SP_MST_CASE_TYPE" Selected_Text="---Select---"
+                                        Width="150px" Enabled="False"></extddl:ExtendedDropDownList>
+                                    <extddl:ExtendedDropDownList ID="extddlCaseStatus" Width="150px" runat="server" Connection_Key="Connection_String"
+                                        Procedure_Name="SP_MST_CASE_STATUS" Flag_Key_Value="CASESTATUS_LIST" Selected_Text="--- Select ---"
+                                        Flag_ID="txtCompanyID.Text.ToString();" Visible="false" Enabled="False" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <table id="tb2" runat="server" width="100%">
+            <tr>
+                <td style="font-family: Arial; font-size: 12px; text-align: left;" valign="top" align="left">
+                </td>
+                <td valign="top" align="center">
+                    <table width="100%" border="0">
+                        <tr>
+                            <td style="width: 78%">
+                                &nbsp;</td>
+                            <td>
+                                <input id="btnClear" type="button" style="width: 50PX" onclick="javascript:ClearGrid();"
+                                    name="Clear" value="Clear" visible="true" /></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 15%">
+                    Doctor
+                </td>
+                <td style="font-family: Arial; font-size: 12px; text-align: left; width: 85%;" valign="top"
+                    align="left">
+                    <dx:ASPxGridView ID="grdDoctor" runat="server" KeyFieldName="CODE" AutoGenerateColumns="false"
+                        Width="85%" SettingsPager-PageSize="50" SettingsCustomizationWindow-Height="100"
+                        Settings-VerticalScrollableHeight="120">
+                        <Columns>
+                            <%--0--%>
+                            <dx:GridViewDataColumn Caption="All" Width="12%" CellStyle-HorizontalAlign="Center">
+                                <CellStyle HorizontalAlign="Center">
+                                </CellStyle>
+                                <HeaderTemplate>
+                                    <asp:CheckBox ID="chkSelectAll" runat="server" onclick="javascript:SelectAllDpctor(this.checked);"
+                                        Text="All" ToolTip="Select All" />
+                                </HeaderTemplate>
+                                <DataItemTemplate>
+                                    <asp:CheckBox ID="chkSelect" runat="server" onclick="javascript:ValidateDocotr(this.checked);" />
+                                </DataItemTemplate>
+                                <HeaderStyle HorizontalAlign="Left" Font-Bold="True" />
+                            </dx:GridViewDataColumn>
+                            <%--1--%>
+                            <dx:GridViewDataColumn FieldName="CODE" Caption="CODE" HeaderStyle-HorizontalAlign="Center"
+                                Visible="false">
+                                <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                            </dx:GridViewDataColumn>
+                            <%--2--%>
+                            <dx:GridViewDataColumn FieldName="Specialty" Caption="Specialty" HeaderStyle-HorizontalAlign="Center"
+                                Visible="false">
+                                <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                            </dx:GridViewDataColumn>
+                            <%--3--%>
+                            <dx:GridViewDataColumn FieldName="DESCRIPTION" Caption="Doctor" HeaderStyle-HorizontalAlign="Center">
+                                <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                            </dx:GridViewDataColumn>
+                            <%--4--%>
+                            <dx:GridViewDataColumn FieldName="SZ_USER_ID" Caption="SZ_USER_ID" HeaderStyle-HorizontalAlign="Center"
+                                Visible="false">
+                                <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                            </dx:GridViewDataColumn>
+                            <%--5--%>
+                            <dx:GridViewDataColumn FieldName="GROUP_CODE" Caption="GROUP_CODE" HeaderStyle-HorizontalAlign="Center"
+                                Visible="false">
+                                <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                            </dx:GridViewDataColumn>
+                            <%--6--%>
+                            <dx:GridViewDataColumn FieldName="DocName" Caption="DocName" HeaderStyle-HorizontalAlign="Center"
+                                Visible="false">
+                                <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                            </dx:GridViewDataColumn>
+                            <%--7--%>
+                            <dx:GridViewDataColumn FieldName="BT_NOT_HAVE_NOTES" Caption="BT_NOT_HAVE_NOTES"
+                                HeaderStyle-HorizontalAlign="Center" Visible="false">
+                                <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                            </dx:GridViewDataColumn>
+                            <%--8--%>
+                            <dx:GridViewDataColumn FieldName="IS_HAVE_LOGIN" Caption="IS_HAVE_LOGIN" HeaderStyle-HorizontalAlign="Center"
+                                Visible="false">
+                                <HeaderStyle HorizontalAlign="Center"></HeaderStyle>
+                            </dx:GridViewDataColumn>
+                        </Columns>
+                        <Settings ShowVerticalScrollBar="true" ShowFilterRow="false" ShowGroupPanel="false" />
+                        <SettingsBehavior AllowFocusedRow="false" />
+                        <SettingsBehavior AllowSelectByRowClick="true" />
+                        <SettingsPager Position="Bottom" />
+                        <SettingsCustomizationWindow Height="100px"></SettingsCustomizationWindow>
+                    </dx:ASPxGridView>
+                </td>
+            </tr>
+        </table>
+        <table width="100%" id="tb3" runat="server">
+            <tr>
+                <td style="width: 15%">
+                    Date
+                </td>
+                <td>
+                    <asp:TextBox ID="txtEventDate" runat="server" onkeypress="return CheckForInteger(event,'/')"
+                        MaxLength="10"></asp:TextBox>
+                    <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Images/cal.gif" />
+                    <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="txtEventDate"
+                        PopupButtonID="ImageButton1" />
+                </td>
+                <td>
+                    Time
+                </td>
+                <td>
+                    <asp:DropDownList ID="ddlHours_event" runat="server" Width="60px">
+                    </asp:DropDownList>
+                    <asp:DropDownList ID="ddlMinutes_event" runat="server" Width="60px">
+                    </asp:DropDownList>
+                    <asp:DropDownList ID="ddlTime_event" runat="server" Width="60px">
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Visit Type:
+                </td>
+                <td>
+                    <extddl:ExtendedDropDownList ID="extddlVisitType" runat="server" Width="200px" AutoPost_back="false"
+                        Selected_Text="---Select---" Procedure_Name="SP_GET_VISIT_TYPE_LIST" Flag_Key_Value="GET_VISIT_TYPE"
+                        Connection_Key="Connection_String"></extddl:ExtendedDropDownList>
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 15%">
+                    Notes
+                </td>
+                <td colspan="3">
+                    <asp:TextBox ID="txtNotes" runat="server" TextMode="MultiLine" Width="85%" Height="52px"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td colspan="3" align="left">
+                    <asp:CheckBox ID="chkAddToDoctor" runat="server" Text="Can be finalized only by the doctor" />
+                    <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" align="left">
+                    <asp:CheckBox ID="chkTransportation" runat="server" Text="Transport" TextAlign="Left" />
+                </td>
+            </tr>
+        </table>
+        <table width="100%">
+            <tr>
+                <td>
+                    <div id="divTrans" runat="server" style="width: 100%; visibility: hidden; overflow: scroll;
+                        height: 400px;">
+                        <table width="100%">
+                            <tr>
+                                <td style="width: 15%;">
+                                    Transport Name
+                                </td>
+                                <td>
+                                    <extddl:ExtendedDropDownList ID="extddlTransport" runat="server" Width="110px" Connection_Key="Connection_String"
+                                        Flag_Key_Value="GET_TRANSPORT_LIST" Procedure_Name="SP_MST_TRANSPOTATION" Selected_Text="---Select---">
+                                    </extddl:ExtendedDropDownList>
+                                </td>
+                                <td>
+                                    Date
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txtFromDate" runat="server" onkeypress="return CheckForInteger(event,'/')"
+                                        MaxLength="10"></asp:TextBox>
+                                    <asp:ImageButton ID="imgbtnFromDate" runat="server" ImageUrl="~/Images/cal.gif" />
+                                    <ajaxToolkit:CalendarExtender ID="calExtFromDate" runat="server" TargetControlID="txtFromDate"
+                                        PopupButtonID="imgbtnFromDate" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 15%;">
+                                    Time
+                                </td>
+                                <td>
+                                    <asp:DropDownList ID="ddlHours" runat="server" Width="60px">
+                                    </asp:DropDownList>
+                                    <asp:DropDownList ID="ddlMinutes" runat="server" Width="60px">
+                                    </asp:DropDownList>
+                                    <asp:DropDownList ID="ddlTime" runat="server" Width="60px">
+                                    </asp:DropDownList>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" colspan="4">
+                                    <asp:Button ID="btnTransportsave" runat="server" Text="Save" OnClick="btnTransportsave_Click" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    &nbsp;
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right" colspan="4">
+                                    <asp:Button ID="btnTransportdelete" runat="server" Text="Delete" OnClick="btnTransportdelete_Click" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" align="center">
+                                    <div style="overflow: auto; height: 10%; width: 100%;">
+                                        <asp:DataGrid ID="grdTransport" runat="server" Width="100%" CssClass="GridTable"
+                                            AutoGenerateColumns="false" DataKeyField="I_TRANS_ID">
+                                            <FooterStyle />
+                                            <SelectedItemStyle />
+                                            <PagerStyle />
+                                            <AlternatingItemStyle />
+                                            <ItemStyle CssClass="GridRow" />
+                                            <Columns>
+                                                <asp:BoundColumn DataField="I_TRANS_ID" HeaderText="I_TRANS_ID" Visible="false"></asp:BoundColumn>
+                                                <asp:BoundColumn DataField="SZ_TARNSPOTATION_COMPANY_NAME" HeaderText="Transport Name">
+                                                </asp:BoundColumn>
+                                                <asp:BoundColumn DataField="SZ_TRANS_ID" HeaderText="SZ_TRANS_ID"></asp:BoundColumn>
+                                                <asp:BoundColumn DataField="SZ_COMPANY_ID" HeaderText="SZ_COMPANY_ID" Visible="false">
+                                                </asp:BoundColumn>
+                                                <asp:BoundColumn DataField="SZ_CASE_ID" HeaderText="SZ_CASE_ID" Visible="false"></asp:BoundColumn>
+                                                <asp:BoundColumn DataField="DT_TRANS_DATE" HeaderText="Transport Date"></asp:BoundColumn>
+                                                <asp:BoundColumn DataField="SZ_TRANS_TIME" HeaderText="Time" Visible="false"></asp:BoundColumn>
+                                                <asp:BoundColumn DataField="SZ_TRANS_TIME_TYPE" HeaderText="Time Type" Visible="false">
+                                                </asp:BoundColumn>
+                                                <asp:TemplateColumn HeaderText="Delete">
+                                                    <HeaderTemplate>
+                                                        <asp:CheckBox ID="chkSelectAll" runat="server" onclick="javascript:SelectAllTrans(this.checked);"
+                                                            ToolTip="Select All" />
+                                                    </HeaderTemplate>
+                                                    <ItemTemplate>
+                                                        <asp:CheckBox ID="chkDelete" runat="server" />
+                                                    </ItemTemplate>
+                                                </asp:TemplateColumn>
+                                            </Columns>
+                                            <HeaderStyle CssClass="GridHeader1" />
+                                        </asp:DataGrid>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <div id="Div1" runat="server" style="height: 5px">
+        </div>
+        <asp:TextBox ID="txtCompanyID" runat="server" Visible="false"></asp:TextBox>
+        <asp:TextBox ID="txtPatientID" runat="server" Visible="false" Width="10px"></asp:TextBox>
+        <asp:TextBox ID="txtCaseID" runat="server" Visible="false" Width="10px"></asp:TextBox>
+        <asp:HiddenField ID="hdSeting" runat="server" />
+        <asp:HiddenField ID="hdEnable" runat="server" />
+        <div style="visibility: hidden;">
+            <asp:Button ID="btnCls" Text="X" BackColor="#B5DF82" BorderStyle="None" runat="server"
+                OnClick="txtUpdate_Click" />
+            <asp:Button ID="btnClear1" Text="X" BackColor="#B5DF82" BorderStyle="None" runat="server"
+                OnClick="btnClear_Click" />
+        </div>
+    </form>
+</body>
+</html>

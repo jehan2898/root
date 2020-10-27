@@ -1,0 +1,109 @@
+/* CSS Document */
+
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}.heading {
+	font-family: "Arial Rounded MT Bold";
+	font-size: 20px;
+	font-weight: bold;
+	color: #4FA600;
+	text-decoration: none;
+}
+.headingtxt1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	color: #4FA600;
+	text-decoration: none;
+	font-weight: bold;
+}
+.toplinktxt {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #438C00;
+	text-decoration: underline;
+}
+.txt1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	text-decoration: none;
+}
+.menutxt {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+.txt2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000000;
+	text-decoration: none;
+}
+.border {
+	border: 1px solid #B5DF82;
+}
+.txt3 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+}
+.borderblue {
+	border: 1px solid #5998C9;
+}
+.borderright {
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #B5DF82;
+}
+.notetxt {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #A80000;
+	text-decoration: none;
+}
+
+.search-input
+{
+	height: 17px;
+	border: 1px solid;
+	font-family: Arial;
+	font-size: 12px;
+}
+
+.input_box {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	text-decoration: none;
+	height: 16px;
+	border: 1px solid #B2B2B2;
+}
+
+.border1 {
+	border: 1px solid #4FA600;
+}
+.homepage_menu {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	color: #356B04;
+	text-decoration: none;
+	font-weight: bold;
+}
+.backgroundimg {
+	background-image: url(images/background.jpg);
+	background-repeat: no-repeat;
+}
+.sign_txt {
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	color: #000000;
+	text-decoration: none;
+	font-weight: bold;
+}

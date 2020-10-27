@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_WORK_STATUS">
+  <Field Name="SZ_WORK_STATUS_ID"                  DataType="NVarChar"     Size="20"     Null="False"   Control="TextBox"             ControlID=""                                        Editable="False" Visible="False"></Field>
+  <Field Name="BT_PATIENT_MISSED_WORK"             DataType="Bit"          Size=""       Null="False"   Control="RadioButtonList"        ControlID="rdlstPatientMissedWork"                 Editable="True"  Visible="True" ></Field>
+  <Field Name="DT_PATIENT_MISSED_WORK_DATE"        DataType="DateTime"     Size=""       Null="False"   Control="TextBox"             ControlID="txtPatientMissedWorkDate"                Editable="True"  Visible="True" ></Field>
+  <Field Name="BT_PATIENT_CUR_WORKING"             DataType="Bit"          Size=""       Null="False"   Control="RadioButtonList"        ControlID="rdlstPatientCurrentlyWorking"           Editable="True"  Visible="True" ></Field>
+  <Field Name="BT_PATIENT_WORK_TYPE"               DataType="Bit"          Size=""       Null="False"   Control="RadioButtonList"        ControlID="rdlstDidPatientReturn"                  Editable="True"  Visible="True" ></Field>
+  <Field Name="BT_PATIENT_RETURN_WORK"             DataType="Int"          Size=""       Null="False"   Control="TextBox"             ControlID="hdntxtPatientCanReturnWork"              Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PATIENT_RETURN_WORK_DESCRIPTION" DataType="NVarChar"     Size="150"    Null="False"   Control="TextBox"             ControlID="hdntxtPatientCanReturnWorkDescription"   Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_QUANIFY_LIMITATION"              DataType="NVarChar"     Size="150"    Null="False"   Control="TextBox"             ControlID="txtOtherLimitation"                      Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_LIMITATION_DURATION"             DataType="NVarChar"     Size="20"     Null="False"   Control="TextBox"             ControlID="txtQuantifyTheLimitaion"                 Editable="True"  Visible="True" ></Field>
+  <Field Name="INT_HOW_LONG_LIMITATION_APPLY"      DataType="Int"          Size=""       Null="False"   Control="RadioButtonList"        ControlID="rdlstHowLongLimitaionApply"             Editable="True"  Visible="True" ></Field>
+  <Field Name="INT_WHOM_DISCUSS"                   DataType="Int"          Size=""       Null="False"   Control="RadioButtonList"        ControlID="rdlstDiscussPatientReturn"              Editable="True"  Visible="True" ></Field>
+  <Field Name="BT_BOARD_AUTHORIZED"                DataType="Bit"          Size=""       Null="False"   Control="RadioButtonList"        ControlID="rdlstHealthCareProvider"                Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PATIENT_ID"                      DataType="NVarChar"     Size="20"     Null="False"   Control="TextBox"             ControlID="txtPatientID"                            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_COMPANY_ID"                      DataType="NVarChar"     Size="20"     Null="False"   Control="TextBox"             ControlID="txtCompanyID"                            Editable="True"  Visible="True" ></Field>
+
+  <StoreProcedure name="SP_MST_WORK_STATUS"></StoreProcedure>
+</Table>
+

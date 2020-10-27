@@ -1,0 +1,280 @@
+<root>
+  <document type= "FUNDING_SYSTEM" description="LSC Payoff letter template" lastmodified="June 22 2009 15:35" procedure_name="[dbo].[SP_WORKER_TEMPLATE_SPECIFIC_C4_2_TEST]" >
+    <field db_field_name="chk_F_2_Sitting"       pdf_field_index="1"  pdf_field_name="chk_F_2_Sitting"   if_blank=" "/>
+    <field db_field_name="chk_F_2_Environment"       pdf_field_index="2"  pdf_field_name="chk_F_2_Environment"   if_blank=" "/>
+    <field db_field_name="CUR_YEAR"       pdf_field_index="3"  pdf_field_name="CUR_YEAR"   if_blank=" "/>
+    <field db_field_name="CHK_PPO"       pdf_field_index="4"  pdf_field_name="CHK_PPO"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="SZ_TO_YY_6"       pdf_field_index="5"  pdf_field_name="SZ_TO_YY_6"   if_blank=" "/>
+    <field db_field_name="SZ_TO_DD_6"       pdf_field_index="6"  pdf_field_name="SZ_TO_DD_6"   if_blank=" "/>
+    <field db_field_name="SZ_TO_MM_6"       pdf_field_index="7"  pdf_field_name="SZ_TO_MM_6"   if_blank=" "/>
+    <field db_field_name="SZ_FROM_YY_5"       pdf_field_index="8"  pdf_field_name="SZ_FROM_YY_5"   if_blank=" "/>
+    <field db_field_name="SZ_FROM_DD_5"       pdf_field_index="9"  pdf_field_name="SZ_FROM_DD_5"   if_blank=" "/>
+    <field db_field_name="SZ_FROM_MM_5"       pdf_field_index="10"  pdf_field_name="SZ_FROM_MM_5"   if_blank=" "/>
+    <field db_field_name="SZ_DAYS_2"       pdf_field_index="11"  pdf_field_name="SZ_DAYS_2"   if_blank=" "/>
+    <field db_field_name="SZ_POS_1"       pdf_field_index="12"  pdf_field_name="SZ_POS_1"   if_blank=" "/>
+    <field db_field_name="SZ_NPI"       pdf_field_index="13"  pdf_field_name="SZ_NPI"   if_blank=" "/>
+    <field db_field_name="SZ_OFFICE_ADDRESS"       pdf_field_index="14"  pdf_field_name="SZ_OFFICE_ADDRESS"   if_blank=" "/>
+    <field db_field_name="SZ_DOCTOR_NAME"       pdf_field_index="15"  pdf_field_name="SZ_DOCTOR_NAME"   if_blank=" "/>
+    <field db_field_name="SZ_PATIENT_ACCOUNT_NO"       pdf_field_index="16"  pdf_field_name="SZ_PATIENT_ACCOUNT_NO"   if_blank=" "/>
+    <field db_field_name="SZ_PATIENT_LAST_NAME"       pdf_field_index="17"  pdf_field_name="SZ_PATIENT_LAST_NAME"   if_blank=" "/>
+    <field db_field_name="chk_F_3_No"       pdf_field_index="18"  pdf_field_name="chk_F_3_No"   if_blank=" "/>
+    <field db_field_name="chk_F_1_WorkRestrictYes"       pdf_field_index="19"  pdf_field_name="chk_F_1_WorkRestrictYes"   if_blank=" "/>
+    <field db_field_name="chk_d_5_emg/ncs"       pdf_field_index="20"  pdf_field_name="chk_d_5_emg/ncs"   if_blank=" "/>
+    <field db_field_name="SZ_PATIENT_RETURN_WORK_LIMITATIONYY"       pdf_field_index="21"  pdf_field_name="SZ_PATIENT_RETURN_WORK_LIMITATIONYY"   if_blank=" "/>
+    <field db_field_name="SZ_PATIENT_RETURN_WORK_LIMITATIONDD"       pdf_field_index="22"  pdf_field_name="SZ_PATIENT_RETURN_WORK_LIMITATIONDD"   if_blank=" "/>
+    <field db_field_name="SZ_PATIENT_RETURN_WORK_LIMITATIONMM"       pdf_field_index="23"  pdf_field_name="SZ_PATIENT_RETURN_WORK_LIMITATIONMM"   if_blank=" "/>
+    <field db_field_name="txt_d_5other1"       pdf_field_index="24"  pdf_field_name="txt_d_5other1"   if_blank=" "/>
+    <field db_field_name="SZ_OFFICE_STATE"       pdf_field_index="25"  pdf_field_name="SZ_OFFICE_STATE"   if_blank=" "/>
+    <field db_field_name="SZ_FROM_YY_6"       pdf_field_index="26"  pdf_field_name="SZ_FROM_YY_6"   if_blank=" "/>
+    <field db_field_name="SZ_FROM_DD_6"       pdf_field_index="27"  pdf_field_name="SZ_FROM_DD_6"   if_blank=" "/>
+    <field db_field_name="SZ_FROM_MM_6"       pdf_field_index="28"  pdf_field_name="SZ_FROM_MM_6"   if_blank=" "/>
+    <field db_field_name="SZ_DAYS_3"       pdf_field_index="29"  pdf_field_name="SZ_DAYS_3"   if_blank=" "/>
+    <field db_field_name="SZ_POS_2"       pdf_field_index="30"  pdf_field_name="SZ_POS_2"   if_blank=" "/>
+    <field db_field_name="SZ_INSURANCE_COMPANY_ADDRESS"       pdf_field_index="31"  pdf_field_name="SZ_INSURANCE_COMPANY_ADDRESS"   if_blank=" "/>
+    <field db_field_name="SZ_WCB_AOTH_NO"       pdf_field_index="32"  pdf_field_name="SZ_WCB_AOTH_NO"   if_blank=" "/>
+    <field db_field_name="chk_F_2_Pubtransport"       pdf_field_index="33"  pdf_field_name="chk_F_2_Pubtransport"   if_blank=" "/>
+    <field db_field_name="chk_F_2_Bending"       pdf_field_index="34"  pdf_field_name="chk_F_2_Bending"   if_blank=" "/>
+    <field db_field_name="chk_F_1_WorkRestrictPeriod_8-14dys"       pdf_field_index="35"  pdf_field_name="chk_F_1_WorkRestrictPeriod_8-14dys"   if_blank=" "/>
+    <field db_field_name="chk_E_3_Yes"       pdf_field_index="57"  pdf_field_name="chk_E_3_Yes"   if_blank=" "/>
+    <field db_field_name="chk_E_3_No"       pdf_field_index="36"  pdf_field_name="chk_E_3_No"   if_blank=" "/>
+    <field db_field_name="chk_E_1_Yes"       pdf_field_index="37"  pdf_field_name="chk_E_1_Yes"   if_blank=" "/>
+    <field db_field_name="chk_d_5_phytherapist"       pdf_field_index="38"  pdf_field_name="chk_d_5_phytherapist"   if_blank=" "/>
+    <field db_field_name="chk_d_5_No"       pdf_field_index="39"  pdf_field_name="chk_d_5_No"   if_blank=" "/>
+    <field db_field_name="others"       pdf_field_index="40"  pdf_field_name="others"   if_blank=" "/>
+    <field db_field_name="SZ_TREATEMENT_RENDERED"       pdf_field_index="41"  pdf_field_name="SZ_TREATEMENT_RENDERED"   if_blank=" " />
+    <field db_field_name="txt_d_5other2"       pdf_field_index="42"  pdf_field_name="txt_d_5other2"   if_blank=" "/>
+    <field db_field_name="DT_DATE_OF_ACCIDENT"       pdf_field_index="43"  pdf_field_name="DT_DATE_OF_ACCIDENT"   if_blank=" " is_date_formate="1" />
+    <field db_field_name="SZ_DIAGNOSIS_TREATEMENT_RENDERED"       pdf_field_index="44"  pdf_field_name="SZ_DIAGNOSIS_TREATEMENT_RENDERED"   if_blank=" "/>
+    <field db_field_name="SZ_DAYS_4"       pdf_field_index="45"  pdf_field_name="SZ_DAYS_4"   if_blank=" "/>
+    <field db_field_name="SZ_POS_3"       pdf_field_index="46"  pdf_field_name="SZ_POS_3"   if_blank=" "/>
+    <field db_field_name="SZ_BILLING_PHONE"       pdf_field_index="47"  pdf_field_name="SZ_BILLING_PHONE"   if_blank=" " is_phone_formate="1"/>
+    <field db_field_name="chk_F_2_Standing"       pdf_field_index="48"  pdf_field_name="chk_F_2_Standing"   if_blank=" "/>
+    <field db_field_name="chk_E_2_No"       pdf_field_index="49"  pdf_field_name="chk_E_2_No"   if_blank=" "/>
+    <field db_field_name="chk_E_2_Yes"       pdf_field_index="50"  pdf_field_name="chk_E_2_Yes"   if_blank=" "/>
+    <field db_field_name="chk_D_7_1-2wks"       pdf_field_index="51"  pdf_field_name="chk_D_7_1-2wks"   if_blank=" "/>
+    <field db_field_name="SZ_DAYS_5"       pdf_field_index="52"  pdf_field_name="SZ_DAYS_5"   if_blank=" "/>
+    <field db_field_name="SZ_POS_4"       pdf_field_index="53"  pdf_field_name="SZ_POS_4"   if_blank=" "/>
+    <field db_field_name="SZ_DIAG_CODE_1"       pdf_field_index="54"  pdf_field_name="SZ_DIAG_CODE_1"   if_blank=" "/>
+    <field db_field_name="SZ_WCB_RATING_CODE"       pdf_field_index="55"  pdf_field_name="SZ_WCB_RATING_CODE"   if_blank=" "/>
+    <field db_field_name="chk_F_1_WorkRestrictPeriod_unknown"       pdf_field_index="56"  pdf_field_name="chk_F_1_WorkRestrictPeriod_unknown"   if_blank=" "/>
+    <field db_field_name="chk_E_1_No"       pdf_field_index="58"  pdf_field_name="chk_E_1_No"   if_blank=" "/>
+    <field db_field_name="SZ_HEALT_CARE_NAME"       pdf_field_index="59"  pdf_field_name="SZ_HEALT_CARE_NAME"   if_blank=" "/>
+    <field db_field_name="SZ_PATIENT_RETURN_WORK_DESCRIPTIONYY"       pdf_field_index="60"  pdf_field_name="SZ_PATIENT_RETURN_WORK_DESCRIPTIONYY"   if_blank=" "/>
+    <field db_field_name="SZ_PATIENT_RETURN_WORK_DESCRIPTIONDD"       pdf_field_index="61"  pdf_field_name="SZ_PATIENT_RETURN_WORK_DESCRIPTIONDD"   if_blank=" "/>
+    <field db_field_name="SZ_PATIENT_RETURN_WORK_DESCRIPTIONMM"       pdf_field_index="62"  pdf_field_name="SZ_PATIENT_RETURN_WORK_DESCRIPTIONMM"   if_blank=" "/>
+    <field db_field_name="SZ_PATIENT_RETURN_WORK_DESCRIPTION"       pdf_field_index="63"  pdf_field_name="SZ_PATIENT_RETURN_WORK_DESCRIPTION"   if_blank=" "/>
+    <field db_field_name="SZ_DIAGNOSIS_CODE"       pdf_field_index="64"  pdf_field_name="SZ_DIAGNOSIS_CODE"   if_blank=" "/>
+    <field db_field_name="SZ_DAYS_6"       pdf_field_index="65"  pdf_field_name="SZ_DAYS_6"   if_blank=" "/>
+    <field db_field_name="SZ_POS_5"       pdf_field_index="66"  pdf_field_name="SZ_POS_5"   if_blank=" "/>
+    <field db_field_name="SZ_DIAG_CODE_2"       pdf_field_index="67"  pdf_field_name="SZ_DIAG_CODE_2"   if_blank=" "/>
+    <field db_field_name="SZ_COB_1"       pdf_field_index="68"  pdf_field_name="SZ_COB_1"   if_blank=" "/>
+    <field db_field_name="SZ_CPT_1"       pdf_field_index="69"  pdf_field_name="SZ_CPT_1"   if_blank=" "/>
+    <field db_field_name="SZ_SSN_NO"       pdf_field_index="70"  pdf_field_name="SZ_SSN_NO"   if_blank=" "/>
+    <field db_field_name="chk_F_3_Patient"       pdf_field_index="71"  pdf_field_name="chk_F_3_Patient"   if_blank=" "/>
+    <field db_field_name="chk_F_2_vehical"       pdf_field_index="72"  pdf_field_name="chk_F_2_vehical"   if_blank=" "/>
+    <field db_field_name="CUR_MONTH"       pdf_field_index="73"  pdf_field_name="CUR_MONTH"   if_blank=" " is_date_formate="1"/>
+    <field db_field_name="SZ_PATIENT_RETURN_WORK_DESCRIPTION0 "       pdf_field_index="74"  pdf_field_name="SZ_PATIENT_RETURN_WORK_DESCRIPTION0 "   if_blank=" "/>
+    <field db_field_name="SZ_POS_6"       pdf_field_index="75"  pdf_field_name="SZ_POS_6"   if_blank=" "/>
+    <field db_field_name="SZ_DIAG_CODE_3"       pdf_field_index="76"  pdf_field_name="SZ_DIAG_CODE_3"   if_blank=" "/>
+    <field db_field_name="SZ_COB_2"       pdf_field_index="77"  pdf_field_name="SZ_COB_2"   if_blank=" "/>
+    <field db_field_name="SZ_CPT_2"       pdf_field_index="78"  pdf_field_name="SZ_CPT_2"   if_blank=" "/>
+    <field db_field_name="SZ_CARRIER_CASE_NO"       pdf_field_index="79"  pdf_field_name="SZ_CARRIER_CASE_NO"   if_blank=" "/>
+    <field db_field_name="chk_F_4_Yes"       pdf_field_index="80"  pdf_field_name="chk_F_4_Yes"   if_blank=" "/>
+    <field db_field_name="chk_F_3_NA"       pdf_field_index="81"  pdf_field_name="chk_F_3_NA"   if_blank=" "/>
+    <field db_field_name="chk_d_5_specialist"       pdf_field_index="82"  pdf_field_name="chk_d_5_specialist"   if_blank=" "/>
+    <field db_field_name="chk_d_5_ctscan"       pdf_field_index="83"  pdf_field_name="chk_d_5_ctscan"   if_blank=" "/>
+    <field db_field_name="chk_D_5_Yes"       pdf_field_index="84"  pdf_field_name="chk_D_5_Yes"   if_blank=" "/>
+    <field db_field_name="SZ_TREATEMENT_RENDERED_1"       pdf_field_index="85"  pdf_field_name="SZ_TREATEMENT_RENDERED_1"   if_blank=" "/>
+    <field db_field_name="SZ_NATURE_OF_INJURY_1"       pdf_field_index="86"  pdf_field_name="SZ_NATURE_OF_INJURY_1"   if_blank=" "/>
+    <field db_field_name="SZ_DIAG_CODE_4"       pdf_field_index="87"  pdf_field_name="SZ_DIAG_CODE_4"   if_blank=" "/>
+    <field db_field_name="SZ_COB_3"       pdf_field_index="88"  pdf_field_name="SZ_COB_3"   if_blank=" "/>
+    <field db_field_name="SZ_CPT_3"       pdf_field_index="89"  pdf_field_name="SZ_CPT_3"   if_blank=" "/>
+    <field db_field_name="SZ_TO_YY_3"       pdf_field_index="90"  pdf_field_name="SZ_TO_YY_3"   if_blank=" "/>
+    <field db_field_name="SZ_CHARGES_1"       pdf_field_index="91"  pdf_field_name="SZ_CHARGES_1"   if_blank=" "/>
+    <field db_field_name="SZ_MODIFER_1"       pdf_field_index="92"  pdf_field_name="SZ_MODIFER_1"   if_blank=" "/>
+    <field db_field_name="chk_F_2_proctectEquip"       pdf_field_index="93"  pdf_field_name="chk_F_2_proctectEquip"   if_blank=" "/>
+    <field db_field_name="chk_F_2_a"       pdf_field_index="94"  pdf_field_name="chk_F_2_a"   if_blank=" "/>
+    <field db_field_name="chk_F_1_WorkRestrictPeriod_3-7dys"       pdf_field_index="95"  pdf_field_name="chk_F_1_WorkRestrictPeriod_3-7dys"   if_blank=" "/>
+    <field db_field_name="chk_E_3_NA"       pdf_field_index="96"  pdf_field_name="chk_E_3_NA"   if_blank=" "/>
+    <field db_field_name="CUR_DAY"       pdf_field_index="97"  pdf_field_name="CUR_DAY"   if_blank=" "/>
+    <field db_field_name="FT_TEMPORARY_IMPAIRMENT_PERCENTAGE"       pdf_field_index="98"  pdf_field_name="FT_TEMPORARY_IMPAIRMENT_PERCENTAGE"   if_blank=" "/>
+    <field db_field_name="SZ_BILLING_STATE"       pdf_field_index="99"  pdf_field_name="SZ_BILLING_STATE"   if_blank=" "/>
+    <field db_field_name="SZ_OFFICE_CITY"       pdf_field_index="100"  pdf_field_name="SZ_OFFICE_CITY"   if_blank=" "/>
+    <field db_field_name="SZ_DIAG_CODE_5"       pdf_field_index="101"  pdf_field_name="SZ_DIAG_CODE_5"   if_blank=" "/>
+    <field db_field_name="SZ_COB_4"       pdf_field_index="102"  pdf_field_name="SZ_COB_4"   if_blank=" "/>
+    <field db_field_name="SZ_CPT_4"       pdf_field_index="103"  pdf_field_name="SZ_CPT_4"   if_blank=" "/>
+    <field db_field_name="SZ_CHARGES_2"       pdf_field_index="104"  pdf_field_name="SZ_CHARGES_2"   if_blank=" "/>
+    <field db_field_name="SZ_MODIFER_2"       pdf_field_index="105"  pdf_field_name="SZ_MODIFER_2"   if_blank=" "/>
+    <field db_field_name="SZ_FEDERAL_TAX_ID"       pdf_field_index="106"  pdf_field_name="SZ_FEDERAL_TAX_ID"   if_blank=" "/>
+    <field db_field_name="chk_F_2_b"       pdf_field_index="107"  pdf_field_name="chk_F_2_b"   if_blank=" "/>
+    <field db_field_name="chk_D_7_7-8wks"       pdf_field_index="108"  pdf_field_name="chk_D_7_7-8wks"   if_blank=" "/>
+    <field db_field_name="chk_d_5_xray"       pdf_field_index="109"  pdf_field_name="chk_d_5_xray"   if_blank=" "/>
+    <field db_field_name="chk_d_5_mri"       pdf_field_index="110"  pdf_field_name="chk_d_5_mri"   if_blank=" "/>
+    <field db_field_name="SZ_TEST_RESULTS_1"       pdf_field_index="111"  pdf_field_name="SZ_TEST_RESULTS_1"   if_blank=" "/>
+    <field db_field_name="txt_d_5mri"       pdf_field_index="112"  pdf_field_name="txt_d_5mri"   if_blank=" "/>
+    <field db_field_name="SZ_AFFECTED_BY_INJURY"       pdf_field_index="113"  pdf_field_name="SZ_AFFECTED_BY_INJURY"   if_blank=" "/>
+    <field db_field_name="SZ_BILLING_ZIP_CODE"       pdf_field_index="114"  pdf_field_name="SZ_BILLING_ZIP_CODE"   if_blank=" "/>
+    <field db_field_name="SZ_TOTAL_PAID_AMOUNT"       pdf_field_index="115"  pdf_field_name="SZ_TOTAL_PAID_AMOUNT"   if_blank=" "/>
+    <field db_field_name="SZ_DIAG_CODE_6"       pdf_field_index="116"  pdf_field_name="SZ_DIAG_CODE_6"   if_blank=" "/>
+    <field db_field_name="SZ_COB_5"       pdf_field_index="117"  pdf_field_name="SZ_COB_5"   if_blank=" "/>
+    <field db_field_name="SZ_CPT_5"       pdf_field_index="118"  pdf_field_name="SZ_CPT_5"   if_blank=" "/>
+    <field db_field_name="SZ_CHARGES_3"       pdf_field_index="119"  pdf_field_name="SZ_CHARGES_3"   if_blank=" "/>
+    <field db_field_name="SZ_MODIFER_3"       pdf_field_index="120"  pdf_field_name="SZ_MODIFER_3"   if_blank=" "/>
+    <field db_field_name="SZ_ZIP_CODE_1"       pdf_field_index="121"  pdf_field_name="SZ_ZIP_CODE_1"   if_blank=" "/>
+    <field db_field_name="chk_F_2_c_LimitPeriod_3-7dys"       pdf_field_index="122"  pdf_field_name="chk_F_2_c_LimitPeriod_3-7dys"   if_blank=" "/>
+    <field db_field_name="chk_F_2_c"       pdf_field_index="123"  pdf_field_name="chk_F_2_c"   if_blank=" "/>
+    <field db_field_name="chk_d_5_occutherapist"       pdf_field_index="124"  pdf_field_name="chk_d_5_occutherapist"   if_blank=" "/>
+    <field db_field_name="SZ_SPECIALITY"       pdf_field_index="125"  pdf_field_name="SZ_SPECIALITY"   if_blank=" "/>
+    <field db_field_name="SZ_COB_6"       pdf_field_index="126"  pdf_field_name="SZ_COB_6"   if_blank=" "/>
+    <field db_field_name="SZ_CPT_6"       pdf_field_index="127"  pdf_field_name="SZ_CPT_6"   if_blank=" "/>
+    <field db_field_name="SZ_CHARGES_4"       pdf_field_index="128"  pdf_field_name="SZ_CHARGES_4"   if_blank=" "/>
+    <field db_field_name="SZ_MODIFER_4"       pdf_field_index="129"  pdf_field_name="SZ_MODIFER_4"   if_blank=" "/>
+    <field db_field_name="SZ_ZIP_CODE_2"       pdf_field_index="130"  pdf_field_name="SZ_ZIP_CODE_2"   if_blank=" "/>
+    <field db_field_name="SZ_INSURANCE_COMPANY"       pdf_field_index="131"  pdf_field_name="SZ_INSURANCE_COMPANY"   if_blank=" "/>
+    <field db_field_name="chk_F_4_ProvidedServices"       pdf_field_index="132"  pdf_field_name="chk_F_4_ProvidedServices"   if_blank=" "/>
+    <field db_field_name="txt_d_5xray"       pdf_field_index="133"  pdf_field_name="txt_d_5xray"   if_blank=" "/>
+    <field db_field_name="SZ_CHARGES_5"       pdf_field_index="134"  pdf_field_name="SZ_CHARGES_5"   if_blank=" "/>
+    <field db_field_name="SZ_MODIFER_5"       pdf_field_index="135"  pdf_field_name="SZ_MODIFER_5"   if_blank=" "/>
+    <field db_field_name="SZ_ZIP_CODE_3"       pdf_field_index="136"  pdf_field_name="SZ_ZIP_CODE_3"   if_blank=" "/>
+    <field db_field_name="chk_F_3_Employer"       pdf_field_index="137"  pdf_field_name="chk_F_3_Employer"   if_blank=" "/>
+    <field db_field_name="chk_F_1_WorkRestrictNo"       pdf_field_index="138"  pdf_field_name="chk_F_1_WorkRestrictNo"   if_blank=" "/>
+    <field db_field_name="chk_d_5_chiropractor"       pdf_field_index="139"  pdf_field_name="chk_d_5_chiropractor"   if_blank=" "/>
+    <field db_field_name="chk_d_5_otherspecify1"       pdf_field_index="140"  pdf_field_name="chk_d_5_otherspecify1"   if_blank=" "/>
+    <field db_field_name="SZ_SPECIALITY"       pdf_field_index="141"  pdf_field_name="Text156"   if_blank=" "/>
+    <field db_field_name="SZ_QUANTIFY_LIMITATION"       pdf_field_index="142"  pdf_field_name="SZ_QUANTIFY_LIMITATION"   if_blank=" "/>
+    <field db_field_name="SZ_APPOINTMENT_MONTH"       pdf_field_index="143"  pdf_field_name="SZ_APPOINTMENT_MONTH"   if_blank=" "/>
+    <field db_field_name="SZ_CHANGES_IN_TREATMENT_PLAN"       pdf_field_index="144"  pdf_field_name="SZ_CHANGES_IN_TREATMENT_PLAN"   if_blank=" "/>
+    <field db_field_name="SZ_OFFICE_ZIP_CODE"       pdf_field_index="145"  pdf_field_name="SZ_OFFICE_ZIP_CODE"   if_blank=" "/>
+    <field db_field_name="SZ_STATE"       pdf_field_index="146"  pdf_field_name="SZ_STATE"   if_blank=" "/>
+    <field db_field_name="SZ_TOTAL_BALANCE_AMOUNT"       pdf_field_index="147"  pdf_field_name="SZ_TOTAL_BALANCE_AMOUNT"   if_blank=" "/>
+    <field db_field_name="SZ_CHARGES_6"       pdf_field_index="148"  pdf_field_name="SZ_CHARGES_6"   if_blank=" "/>
+    <field db_field_name="SZ_MODIFER_6"       pdf_field_index="149"  pdf_field_name="SZ_MODIFER_6"   if_blank=" "/>
+    <field db_field_name="SZ_ZIP_CODE_4"       pdf_field_index="150"  pdf_field_name="SZ_ZIP_CODE_4"   if_blank=" "/>
+    <field db_field_name="chk_F_4_Supervised"       pdf_field_index="151"  pdf_field_name="chk_F_4_Supervised"   if_blank=" "/>
+    <field db_field_name="chk_F_2_c_LimitPeriod_8-14dys"       pdf_field_index="152"  pdf_field_name="chk_F_2_c_LimitPeriod_8-14dys"   if_blank=" "/>
+    <field db_field_name="chk_F_2_Climbing"       pdf_field_index="153"  pdf_field_name="chk_F_2_Climbing"   if_blank=" "/>
+    <field db_field_name="chk_F_1_WorkRestrictPeriod_15+dys"       pdf_field_index="154"  pdf_field_name="chk_F_1_WorkRestrictPeriod_15+dys"   if_blank=" "/>
+    <field db_field_name="chk_F_1_WorkingYes"       pdf_field_index="155"  pdf_field_name="chk_F_1_WorkingYes"   if_blank=" "/>
+    <field db_field_name="chk_D_7_5-6wks"       pdf_field_index="156"  pdf_field_name="chk_D_7_5-6wks"   if_blank=" "/>
+    <field db_field_name="chk_d_5_otherspecify2"       pdf_field_index="157"  pdf_field_name="chk_d_5_otherspecify2"   if_blank=" "/>
+    <field db_field_name="SZ_HEALT_CARE_NAME"       pdf_field_index="158"  pdf_field_name="SZ_BOARD_PROVIDER_NAME"   if_blank=" "/>
+    <field db_field_name="CHK_EIN"       pdf_field_index="159"  pdf_field_name="CHK_EIN"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="SZ_TOTAL_AMOUNT"       pdf_field_index="160"  pdf_field_name="SZ_TOTAL_AMOUNT"   if_blank=" "/>
+    <field db_field_name="SZ_ZIP_CODE_5"       pdf_field_index="161"  pdf_field_name="SZ_ZIP_CODE_5"   if_blank=" "/>
+    <field db_field_name="SZ_TO_YY_1"       pdf_field_index="162"  pdf_field_name="SZ_TO_YY_1"   if_blank=" "/>
+    <field db_field_name="SZ_TO_DD_1"       pdf_field_index="163"  pdf_field_name="SZ_TO_DD_1"   if_blank=" "/>
+    <field db_field_name="SZ_TO_MM_1"       pdf_field_index="164"  pdf_field_name="SZ_TO_MM_1"   if_blank=" "/>
+    <field db_field_name="chk_D_7_asneeded"       pdf_field_index="165"  pdf_field_name="chk_D_7_asneeded"   if_blank=" "/>
+    <field db_field_name="chk_d_5_labs"       pdf_field_index="166"  pdf_field_name="chk_d_5_labs"   if_blank=" "/>
+    <field db_field_name="SZ_CITY"       pdf_field_index="167"  pdf_field_name="SZ_CITY"   if_blank=" "/>
+    <field db_field_name="SZ_ZIP_CODE_6"       pdf_field_index="168"  pdf_field_name="SZ_ZIP_CODE_6"   if_blank=" "/>
+    <field db_field_name="SZ_TO_YY_2"       pdf_field_index="169"  pdf_field_name="SZ_TO_YY_2"   if_blank=" "/>
+    <field db_field_name="SZ_TO_DD_2"       pdf_field_index="170"  pdf_field_name="SZ_TO_DD_2"   if_blank=" "/>
+    <field db_field_name="SZ_TO_MM_2"       pdf_field_index="171"  pdf_field_name="SZ_TO_MM_2"   if_blank=" "/>
+    <field db_field_name="SZ_FROM_YY_1"       pdf_field_index="172"  pdf_field_name="SZ_FROM_YY_1"   if_blank=" "/>
+    <field db_field_name="SZ_FROM_DD_1"       pdf_field_index="173"  pdf_field_name="SZ_FROM_DD_1"   if_blank=" "/>
+    <field db_field_name="SZ_FROM_MM_1"       pdf_field_index="174"  pdf_field_name="SZ_FROM_MM_1"   if_blank=" "/>
+    <field db_field_name="SZ_OFFICE_PHONE"       pdf_field_index="175"  pdf_field_name="SZ_OFFICE_PHONE"   if_blank=" " is_phone_formate="1"/>
+    <field db_field_name="SZ_WCB_NO"       pdf_field_index="176"  pdf_field_name="SZ_WCB_NO"   if_blank=" " is_phone_formate="1"/>
+    <field db_field_name="DT_DATE_OF_EXAMINATION"       pdf_field_index="177"  pdf_field_name="DT_DATE_OF_EXAMINATION"   if_blank=" " is_date_formate="1"/>
+    <field db_field_name="chk_F_2_c_LimitPeriod_unkown"       pdf_field_index="178"  pdf_field_name="chk_F_2_c_LimitPeriod_unkown"   if_blank=" "/>
+    <field db_field_name="chk_F_2_c_LimitPeriod_15+dys"       pdf_field_index="179"  pdf_field_name="chk_F_2_c_LimitPeriod_15+dys"   if_blank=" "/>
+    <field db_field_name="chk_F_2_UpperExtremist"       pdf_field_index="180"  pdf_field_name="chk_F_2_UpperExtremist"   if_blank=" "/>
+    <field db_field_name="chk_F_2_OtherSpecify"       pdf_field_index="181"  pdf_field_name="chk_F_2_OtherSpecify"   if_blank=" "/>
+    <field db_field_name="chk_F_2_Kneeling"       pdf_field_index="182"  pdf_field_name="chk_F_2_Kneeling"   if_blank=" "/>
+    <field db_field_name="chk_F_1_WorkRestrictPeriod_1-2dys"       pdf_field_index="183"  pdf_field_name="chk_F_1_WorkRestrictPeriod_1-2dys"   if_blank=" "/>
+    <field db_field_name="chk_D_7_withinweek"       pdf_field_index="184"  pdf_field_name="chk_D_7_withinweek"   if_blank=" "/>
+    <field db_field_name="SZ_BILLING_CITY"       pdf_field_index="185"  pdf_field_name="SZ_BILLING_CITY"   if_blank=" "/>
+    <field db_field_name="SZ_TO_DD_3"       pdf_field_index="186"  pdf_field_name="SZ_TO_DD_3"   if_blank=" "/>
+    <field db_field_name="SZ_TO_MM_3"       pdf_field_index="187"  pdf_field_name="SZ_TO_MM_3"   if_blank=" "/>
+    <field db_field_name="SZ_FROM_YY_2"       pdf_field_index="188"  pdf_field_name="SZ_FROM_YY_2"   if_blank=" "/>
+    <field db_field_name="SZ_FROM_DD_2"       pdf_field_index="189"  pdf_field_name="SZ_FROM_DD_2"   if_blank=" "/>
+    <field db_field_name="SZ_FROM_MM_2"       pdf_field_index="190"  pdf_field_name="SZ_FROM_MM_2"   if_blank=" "/>
+    <field db_field_name="SZ_INSURANCE_COMPANY_CODE"       pdf_field_index="191"  pdf_field_name="SZ_INSURANCE_COMPANY_CODE"   if_blank=" "/>
+    <field db_field_name="chk_F_2_c_LimitPeriod_NA"       pdf_field_index="192"  pdf_field_name="chk_F_2_c_LimitPeriod_NA"   if_blank=" "/>
+    <field db_field_name="chk_F_2_Lifting"       pdf_field_index="193"  pdf_field_name="chk_F_2_Lifting"   if_blank=" "/>
+    <field db_field_name="chk_D_7_mnths"       pdf_field_index="194"  pdf_field_name="chk_D_7_mnths"   if_blank=" "/>
+    <field db_field_name="chk_d_5_internist"       pdf_field_index="195"  pdf_field_name="chk_d_5_internist"   if_blank=" "/>
+    <field db_field_name="SZ_TEST_RESULTS"       pdf_field_index="196"  pdf_field_name="SZ_TEST_RESULTS"   if_blank=" "/>
+    <field db_field_name="txt_d_5specialist"       pdf_field_index="197"  pdf_field_name="txt_d_5specialist"   if_blank=" "/>
+    <field db_field_name="txt_d_5labs"       pdf_field_index="198"  pdf_field_name="txt_d_5labs"   if_blank=" "/>
+    <field db_field_name="SZ_PATIENT_FIRST_NAME"       pdf_field_index="199"  pdf_field_name="SZ_PATIENT_FIRST_NAME"   if_blank=" "/>
+    <field db_field_name="SZ_DIAGNOSIS_TREATEMENT_RENDERED_1"       pdf_field_index="200"  pdf_field_name="SZ_DIAGNOSIS_TREATEMENT_RENDERED_1"   if_blank=" "/>
+    <field db_field_name="SZ_TO_YY_4"       pdf_field_index="201"  pdf_field_name="SZ_TO_YY_4"   if_blank=" "/>
+    <field db_field_name="SZ_TO_DD_4"       pdf_field_index="202"  pdf_field_name="SZ_TO_DD_4"   if_blank=" "/>
+    <field db_field_name="SZ_TO_MM_4"       pdf_field_index="203"  pdf_field_name="SZ_TO_MM_4"   if_blank=" "/>
+    <field db_field_name="SZ_FROM_YY_3"       pdf_field_index="204"  pdf_field_name="SZ_FROM_YY_3"   if_blank=" "/>
+    <field db_field_name="SZ_FROM_DD_3"       pdf_field_index="205"  pdf_field_name="SZ_FROM_DD_3"   if_blank=" "/>
+    <field db_field_name="SZ_FROM_MM_3"       pdf_field_index="206"  pdf_field_name="SZ_FROM_MM_3"   if_blank=" "/>
+    <field db_field_name="SZ_BILLING_ADDRESS"       pdf_field_index="207"  pdf_field_name="SZ_BILLING_ADDRESS"   if_blank=" "/>
+    <field db_field_name="SZ_ADDRESS"       pdf_field_index="208"  pdf_field_name="SZ_ADDRESS"   if_blank=" "/>
+    <field db_field_name="chk_F_2_c_LimitPeriod_1-2dys"       pdf_field_index="209"  pdf_field_name="chk_F_2_c_LimitPeriod_1-2dys"   if_blank=" "/>
+    <field db_field_name="chk_F_2_OprEquip"       pdf_field_index="210"  pdf_field_name="chk_F_2_OprEquip"   if_blank=" "/>
+    <field db_field_name="chk_F_1_WorkingNo"       pdf_field_index="211"  pdf_field_name="chk_F_1_WorkingNo"   if_blank=" "/>
+    <field db_field_name="chk_D_7_3-4wks"       pdf_field_index="212"  pdf_field_name="chk_D_7_3-4wks"   if_blank=" "/>
+    <field db_field_name="SZ_NATURE_OF_INJURY"       pdf_field_index="213"  pdf_field_name="SZ_NATURE_OF_INJURY"   if_blank=" "/>
+    <field db_field_name="SZ_ZIP"       pdf_field_index="214"  pdf_field_name="SZ_ZIP"   if_blank=" "/>
+    <field db_field_name="SZ_PATIENT_MIDDLE_NAME"       pdf_field_index="215"  pdf_field_name="SZ_PATIENT_MIDDLE_NAME"   if_blank=" "/>
+    <field db_field_name="CHK_SSN"       pdf_field_index="216"  pdf_field_name="CHK_SSN"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="SZ_TO_YY_5"       pdf_field_index="217"  pdf_field_name="SZ_TO_YY_5"   if_blank=" "/>
+    <field db_field_name="SZ_TO_DD_5"       pdf_field_index="218"  pdf_field_name="SZ_TO_DD_5"   if_blank=" "/>
+    <field db_field_name="SZ_TO_MM_5"       pdf_field_index="219"  pdf_field_name="SZ_TO_MM_5"   if_blank=" "/>
+    <field db_field_name="SZ_FROM_YY_4"       pdf_field_index="220"  pdf_field_name="SZ_FROM_YY_4"   if_blank=" "/>
+    <field db_field_name="SZ_FROM_DD_4"       pdf_field_index="221"  pdf_field_name="SZ_FROM_DD_4"   if_blank=" "/>
+    <field db_field_name="SZ_FROM_MM_4"       pdf_field_index="222"  pdf_field_name="SZ_FROM_MM_4"   if_blank=" "/>
+    <field db_field_name="SZ_DAYS_1"       pdf_field_index="223"  pdf_field_name="SZ_DAYS_1"   if_blank=" "/>
+
+    <field db_field_name="MONTH,DAY,YEAR,TO_MONTH,TO_DAY,TO_YEAR,SZ_PROCEDURE_CODE,FL_AMOUNT,I_UNIT,BILL_AMOUNT,PAID_AMOUNT,BALANCE,ZIP_CODE,PLACE_OF_SERVICE,SZ_MODIFIER" pdf_field_index= "174,190,206,222,10,28:173,189,205,221,9,27:172,188,204,220,8,26:164,171,187,203,219,7:163,170,186,202,218,6:162,169,90,201,217,5:69,78,89,103,118,127:91,104,119,128,134,148:223,11,29,45,52,65:160,160,160,160,160,160:0,0,0,0,0,0:0,0,0,0,0,0:121,130,136,150,161,168:12,30,46,53,66,75:92,105,120,129,135,149" pdf_field_name="1,2,3,4,5,6:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f" if_blank="" is_service = "1" />
+
+    <!-- Doctor Information  -->
+
+    <field db_field_name="BIT_TAX_ID_TYPE" pdf_field_index="159" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="1"
+          flip_index="216" />
+
+    <!-- Doctor Information  -->
+
+    <field db_field_name="BT_PPO" pdf_field_index="4" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="0"
+         flip_index="" />
+
+    <!-- Examination and Treatment  -->
+    <field db_field_name="BT_IS_DIAGNOSTIC_REFERRALS_REQUIRED" pdf_field_index="39" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="1" flip_index="84" />
+    <field db_field_name="I_PATIENT_NEXT_APPOINTMENT" pdf_field_index="184,51,212,156,108,194,165" pdf_Textfield_index="0,0,0,0,0,143,0" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="2" flip_index="" />
+
+    <field db_field_name="CT Scan,EMG/NCS,MRI (specify):,Labs (specify):,X-rays (specify):,Other (specify):" pdf_field_index="83,20,110,166,109,140"  pdf_Textfield_index="0,0,112,198,133,24"  pdf_field_name="" if_blank="" is_check_box = "1" is_bit="3" flip_index="" pdf_proc_name="SP_MULTIPLE_CHECKBOX_SELECT_FOR_TEMPLATE_C_FOUR_TWO" pdf_flag_name="DIAGNOSTIC_TESTS" />
+    <field db_field_name="Chiropractor,Internist/Family Physician,Occupational Therapist,Physical Therapist,Specialist in,Other (specify)" pdf_field_index="139,195,124,38,82,157"  pdf_Textfield_index="0,0,0,0,197,42"  pdf_field_name="" if_blank="" is_check_box = "1" is_bit="3" flip_index="" pdf_proc_name="SP_MULTIPLE_CHECKBOX_SELECT_FOR_TEMPLATE_C_FOUR_TWO" pdf_flag_name="REFERRALS" />
+
+    <!-- Doctor Opinion  -->
+
+    <field db_field_name="BT_IS_COMPETENT_MEDICAL_CAUSE" pdf_field_index="58" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="1" flip_index="37" />
+
+    <field db_field_name="BT_IS_CONSISTENT_WITH_HISTORY" pdf_field_index="49" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="1" flip_index="50" />
+
+    <field db_field_name="BT_IS_CONSISTENT_WITH_OBJECTIVE_FINDINGS" pdf_field_index="57,36,96" pdf_field_name="" if_blank=" " is_check_box = "1" is_bit="2" flip_index="" />
+
+    <!-- Return to work  -->
+
+    <field db_field_name="BT_PATIENT_IS_WORKING" pdf_field_index="211" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="1"
+          flip_index="155" />
+
+    <field db_field_name="BT_WORK_RESTRICTION" pdf_field_index="138" pdf_field_name="" pdf_Textfield_index="74" if_blank="" is_check_box = "1" is_bit="1"
+          flip_index="19" />
+
+    <field db_field_name="INT_HOW_LONG_RESTRICTION_APPLY" pdf_field_index="183,95,35,154,56" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="2" flip_index="" />
+
+    <field db_field_name="INT_HOW_LONG_LIMITATION_APPLY" pdf_field_index="209,122,152,179,178,192" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="2" flip_index="" />
+
+    <field db_field_name="INT_WHOM_DISCUSS" pdf_field_index="71,137,81" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="2" flip_index="" />
+
+    <field db_field_name="BT_PATIENT_BENEFIT" pdf_field_index="18" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="1"
+          flip_index="80" />
+
+    <field db_field_name="BT_BOARD_AUTHORIZED" pdf_field_index="151" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="1"
+          flip_index="132" />
+
+    <field db_field_name="BT_PATIENT_RETURN_WORK" pdf_field_index="94,107,123,0" pdf_Textfield_index="63,23,23,0" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="2" flip_index="" />
+
+    <field db_field_name="Bending/twisting,Lifting,Sitting,Climbing stairs/ladders,Operating heavy equipment,Standing,Environmental conditions,Operation of motor vehicles,Use of public transportation,Kneeling,Personal protective equipment,Use of upper extremities,Other (explain):" pdf_field_index="34,193,1,153,210,48,2,72,33,182,93,180,181"  pdf_Textfield_index="0,0,0,0,0,0,0,0,0,0,0,0,40"  pdf_field_name="" if_blank="" is_check_box = "1" is_bit="3" flip_index="" pdf_proc_name="SP_MULTIPLE_CHECKBOX_SELECT_FOR_TEMPLATE_C_FOUR_TWO" pdf_flag_name="WORK_STATUS" />
+
+
+  </document>
+</root>

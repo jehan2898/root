@@ -1,0 +1,556 @@
+<configuration xmlns="http://schemas.microsoft.com/.NetConfiguration/v2.0">
+  <configSections>
+    <section name="nlog" type="NLog.Config.ConfigSectionHandler, NLog" />
+    <section name="indexusNetSharedCache" type="SharedCache.WinServiceCommon.Configuration.Client.IndexusProviderSection, SharedCache.WinServiceCommon" />
+    <section name="log4net" type="log4net.Config.Log4NetConfigurationSectionHandler" />
+    <sectionGroup name="elmah">
+      <section name="security" requirePermission="false" type="Elmah.SecuritySectionHandler, Elmah" />
+      <section name="errorLog" requirePermission="false" type="Elmah.ErrorLogSectionHandler, Elmah" />
+      <section name="errorMail" requirePermission="false" type="Elmah.ErrorMailSectionHandler, Elmah" />
+      <section name="errorFilter" requirePermission="false" type="Elmah.ErrorFilterSectionHandler, Elmah" />
+    </sectionGroup>
+    <sectionGroup name="devExpress">
+      <section name="themes" type="DevExpress.Web.ThemesConfigurationSection, DevExpress.Web.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" requirePermission="false" />
+      <section name="compression" type="DevExpress.Web.CompressionConfigurationSection, DevExpress.Web.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" requirePermission="false" />
+      <section name="settings" type="DevExpress.Web.SettingsConfigurationSection, DevExpress.Web.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" requirePermission="false" />
+      <section name="errors" type="DevExpress.Web.ErrorsConfigurationSection, DevExpress.Web.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" requirePermission="false" />
+      <section name="resources" type="DevExpress.Web.ResourcesConfigurationSection, DevExpress.Web.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" requirePermission="false" />
+    </sectionGroup>
+  </configSections>
+  <indexusNetSharedCache defaultProvider="IndexusSharedCacheProvider">
+    <clientSetting SharedCacheVersionNumber="3.0.5.1" LoggingEnable="1" CompressionEnabled="0" CompressionMinSize="1024000" HashingAlgorithm="Hashing" SocketPoolMinAvailableSize="5" SocketPoolValidationInterval="00:02:00" SocketPoolTimeout="00:02:00" />
+    <!-- 
+      Hashing (default - is useless if your envrionment is using different versions of CLR's)
+      Ketama
+      FvnHash32
+      FvnHash64
+      -->ax
+    <servers><add key="localhost" ipaddreshttpHandlerss="127.0.0.1" port="48888" /><!--<add key="Server01-Local"  ipaddress="192.168.1.10" port="48888" />--></servers><replicatedServers><add key="srvzh02" ipaddress="192.168.212.50" port="48888" /><!-- only use this node in case you are using replication mode on server --><!--<add key="Cluster02-Remote"    ipaddress="192.168.1.11" port="48888" />--><!--<add key="Cluster03-Remote"    ipaddress="192.168.1.12" port="48888" />--></replicatedServers><providers><add name="IndexusSharedCacheProvider" type="SharedCache.WinServiceCommon.Provider.Cache.IndexusSharedCacheProvider, SharedCache.WinServiceCommon" /></providers></indexusNetSharedCache>
+  <nlog autoReload="true" throwExceptions="true">
+    <targets async="true">
+      <target name="shared_cache_general" type="File" layout="${longdate}|${level:uppercase=true}|${aspnet-request:item=logSession}|${message}" filename="C:\temp\logs\client\${date:format=yyyy-MM-dd}_shared_cache_general_log.txt" />
+      <target name="shared_cache_traffic" type="File" layout="${longdate}|${level:uppercase=true}|${aspnet-request:item=logSession}|${message}" filename="C:\temp\logs\client\${date:format=yyyy-MM-dd}_shared_cache_traffic_log.txt" />
+      <target name="shared_cache_tracking" type="File" layout="${longdate}|${level:uppercase=true}|${aspnet-request:item=logSession}|${message}" filename="C:\temp\logs\client\${date:format=yyyy-MM-dd}_shared_cache_tracking_log.txt" />
+      <target name="shared_cache_sync" type="File" layout="${longdate}|${level:uppercase=true}|${aspnet-request:item=logSession}|${message}" filename="C:\temp\logs\client\${date:format=yyyy-MM-dd}_shared_cache_sync_log.txt" />
+    </targets>
+    <rules>
+      <logger name="General" minlevel="Debug" writeTo="shared_cache_general" final="true" />
+      <logger name="Traffic" minlevel="Debug" writeTo="shared_cache_traffic" final="true" />
+      <logger name="Tracking" minlevel="Debug" writeTo="shared_cache_tracking" final="true" />
+      <logger name="Sync" minlevel="Debug" writeTo="shared_cache_sync" final="true" />
+      <logger name="*" minlevel="Debug" writeTo="shared_cache_general" />
+      <logger name="*" minlevel="Info" writeTo="shared_cache_general" />
+    </rules>
+  </nlog>
+  <system.runtime.remoting>
+    <application>
+      <service>
+        <!--<activated type="TXTextControl.ServerTextControl, TXTextControl"/>-->
+      </service>
+      <channels>
+        <channel ref="http">
+          <serverProviders>
+            <provider ref="wsdl" />
+            <formatter ref="binary" typeFilterLevel="Full" />
+          </serverProviders>
+        </channel>
+      </channels>
+    </application>
+    <customErrors mode="on" />
+  </system.runtime.remoting>
+  <!--
+    For a description of web.config changes see http://go.microsoft.com/fwlink/?LinkId=235367.
+
+    The following attributes can be set on the <httpRuntime> tag.
+      <system.Web>
+        <httpRuntime targetFramework="4.6.1" />
+      </system.Web>
+  -->
+  <system.web>
+    <httpRuntime maxRequestLength="1100000" />
+    <pages controlRenderingCompatibilityVersion="3.5" clientIDMode="AutoID">
+      <namespaces>
+        <add namespace="Microsoft.VisualBasic" />
+        <add namespace="System.Data" />
+        <add namespace="System.Drawing" />
+      </namespaces>
+      <controls>
+        <add tagPrefix="dx" namespace="DevExpress.Web" assembly="DevExpress.Web.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add tagPrefix="dx" namespace="DevExpress.Web.ASPxScheduler" assembly="DevExpress.Web.ASPxScheduler.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add tagPrefix="dx" namespace="DevExpress.Web.ASPxScheduler.Controls" assembly="DevExpress.Web.ASPxScheduler.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add tagPrefix="dx" namespace="DevExpress.Web.ASPxScheduler.Reporting" assembly="DevExpress.Web.ASPxScheduler.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add tagPrefix="dx" namespace="DevExpress.XtraScheduler" assembly="DevExpress.XtraScheduler.v16.2.Core, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add tagPrefix="dx" namespace="DevExpress.Xpo" assembly="DevExpress.Xpo.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add tagPrefix="dx" namespace="DevExpress.XtraReports.Web" assembly="DevExpress.XtraReports.v16.2.Web, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+      </controls>
+    </pages>
+    <httpModules>
+      <add type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" name="ASPxHttpHandlerModule" />
+    </httpModules>
+    <httpHandlers>
+      <add verb="*" path="BusyBoxDotNet.axd" type="BusyBoxDotNet.ResourceHttpHandler, BusyBoxDotNet" />
+      <add type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" verb="GET" path="DX.ashx" validate="false" />
+    </httpHandlers>
+    <!--  DYNAMIC DEBUG COMPILATION
+          Set compilation debug="true" to insert debugging symbols (.pdb information)
+          into the compiled page. Because this creates a larger file that executes
+          more slowly, you should set this value to true only when debugging and to
+          false at all other times. For more information, refer to the documentation about
+          debugging ASP.NET files.
+    -->
+    <compilation debug="true" defaultLanguage="c#" targetFramework="4.5">
+      <compilers>
+        <compiler language="c#" extension=".cs" type="Microsoft.CSharp.CSharpCodeProvider, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089" compilerOptions="/d:DEBUG;TRACE" />
+      </compilers>
+      <assemblies>
+        <add assembly="DevExpress.CodeParser.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.Data.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.Utils.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.Web.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.Web.ASPxThemes.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.Xpo.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.XtraScheduler.v16.2.Core, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.XtraScheduler.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.XtraScheduler.v16.2.Reporting, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.Web.ASPxScheduler.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.XtraReports.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.XtraReports.v16.2.Web, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="DevExpress.Printing.v16.2.Core, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        <add assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089" />
+        <add assembly="System.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A" />
+        <add assembly="System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A" />
+        <add assembly="System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A" />
+        <add assembly="System.Runtime.Remoting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089" />
+        <add assembly="System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089" />
+        <add assembly="System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089" />
+        <add assembly="System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A" />
+        <add assembly="System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089" />
+        <add assembly="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A" />
+        <add assembly="System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+        <add assembly="System.Web.Extensions.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+        <add assembly="DevExpress.Web.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A" />
+        <add assembly="DevExpress.Web.ASPxScheduler.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A" />
+        <add assembly="DevExpress.XtraScheduler.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A" />
+        <add assembly="DevExpress.XtraScheduler.v16.2.Core, Version=16.2.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A" />
+        <add assembly="DevExpress.Data.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=B88D1754D700E49A" />
+        <add assembly="DevExpress.Web.ASPxThemes.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+      </assemblies>
+    </compilation>
+    <!--  CUSTOM ERROR MESSAGES
+          Set customErrors mode="On" or "RemoteOnly" to enable custom error messages, "Off" to disable. 
+          Add <error> tags for each of the errors you want to handle.
+
+          "On" Always display custom (friendly) messages.
+          "Off" Always display detailed ASP.NET error information.
+          "RemoteOnly" Display custom (friendly) messages only to users not running 
+           on the local Web server. This setting is recommended for security purposes, so 
+           that you do not display application detail information to remote clients.
+    -->
+    <customErrors mode="Off" />
+    <!--
+    <customErrors mode="RemoteOnly" defaultRedirect="/SthalDocManager/ErrorPages/404.htm">
+      <error statusCode="401" redirect="/SthalDocManager/ErrorPages/404.htm" />
+      <error statusCode="402" redirect="/SthalDocManager/ErrorPages/404.htm" />
+      <error statusCode="403" redirect="/SthalDocManager/ErrorPages/404.htm" />
+      <error statusCode="404" redirect="/SthalDocManager/ErrorPages/404.htm" />
+      <error statusCode="405" redirect="/SthalDocManager/ErrorPages/404.htm" />
+      <error statusCode="406" redirect="/SthalDocManager/ErrorPages/404.htm" />
+      <error statusCode="407" redirect="/SthalDocManager/ErrorPages/404.htm" />
+    </customErrors>
+  -->
+    <!--  AUTHENTICATION 
+          This section sets the authentication policies of the application. Possible modes are "Windows", 
+          "Forms", "Passport" and "None"
+
+          "None" No authentication is performed. 
+          "Windows" IIS performs authentication (Basic, Digest, or Integrated Windows) according to 
+           its settings for the application. Anonymous access must be disabled in IIS. 
+          "Forms" You provide a custom form (Web page) for users to enter their credentials, and then 
+           you authenticate them in your application. A user credential token is stored in a cookie.
+          "Passport" Authentication is performed via a centralized authentication service provided
+           by Microsoft that offers a single logon and core profile services for member sites.
+    -->
+    <authentication mode="Forms">
+      <forms loginUrl="~/Bill_Sys_Login.aspx" timeout="120" />
+    </authentication>
+    <!--  AUTHORIZATION 
+          This section sets the authorization policies of the application. You can allow or deny access
+          to application resources by user or role. Wildcards: "*" mean everyone, "?" means anonymous 
+          (unauthenticated) users.
+    -->
+    <authorization>
+      <!--<allow users="*" /> -->
+      <!-- Allow all users -->
+      <deny users="?" />
+      <!--  <allow     users="[comma separated list of users]"
+                roles="[comma separated list of roles]"/>
+          <deny      users="[comma separated list of users]"
+                roles="[comma separated list of roles]"/>
+        -->
+    </authorization>
+    <!--  APPLICATION-LEVEL TRACE LOGGING
+          Application-level tracing enables trace log output for every page within an application. 
+          Set trace enabled="true" to enable application trace logging.  If pageOutput="true", the
+          trace information will be displayed at the bottom of each page.  Otherwise, you can view the 
+          application trace log by browsing the "trace.axd" page from your web application
+          root. 
+    -->
+    <trace enabled="false" requestLimit="10" pageOutput="false" traceMode="SortByTime" localOnly="true" />
+    <!--  SESSION STATE SETTINGS
+          By default ASP.NET uses cookies to identify which requests belong to a particular session. 
+          If cookies are not available, a session can be tracked by adding a session identifier to the URL. 
+          To disable cookies, set sessionState cookieless="true".
+    -->
+    <sessionState cookieless="UseCookies" mode="InProc" sqlConnectionString="LocalSqlServer" stateConnectionString="tcpip=127.0.0.1:42424" timeout="480" />
+    <!--  GLOBALIZATION
+          This section sets the globalization settings of the application. 
+    -->
+    <globalization culture="en-US" uiCulture="en-US" />
+    <xhtmlConformance mode="Legacy" />
+  </system.web>
+  <log4net debug="false">
+    <!--
+    <appender name="LogFileAppender" type="log4net.Appender.FileAppender,log4net">
+      <param name="File" value="C:\\temp\\Billing-web-log_new.txt" />
+      <param name="AppendToFile" value="true" />
+      <layout type="log4net.Layout.PatternLayout,log4net">
+        <param name="ConversionPattern" value="%d [%t] %-5p %c [%x] - %m%n" />
+      </layout>
+    </appender>
+    -->
+    <appender name="RollingFileAppender" type="log4net.Appender.RollingFileAppender">
+      <file type="log4net.Util.PatternString" value="G:\\GreenBills_Temp\\logs\\log_%date{yyyy-MM-dd}.txt" />
+      <appendToFile value="true" />
+      <rollingStyle value="Date" />
+      <datePattern value="yyyy-MM-dd" />
+      <staticLogFileName value="true" />
+      <layout type="log4net.Layout.PatternLayout">
+        <conversionPattern value="%date [%thread] %-5level %logger [%property{NDC}] - %message%newline" />
+      </layout>
+    </appender>
+    <root>
+      <priority value="ALL" />
+      <appender-ref ref="RollingFileAppender" />
+    </root>
+    <category name="my.category">
+      <priority value="DEBUG" />
+    </category>
+  </log4net>
+  <appSettings>
+    <!--<add key="Connection_String" value="Data Source=pandora-db; Initial Catalog=BillingSystem; User ID=BillingUser; Pwd=LawAllies!@#;Connect Timeout=99999; pooling='true'; Max Pool Size=500;" />
+    -->
+    <!--<add key="ConnectionString" value="Data Source=pandora-db; Initial Catalog=BillingSystem; User ID=BillingUser; Pwd=LawAllies!@#;Connect Timeout=99999; pooling='true'; Max Pool Size=500;" />-->
+    <!--
+    <add key="ConnectionString" value="Driver={SQL Server};Server=pandora-db;UID=BillingUser;PWD=LawAllies!@#;database=BillingSystem" />-->
+    <add key="DBConnectionString" value="Data Source=codearray.tk\MSSQLSERVER1; Initial Catalog= BillingSystem; User ID=sa; Pwd=CodeArray@123;Connect Timeout=36000; pooling='true'; Max Pool Size=1000;" />
+    <!--<add key="Connection_String" value="Data Source=codearray.tk\MSSQLSERVER1; Initial Catalog=BillingSystem; User ID=sa; Pwd=CodeArray@123;Connect Timeout=99999; pooling='true'; Max Pool Size=500;" />-->
+    <add key="Connection_String" value="Data Source=codearray.tk\MSSQLSERVER1; Initial Catalog=BillingSystem; User ID=sa; Pwd=CodeArray@123;Connect Timeout=99999; pooling='true'; Max Pool Size=500;" />
+    <!--<add key="Connection_String" value="Data Source=codearray.tk\MSSQLSERVER1; Initial Catalog=BillingSystem; User ID=sa; Pwd=CodeArray@123;Connect Timeout=99999; pooling='true'; Max Pool Size=500;" />-->
+    <!--<add key="Connection_String" value="Data Source=13.82.29.253; Initial Catalog=BillingSystem; User ID=BillingUser; Pwd=LawAllies!@#;Connect Timeout=99999; pooling='true'; Max Pool Size=500;" />-->
+    <add key="CommandTimeOut" value="50" />
+    <add key="ConnectionString" value="Driver={SQL Server};Data Source=codearray.tk\MSSQLSERVER1;UID=sa;Pwd=CodeArray@123;database=BillingSystem" />
+    <add key="webscanurl" value="https://www.gogreenbills.com/webscan/Scan.aspx?" />
+    <add key="ExportToExcelPath" value="E:\Working Data\Github4.5\GoGreen4.5\iisdocs\ExportToExcelPath.xls" />
+    <add key="SMTPServer" value="smtp.gmail.com" />
+    <add key="FromMailID" value="gbbticktes@gmail.com" />
+    <add key="Password" value="ggyb12345" />
+    <add key="SMTPPort" value="587" />
+    <add key="EnableSSL" value="true" />
+    <add key="CCEmail" value="gbsupport@codearray.tech" />
+    <add key="XMLCCPath" value="C:/inetpub/wwwroot/XML/cc.xml" />
+    <add key="Only_1500_in_PVT_Bill" value="false" />
+    <add key="XMLPath" value="C:/inetpub/wwwroot/XML/Email.xml" />
+    <add key="1500_form" value="C:/inetpub/wwwroot/Config/1500_form.xml" />
+    <add key="UnEncrypted1500" value="C:/inetpub/wwwroot/UnEncrypted1500.pdf" />
+    <add key="URL" value="https://www.gogreenbills.com/Bill_Sys_Login.aspx" />
+    <add key="DoctorModuleURL" value="https://gogreenbills.com/imdoctor/" />
+    <add key="AxpConnectionString" value="Provider=sqloledb;Data Source=codearray.tk\MSSQLSERVER1;Initial Catalog=BillingSystem;User Id=sa;Password=CodeArray@123;Connect Timeout=30000 ; pooling='true'; Max Pool Size=500;" />
+    <add key="MyConnectionString" value="Data Source=codearray.tk\MSSQLSERVER1;Initial Catalog=BillingSystem;User Id=sa;Password=CodeArray@123;Connect Timeout=9999 ; pooling='true'; Max Pool Size=500;" />
+    <add key="TestMyConnectionString" value="Data Source=codearray.tk\MSSQLSERVER1; Initial Catalog=BillingSystem; User ID=sa; Pwd=CodeArray@123;Connect Timeout=30000; pooling='true'; Max Pool Size=500;" />
+    <add key="UploadFileURI" value="https://www.gogreenbills.com/Document%20Manager/case/vb_CaseInformation.aspx" />
+    <add key="TEMPLATE_VARIABLES_FILE" value="C:/inetpub/wwwroot/Config/ReplaceString.xml" />
+    <add key="TEMPLATE_VARIABLES_FILE_FOR_BILL" value="C:/inetpub/wwwroot/Config/ReplaceStringForBill.xml" />
+    <add key="DefaultTemplateName" value="NF3" />
+    <add key="PDFORHTML" value="HTML" />
+    <add key="DefaultC4.2TemplateName" value="c4.2.pdf" />
+    <add key="TEMPLATE_VARIABLES_FILE_FOR_C4" value="C:/inetpub/wwwroot/Config/WC4_0_SQL_To_PDF_Parameters.xml" />
+    <add key="TEMPLATE_VARIABLES_FILE_FOR_C42" value="C:/inetpub/wwwroot/Config/WC4.2.xml" />
+    <add key="TEMPLATE_VARIABLES_FILE_FOR_C43" value="C:/inetpub/wwwroot/Config/WC4_3_SQL_To_PDF_Parameters.xml" />
+    <add key="PDF_FILE_PATH_C4" value="E:/PDF/c4_worestrictions.pdf" />
+    <add key="PDF_FILE_PATH_C42" value="C:/inetpub/wwwroot/c4.2.pdf" />
+    <add key="PDF_FILE_PATH_C43" value="C:/inetpub/wwwroot/c4.3.pdf" />
+    <add key="PACKET_DOC_URL" value="https://www.gogreenbills.com/Packet Doc/" />
+    <add key="NextDiagnosisTemplate" value="DiagnosisNF3" />
+    <add key="CutePDFSerialKey" value="FS21-001-67901587-19272105" />
+    <add key="NF3_XML_FILE" value="C:/inetpub/wwwroot/Config/NF3.xml" />
+    <add key="NF3_PDF_FILE" value="C:/inetpub/wwwroot/NF3_Page1.pdf" />
+    <add key="NF33_XML_FILE" value="C:/inetpub/wwwroot/Config/NF33.xml" />
+    <add key="NF3_PAGE3" value="C:/inetpub/wwwroot/NF33.pdf" />
+    <add key="NF3_PAGE4" value="C:/inetpub/wwwroot/NF34.pdf" />
+    <add key="DocumentManagerURL" value="https://www.gogreenbills.com/MBSScans/" />
+    <add key="DocumentMergeXML" value="C:/inetpub/wwwroot/Config/Config_MergeDocuments.xml" />
+    <add key="DOC_INPUT_FILE_PATH" value="C:/inetpub/wwwroot/Templates/" />
+    <add key="DOC_OUT_FILE_PATH" value="G:\LawAllies\MBSUpload\" />
+    <add key="VIEWWORD_DOC" value="https://www.gogreenbills.com/MBSScans/" />
+    <add key="EXCEL_SHEET" value="E:\LawAllies\MBSUpload\Reports\" />
+    <add key="FETCHEXCEL_SHEET" value="https://www.gogreenbills.com/MBSScans/Reports/" />
+    <add key="NF2_XML_FILE" value="C:/inetpub/wwwroot/Config/NF2.xml" />
+    <add key="NF2_PDF_FILE" value="C:/inetpub/wwwroot/NF2.pdf" />
+    <add key="PATIENT_INFO_HTML" value="D:\Working Data\Github4.5\GoGreen4.5/PatientInfo.htm" />
+    <add key="PATIENT_INFO_XML" value="C:/inetpub/wwwroot/Config/PatientInfo.xml" />
+    <add key="NF2_ENVELOPE_XML_FILE" value="C:/inetpub/wwwroot/Config/NF2_ENVELOPE.xml" />
+    <add key="NF2_ENVELOPE_PDF_FILE" value="C:/inetpub/wwwroot/NF2_ENVELOPE.pdf" />
+    <add key="NF3_ENVELOPE_XML_FILE" value="C:/inetpub/wwwroot/Config/NF3_ENVELOPE.xml" />
+    <add key="NF3_ENVELOPE_XML_WC_FILE" value="C:/inetpub/wwwroot/Config/NF3_ENVELOPE_WC.xml" />
+    <add key="PVT_PDF_FILE" value="C:/inetpub/wwwroot/1500cms 2.0B (unsecured)(1).pdf" />
+    <add key="NF2_SENT_MAIL_HTML" value="D:\NF2Mail.htm" />
+    <add key="NF2_SENT_MAIL_XML" value="D:/NF2.xml" />
+    <add key="HILLSIDE_XML_FILE" value="C:/inetpub/wwwroot/Config/NewHillside.xml" />
+    <add key="HILLSIDE_PDF_FILE" value="C:/inetpub/wwwroot/NewHillside.pdf" />
+    <add key="POM_HTML" value="D:\Working Data\Github4.5\GoGreen4.5/POM.htm" />
+    <add key="TEST_POM_HTML" value="D:\Working Data\Github4.5\GoGreen4.5/iisdocs/POMTest.htm" />
+    <add key="POM_RECORD_PER_PAGE" value="12" />
+    <add key="WC_TREATMENT_RECORD_PER_PAGE" value="20" />
+    <add key="PT_XML_Path" value="C:/inetpub/wwwroot/Config/PTNotes.xml" />
+    <add key="PT_PDF_Path" value="C:/inetpub/wwwroot/PT Progress Notes.pdf" />
+    <add key="IM_XML_Path" value="C:/inetpub/wwwroot/Config/IMNotes.xml" />
+    <add key="IM_PDF_Path" value="C:/inetpub/wwwroot/IM Form.pdf" />
+    <add key="IM_FOLLOWUP_XML_Path" value="C:/inetpub/wwwroot/Config/IM_FOLLOWUP.xml" />
+    <add key="IM_FOLLOWUP_PDF_Path" value="C:/inetpub/wwwroot/IM Follow-up Feb-18-2010.pdf" />
+    <add key="Accu_FollowUp_XML_Path" value="C:/inetpub/wwwroot/Config/Accu_FollowUp.xml" />
+    <add key="Accu_FollowUp_PDF_Path" value="C:/inetpub/wwwroot/Accu_Followup_Form_Feb_24_2010.pdf" />
+    <add key="AC_REEVAL_XML_Path" value="C:/inetpub/wwwroot/Config/ROM.xml" />
+    <add key="AC_REEVAL_PDF_Path" value="C:/inetpub/wwwroot/Accu_Re_Eval_Form Feb-24-2010.pdf" />
+    <add key="PDF_FILE_PATH_patientinfo" value="C:/inetpub/wwwroot/Patient_Information.pdf" />
+    <add key="ACCUREAL_ROM_XML_Path" value="C:/inetpub/wwwroot/Config/ACCUREAL_ROM.xml" />
+    <add key="ACCUREAL_ROM_PDF_Path" value="C:/inetpub/wwwroot/ROM FORM Feb-24-2010.pdf" />
+    <add key="MST_CHIRO_CA_XML_Path" value="C:/inetpub/wwwroot/Config/MST_CHIRO_CA_DETAIL.xml" />
+    <add key="MST_CHIRO_CA_PDF_Path" value="C:/inetpub/wwwroot/Chiro CA Feb-24-2010.pdf" />
+    <add key="Supplies_IM_INICIAL_XML_Path" value="C:/inetpub/wwwroot/Config/Supplies_IM_Initial_Get_Details.xml" />
+    <add key="CO_Refferal_IM_XML_Path" value="C:/inetpub/wwwroot/Config/Refferal_IM.xml" />
+    <add key="Supplies_XML_Path" value="C:/inetpub/wwwroot/Config/Supplies_Get_Details.xml" />
+    <add key="Refferal_IM_FOLLOWUP_XML_Path" value="C:/inetpub/wwwroot/Config/Refferal_IM_Followup.xml" />
+    <add key="Supplies_PDF_Path" value="C:/inetpub/wwwroot/SUPPLIES FORM  Feb-24-2010.pdf" />
+    <add key="CO_Refferal_PDF_Path" value="C:/inetpub/wwwroot/Referral Form  Feb-24-2010.pdf" />
+    <add key="MST_ECG_IM_FOLLOWUP_XML_Path" value="C:/inetpub/wwwroot/Config/ECG_IM_FOLLOWING.xml" />
+    <add key="MST_ECG_PDF_Path" value="C:/inetpub/wwwroot/ECG Form Feb-24-2010.pdf" />
+    <add key="MST_ECG_IM_XML_Path" value="C:/inetpub/wwwroot/Config/ECG_IM.xml" />
+    <add key="LIEN_XML_Path" value="C:/inetpub/wwwroot/Config/LIENXML.xml" />
+    <add key="LIEN_PDF_Path" value="C:/inetpub/wwwroot/LIEN Mar-05-2010.pdf" />
+    <add key="PatientIntake_XML_Path" value="C:/inetpub/wwwroot/Config/PatientIntakeXML.xml" />
+    <add key="PatientIntake_PDF_Path" value="C:/inetpub/wwwroot/Patient Intake form Mar-05-2010.pdf" />
+    <add key="HIPPA_XML_Path" value="C:/inetpub/wwwroot/Config/HIPPAXML.xml" />
+    <add key="HIPPA_PDF_Path" value="C:/inetpub/wwwroot/HIPPA_Mar-04-2010.pdf" />
+    <add key="AOB_XML_Path" value="C:/inetpub/wwwroot/Config/AOB1.xml" />
+    <add key="AOB_PDF_Path" value="C:/inetpub/wwwroot/AOB_Mar-04-2010.pdf" />
+    <add key="Accu_Initial_XML_Path" value="C:/inetpub/wwwroot/Config/Accu_Initial_PDF_xml.xml" />
+    <add key="Accu_Initial_PDF_Path" value="C:/inetpub/wwwroot/Accu_Initial_Form  Feb-24-2010.pdf" />
+    <add key="MRI_INTAKE_XML_Path" value="C:/inetpub/wwwroot/Config/MRI-Intake.xml" />
+    <add key="MRI_INTAKE_PDF_Path" value="C:/inetpub/wwwroot/MRI-Intake.pdf" />
+    <add key="MRI_QUESTIONAIRE_XML_Path" value="C:/inetpub/wwwroot/Config/MRI-QUESTIONAIRE.xml" />
+    <add key="MRI_QUESTIONAIRE_PDF_Path" value="C:/inetpub/wwwroot/MRI-QUESTIONAIRE.pdf" />
+    <add key="TEST_FACILITY_ENVELOPE_XML_WC_FILE" value="C:/inetpub/wwwroot/Config/TestFacilityWC.xml" />
+    <add key="TEST_FACILITY_ENVELOPE_XML_FILE" value="C:/inetpub/wwwroot/Config/TestFacilityEnvelop.xml" />
+    <add key="TEST_TEMPLATE_VARIABLES_FILE_FOR_C4" value="C:/inetpub/wwwroot/Config/Test_WC4_0_SQL_To_PDF_Parameters.xml" />
+    <add key="PROVIDERNAME" value="C:/inetpub/wwwroot/Config/NF2_GET_PROVIDERNAME.xml" />
+    <add key="WC_HTML" value="D:\Working Data\Github4.5\GoGreen4.5/WC.htm" />
+    <add key="TEST_TEMPLATE_VARIABLES_FILE_FOR_C4_P1" value="C:/inetpub/wwwroot/Config/c4.0Part1.xml" />
+    <add key="TEST_TEMPLATE_VARIABLES_FILE_FOR_C4_P2" value="C:/inetpub/wwwroot/Config/c4.0Part2.xml" />
+    <add key="PDF_FILE_PATH_C4_P1" value="C:/inetpub/wwwroot/c4.0Part1_New.pdf" />
+    <add key="PDF_FILE_PATH_C4_P2" value="C:/inetpub/wwwroot/C4.0Part2New.pdf" />
+    <add key="TEST_TEMPLATE_VARIABLES_FILE_FOR_C4_2_P1" value="C:/inetpub/wwwroot/Config/c4.2Part1.xml" />
+    <add key="TEST_TEMPLATE_VARIABLES_FILE_FOR_C4_2_P2" value="C:/inetpub/wwwroot/Config/c4.2Part2.xml" />
+    <add key="PDF_FILE_PATH_C4_2_P1" value="C:/inetpub/wwwroot/c4.2Part1.pdf" />
+    <add key="PDF_FILE_PATH_C4_2_P2" value="C:/inetpub/wwwroot/c4.2Part2.pdf" />
+    <add key="TEST_TEMPLATE_VARIABLES_FILE_FOR_C42" value="C:/inetpub/wwwroot/Config/Test_WC4_2_SQL_To_PDF_Parameters.xml" />
+    <add key="TEST_TEMPLATE_VARIABLES_FILE_FOR_C43" value="C:/inetpub/wwwroot/Config/Test_WC4_3_SQL_To_PDF_Parameters.xml" />
+    <add key="BILLING_TEMPLATE_VARIABLES_FILE_FOR_C4_P1" value="C:/inetpub/wwwroot/Config/Billing_c4.0Part1.xml" />
+    <add key="BILLING_TEMPLATE_VARIABLES_FILE_FOR_C4_P2" value="C:/inetpub/wwwroot/Config/Biiing_c4.0Part2.xml" />
+    <add key="BILLING_TEMPLATE_VARIABLES_FILE_FOR_C4_2_P1" value="C:/inetpub/wwwroot/Config/Billingc4.2Part1.xml" />
+    <add key="BILLING_TEMPLATE_VARIABLES_FILE_FOR_C4_2_P2" value="C:/inetpub/wwwroot/Config/Billingc4.2Part2.xml" />
+    <add key="WCReferal_PDF_FILE_5_1" value="C:/inetpub/wwwroot/C-4AMR_5_1.pdf" />
+    <add key="WCReferal_PDF_FILE_5_2" value="C:/inetpub/wwwroot/C-4AMR_5_2.pdf" />
+    <add key="WCReferal_PDF_FILE_5_3" value="C:/inetpub/wwwroot/C-4AMR[2]_5.pdf" />
+    <add key="WCReferal_XML_FILE_5" value="C:/inetpub/wwwroot/Config/C-4AMR[2].xml" />
+    <add key="SHOW_REPORT_HTML" value="D:\Working Data\Github4.5\GoGreen4.5/ShowReport.htm" />
+    <add key="NO_OF_RECORDS" value="20" />
+    <add key="MISSING_REPORT_HTML" value="D:\Working Data\Github4.5\GoGreen4.5/Missing_Report.htm" />
+    <add key="PatientIntakePrint_XML_Path" value="C:/inetpub/wwwroot/Config/PatientIntakePrintXML.xml" />
+    <add key="LIEN_PRINT_XML_Path" value="C:/inetpub/wwwroot/Config/LIENPRINTXML.xml" />
+    <add key="AOBPrint_XML_Path" value="C:/inetpub/wwwroot/Config/AOBPrint.xml" />
+    <add key="HCFA1500_XML_FILE" value="C:/inetpub/wwwroot/Config/HCFA -1500.xml" />
+    <add key="HCFA1500_PDF_FILE" value="C:/inetpub/wwwroot/HCFA -1500.pdf" />
+    <add key="ScannedFilesPath" value="../Scans/" />
+    <add key="FilesPath" value="UploadedTemplateFiles/" />
+    <add key="MergedFilesPath" value="MergedFiles/" />
+    <add key="ApplicationName" value="DCaseDocTemp" />
+    <add key="DesktopDefaultUrl" value="" />
+    <add key="DocumentManagerServer" value="www.gogreenbills.com" />
+    <add key="DragAndDropEnable" value="false" />
+    <add key="EditNodeEnable" value="false" />
+    <add key="LFIRMDOCURL" value="https://www.gogreenbills.com/BatchDownloads/" />
+    <add key="WCReferal_XML_FILE" value="C:/inetpub/wwwroot/Config/C-4AMR[1].xml" />
+    <add key="WCReferal_PDF_FILE" value="C:/inetpub/wwwroot/C-4AMR[1].pdf" />
+    <add key="IISDOCSRTFPath" value="C:\template\sample.rtf" />
+    <add key="RPNLicenseKey" value="8HVDS-4K3TA-C76LM" />
+    <add key="WebTerLicenseKey" value="PX8LS-UN7DA-84KN3" />
+    <add key="USERNAME_LIST" value="E:/UserName_List.txt" />
+    <add key="NO_OF_SHOW_RECORDS" value="8" />
+    <add key="NO_OF_SHOW_RECORDS_EMG" value="11" />
+    <add key="privatekey" value="6LfFUsASAAAAANGo1tc19XVUQ5NTP8LN6VqXXvla" />
+    <add key="publickey" value="6LfFUsASAAAAAGQT0YbAu8Jl8kOnpitxQ0-7y7QJ" />
+    <add key="CaptchaTheme" value="Red" />
+    <add key="CaptchaWidth" value="150" />
+    <add key="CaptchaHight" value="500" />
+    <add key="From" value="tatyanar@citimedny.com" />
+    <add key="Logo" value="Go Green Bills" />
+    <add key="Port" value="587" />
+    <add key="Host" value="smtp.gmail.com" />
+    <add key="To" value="" />
+    <add key="cc" value="" />
+    <add key="Footer" value="Note: This is an auto generated e-mail, replies to this e-mail id will not reach us." />
+    <add key="BillDownload" value="https://www.gogreenbills.com/BillDownload/" />
+    <add key="WCLOGOPATH" value="E:/Working Data/Github4.5/GoGreen4.5/Images/WCLOGO.JPG" />
+    <add key="Headingstyle" value=" style='font-weight:bold;font-size=8pt'" />
+    <add key="Datastyle" value=" style='font-size=8pt'" />
+    <add key="Bottomstyle" value=" style='font-weight:bold;font-size=10pt'" />
+    <add key="PDF_FILE_PATH_CharoInfo" value="C:/inetpub/wwwroot/CH_Notes.pdf" />
+    <add key="PDF_FILE_PATH_PtInfo" value="https://www.gogreenbills.com/PT_Notes.pdf" />
+    <add key="BASEPATH" value="E:\LawAllies\MBSUpload\" />
+    <add key="FILE_URL" value="D:/LawAllies/MBSUpload/" />
+    <add key="REPORTFOLDER" value="Reports\" />
+    <add key="XLPATH" value="G:\LawAllies\batch-downloads\Downloads\temp.xls" />
+    <add key="VR" value="Verification Requests" />
+    <add key="POM" value="Proof of Mailing" />
+    <add key="DEN" value="Denials" />
+    <add key="PAY" value="Payments" />
+    <add key="LFSearchCase" value="C:/inetpub/wwwroot/XML/PatientSearch.xml" />
+    <add key="LienTemplate" value="C:\Inetpub\wwwroot\iisdocs\" />
+    <add key="EmployerTemplate" value="C:\Inetpub\wwwroot\iisdocs\" />
+    <add key="BASEPATH_OF_DOWNLOAD" value="G:/LawAllies/batch-downloads/" />
+    <add key="DownLoadSize" value="600" />
+    <add key="PDF_FILE_PATH_OCT" value="C:/inetpub/wwwroot/otpt4-9.pdf" />
+    <add key="PDF_FILE_PATH_OCT_1" value="C:/inetpub/wwwroot/otpt4-9_1.pdf" />
+    <add key="CREATED_PDF_FILE_PATH" value="G:\LawAllies\MBSUpload" />
+    <add key="BlankMergePth" value="C:/inetpub/wwwroot/Blank.pdf" />
+    <add key="MergePth" value="G:/GreenBills_Temp/Merge_Files/Doc/" />
+    <add key="CHECKBOXPATH" value="E:/Working Data/Github4.5/GoGreen4.5/Images/" />
+    <add key="UNCHECKBOXPATH" value="E:/Working Data/Github4.5/GoGreen4.5/Images/" />
+    <add key="HIPPAImage" value="E:/Working Data/Github4.5/GoGreen4.5/Images/img.JPG" />
+    <add key="CHECKRADIO" value="E:/Working Data/Github4.5/GoGreen4.5/Images/" />
+    <add key="UNCHECKRADIO" value="E:/Working Data/Github4.5/GoGreen4.5/Images/" />
+    <add key="PTchkboxpath" value="E:/Working Data/Github4.5/GoGreen4.5/Images" />
+    <add key="PTprovidersignpath" value="E:/Working Data/Github4.5/GoGreen4.5/Images" />
+    <add key="defaultsignpath2" value="E:/Working Data/Github4.5/GoGreen4.5/Images" />
+    <add key="CHchkboxpath" value="E:/Working Data/Github4.5/GoGreen4.5/Images" />
+    <add key="chkboxpath" value="E:/Working Data/Github4.5/GoGreen4.5/Images" />
+    <add key="CHprovidersignpath" value="E:/Working Data/Github4.5/GoGreen4.5/Images" />
+    <add key="defaultsignpath1" value="E:/Working Data/Github4.5/GoGreen4.5/Images" />
+    <add key="HOSTMAIL" value="green.your.bills.support@procomsys.in" />
+    <add key="HOSPASSWORD" value="gybsupport!@#" />
+    <add key="Subject" value="[GreenYourBills - File transfer notification](GoGYB)" />
+    <add key="signsize" value="10240" />
+    <add key="cursorsignsize" value="670" />
+    <add key="PDFCHECKBOXPATH" value="E:/Working Data/Github4.5/GoGreen4.5/Images" />
+    <add key="PDFUNCHECKBOXPATH" value="E:/Working Data/Github4.5/GoGreen4.5/Images" />
+    <add key="PDFCHECKRADIO" value="E:/Working Data/Github4.5/GoGreen4.5/Images" />
+    <add key="PDFUNCHECKRADIO" value="E:/Working Data/Github4.5/GoGreen4.5/Images" />
+    <add key="TicketOpenTemplete" value="D:/Working Data/Github4.5/GoGreen4.5/Templates/ticketopened.html" />
+    <add key="temp_files" value="G:/GreenBills_Temp/temp_files/" />
+    <add key="GBBHeader_Path" value="G:\LawAllies\batch-downloads\Downloads\GBBHeader.xls" />
+    <add key="DoseSpotBaseURL" value="my.staging.dosespot.com" />
+    <add key="DosespotKey" value="9v7RWDD9UxWsAJdfXhQXECWkzkCuwHqe" />
+    <add key="DosespotProductionBit" value="false" />
+    <add key="EmailVerfication" value="http://localhost:49990/Bill_Sys_EmailVerfication.aspx" />
+    <add key="PWD_ENCRYPTION_KEY" value="greenbills" />
+    <add key="COOKIE_ENCRYPT_KEY" value="greenbills" />
+    <add key="PASSWORD_RESET_TIMEOUT" value="30" />
+    <add key="PASSWORD_RESET_TIMEOUT_MODE" value="minute" />
+    <add key="ACCNT_VERIFY_TIMEOUT" value="30" />
+    <add key="ACCNT_VERIFY_TIMEOUT_MODE" value="minute" />
+    <add key="OTP_RESET_TIMEOUT" value="20" />
+    <add key="OTP_RESET_TIMEOUT_MODE" value="minute" />
+    <add key="MAX_USER_ALLOW" value="20" />
+    <add key="Minus" value="280" />
+    <add key="LogFilePath" value="e:\\GB-Logs\\" />
+    <add key="AppLog" value="false" />
+    <add key="ErrorLog" value="true" />
+    <add key="DetailedLog" value="true" />
+  </appSettings>
+  <system.webServer>
+    <validation validateIntegratedModeConfiguration="false" />
+    <modules>
+      <remove name="FormsAuthenticationModule" />
+      <add name="FormsAuthenticationModule" type="System.Web.Security.FormsAuthenticationModule" />
+      <remove name="UrlAuthorization" />
+      <add name="UrlAuthorization" type="System.Web.Security.UrlAuthorizationModule" />
+      <add type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" name="ASPxHttpHandlerModule" />
+      <add name="SessionTimeoutRedirectModule" type="SessionTimeoutRedirectModule" />
+    </modules>
+    <handlers>
+      <remove name="elma" />
+      <add name="Elmah" path="elmah.axd" verb="POST,GET,HEAD" type="Elmah.ErrorLogPageFactory, Elmah" preCondition="integratedMode" />
+      <add type="DevExpress.Web.ASPxHttpHandlerModule, DevExpress.Web.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" verb="GET" path="DX.ashx" name="ASPxHttpHandlerModule" preCondition="integratedMode" />
+    </handlers>
+    <defaultDocument>
+      <files>
+        <add value="Bill_Sys_login.aspx" />
+      </files>
+    </defaultDocument>
+    <httpRedirect enabled="false" destination="" />
+    <security>
+      <requestFiltering>
+        <requestLimits maxAllowedContentLength="94371840" maxQueryString="99999999" />
+      </requestFiltering>
+    </security>
+  </system.webServer>
+  <connectionStrings>
+    <add name="SchedularConnection" connectionString="Data Source=codearray.tk\MSSQLSERVER1; Initial Catalog=BillingSystem; User ID=sa; Pwd=CodeArray@123;Connect Timeout=99999; pooling='true'; Max Pool Size=500;" />
+    <remove name="LocalSqlServer" />
+    <add name="LocalSqlServer" connectionString="Data Source=codearray.tk\MSSQLSERVER1\SQLEXPRESS;IntegratedSecurity=SSPI;AttachDBFilename=|DataDirectory|aspnetdb.mdf; User Instance=true" providerName="System.Data.SqlClient" />
+    <add name="elmah-express" connectionString="Data Source=codearray.tk\MSSQLSERVER1; Initial Catalog=GreenBillsLog; User ID=sa; Pwd=CodeArray@123;Connect Timeout=99999; pooling='true'; Max Pool Size=500;" />
+    <add name="ErrorLog" connectionString="Data Source=codearray.tk\MSSQLSERVER1; Initial Catalog=GreenBillsLog; User ID=sa; Pwd=CodeArray@123;Connect Timeout=99999; pooling='true'; Max Pool Size=500;" />
+  </connectionStrings>
+  <elmah>
+    <errorLog type="Elmah.SqlErrorLog, Elmah" connectionStringName="elmah-express" />
+    <errorFilter>
+      <test>
+        <equal binding="HttpStatusCode" value="404" valueType="Int32" />
+      </test>
+    </errorFilter>
+  </elmah>
+  <location path="Bill_Sys_EmailVerfication.aspx">
+    <system.web>
+      <authorization>
+        <allow users="*" />
+      </authorization>
+    </system.web>
+  </location>
+  <system.serviceModel>
+    <bindings>
+      <basicHttpBinding>
+        <binding name="APISoap">
+          <security mode="Transport" />
+        </binding>
+        <binding name="APISoap1" />
+      </basicHttpBinding>
+      <customBinding>
+        <binding name="APISoap12">
+          <textMessageEncoding messageVersion="Soap12" />
+          <httpsTransport />
+        </binding>
+      </customBinding>
+    </bindings>
+    <client>
+      <endpoint address="https://my.staging.dosespot.com/api/11/api.asmx" binding="basicHttpBinding" bindingConfiguration="APISoap" contract="DoseSpotAPI.APISoap" name="APISoap" />
+      <endpoint address="https://my.staging.dosespot.com/api/11/api.asmx" binding="customBinding" bindingConfiguration="APISoap12" contract="DoseSpotAPI.APISoap" name="APISoap12" />
+    </client>
+  </system.serviceModel>
+  <devExpress>
+    <themes enableThemesAssembly="true" styleSheetTheme="" theme="" customThemeAssemblies="" baseColor="" font="" />
+    <compression enableHtmlCompression="false" enableCallbackCompression="true" enableResourceCompression="true" enableResourceMerging="true" />
+    <settings accessibilityCompliant="false" doctypeMode="Html5" rightToLeft="false" checkReferencesToExternalScripts="false" protectControlState="true" ieCompatibilityVersion="edge" />
+    <errors callbackErrorRedirectUrl="" />
+  </devExpress>
+</configuration>
+<!--ProjectGuid: {782b6ca4-0b2d-4fe6-949f-4ce525555163}-->

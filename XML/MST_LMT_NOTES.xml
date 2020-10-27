@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_CHIRO_CA">
+  <Field Name="I_EVENT_ID" DataType="Int" Size="" Null="True" Control="TextBox" ControlID="txtEventID" Editable="True" Visible="True"></Field>
+  <StoreProcedure name="SP_MST_LMT"></StoreProcedure>
+</Table>

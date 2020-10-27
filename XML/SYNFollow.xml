@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_SYNAPTIC_FOLLOWUP">
+  <Field Name="I_EVENT_ID" DataType="Int" Size="" Null="" Control="TextBox"  ControlID="txtEventID" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PATIENT_LAST_NAME" DataType="NVarChar" Size="100" Null="False" Control="TextBox" ControlID="TXT_PATIENT_LAST_NAME" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PATIENT_FIRST_NAME" DataType="NVarChar" Size="100" Null="False" Control="TextBox" ControlID="TXT_PATIENT_FIRST_NAME" Editable="True" Visible="True"></Field>
+  <Field Name="DT_DOA" DataType="DateTime" Size="100" Null="False" Control="TextBox" ControlID="TXT_DOA" Editable="True" Visible="True"></Field>
+  <Field Name="DT_CURRENT_DATE" DataType="DateTime" Size="100"  Null="False" Control="TextBox" ControlID="TXT_CURRENT_DATE" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_DOCTOR_NOTE" DataType="NVarChar" Size="100" Null="False" Control="TextBox" ControlID="txtDocNote" Editable="True" Visible="True"></Field>
+  
+  <Field Name="SZ_TREATMENT_TIME" DataType="NVarChar" Size="100" Null="False" Control="TextBox" ControlID="txtTreatmentTime" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_LOP_BEFORE" DataType="NVarChar" Size="100" Null="False" Control="TextBox" ControlID="txtLopBefore" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_INTENSITY_BIAS" DataType="NVarChar" Size="100" Null="False" Control="TextBox" ControlID="txtIntensityBias" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_LOP_AFTER" DataType="NVarChar" Size="100" Null="False" Control="TextBox" ControlID="txtLOPAfter" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_AREA" DataType="NVarChar" Size="100" Null="False" Control="TextBox" ControlID="txtArea" Editable="True" Visible="True"></Field>
+  <StoreProcedure name="SP_SYN_FOLLOWUP"></StoreProcedure>
+</Table>
+
+
+

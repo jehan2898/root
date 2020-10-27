@@ -1,0 +1,120 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Bill_Sys_Reminder_Pop_UP.aspx.cs"
+    Inherits="AJAX_Pages_Bill_Sys_Reminder_Pop_UP" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Reminder</title>
+
+    <script language="Javascript" type="text/javascript">
+    function chkall(ival)	
+	{	
+	    var f= document.getElementById("grdReminder");	
+		for(var i=0; i<f.getElementsByTagName("input").length ;i++ )
+		{		
+		    if(f.getElementsByTagName("input").item(i).type == "checkbox" )		
+			{						
+			    f.getElementsByTagName("input").item(i).checked=ival;
+			    frmReminder.btnDelete.disabled=!ival;						
+			}			
+		}		
+	} 
+	
+	function chk()	
+	{	
+	    var f= document.getElementById("grdReminder");	
+		for(var i=0; i<f.getElementsByTagName("input").length ;i++ )
+		{		
+		    if(f.getElementsByTagName("input").item(i).type == "checkbox" )		
+			{						
+			    if(f.getElementsByTagName("input").item(i).checked==true)
+			    {			    
+			        frmReminder.btnDismiss.disabled=false;	
+			        document.getElementById('btnDismiss').disabled = false; 
+			        return;
+			    }	
+			    else
+			    {			        
+			        document.getElementById('btnDismiss').disabled = true; 
+			        frmReminder.btnDismiss.disabled=true;		
+			    }		
+			}			
+		}
+		
+	} 
+	
+	
+	
+	
+	function ConfirmDisMis()
+	{
+	
+	    var Val= confirm('Dismiss will stop the alert from appearing again. Do you want to remove it?..?');
+	    if(Val==true)
+	    {
+	     return true;
+	    }
+	    else
+	    {
+	        return false;
+	    }
+	}
+    </script>
+      <link href="Css/mainmaster.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="frmReminder" runat="server">
+        <div align="center">
+            <table border="0" cellpadding="0" cellspacing="0" width="700">
+                <tr>
+                    <td align="center" style="font-size: 16px;" valign="middle" class="form-head" height="40">
+                        <strong>Reminder</strong></td>
+                </tr>
+                <tr>
+                    <td align="left" valign="top">
+                        <asp:DataGrid ID="grdReminder" runat="server" AllowSorting="True" AutoGenerateColumns="False"
+                            CellPadding="4" Font-Names="Verdana" Font-Size="Small" ForeColor="#333333" Width="100%">
+                            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                            <EditItemStyle BackColor="#2461BF" />
+                            <SelectedItemStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                            <AlternatingItemStyle BackColor="White" />
+                            <ItemStyle BackColor="#EFF3FB" />
+                            <Columns>
+                                <asp:BoundColumn DataField="i_recurrence_id" HeaderText="i_recurrence_id" Visible="False">
+                                </asp:BoundColumn>
+                                <asp:BoundColumn DataField="I_REMINDER_ID" HeaderText="Reminder ID" Visible="False">
+                                </asp:BoundColumn>
+                                <asp:BoundColumn DataField="DT_REMINDER_DATE" HeaderText="Due Date" DataFormatString="{0:dd MMM yyyy}">
+                                </asp:BoundColumn>
+                                <asp:BoundColumn DataField="SZ_REMINDER_DESC" HeaderText="Task"></asp:BoundColumn>
+                                <asp:BoundColumn DataField="SZ_REMINDER_ASSIGN_TO" HeaderText="Assign To ID" Visible="False">
+                                </asp:BoundColumn>
+                                <asp:BoundColumn DataField="SZ_USER_NAME" HeaderText=" Assigned to"></asp:BoundColumn>
+                                <asp:BoundColumn DataField="SZ_REMINDER_ASSIGN_BY" HeaderText="REMINDER_ASSIGN_BY"
+                                    Visible="False"></asp:BoundColumn>
+                                <asp:BoundColumn DataField="SZ_REMINDER_STATUS_ID" HeaderText="REMINDER_STATUS_ID"
+                                    Visible="False"></asp:BoundColumn>
+                                <asp:TemplateColumn HeaderText="Dismiss">
+                                    <ItemTemplate>
+                                        <asp:CheckBox ID="chkSelect" runat="server" onclick="chk()" />
+                                    </ItemTemplate>
+                                </asp:TemplateColumn>
+                            </Columns>
+                            <HeaderStyle BackColor="#B5DF82" Font-Bold="True" ForeColor="White" />
+                        </asp:DataGrid>
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp;<asp:Label ID="lblREsult" runat="server" Font-Bold="True" ForeColor="Red" Text="No Record Exists..!!"
+                            Visible="False"></asp:Label></td>
+                </tr>
+                <tr>
+                    <td align="center" valign="middle" style="height: 30px">
+                        <asp:Button ID="btnDismiss" runat="server"  Text="Dismiss" Enabled="true" OnClick="btnDismiss_Click" /></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

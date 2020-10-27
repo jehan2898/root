@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="abc">
+  <Field Name="SZ_COMPANY_ID" DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox" ControlID="txtCompanyID"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_CLAIM_NUMBER" DataType="NVarChar"    Size="100"     Null="False"   Control="TextBox" ControlID="txtClaimNumber"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PATIENT_NAME" DataType="NVarChar"    Size="100"     Null="False"   Control="TextBox" ControlID="txtPatientName"            Editable="True"  Visible="True" ></Field>
+  <Field Name="DT_ACCIDENT_DATE" DataType="NVarChar"    Size="100"     Null="False"   Control="TextBox" ControlID="txtDateofAccident"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_OFFICE_ID" DataType="NVarChar"    Size="100"     Null="False"   Control="TextBox" ControlID="txtOfficeID"            Editable="True"  Visible="True" ></Field>
+  <Field Name="DT_OF_BIRTH" DataType="NVarChar"    Size="100"     Null="False"   Control="TextBox" ControlID="txtDateofBirth"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_CASE_TYPE" DataType="NVarChar"    Size="100"     Null="False"   Control="ExtendedDropDownList" ControlID="extddlCaseType"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_CASE_STATUS" DataType="NVarChar"    Size="100"     Null="False"   Control="ExtendedDropDownList" ControlID="extddlCaseStatus"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_INSURANCE_ID" DataType="NVarChar"    Size="100"     Null="False"   Control="TextBox" ControlID="txtInsuranceCompany"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_CASEID" DataType="NVarChar"    Size="4000"     Null="False"   Control="TextBox" ControlID="txtCaseId"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_CASE_NO" DataType="NVarChar"    Size="100"     Null="False"   Control="TextBox" ControlID="txtCaseNo"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PATIENT_ID" DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox" ControlID="txtPatientID"            Editable="True"  Visible="True" ></Field>
+
+  <StoreProcedure name="SP_PROVIDER_PATIENT_LIST"></StoreProcedure>
+  <ListControl name="grdPatientList"></ListControl>
+</Table>

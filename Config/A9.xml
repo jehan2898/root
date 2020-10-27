@@ -1,0 +1,19 @@
+<root>
+<document type= "FUNDING_SYSTEM" description="LSC Payoff letter template" lastmodified="June 22 2009 15:35" procedure_name="SP_A9_TEMPLATE" >
+<field db_field_name="SZ_PROVIDER_ADDRESS"       pdf_field_index="1"  pdf_field_name="SZ_PROVIDER_ADDRESS"   if_blank=" "/>
+<field db_field_name="SZ_EMPLOYER_NAME"       pdf_field_index="2"  pdf_field_name="SZ_EMPLOYER_NAME"   if_blank=" "/>
+<field db_field_name="SZ_PROVIDER_NAME"       pdf_field_index="3"  pdf_field_name="SZ_PROVIDER_NAME"   if_blank=" "/>
+<field db_field_name="DT_DATE_OF_INJURY"       pdf_field_index="4"  pdf_field_name="DT_DATE_OF_INJURY"   if_blank=" "/>
+<field db_field_name="SZ_RELATIONSHIP"       pdf_field_index="5"  pdf_field_name="SZ_RELATIONSHIP"   if_blank=" "/>
+<field db_field_name="SZ_EMPLOYER_ADDRESS"       pdf_field_index="6"  pdf_field_name="SZ_EMPLOYER_ADDRESS"   if_blank=" "/>
+<field db_field_name="SZ_CLAIMANT_NAME"       pdf_field_index="7"  pdf_field_name="SZ_CLAIMANT_NAME"   if_blank=" "/>
+<field db_field_name="SZ_CARRIER_CASE_NO"       pdf_field_index="8"  pdf_field_name="SZ_CARRIER_CASE_NO"   if_blank=" "/>
+<field db_field_name="DT_DATE"       pdf_field_index="9"  pdf_field_name="DT_DATE"   if_blank=" "/>
+<field db_field_name="SZ_RESPONSIBLE_PARTY_NAME"       pdf_field_index="10"  pdf_field_name="SZ_RESPONSIBLE_PARTY_NAME"   if_blank=" "/>
+<field db_field_name="SZ_CLAIMANT_ADDRESS"       pdf_field_index="11"  pdf_field_name="SZ_CLAIMANT_ADDRESS"   if_blank=" "/>
+<field db_field_name="SZ_SSN"       pdf_field_index="12"  pdf_field_name="SZ_SSN"   if_blank=" "/>
+<field db_field_name="SZ_NAME_OTHER_THAN_CLAIMANT"       pdf_field_index="13"  pdf_field_name="SZ_NAME_OTHER_THAN_CLAIMANT"   if_blank=" "/>
+<field db_field_name="SZ_WCB_NO"       pdf_field_index="14"  pdf_field_name="SZ_WCB_NO"   if_blank=" "/>
+<field db_field_name="SZ_INSURANCE_CARRIER_NUMBER"       pdf_field_index="15"  pdf_field_name="SZ_INSURANCE_CARRIER_NUMBER"   if_blank=" "/>
+<field db_field_name="SZ_NATURE_OF_INJURY"       pdf_field_index="16"  pdf_field_name="SZ_NATURE_OF_INJURY"   if_blank=" "/>
+ </document></root>

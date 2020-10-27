@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_CM_ALL">
+  <Field Name ="I_EVENT_ID" DataType="Int" Size="" Null="false" Control="TextBox" ControlID="TXT_I_EVENT" Editable="True" Visible="True"></Field>
+
+
+  <Field Name ="SZ_PQ_NAME_LAST" DataType="NVarChar" Size="50" Null="False" Control="TextBox" ControlID="TXT_PQ_NAME_LAST" Editable="True" Visible="True"></Field>
+    <Field Name ="DT_PQ_DATE_OF_ACCIDENT" DataType="DateTime" Size="" Null="False" Control="TextBox" ControlID="TXT_PQ_DATE_OF_ACCIDENT" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_PQ_AT_THE_TIME_OF_ACCIDENT_I_WAS" DataType="NVarChar" Size="50" Null="False" Control="TextBox" ControlID="TXT_PQ_AT_THE_TIME_OF_ACCIDENT_I_WAS" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_PQ_WERE_U_INJURED" DataType="NVarChar" Size="50" Null="False" Control="TextBox" ControlID="TXT_PQ_WERE_U_INJURED" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_PQ_LIST" DataType="NVarChar" Size="50" Null="False" Control="TextBox" ControlID="TXT_PQ_LIST" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_PQ_RELN_WID_PASSANGERS" DataType="NVarChar" Size="50" Null="False" Control="TextBox" ControlID="TXT_PQ_RELN_WID_PASSANGERS" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_PQ_NEONE_FRM_OTHER_VEHICLE" DataType="NVarChar" Size="50" Null="False" Control="TextBox" ControlID="TXT_PQ_NEONE_FRM_OTHER_VEHICLE" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_PQ_IF_YES_SPECIYFY_WHOM" DataType="NVarChar" Size="50" Null="False" Control="TextBox" ControlID="TXT_PQ_IF_YES_SPECIYFY_WHOM" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_PQ_PRINT_NAME" DataType="NVarChar" Size="50" Null="False" Control="TextBox" ControlID="TXT_PQ_PRINT_NAME" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_PQ_SS" DataType="NVarChar" Size="50" Null="False" Control="TextBox" ControlID="TXT_PQ_SS" Editable="True" Visible="True"></Field>
+  <Field Name ="DT_PQ_DATE" DataType="DateTime" Size="" Null="False" Control="TextBox" ControlID="TXT_PQ_DATE" Editable="True" Visible="True"></Field>
+
+
+
+
+  <StoreProcedure name="SP_CM_ALL2"></StoreProcedure>
+</Table>

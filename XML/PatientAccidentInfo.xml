@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="TXN_PATIENT_ACCIDENT_DETAILS">
+  <Field Name="SZ_ACCIDENT_INFO_ID"       DataType="NVarChar"    Size="20"    Null="False"  Control="TextBox"  ControlID=""                     Editable="False" Visible="False"></Field>
+  <Field Name="SZ_PATIENT_ID"             DataType="NVarChar"    Size="20"    Null="False"  Control="TextBox"  ControlID="txtPatientID"         Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PLATE_NO"               DataType="NVarChar"    Size="20"    Null="False"  Control="TextBox"  ControlID="txtPlatenumber"       Editable="True"  Visible="True" ></Field>
+  <Field Name="DT_ACCIDENT_DATE"          DataType="DateTime"    Size=""      Null="False"  Control="TextBox"  ControlID="txtDateofAccident"    Editable="True"  Visible="True" ></Field>  
+  <Field Name="SZ_ACCIDENT_ADDRESS"       DataType="NVarChar"    Size="50"    Null="False"  Control="TextBox"  ControlID="txtAccidentAddress"   Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_ACCIDENT_CITY"          DataType="NVarChar"    Size="50"    Null="False"  Control="TextBox"  ControlID="txtAccidentCity"      Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_ACCIDENT_STATE"         DataType="NVarChar"    Size="50"    Null="False"  Control="TextBox"  ControlID="txtAccidentState"     Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_ACCIDENT_STATE_ID"      DataType="NVarChar"    Size="50"    Null="False"  Control="ExtendedDropDownList"  ControlID="extddlAccidentState"     Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_REPORT_NO"              DataType="NVarChar"    Size="20"    Null="False"  Control="TextBox"  ControlID="txtPolicyReport"      Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PATIENT_FROM_CAR"       DataType="NVarChar"    Size="150"   Null="False"  Control="TextBox"  ControlID="txtListOfPatient"     Editable="True"  Visible="True" ></Field>  
+  <Field Name="SZ_COMPANY_ID"             DataType="NVarChar"    Size="20"    Null="False"  Control="TextBox"  ControlID="txtCompanyID"         Editable="True"  Visible="True" ></Field>
+
+  <StoreProcedure name="SP_TXN_PATIENT_ACCIDENT_DETAILS"></StoreProcedure>
+  <ListControl name=""></ListControl>
+</Table>
+
+
+
+

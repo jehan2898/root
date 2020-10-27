@@ -1,0 +1,113 @@
+<root>
+<document type= "FUNDING_SYSTEM" description="LSC Payoff letter template" lastmodified="June 22 2009 15:35" procedure_name="SP_WC_REFERAL_BILL" >
+<field db_field_name="Check Box105"       pdf_field_index="1"  pdf_field_name="Check Box105"   if_blank=" "/>
+<field db_field_name="Text59"       pdf_field_index="2"  pdf_field_name="Text59"   if_blank=" "/>
+<field db_field_name="Text48"       pdf_field_index="3"  pdf_field_name="Text48"   if_blank=" "/>
+<field db_field_name="Text37"       pdf_field_index="4"  pdf_field_name="Text37"   if_blank=" "/>
+<field db_field_name="Text26"       pdf_field_index="5"  pdf_field_name="Text26"   if_blank=" "/>
+<field db_field_name="Text15"       pdf_field_index="6"  pdf_field_name="Text15"   if_blank=" "/>
+<field db_field_name="Check Box106"       pdf_field_index="7"  pdf_field_name="Check Box106"   if_blank=" "/>
+<field db_field_name="Text49"       pdf_field_index="8"  pdf_field_name="Text49"   if_blank=" "/>
+<field db_field_name="Text38"       pdf_field_index="9"  pdf_field_name="Text38"   if_blank=" "/>
+<field db_field_name="Text27"       pdf_field_index="10"  pdf_field_name="Text27"   if_blank=" " is_phone_formate="1"/>
+<field db_field_name="Text16"       pdf_field_index="11"  pdf_field_name="Text16"   if_blank=" "/>
+<field db_field_name="Check Box107"       pdf_field_index="12"  pdf_field_name="Check Box107"   if_blank=" "/>
+<field db_field_name="Text39"       pdf_field_index="13"  pdf_field_name="Text39"   if_blank=" "/>
+<field db_field_name="Text28"       pdf_field_index="14"  pdf_field_name="Text28"   if_blank=" "/>
+<field db_field_name="Text17"       pdf_field_index="15"  pdf_field_name="Text17"   if_blank=" "/>
+<field db_field_name="Text1"       pdf_field_index="16"  pdf_field_name="Text1"   if_blank=" "/>
+<field db_field_name="Text29"       pdf_field_index="17"  pdf_field_name="Text29"   if_blank=" "/>
+<field db_field_name="Text18"       pdf_field_index="18"  pdf_field_name="Text18"   if_blank=" "/>
+<field db_field_name="Text2"       pdf_field_index="19"  pdf_field_name="Text2"   if_blank=" "/>
+<field db_field_name="Text90"       pdf_field_index="20"  pdf_field_name="Text90"   if_blank=" "/>
+<field db_field_name="Text19"       pdf_field_index="21"  pdf_field_name="Text19"   if_blank=" "/>
+<field db_field_name="Text3"       pdf_field_index="22"  pdf_field_name="Text3"   if_blank=" "/>
+<field db_field_name="Text91"       pdf_field_index="23"  pdf_field_name="Text91"   if_blank=" "/>
+<field db_field_name="Text80"       pdf_field_index="24"  pdf_field_name="Text80"   if_blank=" "/>
+<field db_field_name="Text4"       pdf_field_index="25"  pdf_field_name="Text4"   if_blank=" "/>
+<field db_field_name="Text92"       pdf_field_index="26"  pdf_field_name="Text92"   if_blank=" "/>
+<field db_field_name="Text81"       pdf_field_index="27"  pdf_field_name="Text81"   if_blank=" "/>
+<field db_field_name="Text70"       pdf_field_index="28"  pdf_field_name="Text70"   if_blank=" "/>
+<field db_field_name="Text5"       pdf_field_index="29"  pdf_field_name="Text5"   if_blank=" "/>
+<field db_field_name="Text93"       pdf_field_index="30"  pdf_field_name="Text93"   if_blank=" "/>
+<field db_field_name="Text82"       pdf_field_index="31"  pdf_field_name="Text82"   if_blank=" "/>
+<field db_field_name="Text71"       pdf_field_index="32"  pdf_field_name="Text71"   if_blank=" "/>
+<field db_field_name="Text60"       pdf_field_index="33"  pdf_field_name="Text60"   if_blank=" "/>
+<field db_field_name="Text6"       pdf_field_index="34"  pdf_field_name="Text6"   if_blank=" "/>
+<field db_field_name="Text94"       pdf_field_index="35"  pdf_field_name="Text94"   if_blank=" "/>
+<field db_field_name="Text83"       pdf_field_index="36"  pdf_field_name="Text83"   if_blank=" "/>
+<field db_field_name="Text72"       pdf_field_index="37"  pdf_field_name="Text72"   if_blank=" "/>
+<field db_field_name="Text61"       pdf_field_index="38"  pdf_field_name="Text61"   if_blank=" "/>
+<field db_field_name="Text50"       pdf_field_index="39"  pdf_field_name="Text50"   if_blank=" "/>
+<field db_field_name="Text7"       pdf_field_index="40"  pdf_field_name="Text7"   if_blank=" " is_phone_formate="1"/>
+<field db_field_name="Text95"       pdf_field_index="41"  pdf_field_name="Text95"   if_blank=" "/>
+<field db_field_name="Text84"       pdf_field_index="42"  pdf_field_name="Text84"   if_blank=" "/>
+<field db_field_name="Text73"       pdf_field_index="43"  pdf_field_name="Text73"   if_blank=" "/>
+<field db_field_name="Text62"       pdf_field_index="44"  pdf_field_name="Text62"   if_blank=" "/>
+<field db_field_name="Text51"       pdf_field_index="45"  pdf_field_name="Text51"   if_blank=" "/>
+<field db_field_name="Text40"       pdf_field_index="46"  pdf_field_name="Text40"   if_blank=" "/>
+<field db_field_name="Text8"       pdf_field_index="47"  pdf_field_name="Text8"   if_blank=" "/>
+<field db_field_name="Text100"       pdf_field_index="48"  pdf_field_name="Text100"   if_blank=" " is_date_formate="1"/>
+<field db_field_name="Text96"       pdf_field_index="49"  pdf_field_name="Text96"   if_blank=" "/>
+<field db_field_name="Text85"       pdf_field_index="50"  pdf_field_name="Text85"   if_blank=" "/>
+<field db_field_name="Text74"       pdf_field_index="51"  pdf_field_name="Text74"   if_blank=" "/>
+<field db_field_name="Text63"       pdf_field_index="52"  pdf_field_name="Text63"   if_blank=" "/>
+<field db_field_name="Text52"       pdf_field_index="53"  pdf_field_name="Text52"   if_blank=" "/>
+<field db_field_name="Text41"       pdf_field_index="54"  pdf_field_name="Text41"   if_blank=" "/>
+<field db_field_name="Text30"       pdf_field_index="55"  pdf_field_name="Text30"   if_blank=" "/>
+<field db_field_name="Text9"       pdf_field_index="56"  pdf_field_name="Text9"   if_blank=" "/>
+<field db_field_name="Text101"       pdf_field_index="57"  pdf_field_name="Text101"   if_blank=" "/>
+<field db_field_name="Text97"       pdf_field_index="58"  pdf_field_name="Text97"   if_blank=" "/>
+<field db_field_name="Text86"       pdf_field_index="59"  pdf_field_name="Text86"   if_blank=" "/>
+<field db_field_name="Text75"       pdf_field_index="60"  pdf_field_name="Text75"   if_blank=" "/>
+<field db_field_name="Text64"       pdf_field_index="61"  pdf_field_name="Text64"   if_blank=" "/>
+<field db_field_name="Text53"       pdf_field_index="62"  pdf_field_name="Text53"   if_blank=" "/>
+<field db_field_name="Text42"       pdf_field_index="63"  pdf_field_name="Text42"   if_blank=" "/>
+<field db_field_name="Text31"       pdf_field_index="64"  pdf_field_name="Text31"   if_blank=" "/>
+<field db_field_name="Text20"       pdf_field_index="65"  pdf_field_name="Text20"   if_blank=" "/>
+<field db_field_name="Text102"       pdf_field_index="66"  pdf_field_name="Text102"   if_blank=" "/>
+<field db_field_name="Text98"       pdf_field_index="67"  pdf_field_name="Text98"   if_blank=" "/>
+<field db_field_name="Text87"       pdf_field_index="68"  pdf_field_name="Text87"   if_blank=" "/>
+<field db_field_name="Text76"       pdf_field_index="69"  pdf_field_name="Text76"   if_blank=" "/>
+<field db_field_name="Text65"       pdf_field_index="70"  pdf_field_name="Text65"   if_blank=" "/>
+<field db_field_name="Text54"       pdf_field_index="71"  pdf_field_name="Text54"   if_blank=" "/>
+<field db_field_name="Text43"       pdf_field_index="72"  pdf_field_name="Text43"   if_blank=" "/>
+<field db_field_name="Text32"       pdf_field_index="73"  pdf_field_name="Text32"   if_blank=" "/>
+<field db_field_name="Text21"       pdf_field_index="74"  pdf_field_name="Text21"   if_blank=" "/>
+<field db_field_name="Text10"       pdf_field_index="75"  pdf_field_name="Text10"   if_blank=" " is_date_formate="1"/>
+<field db_field_name="Text103"       pdf_field_index="76"  pdf_field_name="Text103"   if_blank=" "/>
+<field db_field_name="Text99"       pdf_field_index="77"  pdf_field_name="Text99"   if_blank=" "/>
+<field db_field_name="Text88"       pdf_field_index="78"  pdf_field_name="Text88"   if_blank=" "/>
+<field db_field_name="Text77"       pdf_field_index="79"  pdf_field_name="Text77"   if_blank=" "/>
+<field db_field_name="Text66"       pdf_field_index="80"  pdf_field_name="Text66"   if_blank=" "/>
+<field db_field_name="Text55"       pdf_field_index="81"  pdf_field_name="Text55"   if_blank=" "/>
+<field db_field_name="Text44"       pdf_field_index="82"  pdf_field_name="Text44"   if_blank=" "/>
+<field db_field_name="Text33"       pdf_field_index="83"  pdf_field_name="Text33"   if_blank=" "/>
+<field db_field_name="Text22"       pdf_field_index="84"  pdf_field_name="Text22"   if_blank=" "/>
+<field db_field_name="Text11"       pdf_field_index="85"  pdf_field_name="Text11"   if_blank=" "/>
+<field db_field_name="Text104"       pdf_field_index="86"  pdf_field_name="Text104"   if_blank=" "/>
+<field db_field_name="Text89"       pdf_field_index="87"  pdf_field_name="Text89"   if_blank=" "/>
+<field db_field_name="Text78"       pdf_field_index="88"  pdf_field_name="Text78"   if_blank=" "/>
+<field db_field_name="Text67"       pdf_field_index="89"  pdf_field_name="Text67"   if_blank=" "/>
+<field db_field_name="Text56"       pdf_field_index="90"  pdf_field_name="Text56"   if_blank=" "/>
+<field db_field_name="Text45"       pdf_field_index="91"  pdf_field_name="Text45"   if_blank=" "/>
+<field db_field_name="Text34"       pdf_field_index="92"  pdf_field_name="Text34"   if_blank=" "/>
+<field db_field_name="Text23"       pdf_field_index="93"  pdf_field_name="Text23"   if_blank=" "/>
+<field db_field_name="Text12"       pdf_field_index="94"  pdf_field_name="Text12"   if_blank=" " is_date_formate="1"/>
+<field db_field_name="Text105"       pdf_field_index="95"  pdf_field_name="Text105"   if_blank=" "/>
+<field db_field_name="Check Box103"       pdf_field_index="96"  pdf_field_name="Check Box103"   if_blank=" "/>
+<field db_field_name="Text79"       pdf_field_index="97"  pdf_field_name="Text79"   if_blank=" "/>
+<field db_field_name="Text68"       pdf_field_index="98"  pdf_field_name="Text68"   if_blank=" "/>
+<field db_field_name="Text57"       pdf_field_index="99"  pdf_field_name="Text57"   if_blank=" "/>
+<field db_field_name="Text46"       pdf_field_index="100"  pdf_field_name="Text46"   if_blank=" "/>
+<field db_field_name="Text35"       pdf_field_index="101"  pdf_field_name="Text35"   if_blank=" "/>
+<field db_field_name="Text24"       pdf_field_index="102"  pdf_field_name="Text24"   if_blank=" "/>
+<field db_field_name="Text13"       pdf_field_index="103"  pdf_field_name="Text13"   if_blank=" "/>
+<field db_field_name="Check Box104"       pdf_field_index="104"  pdf_field_name="Check Box104"   if_blank=" "/>
+<field db_field_name="Text69"       pdf_field_index="105"  pdf_field_name="Text69"   if_blank=" "/>
+<field db_field_name="Text58"       pdf_field_index="106"  pdf_field_name="Text58"   if_blank=" "/>
+<field db_field_name="Text47"       pdf_field_index="107"  pdf_field_name="Text47"   if_blank=" "/>
+<field db_field_name="Text36"       pdf_field_index="108"  pdf_field_name="Text36"   if_blank=" "/>
+<field db_field_name="Text25"       pdf_field_index="109"  pdf_field_name="Text25"   if_blank=" " is_phone_formate="1"/>
+<field db_field_name="Text14"       pdf_field_index="110"  pdf_field_name="Text14"   if_blank=" "/>
+ </document></root>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="TXN_CALENDAR_EVENT">
+  <Field Name="SZ_CASE_ID" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="txtCaseID" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PATIENT_NAME" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_PATIENT_NAME" Editable="False" Visible="True"></Field>
+  <Field Name="DT_DATE_OF_ACCIDENT" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_ACCIDENT_INVOLVED" Editable="False" Visible="True"></Field>
+  
+  <StoreProcedure name="SP_MST_LIEN" />
+</Table>

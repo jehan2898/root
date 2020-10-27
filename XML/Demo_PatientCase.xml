@@ -1,0 +1,9 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <SZ_PATIENT_NAME>John Smith</SZ_PATIENT_NAME>
+	<SZ_INSURANCE>STATE FARM INSURANCE</SZ_INSURANCE>
+    <SZ_CLAIM>CLM-100910</SZ_CLAIM>
+	<SZ_WCB>DHG-09919881</SZ_WCB>
+  </Table>
+</NewDataSet>

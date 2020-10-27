@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Table Name="MST_PROCEDURAL_CODE">
+  <Field Name="SZ_PROCEDURAL_CODE_ID"     DataType="NVarChar"    Size="20"     Null="False"  Control="TextBox"   ControlID=""                 Editable="False" Visible="False"></Field>
+  <Field Name="SZ_PROCEDURAL_CODE"        DataType="NVarChar"    Size="50"     Null="False"  Control="TextBox"   ControlID="txtProceduralCode"    Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_COMPANY_ID"         DataType="NVarChar"    Size="20"     Null="False"  Control="TextBox"   ControlID="txtCompanyID"     Editable="True"  Visible="True" ></Field>
+
+  <StoreProcedure name="SP_MST_PROCEDURAL_CODE"></StoreProcedure>
+  <ListControl name="grdProceduralCode"></ListControl>
+</Table>

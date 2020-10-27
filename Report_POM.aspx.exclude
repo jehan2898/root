@@ -1,0 +1,1058 @@
+<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Report_POM.aspx.cs" Inherits="Report_POM" Title="Untitled Page" %>
+<%@ Register Assembly="ExtendedDropDownList" Namespace="ExtendedDropDownList" TagPrefix="extddl" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+<%@ Register Assembly="ExtendedDropDownList" Namespace="ExtendedDropDownList" TagPrefix="cc1" %>
+<%--
+<script runat="server">txtToBillDate.ClientID</script>--%>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    &nbsp;
+    <script type="text/javascript" src="validation.js"></script>
+    <script type="text/javascript">
+     function ascii_value(c){
+             c = c . charAt (0);
+             var i;
+             for (i = 0; i < 256; ++ i)
+             {
+                  var h = i . toString (16);
+                  if (h . length == 1)
+                    h = "0" + h;
+                   h = "%" + h;
+                  h = unescape (h);
+                  if (h == c)
+                    break;
+             }
+             return i;
+        }
+    function CheckForInteger(e,charis)
+        {
+                var keychar;
+                if(navigator.appName.indexOf("Netscape")>(-1))
+                {    
+                    var key = ascii_value(charis);
+                    if(e.charCode == key || e.charCode==0){
+                    return true;
+                   }else{
+                         if (e.charCode < 48 || e.charCode > 57)
+                         {             
+                                return false;
+                         } 
+                     }
+                 }
+            if (navigator.appName.indexOf("Microsoft Internet Explorer")>(-1))
+            {          
+                var key=""
+               if(charis!="")
+               {         
+                     key = ascii_value(charis);
+                }
+                if(event.keyCode == key)
+                {
+                    return true;
+                }
+                else
+                {
+                         if (event.keyCode < 48 || event.keyCode > 57)
+                          {             
+                             return false;
+                          }
+                }
+            }
+            
+            
+         }
+         
+         
+       function OpenFile(path)
+       {
+        window.open(path);
+       }
+         function SetDate()
+         {
+            getWeek();
+            var selValue = document.getElementById('_ctl0_ContentPlaceHolder1_ddlDateValues').value;
+            if(selValue == 0)
+            {
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToBillDate').value = "";
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromBillDate').value = "";
+                   
+            }
+            else if(selValue == 1)
+            {
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToBillDate').value = getDate('today');
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromBillDate').value = getDate('today');
+            }
+            else if(selValue == 2)
+            {
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToBillDate').value = getWeek('endweek');
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromBillDate').value = getWeek('startweek');
+            }
+            else if(selValue == 3)
+            {
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToBillDate').value = getDate('monthend');
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromBillDate').value = getDate('monthstart');
+            }
+            else if(selValue == 4)
+            {
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToBillDate').value = getDate('quarterend');
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromBillDate').value = getDate('quarterstart');
+            }
+            else if(selValue == 5)
+            {
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToBillDate').value = getDate('yearend');
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromBillDate').value = getDate('yearstart');
+            }
+              else if(selValue == 6)
+            {
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToBillDate').value = getLastWeek('endweek');
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromBillDate').value = getLastWeek('startweek');
+            }else if(selValue == 7)
+            {     
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToBillDate').value = lastmonth('endmonth');
+                   
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromBillDate').value = lastmonth('startmonth');
+            }else if(selValue == 8)
+            {     
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToBillDate').value =lastyear('endyear');
+                   
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromBillDate').value = lastyear('startyear');
+            }else if(selValue == 9)
+            {     
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToBillDate').value = quarteryear('endquaeter');
+                   
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromBillDate').value =  quarteryear('startquaeter');
+            }
+         }
+         
+         function getLastWeek(type)
+         {
+            var d = new Date();
+            d.setDate(d.getDate() - 7);
+            var day = d.getDay(); 
+            d.setDate(d.getDate() - day);
+            if(type=='startweek')
+                return(getFormattedDate(d.getDate(),d.getMonth(),d.getFullYear()));
+            if(type=='endweek')
+            {
+                d.setDate(d.getDate() + 6);
+                return(getFormattedDate(d.getDate(),d.getMonth(),d.getFullYear()));
+            }
+         }
+         
+         function lastmonth(type)
+         {
+        
+            var d = new Date();
+            var t_date = d.getDate();      // Returns the day of the month
+            var t_mon = d.getMonth()+1;      // Returns the month as a digit
+            var t_year = d.getFullYear();
+          
+            if(type=='startmonth')
+            {
+             if(t_mon==1)
+             { 
+               var y =t_year-1;
+                return('12/1/'+y) ;
+              
+             }
+            else
+              {
+                var m=t_mon-1;
+                return(m+'/1/'+t_year);
+              }
+            }
+           else if(type=='endmonth')
+            {
+                if(t_mon==1)
+                {   var y =t_year-1;
+                  return('12/31/'+y);
+                }else
+                {
+                   var m=t_mon-1;
+                   var d = daysInMonth(t_mon-1,t_year);
+                  return(m+'/'+d+'/'+t_year);
+                }
+            }
+           
+         }
+
+
+
+         function quarteryear(type)
+         {  var d = new Date();
+            var t_date = d.getDate();      // Returns the day of the month
+            var t_mon = d.getMonth()+1;      // Returns the month as a digit
+            var t_year = d.getFullYear();
+            
+            if(type=='startquaeter')
+            {
+              if(t_mon==1||t_mon==2||t_mon==3)
+              { 
+                var y = t_year-1;
+                return('10/1/'+y);
+              }
+              else if(t_mon==4||t_mon==5||t_mon==6)
+              { 
+                 return('1/1/'+t_year);
+                
+              }else if(t_mon==7||t_mon==8||t_mon==9)
+              {
+                return('4/1/'+t_year);
+                
+              
+              }else if(t_mon==10||t_mon==11||t_mon==12)
+              {
+                return('7/1/'+t_year);
+              
+              }
+            
+            }else if(type=='endquaeter')
+            {
+             if(t_mon==1||t_mon==2||t_mon==3)
+              {
+               //
+               var y = t_year-1;
+               return('12/31/'+y);
+              }
+              else if(t_mon==4||t_mon==5||t_mon==6)
+              {return('3/31/'+t_year);
+               
+              }else if(t_mon==7||t_mon==8||t_mon==9)
+              {
+               return('6/30/'+t_year);
+               
+              
+              }else if(t_mon==10||t_mon==11||t_mon==12)
+              {
+                return('9/30/'+t_year);
+              }
+            
+            }
+            
+         }
+         
+            function lastyear(type)
+            {  
+                var d = new Date();
+          
+            var t_year = d.getFullYear();
+               if(type=='startyear')
+               {  
+                 y= t_year-1;
+                 return('1/1/'+y);
+               }
+               else if(type=='endyear')
+               {y= t_year-1;
+                return('12/31/'+y);
+               }
+            }
+
+        
+         
+         function getDate(type)
+         {
+            var d = new Date();
+            var t_date = d.getDate();      // Returns the day of the month
+            var t_mon = d.getMonth();      // Returns the month as a digit
+            var t_year = d.getFullYear();  // Returns 4 digit year
+            
+                var q_start = 0;
+                var q_end = 0;
+                if((t_mon+1)>=1 && (t_mon+1)<=3)
+                {
+                    q_start = 1;
+                    q_end = 3;
+                }
+                else if((t_mon+1)>=4 && (t_mon+1)<=6)
+                {
+                    q_start = 4;
+                    q_end = 6;
+                }
+                else if((t_mon+1)>=7 && (t_mon+1)<=9)
+                {
+                    q_start = 7;
+                    q_end = 9;
+                }
+                else if((t_mon+1)>=10 && (t_mon+1)<=12)
+                {
+                    q_start = 10;
+                    q_end = 12;
+                }
+            
+            if(type== 'today') 
+                return(getFormattedDate(t_date,t_mon,t_year));
+            if(type== 'monthstart')
+                return(getFormattedDate(1,t_mon,t_year)); 
+            if(type== 'monthend')
+                return(getFormattedDate(daysInMonth(t_mon+1,t_year),t_mon,t_year)); 
+            if(type== 'quarterstart')
+            {
+                 return(getFormattedDateForMonth(1,q_start,t_year)); 
+            }
+            if(type== 'quarterend')
+            {
+                return(getFormattedDateForMonth(daysInMonth(q_end),q_end,t_year)); 
+            }    
+            if(type== 'yearstart')
+                return(getFormattedDate(1,0,t_year)); 
+            if(type== 'yearend')
+                return(getFormattedDate(31,11,t_year)); 
+         }
+         
+         function daysInMonth(month,year) 
+         {
+            var m = [31,28,31,30,31,30,31,31,30,31,30,31];
+            if (month != 2) return m[month - 1];
+            if (year%4 != 0) return m[1];
+            if (year%100 == 0 && year%400 != 0) return m[1];
+            return m[1] + 1;
+         }
+         
+         function getFormattedDate(day,month,year)
+         {
+            return ''+(month+1)+'/'+day+'/'+year;
+         }
+         
+         function getFormattedDateForMonth(day,month,year)
+         {
+            return ''+(month)+'/'+day+'/'+year;
+         }
+         
+         function getWeek(type)
+         {
+            var d = new Date();
+            var day = d.getDay(); 
+            d.setDate(d.getDate() - day);
+            if(type=='startweek')
+                return(getFormattedDate(d.getDate(),d.getMonth(),d.getFullYear()));
+            if(type=='endweek')
+            {
+                d.setDate(d.getDate() + 6);
+                return(getFormattedDate(d.getDate(),d.getMonth(),d.getFullYear()));
+            }
+         }
+      
+         
+          function SetServiceDate()
+         {
+            getWeek();
+            var selValue = document.getElementById('_ctl0_ContentPlaceHolder1_ddlServiseDate').value;
+            if(selValue == 0)
+            {
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToServiceDate').value = "";
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromServiceDate').value = "";
+                   
+            }
+            else if(selValue == 1)
+            {
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToServiceDate').value = getDate('today');
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromServiceDate').value = getDate('today');
+            }
+            else if(selValue == 2)
+            {
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToServiceDate').value = getWeek('endweek');
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromServiceDate').value = getWeek('startweek');
+            }
+            else if(selValue == 3)
+            {
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToServiceDate').value = getDate('monthend');
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromServiceDate').value = getDate('monthstart');
+            }
+            else if(selValue == 4)
+            {
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToServiceDate').value = getDate('quarterend');
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromServiceDate').value = getDate('quarterstart');
+            }
+            else if(selValue == 5)
+            {
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToServiceDate').value = getDate('yearend');
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromServiceDate').value = getDate('yearstart');
+            }
+              else if(selValue == 6)
+            {
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToServiceDate').value = getLastWeek('endweek');
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromServiceDate').value = getLastWeek('startweek');
+            }else if(selValue == 7)
+            {     
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToServiceDate').value = lastmonth('endmonth');
+                   
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromServiceDate').value = lastmonth('startmonth');
+            }else if(selValue == 8)
+            {     
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToServiceDate').value =lastyear('endyear');
+                   
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromServiceDate').value = lastyear('startyear');
+            }else if(selValue == 9)
+            {     
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToServiceDate').value = quarteryear('endquaeter');
+                   
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromServiceDate').value =  quarteryear('startquaeter');
+            }
+         }
+         
+          function SetPOMPrintedDate()
+         {
+            getWeek();
+            var selValue = document.getElementById('_ctl0_ContentPlaceHolder1_ddlPrintDate').value;
+            if(selValue == 0)
+            {
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToPrintedDate').value = "";
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromPrintedDate').value = "";
+                   
+            }
+            else if(selValue == 1)
+            {
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToPrintedDate').value = getDate('today');
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromPrintedDate').value = getDate('today');
+            }
+            else if(selValue == 2)
+            {
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToPrintedDate').value = getWeek('endweek');
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromPrintedDate').value = getWeek('startweek');
+            }
+            else if(selValue == 3)
+            {
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToPrintedDate').value = getDate('monthend');
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromPrintedDate').value = getDate('monthstart');
+            }
+            else if(selValue == 4)
+            {
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToPrintedDate').value = getDate('quarterend');
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromPrintedDate').value = getDate('quarterstart');
+            }
+            else if(selValue == 5)
+            {
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToPrintedDate').value = getDate('yearend');
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromPrintedDate').value = getDate('yearstart');
+            }
+              else if(selValue == 6)
+            {
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToPrintedDate').value = getLastWeek('endweek');
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromPrintedDate').value = getLastWeek('startweek');
+            }else if(selValue == 7)
+            {     
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToPrintedDate').value = lastmonth('endmonth');
+                   
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromPrintedDate').value = lastmonth('startmonth');
+            }else if(selValue == 8)
+            {     
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToPrintedDate').value =lastyear('endyear');
+                   
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromPrintedDate').value = lastyear('startyear');
+            }else if(selValue == 9)
+            {     
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToPrintedDate').value = quarteryear('endquaeter');
+                   
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromPrintedDate').value =  quarteryear('startquaeter');
+            }
+         }
+         
+          function SetPOMReceivedDate()
+         {
+            getWeek();
+            var selValue = document.getElementById('_ctl0_ContentPlaceHolder1_ddlRecDate').value;
+            if(selValue == 0)
+            {
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToRecDate').value = "";
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromRecDate').value = "";
+                   
+            }
+            else if(selValue == 1)
+            {
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToRecDate').value = getDate('today');
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromRecDate').value = getDate('today');
+            }
+            else if(selValue == 2)
+            {
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToRecDate').value = getWeek('endweek');
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromRecDate').value = getWeek('startweek');
+            }
+            else if(selValue == 3)
+            {
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToRecDate').value = getDate('monthend');
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromRecDate').value = getDate('monthstart');
+            }
+            else if(selValue == 4)
+            {
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToRecDate').value = getDate('quarterend');
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromRecDate').value = getDate('quarterstart');
+            }
+            else if(selValue == 5)
+            {
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToRecDate').value = getDate('yearend');
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromRecDate').value = getDate('yearstart');
+            }
+              else if(selValue == 6)
+            {
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToRecDate').value = getLastWeek('endweek');
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromRecDate').value = getLastWeek('startweek');
+            }else if(selValue == 7)
+            {     
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToRecDate').value = lastmonth('endmonth');
+                   
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromRecDate').value = lastmonth('startmonth');
+            }else if(selValue == 8)
+            {     
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToRecDate').value =lastyear('endyear');
+                   
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromRecDate').value = lastyear('startyear');
+            }else if(selValue == 9)
+            {     
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtToRecDate').value = quarteryear('endquaeter');
+                   
+                   document.getElementById('_ctl0_ContentPlaceHolder1_txtFromRecDate').value =  quarteryear('startquaeter');
+            }
+         }
+    </script>
+    
+    
+   <%-- For date validation--%>
+   
+     <script type="text/javascript" language="javascript">
+      function FromDateValidation()
+      {
+         var year1="";
+         year1=document.getElementById("<%=txtFromBillDate.ClientID%>").value; 
+         
+         //alert(year1);
+        // var aryyear = new Array();
+        //alert(year1.charAt(6)+"     "+year1.charAt(6));
+         //if(year.indexOf)
+        //alert(year1);
+        
+         if(year1.charAt(0)=='_' && year1.charAt(1)=='_' && year1.charAt(2)=='/' && year1.charAt(3)=='_' && year1.charAt(4)=='_' && year1.charAt(5)=='/' && year1.charAt(6)=='_' && year1.charAt(7)=='_' && year1.charAt(8)=='_' && year1.charAt(9)=='_')
+         {
+             return true;   
+         }
+         
+         
+         if((year1.charAt(6)=='_' && year1.charAt(7)=='_') || (year1.charAt(8)=='_' && year1.charAt(9)=='_') || (year1.charAt(6)=='0' && year1.charAt(7)=='0') || (year1.charAt(6)=='0') || (year1.charAt(9)=='_'))
+         {
+            //alert("Invalide 'From Date'");
+               
+            //document.getElementById('_ctl0_ContentPlaceHolder1_MaskedEditValidator1').innerText = 'Invalide F Date';
+            //document.getElementById('_ctl0_ContentPlaceHolder1_MaskedEditValidator1').style.visibility = 'visible';
+            
+           document.getElementById('_ctl0_ContentPlaceHolder1_lblValidator1').innerText = 'Date is Invalid';
+          
+          // document.getElementById('_ctl0_ContentPlaceHolder1_lblValidator1').style.display = "block";
+         
+            document.getElementById("<%=txtFromBillDate.ClientID%>").focus();
+            return false; 
+         }
+         if((year1.charAt(6)!='_' && year1.charAt(7)!='_') || (year1.charAt(8)!='_' && year1.charAt(9)!='_') || (year1.charAt(6)!='0' && year1.charAt(7)!='0'))
+         {
+            document.getElementById('_ctl0_ContentPlaceHolder1_lblValidator1').innerText = '';
+            return true;
+         }
+        
+      }
+      
+      function ToDateValidation()
+      {
+         var year2="";
+         year2=document.getElementById("<%=txtToBillDate.ClientID%>").value; 
+         
+         if(year2.charAt(0)=='_' && year2.charAt(1)=='_' && year2.charAt(2)=='/' && year2.charAt(3)=='_' && year2.charAt(4)=='_' && year2.charAt(5)=='/' && year2.charAt(6)=='_' && year2.charAt(7)=='_' && year2.charAt(8)=='_' && year2.charAt(9)=='_')
+         {
+             return true;   
+         }
+         if((year2.charAt(6)=='_' && year2.charAt(7)=='_') || (year2.charAt(8)=='_' && year2.charAt(9)=='_') || (year2.charAt(6)=='0' && year2.charAt(7)=='0') || (year2.charAt(6)=='0') || (year2.charAt(9)=='_'))
+         {
+            //alert("Invalide 'To Date'");
+            document.getElementById('_ctl0_ContentPlaceHolder1_lblValid1').innerText = 'Date is Invalid';
+            document.getElementById("<%=txtToBillDate.ClientID%>").focus();
+            return false; 
+         }
+         if((year2.charAt(6)!='_' && year2.charAt(7)!='_') || (year2.charAt(8)!='_' && year2.charAt(9)!='_') || (year2.charAt(6)!='0' && year2.charAt(7)!='0'))
+         {
+            document.getElementById('_ctl0_ContentPlaceHolder1_lblValid1').innerText = '';
+            return true;
+         }
+         
+      }
+      
+      
+      
+      	function showUploadFilePopup()
+       {
+      
+            document.getElementById('_ctl0_ContentPlaceHolder1_pnlUploadFile').style.height='100px';
+            document.getElementById('_ctl0_ContentPlaceHolder1_pnlUploadFile').style.visibility = 'visible';
+            document.getElementById('_ctl0_ContentPlaceHolder1_pnlUploadFile').style.position = "absolute";
+	        document.getElementById('_ctl0_ContentPlaceHolder1_pnlUploadFile').style.top = '200px';
+	        document.getElementById('_ctl0_ContentPlaceHolder1_pnlUploadFile').style.left ='350px';
+	        document.getElementById('_ctl0_ContentPlaceHolder1_pnlUploadFile').style.zIndex= '0';
+       }
+       function CloseUploadFilePopup()
+       {
+            document.getElementById('_ctl0_ContentPlaceHolder1_pnlUploadFile').style.height='0px';
+            document.getElementById('_ctl0_ContentPlaceHolder1_pnlUploadFile').style.visibility = 'hidden';  
+          //  document.getElementById('_ctl0_ContentPlaceHolder1_txtGroupDateofService').value='';      
+       }
+      
+</script>
+
+<div id="diveserch" language="javascript" onkeypress="javascript:return WebForm_FireDefaultButton(event, '_ctl0_ContentPlaceHolder1_btnSearch')">
+    <asp:ScriptManager id="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <table id="First" border="0" cellpadding="0" cellspacing="0" style="width: 100%;
+        height: 100%">
+        <tr>
+            <td style="padding-right: 3px; padding-left: 3px; padding-bottom: 3px; width: 100%;
+                padding-top: 3px; height: 100%; vertical-align: top;">
+                <table id="MainBodyTable" cellpadding="0" cellspacing="0" style="width: 100%">
+                    <tr>
+                        <td class="LeftTop" style="height: 10px">
+                        </td>
+                        <td class="CenterTop" style="height: 10px">
+                          <asp:Label CssClass="message-text" id="lblMsg" runat="server"  Visible="false"></asp:Label>
+                        </td>
+                        <td class="RightTop" style="height: 10px">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="LeftCenter" style="height: 100%">
+                        </td>
+                        <td class="Center" valign="top">
+                            <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; height: 100%">
+                                <tr>
+                               
+                                </tr>
+                                <tr>
+                                    <td style="width: 100%; height: 214px;" class="TDPart">
+                                    
+                                           <table border="0" cellpadding="3" cellspacing="0" class="ContentTable" style="width: 100%">
+                                            <tr>
+                                                <td class="ContentLabel" colspan="1" style="height: 25px; text-align: left">
+                                                    <strong>POM Report</strong></td>
+                                                <td class="ContentLabel" style="text-align: left; height: 25px;" colspan="4">
+                                                    <%--<asp:Label CssClass="message-text" id="lblMsg" runat="server"  Visible="false"></asp:Label>--%>
+                                                    <div id="ErrorDiv" style="color: red" visible="true">
+                                                    </div>
+                                                    <b> </b>
+                                                    <asp:Label ID="lblHeader" runat="server" Visible="false"></asp:Label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="ContentLabel" style="width: 15%">
+                                                </td>
+                                              
+                                            </tr>
+                                           
+                                            <tr>
+                                                <td class="ContentLabel" style="width: 15%; height: 12px">
+                                                    Bill &nbsp; &nbsp;<asp:DropDownList ID="ddlDateValues" runat="Server">
+                                                        <asp:ListItem Value="0">All</asp:ListItem>
+                                                        <asp:ListItem Value="1">Today</asp:ListItem>
+                                                        <asp:ListItem Value="2">This Week</asp:ListItem>
+                                                        <asp:ListItem Value="3">This Month</asp:ListItem>
+                                                        <asp:ListItem Value="4">This Quarter</asp:ListItem>
+                                                        <asp:ListItem Value="5">This Year</asp:ListItem>
+                                                        <asp:ListItem Value="6">Last Week</asp:ListItem>
+                                                        <asp:ListItem Value="7">Last Month</asp:ListItem>
+                                                        <asp:ListItem Value="9">Last Quarter</asp:ListItem>
+                                                        <asp:ListItem Value="8">Last Year</asp:ListItem>
+                                                    </asp:DropDownList></td>
+                                                   <td class="ContentLabel" style="width: 15%; height: 12px;">
+                                                    From&nbsp; Date&nbsp; &nbsp;</td>
+                                                 <td style="width: 27%; height: 12px;">
+                                                    <asp:TextBox ID="txtFromBillDate" runat="server" onkeypress="return CheckForInteger(event,'/')"
+                                                        CssClass="text-box" MaxLength="10"></asp:TextBox>
+                                                    <asp:ImageButton ID="imgbtnFromBillDate" runat="server" ImageUrl="~/Images/cal.gif"  />
+                                                    <asp:Label ID="lblValidator1" runat="server" Font-Bold="False" ForeColor="Red"></asp:Label>
+                                                         <ajaxToolkit:MaskedEditValidator ID="MaskedEditValidator4" runat="server" ControlExtender="MaskedEditExtender1" ControlToValidate="txtFromBillDate" EmptyValueMessage="Date is required" InvalidValueMessage="Date is invalid" IsValidEmpty="True" TooltipMessage="Input a Date" Visible="true"></ajaxToolkit:MaskedEditValidator>
+                                                    
+                                                </td>
+                                              <td class="ContentLabel" style="width: 14%; height: 12px;">
+                                                    To Bill Date&nbsp;
+                                                </td>
+                                                 <td style="width: 35%; height: 12px;">
+                                                    <asp:TextBox ID="txtToBillDate" runat="server" onkeypress="return CheckForInteger(event,'/')"
+                                                        CssClass="text-box" MaxLength="10"></asp:TextBox>
+                                                    <asp:ImageButton ID="imgbtnToBillDate" runat="server" ImageUrl="~/Images/cal.gif" />
+                                                    <asp:Label ID="lblValid1" runat="server" Font-Bold="False" ForeColor="Red"></asp:Label>
+                                                     <ajaxToolkit:MaskedEditValidator ID="MaskedEditValidator5" runat="server" ControlExtender="MaskedEditExtender1" ControlToValidate="txtToBillDate" EmptyValueMessage="Date is required" InvalidValueMessage="Date is invalid" IsValidEmpty="True" TooltipMessage="Input a Date" Visible="true"></ajaxToolkit:MaskedEditValidator>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="ContentLabel" style="width: 15%; height: 14px;">
+                                                    Service<asp:DropDownList ID="ddlServiseDate" runat="server">
+                                                        <asp:ListItem Value="0">All</asp:ListItem>
+                                                        <asp:ListItem Value="1">Today</asp:ListItem>
+                                                        <asp:ListItem Value="2">This Week</asp:ListItem>
+                                                        <asp:ListItem Value="3">This Month</asp:ListItem>
+                                                        <asp:ListItem Value="4">This Quarter</asp:ListItem>
+                                                        <asp:ListItem Value="5">This Year</asp:ListItem>
+                                                        <asp:ListItem Value="6">Last Week</asp:ListItem>
+                                                        <asp:ListItem Value="7">Last Month</asp:ListItem>
+                                                        <asp:ListItem Value="9">Last Quarter</asp:ListItem>
+                                                        <asp:ListItem Value="8">Last Year</asp:ListItem>
+                                                    </asp:DropDownList></td>
+                                                <td class="ContentLabel" style="width: 15%; height: 12px;">
+                                                    From&nbsp; Date&nbsp; &nbsp;</td>
+                                                <td style="width: 27%; height: 12px;">
+                                                    <asp:TextBox ID="txtFromServiceDate" runat="server" onkeypress="return CheckForInteger(event,'/')"
+                                                        CssClass="text-box" MaxLength="10"></asp:TextBox>
+                                                    <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Images/cal.gif" />
+                                                    <asp:Label ID="lblValid3" runat="server" Font-Bold="False" ForeColor="Red"></asp:Label>
+                                                    <ajaxToolkit:MaskedEditValidator ID="MaskedEditValidator1" runat="server" ControlExtender="MaskedEditExtender1" ControlToValidate="txtFromserviceDate" EmptyValueMessage="Date is required" InvalidValueMessage="Date is invalid" IsValidEmpty="True" TooltipMessage="Input a Date" Visible="true"></ajaxToolkit:MaskedEditValidator>
+                                                </td>
+                                                 <td class="ContentLabel" style="width: 14%; height: 12px;">
+                                                    To Service Date&nbsp;
+                                                </td>
+                                                 <td style="width: 35%; height: 12px;">
+                                                    <asp:TextBox ID="txtToServiceDate" runat="server" onkeypress="return CheckForInteger(event,'/')"
+                                                        CssClass="text-box" MaxLength="10"></asp:TextBox>
+                                                    <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/Images/cal.gif" />
+                                                    <asp:Label ID="lblValid4" runat="server" Font-Bold="False" ForeColor="Red"></asp:Label>
+                                                    <ajaxToolkit:MaskedEditValidator ID="MaskedEditValidator2" runat="server" ControlExtender="MaskedEditExtender1" ControlToValidate="txtToServiceDate" EmptyValueMessage="Date is required" InvalidValueMessage="Date is invalid" IsValidEmpty="True" TooltipMessage="Input a Date" Visible="true"></ajaxToolkit:MaskedEditValidator>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                            <td class="ContentLabel" style="width: 15%; height: 14px;">
+                                                    Printed<asp:DropDownList ID="ddlPrintDate" runat="server">
+                                                        <asp:ListItem Value="0">All</asp:ListItem>
+                                                        <asp:ListItem Value="1">Today</asp:ListItem>
+                                                        <asp:ListItem Value="2">This Week</asp:ListItem>
+                                                        <asp:ListItem Value="3">This Month</asp:ListItem>
+                                                        <asp:ListItem Value="4">This Quarter</asp:ListItem>
+                                                        <asp:ListItem Value="5">This Year</asp:ListItem>
+                                                        <asp:ListItem Value="6">Last Week</asp:ListItem>
+                                                        <asp:ListItem Value="7">Last Month</asp:ListItem>
+                                                        <asp:ListItem Value="9">Last Quarter</asp:ListItem>
+                                                        <asp:ListItem Value="8">Last Year</asp:ListItem>
+                                                    </asp:DropDownList></td>
+                                                <td class="ContentLabel" style="width: 15%; height: 12px;">
+                                                    From&nbsp; Date&nbsp; &nbsp;</td>
+                                                <td style="width: 27%; height: 12px;">
+                                                    <asp:TextBox ID="txtFromPrintedDate" runat="server" onkeypress="return CheckForInteger(event,'/')"
+                                                        CssClass="text-box" MaxLength="10"></asp:TextBox>
+                                                    <asp:ImageButton ID="ImageButton4" runat="server" ImageUrl="~/Images/cal.gif" />
+                                                    <asp:Label ID="lblValig5" runat="server" Font-Bold="False" ForeColor="Red"></asp:Label>
+                                                     <ajaxToolkit:MaskedEditValidator ID="MaskedEditValidator8" runat="server" ControlExtender="MaskedEditExtender1" ControlToValidate="txtFromPrintedDate" EmptyValueMessage="Date is required" InvalidValueMessage="Date is invalid" IsValidEmpty="True" TooltipMessage="Input a Date" Visible="true"></ajaxToolkit:MaskedEditValidator>
+                                                </td>
+                                                <td class="ContentLabel" style="width: 14%; height: 12px;">
+                                                    To Printed Date&nbsp;
+                                                </td>
+                                                 <td style="width: 35%; height: 12px;">
+                                                    <asp:TextBox ID="txtToPrintedDate" runat="server" onkeypress="return CheckForInteger(event,'/')"
+                                                        CssClass="text-box" MaxLength="10"></asp:TextBox>
+                                                    <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/Images/cal.gif" />
+                                                    <asp:Label ID="lblValid6" runat="server" Font-Bold="False" ForeColor="Red"></asp:Label>
+                                                     <ajaxToolkit:MaskedEditValidator ID="MaskedEditValidator3" runat="server" ControlExtender="MaskedEditExtender1" ControlToValidate="txtToPrintedDate" EmptyValueMessage="Date is required" InvalidValueMessage="Date is invalid" IsValidEmpty="True" TooltipMessage="Input a Date" Visible="true"></ajaxToolkit:MaskedEditValidator>
+                                                </td>
+                                            <td style="width: 35%; height: 14px;">
+                                                &nbsp;
+                                                </td>
+                                                    &nbsp;</tr>
+                                            <tr>
+                                            <td class="ContentLabel" style="width: 15%; height: 11px;">
+                                                    Received<asp:DropDownList ID="ddlRecDate" runat="server">
+                                                        <asp:ListItem Value="0">All</asp:ListItem>
+                                                        <asp:ListItem Value="1">Today</asp:ListItem>
+                                                        <asp:ListItem Value="2">This Week</asp:ListItem>
+                                                        <asp:ListItem Value="3">This Month</asp:ListItem>
+                                                        <asp:ListItem Value="4">This Quarter</asp:ListItem>
+                                                        <asp:ListItem Value="5">This Year</asp:ListItem>
+                                                        <asp:ListItem Value="6">Last Week</asp:ListItem>
+                                                        <asp:ListItem Value="7">Last Month</asp:ListItem>
+                                                        <asp:ListItem Value="9">Last Quarter</asp:ListItem>
+                                                        <asp:ListItem Value="8">Last Year</asp:ListItem>
+                                                    </asp:DropDownList></td>
+                                              <td class="ContentLabel" style="width: 15%; height: 11px;">
+                                                    From&nbsp; Date&nbsp; &nbsp;</td>
+                                                <td style="width: 27%; height: 11px;">
+                                                    <asp:TextBox ID="txtFromRecDate" runat="server" onkeypress="return CheckForInteger(event,'/')"
+                                                        CssClass="text-box" MaxLength="10"></asp:TextBox>
+                                                    <asp:ImageButton ID="ImageButton5" runat="server" ImageUrl="~/Images/cal.gif" />
+                                                    <asp:Label ID="lblValid7" runat="server" Font-Bold="False" ForeColor="Red"></asp:Label>
+                                                     <ajaxToolkit:MaskedEditValidator ID="MaskedEditValidator6" runat="server" ControlExtender="MaskedEditExtender1" ControlToValidate="txtFromRecDate" EmptyValueMessage="Date is required" InvalidValueMessage="Date is invalid" IsValidEmpty="True" TooltipMessage="Input a Date" Visible="true"></ajaxToolkit:MaskedEditValidator>
+                                                </td>
+                                                 <td class="ContentLabel" style="width: 14%; height: 11px;">
+                                                    To Received Date&nbsp;
+                                                </td>
+                                                 <td style="width: 35%; height: 11px;">
+                                                    <asp:TextBox ID="txtToRecDate" runat="server" onkeypress="return CheckForInteger(event,'/')"
+                                                        CssClass="text-box" MaxLength="10"></asp:TextBox>
+                                                    <asp:ImageButton ID="ImageButton6" runat="server" ImageUrl="~/Images/cal.gif" />
+                                                    <asp:Label ID="lblValid8" runat="server" Font-Bold="False" ForeColor="Red"></asp:Label>
+                                                     <ajaxToolkit:MaskedEditValidator ID="MaskedEditValidator7" runat="server" ControlExtender="MaskedEditExtender1" ControlToValidate="txtToRecDate" EmptyValueMessage="Date is required" InvalidValueMessage="Date is invalid" IsValidEmpty="True" TooltipMessage="Input a Date" Visible="true"></ajaxToolkit:MaskedEditValidator>
+                                                </td>
+                                            </tr>
+                                             <tr>
+                                            <td class="ContentLabel" style="width: 15%; height: 11px;">
+                                                    </td>
+                                              <td class="ContentLabel" style="width: 15%; height: 11px;">
+                                                  Bill No. &nbsp;&nbsp;</td>
+                                                <td style="width: 27%; height: 11px;">
+                                                   <asp:TextBox ID="txtBillNo" runat="server" Width="147px"></asp:TextBox>
+                                                    &nbsp;
+                                                </td>
+                                                 <td class="ContentLabel" style="width: 14%; height: 11px;">
+                                                     Patient Name&nbsp;
+                                                </td>
+                                                 <td style="width: 35%; height: 11px;">
+                                                    <asp:TextBox ID="txtPatientName" runat="server" Width="147px"></asp:TextBox>
+                                                     &nbsp;
+                                                </td>
+                                            </tr>
+                                             <tr>
+                                            <td class="ContentLabel" style="width: 15%; height: 11px;">
+                                                    </td>
+                                              <td class="ContentLabel" style="width: 15%; height: 9px;">
+                                                  Speciality &nbsp;&nbsp;</td>
+                                                <td style="width: 27%; height: 11px;">
+                                                   <cc1:ExtendedDropDownList ID="extddlSpeciality" runat="server" Connection_Key="Connection_String"
+                                                            Flag_Key_Value="OFFICE_LIST" Procedure_Name="SP_MST_OFFICE" Selected_Text="--- Select ---"
+                                                            Width="178px" />
+                                                    &nbsp;
+                                                </td>
+                                                
+                                               
+                                            </tr>
+                                            <tr>
+                                                <td  colspan="4" style="height: 37px">
+                                <table class="ContentTable" width="100%" >
+                                    <tr align="left";>
+                                                   
+                                                    <%--<td class="ContentLabel" style="width: 5%; height: 12px;" align="left"; >
+                                                       Bill No.<asp:TextBox ID="txtBillNo" runat="server"></asp:TextBox>
+                                                      Patient Name<asp:TextBox ID="txtPatientName" runat="server"></asp:TextBox>
+                                                      Speciality<cc1:ExtendedDropDownList ID="extddlSpeciality" runat="server" Connection_Key="Connection_String"
+                                                            Flag_Key_Value="OFFICE_LIST" Procedure_Name="SP_MST_OFFICE" Selected_Text="--- Select ---"
+                                                            Width="178px" />
+                                                    </td>--%>
+
+                                    </tr>
+                                        </table>
+                                                   
+                                                </td>
+                                            </tr>
+                                             <tr>
+                                                <td class="ContentLabel" colspan="5">
+                                                <asp:TextBox ID="txtCompanyID" runat="server" Visible="False" Width="10px"></asp:TextBox><asp:TextBox ID="txtSort" runat="server" Visible="False" Width="10px"></asp:TextBox>
+                                                <asp:Button ID="btnSearch" runat="server" Text="Search" Width="80px" CssClass="Buttons"
+                                                        OnClick="btnSearch_Click" />
+                                                    <asp:Button ID="btnExport" runat="server" Text="Export To Excel" Width="95px" CssClass="Buttons"
+                                                        OnClick="btnExport_Click" />    
+                                                        
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        
+                                    </td>
+                                </tr>
+                                
+                               <%-- <tr>
+                                    <td style="width: 100%" class="TDPart">
+                                        <div style="text-align: right;">
+                                            <asp:Button ID="btnExportToExcel" runat="server" CssClass="Buttons" Text="Export To Excel"
+                                                OnClick="btnExportToExcel_Click" />
+                                        </div>
+                                    </td>
+                                </tr>--%>
+                            <tr>
+                                    <td style="width: 100%" class="TDPart">
+                                   <div style="overflow: scroll; height: 400px">
+                                       <asp:GridView id="grdPomReport" runat="server" Width="100%" CssClass="GridTable" AutoGenerateColumns="False" DataKeyNames="PATH,SZ_CASEID,POM_ID,SZ_CASENO,SZ_PATIENT_NAME" OnRowCommand="grdPomReport_RowCommand" >
+                                        <RowStyle CssClass="GridRow" />  
+                                           <Columns>
+                                             
+                                               <asp:TemplateField HeaderText="POM ID">
+                                                    <HeaderTemplate>                                                        
+                                                         <asp:LinkButton ID="lnlPomId" runat="server"  CommandName="POMID" CommandArgument="POM_ID"
+                                                            Font-Bold="true" Font-Size="12px">POM ID</asp:LinkButton>
+                                                    </HeaderTemplate>
+                                                    <ItemTemplate>
+                                                        <%# DataBinder.Eval(Container, "DataItem.POM_ID")%>
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
+                                                
+                                                 <%--<asp:BoundField HeaderText="Bill_Number" DataField="BILL_NUMBER"/>--%>
+
+                                                   <asp:TemplateField HeaderText="Bill Number">
+                                                    <HeaderTemplate>                                                        
+                                                         <asp:LinkButton ID="lnlBillNumber" runat="server"  CommandName="BillNumber" CommandArgument="BILL_SORT"
+                                                            Font-Bold="true" Font-Size="12px">Bill Number</asp:LinkButton>
+                                                    </HeaderTemplate>
+                                                    <ItemTemplate>
+                                                        <%# DataBinder.Eval(Container, "DataItem.BILL_NUMBER")%>
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
+                                                
+                                              <%-- <asp:BoundField HeaderText="POM Generated Date" DataField="POM_GENERATED_DATE" DataFormatString="{0:MM/dd/yyyy}" />--%>
+                                              
+                                               <asp:TemplateField HeaderText="POM Generated Date">
+                                                    <HeaderTemplate>                                                        
+                                                         <asp:LinkButton ID="lnlGeneratedDate" runat="server"  CommandName="POMGeneratedDate" CommandArgument="POM_GENERATED_DATE"
+                                                            Font-Bold="true" Font-Size="12px">POM Generated Date</asp:LinkButton>
+                                                    </HeaderTemplate>
+                                                    <ItemTemplate>
+                                                        <%# DataBinder.Eval(Container, "DataItem.POM_GENERATED_DATE", "{0:MM/dd/yyyy}")%>
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
+                                                
+                                               <%-- <asp:BoundField HeaderText="Bill Status" DataField="BILL_STATUS" />--%>
+                                               
+                                               
+                                                 <asp:TemplateField HeaderText="Bill Status">
+                                                    <HeaderTemplate>                                                        
+                                                         <asp:LinkButton ID="lnlBillStatus" runat="server"  CommandName="BillStatus" CommandArgument="BILL_STATUS"
+                                                            Font-Bold="true" Font-Size="12px">Bill Status</asp:LinkButton>
+                                                    </HeaderTemplate>
+                                                    <ItemTemplate>
+                                                        <%# DataBinder.Eval(Container, "DataItem.BILL_STATUS")%>
+                                                    </ItemTemplate>
+                                                </asp:TemplateField>
+                                                
+                                                
+                                               <asp:TemplateField HeaderText="POM">
+                                                   <ItemTemplate>
+                                                      <a href="<%# DataBinder.Eval(Container, "DataItem.PATH")%>" target="_blank">POM</a>
+                                                     
+                                                        
+                                                   </ItemTemplate>
+                                               </asp:TemplateField>
+
+                                              <asp:TemplateField HeaderText="Scan/Upload Received POM">
+                                                   <ItemTemplate>
+                                                    
+ 									        <asp:LinkButton  ID ="lnkscan" runat ="server" CausesValidation="false" CommandName="ViewReceivedPOM" Text="Scan" OnClick="lnkscan_Click"></asp:LinkButton>/<asp:LinkButton  ID ="lnkuplaod" runat ="server" CausesValidation="false" CommandName="Upload" Text="Upload" OnClick="lnkuplaod_Click" CommandArgument="lnkuplaod"></asp:LinkButton>   
+                                                   </ItemTemplate>
+                                               
+                                               </asp:TemplateField>
+                                              
+                                               <%--<asp:TemplateField HeaderText="View Scan Received POM">
+                                                     <a href="<%# DataBinder.Eval(Container, "DataItem.PATH")%>" target="_blank">POM</a>
+                                                
+                                               </asp:TemplateField>--%>
+                                               
+                                              <asp:TemplateField HeaderText="View Scan Received POM">
+                                                   <ItemTemplate>
+                                                      <a href="<%# DataBinder.Eval(Container, "DataItem.RECEIVED_PATH")%>" target="_blank">View Scan Received POM</a>
+                                                     
+                                                        
+                                                   </ItemTemplate>
+                                               </asp:TemplateField>
+                                                <asp:BoundField HeaderText="Path" DataField="PATH" Visible="false"/>
+								 <asp:BoundField HeaderText="caseId" DataField="SZ_CASEID" Visible="false" />
+								 <asp:BoundField HeaderText="POM ID" DataField="POM_ID" Visible="false" />
+								 <asp:BoundField HeaderText="CASENO" DataField="SZ_CASENO" Visible="false" />
+								 <asp:BoundField HeaderText="POM ID" DataField="SZ_PATIENT_NAME" Visible="false" />
+                                                
+                                           </Columns>
+                                           
+                                               <HeaderStyle CssClass="GridHeader" />
+                                    </asp:GridView>
+                                    </div>
+                                       
+                                       
+                                    </td>
+                                </tr>
+                            
+                                
+                                <tr visible="false">
+                                    <td style="width: 100%" class="TDPart" visible="false">
+                                  
+                                       <asp:GridView id="grdExel" runat="server" Width="100%" CssClass="GridTable" AutoGenerateColumns="False" DataKeyNames="PATH" OnRowCommand="grdPomReport_RowCommand" Visible="false" >
+                                        <RowStyle CssClass="GridRow"  />  
+                                           <Columns>
+                                                <asp:BoundField HeaderText="POM ID" DataField="POM_ID"/>
+                                                 <asp:BoundField HeaderText="Bill_Number" DataField="BILL_NUMBER"/>
+                                                 <asp:BoundField HeaderText="POM Generated Date" DataField="POM_GENERATED_DATE" DataFormatString="{0:MM/dd/yyyy}" />
+                                                 <asp:BoundField HeaderText="Bill Status" DataField="BILL_STATUS" />
+                                           
+                                           </Columns>
+                                           
+                                               <HeaderStyle CssClass="GridHeader" />
+                                    </asp:GridView>
+                                    </td>
+                                    </tr>
+                                <tr>
+                                
+                                </tr>
+                            </table>
+                            
+                        </td>
+                    </tr>
+                </table>
+                                                       <ajaxToolkit:CalendarExtender ID="calExtFromDateofService" runat="server" TargetControlID="txtFromserviceDate"
+                                                        PopupButtonID="ImageButton1" />
+                                                         <ajaxToolkit:MaskedEditExtender ID="MaskedEditExtender1" runat="server" Mask="99/99/9999" MaskType="Date" TargetControlID="txtFromserviceDate" PromptCharacter="_" AutoComplete="true" ></ajaxToolkit:MaskedEditExtender>
+                                                      
+                                                  
+                                                    <ajaxToolkit:CalendarExtender ID="calExtToDateofService" runat="server" TargetControlID="txtToServiceDate"
+                                                        PopupButtonID="ImageButton2" />
+                                                         <ajaxToolkit:MaskedEditExtender ID="MaskedEditExtender2" runat="server" Mask="99/99/9999" MaskType="Date" TargetControlID="txtToServiceDate" PromptCharacter="_" AutoComplete="true" ></ajaxToolkit:MaskedEditExtender>
+                                                      
+                                                    
+                                                    <ajaxToolkit:CalendarExtender ID="calExtToPOMPrintDate" runat="server" TargetControlID="txtToPrintedDate"
+                                                        PopupButtonID="ImageButton3" />
+                                                         <ajaxToolkit:MaskedEditExtender ID="MaskedEditExtender3" runat="server" Mask="99/99/9999" MaskType="Date" TargetControlID="txtToPrintedDate" PromptCharacter="_" AutoComplete="true" ></ajaxToolkit:MaskedEditExtender>
+                                                     
+                                                    
+                                                    <ajaxToolkit:CalendarExtender ID="calExtFromBillDate" runat="server" TargetControlID="txtFromBillDate"
+                                                        PopupButtonID="imgbtnFromBillDate" />
+                                                         <ajaxToolkit:MaskedEditExtender ID="MaskedEditExtender4" runat="server" Mask="99/99/9999" MaskType="Date" TargetControlID="txtFromBillDate" PromptCharacter="_" AutoComplete="true" ></ajaxToolkit:MaskedEditExtender>
+                                                 
+                                                  
+                                                    <ajaxToolkit:CalendarExtender ID="calExtToBillDate" runat="server" TargetControlID="txtToBillDate"
+                                                        PopupButtonID="imgbtnToBillDate" />
+                                                         <ajaxToolkit:MaskedEditExtender ID="MaskedEditExtender5" runat="server" Mask="99/99/9999" MaskType="Date" TargetControlID="txtToBillDate" PromptCharacter="_" AutoComplete="true" ></ajaxToolkit:MaskedEditExtender>
+                                                     
+                                                   
+                                                    <ajaxToolkit:CalendarExtender ID="calExtFromPOMRecDate" runat="server" TargetControlID="txtFromRecDate"
+                                                        PopupButtonID="ImageButton5" />
+                                                         <ajaxToolkit:MaskedEditExtender ID="MaskedEditExtender6" runat="server" Mask="99/99/9999" MaskType="Date" TargetControlID="txtFromRecDate" PromptCharacter="_" AutoComplete="true" ></ajaxToolkit:MaskedEditExtender>
+                                                     
+                                                  
+                                                    <ajaxToolkit:CalendarExtender ID="clExtToPOMRecDate" runat="server" TargetControlID="txtToRecDate"
+                                                        PopupButtonID="ImageButton6" />
+                                                         <ajaxToolkit:MaskedEditExtender ID="MaskedEditExtender7" runat="server" Mask="99/99/9999" MaskType="Date" TargetControlID="txtToRecDate" PromptCharacter="_" AutoComplete="true" ></ajaxToolkit:MaskedEditExtender>
+                                                     
+                                                     
+                                                        <ajaxToolkit:CalendarExtender ID="calExtFromPOMPrintDate" runat="server" TargetControlID="txtFromPrintedDate"
+                                                        PopupButtonID="ImageButton4" />
+                                                         <ajaxToolkit:MaskedEditExtender ID="MaskedEditExtender8" runat="server" Mask="99/99/9999" MaskType="Date" TargetControlID="txtFromPrintedDate" PromptCharacter="_" AutoComplete="true" ></ajaxToolkit:MaskedEditExtender>
+                                                                 
+            </td>
+        </tr>
+    </table>
+    
+    </div>
+    
+    <asp:Panel ID="pnlUploadFile" runat="server" Style="width: 450px; height: 0px;
+        background-color: white; border-color: ThreeDFace; border-width: 1px; border-style: solid;
+        visibility: hidden;">
+       
+         <div style="position: relative; text-align: right; background-color: #8babe4;">
+            <a onclick="CloseUploadFilePopup();" style="cursor: pointer;" title="Close">X</a>
+        </div>
+        <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; height: 100%">
+            <tr>
+                <td style="width: 98%;" valign="top">
+                    <table border="0" class="ContentTable" style="width: 100%">
+                        <tr>
+                            <td>
+                                Upload Report :
+                            </td>
+                            <td>
+                                <asp:FileUpload ID="fuUploadReport" runat="server" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <asp:Button ID="btnUploadFile" runat="server" Text="Upload Report" CssClass="Buttons" OnClick="btnUploadFile_Click"/>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+         
+    </asp:Panel>
+</asp:Content>
+
+
+

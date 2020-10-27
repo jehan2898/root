@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table name="MSTINITIALEXAMINATION">
+  <Field Name="I_EVENT_ID" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtEventID" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_CERVICAL_SPINE_FORWARD_MOVEMENT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkCervicalSpineForwordMovement" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_CERVICAL_SPINE_BACKWORD_MOVEMENT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkCervicalSpineBackwordMovement" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_CERVICAL_SPINE_ROTATE_HEAD_LEFT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkCervicalSpineRotateHeadLeft" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_CERVICAL_SPINE_ROTATE_HEAD_RIGHT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkCervicalSpineRotateHeadRight" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_CERVICAL_SPINE_BEND_NECK_LEFT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkCervicalSpineBendNeckLeft" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_CERVICAL_SPINE_BEND_NECK_RIGHT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkCervicalSpineBendNeckRight" Editable="True" Visible="True" ></Field>
+  <Field Name="SZ_LUMBOSACRAL_SPINE_FLEXION_PATIENT_ROM" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtLumbosacralSpineFlexionPatientRom" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_LUMBOSACRAL_SPINE_FLEXION_NORMAL" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkLumbosacralSpineFlexionNormal" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_LUMBOSACRAL_SPINE_FLEXION_DULL" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkLumbosacralSpineFlexionDull" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_LUMBOSACRAL_SPINE_FLEXION_SHARP" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkLumbosacralSpineFlexionSharp" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_LUMBOSACRAL_SPINE_FLEXION_SPASM" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkLumbosacralSpineFlexioSpasm" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_LUMBOSACRAL_SPINE_FLEXION_INFLAME" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkLumbosacralSpineFlexioSpasmInflame" Editable="True" Visible="True" ></Field>
+  <Field Name="SZ_LUMBOSACRAL_SPINE_EXTENSION_PATIENT_ROM" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtLumbosacralSpineExtensionPatientRom" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_LUMBOSACRAL_SPINE_EXTENSION_NORMAL" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkLumbosacralSpineExtensionNormal" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_LUMBOSACRAL_SPINE_EXTENSION_DULL" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkLumbosacralSpineExtensionDull" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_LUMBOSACRAL_SPINE_EXTENSION_SHARP" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkLumbosacralSpineExtensionSharp" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_LUMBOSACRAL_SPINE_EXTENSION_SPASM" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkLumbosacralSpineExtensionSpasm" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_LUMBOSACRAL_SPINE_EXTENSION_INFLAME" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkLumbosacralSpineExtensionInflame" Editable="True" Visible="True" ></Field>
+  <Field Name="SZ_LUMBOSACRAL_SPINE_LEFT_ROTATION_PATIENT_ROM" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtLumbosacralSpineLeftRotaionPatientRom" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_LUMBOSACRAL_SPINE_LEFT_ROTATION_NORMAL" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkLumbosacralSpineLeftRotaionNormal" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_LUMBOSACRAL_SPINE_LEFT_ROTATION_DULL" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkLumbosacralSpineLeftRotaionDull" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_LUMBOSACRAL_SPINE_LEFT_ROTATION_SHARP" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkLumbosacralSpineLeftRotaionSharp" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_LUMBOSACRAL_SPINE_LEFT_ROTATION_SPASM" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="ChecchkLumbosacralSpineLeftRotaionSpasm" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_LUMBOSACRAL_SPINE_LEFT_ROTATION_INFLAME" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkLumbosacralSpineLeftRotaionInflame" Editable="True" Visible="True" ></Field>
+  <Field Name="SZ_LUMBOSACRAL_SPINE_RIGHT_ROTATION_PATIENT_ROM" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtLumbosacralSpinerightRoatationPatientRom" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_LUMBOSACRAL_SPINE_RIGHT_ROTATION_NORMAL" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkLumbosacralSpinerightRoatationNormal" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_LUMBOSACRAL_SPINE_RIGHT_ROTATION_DULL" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkLumbosacralSpinerightRoatationDull" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_LUMBOSACRAL_SPINE_RIGHT_ROTATION_SHARP" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkLumbosacralSpinerightRoatationSharp" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_LUMBOSACRAL_SPINE_RIGHT_ROTATION_SPASM" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkLumbosacralSpinerightRoatationSpasm" Editable="True" Visible="True" ></Field>
+  <!--<Field Name="BT_LUMBOSACRAL_SPINE_RIGHT_ROTATION_SPASM" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkLumbosacralSpinerightRoatationSpasm" Editable="True" Visible="True" ></Field>-->
+  <Field Name="BT_LUMBOSACRAL_SPINE_RIGHT_ROTATION_INFLAME" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkLumbosacralSpinerightRoatationInflame" Editable="True" Visible="True" ></Field>
+  <Field Name="SZ_LUMBOSACRAL_SPINE_LT_LATERAL_FLEXION_PATIENT_ROM" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtLumbosacralSpineLTLateralFlexionPatientRom" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_LUMBOSACRAL_SPINE_LT_LATERAL_FLEXION_NORMAL" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkLumbosacralSpineLTLateralFlexionNormal" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_LUMBOSACRAL_SPINE_LT_LATERAL_FLEXION_DULL" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkLumbosacralSpineLTLateralFlexionDull" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_LUMBOSACRAL_SPINE_LT_LATERAL_FLEXION_SHARP" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkLumbosacralSpineLTLateralFlexionSharp" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_LUMBOSACRAL_SPINE_LT_LATERAL_FLEXION_SPASM" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkLumbosacralSpineLTLateralFlexionSpasm" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_LUMBOSACRAL_SPINE_LT_LATERAL_FLEXION_INFLAME" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkLumbosacralSpineLTLateralFlexionInflame" Editable="True" Visible="True" ></Field>
+  <Field Name="SZ_LUMBOSACRAL_SPINE_RT_LATERAL_FLEXION_PATIENT_ROM" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtLumbosacralSpineRTLateralFlexionPatientRom" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_LUMBOSACRAL_SPINE_RT_LATERAL_FLEXION_NORMAL" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkLumbosacralSpineRTLateralFlexionNormal" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_LUMBOSACRAL_SPINE_RT_LATERAL_FLEXION_DULL" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkLumbosacralSpineRTLateralFlexionDull" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_LUMBOSACRAL_SPINE_RT_LATERAL_FLEXION_SHARP" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkLumbosacralSpineRTLateralFlexionSharp" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_LUMBOSACRAL_SPINE_RT_LATERAL_FLEXION_SPASM" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkLumbosacralSpineRTLateralFlexionSpasm" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_LUMBOSACRAL_SPINE_RT_LATERAL_FLEXION_INFLAME" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkLumbosacralSpineRTLateralFlexionInflame" Editable="True" Visible="True" ></Field>  
+  <Field Name="SZ_HIP_FLEXION_PATIENT_ROM" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtHIPFlexionPatientRom" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_HIP_FLEXION_NORMAL" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkHIPFlexionNormal" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_HIP_FLEXION_DULL" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkHIPFlexionDull" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_HIP_FLEXION_SHARP" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkHIPFlexionSharp" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_HIP_FLEXION_SPASM" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkHIPFlexionSpasm" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_HIP_FLEXION_INFLAME" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkHIPFlexionInflame" Editable="True" Visible="True" ></Field>
+  <Field Name="SZ_HIP_EXTENSION_PATIENT_ROM" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtHIPExtensionPatientRom" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_HIP_EXTENSION_NORMAL" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkHIPExtensionNormal" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_HIP_EXTENSION_DULL" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkHIPExtensionDull" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_HIP_EXTENSION_SHARP" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkHIPExtensionSharp" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_HIP_EXTENSION_SPASM" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkHIPExtensionSpasm" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_HIP_EXTENSION_INFLAME" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkHIPExtensionInflame" Editable="True" Visible="True" ></Field>
+  <Field Name="SZ_HIP_ABDUCTION_PATIENT_ROM" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtHIPAbductionPatientRom" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_HIP_ABDUCTION_NORMAL" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkHIPAbductionNormal" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_HIP_ABDUCTION_DULL" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkHIPAbductionDull" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_HIP_ABDUCTION_SHARP" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkHIPAbductionSharp" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_HIP_ABDUCTION_SPASM" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkHIPAbductionSpasm" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_HIP_ABDUCTION_INFLAME" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkHIPAbductionInflame" Editable="True" Visible="True" ></Field>
+  <Field Name="SZ_HIP_ADDUCTION_PATIENT_ROM" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtHIPAdductionPatientRom" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_HIP_ADDUCTION_NORMAL" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="txtHIPaAdductionNormal" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_HIP_ADDUCTION_DULL" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="txtHIPaAdductionDull" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_HIP_ADDUCTION_SHARP" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="txtHIPaAdductionSharp" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_HIP_ADDUCTION_SPASM" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="txtHIPaAdductionSpasm" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_HIP_ADDUCTION_INFLAME" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="txtHIPaAdductionInflame" Editable="True" Visible="True" ></Field>
+  <Field Name="SZ_HIP_INTERNAL_ROTATION_PATIENT_ROM" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtHIPInternalRotationPatientRom" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_HIP_INTERNAL_ROTATION_NORMAL" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkHIPInternalRotationNormal" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_HIP_INTERNAL_ROTATION_DULL" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkHIPInternalRotationDull" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_HIP_INTERNAL_ROTATION_SHARP" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkHIPInternalRotationSharp" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_HIP_INTERNAL_ROTATION_SPASM" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkHIPInternalRotationSpasm" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_HIP_INTERNAL_ROTATION_INFLAME" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkHIPInternalRotationInflame" Editable="True" Visible="True" ></Field>
+  <Field Name="SZ_HIP_EXTERNAL_ROTATION_PATIENT_ROM" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtHIPExternalRotationPatientRom" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_HIP_EXTERNAL_ROTATION_NORMAL" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkHIPExternalRotationNormal" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_HIP_EXTERNAL_ROTATION_DULL" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkHIPExternalRotationDull" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_HIP_EXTERNAL_ROTATION_SHARP" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkHIPExternalRotationSharp" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_HIP_EXTERNAL_ROTATION_SPASM" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkHIPExternalRotationSpasm" Editable="True" Visible="True" ></Field>
+  <Field Name="BT_HIP_EXTERNAL_ROTATION_INFLAME" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkHIPExternalRotationInflame" Editable="True" Visible="True" ></Field>
+  <!--<Field Name="I_UPPER_LUMBAR_PAIN" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="rdlUpperLumbarPain" Editable="True" Visible="True" ></Field>
+  <Field Name="I_LOWER_LUMBER_PAIN" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="rdlLowerLumbarPain" Editable="True" Visible="True" ></Field> 
+  <Field Name="I_SACRO_ILLAC_PAIN" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="rdlSacroIllacPain" Editable="True" Visible="True" ></Field>
+  <Field Name="I_MUSCLE_SPASM" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="rdlMuscleSpasm" Editable="True" Visible="True" ></Field>
+  <Field Name="I_LEG_RAISING_RIGHT" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="rdlLegRaisingRight" Editable="True" Visible="True" ></Field>
+  <Field Name="I_LEG_RAISING_LEFT" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="rdlLegRaisingLeft" Editable="True" Visible="True" ></Field>  
+  <Field Name="I_CERVICAL_SPINE_APPEAR" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="rdlCervicalSpineAppear" Editable="True" Visible="True" ></Field>
+  <Field Name="I_HIP_TENDERNESS" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="rdlHipTenderness" Editable="True" Visible="True" ></Field>-->
+
+  <Field Name="I_UPPER_LUMBAR_PAIN" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtrdlUpperLumbarPain" Editable="True" Visible="True" ></Field>
+  <Field Name="I_LOWER_LUMBER_PAIN" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtrdlLowerLumbarPain" Editable="True" Visible="True" ></Field>
+  <Field Name="I_SACRO_ILLAC_PAIN" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtrdlSacroIllacPain" Editable="True" Visible="True" ></Field>
+  <Field Name="I_MUSCLE_SPASM" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtrdlMuscleSpasm" Editable="True" Visible="True" ></Field>
+  <Field Name="I_LEG_RAISING_RIGHT" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtrdlLegRaisingRight" Editable="True" Visible="True" ></Field>
+  <Field Name="I_LEG_RAISING_LEFT" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtrdlLegRaisingLeft" Editable="True" Visible="True" ></Field>
+  <Field Name="I_CERVICAL_SPINE_APPEAR" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtrdlCervicalSpineAppear" Editable="True" Visible="True" ></Field>
+  <Field Name="I_HIP_TENDERNESS" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtrdlHipTenderness" Editable="True" Visible="True" ></Field>
+  <StoreProcedure name="SP_IM_PhysicalStatus1" />  
+</Table>
+
+
+<!--<Field Name="I_CERVICAL_SPINE_WITH" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="rdlCervicalSpineWith" Editable="True" Visible="True" ></Field>
+  <Field Name="I_CERVICAL_SPINE_MODERATE" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="rdlCervicalSpineModerate" Editable="True" Visible="True" ></Field>
+  <Field Name="I_CERVICAL_SPINE_TENDERNESS" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="rdlCervicalSpineTenderness" Editable="True" Visible="True" ></Field>-->
+
+

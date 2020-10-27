@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_ACCU_INITIAL">
+
+  <!--<Field Name="I_TONGUE_COLOR"                    DataType="Int"      Size=""    Null="True" Control="RadioButtonList" ControlID="RDO_TONGUE_COLOR"             Editable="True" Visible="True"></Field>-->
+  <Field Name="I_TONGUE_COLOR" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_TONGUE_COLOR" Editable="True" Visible="True" />
+
+
+  <Field Name="SZ_TONGUE_COLOR_OTHER" DataType="NVarChar" Size="100" Null="False" Control="TextBox" ControlID="TXT_TONGUE_COLOR_OTHER" Editable="True" Visible="True"></Field>
+  <!--<Field Name="I_COATING_COLOR"                    DataType="Int"      Size=""    Null="True" Control="RadioButtonList" ControlID="RDO_COATING_COLOR"             Editable="True" Visible="True"></Field>
+  <Field Name="I_COATING_THICKNESS"                    DataType="Int"      Size=""    Null="True" Control="RadioButtonList" ControlID="RDO_COATING_THICKNESS"             Editable="True" Visible="True"></Field>-->
+  <Field Name="I_COATING_COLOR" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_COATING_COLOR" Editable="True" Visible="True" />
+  <Field Name="I_COATING_THICKNESS" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_COATING_THICKNESS" Editable="True" Visible="True" />
+
+
+  <!--<Field Name="I_PULSE"                    DataType="Int"      Size=""    Null="True" Control="RadioButtonList" ControlID="RDO_PULSE"             Editable="True" Visible="True"></Field>-->
+  <Field Name="I_PULSE" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_PULSE" Editable="True" Visible="True" />
+
+
+  <Field Name="SZ_PULSE_OTHER" DataType="NVarChar" Size="100" Null="False" Control="TextBox" ControlID="TXT_PULSE_OTHER" Editable="True" Visible="True"></Field>
+  <!--<Field Name="I_MUSCLE_TENSION"                    DataType="Int"      Size=""    Null="True" Control="RadioButtonList" ControlID="RDO_MUSCLE_TENSION"             Editable="True" Visible="True"></Field>
+  <Field Name="I_NECK_MOTION"                    DataType="Int"      Size=""    Null="True" Control="RadioButtonList" ControlID="RDO_NECK_MOTION"             Editable="True" Visible="True"></Field>
+  <Field Name="I_BACK_MOTION"                    DataType="Int"      Size=""    Null="True" Control="RadioButtonList" ControlID="RDO_BACK_MOTION"             Editable="True" Visible="True"></Field>-->
+  <Field Name="I_MUSCLE_TENSION" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_MUSCLE_TENSION" Editable="True" Visible="True" />
+  <Field Name="I_NECK_MOTION" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_NECK_MOTION" Editable="True" Visible="True" />
+  <Field Name="I_BACK_MOTION" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_BACK_MOTION" Editable="True" Visible="True" />
+
+  <!--<Field Name="I_SHOULDER_LEFT_RIGHT_MOTION"                    DataType="Int"      Size=""    Null="True" Control="RadioButtonList" ControlID="RDO_SHOULDER_LEFT_RIGHT_MOTION"             Editable="True" Visible="True"></Field>-->
+  <Field Name="I_SHOULDER_LEFT_RIGHT_MOTION" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_SHOULDER_LEFT_RIGHT_MOTION" Editable="True" Visible="True" />
+
+
+  <Field Name="BT_NECK_TRIGGER_POINT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_NECK_TRIGGER_POINT" Editable="True" Visible="True"></Field>
+  <Field Name="BT_SHOULDER_TRIGGER_POINT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_SHOULDER_TRIGGER_POINT" Editable="True" Visible="True"></Field>
+  <Field Name="BT_UPPER_BACK_TRIGGER_POINT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_UPPER_BACK_TRIGGER_POINT" Editable="True" Visible="True"></Field>
+  <Field Name="BT_MIDDLE_BACK_TRIGGER_POINT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_MIDDLE_BACK_TRIGGER_POINT" Editable="True" Visible="True"></Field>
+  <Field Name="BT_LOWER_BACK_TRIGGER_POINT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_LOWER_BACK_TRIGGER_POINT" Editable="True" Visible="True"></Field>
+  <Field Name="BT_LEG_TRIGGER_POINT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_LEG_TRIGGER_POINT" Editable="True" Visible="True"></Field>
+  <Field Name="I_EVENT_ID" DataType="Int" Size="" Null="" Control="TextBox"  ControlID="txtEventID" Editable="True" Visible="True"></Field>
+
+  <StoreProcedure name="SP_MST_AC_ACCU_INITIAL_2"></StoreProcedure>
+
+</Table>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  
+  <key name="VL_ExaminationDate" value="ExaminationDate"></key>
+  <key name="VL_SZ_WCB_NO" value="SZ_WCB_NO"></key>
+  <key name="VL_SZ_CARRIER_CASE_NO" value="SZ_CARRIER_CASE_NO"></key>
+  
+  <key name="VL_SZ_PATIENT_LAST_NAME" value="SZ_PATIENT_LAST_NAME"></key>
+  <key name="VL_SZ_PATIENT_FIRST_NAME" value="SZ_PATIENT_FIRST_NAME"></key>
+  <key name="VL_SZ_MI" value="SZ_MI"></key>
+  <key name="VL_DT_INJURY" value="DT_INJURY"></key>
+  <key name="VL_SZ_SOCIAL_SECURITY_NO" value="SZ_SOCIAL_SECURITY_NO"></key>
+  <key name="VL_SZ_PATIENT_STREET" value="SZ_PATIENT_STREET"></key>
+  <key name="VL_SZ_PATIENT_CITY" value="SZ_PATIENT_CITY"></key>
+  <key name="VL_SZ_PATIENT_STREET" value="SZ_PATIENT_STREET"></key>
+  <key name="VL_SZ_PATIENT_ZIP" value="SZ_PATIENT_ZIP"></key>
+  <key name="VL_SZ_CASE_ID" value="SZ_CASE_ID"></key>
+  
+
+  <key name="VL_SZ_DOCTOR_NAME" value="SZ_DOCTOR_NAME"></key>
+  <key name="VL_SZ_WCB_AUTHORIZATION" value="SZ_WCB_AUTHORIZATION"></key>
+  <key name="VL_SZ_WCB_RATING_CODE" value="SZ_WCB_RATING_CODE"></key>
+  <key name="VL_SZ_OFFICE_ADDRESS" value="SZ_OFFICE_ADDRESS"></key>
+  <key name="VL_SZ_OFFICE_CITY" value="SZ_OFFICE_CITY"></key>
+  <key name="VL_SZ_OFFICE_STATE" value="SZ_OFFICE_STATE"></key>
+  <key name="VL_SZ_OFFICE_ZIP" value="SZ_OFFICE_ZIP"></key>
+  <key name="VL_SZ_BILLING_ADDRESS" value="SZ_BILLING_ADDRESS"></key>
+  <key name="VL_SZ_BILLING_CITY" value="SZ_BILLING_CITY"></key>
+  <key name="VL_SZ_BILLING_STATE" value="SZ_BILLING_STATE"></key>
+  <key name="VL_SZ_BILLING_ZIP" value="SZ_BILLING_ZIP"></key>
+  <key name="VL_SZ_OFFICE_PHONE" value="SZ_OFFICE_PHONE"></key>
+  <key name="VL_SZ_BILLING_PHONE" value="SZ_BILLING_PHONE"></key>
+  <key name="VL_SZ_NPI" value="SZ_NPI"></key>
+  <key name="VL_SZ_FEDERAL_TAX_ID" value="SZ_FEDERAL_TAX_ID"></key>
+  <key name="VL_BIT_TAX_ID_TYPE1" value="BIT_TAX_ID_TYPE1"></key>
+  <key name="VL_BIT_TAX_ID_TYPE2" value="BIT_TAX_ID_TYPE2"></key>
+  
+  
+  <key name="VL_SZ_INSURANCE_NAME" value="SZ_INSURANCE_NAME"></key>
+  <key name="VL_SZ_CARRIER_CODE" value="SZ_CARRIER_CODE"></key>
+  <key name="VL_SZ_INSURANCE_STREET" value="SZ_INSURANCE_STREET"></key>
+  <key name="VL_SZ_INSURANCE_CITY" value="SZ_INSURANCE_CITY"></key>
+  <key name="VL_SZ_INSURANCE_STATE" value="SZ_INSURANCE_STATE"></key>
+  <key name="VL_SZ_INSURANCE_ZIP" value="SZ_INSURANCE_ZIP"></key>
+  
+  <key name="VL_BT_PPO" value="BT_PPO"></key>
+  <key name="VL_BT_PPO" value="BT_PPO"></key>
+  <key name="VL_SZ_DIAGNOSIS_TREATEMENT_RENDERED" value="SZ_DIAGNOSIS_TREATEMENT_RENDERED"></key>
+  <key name="VL_SZ_NATURE_OF_INJURY" value="SZ_NATURE_OF_INJURY"></key>
+  <key name="VL_SZ_AFFECTED_BY_INJURY" value="SZ_AFFECTED_BY_INJURY"></key>
+  <key name="VL_SZ_CHANGES_IN_TREATMENT_PLAN" value="SZ_CHANGES_IN_TREATMENT_PLAN"></key>
+  <key name="VL_BT_IS_DIAGNOSTIC_REFERRALS_REQUIRED1" value="BT_IS_DIAGNOSTIC_REFERRALS_REQUIRED1"></key>
+  <key name="VL_BT_IS_DIAGNOSTIC_REFERRALS_REQUIRED2" value="BT_IS_DIAGNOSTIC_REFERRALS_REQUIRED2"></key>
+  <key name="VL_SZ_TREATEMENT_RENDERED" value="SZ_TREATEMENT_RENDERED"></key>
+  <key name="VL_SZ_APPOINTMENT" value="SZ_APPOINTMENT"></key>
+  <key name="VL_SZ_APPOINTMENT_MONTH" value="SZ_APPOINTMENT_MONTH"></key>
+  
+  <key name="VL_BT_IS_COMPETENT_MEDICAL_CAUSE1" value="BT_IS_COMPETENT_MEDICAL_CAUSE1"></key>
+  <key name="VL_BT_IS_COMPETENT_MEDICAL_CAUSE2" value="BT_IS_COMPETENT_MEDICAL_CAUSE2"></key>
+
+  <key name="VL_BT_IS_CONSISTENT_WITH_HISTORY1" value="BT_IS_CONSISTENT_WITH_HISTORY1"></key>
+  <key name="VL_BT_IS_CONSISTENT_WITH_HISTORY2" value="BT_IS_CONSISTENT_WITH_HISTORY2"></key>
+
+  <key name="VL_BT_IS_CONSISTENT_WITH_OBJECTIVE_FINDINGS1" value="BT_IS_CONSISTENT_WITH_OBJECTIVE_FINDINGS1"></key>
+  <key name="VL_BT_IS_CONSISTENT_WITH_OBJECTIVE_FINDINGS2" value="BT_IS_CONSISTENT_WITH_OBJECTIVE_FINDINGS2"></key>
+  <key name="VL_BT_IS_CONSISTENT_WITH_OBJECTIVE_FINDINGS3" value="BT_IS_CONSISTENT_WITH_OBJECTIVE_FINDINGS3"></key>
+
+  <key name="VL_FT_TEMPORARY_IMPAIRMENT_PERCENTAGE" value="FT_TEMPORARY_IMPAIRMENT_PERCENTAGE"></key>
+  <key name="VL_SZ_TEST_RESULTS" value="SZ_TEST_RESULTS"></key>
+
+  <key name="VL_BT_PATIENT_IS_WORKING1" value="BT_PATIENT_IS_WORKING1"></key>
+  <key name="VL_BT_PATIENT_IS_WORKING2" value="BT_PATIENT_IS_WORKING2"></key>
+  <key name="VL_BT_WORK_RESTRICTION1" value="BT_WORK_RESTRICTION1"></key>
+  <key name="VL_BT_WORK_RESTRICTION2" value="BT_WORK_RESTRICTION2"></key>
+  <key name="VL_SZ_WORK_DESCRIBE_RESTRICTION" value="SZ_WORK_DESCRIBE_RESTRICTION"></key>
+  <key name="VL_BT_PATIENT_IS_WORKING1" value="BT_PATIENT_IS_WORKING1"></key>
+  <key name="VL_BT_PATIENT_IS_WORKING1" value="BT_PATIENT_IS_WORKING1"></key>
+
+  
+
+
+</root>

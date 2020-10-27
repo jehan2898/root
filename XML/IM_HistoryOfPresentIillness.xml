@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_INITIAL_EXAMINATION">
+  <Field Name="I_EVENT_ID" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtEventID" Editable="True" Visible="True"></Field>
+
+  <Field Name="SZ_WHERE_HOW_INJURY_HAPPEN" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtWhereHowInjuryHappen" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PATIENT_JOB_TITLE" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtPatientJobTitle" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PATIENT_WORK_ACTIVITY" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtPatientWorkActivity" Editable="True" Visible="True"></Field>
+  <!--<Field Name="I_INJURY" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="rdlInjuryIllness" Editable="True" Visible="True"></Field>-->
+  <Field Name="I_INJURY" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtrdlInjuryIllness" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_INJURY_FROM_OTHERS" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtOtherSpecify" Editable="True" Visible="True"></Field>
+  <!--<Field Name="I_TREAT_INJURY" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="rdlTreatInjury" Editable="True" Visible="True"></Field>-->
+  <Field Name="I_TREAT_INJURY" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtrdlTreatInjury" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_ANOTHER_HEALTH_PROVIDER_TREATED_DETAILS" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtAnotherHealthProviderTreatedDatails" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_LOCATION_OTHER_PROVIDER" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtLocationOtherProvider" Editable="True" Visible="True"></Field>
+  <Field Name="BT_BUS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkBus" Editable="True" Visible="True"></Field>
+  <Field Name="BT_SUBWAY" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkSubWay" Editable="True" Visible="True"></Field>
+  <Field Name="BT_TAXI" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkTaxi" Editable="True" Visible="True"></Field>
+  <Field Name="BT_WALKING" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkWalking" Editable="True" Visible="True"></Field>
+  <Field Name="BT_AMBULATE" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkAmbulate" Editable="True" Visible="True"></Field>
+  <Field Name="BT_PRIVATE_CAR" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkPrivateCar" Editable="True" Visible="True"></Field>
+  <Field Name="BT_OTHER" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkOTHER" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PATIENT_OTHER_TRANSPORT" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtPatientOtherTransport" Editable="True" Visible="True"></Field>
+  <!--<Field Name="I_PREVIOUSLY_TREATED" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="rdlRDOPreviouslyTreated" Editable="True" Visible="True"></Field>-->
+  <Field Name="I_PREVIOUSLY_TREATED" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtrdlRDOPreviouslyTreated" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PREVIOUS_TREATMENT_WORK_RELATED_INJURY" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtPreviousTreatmentWorkRelatedInjury" Editable="True" Visible="True"></Field>
+  <Field Name="BT_TREATMENT_99241" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkTreatment99241" Editable="True" Visible="True"></Field>
+  <Field Name="BT_TREATMENT_99244" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkTreatment99244" Editable="True" Visible="True"></Field>
+  <Field Name="BT_TREATMENT_99242" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkTreatment99242" Editable="True" Visible="True"></Field>
+  <Field Name="BT_TREATMENT_99245" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkTreatment99245" Editable="True" Visible="True"></Field>
+  <Field Name="BT_TREATMENT_99243" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkTreatment99243" Editable="True" Visible="True"></Field>
+
+  <StoreProcedure name="SP_IM_PATINET_HISTORY_OF_PRESENT_ILLNESS" />
+</Table>
+
+
+
+
+
+<!--I_EVENT_ID
+SZ_WHERE_HOW_INJURY_HAPPEN
+SZ_PATIENT_JOB_TITLE
+SZ_PATIENT_WORK_ACTIVITY
+I_INJURY
+SZ_INJURY_FROM_OTHERS
+I_TREAT_INJURY
+SZ_ANOTHER_HEALTH_PROVIDER_TREATED_DETAILS
+SZ_LOCATION_OTHER_PROVIDER
+BT_BUS
+BT_SUBWAY
+BT_TAXI
+BT_WALKING
+BT_AMBULATE
+BT_PRIVATE_CAR
+BT_OTHER
+SZ_PATIENT_OTHER_TRANSPORT
+I_PREVIOUSLY_TREATED
+SZ_PREVIOUS_TREATMENT_WORK_RELATED_INJURY
+BT_TREATMENT_99241
+BT_TREATMENT_99244
+BT_TREATMENT_99242
+BT_TREATMENT_99245
+BT_TREATMENT_99243-->
+
+
+
+<!--<Field Name="I_EVENT_ID" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtEventId" Editable="True" Visible="True"/>
+<Field Name="SZ_WHERE_HOW_INJURY_HAPPEN" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtWhereHowInjuryHappen" Editable="True" Visible="True"/>
+<Field Name="SZ_PATIENT_JOB_TITLE" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtPatientJobTitle" Editable="True" Visible="True"/>
+<Field Name="SZ_PATIENT_WORK_ACTIVITY" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtPatientWorkActivity" Editable="True" Visible="True"/>
+<Field Name="I_INJURY" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="rdlInjuryIllness" Editable="True" Visible="True"/>
+<Field Name="SZ_INJURY_FROM_OTHERS" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtOtherSpecify" Editable="True" Visible="True"/>
+<Field Name="I_TREAT_INJURY" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="rdlTreatInjury" Editable="True" Visible="True"/>
+<Field Name="SZ_ANOTHER_HEALTH_PROVIDER_TREATED_DETAILS" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtAnotherHealthProviderTreatedDatails" Editable="True" Visible="True"/>
+<Field Name="SZ_LOCATION_OTHER_PROVIDER" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtLocationOtherProvider" Editable="True" Visible="True" />
+<Field Name="BT_BUS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkBus" Editable="True" Visible="True"/>
+<Field Name="BT_SUBWAY" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkSubWay" Editable="True" Visible="True"/>
+<Field Name="BT_TAXI" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkTaxi" Editable="True" Visible="True"/>
+<Field Name="BT_WALKING" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkWalking" Editable="True" Visible="True"/>
+<Field Name="BT_AMBULATE" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkAmbulate" Editable="True" Visible="True"/>
+<Field Name="BT_PRIVATE_CAR" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkPrivateCar" Editable="True" Visible="True"/>
+<Field Name="BT_OTHER" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkOTHER" Editable="True" Visible="True"/>
+<Field Name="SZ_PATIENT_OTHER_TRANSPORT" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtPatientOtherTransport" Editable="True" Visible="True"/>
+<Field Name="I_PREVIOUSLY_TREATED" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="rdlRDOPreviouslyTreated" Editable="True" Visible="True"/>
+<Field Name="SZ_PREVIOUS_TREATMENT_WORK_RELATED_INJURY" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtPreviousTreatmentWorkRelatedInjury" Editable="True" Visible="True"/>
+
+<Field Name="BT_TREATMENT_99241" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkTreatment99241" Editable="True" Visible="True" />
+<Field Name="BT_TREATMENT_99244" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkTreatment99244" Editable="True" Visible="True" />
+<Field Name="BT_TREATMENT_99242" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkTreatment99242" Editable="True" Visible="True" />
+<Field Name="BT_TREATMENT_99245" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkTreatment99245" Editable="True" Visible="True" />
+<Field Name="BT_TREATMENT_99243" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkTreatment99243" Editable="True" Visible="True" />
+
+<StoreProcedure name="SP_IM_PATINET_HISTORY_OF_PRESENT_ILLNESS"/>-->

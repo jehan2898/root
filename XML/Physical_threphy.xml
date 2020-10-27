@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_PHYSICAL_THERAPHY_AQUA_MED">
+  <Field Name ="I_EVENT_ID" DataType="Int" Size="" Null="True" Control="TextBox" ControlID="TXT_I_EVENT" Editable="True" Visible="True"></Field>
+  <Field Name ="DT_TREATMENT" DataType="DateTime" Size="" Null="True" Control="TextBox" ControlID="TXT_TREATMENT" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_PROGRESS_1" DataType="Bit" Size="" Null="True" Control="CheckBox" ControlID="CHK_PROGRESS_1" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_PROGRESS_2" DataType="Bit" Size="" Null="True" Control="CheckBox" ControlID="CHK_PROGRESS_2" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_PROGRESS_3" DataType="Bit" Size="" Null="True" Control="CheckBox" ControlID="CHK_PROGRESS_3" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_PROGRESS_4" DataType="Bit" Size="" Null="True" Control="CheckBox" ControlID="CHK_PROGRESS_4" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_PROGRESS_5" DataType="Bit" Size="" Null="True" Control="CheckBox" ControlID="CHK_PROGRESS_5" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_PROGRESS_6" DataType="Bit" Size="" Null="True" Control="CheckBox" ControlID="CHK_PROGRESS_6" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_PROGRESS_7" DataType="Bit" Size="" Null="True" Control="CheckBox" ControlID="CHK_PROGRESS_7" Editable="True" Visible="True"></Field>
+
+  <StoreProcedure name="SP_PHYSCAL_THERAPY_AUQ"></StoreProcedure>
+  
+</Table>
+
+
+
+
+
+

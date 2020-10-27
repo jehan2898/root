@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1FB457C8-C653-45EB-8FB8-BA16DA85D430}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DoseSpotService</RootNamespace>
+    <AssemblyName>DoseSpotService</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\DoseSpotAPI\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DoseSpotAPI\api.wsdl" />
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.AddAllergyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.AddAllergyResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.AddDetailedSelfReportedMedicationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.AddSelfReportedMedicationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.AddSelfReportedMedicationsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.AddUpdateFreeTextMedicationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.AddUpdateSelfReportedMedicationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.AllergyListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.AllergyListResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.AllergySearchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.AllergySearchResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.CheckAllergyInteractionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.CheckAllergyInteractionsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.CheckClinicianRegistrationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.CheckClinicianRegistrationResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.ClinicAddMessage2.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.ClinicAddResultMessage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.ClinicianAddMessage2.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.ClinicianAddMultipleClinicsMessage2.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.ClinicianAddMultipleClinicsResultsMessage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.ClinicianAddResultsMessage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.EditAllergyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.EditAllergyResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.GetMedicationListByDateRangeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.GetMedicationListByDateRangeResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.GetMedicationListMUResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.GetMedicationListMUResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.GetMedicationListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.GetMedicationListResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.GetPatientDetail1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.GetPatientDetailFull1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.GetPatientDetailMU1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.GetPrescriberNotificationCountsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.GetPrescriberNotificationCountsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.GetRefillRequestsDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.GetRefillRequestsDetailsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.GetRefillRequestsTransmissionErrorsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.GetStandardDispenseUnitResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.GetStandardDispenseUnitResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.ImportMedicationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.ImportMedicationsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.LogPatientMedicationHistoryConsentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.MedHistoryConsentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.MedicationQuickSearchMessage2.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.MedicationQuickSearchResultsMessage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.MedicationSearchByRxCuiMessage2.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.MedicationSelectMessage2.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.MedicationSelectResultMessage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.MedicationStatusUpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.MedicationStrengthSearchMessage2.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.MedicationStrengthSearchResultsMessage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.MedicationStrengthSearchResultsWithNDCMessage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.MedicationStrengthSearchWithNDCMessage2.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.MergePatientsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.MergePatientsResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.PatientUpdateFullMessageResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.PatientUpdateMessage1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.PatientUpdateMessageMUResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.PatientUpdateMessageResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.PharmacySearchMessage2.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.PharmacySearchMessageDetailed2.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.PharmacySearchMessageDetailedResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.PharmacySearchMessageResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.PharmacyValidateMessage2.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.PharmacyValidateMessageResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.RefillRequestsTransmissionErrorsMessage1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.RefillRequestsTransmissionErrorsMessageResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.SelfReportedMedicationSearchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.SelfReportedMedicationSearchResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DoseSpotAPI\DoseSpotService.DoseSpotAPI.UpdatePrescriptionStatus1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\DoseSpotAPI\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DoseSpotAPI\api.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DoseSpotAPI\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DoseSpotAPI\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DoseSpotAPI\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

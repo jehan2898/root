@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_MRI_QUESTIONARY">
+  <Field Name="I_EVENT_ID" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_EVENT_ID" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PATIENT_NAME" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_PATIENT_NAME" Editable="False" Visible="True"></Field>
+  <Field Name="SZ_DATE_OF_BIRTH" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_DATE_OF_BIRTH" Editable="False" Visible="True"></Field>
+  <Field Name="SZ_COMPANY_NAME" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_CMP_NAME" Editable="False" Visible="True"></Field>
+  <Field Name="SZ_SEX" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_SEX" Editable="False" Visible="True"></Field>
+
+  <StoreProcedure name="SP_MRI_PATIENT_INFORMATION" />
+</Table>

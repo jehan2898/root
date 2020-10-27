@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Untitled Page</title>
+</head>
+<body>
+    <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td align="center">
+                <table width="40%" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td style='font-size: 18px; font-family: Trebuchet MS; height: 14pt' align="center">
+                            <b>@PROVIDER_NAME</b></td>
+                    </tr>
+                    <tr>
+                        <td style='font-size: 12px; font-family: Trebuchet MS; height: 14pt' align="center">
+                                        @PROVIDER_STREET
+                                <br />  @PROVIDER_CITY
+                                <br />  PHONE: @PROVIDER_PHONE
+                                <br />  FAX: @PROVIDER_FAX
+                                <br />  EMAIL: @PROVIDER_EMAIL
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td style='font-size: 12px; font-family: Trebuchet MS' align="right">
+                Date: @DATE
+            </td>
+        </tr>
+        <tr>
+            <td style='font-size: 12px; font-family: Trebuchet MS' align="right">
+                Bill #: @BILL_NUMBER
+            </td>
+        </tr>
+        <tr>
+            <td style='font-size: 12px; font-family: Trebuchet MS' align="right">
+                TN: @TN</td>
+        </tr>
+        <tr>
+            <td>
+                <table width='100%' border='0' cellpadding='0' cellspacing='0' align='center'>
+                    <tr>
+                        <td style='font-size: 14px; font-family: Trebuchet MS'>
+                            Bill To :
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td style='font-size: 14px; font-family: Trebuchet MS'>
+                            Employer :
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign='top' width='100%' style='font-size: 16px; font-family: Trebuchet MS;' align='left'>
+                            <b>&nbsp;</b>
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td valign='top' width='200' style='font-size: 12px'>
+                            <b>@EMPLOYER_NAME</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign='bottom' width='400' style='font-size: 12px font-family:Trebuchet MS'>&nbsp;
+                            <br />&nbsp;
+                            <br />&nbsp;
+                        </td>
+                        <td>&nbsp;</td>
+                        <td valign='bottom' width='400' style='font-size: 12px font-family:Trebuchet MS' align='left'>@EMPLOYER_ADDRESS
+                            <br />@Employer_State
+                            <br />@EMPLOYER_PHONE
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td valign='top' width='270' style='font-size: 12px font-family:Trebuchet MS' align='left'>
+                            PATIENT: @BOTTOM_PATIENT_NAME
+                           <br />DATE OF ACCIDENT: @ACCIDENT_DATE
+                        </td>
+                    </tr>
+                </table>
+                
+            </td>
+        </tr>
+        
+        <tr>
+            <td align="center">
+                @PROC_TABLE
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+        
+        <tr>
+            <td style='font-size: 12px; font-family: Trebuchet MS' align="center">
+                <b>Make all check payable to @BOTTOM_PROVIDER_NAME</b>
+                <br /><b>THANK YOU FOR YOUR BUSINESS!</b>
+            </td>
+        </tr>
+    </table>
+    
+    <table width="100%" cellpadding="0" cellspacing="0">
+    </table>
+</body>
+</html>

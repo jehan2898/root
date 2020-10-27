@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_OFFICE">
+  <Field Name="SZ_OFFICE_ID"        DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"   ControlID=""               Editable="False" Visible="False"></Field>
+  <Field Name="SZ_OFFICE"           DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"   ControlID="txtBilingOfficeName"      Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_BILLING_ADDRESS"  DataType="NVarChar"    Size="150"    Null="False"   Control="TextBox"   ControlID="txtBillingOfficeAddress"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_BILLING_CITY"     DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"   ControlID="txtBillingOfficeCity"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_BILLING_STATE_ID" DataType="NVarChar"    Size="50"     Null="False"   Control="ExtendedDropDownList"   ControlID="extddlBillingOfficeState"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_BILLING_ZIP"      DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"   ControlID="txtBillingOfficeZip"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_BILLING_PHONE"    DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"   ControlID="txtBillingOfficePhone"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_NPI"              DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"   ControlID="txtNPI"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_FEDERAL_TAX_ID"   DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"   ControlID="txtFederalTax"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_COMPANY_ID"  DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"   ControlID="txtCompanyID"   Editable="True"  Visible="True" ></Field>
+  <Field Name="BIT_IS_BILLING"  DataType="Int"    Size=""     Null="False"   Control="TextBox"   ControlID="txtBillingOfficeFlag"   Editable="True"  Visible="True" ></Field>
+  <StoreProcedure name="SP_MST_OFFICE"></StoreProcedure>
+  <ListControl name="grdOfficeList"></ListControl>
+</Table>

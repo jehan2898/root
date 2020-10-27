@@ -1,0 +1,379 @@
+<root>
+  <document type= "FUNDING_SYSTEM" description="LSC Payoff letter template" lastmodified="June 22 2009 15:35" procedure_name="SP_IM_FOLLOWUP_GET_DETAILS" >
+    <field db_field_name="CHK_PATIENT_WORK_LIMIT_USE_PUBLIC_TRASPT"       pdf_field_index="1"  pdf_field_name="CHK_PATIENT_WORK_LIMIT_USE_PUBLIC_TRASPT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PATIENT_CAN_WORK_WITHOUT_LIMIT"       pdf_field_index="2"  pdf_field_name="CHK_PATIENT_CAN_WORK_WITHOUT_LIMIT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_WORK_RESTRICTIONS_15_PLUS_DAYS"       pdf_field_index="3"  pdf_field_name="CHK_WORK_RESTRICTIONS_15_PLUS_DAYS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_WORK_RESTRICTIONS_3_TO_7_DAYS"       pdf_field_index="4"  pdf_field_name="CHK_WORK_RESTRICTIONS_3_TO_7_DAYS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_PERCENTAGE_TEMP_IMPAIRMENT"       pdf_field_index="5"  pdf_field_name="TXT_PERCENTAGE_TEMP_IMPAIRMENT"   if_blank=" "/>
+    <field db_field_name="CHK_DIAGNOSIS_842_1"       pdf_field_index="6"  pdf_field_name="CHK_DIAGNOSIS_842_1"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DIAGNOSIS_847_1"       pdf_field_index="7"  pdf_field_name="CHK_DIAGNOSIS_847_1"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_MRI_CT_DEMO"       pdf_field_index="8"  pdf_field_name="TXT_MRI_CT_DEMO"   if_blank=" "/>
+    <field db_field_name="CHK_X_RAY_LUM_SPINE_DEMO"       pdf_field_index="9"  pdf_field_name="CHK_X_RAY_LUM_SPINE_DEMO"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="RDO_NUMBNESS_IN_HAND"       pdf_field_index="10"  pdf_field_name="RDO_NUMBNESS_IN_HAND"   if_blank=" "/>
+    <field db_field_name="CHK_ANKLE_EVERSION_INFLAME"       pdf_field_index="11"  pdf_field_name="CHK_ANKLE_EVERSION_INFLAME"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_ANKLE_INVERSION_INFLAME"       pdf_field_index="12"  pdf_field_name="CHK_ANKLE_INVERSION_INFLAME"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_ANKLE_DORSI_FLEXION_PATIENT_ROM"       pdf_field_index="13"  pdf_field_name="TXT_ANKLE_DORSI_FLEXION_PATIENT_ROM"   if_blank=" "/>
+    <field db_field_name="TXT_KNEE_EXTENSION_RIGHT"       pdf_field_index="14"  pdf_field_name="TXT_KNEE_EXTENSION_RIGHT"   if_blank=" "/>
+    <field db_field_name="CHK_SHOULDER_EXTERNAL_ROTATION_SPASM"       pdf_field_index="15"  pdf_field_name="CHK_SHOULDER_EXTERNAL_ROTATION_SPASM"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_SHOULDER_ADDUCTION_SHARP"       pdf_field_index="16"  pdf_field_name="CHK_SHOULDER_ADDUCTION_SHARP"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_SHOULDER_ADDUCTION_PATIENT_ROM_LEFT"       pdf_field_index="17"  pdf_field_name="TXT_SHOULDER_ADDUCTION_PATIENT_ROM_LEFT"   if_blank=" "/>
+    <field db_field_name="TXT_LUMBOSACRAL_SPINE_EXTENSION_PATIENT_ROM"       pdf_field_index="18"  pdf_field_name="TXT_LUMBOSACRAL_SPINE_EXTENSION_PATIENT_ROM"   if_blank=" "/>
+    <field db_field_name="RDO_FORAMINAL_COMPRESSION_SPURLING_SIGN"       pdf_field_index="19"  pdf_field_name="RDO_FORAMINAL_COMPRESSION_SPURLING_SIGN"   if_blank=" "/>
+    <field db_field_name="TXT_CERVICAL_SPINE_RT_LATERAL_FLEXION_PATIENT_ROM"       pdf_field_index="20"  pdf_field_name="TXT_CERVICAL_SPINE_RT_LATERAL_FLEXION_PATIENT_ROM"   if_blank=" "/>
+    <field db_field_name="CHK_FATIGUE"       pdf_field_index="21"  pdf_field_name="CHK_FATIGUE"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_SHOOTING_PAIN_LEG"       pdf_field_index="22"  pdf_field_name="CHK_SHOOTING_PAIN_LEG"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_PATIENT_OTHER_TRANSPORT"       pdf_field_index="23"  pdf_field_name="TXT_PATIENT_OTHER_TRANSPORT"   if_blank=" "/>
+    <field db_field_name="CHK_PATIENT_ARRIVED_BUS"       pdf_field_index="24"  pdf_field_name="CHK_PATIENT_ARRIVED_BUS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_DOE"       pdf_field_index="25"  pdf_field_name="TXT_DOE"   if_blank=" "/>
+    <field db_field_name="TXT_PATIENT_NAME"       pdf_field_index="26"  pdf_field_name="TXT_PATIENT_NAME"   if_blank=" "/>
+    <field db_field_name="TXT_PATIENT_CANNOT_WORK_RET"       pdf_field_index="27"  pdf_field_name="TXT_PATIENT_CANNOT_WORK_RET"   if_blank=" "/>
+    <field db_field_name="CHK_PATIENT_NEXT_VISIT_5_TO_6_WEEKS"       pdf_field_index="28"  pdf_field_name="CHK_PATIENT_NEXT_VISIT_5_TO_6_WEEKS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_SUPPLIES_MASSAGER"       pdf_field_index="29"  pdf_field_name="CHK_SUPPLIES_MASSAGER"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_REFERRALS_SPECIALIST_IN"       pdf_field_index="30"  pdf_field_name="CHK_REFERRALS_SPECIALIST_IN"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DIAGNOSIS_924_2"       pdf_field_index="31"  pdf_field_name="CHK_DIAGNOSIS_924_2"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DIAGNOSIS_RIGHT_923_0"       pdf_field_index="32"  pdf_field_name="CHK_DIAGNOSIS_RIGHT_923_0"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DIAGNOSIS_847_2"       pdf_field_index="33"  pdf_field_name="CHK_DIAGNOSIS_847_2"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_ROM_DEMO_TT_IMP"       pdf_field_index="34"  pdf_field_name="TXT_ROM_DEMO_TT_IMP"   if_blank=" "/>
+    <field db_field_name="CHK_EMG_UPP_EXET_DEMO"       pdf_field_index="35"  pdf_field_name="CHK_EMG_UPP_EXET_DEMO"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_ANKLE_PLANTAR_FLEXION_DULL"       pdf_field_index="36"  pdf_field_name="CHK_ANKLE_PLANTAR_FLEXION_DULL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_HIP_FLEXION_LEFT"       pdf_field_index="37"  pdf_field_name="TXT_HIP_FLEXION_LEFT"   if_blank=" "/>
+    <field db_field_name="CHK_SHOULDER_ABDUCTION_INFLAME"       pdf_field_index="38"  pdf_field_name="CHK_SHOULDER_ABDUCTION_INFLAME"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_SHOULDER_FLEXION_SHARP"       pdf_field_index="39"  pdf_field_name="CHK_SHOULDER_FLEXION_SHARP"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LUMBOSACRAL_SPINE_LT_LATERAL_FLEXION_NORMAL"       pdf_field_index="40"  pdf_field_name="CHK_LUMBOSACRAL_SPINE_LT_LATERAL_FLEXION_NORMAL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LUMBOSACRAL_SPINE_FLEXION_SPASM"       pdf_field_index="41"  pdf_field_name="CHK_LUMBOSACRAL_SPINE_FLEXION_SPASM"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="RDO_CERVICAL_SPINE_TENDERNESS"       pdf_field_index="42"  pdf_field_name="RDO_CERVICAL_SPINE_TENDERNESS"   if_blank=" "/>
+    <field db_field_name="CHK_CERVICAL_SPINE_LEFT_ROTATION_SHARP"       pdf_field_index="43"  pdf_field_name="CHK_CERVICAL_SPINE_LEFT_ROTATION_SHARP"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CERVICAL_SPINE_FLEXION_SHARP"       pdf_field_index="44"  pdf_field_name="CHK_CERVICAL_SPINE_FLEXION_SHARP"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_ANXIETY_STRESS"       pdf_field_index="45"  pdf_field_name="CHK_ANXIETY_STRESS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_PROVIDER_ADDRESS"       pdf_field_index="46"  pdf_field_name="TXT_PROVIDER_ADDRESS"   if_blank=" "/>
+    <field db_field_name="RDO_PATIENT_BENEFIT_REHABILITATION"       pdf_field_index="47"  pdf_field_name="RDO_PATIENT_BENEFIT_REHABILITATION"   if_blank=" "/>
+    <field db_field_name="TXT_DESCRIBE_LIMITATION"       pdf_field_index="48"  pdf_field_name="TXT_DESCRIBE_LIMITATION"   if_blank=" "/>
+    <field db_field_name="CHK_PATIENT_WORK_LIMIT_USE_UPPER_EXTREMITIES"       pdf_field_index="49"  pdf_field_name="CHK_PATIENT_WORK_LIMIT_USE_UPPER_EXTREMITIES"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_WORK_RESTRICTIONS_UNKNOWN"       pdf_field_index="50"  pdf_field_name="CHK_WORK_RESTRICTIONS_UNKNOWN"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="RDO_COMPLAINT_CONSISTENT_YES"       pdf_field_index="51"  pdf_field_name="RDO_COMPLAINT_CONSISTENT_YES"   if_blank=" "/>
+    <field db_field_name="CHK_PATIENT_NEXT_VISIT_3_TO_4_WKS"       pdf_field_index="52"  pdf_field_name="CHK_PATIENT_NEXT_VISIT_3_TO_4_WKS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_TEST_LABS "       pdf_field_index="53"  pdf_field_name="CHK_TEST_LABS "   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_REFERRALS_INTERNIST_FAMILY_PHYSICIAN"       pdf_field_index="54"  pdf_field_name="CHK_REFERRALS_INTERNIST_FAMILY_PHYSICIAN"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_REFERRALS_CHIROPRACTOR"       pdf_field_index="55"  pdf_field_name="CHK_REFERRALS_CHIROPRACTOR"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="0_836"       pdf_field_index="56"  pdf_field_name="0_836"   if_blank=" "/>
+    <field db_field_name="CHK_DIAGNOSIS_724_4"       pdf_field_index="57"  pdf_field_name="CHK_DIAGNOSIS_724_4"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_MRI_CT_CER_SPINE_DEMO"       pdf_field_index="58"  pdf_field_name="TXT_MRI_CT_CER_SPINE_DEMO"   if_blank=" "/>
+    <field db_field_name="RDO_PAIN_AND_NEEDLESS_ARM"       pdf_field_index="59"  pdf_field_name="RDO_PAIN_AND_NEEDLESS_ARM"   if_blank=" "/>
+    <field db_field_name="RDO_PAIN_IN_FOREARM"       pdf_field_index="60"  pdf_field_name="RDO_PAIN_IN_FOREARM"   if_blank=" "/>
+    <field db_field_name="TXT_ANKLE_EVERSION_PATIENT_ROM"       pdf_field_index="61"  pdf_field_name="TXT_ANKLE_EVERSION_PATIENT_ROM"   if_blank=" "/>
+    <field db_field_name="TXT_KNEE_POINT_TENDERNESS"       pdf_field_index="62"  pdf_field_name="TXT_KNEE_POINT_TENDERNESS"   if_blank=" "/>
+    <field db_field_name="CHK_SHOULDER_EXTENSION_SPASM"       pdf_field_index="63"  pdf_field_name="CHK_SHOULDER_EXTENSION_SPASM"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_SHOULDER_EXTENSION_PATIENT_ROM_LEFT"       pdf_field_index="64"  pdf_field_name="TXT_SHOULDER_EXTENSION_PATIENT_ROM_LEFT"   if_blank=" "/>
+    <field db_field_name="RDO_STRAIGHT_ LEG_RAISING_TEST_SUPINE_LEFT"       pdf_field_index="65"  pdf_field_name="RDO_STRAIGHT_ LEG_RAISING_TEST_SUPINE_LEFT"   if_blank=" "/>
+    <field db_field_name="CHK_LUMBOSACRAL_SPINE_FLEXION_INFLAME"       pdf_field_index="66"  pdf_field_name="CHK_LUMBOSACRAL_SPINE_FLEXION_INFLAME"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LUMBOSACRAL_SPINE_FLEXION_DULL"       pdf_field_index="67"  pdf_field_name="CHK_LUMBOSACRAL_SPINE_FLEXION_DULL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_CERVICAL_SPINE_RIGHT_ROTATION_PATIENT_ROM"       pdf_field_index="68"  pdf_field_name="TXT_CERVICAL_SPINE_RIGHT_ROTATION_PATIENT_ROM"   if_blank=" "/>
+    <field db_field_name="CHK_CONCENTRATION_PROBLEMS"       pdf_field_index="69"  pdf_field_name="CHK_CONCENTRATION_PROBLEMS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_SHOULDER_PAIN"       pdf_field_index="70"  pdf_field_name="CHK_SHOULDER_PAIN"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PATIENT_ARRIVED_SUBWAY"       pdf_field_index="71"  pdf_field_name="CHK_PATIENT_ARRIVED_SUBWAY"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DIAGNOSIS_846_0"       pdf_field_index="72"  pdf_field_name="CHK_DIAGNOSIS_846_0"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MRI_CT_CER_SPINE_DEMO"       pdf_field_index="73"  pdf_field_name="CHK_MRI_CT_CER_SPINE_DEMO"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_X_RAY_DEMO"       pdf_field_index="74"  pdf_field_name="TXT_X_RAY_DEMO"   if_blank=" "/>
+    <field db_field_name="TXT_X_RAY_CER_SPINE_DEMO"       pdf_field_index="75"  pdf_field_name="TXT_X_RAY_CER_SPINE_DEMO"   if_blank=" "/>
+    <field db_field_name="RDO_PAIN_AND_NEEDLESS_HAND"       pdf_field_index="76"  pdf_field_name="RDO_PAIN_AND_NEEDLESS_HAND"   if_blank=" "/>
+    <field db_field_name="TXT_HIP_INTERNAL_ROTATION_RIGHT"       pdf_field_index="77"  pdf_field_name="TXT_HIP_INTERNAL_ROTATION_RIGHT"   if_blank=" "/>
+    <field db_field_name="TXT_SHOULDER_EXTERNAL_ROTATION_PATIENT_ROM_RIGHT"       pdf_field_index="78"  pdf_field_name="TXT_SHOULDER_EXTERNAL_ROTATION_PATIENT_ROM_RIGHT"   if_blank=" "/>
+    <field db_field_name="CHK_SHOULDER_ABDUCTION_SPASM"       pdf_field_index="79"  pdf_field_name="CHK_SHOULDER_ABDUCTION_SPASM"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_SHOULDER_ABDUCTION_PATIENT_ROM_LEFT"       pdf_field_index="80"  pdf_field_name="TXT_SHOULDER_ABDUCTION_PATIENT_ROM_LEFT"   if_blank=" "/>
+    <field db_field_name="CHK_LUMBOSACRAL_SPINE_LT_LATERAL_FLEXION_SPASM"       pdf_field_index="81"  pdf_field_name="CHK_LUMBOSACRAL_SPINE_LT_LATERAL_FLEXION_SPASM"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LUMBOSACRAL_SPINE_RIGHT_ROTATION_SPASM"       pdf_field_index="82"  pdf_field_name="CHK_LUMBOSACRAL_SPINE_RIGHT_ROTATION_SPASM"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LUMBOSACRAL_SPINE_EXTENSION_SHARP"       pdf_field_index="83"  pdf_field_name="CHK_LUMBOSACRAL_SPINE_EXTENSION_SHARP"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="RDO_CERVICAL_SPINE_MODERATE"       pdf_field_index="84"  pdf_field_name="RDO_CERVICAL_SPINE_MODERATE"   if_blank=" "/>
+    <field db_field_name="CHK_CERVICAL_SPINE_RIGHT_ROTATION_INFLAME"       pdf_field_index="85"  pdf_field_name="CHK_CERVICAL_SPINE_RIGHT_ROTATION_INFLAME"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MEMORY_PROBLEMS"       pdf_field_index="86"  pdf_field_name="CHK_MEMORY_PROBLEMS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_VISUAL_PROBLEMS"       pdf_field_index="87"  pdf_field_name="CHK_VISUAL_PROBLEMS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_UNABLE_TO_LIFT_OBJECTS"       pdf_field_index="88"  pdf_field_name="CHK_UNABLE_TO_LIFT_OBJECTS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_TREATMENT_99212"       pdf_field_index="89"  pdf_field_name="CHK_TREATMENT_99212"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PATIENT_ARRIVED_PRIVATE_CAR"       pdf_field_index="90"  pdf_field_name="CHK_PATIENT_ARRIVED_PRIVATE_CAR"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_SUPPLIES_LUMBAR_CUSHION"       pdf_field_index="91"  pdf_field_name="CHK_SUPPLIES_LUMBAR_CUSHION"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_REFERRALS_SPECIALIST IN"       pdf_field_index="92"  pdf_field_name="TXT_REFERRALS_SPECIALIST IN"   if_blank=" "/>
+    <field db_field_name="CHK_DIAGNOSIS_736_32"       pdf_field_index="93"  pdf_field_name="CHK_DIAGNOSIS_736_32"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DIAGNOSIS_843_9"       pdf_field_index="94"  pdf_field_name="CHK_DIAGNOSIS_843_9"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DIAGNOSIS_718_31"       pdf_field_index="95"  pdf_field_name="CHK_DIAGNOSIS_718_31"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DIAGNOSIS_722_0"       pdf_field_index="96"  pdf_field_name="CHK_DIAGNOSIS_722_0"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DIAGNOSIS_780_4"       pdf_field_index="97"  pdf_field_name="CHK_DIAGNOSIS_780_4"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DIAGNOSIS_784_0"       pdf_field_index="98"  pdf_field_name="CHK_DIAGNOSIS_784_0"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_ANKLE_PLANTAR_FLEXION_SPASM"       pdf_field_index="99"  pdf_field_name="CHK_ANKLE_PLANTAR_FLEXION_SPASM"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_ANKLE_DORSI_FLEXION_INFLAME"       pdf_field_index="100"  pdf_field_name="CHK_ANKLE_DORSI_FLEXION_INFLAME"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_HIP_FLEXION_RIGHT"       pdf_field_index="101"  pdf_field_name="TXT_HIP_FLEXION_RIGHT"   if_blank=" "/>
+    <field db_field_name="TXT_SHOULDER_ADDUCTION_PATIENT_ROM_RIGHT"       pdf_field_index="102"  pdf_field_name="TXT_SHOULDER_ADDUCTION_PATIENT_ROM_RIGHT"   if_blank=" "/>
+    <field db_field_name="CHK_SHOULDER_EXTENSION_NORMAL"       pdf_field_index="103"  pdf_field_name="CHK_SHOULDER_EXTENSION_NORMAL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_SHOULDER_LEFT"       pdf_field_index="104"  pdf_field_name="CHK_SHOULDER_LEFT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LUMBOSACRAL_SPINE_RT_LATERAL_FLEXION_DULL"       pdf_field_index="105"  pdf_field_name="CHK_LUMBOSACRAL_SPINE_RT_LATERAL_FLEXION_DULL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LUMBOSACRAL_SPINE_LEFT_ROTATION_SHARP"       pdf_field_index="106"  pdf_field_name="CHK_LUMBOSACRAL_SPINE_LEFT_ROTATION_SHARP"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CERVICAL_SPINE_RT_LATERAL_FLEXION_SHARP"       pdf_field_index="107"  pdf_field_name="CHK_CERVICAL_SPINE_RT_LATERAL_FLEXION_SHARP"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CERVICAL_SPINE_EXTENSION_INFLAME"       pdf_field_index="108"  pdf_field_name="CHK_CERVICAL_SPINE_EXTENSION_INFLAME"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_CERVICAL_SPINE_EXTENSION_PATIENT_ROM"       pdf_field_index="109"  pdf_field_name="TXT_CERVICAL_SPINE_EXTENSION_PATIENT_ROM"   if_blank=" "/>
+    <field db_field_name="CHK_CERVICAL_SPINE_FLEXION_DULL"       pdf_field_index="110"  pdf_field_name="CHK_CERVICAL_SPINE_FLEXION_DULL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_NUMBNESS_TINGLING_TOES"       pdf_field_index="111"  pdf_field_name="CHK_NUMBNESS_TINGLING_TOES"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_UPPER_BACK_PAIN_STIFFNESS"       pdf_field_index="112"  pdf_field_name="CHK_UPPER_BACK_PAIN_STIFFNESS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_JAW_PAIN"       pdf_field_index="113"  pdf_field_name="CHK_JAW_PAIN"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_TREATMENT_99213"       pdf_field_index="114"  pdf_field_name="CHK_TREATMENT_99213"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_TREATMENT_99211"       pdf_field_index="115"  pdf_field_name="CHK_TREATMENT_99211"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_ADDITIONAL_BODY_PARTS_AFFECTED"       pdf_field_index="116"  pdf_field_name="TXT_ADDITIONAL_BODY_PARTS_AFFECTED"   if_blank=" "/>
+    <field db_field_name="CHK_PROVIDE_SERVICE"       pdf_field_index="117"  pdf_field_name="CHK_PROVIDE_SERVICE"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="RDO_DISCUSS_LIMIT_PATIENT"       pdf_field_index="118"  pdf_field_name="RDO_DISCUSS_LIMIT_PATIENT"   if_blank=" "/>
+    <field db_field_name="CHK_SUPPLIES_CANE"       pdf_field_index="119"  pdf_field_name="CHK_SUPPLIES_CANE"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="M"       pdf_field_index="120"  pdf_field_name="M"   if_blank=" "/>
+    <field db_field_name="CHK_TEST_X-RAY "       pdf_field_index="121"  pdf_field_name="CHK_TEST_X-RAY "   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_REFERRALS_PHYSICAL_THERAPIST"       pdf_field_index="122"  pdf_field_name="CHK_REFERRALS_PHYSICAL_THERAPIST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DIAGNOSIS_722_1"       pdf_field_index="123"  pdf_field_name="CHK_DIAGNOSIS_722_1"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DIAGNOSIS_723_4"       pdf_field_index="124"  pdf_field_name="CHK_DIAGNOSIS_723_4"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="RDO_FEET_SWOLLEN_FOOT"       pdf_field_index="125"  pdf_field_name="RDO_FEET_SWOLLEN_FOOT"   if_blank=" "/>
+    <field db_field_name="RDO_FEET_NUMBNESS_OF_FOOT"       pdf_field_index="126"  pdf_field_name="RDO_FEET_NUMBNESS_OF_FOOT"   if_blank=" "/>
+    <field db_field_name="RDO_FEET_FOOT_PAIN"       pdf_field_index="127"  pdf_field_name="RDO_FEET_FOOT_PAIN"   if_blank=" "/>
+    <field db_field_name="CHK_ANKLE_DORSI_FLEXION_SHARP"       pdf_field_index="128"  pdf_field_name="CHK_ANKLE_DORSI_FLEXION_SHARP"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_ANKLE_DORSI_FLEXION_DULL"       pdf_field_index="129"  pdf_field_name="CHK_ANKLE_DORSI_FLEXION_DULL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="RDO_KNEE_CREPITUS_POSITIVE"       pdf_field_index="130"  pdf_field_name="RDO_KNEE_CREPITUS_POSITIVE"   if_blank=" "/>
+    <field db_field_name="CHK_SHOULDER_FLEXION_DULL"       pdf_field_index="131"  pdf_field_name="CHK_SHOULDER_FLEXION_DULL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_LUMBOSACRAL_SPINE_LEFT_ROTATION_PATIENT_ROM"       pdf_field_index="132"  pdf_field_name="TXT_LUMBOSACRAL_SPINE_LEFT_ROTATION_PATIENT_ROM"   if_blank=" "/>
+    <field db_field_name="CHK_CERVICAL_SPINE_LT_LATERAL_FLEXION_INFLAM"       pdf_field_index="133"  pdf_field_name="CHK_CERVICAL_SPINE_LT_LATERAL_FLEXION_INFLAM"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CERVICAL_SPINE_LEFT_ROTATION_NORMAL"       pdf_field_index="134"  pdf_field_name="CHK_CERVICAL_SPINE_LEFT_ROTATION_NORMAL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_RESTRICTION_NECK_MOTION"       pdf_field_index="135"  pdf_field_name="CHK_RESTRICTION_NECK_MOTION"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_NECK_PAIN_STIFFNESS"       pdf_field_index="136"  pdf_field_name="CHK_NECK_PAIN_STIFFNESS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PATIENT_ARRIVED_AMBULATE"       pdf_field_index="137"  pdf_field_name="CHK_PATIENT_ARRIVED_AMBULATE"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="IMG_DOCTOR_SIGN"       pdf_field_index="138"  pdf_field_name="IMG_DOCTOR_SIGN"   if_blank=" " isImage="1"/>
+    <field db_field_name="CHK_PATIENT_WORK_LIMIT_ENVIRONMENTAL_CONDI"       pdf_field_index="139"  pdf_field_name="CHK_PATIENT_WORK_LIMIT_ENVIRONMENTAL_CONDI"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_TEST_OTHER "       pdf_field_index="140"  pdf_field_name="CHK_TEST_OTHER "   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_TEST_EMG_NCV"       pdf_field_index="141"  pdf_field_name="CHK_TEST_EMG_NCV"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DIAGNOSIS_924_21"       pdf_field_index="142"  pdf_field_name="CHK_DIAGNOSIS_924_21"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DIAGNOSIS_845_0"       pdf_field_index="143"  pdf_field_name="CHK_DIAGNOSIS_845_0"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_EMG_LOW_EXET_DEMO"       pdf_field_index="144"  pdf_field_name="TXT_EMG_LOW_EXET_DEMO"   if_blank=" "/>
+    <field db_field_name="RDO_KNEE_POINT_TENDERNESS_NEGATIVE"       pdf_field_index="145"  pdf_field_name="RDO_KNEE_POINT_TENDERNESS_NEGATIVE"   if_blank=" "/>
+    <field db_field_name="TXT_HIP_ADDUCTION_LEFT"       pdf_field_index="146"  pdf_field_name="TXT_HIP_ADDUCTION_LEFT"   if_blank=" "/>
+    <field db_field_name="TXT_HIP_EXTENSION_LEFT"       pdf_field_index="147"  pdf_field_name="TXT_HIP_EXTENSION_LEFT"   if_blank=" "/>
+    <field db_field_name="CHK_SHOULDER_EXTENSION_INFLAME"       pdf_field_index="148"  pdf_field_name="CHK_SHOULDER_EXTENSION_INFLAME"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_SHOULDER_FLEXION_SPASM"       pdf_field_index="149"  pdf_field_name="CHK_SHOULDER_FLEXION_SPASM"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LUMBOSACRAL_SPINE_LT_LATERAL_FLEXION_DULL"       pdf_field_index="150"  pdf_field_name="CHK_LUMBOSACRAL_SPINE_LT_LATERAL_FLEXION_DULL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CERVICAL_SPINE_RT_LATERAL_FLEXION_DULL"       pdf_field_index="151"  pdf_field_name="CHK_CERVICAL_SPINE_RT_LATERAL_FLEXION_DULL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CERVICAL_SPIN_LT_LATERAL_FLEXION_DULL"       pdf_field_index="152"  pdf_field_name="CHK_CERVICAL_SPIN_LT_LATERAL_FLEXION_DULL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CERVICAL_SPINE_LT_LATERAL_FLEXION_NORMAL"       pdf_field_index="153"  pdf_field_name="CHK_CERVICAL_SPINE_LT_LATERAL_FLEXION_NORMAL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CERVICAL_SPINE_RIGHT_ROTATION_DULL"       pdf_field_index="154"  pdf_field_name="CHK_CERVICAL_SPINE_RIGHT_ROTATION_DULL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CERVICAL_SPINE_LEFT_ROTATION_SPASM"       pdf_field_index="155"  pdf_field_name="CHK_CERVICAL_SPINE_LEFT_ROTATION_SPASM"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CERVICAL_SPINE_FLEXION_SPASM"       pdf_field_index="156"  pdf_field_name="CHK_CERVICAL_SPINE_FLEXION_SPASM"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_PAIN_SCALE_RATING"       pdf_field_index="157"  pdf_field_name="TXT_PAIN_SCALE_RATING"   if_blank=" "/>
+    <field db_field_name="CHK_SUPERVISE_SERVICE"       pdf_field_index="158"  pdf_field_name="CHK_SUPERVISE_SERVICE"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LIMIT_APPLY_15_PLUS_DAYS"       pdf_field_index="159"  pdf_field_name="CHK_LIMIT_APPLY_15_PLUS_DAYS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_PATIENT_CAN_WORK_WITHOUT_LIMIT"       pdf_field_index="160"  pdf_field_name="TXT_PATIENT_CAN_WORK_WITHOUT_LIMIT"   if_blank=" "/>
+    <field db_field_name="CHK_PATIENT_NEXT_VISIT_1_TO_2_WKS"       pdf_field_index="161"  pdf_field_name="CHK_PATIENT_NEXT_VISIT_1_TO_2_WKS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_SUPPLIES_BIOFEEDBACK_TRAINING_SESSIONS"       pdf_field_index="162"  pdf_field_name="CHK_SUPPLIES_BIOFEEDBACK_TRAINING_SESSIONS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_SUPPLIES_LUMBOSACRAL_BACK_SUPPORT"       pdf_field_index="163"  pdf_field_name="CHK_SUPPLIES_LUMBOSACRAL_BACK_SUPPORT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_TEST_X-RAY "       pdf_field_index="164"  pdf_field_name="TXT_TEST_X-RAY "   if_blank=" "/>
+    <field db_field_name="CHK_DIAGNOSIS_845_1"       pdf_field_index="165"  pdf_field_name="CHK_DIAGNOSIS_845_1"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DIAGNOSIS_922_1"       pdf_field_index="166"  pdf_field_name="CHK_DIAGNOSIS_922_1"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DIAGNOSIS_924_11"       pdf_field_index="167"  pdf_field_name="CHK_DIAGNOSIS_924_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="RDO_PAIN_AND_NEEDLESS_FOREARM"       pdf_field_index="168"  pdf_field_name="RDO_PAIN_AND_NEEDLESS_FOREARM"   if_blank=" "/>
+    <field db_field_name="RDO_PAIN_IN_WRIST"       pdf_field_index="169"  pdf_field_name="RDO_PAIN_IN_WRIST"   if_blank=" "/>
+    <field db_field_name="CHK_ANKLE_EVERSION_NORMAL"       pdf_field_index="170"  pdf_field_name="CHK_ANKLE_EVERSION_NORMAL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_ANKLE_DORSI_FLEXION_NORMAL"       pdf_field_index="171"  pdf_field_name="CHK_ANKLE_DORSI_FLEXION_NORMAL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_GAIT_ANTALGIC"       pdf_field_index="172"  pdf_field_name="CHK_GAIT_ANTALGIC"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_KNEE_FLEXION_LEFT"       pdf_field_index="173"  pdf_field_name="TXT_KNEE_FLEXION_LEFT"   if_blank=" "/>
+    <field db_field_name="CHK_CERVICAL_SPINE_FLEXION_INFLAME"       pdf_field_index="174"  pdf_field_name="CHK_CERVICAL_SPINE_FLEXION_INFLAME"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DIFFICULT_TO_WALK_AFTER_SITTING"       pdf_field_index="175"  pdf_field_name="CHK_DIFFICULT_TO_WALK_AFTER_SITTING"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LIMIT_APPLY_UNKNOWN"       pdf_field_index="176"  pdf_field_name="CHK_LIMIT_APPLY_UNKNOWN"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LIMIT_APPLY_1_TO_2_DAYS"       pdf_field_index="177"  pdf_field_name="CHK_LIMIT_APPLY_1_TO_2_DAYS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PATIENT_WORK_LIMIT_LIFTING"       pdf_field_index="178"  pdf_field_name="CHK_PATIENT_WORK_LIMIT_LIFTING"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_WORK_RESTRICTIONS_8_TO_14_DAYS"       pdf_field_index="179"  pdf_field_name="CHK_WORK_RESTRICTIONS_8_TO_14_DAYS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PATIENT_AS_NEEDED"       pdf_field_index="180"  pdf_field_name="CHK_PATIENT_AS_NEEDED"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_TEST_OTHER "       pdf_field_index="181"  pdf_field_name="TXT_TEST_OTHER "   if_blank=" "/>
+    <field db_field_name="CHK_DIAGNOSIS_924_01"       pdf_field_index="182"  pdf_field_name="CHK_DIAGNOSIS_924_01"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_MRI_CT_LUM_SPINE_DEMO"       pdf_field_index="183"  pdf_field_name="TXT_MRI_CT_LUM_SPINE_DEMO"   if_blank=" "/>
+    <field db_field_name="RDO_PAIN_N_ELBOW"       pdf_field_index="184"  pdf_field_name="RDO_PAIN_N_ELBOW"   if_blank=" "/>
+    <field db_field_name="CHK_GAIT_INTACT"       pdf_field_index="185"  pdf_field_name="CHK_GAIT_INTACT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_KNEE_EXTENSION_LEFT"       pdf_field_index="186"  pdf_field_name="TXT_KNEE_EXTENSION_LEFT"   if_blank=" "/>
+    <field db_field_name="TXT_KNEE_FLEXION_RIGHT"       pdf_field_index="187"  pdf_field_name="TXT_KNEE_FLEXION_RIGHT"   if_blank=" "/>
+    <field db_field_name="TXT_SHOULDER_EXTERNAL_ROTATION_PATIENT_ROM_LEFT"       pdf_field_index="188"  pdf_field_name="TXT_SHOULDER_EXTERNAL_ROTATION_PATIENT_ROM_LEFT"   if_blank=" "/>
+    <field db_field_name="CHK_SHOULDER_INTERNAL_ROTATION_SHARP"       pdf_field_index="189"  pdf_field_name="CHK_SHOULDER_INTERNAL_ROTATION_SHARP"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_SHOULDER_INTERNAL_ROTATION_PATIENT_ROM_LEFT"       pdf_field_index="190"  pdf_field_name="TXT_SHOULDER_INTERNAL_ROTATION_PATIENT_ROM_LEFT"   if_blank=" "/>
+    <field db_field_name="CHK_SHOULDER_ADDUCTION_INFLAME"       pdf_field_index="191"  pdf_field_name="CHK_SHOULDER_ADDUCTION_INFLAME"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_SHOULDER_FLEXION_NORMAL"       pdf_field_index="192"  pdf_field_name="CHK_SHOULDER_FLEXION_NORMAL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_SHOULDER_FLEXION_PATIENT_ROM_RIGHT"       pdf_field_index="193"  pdf_field_name="TXT_SHOULDER_FLEXION_PATIENT_ROM_RIGHT"   if_blank=" "/>
+    <field db_field_name="CHK_LUMBOSACRAL_SPINE_RT_LATERAL_FLEXION_INFLAME"       pdf_field_index="194"  pdf_field_name="CHK_LUMBOSACRAL_SPINE_RT_LATERAL_FLEXION_INFLAME"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LUMBOSACRAL_SPINE_RIGHT_ROTATION_DULL"       pdf_field_index="195"  pdf_field_name="CHK_LUMBOSACRAL_SPINE_RIGHT_ROTATION_DULL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LUMBOSACRAL_SPINE_EXTENSION_SPASM"       pdf_field_index="196"  pdf_field_name="CHK_LUMBOSACRAL_SPINE_EXTENSION_SPASM"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_LUMBOSACRAL_SPINE_FLEXION_PATIENT_ROM"       pdf_field_index="197"  pdf_field_name="TXT_LUMBOSACRAL_SPINE_FLEXION_PATIENT_ROM"   if_blank=" "/>
+    <field db_field_name="CHK_CERVICAL_SPINE_RIGHT_ROTATION_SHARP"       pdf_field_index="198"  pdf_field_name="CHK_CERVICAL_SPINE_RIGHT_ROTATION_SHARP"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CERVICAL_SPINE_LEFT_ROTATION_INFLAME"       pdf_field_index="199"  pdf_field_name="CHK_CERVICAL_SPINE_LEFT_ROTATION_INFLAME"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_TREATMENT_99215"       pdf_field_index="200"  pdf_field_name="CHK_TREATMENT_99215"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PATIENT_ARRIVED_TAXI"       pdf_field_index="201"  pdf_field_name="CHK_PATIENT_ARRIVED_TAXI"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LIMIT_APPLY_3_TO_7_DAYS"       pdf_field_index="202"  pdf_field_name="CHK_LIMIT_APPLY_3_TO_7_DAYS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PATIENT_WORK_LIMIT_OPERATION_MOTOR_VHCLE"       pdf_field_index="203"  pdf_field_name="CHK_PATIENT_WORK_LIMIT_OPERATION_MOTOR_VHCLE"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="RDO_CONSISTENT_OBJ_FIDINGS_YES"       pdf_field_index="204"  pdf_field_name="RDO_CONSISTENT_OBJ_FIDINGS_YES"   if_blank=" "/>
+    <field db_field_name="CHK_SUPPLIES_ROM_TESTING"       pdf_field_index="205"  pdf_field_name="CHK_SUPPLIES_ROM_TESTING"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DIAGNOSIS_842_00"       pdf_field_index="206"  pdf_field_name="CHK_DIAGNOSIS_842_00"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DIAGNOSIS_718_36"       pdf_field_index="207"  pdf_field_name="CHK_DIAGNOSIS_718_36"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_EMG_LOW_EXET_DEMO"       pdf_field_index="208"  pdf_field_name="CHK_EMG_LOW_EXET_DEMO"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MRI_CT_LUM_SPINE_DEMO"       pdf_field_index="209"  pdf_field_name="CHK_MRI_CT_LUM_SPINE_DEMO"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_X_RAY_PART_DEMO"       pdf_field_index="210"  pdf_field_name="TXT_X_RAY_PART_DEMO"   if_blank=" "/>
+    <field db_field_name="TXT_X_RAY_LUM_SPINE_DEMO"       pdf_field_index="211"  pdf_field_name="TXT_X_RAY_LUM_SPINE_DEMO"   if_blank=" "/>
+    <field db_field_name="RDO_PAIN_IN_UPPER_ARM"       pdf_field_index="212"  pdf_field_name="RDO_PAIN_IN_UPPER_ARM"   if_blank=" "/>
+    <field db_field_name="CHK_ANKLE_INVERSION_SHARP"       pdf_field_index="213"  pdf_field_name="CHK_ANKLE_INVERSION_SHARP"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_HIP_ABDUCTION_RIGHT"       pdf_field_index="214"  pdf_field_name="TXT_HIP_ABDUCTION_RIGHT"   if_blank=" "/>
+    <field db_field_name="TXT_SHOULDER_FLEXION_PATIENT_ROM_LEFT"       pdf_field_index="215"  pdf_field_name="TXT_SHOULDER_FLEXION_PATIENT_ROM_LEFT"   if_blank=" "/>
+    <field db_field_name="CHK_SHOULDER_RIGHT"       pdf_field_index="216"  pdf_field_name="CHK_SHOULDER_RIGHT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LUMBOSACRAL_SPINE_LEFT_ROTATION_SPASM"       pdf_field_index="217"  pdf_field_name="CHK_LUMBOSACRAL_SPINE_LEFT_ROTATION_SPASM"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CERVICAL_SPINE_RT_LATERAL_FLEXION_SPASM"       pdf_field_index="218"  pdf_field_name="CHK_CERVICAL_SPINE_RT_LATERAL_FLEXION_SPASM"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CERVICAL_SPINE_LT_LATERAL_FLEXION_SHARP"       pdf_field_index="219"  pdf_field_name="CHK_CERVICAL_SPINE_LT_LATERAL_FLEXION_SHARP"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CERVICAL_SPINE_RIGHT_ROTATION_NORMAL"       pdf_field_index="220"  pdf_field_name="CHK_CERVICAL_SPINE_RIGHT_ROTATION_NORMAL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CERVICAL_SPINE_EXTENSION_SHARP"       pdf_field_index="221"  pdf_field_name="CHK_CERVICAL_SPINE_EXTENSION_SHARP"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CERVICAL_SPINE_FLEXION_NORMAL"       pdf_field_index="222"  pdf_field_name="CHK_CERVICAL_SPINE_FLEXION_NORMAL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DIFFICULTY_IN_BREATHING"       pdf_field_index="223"  pdf_field_name="CHK_DIFFICULTY_IN_BREATHING"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PATIENT_WORK_LIMIT_SITTING"       pdf_field_index="224"  pdf_field_name="CHK_PATIENT_WORK_LIMIT_SITTING"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PATIENT_WORK_LIMIT_BENDING_TWISTING"       pdf_field_index="225"  pdf_field_name="CHK_PATIENT_WORK_LIMIT_BENDING_TWISTING"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_SUPPLIES_RT_LT_ELBOW_SUPPORT"       pdf_field_index="226"  pdf_field_name="CHK_SUPPLIES_RT_LT_ELBOW_SUPPORT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_TEST_MRI"       pdf_field_index="227"  pdf_field_name="CHK_TEST_MRI"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="RDO_FEET_SWOLLEN_ANKLE"       pdf_field_index="228"  pdf_field_name="RDO_FEET_SWOLLEN_ANKLE"   if_blank=" "/>
+    <field db_field_name="RDO_NUMBNESS_IN_FOREARM"       pdf_field_index="229"  pdf_field_name="RDO_NUMBNESS_IN_FOREARM"   if_blank=" "/>
+    <field db_field_name="CHK_ANKLE_EVERSION_SHARP"       pdf_field_index="230"  pdf_field_name="CHK_ANKLE_EVERSION_SHARP"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_ANKLE_INVERSION_PATIENT_ROM"       pdf_field_index="231"  pdf_field_name="TXT_ANKLE_INVERSION_PATIENT_ROM"   if_blank=" "/>
+    <field db_field_name="CHK_ANKLE_PLANTAR_FLEXION_NORMAL"       pdf_field_index="232"  pdf_field_name="CHK_ANKLE_PLANTAR_FLEXION_NORMAL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_ANKLE_DORSI_FLEXION_SPASM"       pdf_field_index="233"  pdf_field_name="CHK_ANKLE_DORSI_FLEXION_SPASM"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_HIP_EXTENSION_RIGHT"       pdf_field_index="234"  pdf_field_name="TXT_HIP_EXTENSION_RIGHT"   if_blank=" "/>
+    <field db_field_name="RDO_STRAIGHT_LEG_RAISING_TEST_SUPINE_RIGHT"       pdf_field_index="235"  pdf_field_name="RDO_STRAIGHT_LEG_RAISING_TEST_SUPINE_RIGHT"   if_blank=" "/>
+    <field db_field_name="CHK_LUMBOSACRAL_SPINE_RT_LATERAL_FLEXION_SHARP"       pdf_field_index="236"  pdf_field_name="CHK_LUMBOSACRAL_SPINE_RT_LATERAL_FLEXION_SHARP"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LUMBOSACRAL_SPINE_LT_LATERAL_FLEXION_INFLAME"       pdf_field_index="237"  pdf_field_name="CHK_LUMBOSACRAL_SPINE_LT_LATERAL_FLEXION_INFLAME"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LUMBOSACRAL_SPINE_RIGHT_ROTATION_INFLAME"       pdf_field_index="238"  pdf_field_name="CHK_LUMBOSACRAL_SPINE_RIGHT_ROTATION_INFLAME"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LUMBOSACRAL_SPINE_EXTENSION_NORMAL"       pdf_field_index="239"  pdf_field_name="CHK_LUMBOSACRAL_SPINE_EXTENSION_NORMAL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PATIENT_WORK_LIMIT_OTHER "       pdf_field_index="240"  pdf_field_name="CHK_PATIENT_WORK_LIMIT_OTHER "   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PATIENT_WORK_LIMIT_KNEELING "       pdf_field_index="241"  pdf_field_name="CHK_PATIENT_WORK_LIMIT_KNEELING "   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PATIENT_CANNOT_WORK_RET"       pdf_field_index="242"  pdf_field_name="CHK_PATIENT_CANNOT_WORK_RET"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_SUPPLIES_RT_LT_KNEE_SUPPORT"       pdf_field_index="243"  pdf_field_name="CHK_SUPPLIES_RT_LT_KNEE_SUPPORT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DIAGNOSIS_841_9"       pdf_field_index="244"  pdf_field_name="CHK_DIAGNOSIS_841_9"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DIAGNOSIS_840_6"       pdf_field_index="245"  pdf_field_name="CHK_DIAGNOSIS_840_6"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_X_RAY_CER_SPINE_DEMO"       pdf_field_index="246"  pdf_field_name="CHK_X_RAY_CER_SPINE_DEMO"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="RDO_NUMBNESS_IN_ARM"       pdf_field_index="247"  pdf_field_name="RDO_NUMBNESS_IN_ARM"   if_blank=" "/>
+    <field db_field_name="TXT_HIP_EXTERNAL_ROTATION_PATIENT_ROM_RIGHT"       pdf_field_index="248"  pdf_field_name="TXT_HIP_EXTERNAL_ROTATION_PATIENT_ROM_RIGHT"   if_blank=" "/>
+    <field db_field_name="TXT_HIP_ADDUCTION_RIGHT"       pdf_field_index="249"  pdf_field_name="TXT_HIP_ADDUCTION_RIGHT"   if_blank=" "/>
+    <field db_field_name="TXT_HIP_ABDUCTION_LEFT"       pdf_field_index="250"  pdf_field_name="TXT_HIP_ABDUCTION_LEFT"   if_blank=" "/>
+    <field db_field_name="CHK_SHOULDER_EXTERNAL_ROTATION_INFLAME"       pdf_field_index="251"  pdf_field_name="CHK_SHOULDER_EXTERNAL_ROTATION_INFLAME"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_SHOULDER_ADDUCTION_DULL"       pdf_field_index="252"  pdf_field_name="CHK_SHOULDER_ADDUCTION_DULL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_SHOULDER_ADDUCTION_NORMAL"       pdf_field_index="253"  pdf_field_name="CHK_SHOULDER_ADDUCTION_NORMAL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_SHOULDER_EXTENSION_DULL"       pdf_field_index="254"  pdf_field_name="CHK_SHOULDER_EXTENSION_DULL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="RDO_STRAIGHT_LEG_RAISING_TEST_SUPINE_LEFT"       pdf_field_index="255"  pdf_field_name="RDO_STRAIGHT_LEG_RAISING_TEST_SUPINE_LEFT"   if_blank=" "/>
+    <field db_field_name="CHK_LUMBOSACRAL_SPINE_RT_LATERAL_FLEXION_NORMAL"       pdf_field_index="256"  pdf_field_name="CHK_LUMBOSACRAL_SPINE_RT_LATERAL_FLEXION_NORMAL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LUMBOSACRAL_SPINE_LEFT_ROTATION_INFLAME"       pdf_field_index="257"  pdf_field_name="CHK_LUMBOSACRAL_SPINE_LEFT_ROTATION_INFLAME"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LUMBOSACRAL_SPINE_EXTENSION_INFLAME"       pdf_field_index="258"  pdf_field_name="CHK_LUMBOSACRAL_SPINE_EXTENSION_INFLAME"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LUMBOSACRAL_SPINE_FLEXION_NORMAL"       pdf_field_index="259"  pdf_field_name="CHK_LUMBOSACRAL_SPINE_FLEXION_NORMAL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="RDO_CERVICAL_SPINE_APPEAR"       pdf_field_index="260"  pdf_field_name="RDO_CERVICAL_SPINE_APPEAR"   if_blank=" "/>
+    <field db_field_name="CHK_CHEST_PAIN"       pdf_field_index="261"  pdf_field_name="CHK_CHEST_PAIN"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_PROVIDER_FAX"       pdf_field_index="262"  pdf_field_name="TXT_PROVIDER_FAX"   if_blank=" "/>
+    <field db_field_name="TXT_PROVIDER_PHONE"       pdf_field_index="263"  pdf_field_name="TXT_PROVIDER_PHONE"   if_blank=" "/>
+    <field db_field_name="TXT_PATIENT_WORK_LIMIT_OTHER"       pdf_field_index="264"  pdf_field_name="TXT_PATIENT_WORK_LIMIT_OTHER"   if_blank=" "/>
+    <field db_field_name="CHK_PATIENT_NEXT_VISIT_TO_7_TO_8_WKS"       pdf_field_index="265"  pdf_field_name="CHK_PATIENT_NEXT_VISIT_TO_7_TO_8_WKS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_SUPPLIES_RT_LT_ANKLE_SUPPORT"       pdf_field_index="266"  pdf_field_name="CHK_SUPPLIES_RT_LT_ANKLE_SUPPORT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="M"       pdf_field_index="267"  pdf_field_name="M"   if_blank=" "/>
+    <field db_field_name="CHK_ANKLE_INVERSION_NORMAL"       pdf_field_index="268"  pdf_field_name="CHK_ANKLE_INVERSION_NORMAL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="RDO_KNEE_SWELLING_POSITIVE"       pdf_field_index="269"  pdf_field_name="RDO_KNEE_SWELLING_POSITIVE"   if_blank=" "/>
+    <field db_field_name="CHK_SHOULDER_EXTERNAL_ROTATION_SHARP"       pdf_field_index="270"  pdf_field_name="CHK_SHOULDER_EXTERNAL_ROTATION_SHARP"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_SHOULDER_ABDUCTION_NORMAL"       pdf_field_index="271"  pdf_field_name="CHK_SHOULDER_ABDUCTION_NORMAL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_SHOULDER_EXTENSION_PATIENT_ROM_RIGHT"       pdf_field_index="272"  pdf_field_name="TXT_SHOULDER_EXTENSION_PATIENT_ROM_RIGHT"   if_blank=" "/>
+    <field db_field_name="CHK_LUMBOSACRAL_SPINE_LEFT_ROTATION_NORMAL"       pdf_field_index="273"  pdf_field_name="CHK_LUMBOSACRAL_SPINE_LEFT_ROTATION_NORMAL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_CERVICAL_SPINE_LT_LATERAL_FLEXION_PATIENT_ROM "       pdf_field_index="274"  pdf_field_name="TXT_CERVICAL_SPINE_LT_LATERAL_FLEXION_PATIENT_ROM "   if_blank=" "/>
+    <field db_field_name="CHK_CERVICAL_SPINE_LEFT_ROTATION_DULL"       pdf_field_index="275"  pdf_field_name="CHK_CERVICAL_SPINE_LEFT_ROTATION_DULL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_CERVICAL_SPINE_LEFT_ROTATION_PATIENT_ROM"       pdf_field_index="276"  pdf_field_name="TXT_CERVICAL_SPINE_LEFT_ROTATION_PATIENT_ROM"   if_blank=" "/>
+    <field db_field_name="CHK_CERVICAL_SPINE_EXTENSION_DULL"       pdf_field_index="277"  pdf_field_name="CHK_CERVICAL_SPINE_EXTENSION_DULL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DIZZINESS"       pdf_field_index="278"  pdf_field_name="CHK_DIZZINESS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_KNEE_PAIN"       pdf_field_index="279"  pdf_field_name="CHK_KNEE_PAIN"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PATIENT_WORK_LIMIT_CLIMBING_STAIRS_LADDERS"       pdf_field_index="280"  pdf_field_name="CHK_PATIENT_WORK_LIMIT_CLIMBING_STAIRS_LADDERS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_PATIENT_CAN_WORK_WITH_LIMIT"       pdf_field_index="281"  pdf_field_name="TXT_PATIENT_CAN_WORK_WITH_LIMIT"   if_blank=" "/>
+    <field db_field_name="RDO_PATIENT_WORK_RESTRICT_YES"       pdf_field_index="282"  pdf_field_name="RDO_PATIENT_WORK_RESTRICT_YES"   if_blank=" "/>
+    <field db_field_name="TXT_PATIENT_NEXT_VISIT_NEEDED_MONTH"       pdf_field_index="283"  pdf_field_name="TXT_PATIENT_NEXT_VISIT_NEEDED_MONTH"   if_blank=" "/>
+    <field db_field_name="CHK_SUPPLIES_CERVICAL_PILLOW   "       pdf_field_index="284"  pdf_field_name="CHK_SUPPLIES_CERVICAL_PILLOW   "   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DIAGNOSIS_920_0"       pdf_field_index="285"  pdf_field_name="CHK_DIAGNOSIS_920_0"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_MRI_CT_BODY_DEMO"       pdf_field_index="286"  pdf_field_name="TXT_MRI_CT_BODY_DEMO"   if_blank=" "/>
+    <field db_field_name="RDO_FEET_ANKLE_PAIN"       pdf_field_index="287"  pdf_field_name="RDO_FEET_ANKLE_PAIN"   if_blank=" "/>
+    <field db_field_name="TXT_SHOULDER_INTERNAL_ROTATION_PATIENT_ROM_RIGHT"       pdf_field_index="288"  pdf_field_name="TXT_SHOULDER_INTERNAL_ROTATION_PATIENT_ROM_RIGHT"   if_blank=" "/>
+    <field db_field_name="CHK_SHOULDER_INTERNAL_ROTATION_SPASM"       pdf_field_index="289"  pdf_field_name="CHK_SHOULDER_INTERNAL_ROTATION_SPASM"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_SHOULDER_ABDUCTION_PATIENT_ROM_RIGHT"       pdf_field_index="290"  pdf_field_name="TXT_SHOULDER_ABDUCTION_PATIENT_ROM_RIGHT"   if_blank=" "/>
+    <field db_field_name="CHK_SHOULDER_FLEXION_INFLAME"       pdf_field_index="291"  pdf_field_name="CHK_SHOULDER_FLEXION_INFLAME"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LUMBOSACRAL_SPINE_RIGHT_ROTATION_NORMAL"       pdf_field_index="292"  pdf_field_name="CHK_LUMBOSACRAL_SPINE_RIGHT_ROTATION_NORMAL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LUMBOSACRAL_SPINE_LEFT_ROTATION_DULL"       pdf_field_index="293"  pdf_field_name="CHK_LUMBOSACRAL_SPINE_LEFT_ROTATION_DULL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LUMBOSACRAL_SPINE_FLEXION_SHARP"       pdf_field_index="294"  pdf_field_name="CHK_LUMBOSACRAL_SPINE_FLEXION_SHARP"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CERVICAL_SPINE_RIGHT_ROTATION_SPASM"       pdf_field_index="295"  pdf_field_name="CHK_CERVICAL_SPINE_RIGHT_ROTATION_SPASM"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DIFFICULT_IN_PROLONGED_RIDING"       pdf_field_index="296"  pdf_field_name="CHK_DIFFICULT_IN_PROLONGED_RIDING"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PATIENT_ARRIVED_WALKING"       pdf_field_index="297"  pdf_field_name="CHK_PATIENT_ARRIVED_WALKING"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_DOA"       pdf_field_index="298"  pdf_field_name="TXT_DOA"   if_blank=" "/>
+    <field db_field_name="TXT_PROVIDER_CITY"       pdf_field_index="299"  pdf_field_name="TXT_PROVIDER_CITY"   if_blank=" "/>
+    <field db_field_name="TXT_DOCTOR_PROVIDER_COMPANY_NAME"       pdf_field_index="300"  pdf_field_name="TXT_DOCTOR_PROVIDER_COMPANY_NAME"   if_blank=" "/>
+    <field db_field_name="CHK_PATIENT_WORK_LIMIT_STANDING"       pdf_field_index="301"  pdf_field_name="CHK_PATIENT_WORK_LIMIT_STANDING"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PATIENT_WORK_LIMIT_OPERATING_HEAVY_EQUIP"       pdf_field_index="302"  pdf_field_name="CHK_PATIENT_WORK_LIMIT_OPERATING_HEAVY_EQUIP"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="RDO_CAUSE_OF_INJURY_YES"       pdf_field_index="303"  pdf_field_name="RDO_CAUSE_OF_INJURY_YES"   if_blank=" "/>
+    <field db_field_name="CHK_REFERRALS_OTHER "       pdf_field_index="304"  pdf_field_name="CHK_REFERRALS_OTHER "   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_TEST_LABS "       pdf_field_index="305"  pdf_field_name="TXT_TEST_LABS "   if_blank=" "/>
+    <field db_field_name="TXT_TEST_MRI"       pdf_field_index="306"  pdf_field_name="TXT_TEST_MRI"   if_blank=" "/>
+    <field db_field_name="CHK_DIAGNOSIS_840_9"       pdf_field_index="307"  pdf_field_name="CHK_DIAGNOSIS_840_9"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_ROM_DEMO_TT_IMP"       pdf_field_index="308"  pdf_field_name="CHK_ROM_DEMO_TT_IMP"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_X_RAY__DEMO"       pdf_field_index="309"  pdf_field_name="CHK_X_RAY__DEMO"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_ANKLE_INVERSION_SPASM"       pdf_field_index="310"  pdf_field_name="CHK_ANKLE_INVERSION_SPASM"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_ANKLE_PLANTAR_FLEXION_PATIENT_ROM"       pdf_field_index="311"  pdf_field_name="TXT_ANKLE_PLANTAR_FLEXION_PATIENT_ROM"   if_blank=" "/>
+    <field db_field_name="TXT_HIP_EXTERNAL_ROTATION_PATIENT_ROM_LEFT"       pdf_field_index="312"  pdf_field_name="TXT_HIP_EXTERNAL_ROTATION_PATIENT_ROM_LEFT"   if_blank=" "/>
+    <field db_field_name="CHK_SHOULDER_EXTERNAL_ROTATION_DULL"       pdf_field_index="313"  pdf_field_name="CHK_SHOULDER_EXTERNAL_ROTATION_DULL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_SHOULDER_EXTERNAL_ROTATION_NORMAL"       pdf_field_index="314"  pdf_field_name="CHK_SHOULDER_EXTERNAL_ROTATION_NORMAL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_SHOULDER_INTERNAL_ROTATION_DULL"       pdf_field_index="315"  pdf_field_name="CHK_SHOULDER_INTERNAL_ROTATION_DULL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_SHOULDER_INTERNAL_ROTATION_NORMAL"       pdf_field_index="316"  pdf_field_name="CHK_SHOULDER_INTERNAL_ROTATION_NORMAL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_SHOULDER_EXTENSION_SHARP"       pdf_field_index="317"  pdf_field_name="CHK_SHOULDER_EXTENSION_SHARP"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_LUMBOSACRAL_SPINE_LT_LATERAL_FLEXION_PATIENT_ROM"       pdf_field_index="318"  pdf_field_name="TXT_LUMBOSACRAL_SPINE_LT_LATERAL_FLEXION_PATIENT_ROM"   if_blank=" "/>
+    <field db_field_name="CHK_LUMBOSACRAL_SPINE_EXTENSION_DULL"       pdf_field_index="319"  pdf_field_name="CHK_LUMBOSACRAL_SPINE_EXTENSION_DULL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CERVICAL_SPINE_LT_LATERAL_FLEXION_SPASM"       pdf_field_index="320"  pdf_field_name="CHK_CERVICAL_SPINE_LT_LATERAL_FLEXION_SPASM"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CERVICAL_SPINE_EXTENSION_SPASM"       pdf_field_index="321"  pdf_field_name="CHK_CERVICAL_SPINE_EXTENSION_SPASM"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_DOS"       pdf_field_index="322"  pdf_field_name="TXT_DOS"   if_blank=" "/>
+    <field db_field_name="CHK_LOWER_BACK_PAIN_STIFFNESS"       pdf_field_index="323"  pdf_field_name="CHK_LOWER_BACK_PAIN_STIFFNESS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_TREATMENT_99214"       pdf_field_index="324"  pdf_field_name="CHK_TREATMENT_99214"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_DOB"       pdf_field_index="325"  pdf_field_name="TXT_DOB"   if_blank=" "/>
+    <field db_field_name="CHK_LIMIT_APPLY_8_TO_14_DAYS"       pdf_field_index="326"  pdf_field_name="CHK_LIMIT_APPLY_8_TO_14_DAYS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PATIENT_WORK_LIMIT_PERSONAL_PROTIVE_EQUIP"       pdf_field_index="327"  pdf_field_name="CHK_PATIENT_WORK_LIMIT_PERSONAL_PROTIVE_EQUIP"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PATIENT_CAN_WORK_WITH_LIMIT"       pdf_field_index="328"  pdf_field_name="CHK_PATIENT_CAN_WORK_WITH_LIMIT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="RDO_PATIENT_WORKING_YES"       pdf_field_index="329"  pdf_field_name="RDO_PATIENT_WORKING_YES"   if_blank=" "/>
+    <field db_field_name="CHK_PATIENT_NEXT_VISIT_NEEDED_MONTH"       pdf_field_index="330"  pdf_field_name="CHK_PATIENT_NEXT_VISIT_NEEDED_MONTH"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PATIENT_NEXT_VISIT_WITHIN_A_WEEK"       pdf_field_index="331"  pdf_field_name="CHK_PATIENT_NEXT_VISIT_WITHIN_A_WEEK"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_REFERRALS_OCCUPATIONAL_THERAPIST"       pdf_field_index="332"  pdf_field_name="CHK_REFERRALS_OCCUPATIONAL_THERAPIST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DIAGNOSIS_923_11"       pdf_field_index="333"  pdf_field_name="CHK_DIAGNOSIS_923_11"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DIAGNOSIS_850_0"       pdf_field_index="334"  pdf_field_name="CHK_DIAGNOSIS_850_0"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MRI_CT_DEMO"       pdf_field_index="335"  pdf_field_name="CHK_MRI_CT_DEMO"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="RDO_PAIN_IN_HAND"       pdf_field_index="336"  pdf_field_name="RDO_PAIN_IN_HAND"   if_blank=" "/>
+    <field db_field_name="CHK_ANKLE_EVERSION_SPASM"       pdf_field_index="337"  pdf_field_name="CHK_ANKLE_EVERSION_SPASM"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_SHOULDER_INTERNAL_ROTATION_INFLAME"       pdf_field_index="338"  pdf_field_name="CHK_SHOULDER_INTERNAL_ROTATION_INFLAME"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_SHOULDER_ABDUCTION_SHARP"       pdf_field_index="339"  pdf_field_name="CHK_SHOULDER_ABDUCTION_SHARP"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LUMBOSACRAL_SPINE_RT_LATERAL_FLEXION_SPASM"       pdf_field_index="340"  pdf_field_name="CHK_LUMBOSACRAL_SPINE_RT_LATERAL_FLEXION_SPASM"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LUMBOSACRAL_SPINE_LT_LATERAL_FLEXION_SHARP"       pdf_field_index="341"  pdf_field_name="CHK_LUMBOSACRAL_SPINE_LT_LATERAL_FLEXION_SHARP"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LUMBOSACRAL_SPINE_RIGHT_ROTATION_SHARP"       pdf_field_index="342"  pdf_field_name="CHK_LUMBOSACRAL_SPINE_RIGHT_ROTATION_SHARP"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_LUMBOSACRAL_SPINE_RIGHT_ROTATION_PATIENT_ROM"       pdf_field_index="343"  pdf_field_name="TXT_LUMBOSACRAL_SPINE_RIGHT_ROTATION_PATIENT_ROM"   if_blank=" "/>
+    <field db_field_name="CHK_CERVICAL_SPINE_RT_LATERAL_FLEXION_INFLAME"       pdf_field_index="344"  pdf_field_name="CHK_CERVICAL_SPINE_RT_LATERAL_FLEXION_INFLAME"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CERVICAL_SPINE_EXTENSION_NORMAL"       pdf_field_index="345"  pdf_field_name="CHK_CERVICAL_SPINE_EXTENSION_NORMAL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_CERVICAL_SPINE_FLEXION_PATIENT_ROM"       pdf_field_index="346"  pdf_field_name="TXT_CERVICAL_SPINE_FLEXION_PATIENT_ROM"   if_blank=" "/>
+    <field db_field_name="IMG_BARCODE"       pdf_field_index="347"  pdf_field_name="IMG_BARCODE"   if_blank=" " isImage="1"/>
+    <field db_field_name="CHK_INSOMNIA"       pdf_field_index="348"  pdf_field_name="CHK_INSOMNIA"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PATIENT_ARRIVED_OTHER"       pdf_field_index="349"  pdf_field_name="CHK_PATIENT_ARRIVED_OTHER"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_PROVIDER_ZIP"       pdf_field_index="350"  pdf_field_name="TXT_PROVIDER_ZIP"   if_blank=" "/>
+    <field db_field_name="TXT_PROVIDER_NAME"       pdf_field_index="351"  pdf_field_name="TXT_PROVIDER_NAME"   if_blank=" "/>
+    <field db_field_name="CHK_WORK_RESTRICTIONS_1_TO_2_DAYS"       pdf_field_index="352"  pdf_field_name="CHK_WORK_RESTRICTIONS_1_TO_2_DAYS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_DESCRIBE_PATIENT_WORK_RESTRICTIONS"       pdf_field_index="353"  pdf_field_name="TXT_DESCRIBE_PATIENT_WORK_RESTRICTIONS"   if_blank=" "/>
+    <field db_field_name="TXT_LIST_CHANGES_OF_TREATMENT"       pdf_field_index="354"  pdf_field_name="TXT_LIST_CHANGES_OF_TREATMENT"   if_blank=" "/>
+    <field db_field_name="TXT_REFERRALS_OTHER"       pdf_field_index="355"  pdf_field_name="TXT_REFERRALS_OTHER"   if_blank=" "/>
+    <field db_field_name="CHK_TEST_CT_SCAN"       pdf_field_index="356"  pdf_field_name="CHK_TEST_CT_SCAN"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="1_844"       pdf_field_index="357"  pdf_field_name="1_844"   if_blank=" "/>
+    <field db_field_name="CHK_DIAGNOSIS_847_0"       pdf_field_index="358"  pdf_field_name="CHK_DIAGNOSIS_847_0"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DIAGNOSIS_850_1"       pdf_field_index="359"  pdf_field_name="CHK_DIAGNOSIS_850_1"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_EMG_UPP_EXET_DEMO"       pdf_field_index="360"  pdf_field_name="TXT_EMG_UPP_EXET_DEMO"   if_blank=" "/>
+    <field db_field_name="CHK_ANKLE_EVERSION_DULL"       pdf_field_index="361"  pdf_field_name="CHK_ANKLE_EVERSION_DULL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_ANKLE_INVERSION_DULL"       pdf_field_index="362"  pdf_field_name="CHK_ANKLE_INVERSION_DULL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_ANKLE_PLANTAR_FLEXION_INFLAME"       pdf_field_index="363"  pdf_field_name="CHK_ANKLE_PLANTAR_FLEXION_INFLAME"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_ANKLE_PLANTAR_FLEXION_SHARP"       pdf_field_index="364"  pdf_field_name="CHK_ANKLE_PLANTAR_FLEXION_SHARP"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_HIP_INTERNAL_ROTATION_PATIENT_ROM_LEFT"       pdf_field_index="365"  pdf_field_name="TXT_HIP_INTERNAL_ROTATION_PATIENT_ROM_LEFT"   if_blank=" "/>
+    <field db_field_name="CHK_SHOULDER_ABDUCTION_DULL"       pdf_field_index="366"  pdf_field_name="CHK_SHOULDER_ABDUCTION_DULL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_LUMBOSACRAL_SPINE_RT_LATERAL_FLEXION"       pdf_field_index="367"  pdf_field_name="TXT_LUMBOSACRAL_SPINE_RT_LATERAL_FLEXION"   if_blank=" "/>
+    <field db_field_name="RDO_FORAMINAL_COMPRESSION_SPURLING_SIGN_POSITIVE"       pdf_field_index="368"  pdf_field_name="RDO_FORAMINAL_COMPRESSION_SPURLING_SIGN_POSITIVE"   if_blank=" "/>
+    <field db_field_name="RDO_CERVICAL_SPINE_WITH"       pdf_field_index="369"  pdf_field_name="RDO_CERVICAL_SPINE_WITH"   if_blank=" "/>
+    <field db_field_name="CHK_CERVICAL_SPINE_RT_LATERAL_FLEXION_NORMAL"       pdf_field_index="370"  pdf_field_name="CHK_CERVICAL_SPINE_RT_LATERAL_FLEXION_NORMAL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_HEADACHES"       pdf_field_index="371"  pdf_field_name="CHK_HEADACHES"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_REVEALED_BY_RECENT_EXAMINATION"       pdf_field_index="372"  pdf_field_name="TXT_REVEALED_BY_RECENT_EXAMINATION"   if_blank=" "/>
+    <field db_field_name="TXT_PROVIDER_STATE"       pdf_field_index="373"  pdf_field_name="TXT_PROVIDER_STATE"   if_blank=" "/>
+    <field db_field_name="301,302,303,304,305,306,307,308,309,310,311,312,313,314,315,316,317,318,320,322,323,324,325,326,327,328,329,330,331,332,333" pdf_field_index="285,98,97,334,359,358,124,96,7,33,72,57,123,32,307,95,245,167,207,166,143,142,244,333,165,31,94,182,206,6,93"  pdf_Textfield_index="0,0,0,0,0,0"  pdf_field_name="" if_blank="" is_check_box = "1" is_bit="3" flip_index="" pdf_proc_name="SP_CO_GET_DIAGNOSIS_CODE" pdf_flag_name="GET_DIAGNOSIS_CODE" />
+    <field db_field_name="501,502,503,504,505" pdf_field_index="115,89,114,324,200"  pdf_Textfield_index="0,0,0,0,0,0"  pdf_field_name="" if_blank="" is_check_box = "1" is_bit="3" flip_index="" pdf_proc_name="SP_CO_GET_DETAILS_EVENT_ID" pdf_flag_name="GET_TREATMENT" />
+   </document>
+  </root>

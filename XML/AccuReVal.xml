@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="TXN_CALENDAR_EVENT">
+  <Field Name="I_EVENT_ID" DataType="Int" Size="" Null="True" Control="TextBox" ControlID="txt_PATIENT_ID" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PATIENT_LAST_NAME" DataType="NVarChar" Size="500" Null="True" Control="TextBox" ControlID="txtPatientLastName" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PATIENT_FIRST_NAME" DataType="NVarChar" Size="500" Null="True" Control="TextBox" ControlID="txtPatientFirstName" Editable="True" Visible="True"></Field>
+  <Field Name="DT_DOA" DataType="DateTime" Size="" Null="True" Control="TextBox" ControlID="txtDoa" Editable="True" Visible="True"></Field>
+  <Field Name="I_PATIENT_AGE" DataType="Int" Size="" Null="True" Control="TextBox" ControlID="txtPatientAge" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_SEX" DataType="NVarChar" Size="20" Null="True" Control="TextBox" ControlID="txtrdosex" Editable="True" Visible="True"></Field>
+  <Field Name="TXT_DOE" DataType="DateTime" Size="" Null="True" Control="TextBox" ControlID="txtDoe" Editable="True" Visible="True"></Field>
+
+  <StoreProcedure name="SP_GET_PATIENT_DETAIL_ACCU_RE_EVAL"></StoreProcedure>
+
+</Table>
+

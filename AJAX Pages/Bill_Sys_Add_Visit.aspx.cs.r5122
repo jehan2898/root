@@ -1,0 +1,736 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using DevExpress.Web.ASPxGridView;
+using System.Data.SqlClient;
+
+public partial class AJAX_Pages_Bill_Sys_Add_Visit : System.Web.UI.Page
+{
+    private Patient_TVBO _patient_TVBO;
+    private ArrayList billAppointmetDate = new ArrayList();
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        chkTransportation.Attributes.Add("onclick", "return showTrans();");
+        if (!IsPostBack)
+        {
+            txtCompanyID.Text = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+            _patient_TVBO = new Patient_TVBO();
+            Session["PatientDataList"] = _patient_TVBO.GetPatientDataList(txtCompanyID.Text);
+            btnAdd.Attributes.Add("onclick", "return Validate()");
+            btnTransportsave.Attributes.Add("onclick", "return ValidateTrans()");
+            btnTransportdelete.Attributes.Add("onclick", "return ValidateDelete()");
+           // btnAdd.Attributes.Add("onclick", "return checkvisittype()");
+            extddlCaseStatus.Flag_ID = txtCompanyID.Text;
+            extddlCaseType.Flag_ID = txtCompanyID.Text;
+            extddlInsuranceCompany.Flag_ID = txtCompanyID.Text;
+            extddlTransport.Flag_ID = txtCompanyID.Text;
+            extddlVisitType.Flag_ID = txtCompanyID.Text;
+            string szBitValue = Session["SendPatientToDoctor"].ToString();
+            hdEnable.Value = "0";
+            if (szBitValue.ToLower() == "false")
+            {
+                hdSeting.Value = "0";
+                chkAddToDoctor.Visible = false;
+            }
+            else
+            {
+                hdSeting.Value = "1";
+                chkAddToDoctor.Visible = true;
+                chkAddToDoctor.Checked = true;
+            }
+            BindTimeControl();
+            BindDoctorList();
+
+            chkTransportation.Visible = false;
+        }
+        //if (chkTransportation.Checked = true)
+        //{
+        //    BillSearchDAO _objBillSearchDAO = new BillSearchDAO();
+        //    DataSet ds = new DataSet();
+        //    ds = _objBillSearchDAO.getTransportinfo(txtCaseID.Text, txtCompanyID.Text);
+        //    grdTransport.DataSource = ds;
+        //    grdTransport.DataBind();
+        //}
+        tb1.Visible = false;
+        // tb2.Visible = false;
+        // tb3.Visible = false;
+    }
+    private void BindDoctorList()
+    {
+        //Bill_Sys_Calender _bill_Sys_Calender = new Bill_Sys_Calender();
+        //DataSet dsDoctor = _bill_Sys_Calender.GetDoctorlList(((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID);
+        //grdDoctor.DataSource = dsDoctor;
+        //grdDoctor.DataBind();
+
+        string szBitValue = Session["SendPatientToDoctor"].ToString();
+        if (szBitValue.ToLower() == "false")
+        {
+            Bill_Sys_Calender _bill_Sys_Calender = new Bill_Sys_Calender();
+            DataSet dsDoctor = _bill_Sys_Calender.GetDoctorlList(((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID);
+            grdDoctor.DataSource = dsDoctor;
+            grdDoctor.DataBind();
+
+        }
+        else if (szBitValue.ToLower() == "true")
+        {
+            Bill_Sys_Event_BO objDocList = new Bill_Sys_Event_BO();
+            DataSet dsDoctor = objDocList.GetDoctorlList(((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID);
+            grdDoctor.DataSource = dsDoctor;
+            grdDoctor.DataBind();
+        }
+
+
+    }
+    private void BindTimeControl()
+    {
+        try
+        {
+            ddlHours.Items.Clear();
+            ddlMinutes.Items.Clear();
+            ddlTime.Items.Clear();
+
+            ddlHours_event.Items.Clear();
+            ddlMinutes_event.Items.Clear();
+            ddlTime_event.Items.Clear();
+
+            for (int i = 0; i <= 12; i++)
+            {
+                if (i > 9)
+                {
+                    ddlHours.Items.Add(i.ToString());
+                    ddlHours_event.Items.Add(i.ToString());
+                }
+                else
+                {
+                    ddlHours.Items.Add("0" + i.ToString());
+                    ddlHours_event.Items.Add("0" + i.ToString());
+                }
+            }
+            for (int i = 0; i < 60; i++)
+            {
+                if (i > 9)
+                {
+                    ddlMinutes.Items.Add(i.ToString());
+                    ddlMinutes_event.Items.Add(i.ToString());
+                }
+                else
+                {
+                    ddlMinutes.Items.Add("0" + i.ToString());
+                    ddlMinutes_event.Items.Add("0" + i.ToString());
+                }
+            }
+            ddlTime.Items.Add("AM");
+            ddlTime_event.Items.Add("AM");
+            ddlTime.Items.Add("PM");
+            ddlTime_event.Items.Add("PM");
+        }
+        catch (Exception ex)
+        {
+            string strError = ex.Message.ToString();
+            strError = strError.Replace("\n", " ");
+            Response.Redirect("Bill_Sys_ErrorPage.aspx?ErrMsg=" + strError);
+        }
+    }
+
+    protected void btnAdd_Click(object sender, EventArgs e)
+    {
+        int iDateCount = 4;
+        String szCompletedMsg = "";
+        int iCompleted = 0;
+        String szFutureUncompletedMsg = "";
+        int iFutureUncompleted = 0;
+        String szMustExist_Initial_EvaluationMsg = "";
+        int iMustExist_Initial_Evaluation = 0;
+        String szAlreadyExistInitial_Evaluation = "";
+        int iAlreadyExistInitial_Evaluation = 0;
+        String szAlreadyExistVisit = "";
+        int iAlreadyExistVisit = 0;
+        string errordocnamemsg = "";
+        string errordocnameIEmsg = "";
+        string errordocnameVisit = "";
+
+        if (txtCaseID.Text != "")
+        {
+            ArrayList arrEventInfo = new ArrayList();
+            string interval = "30";
+            int endMin = Convert.ToInt32(ddlMinutes_event.SelectedValue) + Convert.ToInt32(interval);
+            int endHr = Convert.ToInt32(ddlHours_event.SelectedValue);
+            string endTime = ddlTime_event.SelectedValue;
+            if (endMin >= 60)
+            {
+                endMin = endMin - 60;
+                endHr = endHr + 1;
+                if (endHr > 12)
+                {
+                    endHr = endHr - 12;
+                    if (ddlHours.SelectedValue != "12")
+                    {
+                        if (endTime == "AM")
+                        {
+                            endTime = "PM";
+                        }
+                        else if (endTime == "PM")
+                        {
+                            endTime = "AM";
+                        }
+                    }
+                }
+                else if (endHr == 12)
+                {
+                    if (ddlHours.SelectedValue != "12")
+                    {
+                        if (endTime == "AM")
+                        {
+                            endTime = "PM";
+                        }
+                        else if (endTime == "PM")
+                        {
+                            endTime = "AM";
+                        }
+                    }
+                }
+            }
+            string ddlEndHours = endHr.ToString().PadLeft(2, '0');
+            string ddlEndMinutes = endMin.ToString().PadLeft(2, '0');
+            string ddlEndTime = endTime.ToString();
+            string szResult = "";
+
+            string szBitValue = Session["SendPatientToDoctor"].ToString();
+            if (szBitValue.ToLower() == "true" && chkAddToDoctor.Checked)
+            {
+                for (int i = 0; i < grdDoctor.VisibleRowCount; i++)
+                {
+                    GridViewDataColumn c = (GridViewDataColumn)grdDoctor.Columns[0]; // checkbox column
+                    CheckBox chkSelected = (CheckBox)grdDoctor.FindRowCellTemplateControl(i, c, "chkSelect");
+                    if (chkSelected.Checked == true)
+                    {
+                        Bill_Sys_Event_DAO objEvent = new Bill_Sys_Event_DAO();
+                        string szDoctorId = grdDoctor.GetRowValues(i, "CODE").ToString();
+                        objEvent.SZ_CASE_ID = txtCaseID.Text;
+                        objEvent.DT_EVENT_DATE = txtEventDate.Text;
+                        objEvent.DT_EVENT_TIME = ddlHours_event.SelectedValue.ToString() + "." + ddlMinutes_event.SelectedValue.ToString();
+                        objEvent.SZ_EVENT_NOTES = txtNotes.Text;
+                        objEvent.SZ_DOCTOR_ID = szDoctorId;
+                        objEvent.SZ_TYPE_CODE_ID = "TY000000000000000003";
+                        objEvent.SZ_COMPANY_ID = txtCompanyID.Text;
+                        objEvent.DT_EVENT_TIME_TYPE = ddlTime_event.SelectedValue;
+                        objEvent.DT_EVENT_END_TIME = ddlEndHours.ToString() + "." + ddlEndMinutes.ToString();
+                        objEvent.DT_EVENT_END_TIME_TYPE = ddlEndTime;
+                        objEvent.SZ_USER_ID = grdDoctor.GetRowValues(i, "SZ_USER_ID").ToString();
+                        objEvent.SZ_BILLER_ID = ((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_ID.ToString();
+                        objEvent.SZ_DOCTOR_NAME = grdDoctor.GetRowValues(i, "DocName").ToString();
+                        objEvent.SZ_GROUP_CODE = grdDoctor.GetRowValues(i, "GROUP_CODE").ToString();
+                        arrEventInfo.Add(objEvent);
+
+                    }
+
+                }
+
+                Bill_Sys_Event_BO objAddEvent = new Bill_Sys_Event_BO();
+                szResult = objAddEvent.SaveDocEvent(arrEventInfo);
+
+            }
+            else
+            {
+                for (int i = 0; i < grdDoctor.VisibleRowCount; i++)
+                {
+                    GridViewDataColumn c = (GridViewDataColumn)grdDoctor.Columns[0]; // checkbox column
+                    CheckBox chkSelected = (CheckBox)grdDoctor.FindRowCellTemplateControl(i, c, "chkSelect");
+                    if (chkSelected.Checked == true)
+                    {
+                        string docid = grdDoctor.GetRowValues(i, "CODE").ToString();
+                        string docname = grdDoctor.GetRowValues(i, "DESCRIPTION").ToString();
+                        Boolean iEvisitExists = false;
+                        Boolean visitExists = false;
+                        SqlConnection con = new SqlConnection(ConfigurationManager.AppSettings.Get("MyConnectionString"));
+                        SqlCommand comd = new SqlCommand("SP_CHECK_INITIALE_VALUATIONEXISTS");
+                        comd.CommandType = CommandType.StoredProcedure;
+                        comd.Connection = con;
+                        comd.Connection.Open();
+                        comd.Parameters.AddWithValue("@SZ_CASE_ID", txtCaseID.Text);
+                        comd.Parameters.AddWithValue("@SZ_COMPANY_ID", ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID);
+                        comd.Parameters.AddWithValue("@SZ_PATIENT_ID", txtPatientID.Text);
+                        comd.Parameters.AddWithValue("@SZ_DOCTOR_ID", docid);
+                        comd.Parameters.AddWithValue("@VISIT_DATE", txtEventDate.Text);
+                        SqlParameter objIEExists = new SqlParameter("@INITIAL_EXISTS", SqlDbType.Bit);
+                        objIEExists.Direction = ParameterDirection.Output;
+                        comd.Parameters.Add(objIEExists);
+                        SqlParameter objVisitStatus = new SqlParameter("@VISIT_EXISTS", SqlDbType.Bit, 20);
+                        objVisitStatus.Direction = ParameterDirection.Output;
+                        comd.Parameters.Add(objVisitStatus);
+                        comd.ExecuteNonQuery();
+                        comd.Connection.Close();
+                        //txtvisittype.Text = extddlVisitType.Text;
+                        iEvisitExists = Convert.ToBoolean(objIEExists.Value);
+                        visitExists = Convert.ToBoolean(objVisitStatus.Value);
+                        if (!visitExists)
+                        {
+                            billAppointmetDate.Add(txtEventDate .Text );
+                        }
+
+                        if (iEvisitExists == false && extddlVisitType.Selected_Text != "IE")
+                        {
+                            if (iMustExist_Initial_Evaluation == iDateCount)
+                            {
+                                szMustExist_Initial_EvaluationMsg = szMustExist_Initial_EvaluationMsg + errordocnamemsg + docname + "  ";
+                                iMustExist_Initial_Evaluation = 0;
+                                //errordocnamemsg = errordocnamemsg + docname + "  ";
+                            }
+                            else
+                            {
+                                szMustExist_Initial_EvaluationMsg = szMustExist_Initial_EvaluationMsg + errordocnamemsg + docname + "  ";
+                                iMustExist_Initial_Evaluation++;
+                                //errordocnamemsg = errordocnamemsg + docname + "  ";
+                            }
+                            continue;
+                        }
+                        if (iEvisitExists == true && extddlVisitType.Selected_Text == "IE")
+                        {
+                            if (iAlreadyExistInitial_Evaluation == iDateCount)
+                            {
+                                szAlreadyExistInitial_Evaluation = szAlreadyExistInitial_Evaluation + errordocnameIEmsg + docname + "  ";
+                                iAlreadyExistInitial_Evaluation = 0;
+                                //errordocnameIEmsg = errordocnameIEmsg + docname + "  ";
+                            }
+                            else
+                            {
+                                szAlreadyExistInitial_Evaluation = szAlreadyExistInitial_Evaluation + errordocnameIEmsg + docname + "  ";
+                                iAlreadyExistInitial_Evaluation++;
+                               // errordocnameIEmsg = errordocnameIEmsg + docname + "  ";
+                            }
+                            continue;
+                        }
+                        if (visitExists == true)
+                        {
+                            if (iAlreadyExistVisit == iDateCount)
+                            {
+                                szAlreadyExistVisit = szAlreadyExistVisit + errordocnameVisit + docname + "  ";
+                                iAlreadyExistVisit = 0;
+                                //errordocnameVisit = errordocnameVisit + docname+ "  ";
+                            }
+                            else
+                            {
+                                szAlreadyExistVisit = szAlreadyExistVisit + errordocnameVisit + docname + "  ";
+                                iAlreadyExistVisit++;
+                                //errordocnameVisit = errordocnameVisit + docname + "  ";
+                            }
+                            continue;
+                        }
+
+
+                        Bill_Sys_Event_DAO objEvent = new Bill_Sys_Event_DAO();
+                        string szDoctorId = grdDoctor.GetRowValues(i, "CODE").ToString();
+                        objEvent.SZ_CASE_ID = txtCaseID.Text;
+                        objEvent.DT_EVENT_DATE = txtEventDate.Text;
+                        objEvent.DT_EVENT_TIME = ddlHours_event.SelectedValue.ToString() + "." + ddlMinutes_event.SelectedValue.ToString();
+                        objEvent.SZ_EVENT_NOTES = txtNotes.Text;
+                        objEvent.SZ_DOCTOR_ID = szDoctorId;
+                        objEvent.SZ_TYPE_CODE_ID = "TY000000000000000003";
+                        objEvent.SZ_COMPANY_ID = txtCompanyID.Text;
+                        objEvent.DT_EVENT_TIME_TYPE = ddlTime_event.SelectedValue;
+                        objEvent.DT_EVENT_END_TIME = ddlEndHours.ToString() + "." + ddlEndMinutes.ToString();
+                        objEvent.DT_EVENT_END_TIME_TYPE = ddlEndTime;
+                        objEvent.SZ_USER_ID = ((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_ID.ToString();
+                        objEvent.SZ_VISIT_TYPE = extddlVisitType.Text;
+
+                        arrEventInfo.Add(objEvent);
+
+                    }
+
+                }
+                Bill_Sys_Event_BO objAddEvent = new Bill_Sys_Event_BO();
+                szResult = objAddEvent.SaveEvent(arrEventInfo);
+            }
+            if (szFutureUncompletedMsg == "" && szMustExist_Initial_EvaluationMsg == "" && szAlreadyExistInitial_Evaluation == "" && szAlreadyExistVisit == "")
+            {
+                //lblMsg.Text = "Appointment scheduled successfully.";
+
+                Session["CreateBill"] = null;
+                Session["CreateBill"] = billAppointmetDate;
+
+
+                //    ClearControl();
+                // Page.ClientScript.RegisterStartupScript(this.GetType(), "ss", "<script language='javascript'> window.parent.document.location.href='Bill_SysPatientDesk.aspx';window.self.close(); </script>");
+            }
+            else
+            {
+                if (szCompletedMsg != "")
+                {
+                    Session["CreateBill"] = null;
+                    Session["CreateBill"] = billAppointmetDate;
+                    //lblMsg.Text = lblMsg.Text + szCompletedMsg + " -- Completed.<br/>";
+
+                }
+                if (szFutureUncompletedMsg != "")
+                {
+                    lblMsg.Text = lblMsg.Text + szFutureUncompletedMsg + " -- Visit for future date cannot be added.<br/>";
+                }
+                if (szMustExist_Initial_EvaluationMsg != "")
+                {
+                    if (iMustExist_Initial_Evaluation > 2)
+                    {
+                        lblMsg.Text = lblMsg.Text + "<br/> -- Schedule can not be saved for " + szMustExist_Initial_EvaluationMsg + " is visiting first time hence there visit type should be Initial Evaluation.<br/>";
+                    }
+                    else
+                    {
+                        lblMsg.Text = lblMsg.Text + " -- Schedule can not be saved for " + szMustExist_Initial_EvaluationMsg + " is visiting first time hence there visit type should be Initial Evaluation.<br/>";
+                    }
+                }
+                if (szAlreadyExistInitial_Evaluation != "")
+                {
+                    lblMsg.Text = lblMsg.Text + " -- Schedule can not be saved for " + szAlreadyExistInitial_Evaluation + " because patient already has Initial Evaluation.<br/>";
+                }
+                if (szAlreadyExistVisit != "")
+                {
+                    lblMsg.Text = lblMsg.Text + " -- Schedule can not be saved because for " + szAlreadyExistVisit + " because patient already has this visit.<br/>";
+                }
+            }
+            lblMsg.Focus();
+            lblMsg.Visible = true;
+
+            if (szResult == "success")
+            {
+                if (arrEventInfo.Count >= 1)
+                {
+                    usrMessage.PutMessage("Visit Save successfully..");
+                    usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_UserMessage);
+                    usrMessage.Show();
+                }
+              
+            }
+            else
+            {
+                usrMessage.PutMessage("Eroor " + szResult);
+                usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_ErrorMessage);
+                usrMessage.Show();
+            }
+            tb1.Visible = true;
+            tb3.Visible = true;
+        }
+        else
+        {
+            usrMessage.PutMessage("Please Select Case First " );
+            usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_ErrorMessage);
+            usrMessage.Show();
+
+        }
+    }
+    protected void btnTransportsave_Click(object sender, EventArgs e)
+    {
+        BillSearchDAO _BillSearchDAO = new BillSearchDAO();
+        try
+        {
+            _BillSearchDAO.GetInsertTransport(extddlTransport.Selected_Text, extddlTransport.Text, txtCompanyID.Text, txtCaseID.Text, txtFromDate.Text, ddlHours.SelectedItem.ToString(), ddlMinutes.SelectedItem.ToString(), ddlTime.SelectedItem.ToString());
+            usrMessage.PutMessage("Save Successfully ...!");
+            usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_UserMessage);
+            usrMessage.Show();
+
+
+            DataSet ds = new DataSet();
+            ds = _BillSearchDAO.getTransportinfo(txtCaseID.Text, txtCompanyID.Text);
+            grdTransport.DataSource = ds;
+            grdTransport.DataBind();
+
+            divTrans.Style.Add("visibility", "visible");
+
+            //chkTransportation.Checked = true;
+            tb1.Visible = true;
+            tb3.Visible = true;
+
+        }
+        catch (Exception ex)
+        {
+            usrMessage.PutMessage(ex.ToString());
+            usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_ErrorMessage);
+            usrMessage.Show();
+
+        }
+    }
+
+    protected void btnTransportdelete_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            ArrayList arrtransport = new ArrayList();
+            for (int i = 0; i < grdTransport.Items.Count; i++)
+            {
+                CheckBox chktransport = (CheckBox)grdTransport.Items[i].FindControl("chkDelete");
+                if (chktransport.Checked == true)
+                {
+                    string strtransportid = grdTransport.DataKeys[i].ToString();
+                    arrtransport.Add(strtransportid);
+
+                }
+            }
+            BillSearchDAO _objBillSearchDAO = new BillSearchDAO();
+            _objBillSearchDAO.Delete_Trans_Data(arrtransport, txtCompanyID.Text);
+
+
+            usrMessage.PutMessage("Delete Successfully ...!");
+            usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_UserMessage);
+            usrMessage.Show();
+
+            DataSet ds = new DataSet();
+            ds = _objBillSearchDAO.getTransportinfo(txtCaseID.Text, txtCompanyID.Text);
+            grdTransport.DataSource = ds;
+            grdTransport.DataBind();
+            divTrans.Style.Add("visibility", "visible");
+
+            //chkTransportation.Checked = true;
+            tb1.Visible = true;
+            //tb2.Visible = true;
+            tb3.Visible = true;
+
+        }
+        catch (Exception ex)
+        {
+            usrMessage.PutMessage(ex.ToString());
+            usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_ErrorMessage);
+            usrMessage.Show();
+
+        }
+
+    }
+    protected void btnSearchPatientList_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            SearchPatientGrid();
+        }
+        catch (Exception ex)
+        {
+            string strError = ex.Message.ToString();
+            strError = strError.Replace("\n", " ");
+            Response.Redirect("Bill_Sys_ErrorPage.aspx?ErrMsg=" + strError);
+        }
+    }
+
+    private void SearchPatientGrid()
+    {
+        try
+        {
+            DataTable dt = new DataTable();
+            DataSet ds = new DataSet();
+            ds = (DataSet)Session["PatientDataList"];
+            dt = ds.Tables[0].Clone();
+
+
+
+            // dt = new DataTable();
+
+            if (txtPatientFirstName.Text != "" && txtPatientLastName.Text == "")
+            {
+                DataRow[] dr = ds.Tables[0].Select("SZ_PATIENT_FIRST_NAME LIKE '" + txtPatientFirstName.Text + "%'");
+                for (int i = 0; i < dr.Length; i++)
+                {
+                    dt.ImportRow(dr[i]);
+                }
+
+            }
+            else if (txtPatientLastName.Text != "" && txtPatientFirstName.Text == "")
+            {
+                DataRow[] dr = ds.Tables[0].Select("SZ_PATIENT_LAST_NAME LIKE '" + txtPatientLastName.Text + "%'");
+                for (int i = 0; i < dr.Length; i++)
+                {
+                    dt.ImportRow(dr[i]);
+                }
+
+            }
+            else if (txtPatientLastName.Text != "" && txtPatientFirstName.Text != "")
+            {
+                DataRow[] dr = ds.Tables[0].Select("SZ_PATIENT_FIRST_NAME LIKE '" + txtPatientFirstName.Text + "%' AND SZ_PATIENT_LAST_NAME LIKE '" + txtPatientLastName.Text + "%'");
+                for (int i = 0; i < dr.Length; i++)
+                {
+                    dt.ImportRow(dr[i]);
+                }
+            }
+            grdPatientList.DataSource = dt;
+            grdPatientList.DataBind();
+
+
+
+        }
+        catch (Exception ex)
+        {
+
+            throw;
+        }
+    }
+
+    protected void grdPatientList_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            if (grdPatientList.Items[grdPatientList.SelectedIndex].Cells[1].Text != "&nbsp;") { txtPatientID.Text = grdPatientList.Items[grdPatientList.SelectedIndex].Cells[1].Text; }
+            if (grdPatientList.Items[grdPatientList.SelectedIndex].Cells[2].Text != "&nbsp;") { txtPatientFName.Text = grdPatientList.Items[grdPatientList.SelectedIndex].Cells[2].Text; }
+            if (grdPatientList.Items[grdPatientList.SelectedIndex].Cells[11].Text != "&nbsp;") { txtMI.Text = grdPatientList.Items[grdPatientList.SelectedIndex].Cells[11].Text; }
+            if (grdPatientList.Items[grdPatientList.SelectedIndex].Cells[3].Text != "&nbsp;") { txtPatientLName.Text = grdPatientList.Items[grdPatientList.SelectedIndex].Cells[3].Text; }
+            if (grdPatientList.Items[grdPatientList.SelectedIndex].Cells[9].Text != "&nbsp;") { txtPatientPhone.Text = grdPatientList.Items[grdPatientList.SelectedIndex].Cells[9].Text; }
+            if (grdPatientList.Items[grdPatientList.SelectedIndex].Cells[5].Text != "&nbsp;") { txtPatientAddress.Text = grdPatientList.Items[grdPatientList.SelectedIndex].Cells[5].Text; }
+            if (grdPatientList.Items[grdPatientList.SelectedIndex].Cells[20].Text != "&nbsp;") { txtState.Text = grdPatientList.Items[grdPatientList.SelectedIndex].Cells[20].Text; }
+            if (grdPatientList.Items[grdPatientList.SelectedIndex].Cells[15].Text != "&nbsp;") { txtBirthdate.Text = grdPatientList.Items[grdPatientList.SelectedIndex].Cells[15].Text; }
+            if (grdPatientList.Items[grdPatientList.SelectedIndex].Cells[4].Text != "&nbsp;") { txtPatientAge.Text = grdPatientList.Items[grdPatientList.SelectedIndex].Cells[4].Text; }
+            if (grdPatientList.Items[grdPatientList.SelectedIndex].Cells[13].Text != "&nbsp;") { txtSocialSecurityNumber.Text = grdPatientList.Items[grdPatientList.SelectedIndex].Cells[13].Text; }
+            // if (grdPatientList.Items[grdPatientList.SelectedIndex].Cells[31].Text != "&nbsp;") { if (grdPatientList.Items[grdPatientList.SelectedIndex].Cells[31].Text.ToString() == "True") { chkTransportation.Checked = true; } else { chkTransportation.Checked = false; } }
+
+            Billing_Sys_ManageNotesBO manageNotes = new Billing_Sys_ManageNotesBO();
+            DataSet _ds = manageNotes.GetCaseDetails(txtPatientID.Text);
+            if (_ds.Tables[0].Rows.Count > 0)
+            {
+                txtCaseID.Text = _ds.Tables[0].Rows[0].ItemArray.GetValue(0).ToString();
+                if (((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID != _ds.Tables[0].Rows[0].ItemArray.GetValue(12).ToString())
+                {
+                    extddlInsuranceCompany.Flag_ID = _ds.Tables[0].Rows[0].ItemArray.GetValue(12).ToString();
+                    extddlCaseType.Flag_ID = _ds.Tables[0].Rows[0].ItemArray.GetValue(12).ToString();
+                }
+                else
+                {
+                    extddlInsuranceCompany.Flag_ID = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+                    extddlCaseType.Flag_ID = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+                }
+
+                extddlCaseType.Text = _ds.Tables[0].Rows[0].ItemArray.GetValue(1).ToString();
+                extddlInsuranceCompany.Text = _ds.Tables[0].Rows[0].ItemArray.GetValue(3).ToString();
+
+            }
+
+            tb1.Visible = true;
+            tb2.Visible = true;
+            tb3.Visible = true;
+            chkTransportation.Visible = true;
+
+
+        }
+        catch (Exception ex)
+        {
+            string strError = ex.Message.ToString();
+            strError = strError.Replace("\n", " ");
+            Response.Redirect("Bill_Sys_ErrorPage.aspx?ErrMsg=" + strError);
+        }
+    }
+
+    protected void grdPatientList_PageIndexChanged(object source, DataGridPageChangedEventArgs e)
+    {
+        try
+        {
+            grdPatientList.CurrentPageIndex = e.NewPageIndex;
+            SearchPatientGrid();
+
+        }
+        catch { }
+    }
+
+    protected void txtUpdate_Click(object sender, EventArgs e)
+    {
+        string szHaveNotes = "";
+        string szHaveLogin = "";
+        for (int i = 0; i < grdDoctor.VisibleRowCount; i++)
+        {
+            GridViewDataColumn c = (GridViewDataColumn)grdDoctor.Columns[0]; // checkbox column
+            CheckBox chkSelected = (CheckBox)grdDoctor.FindRowCellTemplateControl(i, c, "chkSelect");
+            if (chkSelected.Checked == true)
+            {
+                szHaveNotes = grdDoctor.GetRowValues(i, "BT_NOT_HAVE_NOTES").ToString();
+                szHaveLogin = grdDoctor.GetRowValues(i, "IS_HAVE_LOGIN").ToString();
+                break;
+            }
+        }
+
+        if (szHaveNotes != "" && szHaveNotes.ToLower() == "1")
+        {
+
+            for (int i = 0; i < grdDoctor.VisibleRowCount; i++)
+            {
+                GridViewDataColumn c = (GridViewDataColumn)grdDoctor.Columns[0]; // checkbox column
+                CheckBox chkSelected = (CheckBox)grdDoctor.FindRowCellTemplateControl(i, c, "chkSelect");
+
+                string szchkHaveLogin = grdDoctor.GetRowValues(i, "IS_HAVE_LOGIN").ToString();
+
+                if (szchkHaveLogin.ToLower() == "1")
+                {
+                    chkSelected.Enabled = false;
+                    chkSelected.Checked = false;
+                }
+                else
+                {
+                    chkSelected.Enabled = true;
+                }
+            }
+            chkAddToDoctor.Checked = false;
+            chkAddToDoctor.Enabled = false;
+            extddlVisitType.Enabled = true;
+        }
+        else if (szHaveLogin != "" && szHaveLogin.ToLower() == "1")
+        {
+            Bill_Sys_PatientVisitBO objPV = new Bill_Sys_PatientVisitBO();
+            String szDefaultVisitTypeID = objPV.GetVisitType(txtCompanyID.Text, "GET_FU_VALUE");
+            for (int i = 0; i < grdDoctor.VisibleRowCount; i++)
+            {
+                GridViewDataColumn c = (GridViewDataColumn)grdDoctor.Columns[0]; // checkbox column
+                CheckBox chkSelected = (CheckBox)grdDoctor.FindRowCellTemplateControl(i, c, "chkSelect");
+
+                string szchkHaveLogin = grdDoctor.GetRowValues(i, "IS_HAVE_LOGIN").ToString();
+
+                if (szchkHaveLogin.ToLower() != "1")
+                {
+                    chkSelected.Enabled = false;
+                    chkSelected.Checked = false;
+                }
+                else
+                {
+                    chkSelected.Enabled = true;
+                    extddlVisitType.Text = szDefaultVisitTypeID;
+                    extddlVisitType.Enabled = false;
+                }
+            }
+            chkAddToDoctor.Checked = true;
+            chkAddToDoctor.Enabled = true;
+        }
+        else
+        {
+            for (int i = 0; i < grdDoctor.VisibleRowCount; i++)
+            {
+                GridViewDataColumn c = (GridViewDataColumn)grdDoctor.Columns[0]; // checkbox column
+                CheckBox chkSelected = (CheckBox)grdDoctor.FindRowCellTemplateControl(i, c, "chkSelect");
+
+                string szchkHaveLogin = grdDoctor.GetRowValues(i, "IS_HAVE_LOGIN").ToString();
+
+                if (szchkHaveLogin.ToLower() == "1")
+                {
+                    chkSelected.Enabled = false;
+                    chkSelected.Checked = false;
+                }
+                else
+                {
+                    chkSelected.Enabled = true;
+                }
+            }
+            chkAddToDoctor.Checked = false;
+            chkAddToDoctor.Enabled = false;
+            extddlVisitType.Enabled = true;
+
+        }
+    }
+    protected void btnClear_Click(object sender, EventArgs e)
+    {
+        for (int i = 0; i < grdDoctor.VisibleRowCount; i++)
+        {
+            GridViewDataColumn c = (GridViewDataColumn)grdDoctor.Columns[0]; // checkbox column
+            CheckBox chkSelected = (CheckBox)grdDoctor.FindRowCellTemplateControl(i, c, "chkSelect");
+            chkSelected.Checked = false;
+            chkSelected.Enabled = true;
+        }
+        hdEnable.Value = "0";
+        chkAddToDoctor.Enabled = true;
+        chkAddToDoctor.Checked = true;
+
+    }
+}

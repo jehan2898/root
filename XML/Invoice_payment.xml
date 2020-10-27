@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="mst_Invoice">
+  <Field Name="sz_invoice_id"      DataType="NVarChar"    Size="20" Null="False" Control="TextBox" ControlID="txtInvoiceNo" Editable="True"  Visible="True" ></Field>
+  <Field Name="sz_employer_name"      DataType="NVarChar"    Size="20" Null="False" Control="TextBox" ControlID="txtEmployerNO" Editable="True"  Visible="True" ></Field>
+  <Field Name="sz_company_id"      DataType="NVarChar"    Size="20" Null="False" Control="TextBox" ControlID="txtCompanyId" Editable="True"  Visible="True" ></Field>
+  <Field Name="dt_from_date"      DataType="NVarChar"    Size="50" Null="False" Control="TextBox" ControlID="txtFromDate" Editable="True"  Visible="True" ></Field>
+  <Field Name="dt_to_date"      DataType="NVarChar"    Size="50" Null="False" Control="TextBox" ControlID="txtToDate" Editable="True"  Visible="True" ></Field>
+  <StoreProcedure name="proc_get_invoice_details"></StoreProcedure>
+  <ListControl name="grdInvoiceSearch"></ListControl>
+</Table>

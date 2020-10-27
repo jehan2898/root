@@ -1,0 +1,34 @@
+<root>
+<document type= "FUNDING_SYSTEM" description="LSC Payoff letter template" lastmodified="June 22 2009 15:35" procedure_name="SP_MRI_QUESTIONARY_PDF_DETAILS" >
+<field db_field_name="TXT_PATIENT_NAME"       pdf_field_index="1"  pdf_field_name="TXT_PATIENT_NAME"   if_blank=" "/>
+<field db_field_name="TXT_PREEXAM_QUESTIONARY"       pdf_field_index="2"  pdf_field_name="TXT_PREEXAM_QUESTIONARY"   if_blank=" "/>
+<field db_field_name="RDO_QUES1"       pdf_field_index="3"  pdf_field_name="RDO_QUES1"   if_blank=" "/>
+<field db_field_name="RDO_QUES2"       pdf_field_index="4"  pdf_field_name="RDO_QUES2"   if_blank=" "/>
+<field db_field_name="TXT_LIST"       pdf_field_index="5"  pdf_field_name="TXT_LIST"   if_blank=" "/>
+<field db_field_name="SIG_PATIENT_SIGNATURE"       pdf_field_index="6"  pdf_field_name="SIG_PATIENT_SIGNATURE"   if_blank=" " isImage="1"/>
+<field db_field_name="RDO_QUES3"       pdf_field_index="7"  pdf_field_name="RDO_QUES3"   if_blank=" "/>
+<field db_field_name="TXT_DATE"       pdf_field_index="8"  pdf_field_name="TXT_DATE"   if_blank=" "/>
+<field db_field_name="RDO_QUES20"       pdf_field_index="9"  pdf_field_name="RDO_QUES20"   if_blank=" "/>
+<field db_field_name="RDO_QUES4"       pdf_field_index="10"  pdf_field_name="RDO_QUES4"   if_blank=" "/>
+<field db_field_name="RDO_QUES21"       pdf_field_index="11"  pdf_field_name="RDO_QUES21"   if_blank=" "/>
+<field db_field_name="RDO_QUES10"       pdf_field_index="12"  pdf_field_name="RDO_QUES10"   if_blank=" "/>
+<field db_field_name="RDO_QUES5"       pdf_field_index="13"  pdf_field_name="RDO_QUES5"   if_blank=" "/>
+<field db_field_name="RDO_QUES11"       pdf_field_index="14"  pdf_field_name="RDO_QUES11"   if_blank=" "/>
+<field db_field_name="RDO_QUES6"       pdf_field_index="15"  pdf_field_name="RDO_QUES6"   if_blank=" "/>
+<field db_field_name="RDO_QUES12"       pdf_field_index="16"  pdf_field_name="RDO_QUES12"   if_blank=" "/>
+<field db_field_name="RDO_QUES7"       pdf_field_index="17"  pdf_field_name="RDO_QUES7"   if_blank=" "/>
+<field db_field_name="BARCODE"       pdf_field_index="18"  pdf_field_name="BARCODE"   if_blank=" " isImage="1"/>
+<field db_field_name="TXT_TECHNICIAN"       pdf_field_index="19"  pdf_field_name="TXT_TECHNICIAN"   if_blank=" "/>
+<field db_field_name="RDO_QUES13"       pdf_field_index="20"  pdf_field_name="RDO_QUES13"   if_blank=" "/>
+<field db_field_name="RDO_QUES8"       pdf_field_index="21"  pdf_field_name="RDO_QUES8"   if_blank=" "/>
+<field db_field_name="TXT_DATE_OF_BIRTH"       pdf_field_index="22"  pdf_field_name="TXT_DATE_OF_BIRTH"   if_blank=" "/>
+<field db_field_name="RDO_QUES14"       pdf_field_index="23"  pdf_field_name="RDO_QUES14"   if_blank=" "/>
+<field db_field_name="RDO_QUES9"       pdf_field_index="24"  pdf_field_name="RDO_QUES9"   if_blank=" "/>
+<field db_field_name="TXT_SEX"       pdf_field_index="25"  pdf_field_name="TXT_SEX"   if_blank=" "/>
+<field db_field_name="TXT_COMPANY_NAME"       pdf_field_index="26"  pdf_field_name="TXT_COMPANY_NAME"   if_blank=" "/>
+<field db_field_name="RDO_QUES15"       pdf_field_index="27"  pdf_field_name="RDO_QUES15"   if_blank=" "/>
+<field db_field_name="RDO_QUES16"       pdf_field_index="28"  pdf_field_name="RDO_QUES16"   if_blank=" "/>
+<field db_field_name="RDO_QUES17"       pdf_field_index="29"  pdf_field_name="RDO_QUES17"   if_blank=" "/>
+<field db_field_name="RDO_QUES18"       pdf_field_index="30"  pdf_field_name="RDO_QUES18"   if_blank=" "/>
+<field db_field_name="RDO_QUES19"       pdf_field_index="31"  pdf_field_name="RDO_QUES19"   if_blank=" "/>
+ </document></root>

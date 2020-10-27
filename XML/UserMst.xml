@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<UserMst>
+  <UserMaster key="userMst">
+    <Subject key="Subject">_varname</Subject>
+    
+    <Body>
+      &lt;html&gt;
+      &lt;body&gt;
+      Hi,
+
+
+      &lt;p&gt;&lt;/p&gt;
+      &lt;p&gt;Client details below.&lt;/p&gt;
+      &lt;br /&gt;
+      &lt;br /&gt;
+
+      &lt;p&gt; User name:  _varUsername  &lt;/p&gt;
+      &lt;p&gt; Password:  _varPassword &lt;/p&gt;
+      &lt;p&gt; UserRole:  _varUserRole &lt;/p&gt;
+      &lt;p&gt; Email Id:  _varEmail &lt;/p&gt;
+
+      &lt;p&gt; &lt;p&gt;
+
+      &lt;p&gt;_bodyText&lt;p&gt;
+      &lt;br /&gt;
+
+
+
+      &lt;/body&gt;
+      &lt;/html&gt;
+    </Body>
+  </UserMaster>
+</UserMst>

@@ -1,0 +1,74 @@
+﻿body
+ {
+	
+}
+.menutable
+{
+	background-color:#B1BEE0;
+}
+
+.menutableSubMenu
+{
+	
+	background-color:#F6F6F6;
+}
+
+.menutableMenu
+{
+	
+	background-color:#DDDDDD;
+}
+
+.menutableButton
+{
+	 width :20%;
+	 border-left-color :#766a63;
+}
+
+#div_to_popup 
+{
+	display:none;
+	
+}
+
+
+.tabContainer .ajax__tab_header 
+{
+    /*color: #aa976b;*/
+    color:#fff;
+    font-size: 13px;
+    font-weight: bold;
+    background-color: White;
+    margin-left: 10px;
+}
+.tabContainer .ajax__tab_outer
+{
+    background-color: White;
+}
+.tabContainer .ajax__tab_inner
+{
+    padding: 6px;
+    margin-right: 1px;
+    margin-left: 1px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    background-color: #D3D3D3;
+}
+.tabContainer .ajax__tab_hover .ajax__tab_outer
+{
+}
+.tabContainer .ajax__tab_hover .ajax__tab_inner
+{
+    /*background-color: #FFFFE1;*/
+    background-color:#b52025
+}
+.tabContainer .ajax__tab_active .ajax__tab_outer
+{
+    /*background-color: White;*/
+    background-color:#b52025
+}
+.tabContainer .ajax__tab_active .ajax__tab_inner
+{
+    /*background-color: #fefdf7;*/
+    background-color:#b52025
+}

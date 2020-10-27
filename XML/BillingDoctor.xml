@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_BILLING_DOCTOR">
+  <Field Name="SZ_DOCTOR_ID"    DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"        ControlID=""                  Editable="False" Visible="False"></Field>
+  <Field Name="SZ_DOCTOR_NAME"  DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"        ControlID="txtDoctorName"     Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_DOCTOR_TYPE"  DataType="NVarChar"    Size="20"     Null="False"   Control="ExtendedDropDownList"   ControlID="extddlDoctorType"     Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_DOCTOR_LICENSE_NUMBER"  DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"        ControlID="txtLicenseNumber"     Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_COMPANY_ID"   DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"        ControlID="txtCompanyID"      Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PROVIDER_ID"     DataType="NVarChar"    Size="20"     Null="False"   Control="ExtendedDropDownList"   ControlID="extddlProvider"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_WCB_AUTHORIZATION" DataType="NVarChar"    Size="50"    Null="False"   Control="TextBox"   ControlID="txtWCBAuth"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_WCB_RATING_CODE"  DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"   ControlID="txtWCBRatingCode"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_OFFICE_ADDRESS"   DataType="NVarChar"    Size="150"    Null="False"   Control="TextBox"   ControlID="txtOfficeAdd"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_OFFICE_CITY"      DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"   ControlID="txtOfficeCity"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_OFFICE_STATE"     DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"   ControlID="txtOfficeState"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_OFFICE_ZIP"       DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"   ControlID="txtOfficeZip"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_OFFICE_PHONE"     DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"   ControlID="txtOfficePhone"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_BILLING_ADDRESS"  DataType="NVarChar"    Size="150"    Null="False"   Control="TextBox"   ControlID="txtBillingAdd"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_BILLING_CITY"     DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"   ControlID="txtBillingCity"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_BILLING_STATE"    DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"   ControlID="txtBillingState"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_BILLING_STATE_ID" DataType="NVarChar"    Size="50"     Null="False"   Control="ExtendedDropDownList"   ControlID="extddlBillingState"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_BILLING_ZIP"      DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"   ControlID="txtBillingZip"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_BILLING_PHONE"    DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"   ControlID="txtBillingPhone"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_NPI"              DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"   ControlID="txtNPI"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_FEDERAL_TAX_ID"   DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"   ControlID="txtFederalTax"          Editable="True"  Visible="True" ></Field>
+  <Field Name="BIT_TAX_ID_TYPE"     DataType="Bit"         Size=""       Null="False"   Control="CheckBoxList"   ControlID="chklstTaxType"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_OFFICE_ID"        DataType="NVarChar"    Size="50"     Null="False"   Control="ExtendedDropDownList"   ControlID="extddlOffice"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_ASSIGN_NO"        DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"   ControlID="txtAssignNumber"          Editable="True"  Visible="True" ></Field>
+  <StoreProcedure name="SP_MST_BILLING_DOCTOR"></StoreProcedure>
+  <ListControl name="grdDoctorNameList"></ListControl>
+</Table>
+
+
+

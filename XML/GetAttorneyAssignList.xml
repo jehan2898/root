@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_ATTORNEY">
+    <Field Name="SZ_COMPANY_ID"               DataType="NVarChar"    Size="20"     Null="False"  Control="TextBox"  ControlID="txtCompanyID"       Editable="True"  Visible="True" ></Field>
+   <Field Name="SZ_CASE_ID"              DataType="NVarChar"    Size="20"     Null="False"  Control="TextBox"  ControlID="txtCaseID"                   Editable="True" Visible="True"></Field>
+  <StoreProcedure name="SP_GET_ATTORNEY_USER_LIST"></StoreProcedure>
+  <ListControl name="grdAttorney"></ListControl>
+
+</Table>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table name="MST_INITIAL_EXAMINATION">
+  <Field Name="I_EVENT_ID" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtEventID" Editable="True" Visible="True"/>
+
+  <Field Name="BT_DIAGNOSIS_920_0" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkDiagnosis_920_0" Editable="True" Visible="True"></Field>
+  <Field Name="BT_DIAGNOSIS_784_0" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkDiagnosis_784_0" Editable="True" Visible="True"></Field>
+  <Field Name="BT_DIAGNOSIS_780_4" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkDiagnosis_780_4" Editable="True" Visible="True"></Field>
+  <Field Name="BT_DIAGNOSIS_850_0" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkDiagnosis_850_0" Editable="True" Visible="True"></Field>
+  <Field Name="BT_DIAGNOSIS_850_1" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkDiagnosis_850_1" Editable="True" Visible="True"></Field>
+  <Field Name="BT_DIAGNOSIS_847_0" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkDiagnosis_847_0" Editable="True" Visible="True"></Field>
+  <Field Name="BT_DIAGNOSIS_723_4" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkDiagnosis_723_4" Editable="True" Visible="True"></Field>
+  <Field Name="BT_DIAGNOSIS_722_0" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkDiagnosis_722_0" Editable="True" Visible="True"></Field>
+  <Field Name="BT_DIAGNOSIS_847_1" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkDiagnosis_847_1" Editable="True" Visible="True"></Field>
+  <Field Name="BT_DIAGNOSIS_847_2" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkDiagnosis_847_2" Editable="True" Visible="True"></Field>
+  <Field Name="BT_DIAGNOSIS_846_0" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkDiagnosis_846_0" Editable="True" Visible="True"></Field>
+  <Field Name="BT_DIAGNOSIS_724_4" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkDiagnosis_724_4" Editable="True" Visible="True"></Field>
+  <Field Name="BT_DIAGNOSIS_722_1" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkDiagnosis_722_1" Editable="True" Visible="True"></Field>
+  <Field Name="BT_DIAGNOSIS_RIGHT_923_0" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkDiagnosis_Right_923_0" Editable="True" Visible="True"></Field>
+  <Field Name="BT_DIAGNOSIS_840_9" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkDiagnosis_Right_840_9" Editable="True" Visible="True"></Field>
+  <Field Name="BT_DIAGNOSIS_718_31" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkDiagnosis_718_31" Editable="True" Visible="True"></Field>
+  <Field Name="BT_DIAGNOSIS_840_6" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkDiagnosis_840_6" Editable="True" Visible="True"></Field>
+  <Field Name="BT_DIAGNOSIS_924_11" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkDiagnosis_924_11" Editable="True" Visible="True"></Field>
+  <Field Name="BT_DIAGNOSIS_844_1_844_0_844_2" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkDiagnosis_844_1_844_0_844_2" Editable="True" Visible="True"></Field>
+  <Field Name="BT_DIAGNOSIS_718_36" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkDiagnosis_718_36" Editable="True" Visible="True"></Field>
+  <Field Name="BT_DIAGNOSIS_836_0_836_1" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkDiagnosis_836_0_836_1" Editable="True" Visible="True"></Field>
+  <Field Name="BT_DIAGNOSIS_922_1" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkDiagnosis_922_1" Editable="True" Visible="True"></Field>
+  <Field Name="BT_DIAGNOSIS_845_0" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkDiagnosis_845_0" Editable="True" Visible="True"></Field>
+  <Field Name="BT_DIAGNOSIS_924_21" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkDiagnosis_924_21" Editable="True" Visible="True"></Field>
+  <Field Name="BT_DIAGNOSIS_841_9" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkDiagnosis_841_9" Editable="True" Visible="True"></Field>
+  <Field Name="BT_DIAGNOSIS_923_11" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkDiagnosis_923_11" Editable="True" Visible="True"></Field>
+  <Field Name="BT_DIAGNOSIS_845_1" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkDiagnosis_845_1" Editable="True" Visible="True"></Field>
+  <Field Name="BT_DIAGNOSIS_924_2" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkDiagnosis_924_2" Editable="True" Visible="True"></Field>
+  <Field Name="BT_DIAGNOSIS_843_9" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkDiagnosis_843_9" Editable="True" Visible="True"></Field>
+  <Field Name="BT_DIAGNOSIS_924_01" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkDiagnosis_924_01" Editable="True" Visible="True"></Field>
+  <Field Name="BT_DIAGNOSIS_842_00" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkDiagnosis_842_00" Editable="True" Visible="True"></Field>
+  <Field Name="BT_DIAGNOSIS_842_1" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkDiagnosis_842_1" Editable="True" Visible="True"></Field>
+  <Field Name="BT_DIAGNOSIS_736_32" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkDiagnosis_736_32" Editable="True" Visible="True"></Field>
+  <!--<Field Name="I_CAUSE_OF_INJURY" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="rdlCause_Of_Injury" Editable="True" Visible="True"></Field>
+  <Field Name="I_COMPLAINT_CONSISTENT" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="rdlComplaint_Consistent" Editable="True" Visible="True"></Field>
+  <Field Name="I_CONSISTENT_OBJ_FIDINGS" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="rdlConsistent_Obj_Fidings" Editable="True" Visible="True"></Field>-->
+  <Field Name="I_CAUSE_OF_INJURY" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtrdlCause_Of_Injury" Editable="True" Visible="True"></Field>
+  <Field Name="I_COMPLAINT_CONSISTENT" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtrdlComplaint_Consistent" Editable="True" Visible="True"></Field>
+  <Field Name="I_CONSISTENT_OBJ_FIDINGS" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtrdlConsistent_Obj_Fidings" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PERCENTAGE_TEMP_IMPAIRMENT" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtPercentage_Temp_Impairmrnt" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_RELAVANT_DIAGNOSTIC_RESULT" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtRelavamt_Diagnostic_Result" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PROGNOSIS_FOR_RECOVERY" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtPrognosis_For_Recovery" Editable="True" Visible="True"></Field>
+  <StoreProcedure name="SP_IM_DiagnosticImpresstion" />
+</Table>
+
+
+
+
+<!--
+BT_DIAGNOSIS_920_0	
+BT_DIAGNOSIS_784_0	
+BT_DIAGNOSIS_780_4	
+BT_DIAGNOSIS_850_0	
+BT_DIAGNOSIS_850_1	
+BT_DIAGNOSIS_847_0	
+BT_DIAGNOSIS_723_4	
+BT_DIAGNOSIS_722_0	
+BT_DIAGNOSIS_847_1	
+BT_DIAGNOSIS_847_2	
+BT_DIAGNOSIS_846_0	
+BT_DIAGNOSIS_724_4	
+BT_DIAGNOSIS_722_1	
+BT_DIAGNOSIS_RIGHT_923_0
+BT_DIAGNOSIS_840_9	
+BT_DIAGNOSIS_718_31
+BT_DIAGNOSIS_840_6	
+BT_DIAGNOSIS_924_11	
+BT_DIAGNOSIS_844_1_844_0_844_2	
+BT_DIAGNOSIS_718_36
+BT_DIAGNOSIS_836_0_836_1
+BT_DIAGNOSIS_922_1	
+BT_DIAGNOSIS_845_0	
+BT_DIAGNOSIS_924_21
+BT_DIAGNOSIS_841_9	
+BT_DIAGNOSIS_923_11
+BT_DIAGNOSIS_845_1	
+BT_DIAGNOSIS_924_2	
+BT_DIAGNOSIS_843_9	
+BT_DIAGNOSIS_924_01
+BT_DIAGNOSIS_842_00
+BT_DIAGNOSIS_842_1
+BT_DIAGNOSIS_736_32
+I_CAUSE_OF_INJURY
+I_COMPLAINT_CONSISTENT	
+I_CONSISTENT_OBJ_FIDINGS
+SZ_PERCENTAGE_TEMP_IMPAIRMENT	
+SZ_RELAVANT_DIAGNOSTIC_RESULT	
+SZ_PROGNOSIS_FOR_RECOVERY-->
+
+
+
+
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_PATIENT">
+  <Field Name="SZ_PATIENT_ID"          DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"        ControlID=""                    Editable="False" Visible="False"></Field>
+  <Field Name="SZ_PATIENT_FIRST_NAME"  DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"        ControlID="txtPatientFName"     Editable="True"  Visible="True" ></Field>
+  <Field Name="MI"                     DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"        ControlID="txtMI"                   Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PATIENT_LAST_NAME"   DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"        ControlID="txtPatientLName"     Editable="True"  Visible="True" ></Field>
+  <Field Name="I_PATIENT_AGE"          DataType="Int"         Size=""       Null="False"   Control="TextBox"        ControlID="txtPatientAge"              Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PATIENT_ADDRESS"     DataType="NVarChar"    Size="50"     Null="True"    Control="TextBox"        ControlID="txtPatientAddress"   Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PATIENT_PHONE"       DataType="NVarChar"    Size="20"     Null="True"    Control="TextBox"        ControlID="txtPatientPhone"     Editable="True"  Visible="True" ></Field>
+  
+  <Field Name="DT_DOB"                 DataType="DateTime"    Size=""     Null="True"   Control="TextBox"        ControlID="txtBirthdate"          Editable="True"  Visible="True" ></Field>
+
+  <Field Name="SZ_PATIENT_STATE"     DataType="NVarChar"    Size="50"     Null="True"   Control="TextBox"        ControlID="txtState"        Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_COMPANY_ID"          DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"        ControlID="txtCompanyID"        Editable="True"  Visible="True" ></Field>
+  <Field Name="BT_TRANSPORTATION"          DataType="Bit"    Size=""     Null="False"   Control="CheckBox"        ControlID="chkTransportation"        Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_SOCIAL_SECURITY_NO"  DataType="NVarChar"    Size="20"       Null="True"   Control="TextBox"        ControlID="txtSocialSecurityNumber" Editable="True"  Visible="True" ></Field>
+  <StoreProcedure name="SP_MST_PATIENT"></StoreProcedure>
+</Table>

@@ -1,0 +1,74 @@
+<root>
+  <document type= "FUNDING_SYSTEM" description="LSC Payoff letter template" lastmodified="June 22 2009 15:35" procedure_name="SP_CM_INITIAL_SUPPLIES_GET_DETAILS" >
+    <field db_field_name="CHK_LUMBAR_BACK_CUSHION"       pdf_field_index="1"  pdf_field_name="CHK_LUMBAR_BACK_CUSHION"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CRUTCHES_FOREARM_ADJUSTABLE_OR_FIXED"       pdf_field_index="2"  pdf_field_name="CHK_CRUTCHES_FOREARM_ADJUSTABLE_OR_FIXED"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_ANKLE_SUPPORT_ADJUSTABLE"       pdf_field_index="3"  pdf_field_name="CHK_ANKLE_SUPPORT_ADJUSTABLE"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_SHOULDER_ORTHOSIS_ELASTIC_PREFABRICATED"       pdf_field_index="4"  pdf_field_name="CHK_SHOULDER_ORTHOSIS_ELASTIC_PREFABRICATED"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PARAPHIN_BATH_W_TIN_ES_STERILE_CIRCUIT"       pdf_field_index="5"  pdf_field_name="CHK_PARAPHIN_BATH_W_TIN_ES_STERILE_CIRCUIT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_HOT_COLD_PACK_W_WRAP"       pdf_field_index="6"  pdf_field_name="CHK_HOT_COLD_PACK_W_WRAP"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_THORACIC_LUMBOSACRAL_ORTHOSIS"       pdf_field_index="7"  pdf_field_name="CHK_THORACIC_LUMBOSACRAL_ORTHOSIS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_PROVIDER_ADDRESS"       pdf_field_index="8"  pdf_field_name="TXT_PROVIDER_ADDRESS"   if_blank=" "/>
+    <field db_field_name="TXT_DIAGNOSIS_COMMENTS"       pdf_field_index="9"  pdf_field_name="TXT_DIAGNOSIS_COMMENTS"   if_blank=" "/>
+    <field db_field_name="CHK_WALKER"       pdf_field_index="10"  pdf_field_name="CHK_WALKER"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DORSO_LUMBAR_SUPPORT"       pdf_field_index="11"  pdf_field_name="CHK_DORSO_LUMBAR_SUPPORT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CERVICAL_COLLAR"       pdf_field_index="12"  pdf_field_name="CHK_CERVICAL_COLLAR"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_DIAGNOSIS_OTHER"       pdf_field_index="13"  pdf_field_name="TXT_DIAGNOSIS_OTHER"   if_blank=" "/>
+    <field db_field_name="CHK_EMS_UNIT_FOUR_LEADS_ACCESSORY_KIT_BELT"       pdf_field_index="14"  pdf_field_name="CHK_EMS_UNIT_FOUR_LEADS_ACCESSORY_KIT_BELT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_WRIST_SUPPORT"       pdf_field_index="15"  pdf_field_name="CHK_WRIST_SUPPORT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_ANKLE_FOOT_ORTHOSIS_PREFABRICATED"       pdf_field_index="16"  pdf_field_name="CHK_ANKLE_FOOT_ORTHOSIS_PREFABRICATED"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_THERMOPHORE"       pdf_field_index="17"  pdf_field_name="CHK_THERMOPHORE"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_DATE"       pdf_field_index="18"  pdf_field_name="TXT_DATE"   if_blank=" "/>
+    <field db_field_name="CHK_LUMBAR_SACRAL_SUPPORT"       pdf_field_index="19"  pdf_field_name="CHK_LUMBAR_SACRAL_SUPPORT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_ARM_SLING"       pdf_field_index="20"  pdf_field_name="CHK_ARM_SLING"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_HYDROTHERAPHY_WHIRPOOL"       pdf_field_index="21"  pdf_field_name="CHK_HYDROTHERAPHY_WHIRPOOL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PARAPHIN_BATH"       pdf_field_index="22"  pdf_field_name="CHK_PARAPHIN_BATH"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_PATIENT_LAST_NAME"       pdf_field_index="23"  pdf_field_name="TXT_PATIENT_LAST_NAME"   if_blank=" "/>
+    <field db_field_name="CHK_ELBOW_ORTHOSIS_EO_ELASTIC_PREFABRICATED"       pdf_field_index="24"  pdf_field_name="CHK_ELBOW_ORTHOSIS_EO_ELASTIC_PREFABRICATED"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_WRIST_SUPPORT_WITH_DIGIT_SPLINT"       pdf_field_index="25"  pdf_field_name="CHK_WRIST_SUPPORT_WITH_DIGIT_SPLINT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_INFRA_RED_HEATING_LAMP"       pdf_field_index="26"  pdf_field_name="CHK_INFRA_RED_HEATING_LAMP"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_KNEE_SUPPORT"       pdf_field_index="27"  pdf_field_name="CHK_KNEE_SUPPORT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_ABDOMINAL_SUPPORT"       pdf_field_index="28"  pdf_field_name="CHK_ABDOMINAL_SUPPORT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_VIBRATING_DEEP_HEAT_MASSAGER"       pdf_field_index="29"  pdf_field_name="CHK_VIBRATING_DEEP_HEAT_MASSAGER"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LSO_APL_CONTROL_CUSTOM_FITTED"       pdf_field_index="30"  pdf_field_name="CHK_LSO_APL_CONTROL_CUSTOM_FITTED"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="IMG_PHYSICIAN_SIGNATURE"       pdf_field_index="31"  pdf_field_name="IMG_PHYSICIAN_SIGNATURE"   if_blank=" " isImage="1"/>
+    <field db_field_name="CHK_CUSTOM_FITTED_KNEE_BRACE"       pdf_field_index="32"  pdf_field_name="CHK_CUSTOM_FITTED_KNEE_BRACE"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_SHOULDER_PASSIVE_MOTION_MACHINE_CPM_RENTAL"       pdf_field_index="33"  pdf_field_name="CHK_SHOULDER_PASSIVE_MOTION_MACHINE_CPM_RENTAL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_POWER_PRESSURE"       pdf_field_index="34"  pdf_field_name="CHK_POWER_PRESSURE"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_SHOULDER_SUPPORT"       pdf_field_index="35"  pdf_field_name="CHK_SHOULDER_SUPPORT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_KNEE_BRACE_CUSTOM_FITTED_KO"       pdf_field_index="36"  pdf_field_name="CHK_KNEE_BRACE_CUSTOM_FITTED_KO"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_TOTAL_ELECTRIC_HOSPITAL_BED_WITH_SIDE_RAILS"       pdf_field_index="37"  pdf_field_name="CHK_TOTAL_ELECTRIC_HOSPITAL_BED_WITH_SIDE_RAILS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_WATER_CIRCULATING_COLD_PAD_WITH_PUMP"       pdf_field_index="38"  pdf_field_name="CHK_WATER_CIRCULATING_COLD_PAD_WITH_PUMP"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_TLSO_APL_CONTROL_CUSTOM_FITTED"       pdf_field_index="39"  pdf_field_name="CHK_TLSO_APL_CONTROL_CUSTOM_FITTED"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_ORTHOPEDIC_CAR_SEAT_SUPPORT"       pdf_field_index="40"  pdf_field_name="CHK_ORTHOPEDIC_CAR_SEAT_SUPPORT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MASSAGER"       pdf_field_index="41"  pdf_field_name="CHK_MASSAGER"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CANE_WITH_RUBBER_TIP_ADJUSTABLE"       pdf_field_index="42"  pdf_field_name="CHK_CANE_WITH_RUBBER_TIP_ADJUSTABLE"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_KNEE_ORTHOSIS_ELASTIC_PREFABRICATED"       pdf_field_index="43"  pdf_field_name="CHK_KNEE_ORTHOSIS_ELASTIC_PREFABRICATED"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_POWER_MOTORIZED_WHEELCHAIR"       pdf_field_index="44"  pdf_field_name="CHK_POWER_MOTORIZED_WHEELCHAIR"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_PROVIDER_FAX"       pdf_field_index="45"  pdf_field_name="TXT_PROVIDER_FAX"   if_blank=" "/>
+    <field db_field_name="TXT_PROVIDER_PHONE"       pdf_field_index="46"  pdf_field_name="TXT_PROVIDER_PHONE"   if_blank=" "/>
+    <field db_field_name="CHK_KO_RIGID_ADJUSTABLE_CUSTOM_FITTED"       pdf_field_index="47"  pdf_field_name="CHK_KO_RIGID_ADJUSTABLE_CUSTOM_FITTED"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_WHIRLPOOL"       pdf_field_index="48"  pdf_field_name="CHK_WHIRLPOOL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_TRACTION_UNIT_LUMBAR_FRAME_W_SENSOR"       pdf_field_index="49"  pdf_field_name="CHK_TRACTION_UNIT_LUMBAR_FRAME_W_SENSOR"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MATTRESS_FOAM_RUBBER"       pdf_field_index="50"  pdf_field_name="CHK_MATTRESS_FOAM_RUBBER"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_DIAGNOSIS"       pdf_field_index="51"  pdf_field_name="TXT_DIAGNOSIS"   if_blank=" "/>
+    <field db_field_name="TXT_DOA"       pdf_field_index="52"  pdf_field_name="TXT_DOA"   if_blank=" "/>
+    <field db_field_name="TXT_PROVIDER_CITY"       pdf_field_index="53"  pdf_field_name="TXT_PROVIDER_CITY"   if_blank=" "/>
+    <field db_field_name="CHK_KNEE_PASSIVE_MOTION_MACHINE_CPM_RENTAL"       pdf_field_index="54"  pdf_field_name="CHK_KNEE_PASSIVE_MOTION_MACHINE_CPM_RENTAL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_ACE_ELASTIC_BANDAGE"       pdf_field_index="55"  pdf_field_name="CHK_ACE_ELASTIC_BANDAGE"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_TRACTION_UNIT_CERVICAL_FRAME_W_SENSOR"       pdf_field_index="56"  pdf_field_name="CHK_TRACTION_UNIT_CERVICAL_FRAME_W_SENSOR"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_PATIENT_FIRST_NAME"       pdf_field_index="57"  pdf_field_name="TXT_PATIENT_FIRST_NAME"   if_blank=" "/>
+    <field db_field_name="IMG_BARCODE"       pdf_field_index="58"  pdf_field_name="IMG_BARCODE"   if_blank=" " isImage="1"/>
+    <field db_field_name="CHK_WRIST_ORTHOSIS_W_O_JOINTS_PREFABRICATED"       pdf_field_index="59"  pdf_field_name="CHK_WRIST_ORTHOSIS_W_O_JOINTS_PREFABRICATED"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CERVICAL_PILLOW_DOUBLE_LOOP"       pdf_field_index="60"  pdf_field_name="CHK_CERVICAL_PILLOW_DOUBLE_LOOP"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_ELECTRIC_HEAT_PAD_MOIST"       pdf_field_index="61"  pdf_field_name="CHK_ELECTRIC_HEAT_PAD_MOIST"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_DME_DELIVERY_SET_UP_FITTING"       pdf_field_index="62"  pdf_field_name="CHK_DME_DELIVERY_SET_UP_FITTING"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_OVERDOOR_CERVICAL_TRACTION"       pdf_field_index="63"  pdf_field_name="CHK_OVERDOOR_CERVICAL_TRACTION"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CERVICAL_TRACTION_SET"       pdf_field_index="64"  pdf_field_name="CHK_CERVICAL_TRACTION_SET"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CERVICAL_HEAD_HALTER"       pdf_field_index="65"  pdf_field_name="CHK_CERVICAL_HEAD_HALTER"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_PROVIDER_ZIP"       pdf_field_index="66"  pdf_field_name="TXT_PROVIDER_ZIP"   if_blank=" "/>
+    <field db_field_name="TXT_PROVIDER_NAME"       pdf_field_index="67"  pdf_field_name="TXT_PROVIDER_NAME"   if_blank=" "/>
+    <field db_field_name="CHK_BED_BOARD"       pdf_field_index="68"  pdf_field_name="CHK_BED_BOARD"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_RIB_BELT"       pdf_field_index="69"  pdf_field_name="CHK_RIB_BELT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_PROVIDER_STATE"       pdf_field_index="70"  pdf_field_name="TXT_PROVIDER_STATE"   if_blank=" "/>
+  </document>
+</root>

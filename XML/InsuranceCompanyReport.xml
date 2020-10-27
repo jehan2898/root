@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Table Name="InsuranceCompanyReport">
+  <Field Name="SZ_COMPANY_ID"                   DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"                ControlID="txtCompanyID"              Editable="False"  Visible="True" ></Field>
+  <Field Name="SZ_NUMBER_OF_DAYS"               DataType="NVarChar"    Size="100"    Null="False"   Control="TextBox"                ControlID="txtNoOfDaysBillSubmitted"  Editable="True"   Visible="True"></Field>
+  <Field Name="SZ_INSURANCE_ID"                 DataType="NVarChar"    Size="20"     Null="False"   Control="ExtendedDropDownList"   ControlID="extddlInsurance"           Editable="True"   Visible="True"></Field>
+  <Field Name="SZ_OFFICE_ID"                    DataType="NVarChar"    Size="20"     Null="False"   Control="ExtendedDropDownList"   ControlID="extddlOffice"              Editable="True"   Visible="True" ></Field>
+  <Field Name="SZ_PROCEDURE_GROUP_ID"           DataType="NVarChar"    Size="20"     Null="False"   Control="ExtendedDropDownList"   ControlID="extddlSpeciality"          Editable="True"   Visible="True" ></Field>
+  <Field Name="SZ_RECEIVED_CORRESPONDENCE"      DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"                ControlID="txtReceived"               Editable="False"  Visible="True" ></Field>
+  <Field Name="SZ_BILL_NUMBER"                  DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"                ControlID="txtBillNo"                 Editable="True"   Visible="True" ></Field>
+
+
+  <StoreProcedure name="SP_GET_INSURANCE_COMPANY_REPORT"></StoreProcedure>
+  <ListControl name="grdInsuranceCompany"></ListControl>
+</Table>
+
+
+

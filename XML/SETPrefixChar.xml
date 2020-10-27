@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_BILLING_COMPANY">
+  
+      <Field Name="SZ_COMPANY_ID"              DataType="NVarChar"    Size="20"     Null="False"  Control="TextBox"  ControlID=""                   Editable="False" Visible="False"></Field>
+      <Field Name="SZ_PREFIX"      DataType="NVarChar"    Size="3"     Null="True"   Control="TextBox"                ControlID="txtPrefixChar"           Editable="True"  Visible="True" ></Field>
+
+  <StoreProcedure name="SP_SET_PREFIX"></StoreProcedure>
+
+
+</Table >
+
+

@@ -1,0 +1,44 @@
+﻿body 
+{
+	font-family: Verdana;
+	font-size: 10pt;
+	width: 100%;
+	margin: 0 0 0 0;
+}
+
+p
+{
+	margin: 0 0 5px 0;
+}
+
+ol
+{
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+li.normal
+{
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+div.content
+{
+	margin-top: 5px;
+	padding: 10px;
+}
+
+div.desc
+{
+	background-color: yellow;
+	padding: 10px;
+	margin: 10px;
+}
+
+div.sample
+{
+	padding: 10px;
+	margin: 10px;
+	border: 1px solid #999999;
+}

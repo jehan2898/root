@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table name="MST_ACCU_RE_EVAL">
+ 
+  <Field Name="TXT_PATIENT_LAST_NAME"      Datatype="NVarChar" Size="50"  Null="True" Control="TextBox"  ControlID="txtPatientLastName"        Editable="True" Visible="True"></Field>
+  <Field Name="TXT_PATIENT_FIRST_NAME"     Datatype="NVarChar" Size="50"  Null="True" Control="TextBox"  ControlID="txtPatientFirstName"       Editable="True" Visible="True"></Field>
+  <Field Name="TXT_PATIENT_AGE"            Datatype="Int"      Size="50"  Null="True" Control="TextBox"  ControlID="txtPatientAge"             Editable="True" Visible="True"></Field>
+  <Field Name="RDO_SEX"                    Datatype="Int"      size=""    Null="True" Control="RadioButtonList" ControlID="rdoSex"             Editable="True" Visible="True"></Field>
+  <Field Name="TXT_DOA"                    Datatype="DateTime" Size=""    Null="True" Control="TextBox"  ControlID="txtDoa"                    Editable="True" Visible="True"></Field>
+  <Field Name="TXT_DOE"                    Datatype="DateTime" Size=""    Null="True" Control="TextBox"  ControlID="txtDoe"                    Editable="True" Visible="True"></Field>
+  <Field Name="TXT_TONGUE"                 Datatype="NVarChar" Size="50"  Null="True" Control="TextBox"  ControlID="txtTongue"                 Editable="True" Visible="True"></Field>
+  <Field Name="TXT_COAT"                   Datatype="NVarChar" Size="50"  Null="True" Control="TextBox"  ControlID="txtCoat"                   Editable="True" Visible="True"></Field>
+  <Field Name="TXT_PULSE"                  Datatype="NVarChar" Size="50"  Null="True" Control="TextBox"  ControlID="txtPulse"                  Editable="True" Visible="True"></Field>
+  <Field Name="CHK_HEAD"                   Datatype="Bit"      Size=""    Null="True" Control="CheckBox" ControlID="chkHead"                   Editable="True" Visible="True"></Field>
+  <Field Name="CHK_CHEST"                  Datatype="Bit"      Size=""    Null="True" Control="CheckBox" ControlID="chkChest"                  Editable="True" Visible="True"></Field>
+  <Field Name="CHK_KNEE_LEFT_RIGHT"        Datatype="Bit"      Size=""    Null="True" Control="CheckBox" ControlID="chkKneeLeftRight"          Editable="True" Visible="True"></Field>
+  <Field Name="CHK_NECK"                   Datatype="Bit"      Size=""    Null="True" Control="CheckBox" ControlID="chkNeck"                   Editable="True" Visible="True"></Field>
+  <Field Name="CHK_HIP_LEFT_RIGHT"         Datatype="Bit"      Size=""    Null="True" Control="CheckBox" ControlID="chkHipLeftRight"           Editable="True" Visible="True"></Field>
+  <Field Name="CHK_UPPER_LEG_LEFT_RIGHT"   Datatype="Bit"      Size=""    Null="True" Control="CheckBox" ControlID="chkUpperLegLeftRight"      Editable="True" Visible="True"></Field>
+  <Field Name="CHK_UPPER_MIDDLE_BACK"      Datatype="Bit"      Size=""    Null="True" Control="CheckBox" ControlID="chkUpperMiddleBack"        Editable="True" Visible="True"></Field>
+  <Field Name="CHK_ARM_LEFT_RIGHT"         Datatype="Bit"      Size=""    Null="True" Control="CheckBox" ControlID="chkArmLeftRight"           Editable="True" Visible="True"></Field>
+  <Field Name="CHK_LOWER_LEG_LEFT_RIGHT"   Datatype="Bit"      Size=""    Null="True" Control="CheckBox" ControlID="chkLowerLegLeftRight"      Editable="True" Visible="True"></Field>
+  <Field Name="CHK_LOWER_BACK"             Datatype="Bit"      Size=""    Null="True" Control="CheckBox" ControlID="chkLowerBack"              Editable="True" Visible="True"></Field>
+  <Field Name="CHK_ELBOW_LEFT_RIGHT"       Datatype="Bit"      Size=""    Null="True" Control="CheckBox" ControlID="chkElbowLeftRight"         Editable="True" Visible="True"></Field>
+  <Field Name="CHK_ANKLE_LEFT_RIGHT"       Datatype="Bit"      Size=""    Null="True" Control="CheckBox" ControlID="chkAnkleLeftRight"         Editable="True" Visible="True"></Field>
+  <Field Name="CHK_SHOULDER_LEFT_RIGHT"    Datatype="Bit"      Size=""    Null="True" Control="CheckBox" ControlID="chkShoulderLeftRight"      Editable="True" Visible="True"></Field>
+  <Field Name="CHK_WRIST_LEFT_RIGHT"       Datatype="Bit"      Size=""    Null="True" Control="CheckBox" ControlID="chkWristLeftRight"         Editable="True" Visible="True"></Field>
+  <Field Name="CHK_FOOT_LEFT_RIGHT"        Datatype="Bit"      Size=""    Null="True" Control="CheckBox" ControlID="chkFootLeftRight"          Editable="True" Visible="True"></Field>
+  <Field Name="CHK_SCAPULAR_LEFT_RIGHT"    Datatype="Bit"      Size=""    Null="True" Control="CheckBox" ControlID="chkScapulaLeftRight"       Editable="True" Visible="True"></Field>
+  <Field Name="CHK_HAND_LEFT_RIGHT"        Datatype="Bit"      Size=""    Null="True" Control="CheckBox" ControlID="chkHankLeftRight"          Editable="True" Visible="True"></Field>
+  <Field Name="CHK_CURRENT_COMPLAINT_OTHER" Datatype="Bit"     Size=""    Null="True" Control="CheckBox" ControlID="chkCurrentComplaintOther"  Editable="True" Visible="True"></Field>
+  <Field Name="CHK_LUNG"                   Datatype="Bit"      Size=""    Null="True" Control="CheckBox" ControlID="chkLung"                   Editable="True" Visible="True"></Field>
+  <Field Name="CHK_HEART"                  Datatype="Bit"      Size=""    Null="True" Control="CheckBox" ControlID="chkHeart"                  Editable="True" Visible="True"></Field>
+  <Field Name="CHK_PERICARDIUM"            Datatype="Bit"      Size=""    Null="True" Control="CheckBox" ControlID="chkPericardium"            Editable="True" Visible="True"></Field>
+  <Field Name="CHK_LARGE_INTESTINE"        Datatype="Bit"      Size=""    Null="True" Control="CheckBox" ControlID="chkLargeIntestine"         Editable="True" Visible="True"></Field>
+  <Field Name="CHK_SMALL_INTESTINE"        Datatype="Bit"      Size=""    Null="True" Control="CheckBox" ControlID="chkSmallIntestine"         Editable="True" Visible="True"></Field>
+  <Field Name="CHK_SAN_JIAO"               Datatype="Bit"      Size=""    Null="True" Control="CheckBox" ControlID="chkSanJiao"                Editable="True" Visible="True"></Field>
+  <Field Name="CHK_STOMACH"                Datatype="Bit"      Size=""    Null="True" Control="CheckBox" ControlID="chkStomach"                Editable="True" Visible="True"></Field>
+  <Field Name="CHK_BLADDER"                Datatype="Bit"      Size=""    Null="True" Control="CheckBox" ControlID="chkBladder"                Editable="True" Visible="True"></Field>
+  <Field Name="CHK_GALLBLADDER"            Datatype="Bit"      Size=""    Null="True" Control="CheckBox" ControlID="chkGallbladder"            Editable="True" Visible="True"></Field>
+  <Field Name="CHK_SPLEEN"                 Datatype="Bit"      Size=""    Null="True" Control="CheckBox" ControlID="chkSpleen"                 Editable="True" Visible="True"></Field>
+  <Field Name="CHK_KIDNEY"                 Datatype="Bit"      Size=""    Null="True" Control="CheckBox" ControlID="chkKidney"                 Editable="True" Visible="True"></Field>
+  <Field Name="CHK_LIVER"                  Datatype="Bit"      Size=""    Null="True" Control="CheckBox" ControlID="chkLiver"                  Editable="True" Visible="True"></Field>
+  <Field Name="CHK_CHANNEL_INVOLVED_OTHER" Datatype="Bit"      Size=""    Null="True" Control="CheckBox" ControlID="chkChannelInvolvedOther"   Editable="True" Visible="True"></Field>
+  <Field Name="CHK_IMPROVED"               Datatype="Bit"      Size=""    Null="True" Control="CheckBox" ControlID="chkImproved"               Editable="True" Visible="True"></Field>
+  <Field Name="CHK_WORSENED"               Datatype="Bit"      Size=""    Null="True" Control="CheckBox" ControlID="chkWorsened"               Editable="True" Visible="True"></Field>
+  <Field Name="CHK_NO_CHANGE"              Datatype="Bit"      Size=""    Null="True" Control="CheckBox" ControlID="chkNoChange"               Editable="True" Visible="True"></Field>
+  <Field Name="CHK_DCM_DX"                 Datatype="Bit"      Size=""    Null="True" Control="CheckBox" ControlID="chkDcmDx"                  Editable="True" Visible="True"></Field>
+  <Field Name="TXT_TCM_BX"                 Datatype="NVarChar" Size="50"  Null="True" Control="TextBox"  ControlID="txtTcmBx"                  Editable="True" Visible="True"></Field>
+  <Field Name="CHK_CONTINUE_TREATMENT"     Datatype="Bit"      Size=""    Null="True" Control="CheckBox" ControlID="chkContinueTreatment"      Editable="True" Visible="True"></Field>
+  <Field Name="TXT_PER_WK"                 Datatype="NVarChar" Size="50"  Null="True" Control="TextBox"  ControlID="txtPerWk"                  Editable="True" Visible="True"></Field>
+  <Field Name="TXT_WEEKS"                  Datatype="NVarChar" Size="50"  Null="True" Control="TextBox"  ControlID="txtWeeks"                  Editable="True" Visible="True"></Field>
+  <Field Name="CHK_DISCHARGE_PATIENT"      Datatype="Bit"      Size=""    Null="True" Control="CheckBox" ControlID="chkDischargePatient"       Editable="True" Visible="True"></Field>
+  <Field Name="TXT_DOCTOR_NAME"            Datatype="NVarChar" Size="50"  Null="True" Control="TextBox"  ControlID="txtDoctorName"             Editable="True" Visible="True"></Field>
+
+  <StoreProcedure Name="SP_ADD_RE_EVAL_DETAILS"/>
+  
+</Table>

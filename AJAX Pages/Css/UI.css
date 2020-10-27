@@ -1,0 +1,404 @@
+body
+{
+}
+.SMChildrenBox
+{
+  
+}
+.level1
+{
+    color: White;
+    background-color: Black;
+    font-variant: small-caps;
+    font-size: large;
+    font-weight: bold;
+}
+
+.level2
+{
+    color: Blue;
+    font-family: Gill Sans MT !important;
+    font-size: medium;
+    background-color: Gray;
+}
+
+.level3
+{
+    color: black;
+    background-color: Silver;
+    font-family: Gill Sans MT !important;
+    font-size: small;
+}
+
+.hoverstyle
+{
+    font-weight: bold;
+}
+
+.parentlevel1
+{
+    background-color: Transparent;
+    color: White !important;
+    font-variant: normal;
+}
+.sublevel1
+{
+    background-color: Transparent;
+    color: White !important;
+    font-variant: small-caps;
+}
+.maintblCSS
+{
+    width: 300px;
+}
+.hdRow
+{
+    background-color: Aqua;
+}
+.userRow
+{
+    padding-left: 10px;
+}
+.passwordRow
+{
+    padding-left: 10px;
+}
+.rememberRow
+{
+    padding-left: 10px;
+}
+.buttonRow
+{
+    text-align: center;
+}
+.errorRow
+{
+    color: Red;
+}
+
+body
+{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+td
+{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+th
+{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.simple-table
+{
+    width: 90%;
+    border: 1px solid;
+    cellspacing: 0;
+    cellpadding: 0;
+}
+
+.lbl
+{
+    font-size: smaller;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+span
+{
+    font-size: smaller;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.bubble
+{
+    background-color: #C3D9FF;
+}
+
+P
+{
+    border-top-width: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+    border-left-width: 0px;
+    font-size: 100%;
+    border-bottom-width: 0px;
+    padding-bottom: 0px;
+    margin: 0px;
+    vertical-align: baseline;
+    padding-top: 0px;
+    font-family: inherit;
+    text-align: left;
+    border-right-width: 0px;
+}
+
+.grid-header
+{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    background-color: #CCCCCC;
+    color: #000000;
+    font-weight: bold;
+}
+
+.grid-data
+{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    background-color: #6694E3;
+    background-color: #EFEFEF;
+    color: #FFFFFF;
+}
+
+.grid-pager
+{
+    text-align: center;
+    font-size: 11px;
+    background-color: #CCCCCC;
+    color: #000000;
+}
+
+.grid-items
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: normal;
+    text-align: left;
+}
+
+.grid-alternate
+{
+    background-color: #EFEFEF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    text-align: left;
+}
+.lbl
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    text-align: left;
+}
+
+.band
+{
+    background-color: #D2D2D6;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    height: 20px;
+    text-align: center; /* color:#000066; */
+    color: #333333;
+}
+.text-box
+{
+    border-right: #d1c7ac 1px solid;
+    border-top: #d1c7ac 1px solid;
+    float: left;
+    border-left: #d1c7ac 1px solid;
+    padding-top: 3px;
+    border-bottom: #d1c7ac 1px solid;
+    background-color: #f9f8f2;
+}
+
+.message-band
+{
+    background-color: #FFF1A8;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    height: 20px;
+    text-align: center;
+    width: 50%;
+}
+
+#newsSideBar .justIn
+{
+    border-right: #4fa4c3 1px solid;
+    border-top: #4fa4c3 1px solid;
+    margin-bottom: 15px;
+    border-left: #4fa4c3 1px solid;
+    color: #333;
+    border-bottom: #4fa4c3 1px solid;
+    background-color: #f8fafb;
+}
+
+#newsSideBar .justIn H5
+{
+    padding-right: 5px;
+    padding-left: 5px;
+    background: url(http://i.i.com.com/cnwk.1d/i/tron/vader/siteId3headerBar.gif) repeat-x;
+    padding-bottom: 0px;
+    font: bold 119%/195.5% Arial, Helvetica, san-serif;
+    color: #282828;
+    padding-top: 0px;
+    border-bottom: #bedbe6 1px solid;
+    height: 28px;
+}
+
+#newsSideBar .justIn LABEL
+{
+    padding-right: 5px;
+    padding-left: 5px;
+    background: url(http://i.i.com.com/cnwk.1d/i/tron/vader/siteId3headerBar.gif) repeat-x;
+    padding-bottom: 0px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, san-serif;
+    color: #282828;
+    padding-top: 0px;
+    border-bottom: #bedbe6 1px solid;
+    height: 28px;
+}
+
+#newsSideBar .justIn LI
+{
+    padding-right: 0px;
+    padding-left: 0px;
+    background: url(http://i.i.com.com/cnwk.1d/i/tron/vader/dottedLine.gif) repeat-x 50% bottom;
+    padding-bottom: 7px;
+    margin: 0px 7px;
+    color: #999;
+    padding-top: 7px;
+}
+
+#newsSideBar .justIn LI.last
+{
+    background: none transparent scroll repeat 0% 0%;
+}
+
+#newsSideBar .justIn A
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 12px;
+}
+A:hover
+{
+    color: #800;
+    text-decoration: none;
+}
+
+.top-menu
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    color: #FFFFFF;
+    text-align: right;
+    text-decoration: none;
+}
+
+.pg-bl-usr
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    color: #FFFFFF;
+    text-align: left;
+    text-decoration: none;
+}
+
+.usr
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    color: #FFFFFF;
+    text-align: right;
+    text-decoration: none;
+}
+
+.pg
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    color: #003366;
+    text-align: right;
+    text-decoration: none;
+}
+
+.message-text
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    color: #FF0000;
+    text-align: right;
+    text-decoration: none;
+}
+
+.sub-menu
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    color: #000066;
+    text-align: right;
+    text-decoration: none;
+}
+
+input.btn
+{
+    /*color:#FFFFFF;*/ /*font: bold 84% 'trebuchet ms',helvetica,sans-serif;   */ /*background-color:#336600;    border:1px solid;    border-color: #FFFFFF #FFFFFF #FFFFFF #FFFFFF;*/
+}
+
+input.btn-gray
+{
+    color: #FFFFFF;
+    font: bold 84% 'trebuchet ms' ,helvetica,sans-serif;
+    background-color: #525252;
+    border: 1px solid;
+    border-color: #FFFFFF #FFFFFF #FFFFFF #FFFFFF;
+}
+.menu-common
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 11px;
+    color: #990000;
+    text-align: center;
+    text-decoration: none;
+}
+
+.maintable
+{
+    width: 80%;
+    height: 2%;
+    cellpadding: 0;
+    cellspacing: 0;
+    border: 1px solid #D8D8D8;
+}
+
+
+.tdLeftMainTbl
+{
+    width: 40%;
+}
+
+.tdRightMainTbl
+{
+    width: 60%;
+}
+
+.tdLeftSubTbl
+{
+    width: 38%;
+    text-align: right;
+    padding-right: 5px;
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 1.00em;
+}
+
+.tdRightSubTbl
+{
+    width: 62%;
+    padding-left: 5px;
+}

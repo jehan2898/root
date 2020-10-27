@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_CM_INITIAL_EVAL">
+  <Field Name="I_EVENT_ID" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtEventID" Editable="True" Visible="True"></Field>
+
+  <!--<Field Name="I_PATIENT_MISSED_WORK"       DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="rdlPatient_Missed_Work" Editable="True" Visible="True"></Field>-->
+  <Field Name="I_PATIENT_MISSED_WORK"       DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtRDO_PATIENT_MISSED_WORK" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PATIENT_MISSED_WORK_DATE" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="TXT_PATIENT_MISSED_WORK_DATE" Editable="True" Visible="True"></Field>
+  <!--<Field Name="I_PATIENT_CURRENTLY_WORKING" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="rdlPatient_Currently_Working" Editable="True" Visible="True"></Field>-->
+  <Field Name="I_PATIENT_CURRENTLY_WORKING" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtRDO_PATIENT_CURRENTLY_WORKING" Editable="True" Visible="True"></Field>
+  <!--<Field Name="I_PATIENT_RETURN_TO_WORK" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="rdlPatient_Return_To_Work" Editable="True" Visible="True"></Field>-->
+  <Field Name="I_PATIENT_RETURN_TO_WORK" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtRDO_PATIENT_RETURN_TO_WORK" Editable="True" Visible="True"></Field>
+  <Field Name="BT_PATIENT_CANNOT_WORK_RET" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PATIENT_CANNOT_WORK_RET" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PATIENT_CANNOT_WORK_RET" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="TXT_PATIENT_CANNOT_WORK_RET" Editable="True" Visible="True"></Field>
+  <Field Name="BT_PATIENT_CAN_WORK_WITHOUT_LIMIT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PATIENT_CAN_WORK_WITHOUT_LIMIT" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PATIENT_CAN_WORK_WITHOUT_LIMIT" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="TXT_PATIENT_CAN_WORK_WITHOUT_LIMIT" Editable="True" Visible="True"></Field>
+
+  <Field Name="BT_PATIENT_CAN_WORK_WITH_LIMIT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PATIENT_CAN_WORK_WITH_LIMIT" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PATIENT_CAN_WORK_WITH_LIMIT" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="TXT_PATIENT_CAN_WORK_WITH_LIMIT" Editable="True" Visible="True"></Field>
+
+  <Field Name="BT_PATIENT_WORK_LIMIT_BENDING_TWISTING" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PATIENT_WORK_LIMIT_BENDING_TWISTING" Editable="True" Visible="True"></Field>
+
+  <Field Name="BT_PATIENT_WORK_LIMIT_LIFTING" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PATIENT_WORK_LIMIT_LIFTING" Editable="True" Visible="True"></Field>
+  <Field Name="BT_PATIENT_WORK_LIMIT_SITTING" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PATIENT_WORK_LIMIT_SITTING" Editable="True" Visible="True"></Field>
+  <Field Name="BT_PATIENT_WORK_LIMIT_CLIMBING_STAIRS_LADDERS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PATIENT_WORK_LIMIT_CLIMBING_STAIRS_LADDERS" Editable="True" Visible="True"></Field>
+  <Field Name="BT_PATIENT_WORK_LIMIT_OPERATING_HEAVY_EQUIP" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PATIENT_WORK_LIMIT_OPERATING_HEAVY_EQUIP" Editable="True" Visible="True"></Field>
+  <Field Name="BT_PATIENT_WORK_LIMIT_STANDING" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PATIENT_WORK_LIMIT_STANDING" Editable="True" Visible="True"></Field>
+  <Field Name="BT_PATIENT_WORK_LIMIT_ENVIRONMENTAL_CONDI" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PATIENT_WORK_LIMIT_ENVIRONMENTAL_CONDI" Editable="True" Visible="True"></Field>
+  <Field Name="BT_PATIENT_WORK_LIMIT_OPERATION_MOTOR_VHCLE" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PATIENT_WORK_LIMIT_OPERATION_MOTOR_VHCLE" Editable="True" Visible="True"></Field>
+  <Field Name="BT_PATIENT_WORK_LIMIT_USE_PUBLIC_TRASPT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PATIENT_WORK_LIMIT_USE_PUBLIC_TRASPT" Editable="True" Visible="True"></Field>
+  <Field Name="BT_PATIENT_WORK_LIMIT_KNEELING" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PATIENT_WORK_LIMIT_KNEELING" Editable="True" Visible="True"></Field>
+  <Field Name="BT_PATIENT_WORK_LIMIT_PERSONAL_PROTIVE_EQUIP" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PATIENT_WORK_LIMIT_PERSONAL_PROTIVE_EQUIP" Editable="True" Visible="True"></Field>
+  <Field Name="BT_PATIENT_WORK_LIMIT_USE_UPPER_EXTREMITIES" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PATIENT_WORK_LIMIT_USE_UPPER_EXTREMITIES" Editable="True" Visible="True"></Field>
+  <Field Name="BT_PATIENT_WORK_LIMIT_OTHER" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PATIENT_WORK_LIMIT_OTHER" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PATIENT_WORK_LIMIT_OTHER" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="TXT_PATIENT_WORK_LIMIT_OTHER" Editable="True" Visible="True"></Field>
+  
+  
+  <Field Name="SZ_DESCRIBE_LIMITATION" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="TXT_DESCRIBE_LIMITATION" Editable="True" Visible="True"></Field>
+  <Field Name="BT_LIMIT_APPLY_1_TO_2_DAYS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_LIMIT_APPLY_1_TO_2_DAYS" Editable="True" Visible="True"></Field>
+  <Field Name="BT_LIMIT_APPLY_3_TO_7_DAYS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_LIMIT_APPLY_3_TO_7_DAYS" Editable="True" Visible="True"></Field>
+  <Field Name="BT_LIMIT_APPLY_8_TO_14_DAYS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_LIMIT_APPLY_8_TO_14_DAYS" Editable="True" Visible="True"></Field>
+  <Field Name="BT_LIMIT_APPLY_15_PLUS_DAYS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_LIMIT_APPLY_15_PLUS_DAYS" Editable="True" Visible="True"></Field>
+  <Field Name="BT_LIMIT_APPLY_UNKNOWN" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_LIMIT_APPLY_UNKNOWN" Editable="True" Visible="True"></Field>
+  
+  <!--<Field Name="I_DISCUSS_LIMIT_PATIENT" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="rdlDiscussLimitPatient" Editable="True" Visible="True"></Field>-->
+  <Field Name="I_DISCUSS_LIMIT_PATIENT" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtRDO_DISCUSS_LIMIT_PATIENT" Editable="True" Visible="True"></Field>
+  <Field Name="BT_PROVIDE_SERVICE" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PROVIDE_SERVICE" Editable="True" Visible="True"></Field>
+  <Field Name="BT_SUPERVISE_SERVICE" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_SUPERVISE_SERVICE" Editable="True" Visible="True"></Field>
+  <!--<Field NaSZ_IMG_DOCTOR_SIGNATUREme="I_PATIENT_CURRENTLY_WORKING" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="SZ_IMG_DOCTOR_SIGNATURE" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_DOCTOR_NAME	I_PATIENT_CURRENTLY_WORKING" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="SZ_DOCTOR_NAME	" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_DOCTOR_PROVIDER_COMPANY_NAMEI_PATIENT_CURRENTLY_WORKING" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="SZ_DOCTOR_PROVIDER_COMPANY_NAME" Editable="True" Visible="True"></Field>-->
+  <StoreProcedure name="SP_MST_CM_INITIAL_EVAL_WorkStatus" />
+
+</Table>

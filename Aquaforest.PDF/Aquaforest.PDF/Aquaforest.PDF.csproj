@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{866536AB-4071-4DEA-B977-09C810493531}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aquaforest.PDF</RootNamespace>
+    <AssemblyName>Aquaforest.PDF</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aquaforest.Pdfa.Validator">
+      <HintPath>..\..\..\..\..\..\..\Aquaforest\PDF Toolkit\bin\Aquaforest.Pdfa.Validator.dll</HintPath>
+    </Reference>
+    <Reference Include="commons-collections4-4.1">
+      <HintPath>..\..\..\..\..\..\..\Aquaforest\PDF Toolkit\bin\commons-collections4-4.1.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Core">
+      <HintPath>..\..\..\..\..\..\..\Aquaforest\PDF Toolkit\bin\IKVM.OpenJDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Media">
+      <HintPath>..\..\..\..\..\..\..\Aquaforest\PDF Toolkit\bin\IKVM.OpenJDK.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.SwingAWT">
+      <HintPath>..\..\..\..\..\..\..\Aquaforest\PDF Toolkit\bin\IKVM.OpenJDK.SwingAWT.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Text">
+      <HintPath>..\..\..\..\..\..\..\Aquaforest\PDF Toolkit\bin\IKVM.OpenJDK.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Util">
+      <HintPath>..\..\..\..\..\..\..\Aquaforest\PDF Toolkit\bin\IKVM.OpenJDK.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Parse">
+      <HintPath>..\..\..\..\..\..\..\Aquaforest\PDF Toolkit\bin\IKVM.OpenJDK.XML.Parse.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Transform">
+      <HintPath>..\..\..\..\..\..\..\Aquaforest\PDF Toolkit\bin\IKVM.OpenJDK.XML.Transform.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime">
+      <HintPath>..\..\..\..\..\..\..\Aquaforest\PDF Toolkit\bin\IKVM.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\..\..\Aquaforest\PDF Toolkit\bin\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.PowerPoint, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\..\..\Aquaforest\PDF Toolkit\bin\Microsoft.Office.Interop.PowerPoint.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Publisher, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\..\..\Aquaforest\PDF Toolkit\bin\Microsoft.Office.Interop.Publisher.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\..\..\Aquaforest\PDF Toolkit\bin\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Office, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\..\..\Aquaforest\PDF Toolkit\bin\Office.dll</HintPath>
+    </Reference>
+    <Reference Include="pdfbox-tools-2.1.0">
+      <HintPath>..\..\..\..\..\..\..\Aquaforest\PDF Toolkit\bin\pdfbox-tools-2.1.0.dll</HintPath>
+    </Reference>
+    <Reference Include="preflight-app-2.1.0">
+      <HintPath>..\..\..\..\..\..\..\Aquaforest\PDF Toolkit\bin\preflight-app-2.1.0.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Aquaforest.Office.PDF\AquaforestFontEmbedding.cs" />
+    <Compile Include="Aquaforest.Office.PDF\AquaforestOfficeException.cs" />
+    <Compile Include="Aquaforest.Office.PDF\AquaforestPageOrientation.cs" />
+    <Compile Include="Aquaforest.Office.PDF\AquaforestPaperSize.cs" />
+    <Compile Include="Aquaforest.Office.PDF\AquaforestPDFBookmarks.cs" />
+    <Compile Include="Aquaforest.Office.PDF\AquaforestPDFOptimizeFor.cs" />
+    <Compile Include="Aquaforest.Office.PDF\AquaforestPrintHandoutOrder.cs" />
+    <Compile Include="Aquaforest.Office.PDF\AquaforestRevisionMode.cs" />
+    <Compile Include="Aquaforest.Office.PDF\AquaforestSlideSize.cs" />
+    <Compile Include="Aquaforest.Office.PDF\DocumentSettings.cs" />
+    <Compile Include="Aquaforest.Office.PDF\ExcelToPDF.cs" />
+    <Compile Include="Aquaforest.Office.PDF\NamespaceDoc.cs" />
+    <Compile Include="Aquaforest.Office.PDF\PowerPointToPDF.cs" />
+    <Compile Include="Aquaforest.Office.PDF\PublisherToPDF.cs" />
+    <Compile Include="Aquaforest.Office.PDF\WordToPDF.cs" />
+    <Compile Include="Aquaforest.PDF\AquaforestPDFAFlavour.cs" />
+    <Compile Include="Aquaforest.PDF\CSVToPDFConverter.cs" />
+    <Compile Include="Aquaforest.PDF\Font\PDFFont.cs" />
+    <Compile Include="Aquaforest.PDF\Font\PDFTrueTypeFont.cs" />
+    <Compile Include="Aquaforest.PDF\Font\PDFType1Font.cs" />
+    <Compile Include="Aquaforest.PDF\HocrLineModel.cs" />
+    <Compile Include="Aquaforest.PDF\HocrModel.cs" />
+    <Compile Include="Aquaforest.PDF\HocrPageModel.cs" />
+    <Compile Include="Aquaforest.PDF\ImageToPDFConverter.cs" />
+    <Compile Include="Aquaforest.PDF\ImageTransparency.cs" />
+    <Compile Include="Aquaforest.PDF\NamespaceDoc.cs" />
+    <Compile Include="Aquaforest.PDF\NonFullScreenModeOptions.cs" />
+    <Compile Include="Aquaforest.PDF\PageLayoutOptions.cs" />
+    <Compile Include="Aquaforest.PDF\PageModeOptions.cs" />
+    <Compile Include="Aquaforest.PDF\PageSize.cs" />
+    <Compile Include="Aquaforest.PDF\PDF2Image.cs" />
+    <Compile Include="Aquaforest.PDF\PDF2PDFaConverter.cs" />
+    <Compile Include="Aquaforest.PDF\PDFAFontsEmbedded.cs" />
+    <Compile Include="Aquaforest.PDF\PDFAnnotation.cs" />
+    <Compile Include="Aquaforest.PDF\PDFAnnotationLineSubtypes.cs" />
+    <Compile Include="Aquaforest.PDF\PDFAnnotationType.cs" />
+    <Compile Include="Aquaforest.PDF\PDFAttachmentItem.cs" />
+    <Compile Include="Aquaforest.PDF\PDFAValidationResult.cs" />
+    <Compile Include="Aquaforest.PDF\PDFAValidator.cs" />
+    <Compile Include="Aquaforest.PDF\PDFBookmark.cs" />
+    <Compile Include="Aquaforest.PDF\PDFBookmarkItem.cs" />
+    <Compile Include="Aquaforest.PDF\PDFColor.cs" />
+    <Compile Include="Aquaforest.PDF\PDFDirection.cs" />
+    <Compile Include="Aquaforest.PDF\PDFDocument.cs" />
+    <Compile Include="Aquaforest.PDF\PDFDocumentInformation.cs" />
+    <Compile Include="Aquaforest.PDF\PDFDocumentOpenSetting.cs" />
+    <Compile Include="Aquaforest.PDF\PDFExtractEmbeddedFiles.cs" />
+    <Compile Include="Aquaforest.PDF\PDFHelper.cs" />
+    <Compile Include="Aquaforest.PDF\PDFHocr.cs" />
+    <Compile Include="Aquaforest.PDF\PDFImageExtractor.cs" />
+    <Compile Include="Aquaforest.PDF\PDFMerger.cs" />
+    <Compile Include="Aquaforest.PDF\PDFOverlay.cs" />
+    <Compile Include="Aquaforest.PDF\PDFPage.cs" />
+    <Compile Include="Aquaforest.PDF\PDFPageContentStream.cs" />
+    <Compile Include="Aquaforest.PDF\PDFPageSettings.cs" />
+    <Compile Include="Aquaforest.PDF\PDFPermission.cs" />
+    <Compile Include="Aquaforest.PDF\PDFRectangle.cs" />
+    <Compile Include="Aquaforest.PDF\PDFRubberStampImages.cs" />
+    <Compile Include="Aquaforest.PDF\PDFSecurity.cs" />
+    <Compile Include="Aquaforest.PDF\PDFSplitter.cs" />
+    <Compile Include="Aquaforest.PDF\PDFStamper.cs" />
+    <Compile Include="Aquaforest.PDF\PDFStamperPositions.cs" />
+    <Compile Include="Aquaforest.PDF\PDFTableSettings.cs" />
+    <Compile Include="Aquaforest.PDF\PDFTextConverter.cs" />
+    <Compile Include="Aquaforest.PDF\PDFTextExtraction.cs" />
+    <Compile Include="Aquaforest.PDF\PDFTextMarkUpSuptype.cs" />
+    <Compile Include="Aquaforest.PDF\PDFToolkit.cs" />
+    <Compile Include="Aquaforest.PDF\PDFToolkitException.cs" />
+    <Compile Include="Aquaforest.PDF\PDFValidator.cs" />
+    <Compile Include="Aquaforest.PDF\WordData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Aquaforest.PDF\Font\xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

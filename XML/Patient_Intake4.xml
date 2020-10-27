@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_PATIENT_INTAKE">
+  <Field Name ="SZ_CASE_ID" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_I_EVENT" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_MOTHER_DIABETES" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_MOTHER_DIABETES" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_MOTHER_HEART_ATTACK" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_MOTHER_HEART_ATTACK" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_MOTHER_KIDNEY" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_MOTHER_KIDNEY" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_MOTHER_CANCER" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_MOTHER_CANCER" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_MOTHER_BACK" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_MOTHER_BACK" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_MOTHER_OTHER_CONDITION" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_MOTHER_OTHER_CONDITION" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_MOTHER_OTHER_CONDITION" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_MOTHER_OTHER_CONDITION" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_FATHER_DIABETES" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_FATHER_DIABETES" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_FATHER_HEART_ATTACK" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_FATHER_HEART_ATTACK" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_FATHER_KIDNEY" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_FATHER_KIDNEY" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_FATHER_CANCER" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_FATHER_CANCER" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_FATHER_BACK" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_FATHER_BACK" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_FATHER_OTHER_CONDITION" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_FATHER_OTHER_CONDITION" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_FATHER_OTHER_CONDITION" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_FATHER_OTHER_CONDITION" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_BROTHER_DIABETES" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_BROTHER_DIABETES" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_BROTHER_HEART_ATTACK" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_BROTHER_HEART_ATTACK" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_BROTHER_KIDNEY" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_BROTHER_KIDNEY" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_BROTHER_CANCER" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_BROTHER_CANCER" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_BROTHER_BACK" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_BROTHER_BACK" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_BROTHER_OTHER_CONDITION" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_BROTHER_OTHER_CONDITION" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_BROTHER_OTHER_CONDITION" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_BROTHER_OTHER_CONDITION" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_SISTER_DIABETES" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_SISTER_DIABETES" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_SISTER_HEART_ATTACK" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_SISTER_HEART_ATTACK" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_SISTER_KIDNEY" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_SISTER_KIDNEY" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_SISTER_CANCER" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_SISTER_CANCER" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_SISTER_BACK" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_SISTER_BACK" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_SISTER_OTHER_CONDITION" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_SISTER_OTHER_CONDITION" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_SISTER_OTHER_CONDITION" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_SISTER_OTHER_CONDITION" Editable="True" Visible="True"></Field>
+  <!--<Field Name ="SZ_PATIENT_SIGNATURE_PATH" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_PATIENT_SIGNATURE_PATH" Editable="True" Visible="True"></Field>-->
+  <Field Name ="DT_DATE" DataType="DateTime" Size="" Null="True" Control="TextBox" ControlID="TXT_DATE" Editable="True" Visible="True"></Field>
+  <StoreProcedure name="SP_MST_PATIENT_INTAKE4"></StoreProcedure>
+</Table>
+
+
+
+
+

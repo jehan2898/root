@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_PROCEDURE_CODES">
+  <Field Name="SZ_COMPANY_ID"         DataType="NVarChar"     Size="20"     Null="False"    Control="TextBox"     ControlID="txtCompanyID"      Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PROCEDURE_CODE"     DataType="NVarChar"     Size="50"     Null="False"    Control="TextBox"     ControlID="txthdnCode"  Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PROCEDURE_GROUP_ID"    DataType="NVarChar"  Size="20"     Null="False"    Control="TextBox"  ControlID="txthdnSpe"  Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_CODE_DESCRIPTION"   DataType="NVarChar"     Size="20"     Null="True"     Control="TextBox"     ControlID="txthdnDesc"  Editable="True"  Visible="True" ></Field>
+  <Field Name="FLT_AMOUNT"            DataType="NVarChar"        Size=""     Null="True"     Control="TextBox"     ControlID="txthdnAmt"         Editable="True"  Visible="True" ></Field>
+  <Field Name="I_VISIT_TYPE"       DataType="NVarChar"   Size="20"     Null="False"    Control="TextBox"    ControlID="txthdnVisitType" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_MODIFIER"       DataType="NVarChar"   Size="20"     Null="False"    Control="TextBox"    ControlID="txthdnModifier" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_REV_CODE"       DataType="NVarChar"   Size="20"     Null="False"    Control="TextBox"    ControlID="txtRevCode" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_VALUE_CODE"       DataType="NVarChar"   Size="20"     Null="False"    Control="TextBox"    ControlID="txtValueCode" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_CODE_LONG_DESC"       DataType="NVarChar"   Size="1000"     Null="False"    Control="TextBox"    ControlID="txtProcedureLongDesc" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_MODIFIER_LONG_DESC"       DataType="NVarChar"   Size="1000"     Null="False"    Control="TextBox"    ControlID="txtModifierDesc" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_RVU"       DataType="NVarChar"   Size="1000"     Null="False"    Control="TextBox"    ControlID="txtRVU" Editable="True" Visible="True"></Field>
+  <Field Name="sz_location_id"      DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"   ControlID="txtLocation"       Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_1500_DESC"      DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"   ControlID="txt1500desc"       Editable="True"  Visible="True" ></Field>
+ 
+  <StoreProcedure name="SP_GET_MST_PROCEDURE_CODES"></StoreProcedure>
+
+  <ListControl name="grdProcedure"></ListControl>
+</Table>
+

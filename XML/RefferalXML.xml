@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_REFERRAL">
+  <Field Name ="I_EVENT_ID" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_I_EVENT" Editable="True" Visible="True"></Field>
+   <Field Name ="SZ_DIAGNOSIS" DataType="NVarChar" Size="MAX" Null="False" Control="TextBox" ControlID="TXT_DIAGNOSIS" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_PRECAUTIONS" DataType="NVarChar" Size="MAX" Null="False" Control="TextBox" ControlID="TXT_PRECAUTIONS" Editable="True" Visible="True"></Field>
+  <Field Name ="I_WEEK" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_WEEK" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_OTHER_GOALS" DataType="NVarChar" Size="MAX" Null="False" Control="TextBox" ControlID="TXT_OTHER_GOALS" Editable="True" Visible="True"></Field>
+
+
+  <Field Name ="SZ_WEEK_S" DataType="NVarChar" Size="MAX" Null="False" Control="TextBox" ControlID="TXT_WEEK_S" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_NWB" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_NWB" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_PWB" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PWB" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_FWB" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_FWB" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_WBAT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_WBAT" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_EVALUATE_TREAT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_EVALUATE_TREAT" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_PAIN" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PAIN" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_ROM" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_ROM" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_IMPROVE_FUNCTION" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_IMPROVE_FUNCTION" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_STRENGTH" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_STRENGTH" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_OTHER_GOALS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_OTHER_GOALS" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_SWELLING" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_SWELLING" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_US" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_US" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_MOIST_HEAT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_MOIST_HEAT" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_TRACTION" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_TRACTION" Editable="True" Visible="True"></Field>
+
+
+  <Field Name ="SZ_LBS" DataType="NVarChar" Size="MAX" Null="False" Control="TextBox" ControlID="TXT_LBS" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_INTERFERENTIAL" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_INTERFERENTIAL" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_ICE" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_ICE" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_CONTINUOUS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_CONTINUOUS" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_TENS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_TENS" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_SPRAY_STRENGTH" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_SPRAY_STRENGTH" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_INTERMITTENT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_INTERMITTENT" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_PARAFIN_BATH" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PARAFIN_BATH" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_CONTRAST_BATH" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_CONTRAST_BATH" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_ELECTRICAL_STIM" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_ELECTRICAL_STIM" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_HEATER_TRACTION" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_HEATER_TRACTION" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_GENTLE_MASSAGE" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_GENTLE_MASSAGE" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_MANUAL_THERAPY_STRETCHING" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_MANUAL_THERAPY_STRETCHING" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_SMT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_SMT" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_MYOFACIAL_RELEASE" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_MYOFACIAL_RELEASE" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_ISOMETIC_STABILIZATION" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_ISOMETIC_STABILIZATION" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_CMT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_CMT" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_JOBST_TECHNIQUES" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_JOBST_TECHNIQUES" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_CERVICAL" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_CERVICAL" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_ACTIVATOR" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_ACTIVATOR" Editable="True" Visible="True"></Field>
+
+  <Field Name ="BT_CRANIOSACRAL" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_CRANIOSACRAL" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_LUMBAR" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_LUMBAR" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_PNF" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PNF" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_ROM_PROM" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_ROM_PROM" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_STRETCHING_EXERCISE" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_STRETCHING_EXERCISE" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_AROM" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_AROM" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_BIOMECHANICS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_BIOMECHANICS" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_STRENGTHENING_EXERCISE" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_STRENGTHENING_EXERCISE" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_HOME_EXERCISE" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_HOME_EXERCISE" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_POSTURE_EXERCISE" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_POSTURE_EXERCISE" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_THERPEUTIC_EXERCISE" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_THERPEUTIC_EXERCISE" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_GAIT_TRAINING" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_GAIT_TRAINING" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_SPECIFIC_INSTRUCTIONS" DataType="NVarChar" Size="MAX" Null="False" Control="TextBox" ControlID="TXT_SPECIFIC_INSTRUCTIONS" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_PHYSICIANS_SIGNATURE_PATH" DataType="NVarChar" Size="MAX" Null="False" Control="TextBox" ControlID="TXT_PHYSICIANS_SIGNATURE_PATH" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_U_PIN_NUMBER" DataType="NVarChar" Size="MAX" Null="False" Control="TextBox" ControlID="TXT_U_PIN_NUMBER" Editable="True" Visible="True"></Field>
+  
+  
+  
+  
+  <StoreProcedure name="SP_MST_REFERRAL"></StoreProcedure>
+</Table>
+
+
+
+
+
+
+
+

@@ -1,0 +1,45 @@
+<root>
+<document type= "FUNDING_SYSTEM" description="LSC Payoff letter template" lastmodified="June 22 2009 15:35" procedure_name="SP_CO_GET_DETAILS_EVENT_ID" >
+<field db_field_name="CHK_TREATMENT_COLD_PACK"       pdf_field_index="1"  pdf_field_name="CHK_TREATMENT_COLD_PACK"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+<field db_field_name="TXT_PATIENT_NAME"       pdf_field_index="2"  pdf_field_name="TXT_PATIENT_NAME"   if_blank=" "/>
+<field db_field_name="CHK_OBJECTIVE_PATIENT_MUCH_IMPROVEMENT"       pdf_field_index="3"  pdf_field_name="CHK_OBJECTIVE_PATIENT_MUCH_IMPROVEMENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+<field db_field_name="TXT_PROVIDER_ADDRESS"       pdf_field_index="4"  pdf_field_name="TXT_PROVIDER_ADDRESS"   if_blank=" "/>
+<field db_field_name="CHK_BALANCE_COORD_POSTUR"       pdf_field_index="5"  pdf_field_name="CHK_BALANCE_COORD_POSTUR"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+<field db_field_name="CHK_INTIAL_EVALU_OF_NEW_PATIENT"       pdf_field_index="6"  pdf_field_name="CHK_INTIAL_EVALU_OF_NEW_PATIENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+<field db_field_name="TXT_COMPLAINTS"       pdf_field_index="7"  pdf_field_name="TXT_COMPLAINTS"   if_blank=" "/>
+<field db_field_name="TXT_CLAIM_NO"       pdf_field_index="8"  pdf_field_name="TXT_CLAIM_NO"   if_blank=" "/>
+<field db_field_name="TXT_ASSESSMENT_COMMENTS"       pdf_field_index="9"  pdf_field_name="TXT_ASSESSMENT_COMMENTS"   if_blank=" "/>
+<field db_field_name="TXT_INS_CMP"       pdf_field_index="10"  pdf_field_name="TXT_INS_CMP"   if_blank=" "/>
+<field db_field_name="CHK_TREATMENT_TENS"       pdf_field_index="11"  pdf_field_name="CHK_TREATMENT_TENS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+<field db_field_name="TXT_DATE"       pdf_field_index="12"  pdf_field_name="TXT_DATE"   if_blank=" "/>
+<field db_field_name="TXT_PATIENT_SIGNATURE"       pdf_field_index="13"  pdf_field_name="TXT_PATIENT_SIGNATURE"   if_blank=" " isImage="1"/>
+<field db_field_name="CHK_TREATMENT_PARAFFIN_BATH"       pdf_field_index="14"  pdf_field_name="CHK_TREATMENT_PARAFFIN_BATH"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+<field db_field_name="CHK_TREATMENT_THERAPEUTIC_EXCERCISE"       pdf_field_index="15"  pdf_field_name="CHK_TREATMENT_THERAPEUTIC_EXCERCISE"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+<field db_field_name="TXT_BARCODE_PATH"       pdf_field_index="16"  pdf_field_name="TXT_BARCODE_PATH"   if_blank=" " isImage="1"/>
+<field db_field_name="TXT_PLAN_COMMENTS"       pdf_field_index="17"  pdf_field_name="TXT_PLAN_COMMENTS"   if_blank=" "/>
+<field db_field_name="CHK_PLAN_COMMENTS"       pdf_field_index="18"  pdf_field_name="CHK_PLAN_COMMENTS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+<field db_field_name="CHK_ASSESSMENT_COMMENTS"       pdf_field_index="19"  pdf_field_name="CHK_ASSESSMENT_COMMENTS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+<field db_field_name="CHK_OBJECTIVE_PATIENT_CONDITION_SAME"       pdf_field_index="20"  pdf_field_name="CHK_OBJECTIVE_PATIENT_CONDITION_SAME"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+<field db_field_name="CHK_TREATMENT_HOT_PACK"       pdf_field_index="21"  pdf_field_name="CHK_TREATMENT_HOT_PACK"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+<field db_field_name="CHK_ASSESSMENT_PATIENT_TOLERATED_WELL"       pdf_field_index="22"  pdf_field_name="CHK_ASSESSMENT_PATIENT_TOLERATED_WELL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+<field db_field_name="CHK_INITIAL_VISITE"       pdf_field_index="23"  pdf_field_name="CHK_INITIAL_VISITE"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+<field db_field_name="CHK_TREATMENT_THERAPEUTIC_MASSAGE"       pdf_field_index="24"  pdf_field_name="CHK_TREATMENT_THERAPEUTIC_MASSAGE"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+<field db_field_name="CHK_PT_EVAL"       pdf_field_index="25"  pdf_field_name="CHK_PT_EVAL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+<field db_field_name="CHK_TREATMENT_MYOFASCIAL_RELEASE"       pdf_field_index="26"  pdf_field_name="CHK_TREATMENT_MYOFASCIAL_RELEASE"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+<field db_field_name="TXT_PROVIDER_FAX"       pdf_field_index="27"  pdf_field_name="TXT_PROVIDER_FAX"   if_blank=" "/>
+<field db_field_name="TXT_PROVIDER_PHONE"       pdf_field_index="28"  pdf_field_name="TXT_PROVIDER_PHONE"   if_blank=" "/>
+<field db_field_name="CHK_REMOVAL_OF_DEVITALIZED_TISSUES"       pdf_field_index="29"  pdf_field_name="CHK_REMOVAL_OF_DEVITALIZED_TISSUES"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+<field db_field_name="TXT_DOA"       pdf_field_index="30"  pdf_field_name="TXT_DOA"   if_blank=" "/>
+<field db_field_name="CHK_TREATMENT_ULTRA_SOUND"       pdf_field_index="31"  pdf_field_name="CHK_TREATMENT_ULTRA_SOUND"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+<field db_field_name="CHK_TREATMENT_ELECTRICAL_MUSCLE_STIMULATION"       pdf_field_index="32"  pdf_field_name="CHK_TREATMENT_ELECTRICAL_MUSCLE_STIMULATION"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+<field db_field_name="TXT_PROVIDER_CITY"       pdf_field_index="33"  pdf_field_name="TXT_PROVIDER_CITY"   if_blank=" "/>
+<field db_field_name="TXT_DOCTOR_SIGNATURE"       pdf_field_index="34"  pdf_field_name="TXT_DOCTOR_SIGNATURE"   if_blank=" " isImage="1"/>
+<field db_field_name="TXT_CASE_NO"       pdf_field_index="35"  pdf_field_name="TXT_CASE_NO"   if_blank=" "/>
+<field db_field_name="CHK_PLAN_CONTINUE_THERAPY"       pdf_field_index="36"  pdf_field_name="CHK_PLAN_CONTINUE_THERAPY"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+<field db_field_name="TXT_PRECAUTION"       pdf_field_index="37"  pdf_field_name="TXT_PRECAUTION"   if_blank=" "/>
+<field db_field_name="CHK_OBJECTIVE_PATIENT_LITTLE_IMPROVEMENT"       pdf_field_index="38"  pdf_field_name="CHK_OBJECTIVE_PATIENT_LITTLE_IMPROVEMENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+<field db_field_name="TXT_PROVIDER_ZIP"       pdf_field_index="39"  pdf_field_name="TXT_PROVIDER_ZIP"   if_blank=" "/>
+<field db_field_name="TXT_PROVIDER_NAME"       pdf_field_index="40"  pdf_field_name="TXT_PROVIDER_NAME"   if_blank=" "/>
+<field db_field_name="TXT_PROVIDER_STATE"       pdf_field_index="41"  pdf_field_name="TXT_PROVIDER_STATE"   if_blank=" "/>
+  <field db_field_name="1,2,3,4,5,6,7,8,9,10,11,12,13,14" pdf_field_index="1,32,15,21,31,26,11,24,14,25,23,6,29,5"  pdf_Textfield_index="0,0,0,0,0,0"  pdf_field_name="" if_blank="" is_check_box = "1" is_bit="3" flip_index="" pdf_proc_name="SP_CO_GET_DETAILS_EVENT_ID" pdf_flag_name="GET_TREATMENT" />
+ </document></root>

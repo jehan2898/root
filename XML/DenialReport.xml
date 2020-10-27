@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="abc">
+  <Field Name="SZ_COMPANY_ID" DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox" ControlID="txtCompanyID"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_FLAG" DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox" ControlID="txtFlag"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_BILL_NUMBER" DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox" ControlID="txtBillNo"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_CASE_NO" DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox" ControlID="txtCaseNo"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PATIENT_NAME" DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox" ControlID="txtPatientName"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_BILL_STATUS_CODE" DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox" ControlID="txtBillStatus"            Editable="True"  Visible="True" ></Field>
+  <Field Name="DT_FROM_DATE" DataType="NVarChar"    Size="10"     Null="False"   Control="TextBox" ControlID="txtFromDate"            Editable="True"  Visible="True" ></Field>
+  <Field Name="DT_TO_DATE" DataType="NVarChar"    Size="10"     Null="False"   Control="TextBox" ControlID="txtToDate"            Editable="True"  Visible="True" ></Field>
+  <Field Name="I_DAY" DataType="NVarChar"    Size="10"     Null="False"   Control="TextBox" ControlID="txtDay"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_DENIAL" DataType="NVarChar"    Size="100"     Null="False"   Control="TextBox" ControlID="txtDenial"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_DOCTOR" DataType="NVarChar"    Size="100"     Null="False"   Control="TextBox" ControlID="txtDoctor"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_LOCATION" DataType="NVarChar"    Size="100"     Null="False"   Control="TextBox" ControlID="txtLocation"            Editable="True"  Visible="True" ></Field>
+  <Field Name="DT_DENIAL_CREATED_DATE_FROM" DataType="NVarChar"    Size="100"     Null="False"   Control="TextBox" ControlID="txtDenialFromdt"            Editable="True"  Visible="True" ></Field>
+  <Field Name="DT_DENIAL_CREATED_DATE_TO" DataType="NVarChar"    Size="100"     Null="False"   Control="TextBox" ControlID="txtDenialTodt"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PAID" DataType="NVarChar"    Size="100"     Null="False"   Control="TextBox" ControlID="txtPaidUnPaid"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_CASE_TPYE"   DataType="NVarChar"       Size="50"   Null="False" Control="TextBox" ControlID="txtCaseType" Editable="True"  Visible="True" ></Field>
+  <StoreProcedure name="proc_denial_report"></StoreProcedure>
+  <ListControl name="grdvDenial"></ListControl>
+</Table>
+

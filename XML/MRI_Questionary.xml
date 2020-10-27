@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_MRI_QUESTIONARY">
+  <Field Name="I_EVENT_ID" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="" Editable="False" Visible="False" />
+  
+  <Field Name="SZ_NAME" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_PATIENT_NAME" Editable="True" Visible="True" />
+  <Field Name="DT_DOB" DataType="DateTime" Size="" Null="False" Control="TextBox" ControlID="TXT_DATE_OF_BIRTH" Editable="True" Visible="True" />
+  <Field Name="SZ_SEX" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_SEX" Editable="True" Visible="True" />
+
+  <Field Name="I_QUES1" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_QUES1" Editable="True" Visible="True" />
+  <Field Name="I_QUES2" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_QUES2" Editable="True" Visible="True" />
+  <Field Name="I_QUES3" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_QUES3" Editable="True" Visible="True" />
+  <Field Name="I_QUES4" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_QUES4" Editable="True" Visible="True" />
+  <Field Name="I_QUES5" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_QUES5" Editable="True" Visible="True" />
+  <Field Name="I_QUES6" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_QUES6" Editable="True" Visible="True" />
+  <Field Name="I_QUES7" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_QUES7" Editable="True" Visible="True" />
+  <Field Name="I_QUES8" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_QUES8" Editable="True" Visible="True" />
+  <Field Name="I_QUES9" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_QUES9" Editable="True" Visible="True" />
+  <Field Name="I_QUES10" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_QUES10" Editable="True" Visible="True" />
+  <Field Name="I_QUES11" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_QUES11" Editable="True" Visible="True" />
+  <Field Name="I_QUES12" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_QUES12" Editable="True" Visible="True" />
+  <Field Name="I_QUES13" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_QUES13" Editable="True" Visible="True" />
+  <Field Name="I_QUES14" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_QUES14" Editable="True" Visible="True" />
+  <Field Name="I_QUES15" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_QUES15" Editable="True" Visible="True" />
+
+  <Field Name="SZ_LIST" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_LIST" Editable="True" Visible="True" />
+  
+  <Field Name="I_QUES16" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_QUES16" Editable="True" Visible="True" />
+  <Field Name="I_QUES17" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_QUES17" Editable="True" Visible="True" />
+  <Field Name="I_QUES18" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_QUES18" Editable="True" Visible="True" />
+  <Field Name="I_QUES19" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_QUES19" Editable="True" Visible="True" />
+  <Field Name="I_QUES20" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_QUES20" Editable="True" Visible="True" />
+  <Field Name="I_QUES21" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_QUES21" Editable="True" Visible="True" />
+
+  <Field Name="DT_CURRENT_DATE" DataType="DateTime" Size="" Null="False" Control="TextBox" ControlID="TXT_CURRENT_DATE" Editable="True" Visible="True" />
+  <Field Name="SZ_TECHNICIAN" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_TECHNICIAN" Editable="True" Visible="True" />
+
+
+  <Field Name="ID" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_EVENT_ID" Editable="True" Visible="True" />
+  <StoreProcedure name="SP_INSERT_MRI_QUESTIONARY"></StoreProcedure>
+  
+</Table>

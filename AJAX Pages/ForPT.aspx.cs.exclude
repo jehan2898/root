@@ -1,0 +1,244 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using System.IO;
+using System.Data.SqlClient;
+using iTextSharp;
+using iTextSharp.text.html;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using mbs.LienBills;
+
+public partial class AJAX_Pages_ForPT : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        MemoryStream m = new MemoryStream();
+        iTextSharp.text.Document document = new iTextSharp.text.Document(PageSize.A4, 36, 36, 20, 36);
+        PdfWriter writer = PdfWriter.GetInstance(document, m);
+        document.Open();
+        #region heading table
+        float[] width ={ 1f, 2f, 1f, 2f, .5f, 1f };
+        PdfPTable heading = new PdfPTable(width);
+        heading.TotalWidth = document.PageSize.Width - document.LeftMargin - document.RightMargin;
+        heading.DefaultCell.Border = Rectangle.NO_BORDER;
+        heading.DefaultCell.HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER;
+        heading.DefaultCell.VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE;
+        heading.DefaultCell.Colspan = 6;
+        heading.AddCell(new Phrase("PT NOTES", iTextSharp.text.FontFactory.GetFont("Arial", 12, Font.BOLD, iTextSharp.text.Color.BLACK)));
+        // heading.AddCell(new Phrase(companyaddress, iTextSharp.text.FontFactory.GetFont("Arial", 6, iTextSharp.text.Color.BLACK)));
+        heading.AddCell(new Phrase(""));
+        heading.DefaultCell.Colspan = 1;
+        heading.DefaultCell.HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT;
+        heading.DefaultCell.VerticalAlignment = iTextSharp.text.Element.ALIGN_BOTTOM;
+
+        heading.AddCell(new Phrase("Patient Name", iTextSharp.text.FontFactory.GetFont("Arial", 8, iTextSharp.text.Color.BLACK)));
+        heading.AddCell(new Phrase(ds1.Tables[0].Rows[0]["SZ_PATIENT_NAME"].ToString(), iTextSharp.text.FontFactory.GetFont("Arial", 8, Font.BOLD, iTextSharp.text.Color.BLACK)));
+
+        heading.AddCell(new Phrase("Case #", iTextSharp.text.FontFactory.GetFont("Arial", 8, iTextSharp.text.Color.BLACK)));
+        heading.AddCell(new Phrase(ds1.Tables[0].Rows[0]["SZ_CASE_NO"].ToString(), iTextSharp.text.FontFactory.GetFont("Arial", 8, Font.BOLD, iTextSharp.text.Color.BLACK)));
+        heading.DefaultCell.Colspan = 1;
+
+        heading.AddCell(new Phrase("Date of Accident", iTextSharp.text.FontFactory.GetFont("Arial", 8, iTextSharp.text.Color.BLACK)));
+        heading.AddCell(new Phrase(ds1.Tables[0].Rows[0]["DT_DATE_OF_ACCIDENT"].ToString(), iTextSharp.text.FontFactory.GetFont("Arial", 8, Font.BOLD, iTextSharp.text.Color.BLACK)));
+
+        heading.AddCell(new Phrase("Insurance Company", iTextSharp.text.FontFactory.GetFont("Arial", 8, iTextSharp.text.Color.BLACK)));
+        heading.AddCell(new Phrase(ds1.Tables[0].Rows[0]["SZ_INSURANCE_COMPANY"].ToString(), iTextSharp.text.FontFactory.GetFont("Arial", 8, Font.BOLD, iTextSharp.text.Color.BLACK)));
+        heading.DefaultCell.Colspan = 1;
+
+        heading.AddCell(new Phrase("Claim Number", iTextSharp.text.FontFactory.GetFont("Arial", 8, iTextSharp.text.Color.BLACK)));
+        heading.AddCell(new Phrase(ds1.Tables[0].Rows[0]["SZ_CLAIM_NO"].ToString(), iTextSharp.text.FontFactory.GetFont("Arial", 8, Font.BOLD, iTextSharp.text.Color.BLACK)));
+
+        heading.AddCell(new Phrase("Date", iTextSharp.text.FontFactory.GetFont("Arial", 8, iTextSharp.text.Color.BLACK)));
+        heading.AddCell(new Phrase(ds1.Tables[0].Rows[0]["DT_DATE"].ToString(), iTextSharp.text.FontFactory.GetFont("Arial", 8, Font.BOLD, iTextSharp.text.Color.BLACK)));
+        heading.DefaultCell.Colspan = 1;
+
+        heading.AddCell(new Phrase("Patient Complaints", iTextSharp.text.FontFactory.GetFont("Arial", 8, iTextSharp.text.Color.BLACK)));
+        heading.AddCell(new Phrase(ds1.Tables[0].Rows[0]["SZ_COMPLAINTS"].ToString(), iTextSharp.text.FontFactory.GetFont("Arial", 8, Font.BOLD, iTextSharp.text.Color.BLACK)));
+
+        heading.AddCell(new Phrase("Precautions", iTextSharp.text.FontFactory.GetFont("Arial", 8, iTextSharp.text.Color.BLACK)));
+        heading.AddCell(new Phrase(ds1.Tables[0].Rows[0]["SZ_PRECAUTIONS"].ToString(), iTextSharp.text.FontFactory.GetFont("Arial", 8, Font.BOLD, iTextSharp.text.Color.BLACK)));
+        heading.DefaultCell.Colspan = 1;
+
+        heading.DefaultCell.Colspan = 1;
+        heading.AddCell(new Phrase("Last Name", iTextSharp.text.FontFactory.GetFont("Arial", 8, iTextSharp.text.Color.BLACK)));
+        heading.AddCell(new Phrase(ds.Tables[0].Rows[0]["Patient_Last_Name"].ToString(), iTextSharp.text.FontFactory.GetFont("Arial", 8, Font.BOLD, iTextSharp.text.Color.BLACK)));
+        heading.AddCell(new Phrase("First Name", iTextSharp.text.FontFactory.GetFont("Arial", 8, iTextSharp.text.Color.BLACK)));
+        heading.AddCell(new Phrase(ds.Tables[0].Rows[0]["Patient_First_Name"].ToString(), iTextSharp.text.FontFactory.GetFont("Arial", 8, Font.BOLD, iTextSharp.text.Color.BLACK)));
+        heading.AddCell(new Phrase("DOA", iTextSharp.text.FontFactory.GetFont("Arial", 8, iTextSharp.text.Color.BLACK)));
+        heading.DefaultCell.HorizontalAlignment = iTextSharp.text.Element.ALIGN_RIGHT;
+        heading.AddCell(new Phrase(Convert.ToDateTime(ds.Tables[0].Rows[0]["Accident_Date"]).ToString("MM/dd/yyyy"), iTextSharp.text.FontFactory.GetFont("Arial", 8, Font.BOLD, iTextSharp.text.Color.BLACK)));
+        heading.WriteSelectedRows(0, -1, document.LeftMargin, document.PageSize.Height - document.TopMargin, writer.DirectContent);
+        #endregion
+
+        Boolean check = true;
+        int count = 0;
+        while (check)
+        {
+            if (datatable.TotalHeight > document.PageSize.Height - document.TopMargin - document.BottomMargin - 50)
+            {
+                datatable.WriteSelectedRows(0, -1, document.LeftMargin, document.PageSize.Height - document.TopMargin - heading.TotalHeight - 1, writer.DirectContent);
+                document.NewPage();
+                heading.WriteSelectedRows(0, -1, document.LeftMargin, document.PageSize.Height - document.TopMargin, writer.DirectContent);
+                datatable = new PdfPTable(width);
+                datatable.TotalWidth = document.PageSize.Width - document.LeftMargin - document.RightMargin;
+                heading.DefaultCell.HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER;
+                heading.DefaultCell.VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE;
+                datatable.AddCell(new Phrase("Treatment", iTextSharp.text.FontFactory.GetFont("Arial", 8, iTextSharp.text.Color.BLACK)));
+            }
+            datatable.AddCell(new Phrase(((++count).ToString()), iTextSharp.text.FontFactory.GetFont("Arial", 8, iTextSharp.text.Color.BLACK)));
+            datatable.AddCell(new Phrase(Convert.ToDateTime(ds.Tables[0].Rows[i]["Visit_Date"]).ToString("MM/dd/yyyy"), iTextSharp.text.FontFactory.GetFont("Arial", 8, iTextSharp.text.Color.BLACK)));
+            //Create Table For Showing Procedure Codes, Doctor Notes, Complaints
+            float[] outertablewidth ={ 3f, 2f, 2f };
+            PdfPTable outertable = new PdfPTable(outertablewidth);
+            outertable.TotalWidth = datatable.TotalWidth - 4f;
+            outertable.DefaultCell.Border = Rectangle.NO_BORDER;
+            //Add Procedure Codes
+            PdfPTable innertable1 = new PdfPTable(3);
+            innertable1.DefaultCell.Border = Rectangle.NO_BORDER;
+            innertable1.DefaultCell.PaddingBottom = 3f;
+            innertable1.DefaultCell.PaddingLeft = 3f;
+            innertable1.DefaultCell.PaddingRight = 3f;
+            innertable1.DefaultCell.PaddingTop = 3f;
+            innertable1.DefaultCell.HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER;
+            innertable1.DefaultCell.VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE;
+            int u = i;
+            int z = 0;
+            PdfPTable innertable11 = null;
+            char no = Convert.ToChar(82);
+            string path = Server.MapPath("../Images/Check+Box.gif");
+            iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(path);
+            while (ds.Tables[0].Rows[i]["EventID"].ToString() == ds.Tables[0].Rows[u]["EventID"].ToString())
+            {
+                if (ds.Tables[0].Rows[u]["Code"].ToString() == "")
+                    innertable1.AddCell(new Phrase(""));
+                else
+                {
+                    float[] innertable11width ={ 1f, 2f };
+                    innertable11 = new PdfPTable(innertable11width);
+                    innertable11.DefaultCell.Border = Rectangle.NO_BORDER;
+                    img.ScaleAbsolute(10f, 10f);
+                    PdfPCell cell1 = new PdfPCell(img);
+                    cell1.Border = Rectangle.NO_BORDER;
+                    cell1.HorizontalAlignment = Element.ALIGN_CENTER;
+                    cell1.VerticalAlignment = Element.ALIGN_BOTTOM;
+                    cell1.FixedHeight = 12f;
+                    innertable11.AddCell(cell1);
+                    innertable11.AddCell(new Phrase(ds.Tables[0].Rows[u]["Code"].ToString(), iTextSharp.text.FontFactory.GetFont("Arial", 8, iTextSharp.text.Color.BLACK)));
+                    innertable1.AddCell(innertable11);
+                }
+                z++;
+                if (z == 3)
+                    z = 0;
+                if (u == ds.Tables[0].Rows.Count - 1)
+                {
+                    check = false;
+                    break;
+                }
+                u++;
+            }
+
+            if (z != 0)
+            {
+                while (z != 3)
+                {
+                    innertable1.AddCell(new Phrase(""));
+                    z++;
+                }
+            }
+            outertable.AddCell(innertable1);
+            //Add Doctor's Notes
+            innertable1 = new PdfPTable(1);
+            innertable1.DefaultCell.Border = Rectangle.NO_BORDER;
+            innertable1.DefaultCell.PaddingBottom = 3f;
+            innertable1.DefaultCell.PaddingLeft = 3f;
+            innertable1.DefaultCell.PaddingRight = 3f;
+            innertable1.DefaultCell.PaddingTop = 3f;
+            innertable1.DefaultCell.HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT;
+            innertable1.DefaultCell.VerticalAlignment = iTextSharp.text.Element.ALIGN_TOP;
+            innertable1.AddCell(new Phrase("DOCTOR NOTES:-", iTextSharp.text.FontFactory.GetFont("Arial", 8, iTextSharp.text.Font.UNDERLINE, iTextSharp.text.Color.BLACK)));
+            innertable1.AddCell(new Phrase(ds.Tables[0].Rows[i]["DOCTOR_NOTE"].ToString(), iTextSharp.text.FontFactory.GetFont("Arial", 8, iTextSharp.text.Color.BLACK)));
+            outertable.AddCell(innertable1);
+            //Add Complaints
+            innertable1 = new PdfPTable(1);
+            innertable1.DefaultCell.Border = Rectangle.NO_BORDER;
+            innertable1.DefaultCell.PaddingBottom = 3f;
+            innertable1.DefaultCell.PaddingLeft = 3f;
+            innertable1.DefaultCell.PaddingRight = 3f;
+            innertable1.DefaultCell.PaddingTop = 3f;
+            innertable1.DefaultCell.HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT;
+            innertable1.DefaultCell.VerticalAlignment = iTextSharp.text.Element.ALIGN_TOP;
+            innertable1.AddCell(new Phrase("Complaints:-", iTextSharp.text.FontFactory.GetFont("Arial", 8, iTextSharp.text.Font.UNDERLINE, iTextSharp.text.Color.BLACK)));
+            innertable1.AddCell(new Phrase(ds.Tables[0].Rows[i]["Complaints"].ToString(), iTextSharp.text.FontFactory.GetFont("Arial", 8, iTextSharp.text.Color.BLACK)));
+            outertable.AddCell(innertable1);
+
+            outertable.DefaultCell.Colspan = 3;
+            outertable.AddCell(new Phrase(""));
+            outertable.AddCell(new Phrase(""));
+            outertable.AddCell(new Phrase(""));
+            outertable.AddCell(new Phrase(""));
+            width = new float[] { 1f, 1.5f, 1f, 1.5f };
+            PdfPTable innertable2 = new PdfPTable(width);
+            innertable2.DefaultCell.PaddingLeft = 3f;
+            innertable2.DefaultCell.Border = Rectangle.NO_BORDER;
+            innertable2.DefaultCell.HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT;
+            innertable2.DefaultCell.VerticalAlignment = iTextSharp.text.Element.ALIGN_BOTTOM;
+            innertable2.AddCell(new Phrase("Patient's Signature", iTextSharp.text.FontFactory.GetFont("Arial", 8, iTextSharp.text.Color.BLACK)));
+            innertable2.DefaultCell.Border = Rectangle.BOTTOM_BORDER;
+            //patient's signature img start
+            try
+            {
+                iTextSharp.text.Image patientim = iTextSharp.text.Image.GetInstance(ds.Tables[0].Rows[u]["Patient_Sign"].ToString().Replace("/", "\\"));
+                patientim.ScaleAbsoluteHeight(30);
+                patientim.ScaleAbsoluteWidth(50);
+                PdfPCell imagecell1 = new PdfPCell(patientim);
+                imagecell1.HorizontalAlignment = Element.ALIGN_LEFT;
+                imagecell1.Border = Rectangle.BOTTOM_BORDER;
+                imagecell1.PaddingBottom = 1f;
+                innertable2.AddCell(imagecell1);
+            }
+            catch
+            {
+                innertable2.AddCell(new Phrase(""));
+            }
+            //end
+            innertable2.DefaultCell.Border = Rectangle.NO_BORDER;
+            innertable2.AddCell(new Phrase("Provider's Signature", iTextSharp.text.FontFactory.GetFont("Arial", 8, iTextSharp.text.Color.BLACK)));
+            innertable2.DefaultCell.Border = Rectangle.BOTTOM_BORDER;
+            //provider's signature img start
+            try
+            {
+                iTextSharp.text.Image providerim = iTextSharp.text.Image.GetInstance(ds.Tables[0].Rows[u]["Doctor_Sign"].ToString().Replace("/", "\\"));
+                providerim.ScaleAbsoluteHeight(30);
+                providerim.ScaleAbsoluteWidth(50);
+                PdfPCell imagecell2 = new PdfPCell(providerim);
+                imagecell2.HorizontalAlignment = Element.ALIGN_LEFT;
+                imagecell2.Border = Rectangle.BOTTOM_BORDER;
+                imagecell2.PaddingBottom = 1f;
+                innertable2.AddCell(imagecell2);
+            }
+            catch
+            {
+                innertable2.AddCell(new Phrase(""));
+            }
+            innertable2.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER;
+            innertable2.DefaultCell.Border = Rectangle.NO_BORDER;
+            //end
+            innertable2.AddCell(new Phrase(""));
+            innertable2.AddCell(new Phrase(""));
+            innertable2.DefaultCell.Colspan = 2;
+            innertable2.DefaultCell.HorizontalAlignment = Element.ALIGN_LEFT;
+            innertable2.AddCell(new Phrase(officeaddress, iTextSharp.text.FontFactory.GetFont("Arial", 6, iTextSharp.text.Color.BLACK)));
+            outertable.AddCell(innertable2);
+            datatable.AddCell(outertable);
+            i = u;
+        }
+    }
+}

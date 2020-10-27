@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="abc">
+  <Field Name="SZ_COMPANY_ID" DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox" ControlID="txtCompanyID"            Editable="True"  Visible="True" ></Field>
+  <Field Name="I_WORK_DAY" DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox" ControlID="txtWorkDay"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_SPECIALITY" DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox" ControlID="txtSpeciality"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_CASE_STATUS" DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox" ControlID="txtStatus"            Editable="True"  Visible="True" ></Field>
+<StoreProcedure name="SP_GET_SPECIALITY_WORKDAYS"></StoreProcedure>
+  <ListControl name="grdWorkDayList"></ListControl>
+</Table>
+

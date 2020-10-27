@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_PLAN_OF_CARE_NEW">
+  
+  <Field Name="I_PLAN_OF_CARE_ID"                      DataType="NVarChar"   Size="20"     Null="False"   Control="TextBox"        ControlID=""                                Editable="False" Visible="False"></Field>
+  <Field Name="SZ_PROPOSED_TREATEMENT"                  DataType="NVarChar"   Size="250"    Null="False"   Control="TextBox"        ControlID="txtProposedWorkTreatment"        Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_MEDICATIONS_PRESCRIBED"               DataType="NVarChar"   Size="200"     Null="False"   Control="TextBox"        ControlID="txtMedicationsPrescribe"         Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_MEDICATIONS_ADVISED"                  DataType="NVarChar"   Size="200"     Null="False"   Control="TextBox"        ControlID="txtMedicationAdvised"            Editable="True"  Visible="True" ></Field>
+  <Field Name="BT_MEDICATION_RESTRICTIONS"              DataType="Bit"        Size=""       Null="False"   Control="RadioButtonList" ControlID="rdlstMedicationRestrictions"    Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_MEDICATION_RESTRICTIONS_DESCRIPTION"  DataType="NVarChar"   Size="300"    Null="False"   Control="TextBox"        ControlID="txtMedicationRestrictions"       Editable="True"  Visible="True" ></Field>
+
+  <Field Name="BT_IS_DIAGNOSTIC_REFERRALS_REQUIRED"     DataType="Int"        Size=""       Null="False"   Control="RadioButtonList"   ControlID="rdlstPatientNeedDiagnosisTest"  Editable="True"  Visible="True" ></Field>
+  <Field Name="BT_IS_ADHERE_NEWYORK_TREATMENT"          DataType="Int"        Size=""       Null="False"   Control="RadioButtonList"   ControlID="rdlstTreatmentGuidelines"       Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_APPOINTMENT"                          DataType="NVarChar"   Size="50"     Null="False"   Control="TextBox"        ControlID="txtPatientAppointment"           Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_APPOINTMENT_MONTH"                    DataType="Int"        Size=""       Null="False"   Control="RadioButtonList"   ControlID="rdlstPatientFollowUpAppoint"    Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_ADHERE_NEWYORK_TREATMENT_DESCRIPTION" DataType="NVarChar"   Size="50"     Null="False"   Control="TextBox"        ControlID="txtTreatmentGuidelines"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PATIENT_ID"                           DataType="NVarChar"   Size="20"     Null="False"   Control="TextBox"        ControlID="txtPatientID"                    Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_COMPANY_ID"                           DataType="NVarChar"   Size="20"     Null="False"   Control="TextBox"        ControlID="txtCompanyID"                    Editable="True"  Visible="True" ></Field>
+
+
+  <Field Name="SZ_PATIENT_FIRST_NAME"  DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"        ControlID="txtMediPatientFirstName"     Editable="True"  Visible="True" ></Field>
+  <Field Name="MI"                     DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"        ControlID="txtMediPatientMiddleName"    Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PATIENT_LAST_NAME"   DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"        ControlID="txtMediPatientLastName"      Editable="True"  Visible="True" ></Field>
+  <Field Name="DT_INJURY"              DataType="DateTime"    Size=""       Null="True"   Control="TextBox"        ControlID="txtDateOfInjury"              Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_BILL_NUMBER"                           DataType="NVarChar"   Size="20"     Null="False"   Control="TextBox"        ControlID="txtBillNumber"                    Editable="True"  Visible="True" ></Field>
+  <StoreProcedure name="SP_MST_PLAN_OF_CARE_NEW"></StoreProcedure>
+
+</Table>

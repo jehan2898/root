@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_PROVIDER">
+  <Field Name="SZ_PROVIDER_ID"      DataType="NVarChar"    Size="20"     Null="False"  Control="TextBox"                ControlID=""                      Editable="False" Visible="False"></Field>
+  <Field Name="SZ_PROVIDER_NAME"    DataType="NVarChar"    Size="50"     Null="False"  Control="TextBox"                ControlID="txtProviderName"       Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PROVIDER_TYPE"    DataType="NVarChar"    Size="20"     Null="True"   Control="TextBox"                 ControlID="txtProviderType"    Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_COMPANY_ID"       DataType="NVarChar"    Size="20"     Null="False"  Control="TextBox"                ControlID="txtCompanyID"          Editable="True"  Visible="True" ></Field>
+
+
+  <Field Name="SZ_PROVIDER_LOCAL_ADDRESS"    DataType="NVarChar"    Size="100"      Null="True"   Control="TextBox"                 ControlID="txtProviderLocalAddress"    Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PROVIDER_LOCAL_CITY"       DataType="NVarChar"    Size="20"       Null="True"   Control="TextBox"                 ControlID="txtProviderLocalCity"    Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PROVIDER_LOCAL_STATE"      DataType="NVarChar"    Size="20"       Null="True"   Control="TextBox"                 ControlID="txtProviderLocalState"    Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PROVIDER_LOCAL_ZIP"        DataType="NVarChar"    Size="10"       Null="True"   Control="TextBox"                 ControlID="txtProviderLocalZip"    Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PROVIDER_CONTACT"          DataType="NVarChar"    Size="100"      Null="True"   Control="TextBox"                 ControlID="txtProviderContact"    Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PROVIDER_PERM_ADDRESS"     DataType="NVarChar"    Size="100"      Null="True"   Control="TextBox"                 ControlID="txtProviderPermAddress"    Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PROVIDER_PERM_CITY"        DataType="NVarChar"    Size="20"       Null="True"   Control="TextBox"                 ControlID="txtProviderPermCity"    Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PROVIDER_PERM_STATE"       DataType="NVarChar"    Size="20"       Null="True"   Control="TextBox"                 ControlID="txtProviderPermState"    Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PROVIDER_PERM_ZIP"         DataType="NVarChar"    Size="50"       Null="True"   Control="TextBox"                 ControlID="txtProviderPermZip"    Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PROVIDER_PERM_PHONE"       DataType="NVarChar"    Size="100"      Null="True"   Control="TextBox"                 ControlID="txtProviderPermPhone"    Editable="True"  Visible="True" ></Field>
+
+  <StoreProcedure name="SP_MST_PROVIDER"></StoreProcedure>
+  
+  <ListControl name="grdProvider"></ListControl>
+</Table>
+
+
+
+

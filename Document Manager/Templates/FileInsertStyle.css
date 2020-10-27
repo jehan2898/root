@@ -1,0 +1,28 @@
+BODY
+{
+	font-size: 9pt;
+	margin: 0px;
+	font-family: Verdana;
+}
+.Selected
+{
+	font-weight: bold;
+	font-size: 9pt;
+	color: #ffffff;
+	font-family: Verdana;
+	background-color: #000099;
+}
+
+.NonSelected
+{
+	font-size:9pt;
+	color: #000000;
+	font-family: Verdana;
+	background-color: #ffffff;
+}
+TD
+{
+	font-size: 9pt;
+	font-family: Verdana;
+
+}

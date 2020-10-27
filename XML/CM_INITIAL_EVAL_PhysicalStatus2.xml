@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_INITIAL_EXAMINATION">
+  <Field Name="I_EVENT_ID" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtEventID" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_KNEE_FLEXION_PATIENT_ROM" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="TXT_KNEE_FLEXION_PATIENT_ROM" Editable="True" Visible="True"></Field>
+  <Field Name="BT_KNEE_FLEXION_NORMAL" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_KNEE_FLEXION_NORMAL" Editable="True" Visible="True"></Field>
+  <Field Name="BT_KNEE_FLEXION_DULL" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_KNEE_FLEXION_DULL" Editable="True" Visible="True"></Field>
+  <Field Name="BT_KNEE_FLEXION_SHARP" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_KNEE_FLEXION_SHARP" Editable="True" Visible="True"></Field>
+  <Field Name="BT_KNEE_FLEXION_SPASM" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_KNEE_FLEXION_SPASM" Editable="True" Visible="True"></Field>
+  <Field Name="BT_KNEE_FLEXION_INFLAME" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_KNEE_FLEXION_INFLAME" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_KNEE_EXTENSION_PATIENT_ROM" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_KNEE_EXTENSION_PATIENT_ROM" Editable="True" Visible="True"></Field>
+  <Field Name="BT_KNEE_EXTENSION_NORMAL" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_KNEE_EXTENSION_NORMAL" Editable="True" Visible="True"></Field>
+  <Field Name="BT_KNEE_EXTENSION_DULL" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_KNEE_EXTENSION_DULL" Editable="True" Visible="True"></Field>
+  <Field Name="BT_KNEE_EXTENSION_SHARP" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_KNEE_EXTENSION_SHARP" Editable="True" Visible="True"></Field>
+  <Field Name="BT_KNEE_EXTENSION_SPASM" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_KNEE_EXTENSION_SPASM" Editable="True" Visible="True"></Field>
+  <Field Name="BT_KNEE_EXTENSION_INFLAME" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_KNEE_EXTENSION_INFLAME" Editable="True" Visible="True"></Field>
+   <Field Name="I_KNEE_POINT_TENDERNESS" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtRDO_KNEE_POINT_TENDERNESS" Editable="True" Visible="True"></Field>
+  <Field Name="I_KNEE_CREPITUS" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtRDO_KNEE_CREPITUS" Editable="True" Visible="True"></Field>
+  <Field Name="I_KNEE_EFFUSION" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtRDO_KNEE_EFFUSION" Editable="True" Visible="True"></Field>
+  <Field Name="I_KNEE_JOINT_LINE_PAIN" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtRDO_KNEE_JOINT_LINE_PAIN" Editable="True" Visible="True"></Field>
+  <Field Name="I_KNEE_SWELLING" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtRDO_KNEE_SWELLING" Editable="True" Visible="True"></Field>
+  <Field Name="I_VALGUS_TEST_RIGHT" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtRDO_VALGUS_TEST_RIGHT" Editable="True" Visible="True"></Field>
+  <Field Name="I_VALGUS_TEST_LEFT" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtRDO_VALGUS_TEST_LEFT" Editable="True" Visible="True"></Field>
+  <Field Name="I_VARUS_TEST_RIGHT" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtRDO_VARUS_TEST_RIGHT" Editable="True" Visible="True"></Field>
+  <Field Name="I_VARUS_TEST_LEFT" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtRDO_VARUS_TEST_LEFT" Editable="True" Visible="True"></Field>
+  <Field Name="I_MCMURRAYS_TEST_RIGHT" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtRDO_MCMURRAYS_TEST_RIGHT" Editable="True" Visible="True"></Field>
+  <Field Name="I_MCMURRAYS_TEST_LEFT" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtRDO_MCMURRAYS_TEST_LEFT" Editable="True" Visible="True"></Field>
+  <Field Name="I_ANTERIOR_DRAWER_SIGN_RIGHT" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtRDO_ANTERIOR_DRAWER_SIGN_RIGHT" Editable="True" Visible="True"></Field>
+  <Field Name="I_ANTERIOR_DRAWER_SIGN_LEFT" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtRDO_ANTERIOR_DRAWER_SIGN_LEFT" Editable="True" Visible="True"></Field>
+  <Field Name="I_POSTERIOR_DRAWER_SIGN_RIGHT" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtRDO_POSTERIOR_DRAWER_SIGN_RIGHT" Editable="True" Visible="True"></Field>
+  <Field Name="I_POSTERIOR_DRAWER_SIGN_LEFT" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtRDO_POSTERIOR_DRAWER_SIGN_LEFT" Editable="True" Visible="True"></Field>
+  <Field Name="I_PAIN_IN_UPPER_ARM" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtRDO_PAIN_IN_UPPER_ARM" Editable="True" Visible="True"></Field>
+  <Field Name="I_PAIN_IN_WRIST" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtRDO_PAIN_IN_WRIST" Editable="True" Visible="True"></Field>
+  <Field Name="I_PAIN_N_ELBOW" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtRDO_PAIN_N_ELBOW" Editable="True" Visible="True"></Field>
+  <Field Name="I_PAIN_IN_HAND" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtRDO_PAIN_IN_HAND" Editable="True" Visible="True"></Field>
+  <Field Name="I_PAIN_IN_FOREARM" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtRDO_PAIN_IN_FOREARM" Editable="True" Visible="True"></Field>
+  <Field Name="I_PAIN_AND_NEEDLESS_HAND" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtRDO_PAIN_AND_NEEDLESS_HAND" Editable="True" Visible="True"></Field>
+  <Field Name="I_PAIN_AND_NEEDLESS_ARM" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtRDO_PAIN_AND_NEEDLESS_ARM" Editable="True" Visible="True"></Field>
+  <Field Name="I_NUMBNESS_IN_HAND" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtRDO_NUMBNESS_IN_HAND" Editable="True" Visible="True"></Field>
+  <Field Name="I_PAIN_AND_NEEDLESS_FOREARM" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtRDO_PAIN_AND_NEEDLESS_FOREARM" Editable="True" Visible="True"></Field>
+  <Field Name="I_NUMBNESS_IN_ARM" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtRDO_NUMBNESS_IN_ARM" Editable="True" Visible="True"></Field>
+  <Field Name="I_NUMBNESS_IN_FOREARM" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtRDO_NUMBNESS_IN_FOREARM" Editable="True" Visible="True"></Field>
+
+
+
+ 
+  <Field Name="I_FEET_ANKLE_PAIN" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtrdlFeet_Ankle_Pain" Editable="True" Visible="True"></Field>
+  <Field Name="I_FEET_SWOLLEN_ANKLE" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtrdlFeet_Swollen_Ankle" Editable="True" Visible="True"></Field>
+  <Field Name="I_FEET_FOOT_PAIN" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtrdlFeet_Foot_Pain" Editable="True" Visible="True"></Field>
+  <Field Name="I_FEET_NUMBNESS_OF_FOOT" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtrdlFeet_Numbness_Of_Foot" Editable="True" Visible="True"></Field>
+  <Field Name="I_FEET_SWOLLEN_FOOT" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtrdlFeet_Swollen_Foot" Editable="True" Visible="True"></Field>
+
+  <Field Name="BT_GAIT_NORMAL" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkGait_Normal" Editable="True" Visible="True"></Field>
+  <Field Name="BT_GAIT_SLOW" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkGait_Slow" Editable="True" Visible="True"></Field>
+  <Field Name="BT_GAIT_ANTALGIC" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkGaint_Antalgic" Editable="True" Visible="True"></Field>
+  <Field Name="BT_GAIT_FOOT_DROP" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkGaint_Foot_Drop" Editable="True" Visible="True"></Field>
+  <Field Name="BT_GAIT_HEMIPLEGIC" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkGaint_hemiplegic" Editable="True" Visible="True"></Field>
+  <StoreProcedure name="SP_MST_CM_INITIAL_EVAL_PhysicalStatus2" />
+</Table>

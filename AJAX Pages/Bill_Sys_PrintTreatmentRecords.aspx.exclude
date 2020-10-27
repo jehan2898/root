@@ -1,0 +1,22 @@
+<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterPage.master"
+    CodeFile="Bill_Sys_PrintTreatmentRecords.aspx.cs" Inherits="Bill_Sys_PrintTreatmentRecords" Title="Green Your Bills - Print Treatment Record" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+<%@ Register Assembly="ExtendedDropDownList" Namespace="ExtendedDropDownList" TagPrefix="extddl" %>
+<%@ Register Src="~/UserControl/CheckPageAutharization.ascx" TagName="CheckPageAutharization"
+    TagPrefix="CPA" %>
+<%@ Register Src="~/UserControl/WUC_QuickLinks.ascx" TagName="WUC_QuickLinks" TagPrefix="QuickLinksBox" %>
+<%@ Register Namespace="XGridView" TagPrefix="xgrid" Assembly="XGridViewControl" %>
+<%@ Register Namespace="XGridPagination" TagPrefix="gridpagination" Assembly="XGridPagination" %>
+<%@ Register Namespace="XGridSearchTextBox" TagPrefix="gridsearch" Assembly="XGridSearchTextBox" %>
+<%@ Register Namespace="CustomControls.ContextMenuScope" TagPrefix="cMenu" Assembly="XGridContextMenu" %>
+<%@ Register Namespace="XGridHyperlinkField" TagPrefix="xlink" Assembly="XGridHyperlinkField" %>
+<%@ Register Namespace="XControl" TagPrefix="XCon" Assembly="XControl" %>
+<%@ Register Src="~/UserControl/ErrorMessageControl.ascx" TagName="MessageControl"
+    TagPrefix="UserMessage" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <asp:ScriptManager 
+        ID="ScriptManager1" 
+        runat="server" 
+        AsyncPostBackTimeout="50000">
+    </asp:ScriptManager>
+</asp:Content>

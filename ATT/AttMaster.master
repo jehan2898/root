@@ -1,0 +1,64 @@
+<%@ master language="C#" AutoEventWireup="true" CodeFile="AttMaster.master.cs" inherits="ATT_AttMaster" %>
+<%@ Register Assembly="System.Web.Extensions, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
+    Namespace="System.Web.UI" TagPrefix="asp" %>
+<%@ Register Assembly="DevExpress.Web.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web" TagPrefix="dxe" %>
+<%@ Register Assembly="DevExpress.Web.ASPxScheduler.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web.ASPxScheduler.Controls" TagPrefix="dxsc" %>
+<%@ Register Assembly="DevExpress.Web.ASPxScheduler.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web.ASPxScheduler" TagPrefix="dxwschs" %>
+<%@ Register Assembly="DevExpress.Web.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web" TagPrefix="dxcp" %>
+<%@ Register Assembly="DevExpress.Web.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web" TagPrefix="dx" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server" id="masterhead">
+    <meta name="robots" content="noindex" />
+    <link rel="stylesheet" href="Css/menu.ch.ui.css" type="text/css" />
+    <%-- <link rel="stylesheet" href="CSS/Content.ui.css" type="text/css" />--%>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div style="width: 100%">
+            <table border="0" width="100%" style="border-collapse: collapse; height: 100%">
+                <tr>
+                    <td align="right" colspan="2">
+                        <asp:LinkButton ID="lnkbtnlogout" runat="server" Text="LogOut" OnClick="lnkbtnlogout_Click"></asp:LinkButton>
+                    </td>
+                </tr>
+                <%--       <tr>
+                    <td align="left" style="width: 100%; background-color: #C8C8C8" colspan="2">
+                        <dx:ASPxMenu ID="mMain" runat="server" AllowSelectItem="True" ShowPopOutImages="True">
+                            <Items>
+                                <dx:MenuItem Text="Patient List " ItemStyle-Width="100%" NavigateUrl="Bill_Sys_Att_SearchCase.aspx">
+                                </dx:MenuItem>
+                            </Items>
+                        </dx:ASPxMenu>
+                    </td>
+                </tr>--%>
+            </table>
+            <table border="0" width="100%" style="margin-left: 4px; background-color: #B1BEE0;">
+                <tr>
+                    <td align="left" style="width: 80%;">
+                        <dx:ASPxMenu ID="mMain" runat="server" AllowSelectItem="True" ShowPopOutImages="True">
+                            <Items>
+                                <dx:MenuItem Text="Patient List" ItemStyle-CssClass="menutableMenu" NavigateUrl="Bill_Sys_Att_SearchCase.aspx">
+                                </dx:MenuItem>
+                            </Items>
+                        </dx:ASPxMenu>
+                    </td>
+                </tr>
+            </table>
+            <table width="100%">
+                <tr>
+                    <td>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

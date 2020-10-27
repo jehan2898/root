@@ -1,0 +1,364 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Collections;
+using DevExpress.Web.ASPxGridView;
+
+public partial class TicketSupportReply : System.Web.UI.Page
+{
+   private Bill_Sys_BillingCompanyObject objCompany = null;
+    private Bill_Sys_UserObject objUser1 = null;
+    
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        
+        //Bill_Sys_BillingCompanyObject obj = new Bill_Sys_BillingCompanyObject();
+        //obj.SZ_COMPANY_ID = "CO00023";
+        //obj.SZ_COMPANY_NAME = "Blue Ridge Medical";
+        //Session["BILLING_COMPANY_OBJECT"] = obj;
+
+        //Bill_Sys_UserObject objUser = new Bill_Sys_UserObject();
+        //objUser.SZ_USER_NAME = "lawuser";
+        //objUser.SZ_USER_EMAIL = "lawuser@gyb.com";
+        //objUser.DomainName = "www.greenyourbills.com";
+        //Session["USER_OBJECT"] = objUser;
+
+        //objCompany = (Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"];
+       // objUser1 = (Bill_Sys_UserObject)Session["USER_OBJECT"];
+        if (!this.pUpdateTime.IsCallback)
+        {
+            //objCompany.SZ_COMPANY_ID = this.hcompanyid.Get("companyid").ToString();
+            if (validateOnPageLoad())
+            {
+                //BindTicketList();
+            }
+        }
+    }
+
+    private bool validateOnPageLoad()
+    {
+        objCompany = (Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"];
+        if (objCompany == null)
+        {
+            lblErrorMessage.Text = "session.expired";
+            lblErrorMessage.Visible = true;
+            return false;
+        }
+
+        objUser1 = (Bill_Sys_UserObject)Session["USER_OBJECT"];
+        if (objUser1 == null)
+        {
+            lblErrorMessage.Text = "session.expired";
+            lblErrorMessage.Visible = true;
+            return false;
+        }
+        return true;
+    }
+
+    private void ResetControls()
+    {
+        this.htid.Set("tid", "");
+        this.tDescription.Text = "";
+    }
+
+    private bool validateFormInput()
+    {
+        if (this.tDescription.Text.Trim().Length == 0)
+        {
+            lblErrorMessage.Text = "tickets.OnReply.validation.mandatory.failed";
+            lblErrorMessage.Visible = true;
+            return false;
+        }
+
+        try
+        {
+            if (this.htid.Get("tid").ToString().Trim().Length == 0)
+            {
+                lblErrorMessage.Text = "tickets.OnReply.validation.ticket.not.selected";
+                lblErrorMessage.Visible = true;
+                return false;
+            }
+        }
+        catch (System.Collections.Generic.KeyNotFoundException o)
+        {
+            lblErrorMessage.Text = "tickets.OnReply.validation.ticket.not.selected";
+            lblErrorMessage.Visible = true;
+            return false;
+        }
+        return true;
+    }
+
+   /* private void BindTicketList()
+    {
+        tickets.TicketDAO dao = new tickets.TicketDAO();
+        dao.CompanyID = objCompany.SZ_COMPANY_ID;
+        dao.RaisedBy = objUser1.SZ_USER_NAME;
+        tickets.SrvTickets service = new tickets.SrvTickets();
+        DataSet ds = new DataSet();
+        ds = service.GetTickets(dao);
+        this.grdticket.DataSource = ds;
+        this.grdticket.DataBind();
+    }*/
+    
+    protected void btnsearch_Click(object sender, EventArgs e)
+    {
+        tickets.SrvTickets service = new tickets.SrvTickets();
+        DataSet ds = new DataSet();
+        tickets.TicketDAO p_Ticket = new tickets.TicketDAO();
+        p_Ticket.StatusCode = cmbStatus.SelectedItem.Value.ToString();
+
+        ds = service.GetTicketsForStatus(p_Ticket);
+        grdticket.DataSource = ds;
+        grdticket.DataBind();
+    }
+   
+    protected void btnsearchnumber_Click(object sender, EventArgs e)
+    {
+        tickets.TicketDAO p_Ticket = new tickets.TicketDAO();
+        p_Ticket.TicketNumber = txtTnumber.Text;
+        DataSet ds = new DataSet();
+        tickets.SrvTickets service=new tickets.SrvTickets();
+        ds = service.SearchTicket(p_Ticket);
+        grdticket.DataSource = ds;
+        grdticket.DataBind();
+    }
+
+    protected void onUpdateTime_CallBack(object source, DevExpress.Web.ASPxClasses.CallbackEventArgsBase b)
+    {
+        tickets.TicketDAO dao = new tickets.TicketDAO();
+        dao.TicketID = Convert.ToInt64(this.htid.Get("tid").ToString());
+        dao.CompanyID = this.hcompanyid.Get("companyid").ToString();
+        BindThreads(dao);
+        pUpdateTime.Visible = true;
+    }
+
+    private void BindThreads(tickets.TicketDAO p_dao)
+    {
+        tickets.SrvTickets service = new tickets.SrvTickets();
+        rThread.DataSource = service.GetThread(p_dao);
+        rThread.DataBind();
+    }
+    protected void btnReply_Click(object sender, EventArgs e)
+    {
+
+        if (!validateFormInput())
+            return;
+
+        tickets.SrvTickets service = new tickets.SrvTickets();
+        tickets.TicketDAO dao = new tickets.TicketDAO();
+        dao.Description = tDescription.Text;
+        dao.Status = tickets.TicketStatus.SUPPORT_REPLY;
+        //objCompany.SZ_COMPANY_ID = this.hcompanyid.Get("companyid").ToString();
+        dao.CompanyID = this.hcompanyid.Get("companyid").ToString();
+        dao.TicketID = Convert.ToInt64(this.htid.Get("tid").ToString());
+
+        tickets.TicketDAO retDao = service.AddTicketThread(dao);
+        if (retDao != null)
+        {
+            try
+            {
+                int i = SendEmail(dao.TicketID);
+                lblMessage.Text = "tickets.OnNewThread.success";
+                lblMessage.Visible = true;
+                BindThreads(dao);
+                //BindTicketList();
+                ResetControls();
+                //btnReply.Enabled = false;
+            }
+            catch (Exception o)
+            {
+                lblErrorMessage.Text = "tickets.OnClose.email.failed";
+                lblErrorMessage.Visible = true;
+            }
+        }
+        else
+        {
+            lblErrorMessage.Text = "tickets.OnNewThread.failed";
+            lblErrorMessage.Visible = true;
+        }
+    }
+
+    protected void detailGrid_OnExpanded(object sender, ASPxGridViewDetailRowEventArgs e)
+    {
+        int iTicketID = Convert.ToInt32(grdticket.GetRowValues(e.VisibleIndex, "TicketID").ToString());
+        string sTicketNumber = grdticket.GetRowValues(e.VisibleIndex, "TicketNumber").ToString();
+        string sCompanyID = grdticket.GetRowValues(e.VisibleIndex, "CompanyID").ToString();
+        ASPxGridView view = (ASPxGridView)grdticket.FindDetailRowTemplateControl(e.VisibleIndex, "grdThreads");
+
+        if (view != null)
+        {
+            tickets.SrvTickets service = new tickets.SrvTickets();
+            tickets.TicketDAO dao = new tickets.TicketDAO();
+            dao.TicketID = iTicketID;
+            dao.TicketNumber = sTicketNumber;
+            dao.CompanyID = sCompanyID;
+            
+            view.DataSource = service.GetThread(dao);
+            view.DataBind();
+        }
+    }
+    
+    protected void detailGrid_DataSelect(object sender, EventArgs e)
+    {
+        Session["TicketID"] = (sender as ASPxGridView).GetMasterRowKeyValue();
+    }
+
+    private int SendEmail(long p_TicketID)
+    {
+        // fetch the ticket details before sending the email. this function receives the ticket id, loads the ticket data and uses it to send email
+
+        tickets.TicketDAO dao = new tickets.TicketDAO();
+        dao.TicketID = p_TicketID;
+        //dao.CompanyID = objCompany.SZ_COMPANY_ID;
+        dao.CompanyID = this.hcompanyid.Get("companyid").ToString();
+        
+        tickets.SrvTickets service = new tickets.SrvTickets();
+        dao = service.GetTicketForID(dao);
+
+        ArrayList toMail = new ArrayList();
+        try
+        {
+            if (dao.EmailCC != null)
+            {
+                string[] emailTo = dao.EmailCC.Split(',');
+                if (dao.EmailCC.Contains(","))
+                {
+                    emailTo = dao.EmailCC.ToString().Split(',');
+                }
+                if (emailTo.Length > 0)
+                {
+                    for (int i = 0; i < emailTo.Length; i++)
+                    {
+                        if (emailTo[i].ToString().Contains(";"))
+                        {
+                            string[] emailTo1 = dao.EmailCC.ToString().Split(';');
+                            for (int j = 0; j < emailTo1.Length; j++)
+                            {
+                                toMail.Add(emailTo1[j].ToString());
+                            }
+                        }
+                        else
+                        {
+                            toMail.Add(emailTo[i].ToString());
+                        }
+                    }
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            else
+            {
+                toMail.Add("gbtickets@procomsys.in");
+            }
+            string num = dao.TicketNumber;
+            string sz_message = tDescription.Text;
+
+            string sSubjectStatus = "";
+            if (dao.StatusCode == tickets.TicketStatusConstants.CLOSED)
+            {
+                sSubjectStatus = "[Ticket Closed ";
+            }
+            else
+            {
+                sSubjectStatus = "[Ticket Updated ";
+            }
+            dao.EmailDefault = "gbtickets@procomsys.in";
+            System.Net.Mail.MailMessage MyMailMessage = new System.Net.Mail.MailMessage("gbtickets@procomsys.in", dao.EmailDefault,
+            sSubjectStatus + " - " + num + " ] " + dao.Subject, sz_message);
+
+            if (dao.EmailCC.Trim().Length != 0)
+            {
+                MyMailMessage.CC.Add(dao.EmailCC);
+            }
+
+            MyMailMessage.CC.Add("green.your.bills.support@procomsys.in");
+
+            MyMailMessage.IsBodyHtml = false;
+            string msgBody = "Dear " + dao.RaisedBy + ", \n\nTicket number - " + dao.TicketNumber + " has been updated. The summary of the update is mentioned below.\n\n";
+
+            msgBody = msgBody + "\nTicket Reference Number: " + dao.TicketNumber + "\n";
+            msgBody = msgBody + "Account Name: " + dao.AccountName + "\n";
+            msgBody = msgBody + "Domain: " + dao.DomainName + "\n";
+            msgBody = msgBody + "Type: " + dao.TypeText + "\n";
+            msgBody = msgBody + "Status: " + dao.StatusText + "\n";
+            msgBody = msgBody + "Issue: " + dao.Subject + "\n";
+            msgBody = msgBody + "Issue Description:\n";
+            msgBody = msgBody + tDescription.Text + "\n";
+
+            msgBody = msgBody + "\nYou can view the updates made to this ticket in the View Tickets section of the website. \n";
+
+            msgBody = msgBody + "\nThank You,";
+            msgBody = msgBody + "\nGreenbills Support.\n";
+
+            MyMailMessage.Body = msgBody;
+            System.Net.NetworkCredential mailAuthentication = new
+            System.Net.NetworkCredential("gbtickets@procomsys.in", "gybsupport!@#");
+            System.Net.Mail.SmtpClient mailClient = new System.Net.Mail.SmtpClient("smtp.gmail.com", 587);
+
+            mailClient.EnableSsl = true;
+            mailClient.UseDefaultCredentials = false;
+            mailClient.Credentials = mailAuthentication;
+
+            try
+            {
+                mailClient.Send(MyMailMessage);
+            }
+            catch (Exception ex)
+            {
+                lblErrorMessage.Text = "tickets.failed.email";
+                lblErrorMessage.Visible = true;
+                return 0;
+            }
+            return 1;
+        }
+        catch (Exception ex)
+        {
+            lblErrorMessage.Text = "tickets.failed.email";
+            lblErrorMessage.Visible = true;
+            return 0;
+        }
+    }
+    protected void btnClose_Click(object sender, EventArgs e)
+    {
+        if (!validateFormInput())
+            return;
+
+        tickets.SrvTickets service = new tickets.SrvTickets();
+        tickets.TicketDAO dao = new tickets.TicketDAO();
+        dao.Description = tDescription.Text;
+        dao.Status = tickets.TicketStatus.CLOSED;
+        dao.CompanyID = objCompany.SZ_COMPANY_ID;
+        dao.TicketID = Convert.ToInt64(this.htid.Get("tid").ToString());
+
+        tickets.TicketDAO retDao = service.AddTicketThread(dao);
+
+        if (retDao != null)
+        {
+            try
+            {
+                int i = SendEmail(dao.TicketID);
+                lblMessage.Text = "tickets.OnClose.success";
+                lblMessage.Visible = true;
+                BindThreads(dao);
+                //BindTicketList();
+                ResetControls();
+                btnReply.Enabled = false;
+            }
+            catch (Exception o)
+            {
+                lblErrorMessage.Text = "tickets.OnUserReply.email.failed";
+                lblErrorMessage.Visible = true;
+            }
+        }
+        else
+        {
+            lblErrorMessage.Text = "tickets.OnNewThread.failed";
+            lblErrorMessage.Visible = true;
+        }
+    }
+}

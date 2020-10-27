@@ -1,0 +1,5 @@
+<Table Name="MST_CASE_MASTER">
+  <Field Name="SZ_COMPANY_ID"      DataType="NVarChar"    Size="50" Null="True" Control="TextBox" ControlID="txtCompanyID" Editable="True"  Visible="True" ></Field>
+  <StoreProcedure name="SP_GET_ATTORNEY_USERS"></StoreProcedure>
+  <ListControl name="grdAttornyUser"></ListControl>
+</Table>

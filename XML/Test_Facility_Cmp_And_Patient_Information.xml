@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_TEST_FACILITY_INTAKE">
+  <Field Name="I_EVENT_ID " DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtEventID" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PATIENT_NAME" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_PATIENT_NAME" Editable="True" Visible="True"></Field>
+
+  <Field Name="SZ_ACCIDENT_DATE" DataType="NVarChar" Size="50" Null="True" Control="TextBox"  ControlID="TXT_DOA" Editable="True"  Visible="True" ></Field>
+  
+  <Field Name="SZ_OFFICE_NAME" DataType="NVarChar" Size="50" Null="True" Control="TextBox"  ControlID="txtCmpName" Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_ADDRESS" DataType="NVarChar" Size="50" Null="True" Control="TextBox"  ControlID="txtAdd" Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_TEL_NO" DataType="NVarChar" Size="50" Null="True" Control="TextBox"  ControlID="txtTelNo" Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_FAX_NO" DataType="NVarChar" Size="50" Null="True" Control="TextBox"  ControlID="txtFax" Editable="True"  Visible="True" ></Field>
+
+  <StoreProcedure name="SP_TEST_FACILITY_INTAKE_INFORMATION" />
+</Table>
+

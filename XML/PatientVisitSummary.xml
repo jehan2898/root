@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_CASE_MASTER">
+  <Field Name="SZ_PATIENT_NAME"      DataType="NVarChar"    Size="20" Null="False" Control="TextBox" ControlID="txtPatientName" Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_CASE_NUMBER"      DataType="NVarChar"    Size="20" Null="False" Control="TextBox" ControlID="txtCaseNumber" Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_COMPANY_ID"      DataType="NVarChar"    Size="20" Null="False" Control="TextBox" ControlID="txtCompanyID" Editable="True"  Visible="True" ></Field>
+  <Field Name="DT_FROM_DATE"      DataType="NVarChar"    Size="20" Null="False" Control="TextBox" ControlID="txtFromDate" Editable="True"  Visible="True" ></Field>
+  <Field Name="DT_TO_DATE"      DataType="NVarChar"    Size="20" Null="False" Control="TextBox" ControlID="txtToDate" Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_CASE_TYPE"      DataType="NVarChar"    Size="20" Null="False" Control="ExtendedDropDownList" ControlID="extddlCaseType" Editable="True"  Visible="True" ></Field>
+  <Field Name="DT_FROM_DATE_OPEN"      DataType="NVarChar"    Size="20" Null="False" Control="TextBox" ControlID="txtOpenFromDate" Editable="True"  Visible="True" ></Field>
+  <Field Name="DT_TO_DATE__OPEN"      DataType="NVarChar"    Size="20" Null="False" Control="TextBox" ControlID="txtOpenToDate" Editable="True"  Visible="True" ></Field>
+  <Field Name="DT_FROM_VISIT_DATE"      DataType="NVarChar"    Size="20" Null="False" Control="TextBox" ControlID="txtVisitFromDate" Editable="True"  Visible="True" ></Field>
+  <Field Name="DT_TO_VISIT_DATE"      DataType="NVarChar"    Size="20" Null="False" Control="TextBox" ControlID="txtVisitTODate" Editable="True"  Visible="True" ></Field>
+
+
+  <StoreProcedure name="SP_PATIENT_VISIT_SUMMARY_REPORT_SEARCH"></StoreProcedure>
+  <ListControl name="grdCaseMaster"></ListControl>
+</Table>

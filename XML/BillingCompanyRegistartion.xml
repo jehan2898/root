@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_BILLING_COMPANY">
+  <Field Name="SZ_COMPANY_ID"             DataType="NVarChar"    Size="20"     Null="False"  Control="TextBox"                ControlID=""                        Editable="False" Visible="False"></Field>
+  <Field Name="SZ_COMPANY_NAME"           DataType="NVarChar"    Size="50"     Null="False"  Control="TextBox"                ControlID="txtCompanyName"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_ADDRESS_STREET"         DataType="NVarChar"    Size="100"    Null="True"   Control="TextBox"                ControlID="txtCompanyStreet"        Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_ADDRESS_CITY"           DataType="NVarChar"    Size="50"     Null="True"   Control="TextBox"                ControlID="txtCompanyCity"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_ADDRESS_ZIP"            DataType="NVarChar"    Size="10"     Null="True"   Control="TextBox"                ControlID="txtCompanyZip"           Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_ADDRESS_STATE"          DataType="NVarChar"    Size="20"     Null="True"   Control="TextBox"                ControlID="txtCompanyState"         Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_OFFICE_PHONE"           DataType="NVarChar"    Size="20"     Null="True"   Control="TextBox"                ControlID="txtCompanyPhoneNo"       Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_OFFICE_EMAIL"           DataType="NVarChar"    Size="50"     Null="True"   Control="TextBox"                ControlID="txtCompanyEmailID"       Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_CONTACT_ID"             DataType="NVarChar"    Size="50"     Null="False"  Control="TextBox"                ControlID=""                        Editable="False" Visible="False" ></Field>
+  <Field Name="SZ_CONTACT_FIRST_NAME"     DataType="NVarChar"    Size="100"    Null="False"  Control="TextBox"                ControlID="txtContFirstName"        Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_CONTACT_LAST_NAME"      DataType="NVarChar"    Size="100"    Null="False"  Control="TextBox"                ControlID="txtContLastName"         Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_ADMIN_EMAIL"            DataType="NVarChar"    Size="50"     Null="False"  Control="TextBox"                ControlID="txtContAdminEmailID"     Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_CONTACT_OFFICE_PHONE"   DataType="NVarChar"    Size="20"     Null="True"   Control="TextBox"                ControlID="txtContOfficePhone"      Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_CONTACT_OFFICE_EXTN"    DataType="NVarChar"    Size="5"      Null="True"   Control="TextBox"                ControlID="txtContOfficeExt"        Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_CONTACT_EMAIL"          DataType="NVarChar"    Size="50"     Null="True"   Control="TextBox"                ControlID="txtContEmail"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_SCHEME_ID"              DataType="NVarChar"    Size="20"     Null="True"   Control="DropDownList"   ControlID="extddlScheme"            Editable="True"  Visible="True" ></Field>
+  <Field Name="I_NO_OF_USER"              DataType="Int"         Size="20"     Null="True"   Control="TextBox"                ControlID="txtnoOfUser"             Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_LOGIN_LINK_ID"          DataType="NVarChar"    Size="50"     Null="True"   Control="TextBox"                ControlID="txtNewGUID"              Editable="True"  Visible="True" ></Field>
+  <Field Name="USER_ID"                   DataType="NVarChar"    Size="50"     Null="True"   Control="TextBox"                ControlID="txtUserName"               Editable="True"  Visible="True" ></Field>
+  <Field Name="PASSWORD"                  DataType="NVarChar"    Size="50"     Null="True"   Control="TextBox"                ControlID="txtEncryptedPassword"    Editable="True"  Visible="True" ></Field>
+  <Field Name="BT_REFERRING_FACILITY"     DataType="Int"         Size=""       Null="True"   Control="TextBox"                ControlID="txtReferringFacility"    Editable="True"  Visible="True" ></Field>
+  <Field Name="BT_LAWFIRM"                DataType="Int"         Size=""       Null="True"   Control="TextBox"                ControlID="txtLawFirm"              Editable="True"  Visible="True" ></Field>
+  <StoreProcedure name="SP_MST_BILLING_COMPANY"></StoreProcedure>
+  <ListControl name="grdBillingCompany"></ListControl>
+</Table >
+
+

@@ -1,0 +1,138 @@
+﻿Date : 31-08-2016
+History
+	-- Saurabh	- Added model class TreatingPhysician and wrote da logic.
+
+Date : 26-08-2016
+History
+	-- Saurabh	- Commented 1 line of BeginTransaction in ToAppointmentWithReferringFacility method as it was throwing exception of SQLTransaction.
+
+Date : 20-08-2016
+Version: 1.8.0.0
+
+History
+	-- Rohit	- Added MG2 form in project. 
+				  Added model,service regarding MG2 form.
+
+Date : 01-08-2016
+Version: 1.7.0.2
+
+History
+	-- Pravin	- add new property IsShowPreviousVisitByDefault on User Model and on UserMaster Save,Update
+				  add new property IsEmailVerified and IsOTPDisabled in sp_create_user procedure
+
+Date : 01-08-2016
+Version: 1.7.0.1
+
+History
+	-- Pravin	- Add new property domain name on btnSave_Click in cs file and pass it to srvUser.
+
+Date : 25-07-2016
+Version: 1.7.0.0
+
+History
+	-- Pravin	- Refactored SrvUser.Create. Added all roles (simple user,doctor, referring provider, provider in 1
+	-- function with all functionality added to users module.
+	-- Saurabh	- Added scan functionality to SrvScan for verification received, verification sent, denial
+	-- Saurabh	- Added scan functionality to SrvScan for Proof of Mailing
+	-- Pravin	- Added new property IsDisabled in SrvUser.cs for saving 0/1 to mst_users (enable/disable) user
+	-- Prashant - Added new model - ReadingPhysician
+	-- Prashant - Added new service - SrvReadingPhysician. New service methods Create, Select, Update, Delete
+	-- Prashant -  Added title field to reading doctor as required by client. Added Activate/Deactivate on reading doctor
+	
+Date : 02-07-2016
+Version: 1.6.0.0
+Deployed On: 02-07-2016
+History:
+	-- Added the new scan in required document page.
+
+Date : 27-06-2016
+Version: 1.5.0.0
+Deployed On: 27-06-2016
+History:
+	-- Added the referring office report
+
+Date:14-06-2016
+Version: 1.4.0.1
+Deployed On:
+History:
+	-- Added left join to insurance company table in query - SrvMissingProcedure.cs page
+
+Date:09-06-2016
+Version: 1.4.0.0
+Deployed On:
+History:
+	-- Added support to search missing procedures by case type and case status
+
+Date:02-06-2016
+Version: 1.3.4.0
+Deployed On:
+History:
+	-- Bug fix when there are multiple commas in a patient name, it was not showing last name of patient.
+
+Date:02-06-2016
+Version: 1.3.3.0
+Deployed On:
+History:
+	-- Added support for missing procedures on procedure codes. Modified earlier query if no insurance company is selected
+
+Date:30-05-2016
+Version: 1.3.2.0
+Deployed On: 30-05-2016
+History:
+	-- Bug fix when there are multiple commas in a patient name, it was not showing first name of patient.
+
+Date:26-05-2016
+Version: 1.3.1.0
+Deployed On:27-05-2016
+History:
+	-- Bug fix in the last release of POM.
+
+Date:26-05-2016
+Version: 1.3.0.0
+Deployed On:26-05-2016
+History:
+	-- Integrated new logic in verification print pom page from mbsda
+
+Date:26-05-2016
+Version: 1.2.3.0
+Deployed On:26-05-2016
+History:
+	-- Resolved issues of Page Headers in WC Combined and Not Combined POMs
+
+Date:25-05-2016
+Version: 1.2.2.0
+Deployed On:25-05-2016
+History:
+	-- Added Logic for WC Page breaks.
+	-- Changed logic of NOT Combined NF and WC Poms when selected all rows in a grid in SrvPOM.cs
+	-- Resolved the issues of Headers, Footers and Page breaks
+
+Date:24-05-2016
+Version: 1.2.1.0
+Deployed On:24-05-2016
+History:
+	-- Changed logic of Combined NF and WC Poms in SrvPOM.cs
+	-- Resolved the issues of Headers, Footers and Page breaks
+
+Date:21-05-2016
+Version: 1.2.0.0
+Deployed On:
+History:
+	-- Added logic for missing procedure report - Services/Patient/Report/SrvMissingProcedure.cs
+	-- Added model/carrier/type - To map the DB carrier type. Added helper methods for filling type
+
+Date:20-05-2016
+Version: 1.1.0.0
+	-- Added support for printing POM and VerificationPOM in SrvPOM.cs
+	-- Added new class SrvFileName to return pre-defined file names for specific processes
+	-- Added new class services/patient/report/SrvMissingProcedure.cs to report the missing procedure for a patient
+	-- Corrected namespace for model/Procedure and ProcedureUI class
+
+Date:28-03-2016
+Version: 1.0.1.0
+Deployed On:
+History:
+	-- Added support for scanning to denials
+	-- Logic to close scanning window by passing the name instead of index
+	-- Logic to refresh frame by passing refresh parameter as frames name
+	-- UI changes to the Bill_Sys_DenailPopup.aspx form

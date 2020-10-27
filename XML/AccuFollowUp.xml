@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_ACCU_FOLLOWUP">
+  <Field Name="I_EVENT_ID" DataType="Int" Size="" Null="" Control="TextBox"  ControlID="txtEventID" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PATIENT_LAST_NAME" DataType="NVarChar" Size="100" Null="False" Control="TextBox" ControlID="TXT_PATIENT_LAST_NAME" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PATIENT_FIRST_NAME" DataType="NVarChar" Size="100" Null="False" Control="TextBox" ControlID="TXT_PATIENT_FIRST_NAME" Editable="True" Visible="True"></Field>
+  <Field Name="DT_DOA" DataType="DateTime" Size="100" Null="False" Control="TextBox" ControlID="TXT_DOA" Editable="True" Visible="True"></Field>
+  <Field Name="DT_CURRENT_DATE" DataType="DateTime" Size="100"  Null="False" Control="TextBox" ControlID="TXT_CURRENT_DATE" Editable="True" Visible="True"></Field>
+  <Field Name="BT_TREATMENT_CODE_97810" DataType="Bit" Size=""  Null="False" Control="CheckBox" ControlID="CHK_TREATMENT_CODE_97810" Editable="True" Visible="True"></Field>
+  <Field Name="BT_TREATMENT_CODE_97813" DataType="Bit" Size=""  Null="False" Control="CheckBox" ControlID="CHK_TREATMENT_CODE_97813" Editable="True" Visible="True"></Field>
+  <Field Name="BT_TREATMENT_CODE_97811" DataType="Bit" Size=""  Null="False" Control="CheckBox" ControlID="CHK_TREATMENT_CODE_97811" Editable="True" Visible="True"></Field>
+  <Field Name="BT_TREATMENT_CODE_97814" DataType="Bit" Size=""  Null="False" Control="CheckBox" ControlID="CHK_TREATMENT_CODE_97814" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_DOCTOR_NOTE" DataType="NVarChar" Size="100" Null="False" Control="TextBox" ControlID="txtDoctorNotes" Editable="True" Visible="True"></Field>
+  <StoreProcedure name="SP_ACCU_FOLLOWUP"></StoreProcedure>
+</Table>
+
+
+

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Table name="MST_INITIAL_EXAMINATION">
+  <Field Name="I_EVENT_ID" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtEventID" Editable="True" Visible="True"/>
+  
+  <Field Name="I_CAUSE_OF_INJURY" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtRDO_CAUSE_OF_INJURY" Editable="True" Visible="True"></Field>
+  <Field Name="I_COMPLAINT_CONSISTENT" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtRDO_COMPLAINT_CONSISTENT" Editable="True" Visible="True"></Field>
+  <Field Name="I_CONSISTENT_OBJ_FIDINGS" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtRDO_CONSISTENT_OBJ_FIDINGS" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PERCENTAGE_TEMP_IMPAIRMENT" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="TXT_PERCENTAGE_TEMP_IMPAIRMENT" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_RELAVANT_DIAGNOSTIC_RESULT" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="TXT_RELAVANT_DIAGNOSTIC_RESULT" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PROGNOSIS_FOR_RECOVERY" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="TXT_PROGNOSIS_FOR_RECOVERY" Editable="True" Visible="True"></Field>
+<StoreProcedure name="SP_MST_CM_INITIAL_EVAL_DiagnosticImpresstion" />
+</Table>

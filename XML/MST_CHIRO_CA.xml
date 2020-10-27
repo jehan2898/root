@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_CHIRO_CA">
+  <Field Name="I_EVENT_ID" DataType="Int" Size="" Null="True" Control="TextBox" ControlID="txtEventID" Editable="True" Visible="True"></Field>
+  <Field Name="I_NECK" DataType="Int" Size="" Null="True" Control="DropDownList" ControlID="DRP_Neck" Editable="True" Visible="True"></Field>
+  <Field Name="I_UPPER_BACK" DataType="Int" Size="" Null="True" Control="DropDownList" ControlID="DRP_UPPER_BACK" Editable="True" Visible="True"></Field>
+  <Field Name="I_LOW_BACK" DataType="Int" Size="" Null="True" Control="DropDownList" ControlID="DRP_LOW_BACK" Editable="True" Visible="True"></Field>
+  <Field Name="I_SHOULER" DataType="Int" Size="" Null="True" Control="DropDownList" ControlID="DRP_SHOULER" Editable="True" Visible="True"></Field>
+  <Field Name="I_KNEE" DataType="Int" Size="" Null="True" Control="DropDownList" ControlID="DRP_KNEE" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_CH_NOTES" DataType="NVarChar" Size="2000" Null="True" Control="TextBox" ControlID="txt_Notes" Editable="True" Visible="True"></Field>
+  <StoreProcedure name="SP_MST_CHIRO_CA"></StoreProcedure>
+</Table>

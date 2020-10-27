@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<COLLECTION NOTES_CODE="NOT1004" NOTES_TYPE="NTY0001">
+  <CONTROL ID="txtPatientFName" Type="TextBox" Title="Patient's first name"></CONTROL>
+  <CONTROL ID="txtMI" Type="TextBox" Title="Patient's middle name"></CONTROL>
+  <CONTROL ID="txtPatientLName" Type="TextBox" Title="Patient's last name"></CONTROL>
+  <CONTROL ID="txtDateOfBirth" Type="TextBox" Title="Patient's date of birth"></CONTROL>
+  <CONTROL ID="txtSocialSecurityNumber" Type="TextBox" Title="Social security number"></CONTROL>
+  <CONTROL ID="ddlSex" Type="DropDownList" Title="Patient's gender"></CONTROL>
+  <CONTROL ID="txtPatientAddress" Type="TextBox" Title="Patient's address"></CONTROL>
+  <CONTROL ID="txtPatientCity" Type="TextBox" Title="Patient's city"></CONTROL>
+  <CONTROL ID="extddlPatientState" Type="ExtendedDropDownList" Title="Patient's State"></CONTROL>
+  <CONTROL ID="txtPatientZip" Type="TextBox" Title="Patient's Zip"></CONTROL>
+  <CONTROL ID="txtPatientPhone" Type="TextBox" Title="Patient's home phone # "></CONTROL>
+  <CONTROL ID="txtWorkPhone" Type="TextBox" Title="Patient's work phone # "></CONTROL>
+  <CONTROL ID="txtExtension" Type="TextBox" Title="Extension"></CONTROL>
+  <CONTROL ID="chkWrongPhone" Type="CheckBox" Title="Wrong phone"></CONTROL>
+  <CONTROL ID="txtPatientEmail" Type="TextBox" Title="Patient's email"></CONTROL>
+  <CONTROL ID="extddlAttorney" Type="ExtendedDropDownList" Title="Patient's attorney "></CONTROL>
+  <CONTROL ID="extddlCaseType" Type="ExtendedDropDownList" Title="Case Type"></CONTROL>
+  <CONTROL ID="chkTransportation" Type="CheckBox" Title="Transportation"></CONTROL>
+  <CONTROL ID="txtDateofAccident" Type="TextBox" Title=" Date of accident"></CONTROL>
+  <CONTROL ID="txtPlatenumber" Type="TextBox" Title="Plate number"></CONTROL>
+  <CONTROL ID="txtPolicyReport" Type="TextBox" Title="Policy report"></CONTROL>
+  <CONTROL ID="txtEmployerName" Type="TextBox" Title="Employer's name"></CONTROL>
+  <CONTROL ID="txtEmployerAddress" Type="TextBox" Title="Employer's address"></CONTROL>
+  <CONTROL ID="txtEmployerCity" Type="TextBox" Title="Employer's city"></CONTROL>
+  <CONTROL ID="txtEmployerState" Type="TextBox" Title="Employer's state"></CONTROL>
+  <CONTROL ID="txtEmployerZip" Type="TextBox" Title="Employer's zip"></CONTROL>
+  <CONTROL ID="txtEmployerPhone" Type="TextBox" Title="Employer's phone"></CONTROL>
+  <CONTROL ID="txtChartNo" Type="TextBox" Title="Chart No"></CONTROL>
+  <CONTROL ID="txtDateofFirstTreatment" Type="TextBox" Title="Date of first treatment"></CONTROL>
+  <CONTROL ID="txtPolicyHolder" Type="TextBox" Title="PolicyHolder"></CONTROL>
+  <CONTROL ID="extddlInsuranceCompany" Type="ExtendedDropDownList" Title="Insurance Company"></CONTROL>
+  <CONTROL ID="txtClaimNumber" Type="TextBox"  Title="Claim number"></CONTROL>
+  <CONTROL ID="txtPolicyNumber" Type="TextBox" Title="Policy number"></CONTROL>
+  <CONTROL ID="extddlAdjuster" Type="ExtendedDropDownList" Title="Adjuster"></CONTROL>
+  <NOTESOPERATION Name="SP_TXN_NOTES"></NOTESOPERATION>
+</COLLECTION>

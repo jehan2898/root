@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<document  procedure_name="SP_MST_HISTORY">
+  <field sz_field_name="SZ_HISTORY_ID"                          sz_field_value="" ></field>
+  <field sz_field_name="SZ_INJURY_ILLNESS_DETAIL"               sz_field_value="" ></field>
+  <field sz_field_name="SZ_INJURY_LEARN_SOURCE_ID"              sz_field_value="" ></field>
+  <field sz_field_name="SZ_INJURY_LEARN_SOURCE_DESCRIPTION"     sz_field_value="" ></field>
+  <field sz_field_name="BT_IS_ANOTHER_HEALTH_PROVIDER"          sz_field_value="" ></field>
+  <field sz_field_name="SZ_ANOTHER_HEALTH_PROVIDER_DESCRIPTION" sz_field_value="" ></field>
+  <field sz_field_name="BT_IS_PREVIOUSLY_TREATED"               sz_field_value="" ></field>
+  <field sz_field_name="DT_PREVIOUSLY_TREATED_DATE"             sz_field_value="" ></field>
+</document >
+

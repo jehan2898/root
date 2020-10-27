@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Table Name="MST_INVOICE_ITEM">
+
+  <Field Name="SZ_DESCRIPTION"       DataType="NVarChar"    Size=""       Null="False"   Control=""          ControlID=""                    Editable="True"   Visible="True"></Field>
+  <Field Name="SZ_DESCRIPTION1"      DataType="NVarChar"    Size="250"    Null="False"   Control="TextBox"   ControlID="txtItemName"         Editable="True"   Visible="True"></Field>
+  <Field Name="FLT_PRICE"            DataType="Float"       Size=""       Null="False"   Control=""          ControlID=""                    Editable="True"   Visible="True" ></Field>
+  <Field Name="FLT_PRICE1"           DataType="Float"       Size=""       Null="False"   Control="TextBox"   ControlID="txtItemPrice"        Editable="True"   Visible="True" ></Field>
+
+  <Field Name="SZ_COMPANY_ID"        DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"   ControlID="txtCompanyID"        Editable="False"  Visible="True" ></Field>
+  <Field Name="SZ_CREATED_USER_ID"   DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"   ControlID="txtCreatedUserID"    Editable="False"  Visible="True" ></Field>
+  <Field Name="DT_CREATED_DATE"      DataType="DateTime"    Size=""       Null="true"    Control="TextBox"   ControlID="txtCreatedDate"      Editable="False"  Visible="True" ></Field>
+  <Field Name="SZ_UPDATED_USER_ID"   DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"   ControlID="txtCreatedUserID"    Editable="False"  Visible="True" ></Field>
+  <Field Name="DT_UPDATED_DATE"      DataType="DateTime"    Size=""       Null="true"    Control="TextBox"   ControlID="txtCreatedDate"      Editable="False"  Visible="True" ></Field>
+  <Field Name="I_INVOICE_ITEM_ID"    DataType="Int"         Size=""       Null="False"   Control=""          ControlID=""                    Editable="False"  Visible="True" ></Field>
+  <Field Name="I_INVOICE_ITEM_ID1"   DataType="Int"         Size=""       Null="False"   Control="TextBox"   ControlID="txtInvoiceId"        Editable="False"  Visible="True" ></Field>
+
+  <StoreProcedure name="SP_MST_INVOICE_ITEM"></StoreProcedure>
+  <ListControl name="grdInvoiceItem"></ListControl>
+</Table>

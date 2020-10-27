@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<document  procedure_name="[dbo].[SP_WORKER_TEMPLATE_SPECIFIC]">
+    <field sz_field_name="BT_BOARD_AUTHORIZED" sz_field_value="22"  />
+    <field sz_field_name="BT_BOARD_AUTHORIZED" sz_field_value="22"  />
+  </document>
+</root>
+
+
+
+

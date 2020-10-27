@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<root>
+  <document type= "FUNDING_SYSTEM" description="LSC Payoff letter template" lastmodified="June 22 2009 15:35" procedure_name="SP_ACCU_FOLLOWUP_DETAIL" >
+    <!--<field db_field_name="CHK_TREATMENT_CODE_97810"       pdf_field_index="1"  pdf_field_name="CHK_TREATMENT_CODE_97810"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>-->
+    <field db_field_name="TXT_PATIENT_LAST_NAME"       pdf_field_index="2"  pdf_field_name="TXT_PATIENT_LAST_NAME"   if_blank=" "/>
+    <!--<field db_field_name="CHK_TREATMENT_CODE_97811"       pdf_field_index="3"  pdf_field_name="CHK_TREATMENT_CODE_97811"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>-->
+    <field db_field_name="IMG_PATIENT_SIGNATURE"       pdf_field_index="4"  pdf_field_name="IMG_PATIENT_SIGNATURE"   if_blank=" " isImage="1"/>
+    <field db_field_name="IMG_PROVIDER_SIGNATURE"       pdf_field_index="5"  pdf_field_name="IMG_PROVIDER_SIGNATURE"   if_blank=" " isImage="1"/>
+    <field db_field_name="TXT_CURRENT_DATE"       pdf_field_index="6"  pdf_field_name="TXT_CURRENT_DATE"   if_blank=" "/>
+    <!--<field db_field_name="CHK_TREATMENT_CODE_97813"       pdf_field_index="7"  pdf_field_name="CHK_TREATMENT_CODE_97813"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>-->
+    <field db_field_name="TXT_PATIENT_FIRST_NAME"       pdf_field_index="8"  pdf_field_name="TXT_PATIENT_FIRST_NAME"   if_blank=" "/>
+    <!--<field db_field_name="CHK_TREATMENT_CODE_97814"       pdf_field_index="9"  pdf_field_name="CHK_TREATMENT_CODE_97814"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>-->
+    <field db_field_name="TXT_DOA"       pdf_field_index="10"  pdf_field_name="TXT_DOA"   if_blank=" "/>
+    <field db_field_name="IMG_BARCODE"       pdf_field_index="11"  pdf_field_name="IMG_BARCODE"   if_blank=" " isImage="1"/>
+    <field db_field_name="201,202,203,204" pdf_field_index="1,3,7,9"  pdf_Textfield_index="0,0,0,0"  pdf_field_name="" if_blank="" is_check_box = "1" is_bit="3" flip_index="" pdf_proc_name="SP_CO_GET_DETAILS_EVENT_ID" pdf_flag_name="GET_TREATMENT" />
+
+  </document>
+</root>

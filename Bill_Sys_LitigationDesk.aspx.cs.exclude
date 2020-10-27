@@ -1,0 +1,707 @@
+/***********************************************************/
+/*Project Name         :       BILLING System
+/*File Name            :       Bill_Sys_LitigationDesk.aspx.cs
+/*Purpose              :       Dash Board open in panel
+/*Author               :       Sandeep y
+/*Date of creation     :       14 Jan 2009 
+/*Modified By (Last)   :        Prashant zope
+/*Modified By (S-Last) :        Sandeep y
+/*Modified Date        :        28 april 2010
+/************************************************************/
+
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using Componend;
+using PDFValueReplacement;
+using MergeDocumentNodes;
+using MergeTIFFANDPDF;
+using ExtendedDropDownList;
+using System.Text;
+using System.IO;
+public partial class LitigationDesk : System.Web.UI.Page
+{
+    Bill_Sys_BillingCompanyDetails_BO _obj;
+    Bill_Sys_NF3_Template objNF3Template;
+    PDFValueReplacement.PDFValueReplacement objPDFReplacement;
+
+    MergeTIFFANDPDF.MergeTIFFANDPDF  _objMergeTiffAndPDF;
+    Bill_Sys_BillTransaction_BO _billTransactionBO;
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+        if (Request.QueryString["Type"] != null)
+        {
+            hlnkShowDiv.Visible = true;
+        }
+        btnAssign.Attributes.Add("onclick", "return formValidator('aspnetForm','extddlUserLawFirm');");
+        if (Page.IsPostBack == false)
+        {
+            txtCompanyID.Text = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+            BindgrdLitigationdesk();
+            setLabels();
+            extddlUserLawFirm.Visible = true;
+        }
+        extddlUserLawFirm.Flag_ID = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+        if (((Bill_Sys_SystemObject)Session["SYSTEM_OBJECT"]).SZ_DEFAULT_LAW_FIRM != "")
+        {
+            extddlUserLawFirm.Text = ((Bill_Sys_SystemObject)Session["SYSTEM_OBJECT"]).SZ_DEFAULT_LAW_FIRM;
+        }
+        #region "check version readonly or not"
+        string app_status = ((Bill_Sys_BillingCompanyObject)Session["APPSTATUS"]).SZ_READ_ONLY.ToString();
+        if (app_status.Equals("True"))
+        {
+            Bill_Sys_ChangeVersion cv = new Bill_Sys_ChangeVersion(this.Page);
+            cv.MakeReadOnlyPage("Bill_Sys_LitigationDesk.aspx");
+        }
+        #endregion
+    }
+
+    #region " MergePDF And GetListWithPDFName"
+
+    private string lfnMergePDF(string p_szSource1, string p_szSource2, string p_szDestinationFileName)
+    {
+        try
+        {
+            CUTEFORMCOLib.CutePDFDocumentClass objMyForm = new CUTEFORMCOLib.CutePDFDocumentClass();
+            int iResult = 0;
+            string KeyForCutePDF = ConfigurationSettings.AppSettings["CutePDFSerialKey"].ToString();
+            objMyForm.initialize(KeyForCutePDF);
+
+            if (objMyForm == null)
+            {
+                
+            }
+            else
+            {
+                if (System.IO.File.Exists(p_szSource1) && System.IO.File.Exists(p_szSource2))
+                {
+                    iResult = objMyForm.mergePDF(p_szSource1, p_szSource2, p_szDestinationFileName);
+               //     iResult = objMyForm.mergePDF("D:/1.pdf", "D:/2.pdf", "D:/3.pdf");
+                }
+            }
+            if (iResult == 0)
+                return "FAIL";
+            else
+                return "SUCCESS";
+        }
+        catch (Exception ex)
+        {
+            
+            throw;
+        }
+    }
+
+    private ArrayList lfnGetListWithPDFName(ArrayList objAL, string p_szPDFFileName, string p_szDiagPosKey,string p_szAddDiagNextPage,int p_iDiagCount)
+    {
+        try
+        {
+            for (int i=0; i < objAL.Count - 1 ; i++)
+            {
+                if (p_szDiagPosKey == Bill_Sys_Constant.constAFTER_AOB && p_szAddDiagNextPage != Bill_Sys_Constant.constGenerateNextDiagPage && p_iDiagCount >= 5)
+                {
+                    if (objAL[i].ToString().Equals("AOB"))
+                    {
+                        objAL[i] = p_szPDFFileName;
+                    }
+                }
+                if (p_szDiagPosKey == Bill_Sys_Constant.constAFTER_EOB && p_szAddDiagNextPage != Bill_Sys_Constant.constGenerateNextDiagPage && p_iDiagCount >= 5)
+                {
+                    if (objAL[i].ToString().Equals("EOB"))
+                    {
+                        objAL[i] = p_szPDFFileName;
+                    }
+                }
+            }
+            for (int i = 0; i < objAL.Count; i++)
+            {
+                if (objAL[i].ToString().Equals("AOB") || objAL[i].ToString().Equals("EOB") || objAL[i].ToString().ToLower().Equals("denials"))
+                {
+                    objAL.RemoveAt(i);
+                    i = i - 1;
+                }
+           }
+           return objAL;
+
+        }
+        catch (Exception ex)
+        {
+            
+            throw;
+        }
+    }
+
+    #endregion
+
+    #region "btnAssign"
+
+    protected void btnAssign_Click(object sender, EventArgs e)
+    {
+        LitigationDeskBO _objLD;
+        if (extddlUserLawFirm.Text != "NA")
+        {
+            foreach (DataGridItem dr in grdLitigationDesk.Items)
+            {
+                if (((CheckBox)dr.Cells[10].FindControl("chkSelect")).Checked != false)
+                {
+                    _objLD = new LitigationDeskBO();
+                    ArrayList _objAL = new ArrayList();
+                    _objAL.Add(dr.Cells[1].Text);
+                    _objAL.Add(dr.Cells[0].Text);
+                    _objAL.Add(extddlUserLawFirm.Text);
+                    _objAL.Add("0");
+                    _objAL.Add(((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID);
+                    _objLD.saveLegalCases(_objAL);
+                }
+            }
+            BindgrdLitigationdesk();
+        }
+    }
+
+    #endregion
+
+    #region "Bind Label For Dash Board"
+    //protected void setLabels()
+    //{
+    //    DashBoardBO _obj = new DashBoardBO();
+    //    _billTransactionBO = new Bill_Sys_BillTransaction_BO();
+    //    try
+    //    {
+    //        DayOfWeek day = Convert.ToDateTime(System.DateTime.Today.ToString()).DayOfWeek;
+    //        int days = day - DayOfWeek.Sunday;
+
+    //        DateTime start = Convert.ToDateTime(System.DateTime.Today.ToString()).AddDays(-days);
+    //        DateTime end = start.AddDays(6);
+
+    //        lblAppointmentToday.Text = _obj.getAppoinmentCount(System.DateTime.Today.ToString(), System.DateTime.Today.ToString(), txtCompanyID.Text, "GET_APPOINTMENT");
+    //        lblAppointmentWeek.Text = _obj.getAppoinmentCount(start.ToString(), end.ToString(), txtCompanyID.Text, "GET_APPOINTMENT");
+
+    //        lblBillStatus.Text = "<ul style=\"list-style-type:disc;padding-left:60px;\"> <li><a href='Bill_Sys_PaidBills.aspx?Flag=Paid' onclick=\"javascript:OpenPage('Paid');\" > " + _billTransactionBO.GetCaseCount("SP_MST_CASE_MASTER", "GET_PAID_LIST_COUNT", txtCompanyID.Text) + "</a>";
+    //        lblBillStatus.Text += " Paid Bills  </li>  <li> <a href='Bill_Sys_PaidBills.aspx?Flag=UnPaid' onclick=\"javascript:OpenPage('UnPaid');\" > " + _billTransactionBO.GetCaseCount("SP_MST_CASE_MASTER", "GET_UNPAID_LIST_COUNT", txtCompanyID.Text) + "</a> Un-Paid Bills </li></ul>";
+
+    //        lblDesk.Text = "<ul style=\"list-style-type:disc;padding-left:60px;\"> <li><a href='Bill_Sys_LitigationDesk.aspx?Type=Litigation' onclick=\"javascript:OpenPage('Litigation');\" > " + _billTransactionBO.GetCaseCount("SP_LITIGATION_WRITEOFF_DESK", "GET_LETIGATION_COUNT", txtCompanyID.Text) + "</a>" + " bills due for litigation";
+
+    //        lblMissingInformation.Text = "<ul style=\"list-style-type:disc;padding-left:60px;\"> <li><a href='Bill_Sys_PaidBills.aspx?Flag=MissingProvider' onclick=\"javascript:OpenPage('MissingProvider');\" > " + _obj.getAppoinmentCount(System.DateTime.Today.ToString(), System.DateTime.Today.ToString(), txtCompanyID.Text, "MISSING_PROVIDER") + "</a>";
+    //        lblMissingInformation.Text += " provider information missing  </li>  <li> <a href='Bill_Sys_PaidBills.aspx?Flag=MissingInsuranceCompany' onclick=\"javascript:OpenPage('MissingInsuranceCompany');\" > " + _obj.getAppoinmentCount(System.DateTime.Today.ToString(), System.DateTime.Today.ToString(), txtCompanyID.Text, "MISSING_INSURANCE_COMPANY") + "</a> ";
+    //        lblMissingInformation.Text += " insurance company missing </li>  <li> <a href='Bill_Sys_PaidBills.aspx?Flag=MissingAttorney' onclick=\"javascript:OpenPage('MissingAttorney');\" > " + _obj.getAppoinmentCount(System.DateTime.Today.ToString(), System.DateTime.Today.ToString(), txtCompanyID.Text, "MISSING_ATTORNEY") + "</a>";
+    //        lblMissingInformation.Text += " attorney missing </li>  <li> <a href='Bill_Sys_PaidBills.aspx?Flag=MissingClaimNumber' onclick=\"javascript:OpenPage('MissingClaimNumber');\" > " + _obj.getAppoinmentCount(System.DateTime.Today.ToString(), System.DateTime.Today.ToString(), txtCompanyID.Text, "MISSING_CLAIM_NUMBER") + "</a> claim number missing </li></ul>";
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        throw;
+    //    }
+    //}
+    protected void setLabels()
+    {
+        DashBoardBO _obj = new DashBoardBO();
+        Bill_Sys_BillTransaction_BO _billTransactionBO = new Bill_Sys_BillTransaction_BO();
+        try
+        {
+           
+            DayOfWeek day = Convert.ToDateTime(System.DateTime.Today.ToString()).DayOfWeek;
+            int days = day - DayOfWeek.Sunday;
+
+            DateTime start = Convert.ToDateTime(System.DateTime.Today.ToString()).AddDays(-days);
+            DateTime end = start.AddDays(6);
+
+            lblAppointmentToday.Text = _obj.getAppoinmentCount(System.DateTime.Today.ToString(), System.DateTime.Today.ToString(), txtCompanyID.Text, "GET_APPOINTMENT");
+            lblAppointmentWeek.Text = _obj.getAppoinmentCount(start.ToString(), end.ToString(), txtCompanyID.Text, "GET_APPOINTMENT");
+
+            lblBillStatus.Text = "<ul style=\"list-style-type:disc;padding-left:60px;\"> <li><a href='Bill_Sys_PaidBills.aspx?Flag=Paid' onclick=\"javascript:OpenPage('Paid');\" > " + _billTransactionBO.GetCaseCount("SP_MST_CASE_MASTER", "GET_PAID_LIST_COUNT", txtCompanyID.Text) + "</a>";
+            lblBillStatus.Text += " Paid Bills  </li>  <li> <a href='Bill_Sys_PaidBills.aspx?Flag=UnPaid' onclick=\"javascript:OpenPage('UnPaid');\" > " + _billTransactionBO.GetCaseCount("SP_MST_CASE_MASTER", "GET_UNPAID_LIST_COUNT", txtCompanyID.Text) + "</a> Un-Paid Bills </li></ul>";
+
+            lblDesk.Text = "<ul style=\"list-style-type:disc;padding-left:60px;\"> <li><a href='Bill_Sys_LitigationDesk.aspx?Type=Litigation' onclick=\"javascript:OpenPage('Litigation');\" > " + _billTransactionBO.GetCaseCount("SP_LITIGATION_WRITEOFF_DESK", "GET_LETIGATION_COUNT", txtCompanyID.Text) + "</a>" + " bills due for litigation";
+
+            //lblMissingInformation.Text = "<ul style=\"list-style-type:disc;padding-left:60px;\"> <li><a href='Bill_Sys_PaidBills.aspx?Flag=MissingProvider' onclick=\"javascript:OpenPage('MissingProvider');\" > " + _obj.getAppoinmentCount(System.DateTime.Today.ToString(), System.DateTime.Today.ToString(), txtCompanyID.Text, "MISSING_PROVIDER") + "</a>";
+            //lblMissingInformation.Text += " provider information missing  </li>  <li> <a href='Bill_Sys_PaidBills.aspx?Flag=MissingInsuranceCompany' onclick=\"javascript:OpenPage('MissingInsuranceCompany');\" > " + _obj.getAppoinmentCount(System.DateTime.Today.ToString(), System.DateTime.Today.ToString(), txtCompanyID.Text, "MISSING_INSURANCE_COMPANY") + "</a> ";
+            lblMissingInformation.Text = "<ul style=\"list-style-type:disc;padding-left:60px;\"> <li> <a href='Bill_Sys_PaidBills.aspx?Flag=MissingInsuranceCompany' onclick=\"javascript:OpenPage('MissingInsuranceCompany');\" > " + _obj.getAppoinmentCount(System.DateTime.Today.ToString(), System.DateTime.Today.ToString(), txtCompanyID.Text, "MISSING_INSURANCE_COMPANY") + "</a> ";
+            lblMissingInformation.Text += " insurance company missing </li>  <li> <a href='Bill_Sys_PaidBills.aspx?Flag=MissingAttorney' onclick=\"javascript:OpenPage('MissingAttorney');\" > " + _obj.getAppoinmentCount(System.DateTime.Today.ToString(), System.DateTime.Today.ToString(), txtCompanyID.Text, "MISSING_ATTORNEY") + "</a>";
+            lblMissingInformation.Text += " attorney missing </li>  <li> <a href='Bill_Sys_PaidBills.aspx?Flag=MissingClaimNumber' onclick=\"javascript:OpenPage('MissingClaimNumber');\" > " + _obj.getAppoinmentCount(System.DateTime.Today.ToString(), System.DateTime.Today.ToString(), txtCompanyID.Text, "MISSING_CLAIM_NUMBER") + "</a> claim number missing </li>";
+            lblMissingInformation.Text += "<li> <a href='Bill_Sys_PaidBills.aspx?Flag=MissingReportNumber' onclick=\"javascript:OpenPage('MissingReportNumber');\" > " + _obj.getAppoinmentCount(System.DateTime.Today.ToString(), System.DateTime.Today.ToString(), txtCompanyID.Text, "MISSING_REPORT_NUMBER") + "</a> report number missing </li>";
+            lblMissingInformation.Text += "<li> <a href='Bill_Sys_PaidBills.aspx?Flag=MissingPolicyHolder'> " + _obj.getAppoinmentCount(System.DateTime.Today.ToString(), System.DateTime.Today.ToString(), txtCompanyID.Text, "MISSING_POLICY_HOLDER") + "</a> policy holder missing </li>";
+            lblMissingInformation.Text += "<li> <a href='Bill_Sys_ShowUnSentNF2.aspx' > " + _obj.getAppoinmentCount(System.DateTime.Today.ToString(), System.DateTime.Today.ToString(), txtCompanyID.Text, "UNSENTNF2") + "</a> unsent NF2 </li></ul>";
+
+
+            //lblReport.Text = "<ul style=\"list-style-type:disc;padding-left:60px;\"> <li><a href='Bill_Sys_PaidBills.aspx?Flag=report&Type=R' onclick=\"javascript:OpenPage('Litigation');\" > " + _obj.getAppoinmentCount(System.DateTime.Today.ToString(), System.DateTime.Today.ToString(), txtCompanyID.Text, "DOCUMENT_RECEIVED_COUNT") + "</a>" + " Received Report";
+            lblReport.Text = "<ul style=\"list-style-type:disc;padding-left:60px;\"> <li><a href='Bill_Sys_ReffPaidBills.aspx' onclick=\"javascript:OpenPage('Litigation');\" > " + _obj.getAppoinmentCount(System.DateTime.Today.ToString(), System.DateTime.Today.ToString(), txtCompanyID.Text, "DOCUMENT_RECEIVED_COUNT") + "</a>" + " Received Report";
+            lblReport.Text += "</li>  <li> <a href='Bill_Sys_PaidBills.aspx?Flag=report&Type=P' onclick=\"javascript:OpenPage('MissingInsuranceCompany');\" > " + _obj.getAppoinmentCount(System.DateTime.Today.ToString(), System.DateTime.Today.ToString(), txtCompanyID.Text, "DOCUMENT_PENDING_COUNT") + "</a> Pending Report </li></ul>";
+
+            lblProcedureStatus.Text = "<ul style=\"list-style-type:disc;padding-left:60px;\"> <li>" + _obj.getBilledUnbilledProcCode(txtCompanyID.Text, "GET_BILLEDPROC") + " billed procedure codes";
+            lblProcedureStatus.Text += "</li>  <li>" + _obj.getBilledUnbilledProcCode(txtCompanyID.Text, "GET_UNBILLEDPROC") + " Un-billed procedure codes </li></ul>";
+
+
+            //lblVisits.Text = "<ul style=\"list-style-type:disc;padding-left:60px;\"> <li>" + _obj.getTotalVisits(txtCompanyID.Text, "GET_VISIT_COUNT") + " Visits</li>";
+            //lblVisits.Text += "<li>" + _obj.getTotalVisits(txtCompanyID.Text, "GET_BILLED_VISIT_COUNT") + " Billed visits </li>";
+            //lblVisits.Text += "<li>" + _obj.getTotalVisits(txtCompanyID.Text, "GET_UNBILLED_VISIT_COUNT") + " Un-billed visits </li></ul>";
+
+            lblTotalVisit.Text = _obj.getTotalVisits(txtCompanyID.Text, "GET_VISIT_COUNT");
+            lblBilledVisit.Text = _obj.getTotalVisits(txtCompanyID.Text, "GET_BILLED_VISIT_COUNT");
+            lblUnBilledVisit.Text = _obj.getTotalVisits(txtCompanyID.Text, "GET_UNBILLED_VISIT_COUNT");
+
+            // 8 April - add patient visit status block on page - sachin
+            lblPatientVisitStatus.Text = "<ul style=\"list-style-type:disc;padding-left:60px;\"> <li> <a href='Bill_Sys_ShowPatientVisitStatus.aspx?Flag=patientscheduled' onclick=\"javascript:OpenPage('PatientScheduled');\" > " + _obj.getPatientVisitStatusCount(txtCompanyID.Text, "GET_PATIENT_VISIT_SCHEDULED_COUNT") + "</a> ";
+            lblPatientVisitStatus.Text += " Patient Scheduled </li>  <li> <a href='Bill_Sys_ShowPatientVisitStatus.aspx?Flag=patientnoshows' onclick=\"javascript:OpenPage('PatientNoShows');\" > " + _obj.getPatientVisitStatusCount(txtCompanyID.Text, "GET_PATIENT_VISIT_NO_SHOWS") + "</a>";
+            lblPatientVisitStatus.Text += " Patient No Shows </li>  <li> <a href='Bill_Sys_ShowPatientVisitStatus.aspx?Flag=patientrescheduled' onclick=\"javascript:OpenPage('PatientRescheduled');\" > " + _obj.getPatientVisitStatusCount(txtCompanyID.Text, "GET_PATIENT_VISIT_RESCHEDULED") + "</a>";
+            lblPatientVisitStatus.Text += " Patient Rescheduled </li>  <li> <a href='Bill_Sys_ShowPatientVisitStatus.aspx?Flag=patientvisitcompleted' onclick=\"javascript:OpenPage('PatientVisitcompleted');\" > " + _obj.getPatientVisitStatusCount(txtCompanyID.Text, "GET_PATIENT_VISIT_COMPLETED") + "</a>Patient Visit completed </li></ul>";
+
+            DataTable dt = new DataTable();
+            try
+            {
+                string companyID = txtCompanyID.Text;
+                dt = _obj.getMissingSpecialityList(companyID);
+
+                lblMissingSpecialityText.Text = "<table>";
+
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    if (i % 4 == 0)
+                    {
+                        if (i != 0 && i % 4 == 0)
+                        {
+                            lblMissingSpecialityText.Text += "</tr>";
+                        }
+                        lblMissingSpecialityText.Text += "<tr><td><ul style=\"list-style-type:disc;padding-left:60px;\"><li><a href='#' onclick=\"javascript:OpenReport('" + dt.Rows[i][2].ToString() + "')\">" + dt.Rows[i][0].ToString() + "</a> - " + dt.Rows[i][1].ToString() + "</li></ul></td>";
+                    }
+                    else
+                    {
+                        lblMissingSpecialityText.Text += "<td><ul style=\"list-style-type:disc;padding-left:60px;\"><li><a href='#' onclick=\"javascript:OpenReport('" + dt.Rows[i][2].ToString() + "')\">" + dt.Rows[i][0].ToString() + "</a> - " + dt.Rows[i][1].ToString() + "</li><ul></td>";
+                    }
+                }
+                lblMissingSpecialityText.Text += "</table>";
+            }
+            catch (Exception ex)
+            {
+                string strError = ex.Message.ToString();
+                strError = strError.Replace("\n", " ");
+                Response.Redirect("Bill_Sys_ErrorPage.aspx?ErrMsg=" + strError);
+            }
+            ConfigDashBoard();
+           
+
+        }
+        catch (Exception ex)
+        {
+            string strError = ex.Message.ToString();
+            strError = strError.Replace("\n", " ");
+            Response.Redirect("Bill_Sys_ErrorPage.aspx?ErrMsg=" + strError);
+        }
+    }
+    #endregion
+
+    #region "grdLitigationDesk Event"
+
+    public void BindgrdLitigationdesk()
+    {
+        _obj = new Bill_Sys_BillingCompanyDetails_BO();
+        grdLitigationDesk.DataSource = _obj.Litigation_WriteOff_Desk(((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID, 1);
+        grdLitigationDesk.DataBind();
+
+
+        grdForReport.DataSource = _obj.Litigation_WriteOff_Desk(((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID, 1);
+        grdForReport.DataBind();
+    }
+
+    protected void grdLitigationDesk_ItemCommand(object source, DataGridCommandEventArgs e)
+    {
+
+        if (e.CommandName.ToString() == "Document Manager")
+        {
+            Session["TM_SZ_CASE_ID"] = e.CommandArgument;
+            Session["TM_SZ_BILL_ID"] = e.Item.Cells[0].Text;
+            String szCompanyID = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+
+            CaseDetailsBO objCaseDetails = new CaseDetailsBO();
+
+            if (objCaseDetails.GetCaseType(Session["TM_SZ_BILL_ID"].ToString()) == "WC000000000000000002")
+            {
+                String szDefaultPath = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_NAME + "/" + Session["TM_SZ_CASE_ID"].ToString() + "/Packet Document/";
+                string strPath = ConfigurationManager.AppSettings["DefaultTemplateName"].ToString();
+
+                string strNextDiagFileName = ConfigurationManager.AppSettings["NextDiagnosisTemplate"].ToString();
+                String szFile3 = ConfigurationSettings.AppSettings["NF3_PAGE3"].ToString();
+                String szFile4 = ConfigurationSettings.AppSettings["NF3_PAGE4"].ToString();
+                String szPDFPage1;
+                String szXMLFileName;
+                String szOriginalPDFFileName;
+                String sz3and4Page;
+                Bill_Sys_Configuration objConfiguration = new Bill_Sys_Configuration();
+                String szDiagPDFFilePosition = objConfiguration.getConfigurationSettings(szCompanyID, "GET_DIAG_PAGE_POSITION");
+                String szGenerateNextDiagPage = objConfiguration.getConfigurationSettings(szCompanyID, "DIAG_PAGE");
+
+                szXMLFileName = ConfigurationManager.AppSettings["NF3_XML_FILE"].ToString();
+                szOriginalPDFFileName = ConfigurationManager.AppSettings["NF3_PDF_FILE"].ToString();
+
+                objNF3Template = new Bill_Sys_NF3_Template();
+                Boolean fAddDiag = true;
+
+                GeneratePDFFile.GenerateNF3PDF objGeneratePDF = new GeneratePDFFile.GenerateNF3PDF();
+                objPDFReplacement = new PDFValueReplacement.PDFValueReplacement();
+
+
+
+                // Note : Generate PDF with Billing Information table. **** II
+                String szPDFFileName = objGeneratePDF.GeneratePDF(((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID, ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_NAME, ((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_ID, ((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_NAME, Session["TM_SZ_CASE_ID"].ToString(), Session["TM_SZ_BILL_ID"].ToString(), "", strPath);
+
+
+                // Note : Generate PDF File with More than 5 diagonis code entry.
+                String szNextDiagPDFFileName = objGeneratePDF.GeneratePDF(((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID, ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_NAME, ((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_ID, ((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_NAME, Session["TM_SZ_CASE_ID"].ToString(), Session["TM_SZ_BILL_ID"].ToString(), "", strNextDiagFileName);
+
+
+
+                // Note : Merge Last and Second-Last Page
+                sz3and4Page = objPDFReplacement.Merge3and4Page(((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID, ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_NAME, Session["TM_SZ_CASE_ID"].ToString(), Session["TM_SZ_BILL_ID"].ToString(), szFile3, szFile4);
+
+                if (szGenerateNextDiagPage != Bill_Sys_Constant.constGenerateNextDiagPage && objNF3Template.getDiagnosisCodeCount(Session["TM_SZ_BILL_ID"].ToString()) >= 5 && szDiagPDFFilePosition == Bill_Sys_Constant.constBEFORE_AOB)
+                {
+                    if (szGenerateNextDiagPage == "CI_0000004" && objNF3Template.getDiagnosisCodeCount(Session["TM_SZ_BILL_ID"].ToString()) == 5)
+                    {
+                    }
+                    else
+                    {
+                        lfnMergePDF(objNF3Template.getPhysicalPath() + szDefaultPath + sz3and4Page, objNF3Template.getPhysicalPath() + szDefaultPath + szNextDiagPDFFileName, objNF3Template.getPhysicalPath() + szDefaultPath + sz3and4Page.Replace(".pdf", "_new34.pdf"));
+                        sz3and4Page = sz3and4Page.Replace(".pdf", "_new34.pdf");
+                    }
+                }
+
+                // Note : Generate First Page [Replace value from database] **** I
+                szPDFPage1 = objPDFReplacement.ReplacePDFvalues(szXMLFileName, szOriginalPDFFileName, Session["TM_SZ_BILL_ID"].ToString(), ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_NAME, Session["TM_SZ_CASE_ID"].ToString());
+
+                if (szGenerateNextDiagPage != Bill_Sys_Constant.constGenerateNextDiagPage && objNF3Template.getDiagnosisCodeCount(Session["TM_SZ_BILL_ID"].ToString()) >= 5 && szDiagPDFFilePosition == Bill_Sys_Constant.constAFTER_FIRST_PAGE)
+                {
+                    if (szGenerateNextDiagPage == "CI_0000004" && objNF3Template.getDiagnosisCodeCount(Session["TM_SZ_BILL_ID"].ToString()) == 5)
+                    {
+                    }
+                    else
+                    {
+                        lfnMergePDF(objNF3Template.getPhysicalPath() + szDefaultPath + szPDFPage1, objNF3Template.getPhysicalPath() + szDefaultPath + szNextDiagPDFFileName, objNF3Template.getPhysicalPath() + szDefaultPath + szPDFPage1.Replace(".pdf", "_MER.pdf"));
+                        szPDFPage1 = szPDFPage1.Replace(".pdf", "_MER.pdf");
+                    }
+                }
+
+                if (szGenerateNextDiagPage != Bill_Sys_Constant.constGenerateNextDiagPage && objNF3Template.getDiagnosisCodeCount(Session["TM_SZ_BILL_ID"].ToString()) >= 5 && szDiagPDFFilePosition == Bill_Sys_Constant.constAFTER_BILL_INFORMATION)
+                {
+                    if (szGenerateNextDiagPage == "CI_0000004" && objNF3Template.getDiagnosisCodeCount(Session["TM_SZ_BILL_ID"].ToString()) == 5)
+                    {
+                    }
+                    else
+                    {
+                        lfnMergePDF(objNF3Template.getPhysicalPath() + szDefaultPath + szPDFFileName, objNF3Template.getPhysicalPath() + szDefaultPath + szNextDiagPDFFileName, objNF3Template.getPhysicalPath() + szDefaultPath + szPDFFileName.Replace(".pdf", "_MER.pdf"));
+                        szPDFFileName = szPDFFileName.Replace(".pdf", "_MER.pdf");
+                    }
+                }
+
+
+                // Merge **** I AND **** II
+                String szPDF_1_3;
+                // (                                                string p_szCompanyID,                                                           string p_szCompanyName,                                                             string p_szCaseID,                  string p_szBillID,              string p_szFile1, string p_szFile2)
+                szPDF_1_3 = objPDFReplacement.MergePDFFiles(((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID, ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_NAME, Session["TM_SZ_CASE_ID"].ToString(), Session["TM_SZ_BILL_ID"].ToString(), szPDFPage1, szPDFFileName);
+
+                String szLastPDFFileName;
+                szLastPDFFileName = objPDFReplacement.MergePDFFiles(((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID, ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_NAME, Session["TM_SZ_CASE_ID"].ToString(), Session["TM_SZ_BILL_ID"].ToString(), szPDF_1_3, sz3and4Page);
+
+                String szGenereatedFileName = "";
+                szGenereatedFileName = szDefaultPath + szLastPDFFileName;
+
+
+
+                String szOpenFilePath = "";
+                szOpenFilePath = ConfigurationSettings.AppSettings["DocumentManagerURL"].ToString() + szGenereatedFileName;
+
+                // Logic Start For Get Node From AOB , EOB , Denials
+
+                ProcessDocumentMergeList objProcessDocumentMergeList = new ProcessDocumentMergeList(ConfigurationSettings.AppSettings["DocumentMergeXML"].ToString());
+
+                DAO_Bill_Sys_Case objDAO = new DAO_Bill_Sys_Case();
+                objDAO.CaseID = Session["TM_SZ_CASE_ID"].ToString();
+                objDAO.BillingCompanyID = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+                objDAO.MergeType = "litigation";
+                ArrayList objList = objProcessDocumentMergeList.getNodeList(objDAO);
+
+                objList = lfnGetListWithPDFName(objList, objNF3Template.getPhysicalPath() + szDefaultPath + szNextDiagPDFFileName, szDiagPDFFilePosition, szGenerateNextDiagPage, objNF3Template.getDiagnosisCodeCount(Session["TM_SZ_BILL_ID"].ToString()));
+
+                string szFileNameWithFullPath = objNF3Template.getPhysicalPath() + "/" + szGenereatedFileName;
+
+                //               objList.Insert(0, szFileNameWithFullPath);
+
+                _objMergeTiffAndPDF = new MergeTIFFANDPDF.MergeTIFFANDPDF();
+                _objMergeTiffAndPDF.CreateTiffToPDFList(szFileNameWithFullPath.Replace(".pdf", "_Temp.pdf").ToString(), objList);
+
+                CUTEFORMCOLib.CutePDFDocumentClass objMyForm = new CUTEFORMCOLib.CutePDFDocumentClass();
+                string newPdfFilename = "";
+                string KeyForCutePDF = ConfigurationSettings.AppSettings["CutePDFSerialKey"].ToString();
+                objMyForm.initialize(KeyForCutePDF);
+
+                if (objMyForm == null)
+                {
+                    // Response.Write("objMyForm not initialized");
+                }
+                else
+                {
+                    if (System.IO.File.Exists(szFileNameWithFullPath) && System.IO.File.Exists(szFileNameWithFullPath.Replace(".pdf", "_Temp.pdf").ToString()))
+                    {
+                        objMyForm.mergePDF(szFileNameWithFullPath, szFileNameWithFullPath.Replace(".pdf", "_Temp.pdf").ToString(), szFileNameWithFullPath.Replace(".pdf", "_New.pdf").ToString());
+
+                        if (szGenerateNextDiagPage != Bill_Sys_Constant.constGenerateNextDiagPage && objNF3Template.getDiagnosisCodeCount(Session["TM_SZ_BILL_ID"].ToString()) >= 5 && szDiagPDFFilePosition == Bill_Sys_Constant.constAT_THE_END)
+                        {
+                            if (szGenerateNextDiagPage == "CI_0000004" && objNF3Template.getDiagnosisCodeCount(Session["TM_SZ_BILL_ID"].ToString()) == 5)
+                            {
+                            }
+                            else
+                            {
+                                lfnMergePDF(szFileNameWithFullPath.Replace(".pdf", "_New.pdf").ToString(), objNF3Template.getPhysicalPath() + szDefaultPath + szNextDiagPDFFileName, szFileNameWithFullPath.Replace(".pdf", "_NewMerge.pdf").ToString());
+                                szPDFFileName = szPDFFileName.Replace(".pdf", "_NewMerge.pdf");
+                            }
+                        }
+
+                    }
+
+                }
+
+                // End Logic
+
+                string szFileNameForSaving = "";
+
+                // Save Entry in Table
+                if (System.IO.File.Exists(szFileNameWithFullPath) && System.IO.File.Exists(szFileNameWithFullPath.Replace(".pdf", "_New.pdf").ToString()))
+                {
+                    szGenereatedFileName = szFileNameWithFullPath.Replace(".pdf", "_New.pdf").ToString();
+                }
+
+                // End
+
+                if (System.IO.File.Exists(szFileNameWithFullPath) && System.IO.File.Exists(szFileNameWithFullPath.Replace(".pdf", "_NewMerge.pdf").ToString()))
+                {
+                    szFileNameForSaving = szOpenFilePath.Replace(".pdf", "_NewMerge.pdf").ToString();
+                    Page.ClientScript.RegisterClientScriptBlock(typeof(GridView), "Msg", "window.open('" + szOpenFilePath.Replace(".pdf", "_NewMerge.pdf").ToString() + "'); ", true);
+                }
+                else
+                {
+                    if (System.IO.File.Exists(szFileNameWithFullPath) && System.IO.File.Exists(szFileNameWithFullPath.Replace(".pdf", "_New.pdf").ToString()))
+                    {
+                        szFileNameForSaving = szOpenFilePath.Replace(".pdf", "_New.pdf").ToString();
+                        Page.ClientScript.RegisterClientScriptBlock(typeof(GridView), "Msg", "window.open('" + szOpenFilePath.Replace(".pdf", "_New.pdf").ToString() + "'); ", true);
+                    }
+                    else
+                    {
+                        szFileNameForSaving = szOpenFilePath.ToString();
+                        Page.ClientScript.RegisterClientScriptBlock(typeof(GridView), "Msg", "window.open('" + szOpenFilePath.ToString() + "'); ", true);
+                    }
+                }
+
+                ArrayList objAL = new ArrayList();
+                szFileNameForSaving = szFileNameForSaving.Remove(0, ConfigurationSettings.AppSettings["DocumentManagerURL"].ToString().Length);
+                objAL.Add(szFileNameForSaving);
+                objAL.Add(Session["TM_SZ_BILL_ID"].ToString());
+                objAL.Add(Session["TM_SZ_CASE_ID"].ToString());
+                objAL.Add(((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID);
+                objNF3Template.saveGeneratedNF3File(objAL);
+
+            }
+            else
+            {
+                //Session["TM_SZ_CASE_ID"] = e.CommandArgument;
+                //Session["TM_SZ_BILL_ID"] = e.Item.Cells[2].Text;
+                Page.ClientScript.RegisterClientScriptBlock(typeof(GridView), "Msg", "window.open('Bill_Sys_SelectBillType.aspx'); ", true);
+            }
+        }
+    }
+
+    protected void grdLitigationDesk_ItemDataBound(object sender, DataGridItemEventArgs e)
+    {
+        try
+        {
+            if (e.Item.Cells[9].Text != "" && e.Item.Cells[9].Text != "&nbsp;")
+            {
+                ((CheckBox)e.Item.Cells[10].FindControl("chkSelect")).Visible = false;
+
+            }
+        }
+        catch { }
+    }
+
+    protected void grdLitigationDesk_PageIndexChanged(object source, DataGridPageChangedEventArgs e)
+    {
+        grdLitigationDesk.CurrentPageIndex = e.NewPageIndex;
+        BindgrdLitigationdesk();
+    }
+
+    #endregion
+
+    #region "Export to Excel"
+
+    protected void btnExportToExcel_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            ExportToExcel();
+        }
+        catch (Exception ex)
+        {
+            string strError = ex.Message.ToString();
+            strError = strError.Replace("\n", " ");
+            Response.Redirect("Bill_Sys_ErrorPage.aspx?ErrMsg=" + strError);
+        }
+    }
+
+    private void ExportToExcel()
+    {
+        try
+        {
+            StringBuilder strHtml = new StringBuilder();
+            strHtml.Append("<table border='1px'>");
+            for (int icount = 0; icount < grdForReport.Items.Count; icount++)
+            {
+                if (icount == 0)
+                {
+                    strHtml.Append("<tr>");
+                    for (int i = 0; i < grdForReport.Columns.Count; i++)
+                    {
+                        if (grdForReport.Columns[i].Visible == true)
+                        {
+                            strHtml.Append("<td>");
+                            strHtml.Append(grdForReport.Columns[i].HeaderText);
+                            strHtml.Append("</td>");
+                        }
+                    }
+
+                    strHtml.Append("</tr>");
+                }
+
+                strHtml.Append("<tr>");
+                for (int j = 0; j < grdForReport.Columns.Count; j++)
+                {
+                    if (grdForReport.Columns[j].Visible == true)
+                    {
+                        strHtml.Append("<td>");
+                        strHtml.Append(grdForReport.Items[icount].Cells[j].Text);
+                        strHtml.Append("</td>");
+                    }
+                }
+                strHtml.Append("</tr>");
+
+            }
+            strHtml.Append("</table>");
+            string filename = getFileName("EXCEL") + ".xls";
+            StreamWriter sw = new StreamWriter(ConfigurationManager.AppSettings["EXCEL_SHEET"] + filename);
+            sw.Write(strHtml);
+            sw.Close();
+
+            Response.Redirect(ConfigurationManager.AppSettings["FETCHEXCEL_SHEET"] + filename, false);
+
+
+        }
+        catch (Exception ex)
+        {
+            string strError = ex.Message.ToString();
+            strError = strError.Replace("\n", " ");
+            Response.Redirect("Error/PFS_Sys_ErrorPage.aspx?ErrMsg=" + strError);
+        }
+    }
+    private string getFileName(string p_szBillNumber)
+    {
+        String szBillNumber = "";
+        szBillNumber = p_szBillNumber;
+        String szFileName;
+        DateTime currentDate;
+        currentDate = DateTime.Now;
+        szFileName = p_szBillNumber + "_" + getRandomNumber() + "_" + currentDate.ToString("yyyyMMddHHmmssms");
+        return szFileName;
+    }
+    private string getRandomNumber()
+    {
+        System.Random objRandom = new Random();
+        return objRandom.Next(1, 10000).ToString();
+    }
+
+    #endregion
+    protected void btnSearch_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            _obj = new Bill_Sys_BillingCompanyDetails_BO();
+            if (txtBillNumber.Text != "")
+            {
+                grdLitigationDesk.DataSource = _obj.Litigation_BillNumber_search(txtCompanyID.Text, txtBillNumber.Text, "GET_BILL_NUMBER_RECORDS");
+                grdLitigationDesk.DataBind();
+            }
+            else
+            {
+                BindgrdLitigationdesk();
+            }
+
+        }
+        catch (Exception ex)
+        {
+            string strError = ex.Message.ToString();
+            strError = strError.Replace("\n", " ");
+            Response.Redirect("Bill_Sys_ErrorPage.aspx?ErrMsg=" + strError);
+        }
+    }
+    private void ConfigDashBoard()
+    {
+        DashBoardBO _objDashBoardBO = new DashBoardBO();
+        try
+        {
+
+            DataTable dt = _objDashBoardBO.GetConfigDashBoard(((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_ROLE);
+            foreach (DataRow dr in dt.Rows)
+            {
+                switch (dr[0].ToString())
+                {
+                    case "Daily Appointment":
+                        tblDailyAppointment.Visible = true;
+                        break;
+                    case "Weekly Appointment":
+                        tblWeeklyAppointment.Visible = true;
+                        break;
+                    case "Bill Status":
+                        tblBillStatus.Visible = true;
+                        break;
+                    case "Desk":
+                        tblDesk.Visible = true;
+                        break;
+                    case "Missing Information":
+                        tblMissingInfo.Visible = true;
+                        break;
+                    case "Report Section":
+                        tblReportSection.Visible = true;
+                        break;
+                    case "Procedure Status":
+                        tblBilledUnbilledProcCode.Visible = true;
+                        break;
+                    case "Visits":
+                        tblVisits.Visible = true;
+                        grdTotalVisit.DataSource = _objDashBoardBO.getVisitDetails(txtCompanyID.Text, "TOTALCOUNT");
+                        grdTotalVisit.DataBind();
+                        grdVisit.DataSource = _objDashBoardBO.getVisitDetails(txtCompanyID.Text, "BILLEDVISIT");
+                        grdVisit.DataBind();
+                        grdUnVisit.DataSource = _objDashBoardBO.getVisitDetails(txtCompanyID.Text, "UNBILLEDVISIT");
+                        grdUnVisit.DataBind();
+                        break;
+                    case "Missing Speciality":
+                        tblMissingSpeciality.Visible = true;
+                        break;
+                    case "Patient Visit Status":
+                        tblPatientVisitStatus.Visible = true;
+                        break;
+
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            string strError = ex.Message.ToString();
+            strError = strError.Replace("\n", " ");
+            Response.Redirect("Bill_Sys_ErrorPage.aspx?ErrMsg=" + strError);
+        }
+    }
+
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <color percent="25" color="red" text="75" > </color>
+  <color percent="50" color="yellow" text="50" > </color>
+  <color percent="75" color="blue" text="25" > </color>
+  <color percent="0" color="green" text="100" > </color>
+</root>

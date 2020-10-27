@@ -1,0 +1,24 @@
+removed bugs from Bill search page
+(
+	bugs:
+
+	1) Sorting of bill no , default sort should be on bill no desc
+	2)Display msg "Bil not generated" on view bill icon if there is no pdf available in database entry or physicaly
+	3)Change update status and delete functionality check for transferred bill
+		this check should as per bill status "Transfer" and not on case status transfer
+)
+
+Release	:
+
+
+APPLICATION	:
+
+AJAX PAGES	:
+		Bill_sys_BillSearch.aspx and .cs
+		Bill_Sys_Open.aspx and .cs
+
+BIN		:
+
+
+DATABASE	:
+		SP_GET_BILL_SEARCH

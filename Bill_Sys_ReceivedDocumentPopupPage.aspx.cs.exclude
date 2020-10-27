@@ -1,0 +1,617 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using System.IO;
+using System.Text;
+using System.Data;
+using System.Data.SqlClient;
+
+public partial class ReceivedDocumentPopupPage : System.Web.UI.Page
+{
+    Bill_Sys_DigosisCodeBO _digosisCodeBO;
+    Bill_Sys_AssociateDiagnosisCodeBO _associateDiagnosisCodeBO = new Bill_Sys_AssociateDiagnosisCodeBO();
+    Bill_Sys_NF3_Template objNF3Template;
+    string strLinkPath = null;
+     Bill_Sys_ProcedureCode_BO  _bill_Sys_ProcedureCode_BO ;
+    private DataSet _ds;
+    DataTable _patientGrid_dt = new DataTable();
+    private ArrayList _arrayList;
+    private string _CompanyID = "";
+  
+    protected void Page_Load(object sender, EventArgs e)
+    {
+           
+            txtCompanyID.Text = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+
+            txtDiagonosisCode.Attributes.Add("onkeydown", "if(event.which || event.keyCode){if ((event.which == 13) || (event.keyCode == 13)) {document.getElementById('_ctl0_ContentPlaceHolder1_tabcontainerDiagnosisCode_tabpnlAssociate_btnSeacrh').click(); return false;}} else {alert('Other');return true;}; ");
+            if (!IsPostBack)
+            {
+
+                extddlDiagnosisType.Flag_ID = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+                //extddlSpeciality.Flag_ID = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+                extddlReadingDoctor.Flag_ID = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+                if (Request.QueryString["SetId"] != null)
+                {
+                    txtDiagnosisSetID.Text = Request.QueryString["SetId"].ToString();
+                    _ds = _associateDiagnosisCodeBO.GetCaseAssociateDiagnosisDetails(txtDiagnosisSetID.Text);
+                    //GetDiagnosisCode(txtCaseID.Text, txtCompanyID.Text, "", "GET_DIAGNOSIS_CODE");
+                    
+                }
+                else
+                {
+                    txtDiagnosisSetID.Text = _associateDiagnosisCodeBO.GetDiagnosisSetID();
+                }
+                if (Session["DIAGNOS_ASSOCIATION_PAID"] != null) { if (((ArrayList)Session["DIAGNOS_ASSOCIATION_PAID"]).Count > 0) { txtCaseID.Text = (((Bil_Sys_Associate_Diagnosis)((ArrayList)Session["DIAGNOS_ASSOCIATION_PAID"])[0])).CaseID; } }
+                GetAssignedDiagnosisCode(txtCaseID.Text, ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID, "", "GET_DIAGNOSIS_CODE");
+                GetDiagnosisCode(txtCaseID.Text, txtCompanyID.Text, "", "GET_DIAGNOSIS_CODE");
+                grdNormalDgCode.Visible = false;
+                tabcontainerDiagnosisCode.ActiveTabIndex = 1;
+                if (Session["PROCEDURE_CODE"] != null)
+                {
+                    DataSet dsProc = new DataSet();
+                    dsProc = (DataSet)Session["PROCEDURE_CODE"];
+                    grdProCode.DataSource = dsProc;
+                    grdProCode.DataBind();
+                    grdProCode.Visible = true;
+                    btnAdd.Visible = true;
+                    proc.Visible = true;
+                }
+                else
+                {
+                    grdProCode.Visible = false;
+                    btnAdd.Visible = false;
+                    proc.Visible = false;
+                }
+            }
+       }
+    protected void btnSeacrh_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            //lblSpeciality.Visible = true;
+            //extddlSpeciality.Visible = true;
+            grdNormalDgCode.Visible = true;
+            BindGrid(extddlDiagnosisType.Text, txtDiagonosisCode.Text, txtDescription.Text);
+        }
+        catch
+        {
+        }
+    }
+
+    private void BindGrid(string typeid, string code, string description)
+    {
+        _digosisCodeBO = new Bill_Sys_DigosisCodeBO();
+        try
+        {
+            grdNormalDgCode.DataSource = _digosisCodeBO.GetDiagnosisCodeReferalList(txtCompanyID.Text, typeid, code, description);
+            grdNormalDgCode.DataBind();
+
+        }
+        catch (Exception ex)
+        {
+            string strError = ex.Message.ToString();
+            strError = strError.Replace("\n", " ");
+            Response.Redirect("Bill_Sys_ErrorPage.aspx?ErrMsg=" + strError);
+        }
+    }
+    protected void btnAssign_Click(object sender, EventArgs e)
+    {
+        _associateDiagnosisCodeBO = new Bill_Sys_AssociateDiagnosisCodeBO();
+        try
+        {
+            // if (ValidateControl())
+            // {                
+            SaveDiagnosisCode();
+            // ClearControl();
+            lblMsg.Visible = true;
+            BindGrid(extddlDiagnosisType.Text, txtDiagonosisCode.Text, txtDescription.Text);
+            lblMsg.Text = "Case Associate Diagnosis  Saved Successfully ...!";
+            // }
+        }
+        catch (Exception ex)
+        {
+            string strError = ex.Message.ToString();
+            strError = strError.Replace("\n", " ");
+            Response.Redirect("Bill_Sys_ErrorPage.aspx?ErrMsg=" + strError);
+        }
+    }
+
+    protected void btnCancel_Click(object sender, EventArgs e)
+    {
+        Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "ss", "<script language='javascript'>parent.document.getElementById('divid').style.visibility = 'hidden';window.parent.document.location.href='Bill_Sys_PaidBills.aspx?Flag=report&Type=p&popup=cancel';</script>");
+    }
+
+    protected void btnUploadFile_Click(object sender, EventArgs e)
+    {
+        objNF3Template = new Bill_Sys_NF3_Template();
+        try
+        {
+
+            String szDefaultPath = objNF3Template.getPhysicalPath();
+            int ImageID = 0;
+            if (extddlReadingDoctor.Text == "NA")
+            {
+                Page.RegisterStartupScript("ss", "<script language='javascript'> alert('please select Reading Doctor !');</script>");
+                return;
+            }
+            
+            else if (!fuUploadReport.HasFile)
+            {
+                Page.RegisterStartupScript("ss", "<script language='javascript'> alert('please select file from upload Report !');</script>");
+                return;
+            }
+
+            ArrayList ListObject;
+            ListObject = ((ArrayList)Session["DIAGNOS_ASSOCIATION_PAID"]);
+            Bil_Sys_Associate_Diagnosis billSysassociate;
+            foreach (Object obj in ListObject)
+            {
+
+                billSysassociate = (Bil_Sys_Associate_Diagnosis)obj;
+                
+                    String szDestinationDir = "";
+
+                    if (((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY == true && ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID == (((Bil_Sys_Associate_Diagnosis)((ArrayList)Session["DIAGNOS_ASSOCIATION_PAID"])[0])).CompanyId)
+                    {
+                        szDestinationDir = objNF3Template.GetCompanyName(((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID);
+                    }
+                    else
+                    {
+                        szDestinationDir = objNF3Template.GetCompanyName((((Bil_Sys_Associate_Diagnosis)((ArrayList)Session["DIAGNOS_ASSOCIATION_PAID"])[0])).CompanyId);
+
+                    }
+                    szDestinationDir = szDestinationDir + "/" + txtCaseID.Text + "/No Fault File/Medicals/" + billSysassociate.ProceuderGroupName.ToString() + "/";
+                    strLinkPath = szDestinationDir + fuUploadReport.FileName;
+                    if (!Directory.Exists(szDefaultPath + szDestinationDir))
+                    {
+                        Directory.CreateDirectory(szDefaultPath + szDestinationDir);
+                    }
+                    //if (!File.Exists(szDefaultPath + szDestinationDir + fuUploadReport.FileName))
+                    //{
+                        fuUploadReport.SaveAs(szDefaultPath + szDestinationDir + fuUploadReport.FileName);
+                        // Start : Save report under document manager.
+
+                        ArrayList objAL = new ArrayList();
+                        if (((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY == true && ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID == (((Bil_Sys_Associate_Diagnosis)((ArrayList)Session["DIAGNOS_ASSOCIATION_PAID"])[0])).CompanyId)
+                        {
+                            objAL.Add(((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID);
+                        }
+                        else
+                        {
+                            objAL.Add((((Bil_Sys_Associate_Diagnosis)((ArrayList)Session["DIAGNOS_ASSOCIATION_PAID"])[0])).CompanyId);
+                        }
+
+                        objAL.Add(txtCaseID.Text);
+                        objAL.Add(fuUploadReport.FileName);
+                        objAL.Add(szDestinationDir);
+                        objAL.Add(((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_NAME);
+                        objAL.Add(billSysassociate.ProceuderGroupName.ToString());
+                        ImageID=objNF3Template.saveReportInDocumentManager(objAL);
+                        // End :   Save report under document manager.
+                    //}
+                
+            }
+
+            Bill_Sys_ReferalEvent _bill_Sys_ReferalEvent;
+            ArrayList arrOBJ;
+            int _iReturnValue = 0;
+            bool _iupdate = false;
+            bool _iNotUpdate = false;
+
+           
+            Bil_Sys_Associate_Diagnosis billSysassociateobj;
+            foreach (Object obj in ListObject)
+            {
+
+                billSysassociateobj = (Bil_Sys_Associate_Diagnosis)obj;
+               
+                    _bill_Sys_ProcedureCode_BO = new Bill_Sys_ProcedureCode_BO();
+                    _iReturnValue = _bill_Sys_ProcedureCode_BO.UpdateReportProcedureCodeListWithRefDoctor(Convert.ToInt32(billSysassociateobj.EventProcID.ToString()), strLinkPath, Convert.ToString(extddlReadingDoctor.Text), ImageID);
+
+                 if (_iReturnValue == 1)
+                 {
+                     _iupdate = true;
+                     #region "make ready for bill"
+                      _bill_Sys_ReferalEvent = new Bill_Sys_ReferalEvent();
+                     arrOBJ = new ArrayList();
+                     arrOBJ.Add(billSysassociateobj.PatientId.ToString()); // SZ_PATIENT_ID
+                     arrOBJ.Add(billSysassociateobj.DoctorID.ToString()); // SZ_DOCTOR_ID
+                     arrOBJ.Add(billSysassociateobj.DateOfService.ToString()); // EVENT DT_DATE
+                     arrOBJ.Add(billSysassociateobj.ProcedureCode.ToString()); // SZ_PROCEDURE_CODE_ID 
+                     arrOBJ.Add(((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID);// SZ_COMPANY_ID
+                     arrOBJ.Add("");
+                     arrOBJ.Add(billSysassociateobj.EventProcID.ToString()); // SZ_CODE (I_EVENT_PROC_ID)
+                     _bill_Sys_ReferalEvent.AddPatientProc(arrOBJ);
+
+                     _bill_Sys_ProcedureCode_BO = new Bill_Sys_ProcedureCode_BO();
+                     _bill_Sys_ProcedureCode_BO.UpdateStatusProcedureCodeList(Convert.ToInt32(billSysassociateobj.EventProcID.ToString())); // SZ_CODE (I_EVENT_PROC_ID)
+
+                     #endregion
+                 }
+                 else
+                 {
+                     _iNotUpdate = true;
+                 }
+            }
+            if (_iupdate == true && _iNotUpdate == false)
+            {
+
+                Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "ss", "<script language='javascript'>parent.document.getElementById('divid').style.visibility = 'hidden';window.parent.document.location.href='Bill_Sys_PaidBills.aspx?Flag=report&Type=p&popup=done';</script>");
+                
+            }
+
+            //GetProcedureList(txtCaseID.Text, ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID);
+        }
+        catch (Exception ex)
+        {
+            string strError = ex.Message.ToString();
+            strError = strError.Replace("\n", " ");
+            Response.Redirect("Bill_Sys_ErrorPage.aspx?ErrMsg=" + strError);
+        }
+    }
+
+    private void SaveDiagnosisCode()
+    {
+        _associateDiagnosisCodeBO = new Bill_Sys_AssociateDiagnosisCodeBO();
+        DataSet _billDs = new DataSet();
+        ArrayList _arrayList;
+        try
+        {
+
+            _associateDiagnosisCodeBO.DeleteCaseAssociateDignosisCodeWithProcCode(txtCaseID.Text, txtCompanyID.Text, "");//, lstPTDProcCode.Items[j].Value.Substring(0, lstPTDProcCode.Items[j].Value.IndexOf("|")), lstPTDProcCode.Items[j].Value.Substring((lstPTDProcCode.Items[j].Value.IndexOf("|") + 1), ((lstPTDProcCode.Items[j].Value.Length - lstPTDProcCode.Items[j].Value.IndexOf("|")) - 1)));
+
+            foreach (DataGridItem dgiProcedureCode in grdSelectedDiagnosisCode.Items)
+            {
+
+
+                _arrayList = new ArrayList();
+                _arrayList.Add(txtDiagnosisSetID.Text);
+                _arrayList.Add(txtCaseID.Text);
+                if (((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY == true)
+                {
+                    _arrayList.Add("");
+                }
+                else
+                {
+                    _arrayList.Add("");
+                }
+                _arrayList.Add(dgiProcedureCode.Cells[0].Text.ToString());
+                _arrayList.Add(txtCompanyID.Text);
+                _arrayList.Add(dgiProcedureCode.Cells[5].Text.ToString());
+                _associateDiagnosisCodeBO.SaveCaseAssociateDignosisCode(_arrayList);
+
+
+
+            }
+
+         
+            foreach (DataGridItem dgiProcedureCode in grdNormalDgCode.Items)
+            {
+                CheckBox chkEmpty = (CheckBox)dgiProcedureCode.Cells[1].FindControl("chkSelect");
+                if (chkEmpty.Checked == true)
+                {
+
+                    _arrayList = new ArrayList();
+                    _arrayList.Add(txtDiagnosisSetID.Text);
+                    _arrayList.Add(txtCaseID.Text);
+                    if (((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY == true)
+                    {
+                        _arrayList.Add("");
+                    }
+                    else
+                    {
+                        _arrayList.Add("");
+                    }
+                    _arrayList.Add(dgiProcedureCode.Cells[1].Text.ToString());
+                    _arrayList.Add(txtCompanyID.Text);
+//                    _arrayList.Add(extddlSpeciality.Text);
+                    _arrayList.Add((((Bil_Sys_Associate_Diagnosis)((ArrayList)Session["DIAGNOS_ASSOCIATION_PAID"])[0])).ProceuderGroupId);
+                    _associateDiagnosisCodeBO.SaveCaseAssociateDignosisCode(_arrayList);
+
+
+                }
+
+            }
+            GetAssignedDiagnosisCode(txtCaseID.Text, ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID, "", "GET_DIAGNOSIS_CODE");
+            //new code from associate diagnosis page
+            GetDiagnosisCode(txtCaseID.Text, ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID, "", "GET_DIAGNOSIS_CODE");
+        }
+        catch (Exception ex)
+        {
+            string strError = ex.Message.ToString();
+            strError = strError.Replace("\n", " ");
+            Response.Redirect("Bill_Sys_ErrorPage.aspx?ErrMsg=" + strError);
+        }
+    }
+
+    private void GetAssignedDiagnosisCode(string caseID, string companyId, string doctorId, string flag)
+    {
+        _associateDiagnosisCodeBO = new Bill_Sys_AssociateDiagnosisCodeBO();
+        try
+        {
+            DataSet ds = new DataSet();
+            // please check the below function.. it returns all the rows from the database when a doctor is selected
+            ds = _associateDiagnosisCodeBO.GetDiagnosisCode(caseID, companyId, doctorId, flag);
+            //    ds = _digosisCodeBO.GetDiagnosisCodeReferalList(txtCompanyID.Text, extddlDiagnosisType.Text, txtDiagonosisCode.Text, txtDescription.Text);
+            grdNormalDgCode.DataSource = ds.Tables[0]; //_associateDiagnosisCodeBO.GetDoctorDiagnosisCode(id, flag);
+            grdNormalDgCode.DataBind();
+            DataTable dt = new DataTable();
+            dt.Columns.Add("SZ_DIAGNOSIS_CODE_ID");
+            dt.Columns.Add("SZ_DIAGNOSIS_CODE");
+            dt.Columns.Add("SZ_DESCRIPTION");
+            dt.Columns.Add("SZ_COMPANY_ID");
+            dt.Columns.Add("SZ_PROCEDURE_GROUP");
+            dt.Columns.Add("SZ_PROCEDURE_GROUP_ID");
+            DataRow dr;
+            DataTable dtNew = new DataTable();
+            dtNew.Columns.Add("SZ_DIAGNOSIS_CODE_ID");
+            dtNew.Columns.Add("SZ_DIAGNOSIS_CODE");
+            dtNew.Columns.Add("SZ_DESCRIPTION");
+            dtNew.Columns.Add("SZ_COMPANY_ID");
+            dtNew.Columns.Add("SZ_PROCEDURE_GROUP");
+            dtNew.Columns.Add("SZ_PROCEDURE_GROUP_ID");
+            DataRow drNew;
+            for (int intLoop = 0; intLoop < ds.Tables[0].Rows.Count; intLoop++)
+            {
+                foreach (DataGridItem dgiProcedureCode in grdNormalDgCode.Items)
+                {
+                    if (dgiProcedureCode.ItemIndex == intLoop && ((Boolean)ds.Tables[0].Rows[intLoop]["CHECKED"]) == true)
+                    {
+                        dr = dt.NewRow();
+                        dr["SZ_DIAGNOSIS_CODE_ID"] = ds.Tables[0].Rows[intLoop]["SZ_DIAGNOSIS_CODE_ID"].ToString();
+                        dr["SZ_DIAGNOSIS_CODE"] = ds.Tables[0].Rows[intLoop]["SZ_DIAGNOSIS_CODE"].ToString();
+                        dr["SZ_DESCRIPTION"] = ds.Tables[0].Rows[intLoop]["SZ_DESCRIPTION"].ToString();
+                        dr["SZ_COMPANY_ID"] = ds.Tables[0].Rows[intLoop]["SZ_COMPANY_ID"].ToString();
+                        dr["SZ_PROCEDURE_GROUP"] = ds.Tables[0].Rows[intLoop]["Speciality"].ToString();
+                        dr["SZ_PROCEDURE_GROUP_ID"] = ds.Tables[0].Rows[intLoop]["SZ_PROCEDURE_GROUP_ID"].ToString();
+                        dt.Rows.Add(dr);
+
+                    }
+
+                }
+            }
+           
+            grdAssignedDiagnosisCode.DataSource = dt;
+            grdAssignedDiagnosisCode.DataBind();
+            
+
+            //BindGrid(extddlDiagnosisType.Text, txtDiagonosisCode.Text, txtDescription.Text);
+
+
+
+        }
+        catch (Exception ex)
+        {
+            string strError = ex.Message.ToString();
+            strError = strError.Replace("\n", " ");
+            Response.Redirect("Bill_Sys_ErrorPage.aspx?ErrMsg=" + strError);
+        }
+    }
+
+    protected void btnDeassociateDiagCode_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            Boolean blStatus = false;
+            string szDiagIDs = "";
+            foreach (DataGridItem dgiItem in grdAssignedDiagnosisCode.Items)
+            {
+                CheckBox chkEmpty = (CheckBox)dgiItem.Cells[0].FindControl("chkSelect");
+                if (chkEmpty.Checked == true)
+                {
+                    _arrayList = new ArrayList();
+                    _arrayList.Add(dgiItem.Cells[1].Text.ToString());
+                    if (((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).BT_REFERRING_FACILITY == true)
+                    {
+                        _arrayList.Add("");
+                    }
+                    else
+                    {
+                        _arrayList.Add("");
+                    }
+
+                    _arrayList.Add(txtCaseID.Text);
+                    _arrayList.Add(txtCompanyID.Text);
+                    if (_associateDiagnosisCodeBO.DeleteAssociateDiagonisCode(_arrayList))
+                    {
+                    }
+                    else
+                    {
+                        szDiagIDs += "  " + dgiItem.Cells[2].Text.ToString() + ",";
+                    }
+                }
+            }
+            if (szDiagIDs == "")
+            {
+                lblMsg.Visible = true;
+                lblMsg.Text = " All diagnosis code deassociated successfully ...!";
+            }
+            else
+            {
+                lblMsg.Visible = true;
+
+                lblMsg.Text = szDiagIDs + " diagnosis code used in bills. You can not de-associate it.";
+            }
+            GetDiagnosisCode(txtCaseID.Text, ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID, "", "GET_DIAGNOSIS_CODE");
+            grdAssignedDiagnosisCode.CurrentPageIndex = 0;
+            GetAssignedDiagnosisCode(txtCaseID.Text, ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID, "", "GET_DIAGNOSIS_CODE");
+            BindGrid(extddlDiagnosisType.Text, txtDiagonosisCode.Text, txtDescription.Text);
+        }
+        catch (Exception ex)
+        {
+            string strError = ex.Message.ToString();
+            strError = strError.Replace("\n", " ");
+            Response.Redirect("Bill_Sys_ErrorPage.aspx?ErrMsg=" + strError);
+        }
+    }
+  
+    protected void grdAssignedDiagnosisCode_PageIndexChanged(object source, DataGridPageChangedEventArgs e)
+    {
+        try
+        {
+            grdAssignedDiagnosisCode.CurrentPageIndex = e.NewPageIndex;
+            GetAssignedDiagnosisCode(txtCaseID.Text, ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID, "", "GET_DIAGNOSIS_CODE");
+            tabcontainerDiagnosisCode.ActiveTabIndex = 1;
+        }
+        catch (Exception ex)
+        {
+            string strError = ex.Message.ToString();
+            strError = strError.Replace("\n", " ");
+            Response.Redirect("Bill_Sys_ErrorPage.aspx?ErrMsg=" + strError);
+        }
+    }
+    //private void GetSpecialityField()
+    //{
+    //    _associateDiagnosisCodeBO = new Bill_Sys_AssociateDiagnosisCodeBO();
+    //    string _speciality_ID = "";
+    //    string _speciality_Name = "";
+    //    try
+    //    {
+    //        _patientGrid_dt.Columns.Add("SPECIALITY");
+    //        _patientGrid_dt.Columns.Add("SPECIALITY_NAME");
+    //        foreach (DataRow dr in _patientGrid_dt.Rows)
+    //        {
+    //            string _typeCode = "";
+    //            string _companyID = "";
+    //            DataRow drSpecaility = _patientGrid_dt.NewRow();
+
+    //            _typeCode = dr["SZ_PROC_CODE"].ToString();
+    //            _companyID = dr["SZ_COMPANY_ID"].ToString();
+
+    //            _speciality_ID = _associateDiagnosisCodeBO.GetAssociateSpecaility(_typeCode, _companyID, "SPECIALITY_ID");
+    //            dr["SPECIALITY"] = _speciality_ID;  
+
+    //            _speciality_Name = _associateDiagnosisCodeBO.GetAssociateSpecaility(_typeCode, _companyID, "SPECIALITY_NAME");
+    //            dr["SPECIALITY_NAME"] = _speciality_Name;
+
+               
+
+    //        }
+    //        Session["AllReceivedDocument"] = null;
+    //        Session["AllReceivedDocument"] =(DataTable) _patientGrid_dt;
+    //    }
+    //    catch { }
+    //}
+
+    #region "New code from Associate Diagnosis code page"
+    private void GetDiagnosisCode(string caseID, string companyId, string doctorId, string flag)
+    {
+        _associateDiagnosisCodeBO = new Bill_Sys_AssociateDiagnosisCodeBO();
+        try
+        {
+            DataSet ds = new DataSet();
+            // please check the below function.. it returns all the rows from the database when a doctor is selected
+            ds = _associateDiagnosisCodeBO.GetDiagnosisCode(caseID, companyId, doctorId, flag);
+
+            grdNormalDgCode.DataSource = ds.Tables[0]; //_associateDiagnosisCodeBO.GetDoctorDiagnosisCode(id, flag);
+            grdNormalDgCode.DataBind();
+            DataTable dt = new DataTable();
+            dt.Columns.Add("SZ_DIAGNOSIS_CODE_ID");
+            dt.Columns.Add("SZ_DIAGNOSIS_CODE");
+            dt.Columns.Add("SZ_DESCRIPTION");
+            dt.Columns.Add("SZ_COMPANY_ID");
+            dt.Columns.Add("SZ_PROCEDURE_GROUP");
+            dt.Columns.Add("SZ_PROCEDURE_GROUP_ID");
+            DataRow dr;
+            DataTable dtNew = new DataTable();
+            dtNew.Columns.Add("SZ_DIAGNOSIS_CODE_ID");
+            dtNew.Columns.Add("SZ_DIAGNOSIS_CODE");
+            dtNew.Columns.Add("SZ_DESCRIPTION");
+            dtNew.Columns.Add("SZ_COMPANY_ID");
+            dtNew.Columns.Add("SZ_PROCEDURE_GROUP");
+            dtNew.Columns.Add("SZ_PROCEDURE_GROUP_ID");
+            DataRow drNew;
+            for (int intLoop = 0; intLoop < ds.Tables[0].Rows.Count; intLoop++)
+            {
+                foreach (DataGridItem dgiProcedureCode in grdNormalDgCode.Items)
+                {
+                    if (dgiProcedureCode.ItemIndex == intLoop && ((Boolean)ds.Tables[0].Rows[intLoop]["CHECKED"]) == true)
+                    {
+                        dr = dt.NewRow();
+                        dr["SZ_DIAGNOSIS_CODE_ID"] = ds.Tables[0].Rows[intLoop]["SZ_DIAGNOSIS_CODE_ID"].ToString();
+                        dr["SZ_DIAGNOSIS_CODE"] = ds.Tables[0].Rows[intLoop]["SZ_DIAGNOSIS_CODE"].ToString();
+                        dr["SZ_DESCRIPTION"] = ds.Tables[0].Rows[intLoop]["SZ_DESCRIPTION"].ToString();
+                        dr["SZ_COMPANY_ID"] = ds.Tables[0].Rows[intLoop]["SZ_COMPANY_ID"].ToString();
+                        dr["SZ_PROCEDURE_GROUP"] = ds.Tables[0].Rows[intLoop]["Speciality"].ToString();
+                        dr["SZ_PROCEDURE_GROUP_ID"] = ds.Tables[0].Rows[intLoop]["SZ_PROCEDURE_GROUP_ID"].ToString();
+                        dt.Rows.Add(dr);
+
+                    }
+
+                }
+            }
+
+            grdSelectedDiagnosisCode.DataSource = dt;
+            grdSelectedDiagnosisCode.DataBind();
+            lblDiagnosisCount.Text = dt.Rows.Count.ToString();
+
+        }
+        catch (Exception ex)
+        {
+            string strError = ex.Message.ToString();
+            strError = strError.Replace("\n", " ");
+            Response.Redirect("Bill_Sys_ErrorPage.aspx?ErrMsg=" + strError);
+        }
+    }
+    #endregion
+
+
+
+
+    protected void grdNormalDgCode_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
+    protected void grdNormalDgCode_PageIndexChanged(object source, DataGridPageChangedEventArgs e)
+    {
+        try
+        {
+            grdNormalDgCode.CurrentPageIndex = e.NewPageIndex;
+            GetDiagnosisCode(txtCaseID.Text, ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID, "", "GET_DIAGNOSIS_CODE");
+        }
+        catch (Exception ex)
+        {
+            string strError = ex.Message.ToString();
+            strError = strError.Replace("\n", " ");
+            Response.Redirect("Bill_Sys_ErrorPage.aspx?ErrMsg=" + strError);
+        }
+    }
+
+    protected void btnAdd_Click(object sender, EventArgs e)
+    {
+        ArrayList arrProcCode = new ArrayList();
+        for (int i = 0; i < grdProCode.Items.Count; i++)
+
+        {
+            CheckBox chk = (CheckBox)grdProCode.Items[i].FindControl("chkSelectProc");
+            if (chk.Checked)
+            {
+                arrProcCode.Add(grdProCode.Items[i].Cells[0].Text);
+            }
+        }
+        ArrayList arrEvent=(ArrayList)Session["EVENT_ID"] ;
+        Bill_Sys_CheckoutBO objSaveProcedureCodes;
+        if (arrProcCode.Count > 0 && arrEvent.Count>0)
+        {
+            for (int procount = 0; procount < arrProcCode.Count; procount++)
+            {
+                for (int eventcount = 0; eventcount < arrEvent.Count; eventcount++)
+                {
+                    objSaveProcedureCodes = new Bill_Sys_CheckoutBO();
+
+                    objSaveProcedureCodes.saveProcCodes(arrEvent[eventcount].ToString(), arrProcCode[procount].ToString());
+                }
+
+                
+            }
+        }
+
+    }
+}

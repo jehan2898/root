@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<document  procedure_name="SP_MST_WORK_STATUS">
+    <field sz_field_name="BT_PATIENT_MISSED_WORK"             sz_field_value="5"></field>
+    <field sz_field_name="DT_PATIENT_MISSED_WORK_DATE"        sz_field_value=""></field>
+    <field sz_field_name="BT_PATIENT_CUR_WORKING"             sz_field_value="5"></field>
+    <field sz_field_name="BT_PATIENT_WORK_TYPE"               sz_field_value="5"></field>
+    <field sz_field_name="BT_PATIENT_RETURN_WORK"             sz_field_value="5"></field>
+    <field sz_field_name="SZ_PATIENT_RETURN_WORK_DESCRIPTION" sz_field_value=""></field>
+    <field sz_field_name="SZ_QUANIFY_LIMITATION"              sz_field_value=""></field>
+    <field sz_field_name="SZ_LIMITATION_DURATION"             sz_field_value=""></field>
+    <field sz_field_name="INT_HOW_LONG_LIMITATION_APPLY"      sz_field_value="0"></field>
+    <field sz_field_name="INT_WHOM_DISCUSS"                   sz_field_value="0"></field>
+    <field sz_field_name="BT_BOARD_AUTHORIZED"                sz_field_value="0"></field>
+
+  </document>
+</root>

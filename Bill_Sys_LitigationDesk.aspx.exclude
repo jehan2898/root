@@ -1,0 +1,436 @@
+<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterPage.master"
+    CodeFile="Bill_Sys_LitigationDesk.aspx.cs" Inherits="LitigationDesk" %>
+<%@ Register Assembly="ExtendedDropDownList" Namespace="ExtendedDropDownList" TagPrefix="extddl" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+ <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <script type="text/javascript" src="validation.js"></script>
+   
+    
+<%--<div id="divDashBoard" visible="false" style="position: absolute; width: 600px; height: 480px;
+        background-color: #DBE6FA; visibility: hidden; border-right: silver 1px solid;
+        border-top: silver 1px solid; border-left: silver 1px solid; border-bottom: silver 1px solid;">
+        <div style="position: relative; text-align: right; background-color: #8babe4;">
+            <a onclick="document.getElementById('divDashBoard').style.visibility='hidden';" style="cursor: pointer;"
+                title="Close">X</a>
+        </div>
+        <table id="Table1" border="0" cellpadding="0" cellspacing="0" style="width: 100%; height: 100%">
+            <tr>
+                <td style="padding-right: 3px; padding-left: 3px; padding-bottom: 3px; width: 100%;
+                    padding-top: 3px; height: 100%" valign="top">
+                    <table id="Table2" cellpadding="0" cellspacing="0" style="width: 100%">
+                        <tr>
+                            <td class="LeftTop">
+                            </td>
+                            <td class="CenterTop">
+                            </td>
+                            <td class="RightTop">
+                            </td>
+                        </tr>
+                         <tr>
+                        <td class="LeftCenter" style="height: 100%">
+                        </td>
+                        <td class="Center" valign="top">
+                         <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; height: 100%">
+                         <tr>
+                            <td class="Center" valign="top" width="45%">
+                                <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; height: 100%">
+                                    <tr>
+                                        <td class="TDHeading" style="width: 100%">
+                                            Today's Appointment</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%" class="TDPart">
+                                            <asp:Label ID="lblAppointmentToday" runat="server" Text=""></asp:Label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%" class="SectionDevider">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                          
+                            <td class="Center" width="45%" valign="top">
+                                <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; height: 100%">
+                                    <tr>
+                                        <td class="TDHeading" style="width: 100%">
+                                            Weekly &nbsp;Appointment</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%" class="TDPart">
+                                            <asp:Label ID="lblAppointmentWeek" runat="server" Text=""></asp:Label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%" class="SectionDevider">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="Center" valign="top" width="45%">
+                                <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; height: 100%">
+                                    <tr>
+                                        <td class="TDHeading" style="width: 100%">
+                                            Bill Status</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%" class="TDPart">
+                                            You have &nbsp;<asp:Label ID="lblBillStatus" runat="server"></asp:Label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%" class="SectionDevider">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                          
+                            <td class="Center" width="45%" valign="top">
+                                <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; height: 100%">
+                                    <tr>
+                                        <td class="TDHeading" style="width: 100%">
+                                            Desk</td>
+                                    </tr>                                     
+                                    <tr>
+                                        <td style="width: 100%" class="TDPart">
+                                           You have &nbsp; <asp:Label ID="lblDesk" runat="server"></asp:Label>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                        
+                            <td class="Center" valign="top">
+                                <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; height: 100%">
+                                    <tr>
+                                        <td class="TDHeading" style="width: 100%">
+                                            Missing Information</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100%" class="TDPart">
+                                            You have &nbsp;<asp:Label ID="lblMissingInformation" runat="server"></asp:Label>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                         
+                            
+                        </tr>
+                         </table> 
+                        </td> 
+                         <td class="RightCenter" style="width: 10px; height: 100%;">
+                        </td>
+                    
+                        </tr> 
+                        
+                         <tr>
+                        <td class="LeftBottom">
+                        </td>
+                        <td class="CenterBottom">
+                        </td>
+                        <td class="RightBottom" style="width: 10px">
+                        </td>
+                    </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>--%>
+                 <div id="divDashBoard" visible="false" style="position: absolute; width: 800px; height: 475px;
+        background-color: #DBE6FA; visibility: hidden; border-right: silver 1px solid;
+        border-top: silver 1px solid; border-left: silver 1px solid; border-bottom: silver 1px solid;">
+        <div style="position: relative; text-align: right; background-color: #8babe4;">
+            <a onclick="document.getElementById('divDashBoard').style.visibility='hidden';" style="cursor: pointer;"
+                title="Close">X</a>
+        </div>
+        <table id="Table1" border="0" cellpadding="0" cellspacing="0" style="width: 100%;
+            height: 430; float: left; position: relative;">
+            <tr>
+                <td style="padding-right: 3px; padding-left: 3px; padding-bottom: 3px; width: 100%;
+                    padding-top: 3px; height: 100%" valign="top">
+                    <table id="Table2" cellpadding="0" cellspacing="0" style="width: 100%">
+                        <tr>
+                            <td class="LeftTop" style="width: 12px">
+                            </td>
+                            <td class="CenterTop">
+                            </td>
+                            <td class="RightTop">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="LeftCenter" style="height: 100%; width: 12px;">
+                            </td>
+                            <td style="width: 97%" class="TDPart">
+                            <table id="tblMissingSpeciality" runat="server" border="0" cellpadding="0" cellspacing="0"
+                                                style="width: 99%; height: 130px; float: left; position: relative; left: 0px;
+                                                top: 0px;vertical-align:top" visible="false">
+                                                <tr>
+                                                    <td class="TDHeading" style="width: 99%" valign="top">
+                                                        Missing Speciality</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 99%" class="TDPart" valign="top">
+                                                        <table>
+                                                            <tr>
+                                                                <td>
+                                                                    You have
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <asp:Label ID="lblMissingSpecialityText" runat="server" Text=""></asp:Label>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                               <tr>
+                                                    <td style="width: 99%; height: 10px;" class="SectionDevider">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                <table border="0" id="tblDailyAppointment" runat="server" cellpadding="0" cellspacing="0"
+                                    style="width: 32%; height: 195px; float: left; position: relative;" visible="false">
+                                    <tr>
+                                        <td class="TDHeading" style="width: 99%" valign="top">
+                                            Today's Appointment</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 99%" class="TDPart" valign="top">
+                                            <asp:Label ID="lblAppointmentToday" runat="server" Text=""></asp:Label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 99%" class="SectionDevider">
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table id="tblWeeklyAppointment" runat="server" border="0" cellpadding="0" cellspacing="0"
+                                    style="width: 32%; height: 195px; float: left; position: relative;" visible="false">
+                                    <tr>
+                                        <td class="TDHeading" style="width: 99%">
+                                            Weekly &nbsp;Appointment</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 99%" class="TDPart">
+                                            <asp:Label ID="lblAppointmentWeek" runat="server" Text=""></asp:Label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 99%" class="SectionDevider">
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table id="tblBillStatus" runat="server" border="0" cellpadding="0" cellspacing="0"
+                                    style="width: 32%; height: 195px; vertical-align: top; float: left; position: relative;"
+                                    visible="false">
+                                    <tr>
+                                        <td class="TDHeading" style="width: 99%" valign="top">
+                                            Bill Status</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 99%" class="TDPart" valign="top">
+                                            You have &nbsp;<asp:Label ID="lblBillStatus" runat="server"></asp:Label>
+                                            <br />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 99%" class="SectionDevider">
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table id="tblDesk" runat="server" border="0" cellpadding="0" cellspacing="0" style="width: 32%;
+                                    height: 195px; float: left; position: relative;" visible="false">
+                                    <tr>
+                                        <td class="TDHeading" style="width: 99%;" valign="top">
+                                            Desk</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 99%" class="TDPart" valign="top">
+                                            You have&nbsp;
+                                            <asp:Label ID="lblDesk" runat="server"></asp:Label>
+                                            <br />
+                                            <br />
+                                            <br />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 99%" class="SectionDevider">
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table id="tblMissingInfo" runat="server" border="0" cellpadding="0" cellspacing="0"
+                                    style="width: 32%; height: 195px; float: left; position: relative;" visible="false">
+                                    <tr>
+                                        <td class="TDHeading" style="width: 99%" valign="top">
+                                            Missing Information</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 99%;" class="TDPart" valign="top">
+                                            You have &nbsp;<asp:Label ID="lblMissingInformation" runat="server"></asp:Label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 99%" class="SectionDevider">
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table id="tblReportSection" runat="server" border="0" cellpadding="0" cellspacing="0"
+                                    style="width: 32%; height: 195px; float: left; position: relative;" visible="false">
+                                    <tr>
+                                        <td class="TDHeading" style="width: 99%" valign="top">
+                                            Report Section</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 99%" class="TDPart" valign="top">
+                                            You have &nbsp;<asp:Label ID="lblReport" runat="server"></asp:Label>
+                                            <br />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 99%" class="SectionDevider">
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table id="tblBilledUnbilledProcCode" runat="server" border="0" cellpadding="0" cellspacing="0"
+                                    style="width: 32%; height: 195px; float: left; position: relative; left: 0px;
+                                    top: 0px;" visible="false">
+                                    <tr>
+                                        <td class="TDHeading" style="width: 99%" valign="top">
+                                            Procedure Status</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 99%" class="TDPart" valign="top">
+                                            You have &nbsp;<asp:Label ID="lblProcedureStatus" runat="server"></asp:Label>
+                                            <br />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 99%" class="SectionDevider">
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table id="tblVisits" runat="server" border="0" cellpadding="0" cellspacing="0" style="width: 32%;
+                                    height: 195px; float: left; position: relative; left: 0px; top: 0px;" visible="false">
+                                    <tr>
+                                        <td class="TDHeading" style="width: 99%" valign="top">
+                                            Visits</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 99%" class="TDPart" valign="top">
+                                            <asp:Label ID="lblVisits" runat="server" Visible="true"></asp:Label>
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        You have
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <ul style="list-style-type: disc; padding-left: 60px;">
+                                                            <li><a id="hlnkTotalVisit" href="#" runat="server">
+                                                                <asp:Label ID="lblTotalVisit" runat="server"></asp:Label></a>&nbsp;Total Visit</li><li>
+                                                                    <a id="hlnkBilledVisit" href="#" runat="server">
+                                                                        <asp:Label ID="lblBilledVisit" runat="server"></asp:Label></a>&nbsp;Billed Visit
+                                                                </li>
+                                                            <li><a id="hlnkUnBilledVisit" href="#" runat="server">
+                                                                <asp:Label ID="lblUnBilledVisit" runat="server"></asp:Label></a>&nbsp;UnBilled Visit
+                                                            </li>
+                                                        </ul>
+                                                        <ajaxToolkit:PopupControlExtender ID="PopExTotalVisit" runat="server" TargetControlID="hlnkTotalVisit"
+                                                            PopupControlID="pnlTotalVisit" Position="Center" OffsetX="100" OffsetY="10" />
+                                                        <ajaxToolkit:PopupControlExtender ID="PopExBilledVisit" runat="server" TargetControlID="hlnkBilledVisit"
+                                                            PopupControlID="pnlBilledVisit" Position="Center" OffsetX="100" OffsetY="10" />
+                                                        <ajaxToolkit:PopupControlExtender ID="PopExUnBilledVisit" runat="server" TargetControlID="hlnkUnBilledVisit"
+                                                            PopupControlID="pnlUnBilledVisit" Position="Center" OffsetX="100" OffsetY="10" />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 99%" class="SectionDevider">
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table id="tblPatientVisitStatus" runat="server" border="0" cellpadding="0" cellspacing="0"
+                                                style="width: 33%; height: 195px; float: left; position: relative; left: 0px;
+                                                top: 0px;vertical-align:top" visible="false">
+                                                <tr>
+                                                    <td class="TDHeading" style="width: 99%" valign="top">
+                                                        Patient Visit Status</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 99%" class="TDPart" valign="top">
+                                                        You have &nbsp;<asp:Label ID="lblPatientVisitStatus" runat="server"></asp:Label>
+                                                        <br />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 99%" class="SectionDevider">
+                                                    </td>
+                                                </tr>
+                                            </table>
+                            </td>
+                            <td class="RightCenter" style="width: 10px; height: 100%;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="LeftBottom" style="width: 12px">
+                            </td>
+                            <td class="CenterBottom">
+                            </td>
+                            <td class="RightBottom" style="width: 10px">
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+             <tr>
+                <td style="width: 100%;">
+                    <asp:DataGrid ID="grdTotalVisit" runat="server" Width="25px" CssClass="GridTable"
+                        AutoGenerateColumns="false">
+                        <ItemStyle CssClass="GridRow" />
+                        <Columns>
+                            <asp:BoundColumn DataField="Speciality" HeaderText="Speciality"></asp:BoundColumn>
+                            <asp:BoundColumn DataField="SP_COUNT" HeaderText="Count" ItemStyle-HorizontalAlign="Right">
+                            </asp:BoundColumn>
+                        </Columns>
+                        <HeaderStyle CssClass="GridHeader" />
+                    </asp:DataGrid>
+                </td>
+            </tr>
+               <tr>
+                <td style="width: 100%;">
+                    <asp:DataGrid ID="grdVisit" runat="server" Width="25px" CssClass="GridTable" AutoGenerateColumns="false">
+                        <ItemStyle CssClass="GridRow" />
+                        <Columns>
+                            <asp:BoundColumn DataField="Speciality" HeaderText="Speciality"></asp:BoundColumn>
+                            <asp:BoundColumn DataField="SP_COUNT" HeaderText="Count" ItemStyle-HorizontalAlign="Right">
+                            </asp:BoundColumn>
+                        </Columns>
+                        <HeaderStyle CssClass="GridHeader" />
+                    </asp:DataGrid>
+                </td>
+            </tr>
+              <tr>
+                <td style="width: 100%;">
+                    <asp:DataGrid ID="grdUnVisit" runat="server" Width="25px" CssClass="GridTable" AutoGenerateColumns="false">
+                        <ItemStyle CssClass="GridRow" />
+                        <Columns>
+                            <asp:BoundColumn DataField="Speciality" HeaderText="Speciality"></asp:BoundColumn>
+                            <asp:BoundColumn DataField="SP_COUNT" HeaderText="Count" ItemStyle-HorizontalAlign="Right">
+                            </asp:BoundColumn>
+                        </Columns>
+                        <HeaderStyle CssClass="GridHeader" />
+                    </asp:DataGrid>
+                </td>
+            </tr>
+        </table>
+    </div>
+</asp:Content>

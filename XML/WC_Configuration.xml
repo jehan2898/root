@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="abc">
+  <Field Name="SZ_COMPANY_ID" DataType="NVarChar" Size="20" Null="False" Control="TextBox" ControlID="txthdnCompanyID" Editable="True" Visible="True"></Field>
+  <StoreProcedure name="SP_GET_WC_CONFIGURATION"></StoreProcedure>
+  <ListControl name="grdConfiguration"></ListControl>
+</Table>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_IM_FOLLOWING">
+  <Field Name="I_EVENT_ID" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_EVENT_ID" Editable="True" Visible="True" />
+
+
+
+  <Field Name="BT_X_RAY_CER_SPINE_DEMO" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_X_RAY_CER_SPINE_DEMO" Editable="True" Visible="True" />
+  <Field Name="SZ_X_RAY_CER_SPINE_DEMO" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_X_RAY_CER_SPINE_DEMO" Editable="True" Visible="True" />
+
+  <Field Name="BT_X_RAY_LUM_SPINE_DEMO" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_X_RAY_LUM_SPINE_DEMO" Editable="True" Visible="True" />
+  <Field Name="SZ_X_RAY_LUM_SPINE_DEMO" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_X_RAY_LUM_SPINE_DEMO" Editable="True" Visible="True" />
+
+  <Field Name="BT_X_RAY_DEMO" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_X_RAY__DEMO" Editable="True" Visible="True" />
+  <Field Name="SZ_X_RAY_PART_DEMO" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_X_RAY_PART_DEMO" Editable="True" Visible="True" />
+  <Field Name="SZ_X_RAY_DEMO" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_X_RAY_DEMO" Editable="True" Visible="True" />
+
+  <Field Name="BT_MRI_CT_CER_SPINE_DEMO" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_MRI_CT_CER_SPINE_DEMO" Editable="True" Visible="True" />
+  <Field Name="SZ_MRI_CT_CER_SPINE_DEMO" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MRI_CT_CER_SPINE_DEMO" Editable="True" Visible="True" />
+
+  <Field Name="BT_MRI_CT_LUM_SPINE_DEMO" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_MRI_CT_LUM_SPINE_DEMO" Editable="True" Visible="True" />
+  <Field Name="SZ_MRI_CT_LUM_SPINE_DEMO" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MRI_CT_LUM_SPINE_DEMO" Editable="True" Visible="True" />
+
+  <Field Name="BT_MRI_CT_DEMO" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_MRI_CT_DEMO" Editable="True" Visible="True" />
+  <Field Name="SZ_MRI_CT_BODY_DEMO" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MRI_CT_BODY_DEMO" Editable="True" Visible="True" />
+  <Field Name="SZ_MRI_CT_DEMO" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MRI_CT_DEMO" Editable="True" Visible="True" />
+
+  <Field Name="BT_EMG_UPP_EXET_DEMO" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_EMG_UPP_EXET_DEMO" Editable="True" Visible="True" />
+  <Field Name="SZ_EMG_UPP_EXET_DEMO" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_EMG_UPP_EXET_DEMO" Editable="True" Visible="True" />
+
+  <Field Name="BT_EMG_LOW_EXET_DEMO" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_EMG_LOW_EXET_DEMO" Editable="True" Visible="True" />
+  <Field Name="SZ_EMG_LOW_EXET_DEMO" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_EMG_LOW_EXET_DEMO" Editable="True" Visible="True" />
+
+  <Field Name="BT_ROM_DEMO_TT_IMP" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_ROM_DEMO_TT_IMP" Editable="True" Visible="True" />
+  <Field Name="SZ_ROM_DEMO_TT_IMP" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_ROM_DEMO_TT_IMP" Editable="True" Visible="True" />
+
+
+
+  <Field Name="BT_DIAGNOSIS_920_0" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIAGNOSIS_920_0" Editable="True" Visible="True" />
+  <Field Name="BT_DIAGNOSIS_784_0" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIAGNOSIS_784_0" Editable="True" Visible="True" />
+  <Field Name="BT_DIAGNOSIS_780_4" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIAGNOSIS_780_4" Editable="True" Visible="True" />
+  <Field Name="BT_DIAGNOSIS_850_0" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIAGNOSIS_850_0" Editable="True" Visible="True" />
+  <Field Name="BT_DIAGNOSIS_850_1" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIAGNOSIS_850_1" Editable="True" Visible="True" />
+  <Field Name="BT_DIAGNOSIS_847_0" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIAGNOSIS_847_0" Editable="True" Visible="True" />
+  <Field Name="BT_DIAGNOSIS_723_4" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIAGNOSIS_723_4" Editable="True" Visible="True" />
+  <Field Name="BT_DIAGNOSIS_722_0" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIAGNOSIS_722_0" Editable="True" Visible="True" />
+  <Field Name="BT_DIAGNOSIS_847_1" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIAGNOSIS_847_1" Editable="True" Visible="True" />
+  <Field Name="BT_DIAGNOSIS_847_2" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIAGNOSIS_847_2" Editable="True" Visible="True" />
+  <Field Name="BT_DIAGNOSIS_846_0" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIAGNOSIS_846_0" Editable="True" Visible="True" />
+  <Field Name="BT_DIAGNOSIS_724_4" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIAGNOSIS_724_4" Editable="True" Visible="True" />
+  <Field Name="BT_DIAGNOSIS_722_1" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIAGNOSIS_722_1" Editable="True" Visible="True" />
+  <Field Name="BT_DIAGNOSIS_RIGHT_923_0" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIAGNOSIS_RIGHT_923_0" Editable="True" Visible="True" />
+  <Field Name="BT_DIAGNOSIS_840_9" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIAGNOSIS_840_9" Editable="True" Visible="True" />
+  <Field Name="BT_DIAGNOSIS_718_31" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIAGNOSIS_718_31" Editable="True" Visible="True" />
+  <Field Name="BT_DIAGNOSIS_840_6" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIAGNOSIS_840_6" Editable="True" Visible="True" />
+  <Field Name="BT_DIAGNOSIS_924_11" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIAGNOSIS_924_11" Editable="True" Visible="True" />
+  <Field Name="BT_DIAGNOSIS_844_1" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIAGNOSIS_844_1" Editable="True" Visible="True" />
+  <Field Name="BT_DIAGNOSIS_718_36" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIAGNOSIS_718_36" Editable="True" Visible="True" />
+  <Field Name="BT_DIAGNOSIS_836_0_1" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIAGNOSIS_836_0_1" Editable="True" Visible="True" />
+  <Field Name="BT_DIAGNOSIS_922_1" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIAGNOSIS_922_1" Editable="True" Visible="True" />
+  <Field Name="BT_DIAGNOSIS_845_0" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIAGNOSIS_845_0" Editable="True" Visible="True" />
+  <Field Name="BT_DIAGNOSIS_924_21" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIAGNOSIS_924_21" Editable="True" Visible="True" />
+  <Field Name="BT_DIAGNOSIS_841_9" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIAGNOSIS_841_9" Editable="True" Visible="True" />
+  <Field Name="BT_DIAGNOSIS_923_11" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIAGNOSIS_923_11" Editable="True" Visible="True" />
+  <Field Name="BT_DIAGNOSIS_845_1" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIAGNOSIS_845_1" Editable="True" Visible="True" />
+  <Field Name="BT_DIAGNOSIS_924_2" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIAGNOSIS_924_2" Editable="True" Visible="True" />
+  <Field Name="BT_DIAGNOSIS_843_9" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIAGNOSIS_843_9" Editable="True" Visible="True" />
+  <Field Name="BT_DIAGNOSIS_924_01" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIAGNOSIS_924_01" Editable="True" Visible="True" />
+  <Field Name="BT_DIAGNOSIS_842_00" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIAGNOSIS_842_00" Editable="True" Visible="True" />
+  <Field Name="BT_DIAGNOSIS_842_1" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIAGNOSIS_842_1" Editable="True" Visible="True" />
+  <Field Name="BT_DIAGNOSIS_736_32" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIAGNOSIS_736_32" Editable="True" Visible="True" />
+  
+  <StoreProcedure name="SP_TEST_RESULTS" />
+</Table>

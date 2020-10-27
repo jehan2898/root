@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_ECG_FORM">
+  
+  <Field Name ="I_EVENT_ID" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_I_EVENT" Editable="True" Visible="True"></Field>
+   <Field Name ="DT_DOA_FECHA_DE" DataType="DateTime" Size="" Null="False" Control="TextBox" ControlID="TXT_DOA_FECHA_DE" Editable="True" Visible="True"></Field>
+    <Field Name ="DT_DATE_FECHA" DataType="DateTime" Size="" Null="False" Control="TextBox" ControlID="TXT_DATE_FECHA" Editable="True" Visible="True"></Field>
+  <Field Name ="I_USTED_ERA" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_USTED_ERA" Editable="True" Visible="True"></Field>
+
+
+
+
+  <StoreProcedure name="SP_ECG_FORM_USTED_ERA"></StoreProcedure>
+</Table>

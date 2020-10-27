@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E92B3130-4D65-48BA-87F5-9FC18528D30D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>gb.mbs.da</RootNamespace>
+    <AssemblyName>gb.mbs.da</AssemblyName>
+    <TargetFrameworkVersion>v3.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\..\..\..\dev\GoGYB\webapi.doctor\webapi.doctor.da\bin\Debug\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\..\..\..\dev\GoGYB\webapi.doctor\webapi.doctor.da\bin\Debug\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="BlazeFast">
+      <HintPath>..\..\..\..\dev\GoGYB\Application\bin\BlazeFast.dll</HintPath>
+    </Reference>
+    <Reference Include="blazefast.keys, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\mbs.da\mbs.da\trunk\bin\Debug\blazefast.keys.dll</HintPath>
+    </Reference>
+    <Reference Include="BusyBoxDotNet">
+      <HintPath>..\..\..\..\dev\GoGYB\Application\bin\BusyBoxDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=4.1.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\dev\GoGYB\webapi.doctor\webapi.doctor.da\bin\Debug\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\dev\GoGYB\webapi.doctor\webapi.doctor.da\bin\Debug\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\..\..\..\dev\GoGYB\webapi.doctor\webapi.doctor.da\bin\Debug\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="SharedCache.WinServiceCommon, Version=3.0.5.1, Culture=neutral, PublicKeyToken=19f944f08f2af8b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\dev\GoGYB\Application\bin\SharedCache.WinServiceCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Net.Http.WebRequest, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Extensions, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="gb\dataaccess\ConnectionManager.cs" />
+    <Compile Include="gb\dataaccess\exception\AuthenticationException.cs" />
+    <Compile Include="gb\dataaccess\exception\NoDataFoundException.cs" />
+    <Compile Include="gb\dbconstant\Procedures.cs" />
+    <Compile Include="gb\models\account\Account.cs" />
+    <Compile Include="gb\models\adjuster\Adjuster.cs" />
+    <Compile Include="gb\models\appointment\Appointment.cs" />
+    <Compile Include="gb\models\appointment\note\ch\CHNote.cs" />
+    <Compile Include="gb\models\appointment\note\ch\ObjectiveFinding.cs" />
+    <Compile Include="gb\models\appointment\note\ch\TreatmentPlan.cs" />
+    <Compile Include="gb\models\appointment\note\Note.cs" />
+    <Compile Include="gb\models\attorney\Attorney.cs" />
+    <Compile Include="gb\models\bill\Bill.cs" />
+    <Compile Include="gb\models\bill\BillStatus.cs" />
+    <Compile Include="gb\models\bill\pom\Pom.cs" />
+    <Compile Include="gb\models\bill\type\TypeBill.cs" />
+    <Compile Include="gb\models\bill\verification\Verification.cs" />
+    <Compile Include="gb\models\carrier\Carrier.cs" />
+    <Compile Include="gb\models\carrier\CarrierGroup.cs" />
+    <Compile Include="gb\models\carrier\type\TypeCarrier.cs" />
+    <Compile Include="gb\models\carrier\type\TypeCarrierGroup.cs" />
+    <Compile Include="gb\models\case\CaseStatus.cs" />
+    <Compile Include="gb\models\case\CaseType.cs" />
+    <Compile Include="gb\models\common\Address.cs" />
+    <Compile Include="gb\models\common\enum\MaritalStatusType.cs" />
+    <Compile Include="gb\models\common\enum\PatientCaseTypes.cs" />
+    <Compile Include="gb\models\common\enum\PatientTypes.cs" />
+    <Compile Include="gb\models\common\enum\PregnantData.cs" />
+    <Compile Include="gb\models\common\exception\IncompleteDataException.cs" />
+    <Compile Include="gb\models\common\SearchParameters.cs" />
+    <Compile Include="gb\models\common\SelectRequestData.cs" />
+    <Compile Include="gb\models\common\State.cs" />
+    <Compile Include="gb\models\common\File\File.cs" />
+    <Compile Include="gb\models\common\documentnode\Node.cs" />
+    <Compile Include="gb\models\bill\denial\Denial.cs" />
+    <Compile Include="gb\models\document\IntakeProviderDocument.cs" />
+    <Compile Include="gb\models\document\RequiredDocument.cs" />
+    <Compile Include="gb\models\employer\Employer.cs" />
+    <Compile Include="gb\models\intakeprovider\IntakeProvider.cs" />
+    <Compile Include="gb\models\intake\IntakeReq.cs" />
+    <Compile Include="gb\models\intake\Nys.cs" />
+    <Compile Include="gb\models\intake\EmployeeCliam.cs" />
+    <Compile Include="gb\models\intake\OCA.cs" />
+    <Compile Include="gb\models\intake\ConsetMirror.cs" />
+    <Compile Include="gb\models\intake\Hipaa.cs" />
+    <Compile Include="gb\models\intake\InformedConset.cs" />
+    <Compile Include="gb\models\intake\AOB.cs" />
+    <Compile Include="gb\models\intake\Intake.cs" />
+    <Compile Include="gb\models\intake\Declaration.cs" />
+    <Compile Include="gb\models\intake\IntakeForm.cs" />
+    <Compile Include="gb\models\intake\Lien.cs" />
+    <Compile Include="gb\models\master\PlaceOfService.cs" />
+    <Compile Include="gb\models\office\Office.cs" />
+    <Compile Include="gb\models\office\type\TypeOffice.cs" />
+    <Compile Include="gb\models\patient\form\HPJ1.cs" />
+    <Compile Include="gb\models\patient\form\MG2.cs" />
+    <Compile Include="gb\models\patient\note\ACNote.cs" />
+    <Compile Include="gb\models\patient\note\CHNote.cs" />
+    <Compile Include="gb\models\patient\note\EnumNoteType.cs" />
+    <Compile Include="gb\models\patient\note\Note.cs" />
+    <Compile Include="gb\models\patient\note\PTNote.cs" />
+    <Compile Include="gb\models\patient\Patient.cs" />
+    <Compile Include="gb\models\patient\SpecialtyNote.cs" />
+    <Compile Include="gb\models\payment\Payment.cs" />
+    <Compile Include="gb\models\physician\Physician.cs" />
+    <Compile Include="gb\models\physician\ReadingPhysician.cs" />
+    <Compile Include="gb\models\physician\TreatingPhysician.cs" />
+    <Compile Include="gb\models\physician\type\TypePhysician.cs" />
+    <Compile Include="gb\models\ping\Domain.cs" />
+    <Compile Include="gb\models\procedure\AppointmentProcedureUI.cs" />
+    <Compile Include="gb\models\procedure\Procedure.cs" />
+    <Compile Include="gb\models\procedure\ProcedureGroup.cs" />
+    <Compile Include="gb\models\procedure\type\TypeProcedure.cs" />
+    <Compile Include="gb\models\provider\Provider.cs" />
+    <Compile Include="gb\models\provider\type\TypeProvider.cs" />
+    <Compile Include="gb\models\speciality\Speciality.cs" />
+    <Compile Include="gb\models\specialty\type\TypeSpecialty.cs" />
+    <Compile Include="gb\models\specialty\Specialty.cs" />
+    <Compile Include="gb\models\user\Role.cs" />
+    <Compile Include="gb\models\user\User.cs" />
+    <Compile Include="gb\services\account\SrvAccount.cs" />
+    <Compile Include="gb\services\adjuster\srvAdjuster.cs" />
+    <Compile Include="gb\services\appointment\note\ch\SrvCHNote.cs" />
+    <Compile Include="gb\services\bill\SrvBill.cs" />
+    <Compile Include="gb\services\bill\SrvPaymentInformation.cs" />
+    <Compile Include="gb\services\bill\SrvPOM.cs" />
+    <Compile Include="gb\services\carrier\srvCarrier.cs" />
+    <Compile Include="gb\services\attorney\srvAttorney.cs" />
+    <Compile Include="gb\services\case\SrvCaseType.cs" />
+    <Compile Include="gb\services\common\ApplicationSettings.cs" />
+    <Compile Include="gb\services\common\scan\SrvScan.cs" />
+    <Compile Include="gb\services\common\SrvFile.cs" />
+    <Compile Include="gb\services\common\SrvFileName.cs" />
+    <Compile Include="gb\services\common\SrvValidation.cs" />
+    <Compile Include="gb\services\common\StringExtensions.cs" />
+    <Compile Include="gb\services\diagnosis\SrvDiagnosis.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="gb\services\document\srvDocument.cs" />
+    <Compile Include="gb\services\intake\srvIntake.cs" />
+    <Compile Include="gb\services\intake\srvIntakeForm.cs" />
+    <Compile Include="gb\services\master\SrvPlaceOfService.cs" />
+    <Compile Include="gb\services\office\report\SrvReferringOfficeReport.cs" />
+    <Compile Include="gb\services\office\SrvOffice.cs" />
+    <Compile Include="gb\services\patient\form\SrvHPJ1.cs" />
+    <Compile Include="gb\services\patient\form\SrvMG2.cs" />
+    <Compile Include="gb\services\patient\note\SrvCHNote.cs" />
+    <Compile Include="gb\services\patient\note\SrvCHNoteV2 .cs" />
+    <Compile Include="gb\services\patient\note\SrvNote.cs" />
+    <Compile Include="gb\services\patient\note\SrvACNote.cs" />
+    <Compile Include="gb\services\patient\note\SrvPTNote.cs" />
+    <Compile Include="gb\services\patient\report\SrvMissingProcedure.cs" />
+    <Compile Include="gb\services\patient\SrvPatient.cs" />
+    <Compile Include="gb\services\patient\SrvSpecialtyNote.cs" />
+    <Compile Include="gb\services\physician\SrvReadingPhysician.cs" />
+    <Compile Include="gb\services\physician\SrvTreatingPhysician.cs" />
+    <Compile Include="gb\services\ping\srvPing.cs" />
+    <Compile Include="gb\services\procedure\SrvProcedure.cs" />
+    <Compile Include="gb\services\provider\SrvProvider.cs" />
+    <Compile Include="gb\services\specialty\SrvSpecialty.cs" />
+    <Compile Include="gb\services\user\SrvUser.cs" />
+    <Compile Include="gb\util\service\DBUtil.cs" />
+    <Compile Include="gb\util\service\EncryDecryUtil.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="gb\util\model\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="changehistory.txt" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,232 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using Componend;
+using NOTES_OBJECT;
+using NotesComponent;
+using System.IO;
+using System.Text.RegularExpressions;
+using log4net;
+using System.Data.SqlClient;
+
+public partial class AJAX_Pages_Adjuster : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            if (Request.QueryString["adjcompany"] != null)
+            {
+                txtCompanyID.Text = Request.QueryString["adjcompany"].ToString();
+            }
+            ajAutoName.ContextKey = txtCompanyID.Text;
+        }
+        
+        
+      
+    }
+
+    protected void txtInsuranceCompany_TextChanged(object sender, EventArgs args)
+    {
+        if (hdadjusterCode.Value != "" && hdadjusterCode.Value != "0")
+        {
+            hdfadjname.Value = txtAdjusterPopupName.Text;
+            txtAdjusterPopupName.Text = hdfadjname.Value.Trim();
+            hdacode.Value = hdadjusterCode.Value;
+            hdadjusterCode.Value = "";
+            btnupdate.Visible = true;
+            btnSaveAdjuster.Visible = false;
+            getAdjusterdata(txtCompanyID.Text,hdacode.Value);
+           
+           
+            
+        }
+        else
+        {
+            btnupdate.Visible = false;
+            btnSaveAdjuster.Visible = true;
+            txtAdjusterPopupPhone.Text = "";
+            txtAdjusterPopupExtension.Text = "";
+            txtAdjusterPopupFax.Text = "";
+            txtAdjusterPopupEmail.Text = "";
+            hdacode.Value = "";
+            Session["attoenyset"] = null;
+
+
+        }
+
+    }
+    protected void btnupdate_click(object sender, EventArgs e)
+    {
+        try
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.AppSettings["Connection_String"].ToString());
+            SqlCommand sqlcmd = new SqlCommand("SP_GET_ADJUSTER", con);
+            sqlcmd.CommandType = CommandType.StoredProcedure;
+            sqlcmd.Parameters.Add("@SZ_COMPANY_ID", txtCompanyID.Text);
+            sqlcmd.Parameters.Add("@SZ_ADJUSTER_ID", hdacode.Value);
+            sqlcmd.Parameters.Add("@sz_phone", txtAdjusterPopupPhone.Text);
+            sqlcmd.Parameters.Add("@sz_email", txtAdjusterPopupEmail.Text);
+            sqlcmd.Parameters.Add("@sz_extenstion", txtAdjusterPopupExtension.Text);
+            sqlcmd.Parameters.Add("@sz_fax", txtAdjusterPopupFax.Text);
+            sqlcmd.Parameters.Add("@SZ_INSURANCE_COMPANY_NAME", txtAdjusterPopupName.Text);
+            sqlcmd.Parameters.Add("@FLAG", "UPDATE");
+            con.Open();
+            sqlcmd.ExecuteNonQuery();
+            con.Close();
+            usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_UserMessage);
+            usrMessage.PutMessage("Update sucessfully");
+            Session["attoenyset"] = hdacode.Value;
+            usrMessage.Show();
+            txtAdjusterPopupName.Text = "";
+            txtAdjusterPopupPhone.Text = "";
+            txtAdjusterPopupExtension.Text = "";
+            txtAdjusterPopupFax.Text = "";
+            txtAdjusterPopupEmail.Text = "";
+            hdacode.Value = "";
+            hdadjusterCode.Value = "";
+            hdfadjname.Value = "";
+            btnSaveAdjuster.Visible = true;
+            btnupdate.Visible = false;
+            
+            
+        }
+catch (Exception ex)
+{
+Elmah.ErrorSignal.FromCurrentContext().Raise(ex);
+using (Utils utility = new Utils())
+{
+	utility.MethodEnd(id, System.Reflection.MethodBase.GetCurrentMethod());
+}
+string str2 = "Error Request="+ id + ".Please share with Technical support.";
+base.Response.Redirect("../Bill_Sys_ErrorPage.aspx?ErrMsg=" + str2);
+
+}
+
+//Method End
+
+using (Utils utility = new Utils())
+{
+utility.MethodEnd(id, System.Reflection.MethodBase.GetCurrentMethod());
+}
+
+    }
+
+    protected void btnSaveAdjuster_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            string id = "";
+            PopupBO _objPopupBO = new PopupBO();
+            ArrayList _objAL = new ArrayList();
+            _objAL.Add("");
+            _objAL.Add(txtAdjusterPopupName.Text);
+            _objAL.Add(txtAdjusterPopupPhone.Text);
+            _objAL.Add(txtAdjusterPopupExtension.Text);
+            _objAL.Add(txtAdjusterPopupFax.Text);
+            _objAL.Add(txtAdjusterPopupEmail.Text);
+            _objAL.Add(txtCompanyID.Text);
+
+              _objPopupBO.saveAdjuster(_objAL);
+
+              //Session["attoenyset"] = id;
+            //  extddlAdjuster.Text = _objPopupBO.getLatestID("SP_MST_ADJUSTER", txtCompanyID.Text);
+            //if (extddlAdjuster.Text != "")
+            //{
+            //    txtAdjusterPhone.Text = txtAdjusterPopupPhone.Text;
+            //    txtAdjusterExtension.Text = txtAdjusterPopupExtension.Text;
+            //    txtfax.Text = txtAdjusterPopupFax.Text;
+            //    txtEmail.Text = txtAdjusterPopupEmail.Text;
+            //}
+            txtAdjusterPopupName.Text = "";
+            txtAdjusterPopupPhone.Text = "";
+            txtAdjusterPopupExtension.Text = "";
+            txtAdjusterPopupFax.Text = "";
+            txtAdjusterPopupEmail.Text = "";
+            hdacode.Value = "";
+            hdadjusterCode.Value = "";
+            hdfadjname.Value = "";
+            btnSaveAdjuster.Visible = true;
+            btnupdate.Visible = false;
+            usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_UserMessage);
+            usrMessage.PutMessage("Save sucessfully");
+            usrMessage.Show();
+
+
+
+        }
+catch (Exception ex)
+{
+Elmah.ErrorSignal.FromCurrentContext().Raise(ex);
+using (Utils utility = new Utils())
+{
+	utility.MethodEnd(id, System.Reflection.MethodBase.GetCurrentMethod());
+}
+string str2 = "Error Request="+ id + ".Please share with Technical support.";
+base.Response.Redirect("../Bill_Sys_ErrorPage.aspx?ErrMsg=" + str2);
+
+}
+
+//Method End
+
+using (Utils utility = new Utils())
+{
+utility.MethodEnd(id, System.Reflection.MethodBase.GetCurrentMethod());
+}
+
+
+    }
+    public void getAdjusterdata(string sz_Companyid,string sz_adjuster)
+    {
+        DataSet ds = null;
+        try
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.AppSettings["Connection_String"].ToString());
+            SqlCommand sqlcmd = new SqlCommand("SP_GET_ADJUSTER", con);
+            sqlcmd.CommandType = CommandType.StoredProcedure;
+            sqlcmd.Parameters.Add("@SZ_COMPANY_ID", sz_Companyid);
+            sqlcmd.Parameters.Add("@SZ_ADJUSTER_ID", sz_adjuster);
+            sqlcmd.Parameters.Add("@FLAG", "LIST");
+            SqlDataAdapter da = new SqlDataAdapter(sqlcmd);
+            ds = new DataSet();
+            da.Fill(ds);
+            con.Close();
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                txtAdjusterPopupPhone.Text = ds.Tables[0].Rows[0]["SZ_PHONE"].ToString();
+                txtAdjusterPopupExtension.Text = ds.Tables[0].Rows[0]["SZ_EXTENSION"].ToString();
+                txtAdjusterPopupFax.Text = ds.Tables[0].Rows[0]["SZ_FAX"].ToString();
+                txtAdjusterPopupEmail.Text = ds.Tables[0].Rows[0]["SZ_EMAIL"].ToString();
+            }
+        }
+catch (Exception ex)
+{
+Elmah.ErrorSignal.FromCurrentContext().Raise(ex);
+using (Utils utility = new Utils())
+{
+	utility.MethodEnd(id, System.Reflection.MethodBase.GetCurrentMethod());
+}
+string str2 = "Error Request="+ id + ".Please share with Technical support.";
+base.Response.Redirect("../Bill_Sys_ErrorPage.aspx?ErrMsg=" + str2);
+
+}
+
+//Method End
+
+using (Utils utility = new Utils())
+{
+utility.MethodEnd(id, System.Reflection.MethodBase.GetCurrentMethod());
+}
+
+        
+        
+    }
+
+}

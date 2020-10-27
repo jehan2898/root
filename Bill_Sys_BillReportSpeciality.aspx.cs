@@ -1,0 +1,412 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using System.Text;
+using System.IO;
+public partial class Bill_Sys_BillReportSpeciality : PageBase
+{
+    private Bill_Sys_ReportBO _reportBO;
+    private Bill_Sys_Visit_BO _bill_Sys_Visit_BO;
+    private ArrayList objAL;
+    private void BindGrid()
+    {
+        string id = string.Format("Id: {0} Uri: {1}", Guid.NewGuid(), HttpContext.Current.Request.Url);
+        using (Utils utility = new Utils())
+        {
+            utility.MethodStart(id, System.Reflection.MethodBase.GetCurrentMethod());
+        }
+        this._reportBO = new Bill_Sys_ReportBO();
+        int num = 0;
+        this.objAL = new ArrayList();
+        try
+        {
+            this.objAL.Add(this.txtCompanyID.Text);
+            this.objAL.Add(this.extddlBillStatus.Text);
+            this.objAL.Add(this.extddlSpeciality.Text);
+            this.objAL.Add(this.txtFromDate.Text);
+            this.objAL.Add(this.txtToDate.Text);
+            this.objAL.Add(this.extddlUser.Text);
+            this.objAL.Add(this.extddlLocation.Text);
+            this.objAL.Add(this.extddlCaseType.Text);
+            this.objAL.Add(this.txtCaseNo.Text);
+            this.objAL.Add(this.txtBillNo.Text);
+            this.objAL.Add(this.txtPatientName.Text);
+            this.objAL.Add(this.txtFirstVisitDate.Text);
+            this.objAL.Add(this.txtlastVisitDate.Text);
+            this.objAL.Add(this.extddlInsuranceCompany.Text);
+            if (this.chkVerificationsent.Checked)
+            {
+                this.objAL.Add("VS");
+                num++;
+            }
+            if (this.chkVerificationreceived.Checked)
+            {
+                this.objAL.Add("VR");
+                num++;
+            }
+            if (this.chkdenail.Checked)
+            {
+                this.objAL.Add("DEN");
+                num++;
+            }
+            if (this.chkPaidfull.Checked)
+            {
+                this.objAL.Add("FBP");
+                num++;
+            }
+            DataSet set = new DataSet();
+            switch (num)
+            {
+                case 1:
+                    set = this._reportBO.getBillReportSpecialitySelect(this.objAL, "SP_GET_BILL_REPORT_SPECIALITY_SELECT");
+                    break;
+
+                case 4:
+                    set = this._reportBO.getBillReportSpecialitySelect(this.objAL, "SP_GET_BILL_REPORT_SPECIALITY_ALL");
+                    break;
+
+                case 3:
+                    set = this._reportBO.getBillReportSpecialityThree(this.objAL);
+                    break;
+
+                case 2:
+                    set = this._reportBO.getBillReportSpecialityTwo(this.objAL);
+                    break;
+
+                default:
+                    set = this._reportBO.getBillReportSpeciality(this.objAL);
+                    break;
+            }
+            grdAllReports.Visible = true;
+            lblTotal.Visible = true;
+            lblAmountBill.Visible = true;
+
+            this.grdAllReports.DataSource = set.Tables[0];
+            this.grdAllReports.DataBind();
+            decimal num2 = 0M;
+            foreach (DataGridItem item in this.grdAllReports.Items)
+            {
+                if (item.Cells[4].Text != "&nbsp;")
+                {
+                    num2 += Convert.ToDecimal(item.Cells[4].Text);
+                }
+            }
+            this.lblTotal.Text = num2.ToString();
+            if ((this.txtFromDate.Text != "") && (this.txtToDate.Text != ""))
+            {
+                this.Session["sz_Todate"] = this.txtToDate.Text;
+                this.Session["sz_FromDate"] = this.txtFromDate.Text;
+            }
+            else
+            {
+                this.Session["sz_Todate"] = "";
+                this.Session["sz_FromDate"] = "";
+            }
+            if ((this.extddlUser.Text != "") && (this.extddlUser.Text != "NA"))
+            {
+                this.Session["User_ID"] = this.extddlUser.Text;
+            }
+            else
+            {
+                this.Session["User_ID"] = "";
+            }
+            if ((this.extddlLocation.Visible && (this.extddlLocation.Text != "")) && (this.extddlLocation.Text != "NA"))
+            {
+                this.Session["sz_LOCATION_Id"] = this.extddlLocation.Text;
+            }
+            else
+            {
+                this.Session["sz_LOCATION_Id"] = "";
+            }
+            if ((this.txtFirstVisitDate.Text != "") && (this.txtlastVisitDate.Text != ""))
+            {
+                this.Session["sz_visitFromDate"] = this.txtFirstVisitDate.Text;
+                this.Session["sz_visitTodate"] = this.txtlastVisitDate.Text;
+            }
+            else
+            {
+                this.Session["sz_visitTodate"] = "";
+                this.Session["sz_visitFromDate"] = "";
+            }
+            if ((this.extddlInsuranceCompany.Visible && (this.extddlInsuranceCompany.Text != "")) && (this.extddlInsuranceCompany.Text != "NA"))
+            {
+                this.Session["SZ_INSURANCE_ID"] = this.extddlInsuranceCompany.Text;
+            }
+            else
+            {
+                this.Session["SZ_INSURANCE_ID"] = "";
+            }
+        }
+        catch (Exception ex)
+        {
+            //log.Debug("Bill_Sys_BilPOM. Method - getNF2MailDetails : " + ex.Message.ToString());
+            Elmah.ErrorSignal.FromCurrentContext().Raise(ex);
+            using (Utils utility = new Utils())
+            {
+                utility.MethodEnd(id, System.Reflection.MethodBase.GetCurrentMethod());
+            }
+            string str2 = "Error Request=" + id + ".Please share with Technical support.";
+            base.Response.Redirect("Bill_Sys_ErrorPage.aspx?ErrMsg=" + str2);
+        }
+        //Method End
+        using (Utils utility = new Utils())
+        {
+            utility.MethodEnd(id, System.Reflection.MethodBase.GetCurrentMethod());
+        }
+    }
+
+    protected void btnExportToExcel_Click(object sender, EventArgs e)
+    {
+        string id = string.Format("Id: {0} Uri: {1}", Guid.NewGuid(), HttpContext.Current.Request.Url);
+        using (Utils utility = new Utils())
+        {
+            utility.MethodStart(id, System.Reflection.MethodBase.GetCurrentMethod());
+        }
+        try
+        {
+            this.ExportToExcel();
+        }
+        catch (Exception ex)
+        {
+            //log.Debug("Bill_Sys_BilPOM. Method - getNF2MailDetails : " + ex.Message.ToString());
+            Elmah.ErrorSignal.FromCurrentContext().Raise(ex);
+            using (Utils utility = new Utils())
+            {
+                utility.MethodEnd(id, System.Reflection.MethodBase.GetCurrentMethod());
+            }
+            string str2 = "Error Request=" + id + ".Please share with Technical support.";
+            base.Response.Redirect("Bill_Sys_ErrorPage.aspx?ErrMsg=" + str2);
+        }
+        //Method End
+        using (Utils utility = new Utils())
+        {
+            utility.MethodEnd(id, System.Reflection.MethodBase.GetCurrentMethod());
+        }
+    }
+
+    protected void btnSearch_Click(object sender, EventArgs e)
+    {
+        string id = string.Format("Id: {0} Uri: {1}", Guid.NewGuid(), HttpContext.Current.Request.Url);
+        using (Utils utility = new Utils())
+        {
+            utility.MethodStart(id, System.Reflection.MethodBase.GetCurrentMethod());
+        }
+        try
+        {
+
+            BindGrid();
+
+        }
+        catch (Exception ex)
+        {
+            //log.Debug("Bill_Sys_BilPOM. Method - getNF2MailDetails : " + ex.Message.ToString());
+            Elmah.ErrorSignal.FromCurrentContext().Raise(ex);
+            using (Utils utility = new Utils())
+            {
+                utility.MethodEnd(id, System.Reflection.MethodBase.GetCurrentMethod());
+            }
+            string str2 = "Error Request=" + id + ".Please share with Technical support.";
+            base.Response.Redirect("Bill_Sys_ErrorPage.aspx?ErrMsg=" + str2);
+        }
+        //Method End
+        using (Utils utility = new Utils())
+        {
+            utility.MethodEnd(id, System.Reflection.MethodBase.GetCurrentMethod());
+        }
+    }
+
+    private void ExportToExcel()
+    {
+        string id = string.Format("Id: {0} Uri: {1}", Guid.NewGuid(), HttpContext.Current.Request.Url);
+        using (Utils utility = new Utils())
+        {
+            utility.MethodStart(id, System.Reflection.MethodBase.GetCurrentMethod());
+        }
+        try
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("<table border='1px'>");
+            for (int i = 0; i < this.grdAllReports.Items.Count; i++)
+            {
+                if (i == 0)
+                {
+                    builder.Append("<tr>");
+                    for (int k = 0; k < this.grdAllReports.Columns.Count; k++)
+                    {
+                        if (this.grdAllReports.Columns[k].Visible)
+                        {
+                            builder.Append("<td>");
+                            builder.Append(this.grdAllReports.Columns[k].HeaderText);
+                            builder.Append("</td>");
+                        }
+                    }
+                    builder.Append("</tr>");
+                }
+                builder.Append("<tr>");
+                for (int j = 0; j < this.grdAllReports.Columns.Count; j++)
+                {
+                    if (this.grdAllReports.Columns[j].Visible)
+                    {
+                        builder.Append("<td>");
+                        builder.Append(this.grdAllReports.Items[i].Cells[j].Text);
+                        builder.Append("</td>");
+                    }
+                }
+                builder.Append("</tr>");
+            }
+            builder.Append("</table>");
+            string str = this.getFileName("EXCEL") + ".xls";
+            StreamWriter writer = new StreamWriter(ConfigurationManager.AppSettings["EXCEL_SHEET"] + str);
+            writer.Write(builder);
+            writer.Close();
+            base.Response.Redirect(ConfigurationManager.AppSettings["FETCHEXCEL_SHEET"] + str, false);
+        }
+        catch (Exception ex)
+        {
+            Elmah.ErrorSignal.FromCurrentContext().Raise(ex);
+            using (Utils utility = new Utils())
+            {
+                utility.MethodEnd(id, System.Reflection.MethodBase.GetCurrentMethod());
+            }
+            string str2 = "Error Request=" + id + ".Please share with Technical support.";
+            base.Response.Redirect("Bill_Sys_ErrorPage.aspx?ErrMsg=" + str2);
+        }
+        //Method End
+        using (Utils utility = new Utils())
+        {
+            utility.MethodEnd(id, System.Reflection.MethodBase.GetCurrentMethod());
+        }
+    }
+
+    protected void extddlPatient_extendDropDown_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        new CaseDetailsBO();
+        if (this.extddlPatient.Text != "NA")
+        {
+            this.txtPatientName.Text = this.extddlPatient.Selected_Text;
+        }
+        else
+        {
+            this.txtPatientName.Text = "";
+        }
+    }
+
+    private string getFileName(string p_szBillNumber)
+    {
+        DateTime now = DateTime.Now;
+        return (p_szBillNumber + "_" + this.getRandomNumber() + "_" + now.ToString("yyyyMMddHHmmssms"));
+    }
+
+    private string getRandomNumber()
+    {
+        Random random = new Random();
+        return random.Next(1, 0x2710).ToString();
+    }
+
+    protected void grdAllReports_ItemCommand(object source, DataGridCommandEventArgs e)
+    {
+        string id = string.Format("Id: {0} Uri: {1}", Guid.NewGuid(), HttpContext.Current.Request.Url);
+        using (Utils utility = new Utils())
+        {
+            utility.MethodStart(id, System.Reflection.MethodBase.GetCurrentMethod());
+        }
+        try
+        {
+            if (e.CommandName.ToString() == "View")
+            {
+                this.Session["sz_StatusID"] = e.Item.Cells[5].Text;
+                this.Session["sz_SpecialityID"] = e.Item.Cells[6].Text;
+                base.Response.Redirect("AJAX Pages/Bill_Sys_ViewBillRecordSpeciality.aspx", false);
+            }
+        }
+        catch (Exception ex)
+        {
+            Elmah.ErrorSignal.FromCurrentContext().Raise(ex);
+            using (Utils utility = new Utils())
+            {
+                utility.MethodEnd(id, System.Reflection.MethodBase.GetCurrentMethod());
+            }
+            string str2 = "Error Request=" + id + ".Please share with Technical support.";
+            base.Response.Redirect("Bill_Sys_ErrorPage.aspx?ErrMsg=" + str2);
+        }
+        //Method End
+        using (Utils utility = new Utils())
+        {
+            utility.MethodEnd(id, System.Reflection.MethodBase.GetCurrentMethod());
+        }
+    }
+    protected override void OnPreRender(EventArgs e)
+    {
+        base.OnPreRender(e);
+        ViewState["update"] = Session["update"];
+    }
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        string id = string.Format("Id: {0} Uri: {1}", Guid.NewGuid(), HttpContext.Current.Request.Url);
+        using (Utils utility = new Utils())
+        {
+            utility.MethodStart(id, System.Reflection.MethodBase.GetCurrentMethod());
+        }
+
+        try
+        {
+            this.ddlDateValues.Attributes.Add("onChange", "javascript:SetDate();");
+            this.ddlServDateValue.Attributes.Add("onChange", "javascript:SetDate1();");
+            if (!base.IsPostBack)
+            {
+                Session["update"] = Server.UrlEncode(System.DateTime.Now.ToString());
+
+                this.txtCompanyID.Text = ((Bill_Sys_BillingCompanyObject) this.Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+                this.extddlBillStatus.Flag_ID=((Bill_Sys_BillingCompanyObject) this.Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+                this.extddlSpeciality.Flag_ID=((Bill_Sys_BillingCompanyObject) this.Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+                this.extddlUser.Flag_ID=((Bill_Sys_BillingCompanyObject) this.Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+                this.extddlCaseType.Flag_ID=((Bill_Sys_BillingCompanyObject) this.Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+                this.extddlInsuranceCompany.Flag_ID = ((Bill_Sys_BillingCompanyObject)this.Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+                this.ajAutoName.ContextKey=((Bill_Sys_BillingCompanyObject) this.Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+                
+                if (((Bill_Sys_SystemObject) this.Session["SYSTEM_OBJECT"]).SZ_LOCATION == "1")
+                {
+                    this.extddlLocation.Visible = true;
+                    this.lblLocationName.Visible = true;
+                    this.extddlLocation.Flag_ID=this.txtCompanyID.Text.ToString();
+                }
+                this.ddlDateValues.SelectedValue = "4";
+                DateTime time = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+                DateTime time3 = time.AddMonths(3).AddDays(-1.0);
+                this.txtFromDate.Text = time.ToString("MM/dd/yyyy");
+                this.txtToDate.Text = time3.ToString("MM/dd/yyyy");
+                this.txtFromDate.Attributes.Add("onblur", "javascript:return FromDateValidation(this);");
+                this.txtToDate.Attributes.Add("onblur", "javascript:return ToDateValidation(this);");
+                this.BindGrid();
+            }
+        }
+        catch (Exception ex)
+        {
+            Elmah.ErrorSignal.FromCurrentContext().Raise(ex);
+            using (Utils utility = new Utils())
+            {
+                utility.MethodEnd(id, System.Reflection.MethodBase.GetCurrentMethod());
+            }
+            string str2 = "Error Request=" + id + ".Please share with Technical support.";
+            base.Response.Redirect("Bill_Sys_ErrorPage.aspx?ErrMsg=" + str2);
+        }
+       
+        if (((Bill_Sys_BillingCompanyObject) this.Session["APPSTATUS"]).SZ_READ_ONLY.ToString().Equals("True"))
+        {
+            new Bill_Sys_ChangeVersion(this.Page).MakeReadOnlyPage("Bill_Sys_BillReportSpeciality.aspx");
+        }
+        //Method End
+        using (Utils utility = new Utils())
+        {
+            utility.MethodEnd(id, System.Reflection.MethodBase.GetCurrentMethod());
+        }
+    }
+    
+}

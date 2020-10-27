@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_IM_FOLLOWING">
+  
+  <Field Name="I_EVENT_ID" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_EVENT_ID" Editable="True" Visible="True" />
+  
+  
+  <!--<Field Name="I_CAUSE_OF_INJURY_YES" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="RDO_CAUSE_OF_INJURY_YES" Editable="True" Visible="True" />
+  <Field Name="I_COMPLAINT_CONSISTENT_YES" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="RDO_COMPLAINT_CONSISTENT_YES" Editable="True" Visible="True" />
+  <Field Name="I_CONSISTENT_OBJ_FIDINGS_YES" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="RDO_CONSISTENT_OBJ_FIDINGS_YES" Editable="True" Visible="True" />-->
+
+  <Field Name="I_CAUSE_OF_INJURY_YES" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_CAUSE_OF_INJURY_YES" Editable="True" Visible="True" />
+  <Field Name="I_COMPLAINT_CONSISTENT_YES" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_COMPLAINT_CONSISTENT_YES" Editable="True" Visible="True" />
+  <Field Name="I_CONSISTENT_OBJ_FIDINGS_YES" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_CONSISTENT_OBJ_FIDINGS_YES" Editable="True" Visible="True" />
+  
+  
+  
+  <Field Name="SZ_PERCENTAGE_TEMP_IMPAIRMENT" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_PERCENTAGE_TEMP_IMPAIRMENT" Editable="True" Visible="True" />
+   
+
+
+ 
+  <StoreProcedure name="SP_DOCTORS_OPINION" />
+</Table>

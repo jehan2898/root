@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_CH_FORM">
+
+  <Field Name="I_EVENT_ID" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_EVENT_ID" Editable="True" Visible="True" />
+
+  <Field Name="I_CERVICAL_SPINE_ROM_PAIN" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_CERVICAL_SPINE_ROM_PAIN" Editable="True" Visible="True" />
+  <Field Name="I_CERVICAL_WITH_WITHOUT_PAIN" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_CERVICAL_WITH_WITHOUT_PAIN" Editable="True" Visible="True" />
+  <Field Name="I_CERVICAL_SPINE_SYMPTOMATIC_MUSCLES" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_CERVICAL_SPINE_SYMPTOMATIC_MUSCLES" Editable="True" Visible="True" />
+  <Field Name="I_UPPERTRAP_LEV_SEAP_PARASPINALS_SUB_OCC_SEALENES" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_UPPERTRAP_LEV_SEAP_PARASPINALS_SUB_OCC_SEALENES" Editable="True" Visible="True" />
+  <Field Name="I_CERVICAL_SPINE_TENDERNESS" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_CERVICAL_SPINE_TENDERNESS" Editable="True" Visible="True" />
+  
+  <Field Name="I_CERVICAL_SPINE_MUSCULAR_SPASM" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_CERVICAL_SPINE_MUSCULAR_SPASM" Editable="True" Visible="True" />
+  <Field Name="I_THORACIC_SPINE_ROM_PAIN" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_THORACIC_SPINE_ROM_PAIN" Editable="True" Visible="True" />
+  <Field Name="I_THORACIC_WITH_WITHOUT_PAIN" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_THORACIC_WITH_WITHOUT_PAIN" Editable="True" Visible="True" />
+  <Field Name="I_THORACIC_SPINE_SYMPTOMATIC_MUSCLES" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_THORACIC_SPINE_SYMPTOMATIC_MUSCLES" Editable="True" Visible="True" />
+  <Field Name="I_MID_LOWER_TRAP_RHOMB_ERECTOR_SPINAE_INTERCOSTALS" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_MID_LOWER_TRAP_RHOMB_ERECTOR_SPINAE_INTERCOSTALS" Editable="True" Visible="True" />
+  
+  <Field Name="I_THORACIC_SPINE_TENDERNESS" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_THORACIC_SPINE_TENDERNESS" Editable="True" Visible="True" />
+  <Field Name="I_THORACIC_SPINE_MUSCULAR_SPASM" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_THORACIC_SPINE_MUSCULAR_SPASM" Editable="True" Visible="True" />
+  <Field Name="I_LUMBAR_SPINE_ROM_PAIN" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_LUMBAR_SPINE_ROM_PAIN" Editable="True" Visible="True" />
+  <Field Name="I_LUMBAR_WITH_WITHOUT_PAIN" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_LUMBAR_WITH_WITHOUT_PAIN" Editable="True" Visible="True" />
+ 
+  <Field Name="I_LUMBAR_SPINE_SYMPTOMATIC_MUSCLES" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_LUMBAR_SPINE_SYMPTOMATIC_MUSCLES" Editable="True" Visible="True" />
+  <Field Name="I_QUAD_LAMB_ERECTOR_SPINAE_PARASPINALS" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_QUAD_LAMB_ERECTOR_SPINAE_PARASPINALS" Editable="True" Visible="True" />
+  <Field Name="I_LUMBAR_SPINE_TENDERNESS" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_LUMBAR_SPINE_TENDERNESS" Editable="True" Visible="True" />
+  <Field Name="I_LUMBAR_SPINE_MUSCULAR_SPASM" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_LUMBAR_SPINE_MUSCULAR_SPASM" Editable="True" Visible="True" />
+  <Field Name="I_PATHOLOGICAL_ABNORMAL_CEREBRAL_DORSAL_REFLEX" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_PATHOLOGICAL_ABNORMAL_CEREBRAL_DORSAL_REFLEX" Editable="True" Visible="True" />
+  <Field Name="I_SHOULDER_DEPRESSION_POSITIVE_NEGATIVE" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_SHOULDER_DEPRESSION_POSITIVE_NEGATIVE" Editable="True" Visible="True" />
+  
+  <Field Name="I_SHOULDER_DEPRESSION_POSITIVE_LEFT_RIGHT" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_SHOULDER_DEPRESSION_POSITIVE_LEFT_RIGHT" Editable="True" Visible="True" />
+  <Field Name="I_CERVICAL_DEPRESSION_POSITIVE_NEGATIVE" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_CERVICAL_DEPRESSION_POSITIVE_NEGATIVE" Editable="True" Visible="True" />
+  <Field Name="I_MAXIMAL_FORAMINAL_COMPRESSION_POSITIVE_NEGATIVE" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_MAXIMAL_FORAMINAL_COMPRESSION_POSITIVE_NEGATIVE" Editable="True" Visible="True" />
+  <Field Name="I_MAXIMAL_FORAMINAL_COMPRESSION_POSITIVE_LEFT_RIGHT" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_MAXIMAL_FORAMINAL_COMPRESSION_POSITIVE_LEFT_RIGHT" Editable="True" Visible="True" />
+  <Field Name="I_CERVICAL_DISTRACTION_POSITIVE_NEGATIVE" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_CERVICAL_DISTRACTION_POSITIVE_NEGATIVE" Editable="True" Visible="True" />
+  <Field Name="I_KEMPS_POSITIVE_NEGATIVE" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_KEMPS_POSITIVE_NEGATIVE" Editable="True" Visible="True" />
+ 
+  <Field Name="I_KEMPS_POSITIVE_LEFT_RIGHT" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_KEMPS_POSITIVE_LEFT_RIGHT" Editable="True" Visible="True" />
+  <Field Name="I_SLR_POSITIVE_NEGATIVE" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_SLR_POSITIVE_NEGATIVE" Editable="True" Visible="True" />
+  <Field Name="I_SLR_POSITIVE_LEFT_RIGHT" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_SLR_POSITIVE_LEFT_RIGHT" Editable="True" Visible="True" />
+  <Field Name="I_BRAGGARDS_POSITIVE_NEGATIVE" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_BRAGGARDS_POSITIVE_NEGATIVE" Editable="True" Visible="True" />
+  <Field Name="I_BRAGGARDS_POSITIVE_LEFT_RIGHT" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_BRAGGARDS_POSITIVE_LEFT_RIGHT" Editable="True" Visible="True" />
+ 
+  <Field Name="I_LINDERS_SIGN_SOTO_HALL_POSITIVE_NEGATIVE" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_LINDERS_SIGN_SOTO_HALL_POSITIVE_NEGATIVE" Editable="True" Visible="True" />
+  <Field Name="I_BILATERAL_LEG_RAISE_POSITIVE_NEGATIVE" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_BILATERAL_LEG_RAISE_POSITIVE_NEGATIVE" Editable="True" Visible="True" />
+  <Field Name="I_NACHLAS_POSITIVE_NEGATIVE" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_NACHLAS_POSITIVE_NEGATIVE" Editable="True" Visible="True" />
+  <Field Name="I_NACHLAS_POSITIVE_LEFT_RIGHT" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_NACHLAS_POSITIVE_LEFT_RIGHT" Editable="True" Visible="True" />
+ 
+  <Field Name="I_YEOMANS_POSITIVE_NEGATIVE" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_YEOMANS_POSITIVE_NEGATIVE" Editable="True" Visible="True" />
+  <Field Name="I_YEOMANS_POSITIVE_LEFT_RIGHT" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_YEOMANS_POSITIVE_LEFT_RIGHT" Editable="True" Visible="True" />
+  <Field Name="I_MINERS_SIGN_POSITIVE_NEGATIVE" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_MINERS_SIGN_POSITIVE_NEGATIVE" Editable="True" Visible="True" />
+  <Field Name="I_VALSAVA_POSITIVE_NEGATIVE" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_VALSAVA_POSITIVE_NEGATIVE" Editable="True" Visible="True" />
+  
+
+
+
+  <Field Name="SZ_MANUAL_MYETOMAL_C5_LEFT" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MANUAL_MYETOMAL_C5_LEFT" Editable="True" Visible="True" />
+  <Field Name="SZ_MANUAL_MYETOMAL_C5_RIGHT" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MANUAL_MYETOMAL_C5_RIGHT" Editable="True" Visible="True" />
+  <Field Name="SZ_MANUAL_MYETOMAL_C6_LEFT" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MANUAL_MYETOMAL_C6_LEFT" Editable="True" Visible="True" />
+  <Field Name="SZ_MANUAL_MYETOMAL_C6_RIGHT" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MANUAL_MYETOMAL_C6_RIGHT" Editable="True" Visible="True" />
+  <Field Name="SZ_MANUAL_MYETOMAL_C7_LEFT" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MANUAL_MYETOMAL_C7_LEFT" Editable="True" Visible="True" />
+  <Field Name="SZ_MANUAL_MYETOMAL_C7_RIGHT" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MANUAL_MYETOMAL_C7_RIGHT" Editable="True" Visible="True" />
+ 
+  <Field Name="SZ_MANUAL_MYETOMAL_C8_LEFT" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MANUAL_MYETOMAL_C8_LEFT" Editable="True" Visible="True" />
+  <Field Name="SZ_MANUAL_MYETOMAL_C8_RIGHT" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MANUAL_MYETOMAL_C8_RIGHT" Editable="True" Visible="True" />
+  <Field Name="SZ_MANUAL_MYETOMAL_T1_LEFT" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MANUAL_MYETOMAL_T1_LEFT" Editable="True" Visible="True" />
+  <Field Name="SZ_MANUAL_MYETOMAL_T1_RIGHT" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MANUAL_MYETOMAL_T1_RIGHT" Editable="True" Visible="True" />
+  <Field Name="SZ_MANUAL_MYETOMAL_L1_LEFT" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MANUAL_MYETOMAL_L1_LEFT" Editable="True" Visible="True" />
+  <Field Name="SZ_MANUAL_MYETOMAL_L1_RIGHT" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MANUAL_MYETOMAL_L1_RIGHT" Editable="True" Visible="True" />
+ 
+  <Field Name="SZ_MANUAL_MYETOMAL_L2_LEFT" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MANUAL_MYETOMAL_L2_LEFT" Editable="True" Visible="True" />
+  <Field Name="SZ_MANUAL_MYETOMAL_L2_RIGHT" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MANUAL_MYETOMAL_L2_RIGHT" Editable="True" Visible="True" />
+  <Field Name="SZ_MANUAL_MYETOMAL_L3_LEFT" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MANUAL_MYETOMAL_L3_LEFT" Editable="True" Visible="True" />
+  <Field Name="SZ_MANUAL_MYETOMAL_L3_RIGHT" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MANUAL_MYETOMAL_L3_RIGHT" Editable="True" Visible="True" />
+  <Field Name="SZ_MANUAL_MYETOMAL_L4_LEFT" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MANUAL_MYETOMAL_L4_LEFT" Editable="True" Visible="True" />
+  <Field Name="SZ_MANUAL_MYETOMAL_L4_RIGHT" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MANUAL_MYETOMAL_L4_RIGHT" Editable="True" Visible="True" />
+  
+  <Field Name="SZ_MANUAL_MYETOMAL_L5_LEFT" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MANUAL_MYETOMAL_L5_LEFT" Editable="True" Visible="True" />
+  <Field Name="SZ_MANUAL_MYETOMAL_L5_RIGHT" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MANUAL_MYETOMAL_L5_RIGHT" Editable="True" Visible="True" />
+  <Field Name="SZ_MANUAL_MYETOMAL_S1_LEFT" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MANUAL_MYETOMAL_S1_LEFT" Editable="True" Visible="True" />
+  <Field Name="SZ_MANUAL_MYETOMAL_S1_RIGHT" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MANUAL_MYETOMAL_S1_RIGHT" Editable="True" Visible="True" />
+  <Field Name="SZ_MUSCLE_STRETCH_REFLEX_C5_LEFT" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MUSCLE_STRETCH_REFLEX_C5_LEFT" Editable="True" Visible="True" />
+  
+  <Field Name="SZ_MUSCLE_STRETCH_REFLEX_C5_RIGHT" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MUSCLE_STRETCH_REFLEX_C5_RIGHT" Editable="True" Visible="True" />
+  <Field Name="SZ_MUSCLE_STRETCH_REFLEX_C6_LEFT" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MUSCLE_STRETCH_REFLEX_C6_LEFT" Editable="True" Visible="True" />
+  <Field Name="SZ_MUSCLE_STRETCH_REFLEX_C6_RIGHT" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MUSCLE_STRETCH_REFLEX_C6_RIGHT" Editable="True" Visible="True" />
+  
+  <Field Name="SZ_MUSCLE_STRETCH_REFLEX_C7_LEFT" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MUSCLE_STRETCH_REFLEX_C7_LEFT" Editable="True" Visible="True" />
+  <Field Name="SZ_MUSCLE_STRETCH_REFLEX_C7_RIGHT" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MUSCLE_STRETCH_REFLEX_C7_RIGHT" Editable="True" Visible="True" />
+  <Field Name="SZ_MUSCLE_STRETCH_REFLEX_L4_LEFT" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MUSCLE_STRETCH_REFLEX_L4_LEFT" Editable="True" Visible="True" />
+ 
+  <Field Name="SZ_MUSCLE_STRETCH_REFLEX_L4_RIGHT" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MUSCLE_STRETCH_REFLEX_L4_RIGHT" Editable="True" Visible="True" />
+  <Field Name="SZ_MUSCLE_STRETCH_REFLEX_L5_LEFT" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MUSCLE_STRETCH_REFLEX_L5_LEFT" Editable="True" Visible="True" />
+  <Field Name="SZ_MUSCLE_STRETCH_REFLEX_L5_RIGHT" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MUSCLE_STRETCH_REFLEX_L5_RIGHT" Editable="True" Visible="True" />
+  <Field Name="SZ_MUSCLE_STRETCH_REFLEX_S1_LEFT" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MUSCLE_STRETCH_REFLEX_S1_LEFT" Editable="True" Visible="True" />
+  <Field Name="SZ_MUSCLE_STRETCH_REFLEX_S1_RIGHT" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_MUSCLE_STRETCH_REFLEX_S1_RIGHT" Editable="True" Visible="True" />
+  <Field Name="SZ_DERMATOMAL_EVALUATION_OF_C1_TO_T1_AND_L1_TO_S1" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_DERMATOMAL_EVALUATION_OF_C1_TO_T1_AND_L1_TO_S1" Editable="True" Visible="True" />
+  <Field Name="SZ_DIAGNOSIS_OTHER" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_DIAGNOSIS_OTHER" Editable="True" Visible="True" />
+  <Field Name="SZ_CARNIAL_NERVE" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_CARNIAL_NERVE" Editable="True" Visible="True" />
+
+
+
+
+  <Field Name="BT_DIAGNOSIS_OTHER" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIAGNOSIS_OTHER" Editable="True" Visible="True" />
+  <Field Name="BT_COMPLETE_NEUROLOGICAL_EXAMINATION_IS_WNL" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_COMPLETE_NEUROLOGICAL_EXAMINATION_IS_WNL" Editable="True" Visible="True" />
+
+
+  <Field Name="BT_CLUSTER_HA" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_CLUSTER_HA" Editable="True" Visible="True" />
+  <Field Name="BT_SACROILIAC_SPRAIN_STRAIN" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_SACROILIAC_SPRAIN_STRAIN" Editable="True" Visible="True" />
+  <Field Name="BT_TENSION_HA" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_TENSION_HA" Editable="True" Visible="True" />
+  <Field Name="BT_SUBLUXATION_OF_SACROILIAC_JOINT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_SUBLUXATION_OF_SACROILIAC_JOINT" Editable="True" Visible="True" />
+  <Field Name="BT_POST_TRAUMATIC_HA" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_POST_TRAUMATIC_HA" Editable="True" Visible="True" />
+  
+  <Field Name="BT_COCCYX_SPRAIN_STRAIN" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_COCCYX_SPRAIN_STRAIN" Editable="True" Visible="True" />
+  <Field Name="BT_MIGRAINE_HA" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_MIGRAINE_HA" Editable="True" Visible="True" />
+  <Field Name="BT_SUBLUXATION_OF_COCCYX" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_SUBLUXATION_OF_COCCYX" Editable="True" Visible="True" />
+  <Field Name="BT_POST_CONCUSSION_SYNDROME_ENCEPHALOPHY" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_POST_CONCUSSION_SYNDROME_ENCEPHALOPHY" Editable="True" Visible="True" />
+  
+  <Field Name="BT_RIBS_CHODROCOSTAL_SPRAIN_STRAIN" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_RIBS_CHODROCOSTAL_SPRAIN_STRAIN" Editable="True" Visible="True" />
+  <Field Name="BT_TMI_SYNDROME_RIGHT_LEFT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_TMI_SYNDROME_RIGHT_LEFT" Editable="True" Visible="True" />
+  <Field Name="BT_STERNUM_SPRAIN_STRAIN" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_STERNUM_SPRAIN_STRAIN" Editable="True" Visible="True" />
+  <Field Name="BT_CERVICAL_SPRAIN_STRAIN" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_CERVICAL_SPRAIN_STRAIN" Editable="True" Visible="True" />
+  <Field Name="BT_ARTHRALGIA_OF_SHOULDER" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_ARTHRALGIA_OF_SHOULDER" Editable="True" Visible="True" />
+  
+  <Field Name="BT_CERVICAL_NEURITIS_RADICULITIS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_CERVICAL_NEURITIS_RADICULITIS" Editable="True" Visible="True" />
+  <Field Name="BT_ARTHRALGIA_OF_ELBOW" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_ARTHRALGIA_OF_ELBOW" Editable="True" Visible="True" />
+  <Field Name="BT_CERVICAL_DISC_DISORDER_W_O_MYELOPATHY" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_CERVICAL_DISC_DISORDER_W_O_MYELOPATHY" Editable="True" Visible="True" />
+  <Field Name="BT_ARTHRALGIA_OF_FOREARM" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_ARTHRALGIA_OF_FOREARM" Editable="True" Visible="True" />
+  <Field Name="BT_SUBLUXATION_OF_CERVICAL_VERTEBRAE" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_SUBLUXATION_OF_CERVICAL_VERTEBRAE" Editable="True" Visible="True" />
+  <Field Name="BT_ARTHRALGIA_OF_HAND_WRIST_FINGERS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_ARTHRALGIA_OF_HAND_WRIST_FINGERS" Editable="True" Visible="True" />
+ 
+  <Field Name="BT_THORACIC_SPRAIN_STRAIN" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_THORACIC_SPRAIN_STRAIN" Editable="True" Visible="True" />
+  <Field Name="BT_ARTHRALGIA_OF_SACROILIAC_JOINT_HIP" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_ARTHRALGIA_OF_SACROILIAC_JOINT_HIP" Editable="True" Visible="True" />
+  <Field Name="BT_THORACIC_NEURITIS_RADICULITIS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_THORACIC_NEURITIS_RADICULITIS" Editable="True" Visible="True" />
+  <Field Name="BT_ARTHRALGIA_OF_KNEE_LEG" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_ARTHRALGIA_OF_KNEE_LEG" Editable="True" Visible="True" />
+  <Field Name="BT_THORACIC_DISC_DISORDER_W_O_MYELOPATHY" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_THORACIC_DISC_DISORDER_W_O_MYELOPATHY" Editable="True" Visible="True" />
+  <Field Name="BT_ARTHRALGIA_OF_ANKLE_FOOT_TOES" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_ARTHRALGIA_OF_ANKLE_FOOT_TOES" Editable="True" Visible="True" />
+  <Field Name="BT_SUBLUXATION_OF_THORACIC_VERTEBRAE" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_SUBLUXATION_OF_THORACIC_VERTEBRAE" Editable="True" Visible="True" />
+ 
+  <Field Name="BT_ARTHRALGIA_OF_CERVICAL_THORACIC_LUMBAR_SPINE" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_ARTHRALGIA_OF_CERVICAL_THORACIC_LUMBAR_SPINE" Editable="True" Visible="True" />
+  <Field Name="BT_LUMBAR_SPRAIN_STRAIN" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_LUMBAR_SPRAIN_STRAIN" Editable="True" Visible="True" />
+  <Field Name="BT_CARPAL_TUNNEL_SYNDROME" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_CARPAL_TUNNEL_SYNDROME" Editable="True" Visible="True" />
+  <Field Name="BT_LUMBOSACRAL_SPRAIN_STRAIN" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_LUMBOSACRAL_SPRAIN_STRAIN" Editable="True" Visible="True" />
+  <Field Name="BT_CUBITAL_TUNNEL_SYNDROME" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_CUBITAL_TUNNEL_SYNDROME" Editable="True" Visible="True" />
+  <Field Name="BT_LUMBOSACRAL_RADICULITIS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_LUMBOSACRAL_RADICULITIS" Editable="True" Visible="True" />
+  
+  <Field Name="BT_ROTATOR_CUFF_SUPRASPINATUS_SYNDROME" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_ROTATOR_CUFF_SUPRASPINATUS_SYNDROME" Editable="True" Visible="True" />
+  <Field Name="BT_SCIATICA" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_SCIATICA" Editable="True" Visible="True" />
+  <Field Name="BT_LUMBAR_DISC_DISORDER_W_O_MYELOPATHY" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_LUMBAR_DISC_DISORDER_W_O_MYELOPATHY" Editable="True" Visible="True" />
+  <Field Name="BT_SUBLUXATION_OF_LUMBAR_VERTERAE" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_SUBLUXATION_OF_LUMBAR_VERTERAE" Editable="True" Visible="True" />
+
+
+  <StoreProcedure name="SP_CH_FORM_CHIRO_SPINAL_RANGE_OF_MOTION" />
+</Table>

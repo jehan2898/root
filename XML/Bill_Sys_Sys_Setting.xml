@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_CASE_MASTER">
+  <Field Name="SZ_COMPANY_ID"      DataType="NVarChar"    Size="20" Null="False" Control="TextBox" ControlID="txtCompanyID" Editable="True"  Visible="True" ></Field>
+  <StoreProcedure name="SP_GET_SYS_SETTING"></StoreProcedure>
+  <ListControl name="grdSettings"></ListControl>
+</Table>

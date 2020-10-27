@@ -1,0 +1,122 @@
+<%@ WebService Language="C#" Class="google" %>
+using System;
+using System.Collections.Generic;
+using System.Web;
+using System.Collections;
+using System.Web.Services;
+using System.Web.Services.Protocols;
+using System.Xml;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
+
+/// <summary>
+/// Summary description for google
+/// </summary>
+[WebService(Namespace = "http://tempuri.org/")]
+[WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
+[System.Web.Script.Services.ScriptService]
+public class google : System.Web.Services.WebService
+{
+    [WebMethod]
+    public string[] DOCTORLIST(String prefixText)
+    {
+        SqlCommand sqlCmd;
+        SqlDataAdapter sqlDBAdp;
+        DataSet dsLoad;
+        string strSql;
+        SqlConnection objDBUtils = new SqlConnection(ConfigurationManager.AppSettings["Connection_String"].ToString());
+        List<String> suggArList = new List<string>();
+        try
+        {
+            //Object Initialization
+
+            strSql = "GET_VALUE_LIST_FOR_SEARCH";
+            sqlCmd = new SqlCommand(strSql, objDBUtils);
+            dsLoad = new DataSet();
+            sqlDBAdp = new SqlDataAdapter(sqlCmd);
+            //open connection
+            objDBUtils.Open();
+            sqlCmd.CommandType = CommandType.StoredProcedure;
+            sqlCmd.Parameters.Add(new SqlParameter("@FLAG", SqlDbType.NVarChar));
+            sqlCmd.Parameters["@FLAG"].Value = "DOCTORLIST";
+            sqlCmd.Parameters.Add(new SqlParameter("@SEARCHTEXT", SqlDbType.NVarChar));
+            sqlCmd.Parameters["@SEARCHTEXT"].Value = prefixText;
+            sqlDBAdp.Fill(dsLoad);
+
+            foreach (DataRow dtRow in dsLoad.Tables[0].Rows)
+            {
+                string value = dtRow.ItemArray.GetValue(0).ToString();
+                suggArList.Add(value);
+            }
+            return suggArList.ToArray();
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+        finally
+        {
+            //close connection
+            objDBUtils.Close();
+
+            //Object clearing
+            objDBUtils = null;
+            sqlCmd = null;
+            dsLoad = null;
+        }
+    }
+
+
+    [WebMethod]
+    public string[] PROVIDERLIST(String prefixText)
+    {
+        SqlCommand sqlCmd;
+        SqlDataAdapter sqlDBAdp;
+        DataSet dsLoad;
+        string strSql;
+        SqlConnection objDBUtils = new SqlConnection(ConfigurationManager.AppSettings["Connection_String"].ToString());
+        List<String> suggArList = new List<string>();
+        try
+        {
+            //Object Initialization
+
+            strSql = "GET_VALUE_LIST_FOR_SEARCH";
+            sqlCmd = new SqlCommand(strSql, objDBUtils);
+            dsLoad = new DataSet();
+            sqlDBAdp = new SqlDataAdapter(sqlCmd);
+            //open connection
+            objDBUtils.Open();
+            sqlCmd.CommandType = CommandType.StoredProcedure;
+            sqlCmd.Parameters.Add(new SqlParameter("@FLAG", SqlDbType.NVarChar));
+            sqlCmd.Parameters["@FLAG"].Value = "PROVIDERLIST";
+            sqlCmd.Parameters.Add(new SqlParameter("@SEARCHTEXT", SqlDbType.NVarChar));
+            sqlCmd.Parameters["@SEARCHTEXT"].Value = prefixText;
+            sqlDBAdp.Fill(dsLoad);
+
+            foreach (DataRow dtRow in dsLoad.Tables[0].Rows)
+            {
+                string value = dtRow.ItemArray.GetValue(0).ToString();
+                suggArList.Add(value);
+            }
+            return suggArList.ToArray();
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+        finally
+        {
+            //close connection
+            objDBUtils.Close();
+
+            //Object clearing
+            objDBUtils = null;
+            sqlCmd = null;
+            dsLoad = null;
+        }
+    }
+
+
+   
+}

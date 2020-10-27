@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="TXN_SCHEDULED_REFERAL">
+  <Field Name="SZ_SCHEDULED_REFERAL_ID"    DataType="NVarChar"    Size="20"     Null="False"   Control=""                       ControlID=""                      Editable="True" Visible="False"></Field>
+  <Field Name="SZ_REFERAL_OFFICE_ID"       DataType="NVarChar"    Size="20"     Null="False"   Control="ExtendedDropDownList"   ControlID="extddlReferalList"     Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PROCEDURAL_CODE_ID"      DataType="NVarChar"    Size="20"     Null="False"   Control="ExtendedDropDownList"   ControlID="extddlProceduralCode"  Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_SCHEDULED_DATE"          DataType="DateTime"    Size=""       Null="False"   Control="TextBox"                ControlID="txtScheduleDate"       Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PROCESSED_DATE"          DataType="DateTime"    Size=""       Null="False"   Control=""                       ControlID=""                      Editable="True"  Visible="False" ></Field>
+  <Field Name="SZ_STATUS"                  DataType="Bit"         Size=""       Null="False"   Control=""                       ControlID=""                      Editable="True"  Visible="False" ></Field>
+  <Field Name="SZ_LAST_UPDATED_USER_ID"    DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"                ControlID="txtUserID"             Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_CREATED_USER_ID"         DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"                ControlID="txtUserID"             Editable="True"  Visible="True" ></Field>  
+  <Field Name="SZ_LAST_UPDATED"            DataType="DateTime"    Size=""       Null="False"   Control="TextBox"                ControlID=""                      Editable="True"  Visible="False" ></Field>
+  <Field Name="SZ_COMPANY_ID"              DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"                ControlID="txtCompanyID"          Editable="True"  Visible="True" ></Field>
+  <StoreProcedure name="SP_TXN_SCHEDULED_REFERAL"></StoreProcedure>
+  <ListControl name="grdReferalManagement"></ListControl>
+</Table>

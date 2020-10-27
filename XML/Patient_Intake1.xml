@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_PATIENT_INTAKE">
+  <!--<Field Name ="I_EVENT_ID" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_I_EVENT" Editable="True" Visible="True"></Field>-->
+  <Field Name ="SZ_CASE_ID" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_CASE_ID" Editable="True" Visible="True"></Field>
+  <!--<Field Name ="SZ_PATIENT_NAME" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_PATIENT_NAME" Editable="True" Visible="True"></Field>-->
+  <Field Name ="SZ_REFERRED_BY" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_REFERRED_BY" Editable="True" Visible="True"></Field>
+  <!--<Field Name ="SZ_PATIENT_LAST_NAME" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_PATIENT_LAST_NAME" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_PATIENT_FIRST_NAME" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_PATIENT_FIRST_NAME" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_PATIENT_MI" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_PATIENT_MI" Editable="True" Visible="True"></Field>-->
+  <Field Name ="SZ_PATIENT_TITLE" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_PATIENT_TITLE" Editable="True" Visible="True"></Field>
+  <!--<Field Name ="SZ_PATIENT_ADDRESS" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_PATIENT_ADDRESS" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_PATIENT_CITY" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_PATIENT_CITY" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_PATIENT_STATE" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_PATIENT_STATE" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_PATIENT_ZIP" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_PATIENT_ZIP" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_PATIENT_HOME_PHONE" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_PATIENT_HOME_PHONE" Editable="True" Visible="True"></Field>-->
+  <Field Name ="SZ_PATIENT_CELL_PHONE" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_PATIENT_CELL_PHONE" Editable="True" Visible="True"></Field>
+  <!--<Field Name ="DT_PATIENT_DATE_OF_BIRTH" DataType="DateTime" Size="" Null="True" Control="TextBox" ControlID="TXT_PATIENT_DATE_OF_BIRTH" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_PATIENT_AGE" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_PATIENT_AGE" Editable="True" Visible="True"></Field>-->
+  <Field Name ="I_PATIENT_MALE" DataType="Int" Size="" Null="True" Control="TextBox" ControlID="txtrdblstPATIENT_MALE" Editable="True" Visible="True"></Field>
+  <!--<Field Name ="SZ_PATIENT_SOC_SEC" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_PATIENT_SOC_SEC" Editable="True" Visible="True"></Field>-->
+  <Field Name ="I_PATIENT_SINGLE" DataType="Int" Size="" Null="True" Control="TextBox" ControlID="txtrdblstPATIENT_SINGLE" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_SPOUSE_NAME" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_SPOUSE_NAME" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_SPOUSE_SOC_SEC" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_SPOUSE_SOC_SEC" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_RESPONSIBLE_BILL_SELF" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_RESPONSIBLE_BILL_SELF" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_RESPONSIBLE_BILL_AUTO_INS" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_RESPONSIBLE_BILL_AUTO_INS" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_RESPONSIBLE_BILL_WORKERS_COMP" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_RESPONSIBLE_BILL_WORKERS_COMP" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_RESPONSIBLE_BILL_SELF_PERSONAL_HEALTH_INS" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_RESPONSIBLE_BILL_SELF_PERSONAL_HEALTH_INS" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_RESPONSIBLE_BILL_MEDICARE" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_RESPONSIBLE_BILL_MEDICARE" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_RESPONSIBLE_BILL_OTHER" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_RESPONSIBLE_BILL_OTHER" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_OCCUPATION" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_OCCUPATION" Editable="True" Visible="True"></Field>
+  <!--<Field Name ="SZ_EMPLOYER" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_EMPLOYER" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_ADDRESS" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_ADDRESS" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_CITY" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_CITY" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_STATE" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_STATE" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_ZIP" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_ZIP" Editable="True" Visible="True"></Field>-->
+  <Field Name ="SZ_BUSINESS_PHONE_EXTENSION" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_BUSINESS_PHONE_EXTENSION" Editable="True" Visible="True"></Field>
+  <!--<Field Name ="SZ_BUSINESS_PHONE" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_BUSINESS_PHONE" Editable="True" Visible="True"></Field>-->
+  <Field Name ="SZ_FAX_EXTENSION" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_FAX_EXTENSION" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_FAX" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_FAX" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_INSURANCE_TYPE_PRIVATE" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_INSURANCE_TYPE_PRIVATE" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_INSURANCE_TYPE_AUTO" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_INSURANCE_TYPE_AUTO" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_INSURANCE_TYPE_WORK" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_INSURANCE_TYPE_WORK" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_INSURANCE_TYPE_SLIP_FALL" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_INSURANCE_TYPE_SLIP_FALL" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_INSURANCE_TYPE_OTHER" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_INSURANCE_TYPE_OTHER" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_INSURANCE_TYPE_OTHER" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_INSURANCE_TYPE_OTHER" Editable="True" Visible="True"></Field>
+  <Field Name ="I_PATIENT_RELATIONSHIP_TO_INSURED" DataType="Int" Size="" Null="True" Control="TextBox" ControlID="txtrdblstPATIENT_RELATIONSHIP_TO_INSURED" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_PATIENT_RELATIONSHIP_TO_INSURED_OTHER" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_PATIENT_RELATIONSHIP_TO_INSURED_OTHER" Editable="True" Visible="True"></Field>
+  <!--<Field Name ="DT_DATE_OF_INJURY" DataType="DateTime" Size="" Null="True" Control="TextBox" ControlID="TXT_DATE_OF_INJURY" Editable="True" Visible="True"></Field>-->
+  <Field Name ="I_AUTO_INJURY_ROLE" DataType="Int" Size="" Null="True" Control="TextBox" ControlID="txtrdblstAUTO_INJURY_ROLE" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_AUTO_INJURY_OTHER" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_AUTO_INJURY_OTHER" Editable="True" Visible="True"></Field>
+  <!--<Field Name ="SZ_POLICY_NUMBER" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_POLICY_NUMBER" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_CLAIM_NUMBER" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_CLAIM_NUMBER" Editable="True" Visible="True"></Field>-->
+  <Field Name ="SZ_WORKERS_COMP" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_WORKERS_COMP" Editable="True" Visible="True"></Field>
+  <!--<Field Name ="SZ_HOW_INJURY_HAPPEN" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_HOW_INJURY_HAPPEN" Editable="True" Visible="True"></Field>-->
+  <Field Name ="I_REPORT_INJURY_YES_NO" DataType="Int" Size="" Null="True" Control="TextBox" ControlID="txtrdblstREPORT_INJURY_YES_NO" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_REPORT_INJURY_TO_WHOM" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_REPORT_INJURY_TO_WHOM" Editable="True" Visible="True"></Field>
+  <Field Name ="I_HOSPITALIZED_YES_NO" DataType="Int" Size="" Null="True" Control="TextBox" ControlID="txtrdblstHOSPITALIZED_YES_NO" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_HOSPITALIZED_WHERE" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_HOSPITALIZED_WHERE" Editable="True" Visible="True"></Field>
+  <Field Name ="I_X_RAYS_YES_NO" DataType="Int" Size="" Null="True" Control="TextBox" ControlID="txtrdblstX_RAYS_YES_NO" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_X_RAYS_BY_WHOM" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_X_RAYS_BY_WHOM" Editable="True" Visible="True"></Field>
+  <Field Name ="I_WERE_YOU_WORKING" DataType="Int" Size="" Null="True" Control="TextBox" ControlID="txtrdblstWERE_YOU_WORKING" Editable="True" Visible="True"></Field>
+  <Field Name ="DT_DATES_LOST_FROM_WORK" DataType="DateTime" Size="" Null="True" Control="TextBox" ControlID="TXT_DATES_LOST_FROM_WORK" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_OTHER_DOCTORS_NAME" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_OTHER_DOCTORS_NAME" Editable="True" Visible="True"></Field>
+  <!--<Field Name ="SZ_ATTORNEY_NAME" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_ATTORNEY_NAME" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_ATTORNEY_PHONE" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_ATTORNEY_PHONE" Editable="True" Visible="True"></Field>-->
+  <StoreProcedure name="SP_MST_PATIENT_INTAKE1"></StoreProcedure>
+</Table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

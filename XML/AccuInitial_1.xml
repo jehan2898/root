@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_ACCU_INITIAL">
+
+  <!--<Field Name="SZ_PATIENT_NAME"             DataType="NVarChar"   Size="100"  Null="True" Control="TextBox"         ControlID="TXT_PATIENT_NAME" Editable="True" Visible="True"></Field>
+  <Field Name="DT_DOA"                      DataType="DateTime"   Size=""     Null="True" Control="TextBox"         ControlID="TXT_DOA" Editable="True" Visible="True"></Field>
+  <Field Name="DT_DOE"                      DataType="DateTime"   Size=""     Null="True" Control="TextBox"        ControlID="TXT_DOE" Editable="True" Visible="True"></Field>
+  <Field Name="I_PATIENT_AGE"               DataType="Int"        Size=""     Null="True" Control="TextBox"        ControlID="TXT_PATIENT_AGE" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PATIENT_SEX"              DataType="NVarChar"        Size=""     Null="True" Control="TextBox"        ControlID="TXT_PATIENT_SEX" Editable="True" Visible="True"></Field>-->
+  <!--<Field Name="I_PATIENT_ACCIDENT_CATEGORY" DataType="Int"        Size=""     Null="True" Control="RadioButtonList"   ControlID="RDO_PATIENT_ACCIDENT_CATEGORY" Editable="True" Visible="True"></Field>
+  <Field Name="I_PATIENT_HOSPITALIZED"      DataType="Int"        Size=""     Null="True" Control="RadioButtonList"   ControlID="RDO_PATIENT_HOSPITALIZED" Editable="True" Visible="True"></Field>-->
+  <Field Name="I_PATIENT_ACCIDENT_CATEGORY" DataType="Int" Size="" Null="True" Control="TextBox" ControlID="TXT_PATIENT_ACCIDENT_CATEGORY" Editable="True" Visible="True" />
+  <Field Name="I_PATIENT_HOSPITALIZED" DataType="Int" Size="" Null="True" Control="TextBox" ControlID="TXT_PATIENT_HOSPITALIZED" Editable="True" Visible="True" />
+
+
+  <Field Name="SZ_MEDICATIONS"              DataType="NVarChar"   Size="100"  Null="True" Control="TextBox"        ControlID="TXT_MEDICATIONS" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_FAMILY_HISTORY"           DataType="NVarChar"   Size="100"  Null="True" Control="TextBox"        ControlID="TXT_FAMILY_HISTORY" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PERSONAL_MEDICAL_HISTORY" DataType="NVarChar"   Size="100"  Null="True" Control="TextBox"        ControlID="TXT_PERSONAL_MEDICAL_HISTORY" Editable="True" Visible="True"></Field>
+  <Field Name="BT_HEADACHES"                DataType="Int"        Size=""     Null="True" Control="CheckBox"       ControlID="CHK_HEADACHES" Editable="True" Visible="True"></Field>
+  <!--<Field Name="I_HEADACHES_LEVEL"           DataType="Int"        Size=""     Null="True"  Control="RadioButtonList" ControlID="RDO_HEADACHES_LEVEL"             Editable="True" Visible="True"></Field>-->
+  <Field Name="I_HEADACHES_LEVEL" DataType="Int" Size="" Null="True" Control="TextBox" ControlID="TXT_HEADACHES_LEVEL" Editable="True" Visible="True" />
+
+
+  <Field Name="BT_DIZZINESS"                DataType="Int"        Size=""     Null="True" Control="CheckBox"        ControlID="CHK_DIZZINESS" Editable="True" Visible="True"></Field>
+  <!--<Field Name="I_DIZZINESS_LEVEL"           DataType="Int"        Size=""     Null="True"  Control="RadioButtonList" ControlID="RDO_DIZZINESS_LEVEL"             Editable="True" Visible="True"></Field>-->
+  <Field Name="I_DIZZINESS_LEVEL" DataType="Int" Size="" Null="True" Control="TextBox" ControlID="TXT_DIZZINESS_LEVEL" Editable="True" Visible="True" />
+
+
+  <Field Name="BT_SLEEPING_DISORDERS"       DataType="Int"        Size=""     Null="True" Control="CheckBox"        ControlID="CHK_SLEEPING_DISORDERS" Editable="True" Visible="True"></Field>
+  <!--<Field Name="I_SLEEPING_DISORDERS_LEVEL"  DataType="Int"        Size=""     Null="True"  Control="RadioButtonList" ControlID="RDO_SLEEPING_DISORDERS_LEVEL"             Editable="True" Visible="True"></Field>-->
+  <Field Name="I_SLEEPING_DISORDERS_LEVEL" DataType="Int" Size="" Null="True" Control="TextBox" ControlID="TXT_SLEEPING_DISORDERS_LEVEL" Editable="True" Visible="True" />
+
+  <Field Name="BT_NECK_PAIN"                DataType="Int"        Size=""     Null="True" Control="CheckBox"        ControlID="CHK_NECK_PAIN" Editable="True" Visible="True"></Field>
+  <!--<Field Name="I_NECK_PAIN_LEVEL"           DataType="Int"        size=""     Null="True"  Control="RadioButtonList" ControlID="RDO_NECK_PAIN_LEVEL"             Editable="True" Visible="True"></Field>-->
+  <Field Name="I_NECK_PAIN_LEVEL" DataType="Int" Size="" Null="True" Control="TextBox" ControlID="TXT_NECK_PAIN_LEVEL" Editable="True" Visible="True" />
+
+
+  <Field Name="BT_NECK_STIFFNESS"           DataType="Int"        Size=""     Null="True" Control="CheckBox"        ControlID="CHK_NECK_STIFFNESS" Editable="True" Visible="True"></Field>
+  <!--<Field Name="I_NECK_STIFFNESS_LEVEL"      DataType="Int"        Size=""     Null="True"  Control="RadioButtonList" ControlID="RDO_NECK_STIFFNESS_LEVEL"             Editable="True" Visible="True"></Field>-->
+  <Field Name="I_NECK_STIFFNESS_LEVEL" DataType="Int" Size="" Null="True" Control="TextBox" ControlID="TXT_NECK_STIFFNESS_LEVEL" Editable="True" Visible="True" />
+
+
+  <Field Name="BT_SHOULDER_PAIN"            DataType="Int"        Size=""     Null="True" Control="CheckBox"        ControlID="CHK_SHOULDER_PAIN" Editable="True" Visible="True"></Field>
+  <!--<Field Name="I_SHOULDER_PAIN_LEVEL"       DataType="Int"        Size=""     Null="True"  Control="RadioButtonList" ControlID="RDO_SHOULDER_PAIN_LEVEL"             Editable="True" Visible="True"></Field>-->
+  <Field Name="I_SHOULDER_PAIN_LEVEL" DataType="Int" Size="" Null="True" Control="TextBox" ControlID="TXT_SHOULDER_PAIN_LEVEL" Editable="True" Visible="True" />
+
+
+  <Field Name="BT_SHOULDER_STIFFNESS"       DataType="Int"        Size=""     Null="True" Control="CheckBox"        ControlID="CHK_SHOULDER_STIFFNESS" Editable="True" Visible="True"></Field>
+  <!--<Field Name="I_SHOULDER_STIFFNESS_LEVEL"  DataType="Int"        Size=""     Null="True"  Control="RadioButtonList" ControlID="RDO_SHOULDER_STIFFNESS_LEVEL"             Editable="True" Visible="True"></Field>-->
+  <Field Name="I_SHOULDER_STIFFNESS_LEVEL" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_SHOULDER_STIFFNESS_LEVEL" Editable="True" Visible="True" />
+
+
+  <Field Name="BT_UPPER_BACK_PAIN"          DataType="Int"        Size=""     Null="True" Control="CheckBox"        ControlID="CHK_UPPER_BACK_PAIN" Editable="True" Visible="True"></Field>
+  <!--<Field Name="I_UPPER_BACK_PAIN_LEVEL"     DataType="Int"        Size=""     Null="True"  Control="RadioButtonList" ControlID="RDO_UPPER_BACK_PAIN_LEVEL"             Editable="True" Visible="True"></Field>-->
+  <Field Name="I_UPPER_BACK_PAIN_LEVEL" DataType="Int" Size="" Null="True" Control="TextBox" ControlID="TXT_UPPER_BACK_PAIN_LEVEL" Editable="True" Visible="True" />
+
+
+  <Field Name="BT_MIDDLE_BACK_PAIN"         DataType="Int"        Size=""     Null="True" Control="CheckBox"        ControlID="CHK_MIDDLE_BACK_PAIN" Editable="True" Visible="True"></Field>
+  <!--<Field Name="I_MIDDLE_BACK_PAIN_LEVEL"    DataType="Int"        Size=""     Null="True"  Control="RadioButtonList" ControlID="RDO_MIDDLE_BACK_PAIN_LEVEL"             Editable="True" Visible="True"></Field>-->
+  <Field Name="I_MIDDLE_BACK_PAIN_LEVEL" DataType="Int" Size="" Null="True" Control="TextBox" ControlID="TXT_MIDDLE_BACK_PAIN_LEVEL" Editable="True" Visible="True" />
+
+
+  <Field Name="BT_LOWER_BACK_PAIN"          DataType="Int"        Size=""     Null="True" Control="CheckBox"        ControlID="CHK_LOWER_BACK_PAIN" Editable="True" Visible="True"></Field>
+  <!--<Field Name="I_LOWER_BACK_PAIN_LEVEL"     DataType="Int"        Size=""     Null="True"  Control="RadioButtonList" ControlID="RDO_LOWER_BACK_PAIN_LEVEL"             Editable="True" Visible="True"></Field>-->
+  <Field Name="I_LOWER_BACK_PAIN_LEVEL" DataType="Int" Size="" Null="True" Control="TextBox" ControlID="TXT_LOWER_BACK_PAIN_LEVEL" Editable="True" Visible="True" />
+
+
+  <Field Name="SZ_BACK_OTHER"               DataType="NVarChar"   Size="100"  Null="True" Control="TextBox"         ControlID="TXT_BACK_OTHER" Editable="True" Visible="True"></Field>
+  <Field Name="I_EVENT_ID"                  DataType="Int"        Size=""     Null="" Control="TextBox"         ControlID="txtEventID" Editable="True" Visible="True"></Field>
+
+  <StoreProcedure name="SP_MST_AC_ACCU_INITIAL_1"></StoreProcedure>
+  
+</Table>

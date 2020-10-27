@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<document  procedure_name="SP_MST_EXAM_INFORMATION">
+  <field sz_field_name="SZ_EXAM_INFORAMATION_ID"                     sz_field_value=""    ></field>
+  <field sz_field_name="DT_DATE_OF_EXAMINATION"                      sz_field_value=""    ></field>
+  <field sz_field_name="DT_DATE_INJURY_ONSET"                        sz_field_value=""    ></field>
+  <field sz_field_name="SZ_DIAGNOSTIC_TEST"                          sz_field_value=""    ></field>
+  <field sz_field_name="SZ_TREATMENT"                                sz_field_value=""    ></field>
+  <field sz_field_name="SZ_PROGNOSIS_RECOVERY"                       sz_field_value=""    ></field>
+  <field sz_field_name="BT_IS_AFFECT_TREATMENT_PROGNOSIS"            sz_field_value="0"    ></field>
+  <field sz_field_name="SZ_AFFECT_TREATMENT_PROGNOSIS_DESCRIPTION"   sz_field_value=""    ></field>
+</document>

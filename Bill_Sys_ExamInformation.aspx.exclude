@@ -1,0 +1,764 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Bill_Sys_ExamInformation.aspx.cs"
+    Inherits="Bill_Sys_ExamInformation" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ Register Assembly="MenuControl" Namespace="MenuControl" TagPrefix="cc2" %>
+<%@ Register Src="UserControl/CheckPageAutharization.ascx" TagName="CheckPageAutharization"
+    TagPrefix="CPA" %>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Billing System</title>
+
+    <script type="text/javascript" src="validation.js"></script>
+
+    <link href="Css/main.css" type="text/css" rel="Stylesheet" />
+    <link href="Css/UI.css" type="text/css" rel="stylesheet" />
+    <style>
+		.blocktitle{
+			width:98%; 
+			height:auto;
+			text-align:left;
+			background-color:#d8dfea;
+			border-color:#8ba1ca;
+			border-style:solid;
+			border-width:1px;
+			line-height:2em;		
+			margin-left:10px;
+		}
+		
+		.blocktitle_adv{
+			width:100%;
+			height: 20px;
+			text-align:left;
+			background-color:#CCCCCC;
+			border-color:#8ba1ca;
+			border-style:solid;
+			border-width:1px;
+			font-family:Arial, Helvetica, sans-serif;
+			font-size:12px;
+			font-weight:bold;
+			padding-top:3px;
+		}
+		
+		.block{
+			width:100%; 
+			height: 200px;
+			vertical-align:middle;
+		}
+		
+		DIV#m_content_adv1{
+			position:absolute;
+			left:1000px;
+			top:105px;
+			width:270px;
+		}
+
+		DIV#m_content_adv2{
+			position:absolute;
+			left:1000px;
+			top:290px;
+			width:270px;
+		}
+
+		.m_content{
+			position:absolute;
+			left:225px;
+			top:100px;
+			border:1px solid;
+			width:inherit;
+		}
+		
+		.div_messages{
+			font:Arial, Helvetica, sans-serif;
+			font-family:Arial, Helvetica, sans-serif;
+			font-size:12px;
+			font-weight:bold;
+			width:100%;
+			height:20px;
+			padding-top:10px;
+			text-align:center;
+			/*visibility:hidden*/
+		}
+		
+		.div_blockcontent{
+			width:100%; 
+			vertical-align:middle; 
+			background-color:#ffffff;
+
+			/*padding-right:10%;*/
+		}
+		
+		.div_blockcontent_field_label{
+		
+		}
+		
+		DIV#div_content_adv{
+			border-color:#8ba1ca;
+			background-color:#FFFFFF;
+			height:200px;
+			border:1px;
+		}
+
+		TABLE#content_table{
+			border-color:#8ba1ca;
+			text-align:left;
+			font:Arial, Helvetica, sans-serif;
+			font-family:Arial, Helvetica, sans-serif;
+			font-size:13px;
+			font-weight:normal;
+			height: 100%; 
+			width: 100%;
+		}
+		INPUT#selectbox{
+			width:inherit;
+		}
+		DIV#div_contect_field_buttons{
+			position:inherit;
+			border:0px;
+			height:40px;
+			text-align:center;
+			background-color:#F0F0F0;
+			padding-top:5px;
+		}
+		.btnsignin{
+			background-color:#CCCCCC;
+			color:#000000;
+			font-size:12px;
+			font-weight:bold;
+			height:22px;
+			border:1px solid;
+			text-align:center;
+			padding-bottom:4px;
+		}
+	</style>
+
+    <script language="javascript">
+			var cal1x = new CalendarPopup();
+			cal1x.showNavigationDropdowns();		
+	
+    </script>
+
+    <script type="text/javascript">
+     function ascii_value(c){
+             c = c . charAt (0);
+             var i;
+             for (i = 0; i < 256; ++ i)
+             {
+                  var h = i . toString (16);
+                  if (h . length == 1)
+                    h = "0" + h;
+                   h = "%" + h;
+                  h = unescape (h);
+                  if (h == c)
+                    break;
+             }
+             return i;
+        }
+    function CheckForInteger(e,charis)
+        {
+                var keychar;
+                if(navigator.appName.indexOf("Netscape")>(-1))
+                {    
+                    var key = ascii_value(charis);
+                    if(e.charCode == key || e.charCode==0){
+                    return true;
+                   }else{
+                         if (e.charCode < 48 || e.charCode > 57)
+                         {             
+                                return false;
+                         } 
+                     }
+                 }
+            if (navigator.appName.indexOf("Microsoft Internet Explorer")>(-1))
+            {          
+                var key=""
+               if(charis!="")
+               {         
+                     key = ascii_value(charis);
+                }
+                if(event.keyCode == key)
+                {
+                    return true;
+                }
+                else
+                {
+                         if (event.keyCode < 48 || event.keyCode > 57)
+                          {             
+                             return false;
+                          }
+                }
+            }
+            
+            
+         }
+    </script>
+
+</head>
+<body>
+    <form id="frmHistory" runat="server">
+        <div>
+            <asp:Panel ID="pnlExamInformation" runat="server">
+                <table cellpadding="0" cellspacing="0" class="simple-table;" id="TABLE1">
+                    <tr>
+                        <td width="9%" height="18">
+                            &nbsp;</td>
+                        <td background="Images/header-bg-gray.jpg">
+                            <div align="right">
+                                <span class="top-menu">Home | Logout</span></div>
+                        </td>
+                        <td width="8%">
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="top-menu">
+                            &nbsp;</td>
+                        <td background="Images/header-bg-gray.jpg" class="top-menu">
+                            &nbsp;</td>
+                        <td class="top-menu">
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="top-menu">
+                            &nbsp;</td>
+                        <td background="Images/header-bg-gray.jpg">
+                            &nbsp;</td>
+                        <td class="top-menu">
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td width="9%" class="top-menu">
+                            &nbsp;</td>
+                        <td background="Images/header-bg-gray.jpg">
+                            <cc2:WebCustomControl1 ID="TreeMenuControl1" runat="server" Procedure_Name="SP_MST_MENU"
+                                Connection_Key="Connection_String" Width="744px" Xml_Transform_File="TransformXSLT.xsl"
+                                Height="24px" Child_Label_CSS="sublevel1" DynamicMenuItemStyleCSS="sublevel1"
+                                StaticMenuItemStyleCSS="parentlevel1"></cc2:WebCustomControl1>
+                        </td>
+                        <td width="8%" class="top-menu">
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="top-menu">
+                            &nbsp;</td>
+                        <td height="20px" bgcolor="#EAEAEA" align="center">
+                            <span class="message-text">.</span></td>
+                        <td class="top-menu">
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="top-menu">
+                            &nbsp;</td>
+                        <td width="83%" scope="col">
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td colspan="3" class="usercontrol">
+                                        <CPA:CheckPageAutharization ID="CheckPageAutharization1" runat="server"></CPA:CheckPageAutharization>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="col" style="height: 20px">
+                                        <div align="left" class="band">
+                                            Worker Compension</div>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" scope="col">
+                                        <div align="left" class="blocktitle">
+                                            <asp:Label ID="lblDivHeading" runat="server" Text="Exam Information"></asp:Label>
+                                            <div id="divExamInformation" class="div_blockcontent">
+                                                <table width="80%" border="0" align="center" cellpadding="0" cellspacing="3">
+                                                    <tr>
+                                                        <td width="25%">
+                                                            1. Date(s) of Examination:
+                                                        </td>
+                                                        <td width="75%" colspan="3">
+                                                            <asp:TextBox ID="txtDateOfExam" runat="server"></asp:TextBox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="4" width="100%">
+                                                            2. Patient's subjective complaints: Check all that apply and identify specific affected
+                                                            body part(s).
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkNumbnessTingling" Text="Numbness/Tingling" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtNumbnessTingling" runat="server"></asp:TextBox>
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkSwelling" Text="Swelling" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtSwelling" runat="server"></asp:TextBox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkPain" Text="Pain" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtPain" runat="server"></asp:TextBox>
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkWeakness" Text="Weakness" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtWeakness" runat="server"></asp:TextBox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkStiffness" Text="Stiffness" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtStiffness" runat="server"></asp:TextBox>
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkOther" Text="Other(Specify)" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtOtherExamInfo" runat="server"></asp:TextBox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="4" width="100%">
+                                                            3. Type/nature of injury: Check all that apply and identify specific affected body
+                                                            part(s).
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkAbrasion" Text="Abrasion" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtAbrasion" runat="server"></asp:TextBox>
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkInfectiousDisease" Text="Infectious Disease" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtInfectiousDisease" runat="server"></asp:TextBox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkAmputation" Text="Amputation" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtAmputation" runat="server"></asp:TextBox>
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkInhalationExposure" Text="Inhalation Exposure" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtInhalationExposure" runat="server"></asp:TextBox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkAvulsion" Text="Avulsion" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtAvulsion" runat="server"></asp:TextBox>
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkLaceration" Text="Laceration" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtLaceration" runat="server"></asp:TextBox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkBite" Text="Bite" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtBite" runat="server"></asp:TextBox>
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkNeedleStick" Text="Needle Stick" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtNeedleStick" runat="server"></asp:TextBox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkBurn" Text="Burn" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtBurn" runat="server"></asp:TextBox>
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkPoisoningToxicEffects" Text="Poisoning/Toxic Effects" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtPoisoningToxicEffects" runat="server"></asp:TextBox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkContusionHematoma" Text="Contusion/Hematoma" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtContusionHematoma" runat="server"></asp:TextBox>
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkPsychological" Text="Psychological" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtPsychological" runat="server"></asp:TextBox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkCrushInjury" Text="Crush Injury" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtCrushInjury" runat="server"></asp:TextBox>
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkPunctureWound" Text="Puncture Wound" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtPunctureWound" runat="server"></asp:TextBox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkDermatitis" Text="Dermatitis" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtDermatitis" runat="server"></asp:TextBox>
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkRepetitiveStrainInjury" Text="Repetitive Strain Injury" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtRepetitiveStrainInjury" runat="server"></asp:TextBox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkDislocation" Text="Dislocation" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtDislocation" runat="server"></asp:TextBox>
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkSpinalCordInjury" Text="Spinal Cord Injury" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtSpinalCordInjury" runat="server"></asp:TextBox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkFracture" Text="Fracture" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtFracture" runat="server"></asp:TextBox>
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkSprainStrain" Text="Sprain/Strain" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtSprainStrain" runat="server"></asp:TextBox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkHearingLoss" Text="Hearing Loss" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtHearingLoss" runat="server"></asp:TextBox>
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkTornLigamentTendonOrMuscle" Text="Torn Ligament,Tendon or Muscle"
+                                                                runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtTornLigamentTendonOrMuscle" runat="server"></asp:TextBox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkHernia" Text="Hernia" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtHernia" runat="server"></asp:TextBox>
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkVisionLoss" Text="Vision Loss" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtVisionLoss" runat="server"></asp:TextBox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="25%" valign="top">
+                                                            <asp:CheckBox ID="chkOtherNatureOfInjury" Text="Other(Specify) :" runat="server" />
+                                                        </td>
+                                                        <td colspan="3">
+                                                            <asp:TextBox ID="txtOtherNatureOfInjury" runat="server" TextMode="MultiLine" Width="420px"
+                                                                Height="80px"></asp:TextBox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="4" width="100%">
+                                                            &nbsp;
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="4" width="100%">
+                                                            4. Physical examination: Check all relevant objective findings and identify specific
+                                                            affected body part(s).
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkNoneAtPresent" Text="None at present" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkNeuromuscularFindings" Text="Neuromuscular &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Findings:"
+                                                                runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkBruising" Text="Bruising" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtBruising" runat="server"></asp:TextBox>
+                                                        </td>
+                                                        <td width="25%">
+                                                            &nbsp;&nbsp;<asp:CheckBox ID="chkAbnormalRestrictedROM" Text="Abnormal/Restricted &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  ROM"
+                                                                runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkBurns" Text="Burns" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtBurns" runat="server"></asp:TextBox>
+                                                        </td>
+                                                        <td width="25%">
+                                                            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<asp:CheckBox ID="chkActiveROM" Text="Active ROM"
+                                                                runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtActiveROM" runat="server"></asp:TextBox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkCrepitation" Text="Crepitation" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtCrepitation" runat="server"></asp:TextBox>
+                                                        </td>
+                                                        <td width="25%">
+                                                            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<asp:CheckBox ID="chkPassiveROM" Text="Passive ROM"
+                                                                runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtPassiveROM" runat="server"></asp:TextBox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkDeformity" Text="Deformity" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtDeformity" runat="server"></asp:TextBox>
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkGait" Text="Gait" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtGait" runat="server"></asp:TextBox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkEdema" Text="Edema" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtEdema" runat="server"></asp:TextBox>
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkPalpableMuscleSpasm" Text="Palpable Muscle Spasm" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtPalpableMuscleSpasm" runat="server"></asp:TextBox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkHematomaLumpSwelling" Text="Hematoma/Lump/Swelling" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtHematomaLumpSwelling" runat="server"></asp:TextBox>
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkReflexes" Text="Reflexes" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtReflexes" runat="server"></asp:TextBox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkJointEffusion" Text="Joint Effusion" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtJointEffusion" runat="server"></asp:TextBox>
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkSensation" Text="Sensation" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtSensation" runat="server"></asp:TextBox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkLacerationSutures" Text="Laceration/Sutures" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtLacerationSutures" runat="server"></asp:TextBox>
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkStrengthWeakness" Text="Strength (Weakness)" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtStrengthWeakness" runat="server"></asp:TextBox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkPainTenderness" Text="Pain/Tenderness" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtPainTenderness" runat="server"></asp:TextBox>
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkWastingMuscleAtrophy" Text="Wasting/Muscle Atrophy" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtWastingMuscleAtrophy" runat="server"></asp:TextBox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="25%">
+                                                            <asp:CheckBox ID="chkScar" Text="Scar" runat="server" />
+                                                        </td>
+                                                        <td width="25%">
+                                                            <asp:TextBox ID="txtScar" runat="server"></asp:TextBox>
+                                                        </td>
+                                                        <td width="25%">
+                                                        </td>
+                                                        <td width="25%">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="25%" valign="top">
+                                                            <asp:CheckBox ID="chkOtherPhysicalInfo" Text="Other(Specify) ::" runat="server" />
+                                                        </td>
+                                                        <td colspan="3">
+                                                            <asp:TextBox ID="txtOtherPhysicalInfo" runat="server" TextMode="MultiLine" Width="420px"
+                                                                Height="80px"></asp:TextBox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="50%" colspan="4" valign="top">
+                                                            5. Describe any diagnostic test(s) rendered at this visit:
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="50%" colspan="4" valign="top">
+                                                            <asp:TextBox ID="txtDiagnosticTest" runat="server" TextMode="MultiLine" Width="420px"
+                                                                Height="80px"></asp:TextBox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="50%" colspan="4" valign="top">
+                                                            6. Describe any treatment(s) rendered at this visit:
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="50%" colspan="4">
+                                                            <asp:TextBox ID="txtTreatment" runat="server" TextMode="MultiLine" Width="420px"
+                                                                Height="80px"></asp:TextBox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="50%" colspan="4" valign="top">
+                                                            7. Describe prognosis for recovery:
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="50%" colspan="4">
+                                                            <asp:TextBox ID="txtPrognosis" runat="server" TextMode="MultiLine" Width="420px"
+                                                                Height="80px"></asp:TextBox>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="100%" colspan="4">
+                                                            8. Does the patient's medical history reveal any pre-existing condition(s) that
+                                                            may affect the treatment and/or prognosis?
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="4">
+                                                            <asp:CheckBoxList ID="chklistExamInfo" runat="server" RepeatDirection="Horizontal">
+                                                                <asp:ListItem Text="Yes" Value="1"></asp:ListItem>
+                                                                <asp:ListItem Text="No" Value="0"></asp:ListItem>
+                                                            </asp:CheckBoxList>
+                                                            If yes, list and describe:
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="4">
+                                                            <asp:TextBox ID="txtExamInfo" runat="server" TextMode="MultiLine" Width="420px" Height="80px"></asp:TextBox>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <div id="div_contect_field_buttons">
+                                                <table>
+                                                    <tr>
+                                                        <td colspan="4" width="100%" align="center">
+                                                            <asp:TextBox ID="txtCompanyID" runat="server" Width="10px" Visible="false"></asp:TextBox>
+                                                            <asp:TextBox ID="txtPatientID" runat="server" Width="10px" Visible="false"></asp:TextBox>
+                                                            <asp:Button ID="btnSaveAndGoToNext" runat="server" Text="Save & Next" Width="80px"
+                                                                OnClick="btnSaveAndGoToNext_Click" CssClass="btn-gray" />
+                                                            <asp:Button ID="btnCancel" runat="server" Text="Cancel" Width="80px" OnClick="btnCancel_Click"
+                                                                CssClass="btn-gray" /></td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="top-menu">
+                            &nbsp;</td>
+                    </tr>
+                </table>
+            </asp:Panel>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_CASE_MASTER">
+
+  <Field Name="sz_doctor_id"  DataType="NVarChar" Size="20" Null="False" Control="TextBox" ControlID="txtDoctorId" Editable="True"  Visible="True" ></Field>
+  <StoreProcedure name="sp_find_procedure_code_from_doctor"></StoreProcedure>
+  <ListControl name="grid"></ListControl>
+</Table>

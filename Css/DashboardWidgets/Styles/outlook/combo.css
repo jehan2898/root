@@ -1,0 +1,241 @@
+/* The style for the combo box container */
+.ComboBox
+{
+	border-right: silver 1px solid;
+	border-top: silver 1px solid;
+	border-left: silver 1px solid;
+	border-bottom: silver 1px solid;
+}
+
+/* Defines the text box. */
+.ComboBoxText 
+{
+	border-right: medium none;
+	border-top: medium none;
+	font-size: 9pt;
+	border-left: medium none;
+	cursor: text;
+	border-bottom: medium none;
+	font-family: Verdana, Tahoma, Arial;
+	vertical-align: middle;
+}
+/* Defines the container containing the textbox and button */
+.ComboBoxTextAndButton
+{
+	border-right: white 0px solid;
+	border-top: white 0px solid;
+	border-left: white 0px solid;
+	border-bottom: white 0px solid;
+	background: white;
+	padding-right: 1px;
+}
+/* Defines the button */
+.ComboBoxButton
+{
+	BACKGROUND-POSITION-X: 100%;
+	
+	background-attachment: fixed;
+	background-image: url(button.gif);
+	visibility: visible;
+	overflow: visible;
+	cursor: hand;
+	background-repeat: no-repeat;
+	position: static;
+	width: 17px;
+	height: 20px;
+
+}
+/* The class used when the user mouses over the button. */
+.ComboBoxButtonMouseOver
+{
+	BACKGROUND-POSITION-X: 100%;
+	
+	background-attachment: fixed;
+	background-image: url(button_hl.gif);
+	visibility: visible;
+	overflow: visible;
+	cursor: hand;
+	background-repeat: no-repeat;
+	position: static;
+	width: 17px;
+	height: 20px;
+
+}
+/* Defines the button when pressed */
+.ComboBoxButtonPressed
+{
+	background-attachment: fixed;
+	background-image: url(button_pressed.gif);
+	visibility: visible;
+	overflow: visible;
+	background-repeat: no-repeat;
+	position: static;
+	width: 18px;
+	height: 18px;
+
+}
+/* Defines the container that contains the combo list, header, and footer */
+.ComboBoxList
+{
+	border-right: silver 1px solid;
+	border-top: silver 1px solid;
+	border-left: silver 1px solid;
+	border-bottom: silver 1px solid;
+	z-index: 1000;
+	visibility: hidden;
+	position: absolute;
+	text-align: left;
+	scrollbar-face-color:#D5DFF9;
+	scrollbar-highlight-color:#FFFFFF;
+	scrollbar-3dlight-color:#EBEFF7;
+	scrollbar-darkshadow-color:#5D5A6D;
+	scrollbar-shadow-color:#4D6185;
+	scrollbar-arrow-color:#000000;
+	scrollbar-track-color:#F4F1EC;
+	background-color: White;
+
+}
+/* Defines the container that contains the combo list */
+.ComboBoxListBody
+{
+	overflow: auto;
+	font-size: 8pt;
+	font-family: Tahoma, Verdana, Arial;
+	background-color: #F6F6F6;
+}
+/* A header for the combo list. This is between the list and textbox. */
+.ComboBoxListHeader
+{
+	font-size: 12pt;
+	font-style: bold;
+	color:#FFFFFF;
+	font-family: Trebuchet MS, Trebuchet, Verdana, Arial;
+	background-attachment: fixed;
+	background-image: url(header.gif);
+	overflow: visible;
+	background-repeat: repeat;
+	position: static;	
+	height: 24;
+
+}
+/* The table storing the actual list data */
+.ComboBoxListBodyTable
+{
+	font-size: 8pt;
+	margin: 0px;
+	vertical-align: baseline;
+	cursor: default;
+	position: static;
+	border-collapse: collapse;
+	background-color: #F6F6F6;
+}
+/* A row in the table. */
+.ComboBoxListBodyTableRow
+{
+	font-size: 10pt;
+	margin: 0px;
+	height: 13px;
+	vertical-align: baseline;
+	cursor: default;
+	position: static;
+	font-family: Tahoma, Verdana;
+	border-collapse: collapse;
+	background-color: #F6F6F6;
+	white-space: nowrap;
+}
+/* The style used when the user selects or mouses over a row */
+.ComboBoxListBodyTableRowHighlighted
+{
+	font-size: 10pt;
+	height: 13px;	
+	margin: 0px;
+	vertical-align: baseline;
+	cursor: default;
+	position: static;
+	border-collapse: collapse;
+	color: #FFFFFF;
+	background-color: #316AC5;
+	white-space: nowrap;
+}
+
+/* The column labels at the top of the columns. This style is applied to the whole row of labels. */
+.ComboBoxColumnLabels
+{
+	font-size: 10pt;
+	font-style: bold;
+	color: #000000;
+	font-family: Trebuchet MS, Trebuchet, Verdana, Arial;
+}
+/* The style applied to the individual label. */
+.ComboBoxColumnLabel
+{
+	font-size: 12pt;
+	font-style: normal;
+	font-weight: bold;
+	color: #FFFFFF;
+	vertical-align: middle;
+	font-family: Arial, Verdana;
+	position:relative;
+	top: 0px;
+	
+}
+/* The footer that sits underneath the list. */
+.ComboBoxListFooter
+{
+	font-size: 8pt;
+	font-family: Tahoma, Verdana, Arial;
+	
+	background-attachment: fixed;
+	background-image: url(footer.gif);
+
+	overflow: visible;
+	background-repeat: repeat;
+	vertical-align: middle;
+	position: static;	
+	height: 22;
+}
+.ComboBoxListColumnDefinition
+{
+	height: 15px;
+	overflow:hidden;
+}
+.ComboBoxListFooterPageNextButton
+{
+	background-image: url(pagenext.gif);
+	background-repeat: no-repeat;
+	background-position: right center;
+ 	color: #000000;
+	font-size: 12px;
+	text-align: middle;
+	vertical-align: middle;
+	position:relative;
+	top: 2px;
+	left: 1px;
+	height: 22px;
+}
+.ComboBoxListFooterPageNextButtonHighlight
+{
+	border-right: #000080 1px solid;
+	background-position: right center;
+	border-top: #000080 1px solid;
+	background-image: url(pagenext_hl.gif);
+	border-left: #000080 1px solid;
+	border-bottom: #000080 1px solid;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	position: relative;
+	top: 1px;
+	background-color: #ffeec2;
+	text-align: left;
+	height: 18px;
+	color: #000000;
+	font-size: 12px;
+}
+
+.TestClass
+{
+	color: green;
+	font-style: italic;
+	background-color: yellow;
+	text-decoration: underline overline;
+}

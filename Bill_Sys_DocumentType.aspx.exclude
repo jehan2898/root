@@ -1,0 +1,689 @@
+<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterPage.master"
+    CodeFile="Bill_Sys_DocumentType.aspx.cs" Inherits="Bill_Sys_DocumentType" %>
+
+<%@ Register Assembly="ExtendedDropDownList" Namespace="ExtendedDropDownList" TagPrefix="extddl" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <asp:ScriptManager ID="MasterScriptManager1" runat="server">
+    </asp:ScriptManager>
+
+    <script type="text/javascript" src="validation.js"></script>
+
+    <script type="text/javascript" src="ListBox.js"></script>
+
+    <script type="text/javascript">
+        var oListBox;
+       
+       Sys.Application.add_load(function() 
+       {
+       var Arguments = {
+                Base: document.getElementById('div1'),
+                Rows: 3,
+                Width: 322,
+                Height: 450,
+                NormalItemColor: null,
+                NormalItemBackColor: null,
+                AlternateItemColor: null,
+                AlternateItemBackColor: null,
+                SelectedItemColor: null,
+                SelectedIItemBackColor: null,
+                HoverItemColor: null,
+                HoverItemBackColor: null,
+                HoverBorderdColor: null,
+                ClickEventHandler: OnClick
+            };
+            oListBox = new ListBox(Arguments);    
+            AddtoList();  
+       });
+//        window.onload = function()
+//        {        
+//            var Arguments = {
+//                Base: document.getElementById('div1'),
+//                Rows: 3,
+//                Width: 322,
+//                Height: 450,
+//                NormalItemColor: null,
+//                NormalItemBackColor: null,
+//                AlternateItemColor: null,
+//                AlternateItemBackColor: null,
+//                SelectedItemColor: null,
+//                SelectedIItemBackColor: null,
+//                HoverItemColor: null,
+//                HoverItemBackColor: null,
+//                HoverBorderdColor: null,
+//                ClickEventHandler: OnClick
+//            };
+//            oListBox = new ListBox(Arguments);    
+//            AddtoList();    
+//        }
+      
+        var OnClick = function(Sender, EventArgs)
+        {
+            var Message = new Array();
+            Message.push('IsSelected: ' + Sender.checked.toString());
+            Message.push('Text: ' + EventArgs.Text);
+            Message.push('Value: ' + EventArgs.Value);
+            Message.push('Index: ' + EventArgs.ItemIndex);
+           document.getElementById("<%= hfselectedNodeinListbox.ClientID %>").value = '';
+           var sourceListBox = oListBox;
+           var List = oListBox.GetItems();
+           selectedIndex=null;
+           for (var k = 0; k < oListBox.GetItems().length; k++) 
+           { 
+                if (List[k].IsSelected)
+                {           
+                    document.getElementById("<%= hfselectedNodeinListbox.ClientID %>").value = document.getElementById("<%= hfselectedNodeinListbox.ClientID %>").value + List[k].Value.split(",")[1] + ",";
+                }
+           }
+        }
+        window.onunload = function(){oListBox.Dispose(); }
+        function ConfirmDelete()
+        {
+             var msg = "Do you want to proceed?";
+             var result = confirm(msg);
+             if(result==true)
+             {
+                return true;
+             }
+             else
+             {
+                return false;
+             }
+        }
+        var LoadList = function()
+        {
+            alert('LoadList()');
+             var Arguments = {
+                Base: document.getElementById('div1'),
+                Rows: 3,
+                Width: 322,
+                Height: 450,
+                NormalItemColor: null,
+                NormalItemBackColor: null,
+                AlternateItemColor: null,
+                AlternateItemBackColor: null,
+                SelectedItemColor: null,
+                SelectedIItemBackColor: null,
+                HoverItemColor: null,
+                HoverItemBackColor: null,
+                HoverBorderdColor: null,
+                ClickEventHandler: OnClick
+            };
+            oListBox = new ListBox(Arguments);    
+            AddtoList(); 
+        }
+        function SingleSelect()
+        {
+            var count = 0;
+            for(i = 0; i < document.forms[0].elements.length; i++) 
+            {
+                if (count > 1) {
+                alert("Select Only one Node");
+                document.forms[0].elements[i - 1].checked = false;
+                return false;
+                }
+                elm = document.forms[0].elements[i];
+                if (elm.type == 'checkbox') 
+                {
+                    if(elm.checked ) 
+                    {
+                        count+= 1;
+                    }
+                }
+            }
+        }
+
+        function NodeClick(value)
+        {
+            var count = 0;
+            var node = value
+            for(i = 0; i < document.forms[0].elements.length; i++) 
+            {
+                elm = document.forms[0].elements[i];
+                if (elm.type == 'checkbox') 
+                {
+                    if ( i == value) 
+                    {
+                        document.forms[0].elements[i].checked = true;
+                    }
+                    if(elm.checked ) 
+                    {
+                        count+= 1;
+                    }
+                }
+            }
+        }
+
+        function AddtoList()
+        {
+            var m =document.getElementById("<%= hfOrder.ClientID %>").value.split(",").length - 1;
+            document.getElementById("<%=hfselectedNode.ClientID %>").value = '';
+            var length = document.forms[0].elements.length;
+            var order = document.getElementById("<%= hfOrder.ClientID %>").value.split(",");
+//             alert(document.getElementById("<%= hfOrder.ClientID %>").value);
+            for(i = 0; i < length; i++) 
+            {
+                   elm = document.forms[0].elements[i];
+                   if (elm.type == 'checkbox') 
+                   {
+                       if (elm.checked == true) 
+                       {
+                           var elm1 = elm.nextSibling;
+                           var opt = document.createElement("option");
+                           var str = elm1.title.split("(");
+                           var path = "";
+                           var value = "";
+                           for(j=0;j<str.length;j++)
+                           {
+                               if(j==0)
+                               {
+                                    path = path + str[j].substring(0);
+                               }
+                               else
+                               {
+                                     path = path + str[j].substring(5);
+                                     value = str[j].split(")")[0];
+                               }
+                           }
+                           opt.text = path;
+                           opt.value = elm1.id +","+ value;
+                           
+                           
+                           if(value != '')
+                           {
+                                   oOrder = 0;
+                                                                
+                                   for(l=0;l<(order.length-1);l++)
+                                   {
+                                        var onode = order[l].split("-")[0]; 
+
+                   
+                                        if(value == onode)
+                                        {
+                                            oOrder = 1;
+                                        }                                
+                                   }
+                                   if(oOrder == 0)
+                                   {
+                                    document.getElementById("<%= hfOrder.ClientID %>").value =document.getElementById("<%= hfOrder.ClientID %>").value + value+"-"+m +",";
+                                    m = m+1;
+                                   }
+                                   //alert("hfOrder - " + document.getElementById("<%= hfOrder.ClientID %>").value);
+                               
+                              // alert(document.getElementById("<%=hfselectedNode.ClientID %>").value);
+                               document.getElementById("<%=hfselectedNode.ClientID %>").value = document.getElementById("<%=hfselectedNode.ClientID %>").value + value + ",";
+                               //alert(document.getElementById("<%=hfselectedNode.ClientID %>").value);
+                               var List = oListBox.GetItems();
+                               var str1 = document.getElementById("<%= hfselectedNodeinListbox.ClientID %>").value.split(",");
+                               var _bit = false;
+                               for(k=0;k<str1.length;k++)
+                               {
+                                   if((str1[k] == value) && (value != ''))
+                                   {
+                                      _bit = true; 
+                                      break;
+                                   }                                                                                         
+                               }
+                              // alert(_bit);
+                               oListBox.AddItem(opt.text,opt.value, _bit);  
+                               _bit = false; 
+                           } 
+                       }
+                   }
+            } 
+            ArrangeByOrder();           
+        }
+        function ArrangeByOrder()
+        {
+            var copyList;
+            v = document.getElementById("<%= hfOrder.ClientID %>").value;
+            var order = document.getElementById("<%= hfOrder.ClientID %>").value.split(",");
+            List = oListBox.GetItems();
+            copyList= oListBox.GetItems();
+            for(i=0;i<(order.length-1);i++)
+            {
+                for(j=0;j<oListBox.GetItems().length;j++)
+                {                   
+                    var onode = order[i].split("-")[0];
+                    var oOrder = order[i].split("-")[1];
+                    var node = List[j].Value.split(",")[1];
+                    if(node == onode)
+                    {
+                        if(v == '')
+                        {
+                            copyList[i] = List[j];
+                        }  
+                        else
+                        {
+                            copyList[oOrder] = List[j];
+                        }                     
+                    }
+                }       
+            }             
+                       
+            oListBox.Dispose();
+            var Arguments = {
+                Base: document.getElementById('div1'),
+                Rows: 3,
+                Width: 322,
+                Height: 450,
+                NormalItemColor: null,
+                NormalItemBackColor: null,
+                AlternateItemColor: null,
+                AlternateItemBackColor: null,
+                SelectedItemColor: null,
+                SelectedIItemBackColor: null,
+                HoverItemColor: null,
+                HoverItemBackColor: null,
+                HoverBorderdColor: null,
+                ClickEventHandler: OnClick
+            };
+            oListBox = new ListBox(Arguments);
+            document.getElementById("<%= hfselectedNodeinListbox.ClientID %>").value = '';
+            document.getElementById("<%=hfselectedNode.ClientID %>").value = '';    
+            document.getElementById("<%= hfOrder.ClientID %>").value = '';        
+            for(k=0;k<copyList.length;k++)
+            { 
+                oListBox.AddItem(copyList[k].Text,copyList[k].Value, copyList[k].IsSelected);
+                document.getElementById("<%= hfOrder.ClientID %>").value = document.getElementById("<%= hfOrder.ClientID %>").value + copyList[k].Value.split(",")[1] +"-"+k +",";
+                document.getElementById("<%=hfselectedNode.ClientID %>").value = document.getElementById("<%=hfselectedNode.ClientID %>").value + copyList[k].Value.split(",")[1] + "," ;
+                if(copyList[k].IsSelected)
+                {
+                    document.getElementById("<%= hfselectedNodeinListbox.ClientID %>").value = document.getElementById("<%= hfselectedNodeinListbox.ClientID %>").value + copyList[k].Value.split(",")[1] + ",";                    
+                }               
+            }            
+        }
+        function GetNodeValue(node) 
+        {
+            var nodeValue = "";
+            var nodePath = node.href.substring(node.href.indexOf(",") + 2, node.href.length - 2);
+            var nodeValues = nodePath.split("\\");
+            if (nodeValues.length > 1)
+                nodeValue = nodeValues[nodeValues.length - 1];
+            else
+                nodeValue = nodeValues[0].substr(1);
+            return nodeValue;
+        }
+        function DoRemove()
+        {         
+          var sourceListBox = oListBox;
+          var List = oListBox.GetItems();
+          selectedIndex=null; 
+          for (var k = 0; k < oListBox.GetItems().length; k++) 
+          {
+                List = oListBox.GetItems();
+                var listValue = List[k].Value.split(",");
+                elm = document.getElementById(listValue[0]);
+                elm1 = elm.previousSibling;
+                if (List[k].IsSelected)
+                {             
+                    var nodeid = List[k].Value.split(",")[1];  
+                    elm1.checked = false;      
+                    oListBox.DeleteItem(k);
+                    k = -1;
+                    var order = document.getElementById("<%= hfOrder.ClientID %>").value.split(",");
+                     for(i=0;i<(order.length-1);i++)
+                     {
+                        if(order[i].split("-")[0] == nodeid)
+                        {
+                            //alert(document.getElementById("<%= hfOrder.ClientID %>").value);
+                            //alert(nodeid +"-"+order[i].split("-")[1] +",");
+                            document.getElementById("<%= hfOrder.ClientID %>").value=document.getElementById("<%= hfOrder.ClientID %>").value.replace(nodeid +"-"+order[i].split("-")[1] +",", "");
+                            //alert(document.getElementById("<%= hfOrder.ClientID %>").value);
+                        }
+                     }
+                }
+                else
+                {
+                   elm1.checked = true;
+                }
+            }
+            List = oListBox.GetItems(); 
+            var copyList = oListBox.GetItems();  
+            for(i = List.length-1;i>=0;i--) 
+            {              
+                copyList[i] = List[i];          
+            }
+            oListBox.Dispose();
+            var Arguments = {
+                Base: document.getElementById('div1'),
+                Rows: 3,
+                Width: 322,
+                Height: 450,
+                NormalItemColor: null,
+                NormalItemBackColor: null,
+                AlternateItemColor: null,
+                AlternateItemBackColor: null,
+                SelectedItemColor: null,
+                SelectedIItemBackColor: null,
+                HoverItemColor: null,
+                HoverItemBackColor: null,
+                HoverBorderdColor: null,
+                ClickEventHandler: OnClick
+            };
+            oListBox = new ListBox(Arguments);
+            document.getElementById("<%= hfselectedNodeinListbox.ClientID %>").value = '';
+            document.getElementById("<%=hfselectedNode.ClientID %>").value = '';  
+            document.getElementById("<%= hfOrder.ClientID %>").value = '';          
+            for(i=0;i<copyList.length;i++)
+            {                
+                oListBox.AddItem(copyList[i].Text,copyList[i].Value, copyList[i].IsSelected);
+                document.getElementById("<%= hfOrder.ClientID %>").value = document.getElementById("<%= hfOrder.ClientID %>").value + copyList[i].Value.split(",")[1] +"-"+i +",";
+                document.getElementById("<%=hfselectedNode.ClientID %>").value = document.getElementById("<%=hfselectedNode.ClientID %>").value + copyList[i].Value.split(",")[1] + "," ;
+                if(copyList[i].IsSelected)
+                {
+                    document.getElementById("<%= hfselectedNodeinListbox.ClientID %>").value = document.getElementById("<%= hfselectedNodeinListbox.ClientID %>").value + copyList[i].Value.split(",")[1] + ",";                    
+                }               
+            }
+        }
+        function Button1_onclick() 
+        {
+            oListBox.DeleteItems();
+            oListBox.Dispose();
+            var Arguments = {
+                Base: document.getElementById('div1'),
+                Rows: 3,
+                Width: 322,
+                Height: 450,
+                NormalItemColor: null,
+                NormalItemBackColor: null,
+                AlternateItemColor: null,
+                AlternateItemBackColor: null,
+                SelectedItemColor: null,
+                SelectedIItemBackColor: null,
+                HoverItemColor: null,
+                HoverItemBackColor: null,
+                HoverBorderdColor: null,
+                ClickEventHandler: OnClick
+            };
+            oListBox = new ListBox(Arguments);
+            
+            AddtoList();
+        }
+
+        function Button2_onclick() 
+        {
+            DoRemove();
+            document.getElementById("<%=hfselectedNode.ClientID %>").value = '';
+        }
+        function getParentNode()
+        {
+          var treeView = document.getElementById("<%= tvwmenu.ClientID %>");
+          if(treeView)
+          {
+              var treeLinks = treeView.getElementsByTagName("a");
+              var nodeCount = treeLinks.length;
+              for(i=1;i<nodeCount;i++)
+              {     
+                   if(treeLinks[i].firstChild.tagName)
+                   {
+                       var currentToggleLink = treeLinks[i];
+                       eval(currentToggleLink.href);
+                   }
+              }
+              if(document.getElementById("btnCollapse").value== 'Expand')
+              {
+                 document.getElementById("btnCollapse").value = "Collapse";
+              }
+              else
+              {
+                document.getElementById("btnCollapse").value = "Expand";  
+              }
+           }
+        }
+       
+        function btnCollapse_onclick() 
+        {
+            getParentNode();
+        }
+        function btnselect_onclick() 
+        {
+            document.getElementById("<%= hfselectedNodeinListbox.ClientID %>").value = document.getElementById("<%=hfselectedNode.ClientID %>").value;
+            //alert(document.getElementById("<%= hfselectedNodeinListbox.ClientID %>").value);
+            Button1_onclick();
+        }
+
+        function btnunselect_onclick() 
+        {
+            document.getElementById("<%= hfselectedNodeinListbox.ClientID %>").value = '';
+            Button1_onclick();
+        }
+        function btnMoveup_click()
+        {
+            var List = oListBox.GetItems(); 
+            var copyList = oListBox.GetItems();  
+            for(i = 0;i<List.length;i++) 
+            {              
+                if((i< (List.length-1)) && List[i+1].IsSelected && !List[i].IsSelected)
+                {                 
+                    copyList[i] = List[i+1]; 
+                    List[i+1] = List[i];
+                }
+                else
+                {               
+                    copyList[i] = List[i];          
+                }                
+            }
+            oListBox.Dispose();
+            var Arguments = {
+                Base: document.getElementById('div1'),
+                Rows: 3,
+                Width: 322,
+                Height: 450,
+                NormalItemColor: null,
+                NormalItemBackColor: null,
+                AlternateItemColor: null,
+                AlternateItemBackColor: null,
+                SelectedItemColor: null,
+                SelectedIItemBackColor: null,
+                HoverItemColor: null,
+                HoverItemBackColor: null,
+                HoverBorderdColor: null,
+                ClickEventHandler: OnClick
+            };
+            oListBox = new ListBox(Arguments);
+            document.getElementById("<%= hfselectedNodeinListbox.ClientID %>").value = '';
+            document.getElementById("<%=hfselectedNode.ClientID %>").value = ''; 
+            document.getElementById("<%= hfOrder.ClientID %>").value = '';             
+            for(i=0;i<copyList.length;i++)
+            {                
+                oListBox.AddItem(copyList[i].Text,copyList[i].Value, copyList[i].IsSelected);
+                document.getElementById("<%= hfOrder.ClientID %>").value = document.getElementById("<%= hfOrder.ClientID %>").value + copyList[i].Value.split(",")[1] +"-"+i +",";
+                document.getElementById("<%=hfselectedNode.ClientID %>").value = document.getElementById("<%=hfselectedNode.ClientID %>").value + copyList[i].Value.split(",")[1] + "," ;
+                if(copyList[i].IsSelected)
+                {
+                    document.getElementById("<%= hfselectedNodeinListbox.ClientID %>").value = document.getElementById("<%= hfselectedNodeinListbox.ClientID %>").value + copyList[i].Value.split(",")[1] + ",";                    
+                }               
+            }            
+        }
+        function btnmovedown_click()
+        {
+            var List = oListBox.GetItems(); 
+            var copyList = oListBox.GetItems();  
+            for(i = List.length-1;i>=0;i--) 
+            {              
+                if((i>0) && !List[i].IsSelected && List[i-1].IsSelected)
+                {                 
+                    copyList[i] = List[i-1]; 
+                    List[i-1] = List[i];
+                }
+                else
+                {               
+                    copyList[i] = List[i];          
+                }                
+            }
+            oListBox.Dispose();
+            var Arguments = {
+                Base: document.getElementById('div1'),
+                Rows: 3,
+                Width: 322,
+                Height: 450,
+                NormalItemColor: null,
+                NormalItemBackColor: null,
+                AlternateItemColor: null,
+                AlternateItemBackColor: null,
+                SelectedItemColor: null,
+                SelectedIItemBackColor: null,
+                HoverItemColor: null,
+                HoverItemBackColor: null,
+                HoverBorderdColor: null,
+                ClickEventHandler: OnClick
+            };
+            oListBox = new ListBox(Arguments);
+            document.getElementById("<%= hfselectedNodeinListbox.ClientID %>").value = '';
+            document.getElementById("<%=hfselectedNode.ClientID %>").value = '';  
+            document.getElementById("<%= hfOrder.ClientID %>").value = '';          
+            for(i=0;i<copyList.length;i++)
+            {                
+                oListBox.AddItem(copyList[i].Text,copyList[i].Value, copyList[i].IsSelected);
+                document.getElementById("<%= hfOrder.ClientID %>").value = document.getElementById("<%= hfOrder.ClientID %>").value + copyList[i].Value.split(",")[1] +"-"+i +",";
+                document.getElementById("<%=hfselectedNode.ClientID %>").value = document.getElementById("<%=hfselectedNode.ClientID %>").value + copyList[i].Value.split(",")[1] + "," ;
+                if(copyList[i].IsSelected)
+                {
+                    document.getElementById("<%= hfselectedNodeinListbox.ClientID %>").value = document.getElementById("<%= hfselectedNodeinListbox.ClientID %>").value + copyList[i].Value.split(",")[1] + ",";                    
+                }               
+            }         
+        }
+
+    </script>
+
+    <asp:UpdatePanel ID="UpdatePanel111" runat="server">
+        <contenttemplate>
+    <table id="First" border="0" cellpadding="0" cellspacing="0" style="width: 100%;
+        height: 480px">
+        <tr>
+            
+                    <td style="padding-right: 3px; padding-left: 3px; padding-bottom: 3px; width: 100%;
+                        padding-top: 3px; height: 100%; vertical-align: top;">
+                        <table id="MainBodyTable" cellpadding="0" cellspacing="0" style="width: 100%">
+                            <tr>
+                                <td class="LeftTop">
+                                </td>
+                                <td class="CenterTop">
+                                </td>
+                                <td class="RightTop" style="width: 17px">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="LeftCenter" style="height: 100%">
+                                </td>
+                                <td class="Center" valign="top">
+                                    <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; height: 96%">
+                                        <tr>
+                                            <td style="width: 100%; height: 600px;" class="TDPart">
+                                                <table border="0" cellpadding="3" cellspacing="0" class="ContentTable" style="width: 100%;
+                                                    height: 776px;">
+                                                    <tr>
+                                                        <td class="ContentLabel" style="text-align: left; height: 25px; font-weight: bold;"
+                                                            colspan="4">
+                                                            &nbsp;<div id="ErrorDiv" style="color: red" visible="true">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="ContentLabel" style="width: 45%; height: 24px;">
+                                                            <p class="MsoNormal" style="margin: 0in 0in 0pt 0.25in">
+                                                                &nbsp;
+                                                            </p>
+                                                        </td>
+                                                        <td style="width: 5%; height: 24px;" class="ContentLabel">
+                                                        </td>
+                                                        <td class="ContentLabel" style="width: 47%; height: 24px; text-align: left;">
+                                                        
+                                                              &nbsp;&nbsp;&nbsp;Case Type &nbsp;<extddl:ExtendedDropDownList ID="extddlCaseType"
+                                                                                                            runat="server" Width="50%" Connection_Key="Connection_String" Flag_Key_Value="CASETYPE_LIST"
+                                                                                                            Procedure_Name="SP_MST_CASE_TYPE" Selected_Text="---Select---"></extddl:ExtendedDropDownList>
+                                                                                                        <asp:Label ID="lblMsg" runat="server" Visible="false" CssClass="message-text"></asp:Label>
+                                                                                                                    
+                                                           </td>
+                                                        <td style="height: 24px;" class="ContentLabel">
+                                                            &nbsp;</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="ContentLabel" style="width: 45%; height: 439px; text-align: left;">
+                                                            <input id="btnCollapse" type="button" value="Collapse" onclick="return btnCollapse_onclick()" /><br />
+                                                            <asp:Panel ID="contentPanel" runat="server" ScrollBars="Both" Height="450px" Width="322px">
+                                                                                                                 
+                                                                <asp:TreeView ID="tvwmenu" runat="Server" Height="400px" Width="322px" OnTreeNodePopulate="Node_Populate">
+                                                                    <%--onclick="client_OnTreeNodeChecked();"--%>
+                                                                    <Nodes>
+                                                                        <asp:TreeNode PopulateOnDemand="True" SelectAction="Expand" Text="Document Manager"
+                                                                            Value="0"></asp:TreeNode>
+                                                                    </Nodes>
+                                                                    <SelectedNodeStyle BackColor="LightBlue" />
+                                                                </asp:TreeView>                                                             
+                                                           
+                                                            </asp:Panel>
+                                                            &nbsp;&nbsp;<br />
+                                                            <br />
+                                                            <br />
+                                                            &nbsp;</td>
+                                                        <td style="width: 5%; height: 439px; text-align: center;">
+                                                            &nbsp;<input id="Button1" type="button" value=">>" onclick="return Button1_onclick()" />
+                                                            <br />
+                                                            <br />
+                                                            <input id="Button2" type="button" value="<<" onclick="return Button2_onclick()" />
+                                                        </td>
+                                                        <td class="ContentLabel" style="width: 47%; height: 439px; text-align: center;">
+                                                                                                                
+                                                            <input id="btnselect" type="button" value="Select All" style="width: 62px" onclick="return btnselect_onclick()" /><input
+                                                                id="btnunselect" type="button" value="Un-Select" style="width: 69px" onclick="return btnunselect_onclick()" />
+                                                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input id="btnMoveup" type="button"
+                                                                value="Up" style="width: 35px" onclick="return btnMoveup_click()" />
+                                                            <input id="btnmovedown" type="button" value="Down" style="width: 40px" onclick="return btnmovedown_click()" />
+                                                            <asp:Panel ID="Panel1" runat="server" Height="450px" Width="322px">
+                                                                <div id="div1" style="color: red" visible="true">
+                                                                </div>
+                                                            </asp:Panel>
+                                                            
+                                                            &nbsp;&nbsp;
+                                                       
+                                                                <asp:Button ID="btnSave" runat="server" Text="Assign" Width="80px" CssClass="Buttons"
+                                                                    OnClick="btnSave_Click" />
+                                                                <asp:Button ID="btnRemove" runat="server" Text="Remove" Width="80px" CssClass="Buttons"
+                                                                    OnClick="btnRemove_Click" />
+                                                          
+                                                                </td>
+                                                        <td style="height: 439px;">
+                                                        </td>
+                                                    </tr>
+        <tr>
+            <td class="ContentLabel" colspan="4" style="text-align: center; height: 119px;">
+                &nbsp;<asp:TextBox ID="txtMenuNode" runat="server" Visible="False" Width="28px"></asp:TextBox>
+                <asp:TextBox ID="txtCompanyID" runat="server" Width="10px" Visible="False"></asp:TextBox>
+                <asp:TextBox ID="txtUserID" runat="server" Visible="false" Width="10px"></asp:TextBox>
+                <asp:TextBox ID="txtDocumentTypeID" runat="server" Visible="false" Width="10px"></asp:TextBox>
+                &nbsp;&nbsp; &nbsp;
+                 <asp:HiddenField ID="hfselectedNode" runat="server"></asp:HiddenField>
+                    <asp:HiddenField ID="hfselectedNodeinListbox" runat="server"></asp:HiddenField>
+                    <asp:HiddenField ID="hfOrder" runat="server"></asp:HiddenField>
+                              
+            </td>
+        </tr>
+    </table>
+    &nbsp;&nbsp; </td> </tr>
+    <tr>
+        <td class="TDPart" style="width: 100%; text-align: right; height: 3px;">
+            &nbsp;</td>
+    </tr>
+    <tr>
+        <td style="width: 100%" class="TDPart">
+            &nbsp;</td>
+    </tr>
+    </table> </td>
+    <td class="RightCenter" style="width: 17px; height: 100%;">
+    </td>
+    </tr>
+    <tr>
+        <td class="LeftBottom">
+        </td>
+        <td class="CenterBottom">
+        </td>
+        <td class="RightBottom" style="width: 17px">
+        </td>
+    </tr>
+    </table> </td>   
+     </tr> </table>
+     </contenttemplate>
+    </asp:UpdatePanel>
+</asp:Content>

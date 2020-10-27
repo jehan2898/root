@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<cc>
+  <MailCC key="frommail">
+    <Subject key="Subject">_varname</Subject>
+    <From key="Frommail">sandeep.d@procomsys.in</From>
+    <Body>
+      &lt;html&gt;
+      &lt;body&gt;
+      Hi,
+
+
+      &lt;p&gt;&lt;/p&gt;
+      &lt;p&gt;Client details below.&lt;/p&gt;
+      &lt;br /&gt;
+      &lt;br /&gt;
+
+      &lt;p&gt; Client name:  _varUsername  &lt;/p&gt;
+      &lt;p&gt; Email:  _varPassword &lt;/p&gt;
+
+      &lt;p&gt;Problem.&lt;p&gt;
+
+      &lt;p&gt;_bodyText&lt;p&gt;
+      &lt;br /&gt;
+      
+
+     
+      &lt;/body&gt;
+      &lt;/html&gt;
+    </Body>
+  </MailCC>
+</cc>

@@ -1,0 +1,393 @@
+using System;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using System.IO;
+using System.Text;
+
+
+public partial class Report_POM : System.Web.UI.Page
+{
+    Bill_Sys_BillTransaction_BO _obj;
+    string CaseID;
+    string strLinkPath = "";
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        try
+        {
+            ddlDateValues.Attributes.Add("onChange", "javascript:SetDate();");
+            ddlServiseDate.Attributes.Add("onChange", "javascript:SetServiceDate();");
+            ddlPrintDate.Attributes.Add("onChange", "javascript:SetPOMPrintedDate();");
+            ddlRecDate.Attributes.Add("onChange", "javascript:SetPOMReceivedDate();");
+            if (!IsPostBack)
+            {
+
+                txtCompanyID.Text = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+                ddlPrintDate.SelectedValue = "1";
+                txtFromPrintedDate.Text = DateTime.Now.ToString("MM/dd/yyyy");
+                txtToPrintedDate.Text = DateTime.Now.ToString("MM/dd/yyyy");
+
+
+
+                txtFromBillDate.Attributes.Add("onblur", "javascript:return FromDateValidation(this);");
+                txtToBillDate.Attributes.Add("onblur", "javascript:return ToDateValidation(this);");
+
+                BindGrid();
+
+
+            }
+        }
+        catch (Exception ex)
+        {
+
+        }
+    }
+    protected void btnSearch_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            // //DataSet ds = new DataSet();
+            // //ds = insertogridview();
+
+            // //grdPomReport.DataSource = ds.Tables[0];
+            ///* grdPomReport.Rows[0].Cells[0].Text = ds.Tables[0].Columns["SZ_OFFICE_ID"].ToString();
+            // grdPomReport.Rows[0].Cells[1].Text = ds.Tables[0].Columns["SZ_OFFICE"].ToString();
+            // grdPomReport.Rows[0].Cells[2].Text = ds.Tables[0].Columns["SZ_OFFICE_CITY"].ToString();
+            // grdPomReport.Rows[0].Cells[3].Text = ds.Tables[0].Columns["SZ_OFFICE_STATE"].ToString();
+            // grdPomReport.Rows[0].Cells[4].Text = ds.Tables[0].Columns["SZ_OFFICE_ZIP"].ToString();
+            // grdPomReport.Rows[0].Cells[5].Text = ds.Tables[0].Columns["SZ_BILLING_CITY"].ToString();
+            // */
+            //grdPomReport.DataBind();
+
+            BindGrid();
+        }
+        catch (Exception exe)
+        {
+
+        }
+    }
+    public DataSet insertogridview()
+    {
+        string strsqlCon = ConfigurationManager.AppSettings["Connection_String"].ToString();
+        SqlConnection sqlCon = new SqlConnection(strsqlCon);
+        DataSet ds = new DataSet();
+        try
+        {
+            sqlCon.Open();
+            SqlCommand sqlCmd = new SqlCommand("SP_SampleForSearchPOM", sqlCon);
+            sqlCmd.CommandType = CommandType.StoredProcedure;
+            /* sqlCmd.Parameters.AddWithValue("@SZ_COMPANY_ID", objAL[0].ToString());
+             if (objAL[1].ToString() != "NA" && objAL[1].ToString() != "") { sqlCmd.Parameters.AddWithValue("@SZ_BILL_STATUS_ID", objAL[1].ToString()); }
+             if (objAL[2].ToString() != "NA" && objAL[2].ToString() != "") { sqlCmd.Parameters.AddWithValue("@SZ_PROCEDURE_GROUP_ID", objAL[2].ToString()); }
+             if (objAL[3].ToString() != "") { sqlCmd.Parameters.AddWithValue("@DT_FROM_BILL_DATE", objAL[3].ToString()); }
+             if (objAL[4].ToString() != "") { sqlCmd.Parameters.AddWithValue("@DT_TO_BILL_DATE", objAL[4].ToString()); }
+             if (objAL[5].ToString() != "NA" && objAL[5].ToString() != "") { sqlCmd.Parameters.AddWithValue("@SZ_USER_ID", objAL[5].ToString()); }
+             if (objAL[6].ToString() != "NA" && objAL[6].ToString() != "") { sqlCmd.Parameters.AddWithValue("@DT_FROM_SERVICE_DATE", objAL[6].ToString()); }
+             if (objAL[7].ToString() != "NA" && objAL[7].ToString() != "") { sqlCmd.Parameters.AddWithValue("@DT_TO_SERVICE_DATE", objAL[7].ToString()); }*/
+            SqlDataAdapter sqlda = new SqlDataAdapter(sqlCmd);
+            sqlda.Fill(ds);
+        }
+        catch (SqlException ex)
+        {
+            ex.Message.ToString();
+        }
+        finally
+        {
+            if (sqlCon.State == ConnectionState.Open)
+            {
+                sqlCon.Close();
+            }
+        }
+        return ds;
+    }
+    private void ExportToExcel()
+    {
+        try
+        {
+            StringBuilder strHtml = new StringBuilder();
+            strHtml.Append("<table border='1px'>");
+            for (int icount = 0; icount < grdExel.Rows.Count; icount++)
+            {
+                if (icount == 0)
+                {
+                    strHtml.Append("<tr>");
+                    for (int i = 0; i < grdExel.Columns.Count; i++)
+                    {
+                        if (grdExel.Columns[i].Visible == true)
+                        {
+                            strHtml.Append("<td>");
+                            strHtml.Append(grdExel.Columns[i].HeaderText);
+                            strHtml.Append("</td>");
+                        }
+                        else
+                        {
+                            strHtml.Append("<td>");
+                            strHtml.Append(grdExel.Columns[i].HeaderText);
+                            strHtml.Append("</td>");
+                        }
+                    }
+                    strHtml.Append("</tr>");
+                }
+
+                strHtml.Append("<tr>");
+                for (int j = 0; j < grdExel.Columns.Count; j++)
+                {
+                    if (grdExel.Columns[j].Visible == true)
+                    {
+                        strHtml.Append("<td>");
+                        strHtml.Append(grdExel.Rows[icount].Cells[j].Text);
+                        strHtml.Append("</td>");
+                    }
+                    else
+                    {
+                        strHtml.Append("<td>");
+                        strHtml.Append(grdExel.Rows[icount].Cells[j].Text);
+                        strHtml.Append("</td>");
+                    }
+                }
+                strHtml.Append("</tr>");
+            }
+
+            strHtml.Append("</table>");
+            string filename = getFileName("EXCEL") + ".xls";
+            StreamWriter sw = new StreamWriter(ConfigurationManager.AppSettings["EXCEL_SHEET"] + filename);
+            sw.Write(strHtml);
+            sw.Close();
+            Response.Redirect(ConfigurationManager.AppSettings["FETCHEXCEL_SHEET"] + filename, false);
+        }
+        catch (Exception ex)
+        {
+            string strError = ex.Message.ToString();
+            strError = strError.Replace("\n", " ");
+            Response.Redirect("Bill_Sys_ErrorPage.aspx?ErrMsg=" + strError);
+        }
+    }
+    protected void btnExport_Click(object sender, EventArgs e)
+    {
+        ExportToExcel();
+    }
+    private string getFileName(string p_szBillNumber)
+    {
+        String szBillNumber = "";
+        szBillNumber = p_szBillNumber;
+        String szFileName;
+        DateTime currentDate;
+        currentDate = DateTime.Now;
+        szFileName = p_szBillNumber + "_" + getRandomNumber() + "_" + currentDate.ToString("yyyyMMddHHmmssms");
+        return szFileName;
+    }
+    private string getRandomNumber()
+    {
+        System.Random objRandom = new Random();
+        return objRandom.Next(1, 10000).ToString();
+    }
+    public void BindGrid()
+    {
+        Bill_Sys_ReportBO objReport = new Bill_Sys_ReportBO();
+        DataSet dsReport = new DataSet();
+        if (extddlSpeciality.Text.Equals("NA"))
+        {
+            dsReport = objReport.GetPOM_Report(txtFromBillDate.Text, txtToBillDate.Text, txtFromServiceDate.Text, txtToServiceDate.Text, txtFromPrintedDate.Text, txtToPrintedDate.Text, txtFromRecDate.Text, txtToRecDate.Text, txtBillNo.Text, "NA", txtPatientName.Text, txtCompanyID.Text, txtBillNo.Text, txtPatientName.Text);
+
+        }
+        else
+        {
+            dsReport = objReport.GetPOM_Report(txtFromBillDate.Text, txtToBillDate.Text, txtFromServiceDate.Text, txtToServiceDate.Text, txtFromPrintedDate.Text, txtToPrintedDate.Text, txtFromRecDate.Text, txtToRecDate.Text, txtBillNo.Text, extddlSpeciality.Text, txtPatientName.Text, txtCompanyID.Text, txtBillNo.Text, txtPatientName.Text);
+        }
+        Session["POMReport"] = dsReport;
+        grdPomReport.DataSource = dsReport.Tables[0];
+        grdExel.DataSource = dsReport.Tables[0];
+        grdExel.DataBind();
+        grdPomReport.DataBind();
+    }
+
+
+
+
+    protected void grdPomReport_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        if (e.CommandName.Equals("View"))
+        {
+            int index = Convert.ToInt32(e.CommandArgument);
+            string Path = grdPomReport.DataKeys[index][0].ToString();
+
+            Page.ClientScript.RegisterClientScriptBlock(typeof(GridView), "Msg", "window.open('" + Path + "'); ", true);
+        }
+        #region "Sort"
+        DataView dv;
+        DataSet ds = new DataSet();
+        ds = (DataSet)Session["POMReport"];
+        dv = ds.Tables[0].DefaultView;
+        if (e.CommandName.ToString() == "POMID")
+        {
+            if (txtSort.Text == e.CommandArgument + " ASC")
+            {
+                txtSort.Text = e.CommandArgument + "  DESC";
+            }
+            else
+            {
+                txtSort.Text = e.CommandArgument + " ASC";
+            }
+
+        }
+
+        else if (e.CommandName.ToString() == "BillNumber")
+        {
+            if (txtSort.Text == e.CommandArgument + " ASC")
+            {
+                txtSort.Text = e.CommandArgument + "  DESC";
+            }
+            else
+            {
+                txtSort.Text = e.CommandArgument + " ASC";
+            }
+
+        }
+
+        else if (e.CommandName.ToString() == "POMGeneratedDate")
+        {
+            if (txtSort.Text == e.CommandArgument + " ASC")
+            {
+                txtSort.Text = e.CommandArgument + "  DESC";
+            }
+            else
+            {
+                txtSort.Text = e.CommandArgument + " ASC";
+            }
+
+        }
+
+        else if (e.CommandName.ToString() == "BillStatus")
+        {
+            if (txtSort.Text == e.CommandArgument + " ASC")
+            {
+                txtSort.Text = e.CommandArgument + "  DESC";
+            }
+            else
+            {
+                txtSort.Text = e.CommandArgument + " ASC";
+            }
+
+        }
+
+        dv.Sort = txtSort.Text;
+        grdPomReport.DataSource = dv;
+        grdExel.DataSource = dv;
+        grdPomReport.DataBind();
+        grdExel.DataBind();
+        #endregion
+
+    }
+
+    protected void btnUploadFile_Click(object sender, EventArgs e)
+    {
+        Bill_Sys_NF3_Template objNF3Template = new Bill_Sys_NF3_Template();
+        try
+        {
+            if (!fuUploadReport.HasFile)
+            {
+                Page.RegisterStartupScript("ss", "<script language='javascript'> alert('please select file from upload Report !');showUploadFilePopup();</script>");
+                return;
+            }
+            String szDefaultPath = objNF3Template.getPhysicalPath();
+            int ImageId = 0;
+            String szDestinationDir = "";
+
+            szDestinationDir = objNF3Template.GetCompanyName(((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID);
+            szDestinationDir = szDestinationDir + "/" + Session["UPLOADCASEID"].ToString() + "/No Fault File/Proof of Mailing/";
+
+            strLinkPath = szDestinationDir + fuUploadReport.FileName;
+            if (!Directory.Exists(szDefaultPath + szDestinationDir))
+            {
+                Directory.CreateDirectory(szDefaultPath + szDestinationDir);
+            }
+            //if (!File.Exists(szDefaultPath + szDestinationDir + fuUploadReport.FileName))
+            //{
+            fuUploadReport.SaveAs(szDefaultPath + szDestinationDir + fuUploadReport.FileName);
+            // Start : Save report under document manager.
+            _obj = new Bill_Sys_BillTransaction_BO();
+            // String NodeId = _obj.GetNodeID(txtCompanyID.Text, Session["UPLOADCASEID"].ToString(), "NFPRO");
+            string NodeId = _obj.GetNodeIDMST_Nodes(((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID, "NFPRO");
+            ArrayList objAL = new ArrayList();
+
+            objAL.Add(Session["UPLOADCASEID"].ToString());
+            objAL.Add("");
+            objAL.Add(((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID);
+
+            objAL.Add(fuUploadReport.FileName);
+            objAL.Add(szDestinationDir);
+            objAL.Add(((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_NAME.ToString());
+            objAL.Add(NodeId);
+
+            //objNF3Template.UpdateDocMgr(objAL);
+            string ImgId = objNF3Template.SaveDocumentData(objAL);
+            // End :   Save report under document manager.
+
+           objNF3Template.UpdateReportPomPath(fuUploadReport.FileName, szDestinationDir, ((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_ID, Session["UPLOADPOMID"].ToString(), ImgId);
+
+            lblMsg.Text = "File Upload Successfully";
+            lblMsg.Visible = true;
+            BindGrid();
+        }
+        //Page.RegisterStartupScript("ss", "<script language = 'javascript'>alert('Report received successfully.');</script>");
+
+
+        catch (Exception ex)
+        {
+            string strError = ex.Message.ToString();
+            strError = strError.Replace("\n", " ");
+            Response.Redirect("Bill_Sys_ErrorPage.aspx?ErrMsg=" + strError);
+        }
+    }
+
+    protected void lnkscan_Click(object sender, EventArgs e)
+    {
+
+        int iindex = grdPomReport.SelectedIndex;
+        GridViewRow gvRowscan = (GridViewRow)(sender as Control).Parent.Parent;
+        int index = gvRowscan.RowIndex;
+        CaseID = grdPomReport.DataKeys[index][1].ToString();
+        Session["SCANCASEID"] = CaseID;
+        Session["SCANPOMID"] = grdPomReport.DataKeys[index][2].ToString();
+        Session["SCANCASENO"] = grdPomReport.DataKeys[index][3].ToString();
+        Session["SCANPATIENTNAME"] = grdPomReport.DataKeys[index][4].ToString();
+
+        RedirectToScanApp(iindex);
+    }
+
+    protected void lnkuplaod_Click(object sender, EventArgs e)
+    {
+        GridViewRow gvRow = (GridViewRow)(sender as Control).Parent.Parent;
+        int index = gvRow.RowIndex;
+        //CaseID = grdPomReport.DataKeys[index]
+        CaseID = grdPomReport.DataKeys[index][1].ToString();
+        Session["UPLOADCASEID"] = CaseID;
+        Session["UPLOADPOMID"] = grdPomReport.DataKeys[index][2].ToString();
+        // CaseID = grdPomReport.Rows[index].Cells[8].Text;
+        Page.RegisterStartupScript("ss", "<script language='javascript'>showUploadFilePopup();</script>");
+    }
+
+    public void RedirectToScanApp(int iindex)
+    {
+        iindex = (int)grdPomReport.SelectedIndex;
+        string szUrl = ConfigurationManager.AppSettings["webscanurl"].ToString();
+        _obj = new Bill_Sys_BillTransaction_BO();
+
+        //   String NodeId = _obj.GetNodeID(txtCompanyID.Text, Session["SCANCASEID"].ToString(), "NFPRO");
+        string NodeId = _obj.GetNodeIDMST_Nodes(((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID, "NFPRO");
+
+        // DataTable dt = 
+        szUrl = szUrl + "&Flag=ReqPom" + "&CompanyId=" + ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID + "&CaseId=" + Session["SCANCASEID"].ToString() + "&UserName=" + ((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_NAME + "&CompanyName=" + ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_NAME;
+        szUrl = szUrl + "&CaseNo=" + Session["SCANCASENO"].ToString() + "&PName=" + Session["SCANPATIENTNAME"].ToString() + "&NodeId=" + NodeId + "&PomID=" + Session["SCANPOMID"].ToString() + "&UserId=" + ((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_ID;
+        // szUrl = szUrl + "&PomID=" + Session["SCANPOMID"].ToString() + "&PName=" + ((Bill_Sys_CaseObject)Session["CASE_OBJECT"]).SZ_PATIENT_NAME + "&NodeId=" + NodeId;
+        ScriptManager.RegisterStartupScript(this, this.GetType(), "starScript", "window.open('" + szUrl + "', 'Scan_Document','channelmode=no,location=no,toolbar=no,menubar=0,resizable=0,status=no,scrollbars=0, width=600,height=550'); ", true);
+    }
+
+}

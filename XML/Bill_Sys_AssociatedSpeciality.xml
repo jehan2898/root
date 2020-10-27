@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="TXN_ASSOCIATE_SPECIALITY">
+  <Field Name="SZ_COMPANY_ID"            DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"              ControlID="hdtxtCompanyId"    Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_SPECIALITY"            DataType="NVarChar"    Size="50"     Null="False"   Control="ExtendedDropDownList" ControlID="extddlSpeciality"  Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_ASSOCIATED_SPECIALITY" DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"              ControlID="hdtxtAssSpec"    Editable="True"  Visible="True" ></Field>
+
+  <StoreProcedure name="SP_GET_ASSOCIATED_SPECIALITY"></StoreProcedure>
+  <ListControl name="grdAssociateSpec"></ListControl>
+</Table>

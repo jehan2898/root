@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<document  procedure_name="SP_MST_DOCTORS_OPINION">
+    <field sz_field_name="SZ_DOCTORS_OPINION_ID"                      sz_field_value=""></field>
+    <field sz_field_name="BT_IS_COMPETENT_MEDICAL_CAUSE"              sz_field_value="0"   ></field>
+    <field sz_field_name="BT_IS_CONSISTENT_WITH_HISTORY"              sz_field_value="0" ></field>
+    <field sz_field_name="BT_IS_CONSISTENT_WITH_OBJECTIVE_FINDINGS"   sz_field_value="0" ></field>
+    <field sz_field_name="FT_TEMPORARY_IMPAIRMENT_PERCENTAGE"         sz_field_value="0"></field>
+    <field sz_field_name="SZ_TEST_RESULTS"                            sz_field_value=""></field>
+  </document>
+</root>

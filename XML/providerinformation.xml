@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_PROVIDER">
+  <Field Name="SZ_BILL_NUMBER"    DataType="NVarChar"     Size="20"     Null="False"   Control="TextBox"  ControlID="txtBillNumber"           Editable="False"  Visible="False" ></Field>
+  <Field Name="SZ_PROVIDER_NAME"  DataType="NVarChar"     Size="50"     Null="False"   Control="TextBox"  ControlID="txtProviderName"         Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PROVIDER_TYPE"  DataType="NVarChar"     Size="20"     Null="False"   Control="TextBox"  ControlID="txtProviderSpeciality"   Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_DATE"           DataType="NVarChar"     Size="20"     Null="False"   Control="TextBox"  ControlID="txtProviderDate"         Editable="True"  Visible="True" ></Field>
+  <StoreProcedure name="SP_GET_PROVIDER_NAME"></StoreProcedure>
+</Table>

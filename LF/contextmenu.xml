@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<contextmenu>
+
+  <contextmenuitem>
+    <text>Patient Information</text>
+    <commandname>pinf</commandname>
+    <tooltip></tooltip>
+    <onclientclick>return trapClick();</onclientclick>
+  </contextmenuitem>
+
+  <contextmenuitem>
+    <text>Missing Data</text>
+    <commandname>minf</commandname>
+    <tooltip></tooltip>
+    <onclientclick>return __ConfirmMessage('Are you sure you want to delete this row?');</onclientclick>
+  </contextmenuitem>
+
+  <contextmenuitem>
+    <text>Manage Documents</text>
+    <commandname>mdoc</commandname>
+    <tooltip>Manage Documents</tooltip>
+    <onclientclick />
+  </contextmenuitem>
+
+  <contextmenuitem>
+    <text>Out Schedule</text>
+    <commandname>osch</commandname>
+    <tooltip>Out Schedule</tooltip>
+    <onclientclick />
+  </contextmenuitem>
+
+  <contextmenuitem>
+    <text>New Bill</text>
+    <commandname>nbill</commandname>
+    <tooltip>New Bill</tooltip>
+    <onclientclick />
+  </contextmenuitem>
+</contextmenu>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_CH_FORM">
+  <Field Name="I_EVENT_ID" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_EVENT_ID" Editable="True" Visible="True" />
+  
+  <Field Name="BT_MVA" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_MVA" Editable="True" Visible="True" />
+  <Field Name="BT_W_C" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_W_C" Editable="True" Visible="True" />
+  <Field Name="BT_LIEN" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_LIEN" Editable="True" Visible="True" />
+  <Field Name="BT_PRIVATE" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PRIVATE" Editable="True" Visible="True" />
+  <!--<Field Name="I_INFORMATION_MODE" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="RDO_INFORMATION_MODE" Editable="True" Visible="True" />-->
+   <Field Name="I_INFORMATION_MODE" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_INFORMATION_MODE1" Editable="True" Visible="True" />
+
+  <Field Name="SZ_INFORMATION_MODE" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_INFORMATION_MODE" Editable="True" Visible="True" />
+  <Field Name="BT_DRIVER" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DRIVER" Editable="True" Visible="True" />
+  <Field Name="BT_PEDESTRIAN" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PEDESTRIAN" Editable="True" Visible="True" />
+  <Field Name="BT_BIKE_RIDER" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_BIKE_RIDER" Editable="True" Visible="True" />
+  <Field Name="BT_PASSENGER" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PASSENGER" Editable="True" Visible="True" />
+  <Field Name="BT_LEFT_RIGHT_PASSENGER" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_LEFT_RIGHT_PASSENGER" Editable="True" Visible="True" />
+  <!--<Field Name="I_LEFT_RIGHT_PASSENGER" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="RDO_LEFT_RIGHT_PASSENGER" Editable="True" Visible="True" />-->
+  <Field Name="I_LEFT_RIGHT_PASSENGER" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_LEFT_RIGHT_PASSENGER" Editable="True" Visible="True" />
+
+  <Field Name="BT_MOTOR_CYCLE" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_MOTOR_CYCLE" Editable="True" Visible="True" />
+  <!--<Field Name="I_SEAT_BELT_WEARING" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="RDO_SEAT_BELT_WEARING" Editable="True" Visible="True" />
+  <Field Name="I_AIR_BAG_DEPLOYMENT" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="RDO_AIR_BAG_DEPLOYMENT" Editable="True" Visible="True" />
+  <Field Name="I_FRONT_REAR_IMPACT" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="RDO_FRONT_REAR_IMPACT" Editable="True" Visible="True" />
+  <Field Name="I_LEFT_RIGHT_SIDE_IMPACT" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="RDO_LEFT_RIGHT_SIDE_IMPACT" Editable="True" Visible="True" />-->
+
+  <Field Name="I_SEAT_BELT_WEARING" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_SEAT_BELT_WEARING" Editable="True" Visible="True" />
+  <Field Name="I_AIR_BAG_DEPLOYMENT" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_AIR_BAG_DEPLOYMENT" Editable="True" Visible="True" />
+  <Field Name="I_FRONT_REAR_IMPACT" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_FRONT_REAR_IMPACT" Editable="True" Visible="True" />
+  <Field Name="I_LEFT_RIGHT_SIDE_IMPACT" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_LEFT_RIGHT_SIDE_IMPACT" Editable="True" Visible="True" />
+
+
+  <Field Name="BT_ANTERIOR" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_ANTERIOR" Editable="True" Visible="True" />
+  <Field Name="BT_POSTERIOR" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_POSTERIOR" Editable="True" Visible="True" />
+  <Field Name="BT_MEDIAL" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_MEDIAL" Editable="True" Visible="True" />
+  <Field Name="BT_LATERAL" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_LATERAL" Editable="True" Visible="True" />
+  <Field Name="BT_LEFT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_LEFT" Editable="True" Visible="True" />
+  <Field Name="BT_RIGHT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_RIGHT" Editable="True" Visible="True" />
+  <Field Name="BT_LOSE_OF_CONSCIOUSNESS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_LOSE_OF_CONSCIOUSNESS" Editable="True" Visible="True" />
+  <Field Name="BT_SHOCK" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_SHOCK" Editable="True" Visible="True" />
+  <Field Name="BT_HEADACHE" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_HEADACHE" Editable="True" Visible="True" />
+  <Field Name="BT_DIZZINESS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIZZINESS" Editable="True" Visible="True" />
+  <Field Name="BT_BLURRED_VISION" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_BLURRED_VISION" Editable="True" Visible="True" />
+  <Field Name="BT_NAUSEA" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_NAUSEA" Editable="True" Visible="True" />
+  <Field Name="BT_VOMITTING" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_VOMITTING" Editable="True" Visible="True" />
+  <Field Name="BT_TINNITUS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_TINNITUS" Editable="True" Visible="True" />
+  <Field Name="BT_FACIAL_PAIN" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_FACIAL_PAIN" Editable="True" Visible="True" />
+  <Field Name="BT_NECK_PAIN" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_NECK_PAIN" Editable="True" Visible="True" />
+  <Field Name="BT_UPPER_BACK_PAIN" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_UPPER_BACK_PAIN" Editable="True" Visible="True" />
+  <Field Name="BT_MID_BACK_PAIN" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_MID_BACK_PAIN" Editable="True" Visible="True" />
+  <Field Name="BT_LOW_BACK_PAIN" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_LOW_BACK_PAIN" Editable="True" Visible="True" />
+  <Field Name="BT_R_L_KNEE_PAIN" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_R_L_KNEE_PAIN" Editable="True" Visible="True" />
+
+  <!--<Field Name="I_R_L_KNEE_PAIN" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="RDO_R_L_KNEE_PAIN" Editable="True" Visible="True" />-->
+  <Field Name="I_R_L_KNEE_PAIN" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_R_L_KNEE_PAIN" Editable="True" Visible="True" />
+
+  <Field Name="BT_R_L_SHOULDER_PAIN" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_R_L_SHOULDER_PAIN" Editable="True" Visible="True" />
+
+  <!--<Field Name="I_R_L_SHOULDER_PAIN" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="RDO_R_L_SHOULDER_PAIN" Editable="True" Visible="True" />-->
+  <Field Name="I_R_L_SHOULDER_PAIN" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_R_L_SHOULDER_PAIN" Editable="True" Visible="True" />
+
+  <Field Name="BT_R_L_HIP_PAIN" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_R_L_HIP_PAIN" Editable="True" Visible="True" />
+
+  <!--<Field Name="I_R_L_HIP_PAIN" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="RDO_R_L_HIP_PAIN" Editable="True" Visible="True" />-->
+    <Field Name="I_R_L_HIP_PAIN" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_R_L_HIP_PAIN" Editable="True" Visible="True" />
+
+  <Field Name="BT_R_L_ARM_LEG" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_R_L_ARM_LEG" Editable="True" Visible="True" />
+
+  <!--<Field Name="I_R_L_ARM_LEG" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="RDO_R_L_ARM_LEG" Editable="True" Visible="True" />-->
+   <Field Name="I_R_L_ARM_LEG" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_R_L_ARM_LEG" Editable="True" Visible="True" />
+
+  <Field Name="BT_R_L_HAND_FOOT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_R_L_HAND_FOOT" Editable="True" Visible="True" />
+
+  <!--<Field Name="I_R_L_HAND_FOOT" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="RDO_R_L_HAND_FOOT" Editable="True" Visible="True" />-->
+   <Field Name="I_R_L_HAND_FOOT" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_R_L_HAND_FOOT" Editable="True" Visible="True" />
+
+  <Field Name="BT_R_L_DIGITS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_R_L_DIGITS" Editable="True" Visible="True" />
+
+
+  <!--<Field Name="I_R_L_DIGITS" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="RDO_R_L_DIGITS" Editable="True" Visible="True" />
+  <Field Name="I_R_L_ACCURATE_DIGITS_PAIN" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="RDO_R_L_ACCURATE_DIGITS_PAIN" Editable="True" Visible="True" />-->
+   <Field Name="I_R_L_DIGITS" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_R_L_DIGITS" Editable="True" Visible="True" />
+  <Field Name="I_R_L_ACCURATE_DIGITS_PAIN" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_R_L_ACCURATE_DIGITS_PAIN" Editable="True" Visible="True" />
+
+  <Field Name="BT_R_L_TOES" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_R_L_TOES" Editable="True" Visible="True" />
+  <!--<Field Name="I_R_L_TOES" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="RDO_R_L_TOES" Editable="True" Visible="True" />
+  <Field Name="I_R_L_ACCURATE_TOES_PAIN" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="RDO_R_L_ACCURATE_TOES_PAIN" Editable="True" Visible="True" />-->
+
+   <Field Name="I_R_L_TOES" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_R_L_TOES" Editable="True" Visible="True" />
+  <Field Name="I_R_L_ACCURATE_TOES_PAIN" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_R_L_ACCURATE_TOES_PAIN" Editable="True" Visible="True" />
+
+
+  <Field Name="SZ_OTHER_PAIN" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_OTHER_PAIN" Editable="True" Visible="True" />
+  <!--<Field Name="I_AMBULANCE_CALLED" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="RDO_AMBULANCE_CALLED" Editable="True" Visible="True" />-->
+   <Field Name="I_AMBULANCE_CALLED" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_AMBULANCE_CALLED" Editable="True" Visible="True" />
+
+  <Field Name="BT_PATIENT_BROUGHT_EMERGENCY_ROOM" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PATIENT_BROUGHT_EMERGENCY_ROOM" Editable="True" Visible="True" />
+
+  <Field Name="SZ_PATIENT_BROUGHT_EMERGENCY_ROOM" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_PATIENT_BROUGHT_EMERGENCY_ROOM" Editable="True" Visible="True" />
+  <Field Name="SZ_PRESCRIPTION_DETAILS" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_PRESCRIPTION_DETAILS" Editable="True" Visible="True" />
+  <Field Name="BT_MULTIPLE_X_RAY" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_MULTIPLE_X_RAY" Editable="True" Visible="True" />
+  <!--<Field Name="I_MULTIPLE_X_RAY_TAKEN" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="RDO_MULTIPLE_X_RAY_TAKEN" Editable="True" Visible="True" />
+  <Field Name="I_POSITIVE_NEGATIVE_FRACTURE" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="RDO_POSITIVE_NEGATIVE_FRACTURE" Editable="True" Visible="True" />-->
+
+   <Field Name="I_MULTIPLE_X_RAY_TAKEN" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_MULTIPLE_X_RAY_TAKEN" Editable="True" Visible="True" />
+  <Field Name="I_POSITIVE_NEGATIVE_FRACTURE" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_POSITIVE_NEGATIVE_FRACTURE" Editable="True" Visible="True" />
+
+
+  <Field Name="SZ_X_RAY_DETAILS" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_X_RAY_DETAILS" Editable="True" Visible="True" />
+  <Field Name="BT_ADVANCED_DIAGNOSTIC_IMAGING" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_ADVANCED_DIAGNOSTIC_IMAGING" Editable="True" Visible="True" />
+  <Field Name="SZ_ADVANCED_DIAGNOSTIC_IMAGING" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_ADVANCED_DIAGNOSTIC_IMAGING" Editable="True" Visible="True" />
+  <Field Name="BT_AMBULANCE_DECLINED" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_AMBULANCE_DECLINED" Editable="True" Visible="True" />
+  <Field Name="BT_HOSPITAL_NAME_AND_PRIVATE_TRANSPORT_ON" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_HOSPITAL_NAME_AND_PRIVATE_TRANSPORT_ON" Editable="True" Visible="True" />
+
+  <Field Name="SZ_HOSPITAL_NAME" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_HOSPITAL_NAME" Editable="True" Visible="True" />
+  <Field Name="SZ_PRIVATE_TRANSPORT_ON" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_PRIVATE_TRANSPORT_ON" Editable="True" Visible="True" />
+  <Field Name="BT_PATIENT_WENT_TO_PRIVATE_DOCTOR" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_PATIENT_WENT_TO_PRIVATE_DOCTOR" Editable="True" Visible="True" />
+  <Field Name="SZ_PATIENT_WENT_TO_PRIVATE_DOCTOR" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_PATIENT_WENT_TO_PRIVATE_DOCTOR" Editable="True" Visible="True" />
+  <Field Name="SZ_PRIVATE_DOCTOR_PRESCRIPTION_DETAILS" DataType="NVarChar" Size="" Null="False" Control="TextBox" ControlID="TXT_PRIVATE_DOCTOR_PRESCRIPTION_DETAILS" Editable="True" Visible="True" />
+  
+
+
+
+
+
+
+  <StoreProcedure name="SP_CH_FORM_CHIRO" />
+</Table>

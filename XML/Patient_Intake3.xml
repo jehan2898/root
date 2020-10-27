@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_PATIENT_INTAKE">
+  <Field Name ="SZ_CASE_ID" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="TXT_I_EVENT" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_TREATMENT_SURGERY" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_TREATMENT_SURGERY" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_TREATMENT_SPINAL_INJECTIONS" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_TREATMENT_SPINAL_INJECTIONS" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_TREATMENT_PHYSICAL_THERAPY" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_TREATMENT_PHYSICAL_THERAPY" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_TREATMENT_CHIROPRACTIC" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_TREATMENT_CHIROPRACTIC" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_TREATMENT_MEDICINE" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_TREATMENT_MEDICINE" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_TREATMENT_XRAY_ACUPUNCTURE" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_TREATMENT_XRAY_ACUPUNCTURE" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_TREATMENT_OTHER" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_TREATMENT_OTHER" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_TREATMENT_OTHER" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_TREATMENT_OTHER" Editable="True" Visible="True"></Field>
+  <Field Name ="I_TREATED_PREVIOUSLY" DataType="Int" Size="" Null="True" Control="TextBox" ControlID="txtrdblstTREATED_PREVIOUSLY" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_TREATED_PREVIOUSLY_BY_MD" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_TREATED_PREVIOUSLY_BY_MD" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_TREATED_PREVIOUSLY_BY_CHIROPRACTOR" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_TREATED_PREVIOUSLY_BY_CHIROPRACTOR" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_TREATED_PREVIOUSLY_BY_PHYSICAL_THERAPIST" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_TREATED_PREVIOUSLY_BY_PHYSICAL_THERAPIST" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_TREATED_PREVIOUSLY_BY_PHYSICAL" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_TREATED_PREVIOUSLY_BY_PHYSICAL" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_TREATED_PREVIOUSLY_BY_OTHER" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_TREATED_PREVIOUSLY_BY_OTHER" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_TREATED_PREVIOUSLY_OTHER" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_TREATED_PREVIOUSLY_OTHER" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_MAKES_BETTER_NOTHING" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_MAKES_BETTER_NOTHING" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_MAKES_BETTER_LYING_DOWN" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_MAKES_BETTER_LYING_DOWN" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_MAKES_BETTER_WALKING" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_MAKES_BETTER_WALKING" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_MAKES_BETTER_STANDING" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_MAKES_BETTER_STANDING" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_MAKES_BETTER_SITTING" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_MAKES_BETTER_SITTING" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_MAKES_BETTER_MOVEMENT_EXERCISE" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_MAKES_BETTER_MOVEMENT_EXERCISE" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_MAKES_BETTER_INACTIVITY" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_MAKES_BETTER_INACTIVITY" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_MAKES_BETTER_OTHER" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_MAKES_BETTER_OTHER" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_MAKES_BETTER_OTHER" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_MAKES_BETTER_OTHER" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_MAKES_WORSE_NOTHING" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_MAKES_WORSE_NOTHING" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_MAKES_WORSE_LYING_DOWN" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_MAKES_WORSE_LYING_DOWN" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_MAKES_WORSE_WALKING" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_MAKES_WORSE_WALKING" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_MAKES_WORSE_STANDING" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_MAKES_WORSE_STANDING" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_MAKES_WORSE_SITTING" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_MAKES_WORSE_SITTING" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_MAKES_WORSE_MOVEMENT_EXERCISE" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_MAKES_WORSE_MOVEMENT_EXERCISE" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_MAKES_WORSE_INACTIVITY" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_MAKES_WORSE_INACTIVITY" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_MAKES_WORSE_OTHER" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_MAKES_WORSE_OTHER" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_MAKES_WORSE_OTHER" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_MAKES_WORSE_OTHER" Editable="True" Visible="True"></Field>
+  <Field Name ="I_DO_YOU_WORK" DataType="Int" Size="" Null="True" Control="TextBox" ControlID="txtrdblstDO_YOU_WORK" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_WORK_SITTING_MORE_THAN_50_OF_W" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_WORK_SITTING_MORE_THAN_50_OF_W" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_WORK_LIGHT_MANUAL_LABOR" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_WORK_LIGHT_MANUAL_LABOR" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_WORK_MANUAL_LABOR" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_WORK_MANUAL_LABOR" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_WORK_HEAVY_MANUAL_LABOR" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_WORK_HEAVY_MANUAL_LABOR" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_WORK_OTHER" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_WORK_OTHER" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_WORK_OTHER" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_WORK_OTHER" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_COMPLAINT_AFFECT_NO_AFFECT" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_COMPLAINT_AFFECT_NO_AFFECT" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_COMPLAINT_AFFECT_SOME_RESTRICT" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_COMPLAINT_AFFECT_SOME_RESTRICT" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_COMPLAINT_AFFECT_SOME_RESTRICTION" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_COMPLAINT_AFFECT_SOME_RESTRICTION" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_COMPLAINT_AFFECT_LIMITED_ASSISTANCE" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_COMPLAINT_AFFECT_LIMITED_ASSISTANCE" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_COMPLAINT_AFFECT_NEED_ASSISTANCE" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_COMPLAINT_AFFECT_NEED_ASSISTANCE" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_COMPLAINT_AFFECT_HAVE_INABILITY" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_COMPLAINT_AFFECT_HAVE_INABILITY" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_COMPLAINT_AFFECT_CANNOT_CARE" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_COMPLAINT_AFFECT_CANNOT_CARE" Editable="True" Visible="True"></Field>
+  <Field Name ="BT_WORK_SITTING_MORE_THAN_50_OF_WORKDAY" DataType="Int" Size="" Null="True" Control="CheckBox" ControlID="CHK_WORK_SITTING_MORE_THAN_50_OF_WORKDAY" Editable="True" Visible="True"></Field>
+  <Field Name ="I_TAKING_MEDICATION" DataType="Int" Size="" Null="True" Control="TextBox" ControlID="txtrdblstTAKING_MEDICATION" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_TAKING_MEDICATION" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_TAKING_MEDICATION" Editable="True" Visible="True"></Field>
+  <Field Name ="I_ALLERGIC_TO_DRUGS" DataType="Int" Size="" Null="True" Control="TextBox" ControlID="txtrdblstALLERGIC_TO_DRUGS" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_ALLERGIC_TO_DRUGS" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_ALLERGIC_TO_DRUGS" Editable="True" Visible="True"></Field>
+  <Field Name ="I_DO_YOU_SMOKE" DataType="Int" Size="" Null="True" Control="TextBox" ControlID="txtrdblstDO_YOU_SMOKE" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_HOW_MANY_PACKS" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_HOW_MANY_PACKS" Editable="True" Visible="True"></Field>
+  <Field Name ="I_SUFFER_ALLERGIES" DataType="Int" Size="" Null="True" Control="TextBox" ControlID="txtrdblstSUFFER_ALLERGIES" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_SUFFER_ALLERGIES" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_SUFFER_ALLERGIES" Editable="True" Visible="True"></Field>
+  <Field Name ="I_HAD_SURGERY" DataType="Int" Size="" Null="True" Control="TextBox" ControlID="txtrdblstHAD_SURGERY" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_HAD_SURGERY" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_HAD_SURGERY" Editable="True" Visible="True"></Field>
+  <Field Name ="I_ARE_YOU_PREGNANT" DataType="Int" Size="" Null="True" Control="TextBox" ControlID="txtrdblstARE_YOU_PREGNANT" Editable="True" Visible="True"></Field>
+  <Field Name ="SZ_PATIENT_INITIAL" DataType="NVarChar" Size="MAX" Null="True" Control="TextBox" ControlID="TXT_PATIENT_INITIAL" Editable="True" Visible="True"></Field>
+  <StoreProcedure name="SP_MST_PATIENT_INTAKE3"></StoreProcedure>
+
+</Table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

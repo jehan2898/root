@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_PATIENT">  
+  <Field Name="SZ_CHART_NO"            DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"        ControlID="txtChartNo"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PATIENT_FIRST_NAME"  DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"        ControlID="txtPatientFName"     Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_EMPLOYER_NAME"       DataType="NVarChar"    Size="50"     Null="True"   Control="TextBox"        ControlID="txtEmployerName"        Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PATIENT_LAST_NAME"   DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"        ControlID="txtPatientLName"     Editable="True"  Visible="True" ></Field>
+  <Field Name="I_PATIENT_AGE"          DataType="Int"         Size=""       Null="False"   Control="TextBox"        ControlID="txtPatientAge"              Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PATIENT_ADDRESS"     DataType="NVarChar"    Size="50"     Null="True"    Control="TextBox"        ControlID="txtPatientAddress"   Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PATIENT_STREET"      DataType="NVarChar"    Size="50"     Null="True"    Control="TextBox"        ControlID="txtPatientStreet"    Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PATIENT_CITY"        DataType="NVarChar"    Size="50"     Null="True"    Control="TextBox"        ControlID="txtPatientCity"      Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PATIENT_ZIP"         DataType="NVarChar"    Size="10"     Null="True"    Control="TextBox"        ControlID="txtPatientZip"       Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PATIENT_PHONE"       DataType="NVarChar"    Size="20"     Null="True"    Control="TextBox"        ControlID="txtPatientPhone"     Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PATIENT_EMAIL"       DataType="NVarChar"    Size="20"     Null="True"    Control="TextBox"        ControlID="txtPatientEmail"     Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_COMPANY_ID"          DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"        ControlID="txtCompanyID"        Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_WORK_PHONE"           DataType="NVarChar"    Size="50"     Null="True"    Control="TextBox"        ControlID="txtWorkPhone"     Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_WORK_PHONE_EXTENSION" DataType="NVarChar"    Size="50"     Null="True"    Control="TextBox"        ControlID="txtExtension"     Editable="True"  Visible="True" ></Field>
+
+  <Field Name="MI"                     DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"        ControlID="txtMI"                   Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_WCB_NO"              DataType="NVarChar"    Size="20"     Null="True"   Control="TextBox"        ControlID="txtWCBNumber"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_SOCIAL_SECURITY_NO"  DataType="NVarChar"    Size="20"       Null="True"   Control="TextBox"        ControlID="txtSocialSecurityNumber" Editable="True"  Visible="True" ></Field>
+  <Field Name="DT_DOB"                 DataType="DateTime"    Size=""     Null="True"   Control="TextBox"        ControlID="txtDateOfBirth"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_GENDER"              DataType="NVarChar"    Size="10"     Null="True"   Control="DropDownList"   ControlID="ddlSex"                  Editable="True"  Visible="True" ></Field>
+  <Field Name="DT_INJURY"              DataType="DateTime"    Size=""       Null="True"   Control="TextBox"        ControlID="txtDateOfInjury"         Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_JOB_TITLE"           DataType="NVarChar"    Size="50"     Null="True"   Control="TextBox"        ControlID="txtJobTitle"             Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_WORK_ACTIVITIES"     DataType="NVarChar"    Size="50"     Null="True"   Control="TextBox"        ControlID="txtWorkActivites"        Editable="True"  Visible="True" ></Field>
+
+  <Field Name="SZ_PATIENT_STATE"     DataType="NVarChar"    Size="50"     Null="True"   Control="TextBox"        ControlID="txtState"        Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PATIENT_STATE_ID"     DataType="NVarChar"    Size="50"     Null="True"   Control="ExtendedDropDownList"        ControlID="extddlPatientState"        Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_CARRIER_CASE_NO"     DataType="NVarChar"    Size="50"     Null="True"   Control="TextBox"        ControlID="txtCarrierCaseNo"        Editable="True"  Visible="True" ></Field>
+
+  <!-- Employer Information -->
+  
+
+  <Field Name="SZ_EMPLOYER_PHONE"     DataType="NVarChar"    Size="20"     Null="True"   Control="TextBox"        ControlID="txtEmployerPhone"        Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_EMPLOYER_ADDRESS"     DataType="NVarChar"    Size="150"     Null="True"   Control="TextBox"        ControlID="txtEmployerAddress"        Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_EMPLOYER_CITY"     DataType="NVarChar"    Size="50"     Null="True"   Control="TextBox"        ControlID="txtEmployerCity"        Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_EMPLOYER_STATE"     DataType="NVarChar"    Size="50"     Null="True"   Control="TextBox"        ControlID="txtEmployerState"        Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_EMPLOYER_STATE_ID"     DataType="NVarChar"    Size="50"     Null="True"   Control="ExtendedDropDownList"        ControlID="extddlEmployerState"        Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_EMPLOYER_ZIP"     DataType="NVarChar"    Size="50"     Null="True"   Control="TextBox"        ControlID="txtEmployerZip"        Editable="True"  Visible="True" ></Field>
+
+  <!-- Accident Information -->
+  
+  <Field Name="SZ_ACCIDENT_INFO_ID"       DataType="NVarChar"    Size="20"    Null="False"  Control="TextBox"  ControlID=""                     Editable="False" Visible="False"></Field>
+  <Field Name="SZ_PATIENT_ID"             DataType="NVarChar"    Size="20"    Null="False"  Control="TextBox"  ControlID="txtPatientID"         Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PLATE_NO"               DataType="NVarChar"    Size="20"    Null="False"  Control="TextBox"  ControlID="txtPlatenumber"       Editable="True"  Visible="True" ></Field>
+  <Field Name="DT_ACCIDENT_DATE"          DataType="DateTime"    Size=""      Null="False"  Control="TextBox"  ControlID="txtDateofAccident"    Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_ACCIDENT_ADDRESS"       DataType="NVarChar"    Size="50"    Null="False"  Control="TextBox"  ControlID="txtAccidentAddress"   Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_ACCIDENT_CITY"          DataType="NVarChar"    Size="50"    Null="False"  Control="TextBox"  ControlID="txtAccidentCity"      Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_ACCIDENT_STATE"         DataType="NVarChar"    Size="50"    Null="False"  Control="TextBox"  ControlID="txtAccidentState"     Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_ACCIDENT_STATE_ID"      DataType="NVarChar"    Size="50"    Null="False"  Control="ExtendedDropDownList"  ControlID="extddlAccidentState"     Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_REPORT_NO"              DataType="NVarChar"    Size="20"    Null="False"  Control="TextBox"  ControlID="txtPolicyReport"      Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PATIENT_FROM_CAR"       DataType="NVarChar"    Size="150"   Null="False"  Control="TextBox"  ControlID="txtListOfPatient"     Editable="True"  Visible="True" ></Field>
+
+  <Field Name="SZ_HOSPITAL_NAME"             DataType="NVarChar"    Size="100"    Null="False"  Control="TextBox"  ControlID="txtHospitalName"         Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_HOSPITAL_ADDRESS"             DataType="NVarChar"    Size="150"    Null="False"  Control="TextBox"  ControlID="txtHospitalAddress"         Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_DESCRIBE_INJURY"             DataType="NVarChar"    Size="250"    Null="False"  Control="TextBox"  ControlID="txtDescribeInjury"         Editable="True"  Visible="True" ></Field>
+  <Field Name="DT_ADMISSION_DATE"             DataType="DateTime"    Size=""    Null="False"  Control="TextBox"  ControlID="txtDateofAdmission"         Editable="True"  Visible="True" ></Field>
+  
+  
+  <!-- Case Information -->
+
+  <Field Name="SZ_CASE_ID"                        DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"                ControlID=""                        Editable="False" Visible="False"></Field>
+  <Field Name="SZ_CASE_NAME"                      DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"                ControlID="txtCaseName"             Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_CASE_TYPE_ID"                   DataType="NVarChar"    Size="20"     Null="False"   Control="ExtendedDropDownList"   ControlID="extddlCaseType"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_INSURANCE_ID"                   DataType="NVarChar"    Size="20"     Null="False"   Control="ExtendedDropDownList"   ControlID="extddlInsuranceCompany"  Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_CASE_STATUS_ID"                 DataType="NVarChar"    Size="20"     Null="False"   Control="ExtendedDropDownList"   ControlID="extddlCaseStatus"        Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_ATTORNEY_ID"                    DataType="NVarChar"    Size="20"     Null="False"   Control="ExtendedDropDownList"   ControlID="extddlAttorney"          Editable="True"  Visible="True" ></Field> 
+  <Field Name="SZ_CLAIM_NUMBER"                   DataType="NVarChar"    Size="50"     Null="False"   Control="TextBox"                ControlID="txtClaimNumber"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_POLICY_NUMBER"                  DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"                ControlID="txtWCBNumber"            Editable="True"  Visible="True" ></Field>
+  <Field Name="DT_DATE_OF_ACCIDENT"               DataType="DateTime"    Size=""       Null="False"   Control="TextBox"                ControlID="txtDateofAccident"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_ADJUSTER_ID"                    DataType="NVarChar"    Size="20"     Null="False"   Control="ExtendedDropDownList"                ControlID="extddlAdjuster"          Editable="True"  Visible="True" ></Field>
+  <Field Name="BT_ASSOCIATE_DIAGNOSIS_CODE"       DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"                ControlID="txtAssociateDiagnosisCode"            Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_INS_ADDRESS_ID"                 DataType="NVarChar"    Size="20"     Null="False"   Control="ListBox"                ControlID="lstInsuranceCompanyAddress"          Editable="True"  Visible="True" ></Field>
+
+  <Field Name="SZ_POLICY_HOLDER"                 DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"                ControlID="txtPolicyHolder"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_PATIENT_TYPE"                 DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"                ControlID="txtPatientType"          Editable="True"  Visible="True" ></Field>
+  
+  <!--location Information-->
+  <Field Name="I_RFO_CHART_NO"                 DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"                ControlID="txtRefChartNumber"          Editable="True"  Visible="True" ></Field>
+
+  <Field Name="SZ_LOCATION_ID"     DataType="NVarChar"    Size="50"     Null="True"   Control="ExtendedDropDownList"        ControlID="extddlLocation"        Editable="True"  Visible="True" ></Field>
+
+	<!-- id# - 1 added Anand N - 19-Mar-2010 - Resolution Policy number does not get saved -->
+
+	<Field Name="SZ_POLICY_NUMBER"                  DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"                ControlID="txtPolicyNumber"            Editable="True"  Visible="True" ></Field>
+	<!-- id# - 1 ends -->
+
+  <Field Name="sz_user_id"                  DataType="NVarChar"    Size="20"     Null="False"   Control="TextBox"                ControlID="txtUserId"            Editable="True"  Visible="True" ></Field>
+
+  <!-- Add Cell Phone # -->
+
+  <Field Name="SZ_PATIENT_CELLNO"           DataType="NVarChar"    Size="40"     Null="True"    Control="TextBox"        ControlID="txtCellNo"     Editable="True"  Visible="True" ></Field>
+
+  
+  <StoreProcedure name="SP_MST_PATIENT_DATA_ENTRY"></StoreProcedure>
+  
+</Table>
+
+
+
+
+
+

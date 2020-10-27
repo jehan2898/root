@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Email>  
+  <SendMail key="UserRegistration">
+    <!--<M>hgdgf.vom</M>-->
+    <Subject key="Subject">GreenBills Support Acknowledgement</Subject>
+    <Body>
+    &lt;html&gt;
+    &lt;body&gt;
+      Hello  _varUsername,
+
+
+      &lt;p&gt;Thank you for contacting GreenBills support.&lt;/p&gt;
+      &lt;p&gt;We are following up on the issue you are experiencing.&lt;/p&gt;
+   
+
+      &lt;br /&gt;
+
+    &lt;p&gt;Thanks,&lt;/p&gt;
+
+      GreenBills Support Team
+      &lt;br /&gt;
+      ph: 1.315.510.4948 |e:
+      &lt;br /&gt;
+      www.greenyourbills.com
+
+      &lt;/body&gt;
+    &lt;/html&gt;
+    </Body>
+  </SendMail>
+</Email>

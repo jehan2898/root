@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_CASE_MASTER">
+  <Field Name="sz_company_id"      DataType="NVarChar"    Size="20" Null="False" Control="TextBox" ControlID="txtCompanyId" Editable="True"  Visible="True" ></Field>
+  <Field Name="sz_login_company"      DataType="NVarChar"    Size="20" Null="False" Control="TextBox" ControlID="txtCompany" Editable="True"  Visible="True" ></Field>
+  <Field Name="sz_flag"      DataType="NVarChar"    Size="20" Null="False" Control="TextBox" ControlID="txtFlag" Editable="True"  Visible="True" ></Field>
+  <Field Name="sz_office_id"      DataType="NVarChar"    Size="20" Null="False" Control="TextBox" ControlID="txtOfficeID" Editable="True"  Visible="True" ></Field>
+  <StoreProcedure name="sp_office_account_details_tranfer_by_bill"></StoreProcedure>
+  <ListControl name="grdLitigationCompanyWise"></ListControl>
+</Table>

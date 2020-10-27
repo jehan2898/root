@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<document type= "WC_4.2" description="Mark parameters from PDF file and replace them at runtime from the database" lastmodified="March 21 2009 12:30PM" procedure_name="[dbo].[SP_WORKER_TEMPLATE_SPECIFIC_C4.2]" >
+
+		<field db_field_name="EXAMINATIONDATE" pdf_field_index="28" pdf_field_name="Text1" if_blank="" />
+		<field db_field_name="SZ_WCB_NO" pdf_field_index="35" pdf_field_name="Text2" if_blank=""  />
+		<field db_field_name="SZ_CARRIER_CASE_NO" pdf_field_index="42" pdf_field_name="Text3" if_blank="" />
+		<field db_field_name="SZ_PATIENT_LAST_NAME,SZ_PATIENT_FIRST_NAME,SZ_MI" pdf_field_index="51" pdf_field_name="Text4" if_blank="" space_padding="0,0,0"  />
+
+		<field db_field_name="DT_INJURY_MONTH" pdf_field_index="60" pdf_field_name="" if_blank=""  />
+		<field db_field_name="DT_INJURY_DAY" pdf_field_index="71" pdf_field_name="" if_blank=""  />
+		<field db_field_name="DT_INJURY_YEAR" pdf_field_index="85" pdf_field_name="" if_blank=""  />
+
+    <!--<field db_field_name="SZ_SOCIAL_SECURITY_NO" pdf_field_index="101" pdf_field_name="" if_blank=""  />-->
+    <field db_field_name="SZ_SOCIAL_SECURITY_NO_PART1" pdf_field_index="101" pdf_field_name="" if_blank=""  />
+    <field db_field_name="SZ_SOCIAL_SECURITY_NO_PART2" pdf_field_index="120" pdf_field_name="" if_blank=""  />
+    <field db_field_name="SZ_SOCIAL_SECURITY_NO_PART3" pdf_field_index="160" pdf_field_name="" if_blank=""  />
+
+    <field db_field_name="SZ_PATIENT_ADDRESS,SZ_PATIENT_STREET,SZ_PATIENT_CITY,SZ_PATIENT_STATE,SZ_PATIENT_ZIP" pdf_field_index="181" pdf_field_name="Text11" if_blank="" space_padding="1,1,1,1,1"  />
+		<field db_field_name="SZ_PATIENT_ACCOUNT" pdf_field_index="200" pdf_field_name="Text12" if_blank=""  />
+		<field db_field_name="SZ_DOCTOR_NAME" pdf_field_index="216" pdf_field_name="Text13" if_blank=""  />
+		<field db_field_name="SZ_OFFICE_ADDRESS,SZ_OFFICE_CITY,SZ_OFFICE_STATE,SZ_OFFICE_ZIP" pdf_field_index="20" pdf_field_name="Text16" if_blank="" space_padding="1,1,1,1"  />
+
+		<field db_field_name="SZ_WCB_RATING_CODE" pdf_field_index="11" pdf_field_name="Text13" if_blank=""  />
+		<field db_field_name="SZ_NPI" pdf_field_index="180" pdf_field_name="Text22" if_blank=""  />
+		<field db_field_name="SZ_FEDERAL_TAX_ID" pdf_field_index="199" pdf_field_name="Text23" if_blank=""  />
+		<field db_field_name="SZ_INSURANCE_NAME" pdf_field_index="215" pdf_field_name="Text24" if_blank=""  />
+		<field db_field_name="SZ_CARRIER_CODE" pdf_field_index="228" pdf_field_name="Text25" if_blank=""  />
+
+		<field db_field_name="SZ_DIAGNOSIS_CODE,SZ_DESCRIPTION" pdf_field_index="19,33,138,179:26,119,158,198" pdf_field_name="Text27,Text29,Text31,Text33:Text28,Text30,Text32,Text34" if_blank="" is_transaction_diagnosis="1" />
+
+    <!--<field db_field_name="MONTH,DAY,YEAR,TO_MONTH,TO_DAY,TO_YEAR,SZ_PROCEDURE_CODE,SZ_DIAGNOSIS_CODE,FL_AMOUNT,I_UNIT,BILL_AMOUNT,PAID_AMOUNT,BALANCE" pdf_field_index="214,17,116,175,57,223:227,84,135,194,67,6:9,99,155,210,80,16:18,117,176,50,95,24:25,136,195,58,113,94:100,156,211,68,132,111:137,196,59,96,173,150:178,225,82,133,131,191:197,7,97,153,151,208:213,70,115,174,172,222:79,79,79,79,79,79:93,93,93,93,93,93:110,110,110,110,110,110" pdf_field_name="1,2,3,4,5,6:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f" if_blank="" is_service = "1" />-->
+   <field db_field_name="MONTH,DAY,YEAR,TO_MONTH,TO_DAY,TO_YEAR,SZ_PROCEDURE_CODE,FL_AMOUNT,I_UNIT,BILL_AMOUNT,PAID_AMOUNT,BALANCE,ZIP_CODE,PLACE_OF_SERVICE" pdf_field_index="214,17,116,175,57,223:227,84,135,194,67,6:9,99,155,210,80,16:18,117,176,50,95,24:25,136,195,58,113,94:100,156,211,68,132,111:137,196,59,96,173,150:197,7,97,153,151,208:213,70,115,174,172,222:79,79,79,79,79,79:93,93,93,93,93,93:110,110,110,110,110,110:8,98,154,49,209,15:118,177,224,81,152,130" pdf_field_name="1,2,3,4,5,6:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f:a,b,c,d,e,f" if_blank="" is_service = "1" />
+
+
+    <field db_field_name="SZ_BILLING_ADDRESS,SZ_BILLING_CITY,SZ_BILLING_STATE,SZ_BILLING_ZIP" pdf_field_index="27" pdf_field_name="Text17" if_blank="" space_padding="1,1,1,1"  />
+    <field db_field_name="SZ_OFFICE_PHONE_CODE" pdf_field_index="34" pdf_field_name="Text19" if_blank="" space_padding=""  />
+    <field db_field_name="SZ_OFFICE_PHONE" pdf_field_index="41" pdf_field_name="Text19" if_blank="" space_padding=""  />
+    <field db_field_name="SZ_BILLING_PHONE_CODE" pdf_field_index="139" pdf_field_name="Text21" if_blank="" space_padding=""  />
+    <field db_field_name="SZ_BILLING_PHONE" pdf_field_index="159" pdf_field_name="Text21" if_blank="" space_padding=""  />
+    <field db_field_name="SZ_INSURANCE_STREET,SZ_INSURANCE_CITY,SZ_INSURANCE_STATE,SZ_INSURANCE_ZIP" pdf_field_index="10" pdf_field_name="Text26" if_blank="" space_padding="1,1,1,1"  />
+
+    <field db_field_name="SZ_DIAGNOSIS_TREATEMENT_RENDERED" pdf_field_index="129" pdf_field_name="Text123" if_blank=""  />
+    <field db_field_name="SZ_PATIENT_LAST_NAME,SZ_PATIENT_FIRST_NAME,SZ_MI" pdf_field_index="170" pdf_field_name="Text125" if_blank="" space_padding="0,0,0"  />
+
+    <field db_field_name="DT_INJURY_MONTH" pdf_field_index="190" pdf_field_name="" if_blank=""  />
+    <field db_field_name="DT_INJURY_DAY" pdf_field_index="207" pdf_field_name="" if_blank=""  />
+    <field db_field_name="DT_INJURY_YEAR" pdf_field_index="221" pdf_field_name="" if_blank=""  />
+
+    <field db_field_name="SZ_NATURE_OF_INJURY" pdf_field_index="4" pdf_field_name="" if_blank=""  />
+    <field db_field_name="SZ_AFFECTED_BY_INJURY" pdf_field_index="77" pdf_field_name="" if_blank=""  />
+    <field db_field_name="SZ_CHANGES_IN_TREATMENT_PLAN" pdf_field_index="91" pdf_field_name="" if_blank=""  />
+    <field db_field_name="SZ_TREATEMENT_RENDERED" pdf_field_index="220" pdf_field_name="" if_blank=""  />
+    <field db_field_name="SZ_APPOINTMENT_MONTH" pdf_field_index="65" pdf_field_name="" if_blank=""  space_padding=""/>
+    <field db_field_name="FT_TEMPORARY_IMPAIRMENT_PERCENTAGE" pdf_field_index="76" pdf_field_name="Text142" if_blank=""  />
+    <field db_field_name="SZ_TEST_RESULTS" pdf_field_index="90" pdf_field_name="Text143" if_blank=""  />
+    <field db_field_name="SZ_WORK_DESCRIBE_RESTRICTION" pdf_field_index="127" pdf_field_name="Text145" if_blank=""  />
+    <field db_field_name="SZ_PATIENT_RETURN_WORK_DESCRIPTION" pdf_field_index="75" pdf_field_name="Text153" if_blank=""  />
+    <field db_field_name="SZ_QUANIFY_LIMITATION" pdf_field_index="89" pdf_field_name="Text154" if_blank=""  />
+
+    <field db_field_name="SZ_PATIENT_RETURN_WORK_DESCRIPTION0" pdf_field_index="147" pdf_field_name="" if_blank=""  />
+    
+    <field db_field_name="SZ_PATIENT_RETURN_WORK_LIMITATIONMM" pdf_field_index="168" pdf_field_name="" if_blank=""  />
+    <field db_field_name="SZ_PATIENT_RETURN_WORK_LIMITATIONDD" pdf_field_index="188" pdf_field_name="" if_blank=""  />
+    <field db_field_name="SZ_PATIENT_RETURN_WORK_LIMITATIONYY" pdf_field_index="205" pdf_field_name="" if_blank=""  />
+    
+    <field db_field_name="SZ_PATIENT_RETURN_WORK_DESCRIPTIONMM" pdf_field_index="48" pdf_field_name="" if_blank=""  />
+    <field db_field_name="SZ_PATIENT_RETURN_WORK_DESCRIPTIONDD" pdf_field_index="55" pdf_field_name="" if_blank=""  />
+    <field db_field_name="SZ_PATIENT_RETURN_WORK_DESCRIPTIONYY" pdf_field_index="64" pdf_field_name="" if_blank=""  />
+
+    <field db_field_name="SZ_BOARD_PROVIDER_NAME" pdf_field_index="106" pdf_field_name="Text13" if_blank=""  />
+    <field db_field_name="SZ_HEALT_CARE_NAME" pdf_field_index="146" pdf_field_name="Text13" if_blank=""  />
+   
+    <field db_field_name="SZ_SPECIALITY" pdf_field_index="167" pdf_field_name="Text13" if_blank=""  />
+    <field db_field_name="CUR_MONTH" pdf_field_index="47" pdf_field_name="" if_blank=""  />
+    <field db_field_name="CUR_DAY" pdf_field_index="40" pdf_field_name="" if_blank=""  />
+    <field db_field_name="CUR_YEAR" pdf_field_index="187" pdf_field_name="" if_blank=""  />
+    <!-- Checkboxes 
+			if is_bit = 0 then the form has only 1 single check-box out of which the user either selects or de-selects
+			if is_bit = 1 then the form has a 2 check-box group Yes/No out of which the user selects 1
+			if is_bit = 2 then the form has a more that 2 check-boxes in a group out of which the user selects 1
+			if is_bit = 3 then the form has multiple check boxes and the user makes multiple selections
+		-->
+			<!-- Section B - Doctors Information -->
+
+			<field db_field_name="BIT_TAX_ID_TYPE" pdf_field_index="92" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="1"
+				flip_index="78" />
+
+			<!-- Section C - Billing Information -->
+
+			<field db_field_name="BT_PPO" pdf_field_index="109" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="0"
+				flip_index="" />
+
+			<!-- Section D - Examination and Treatment -->
+
+			<field db_field_name="BT_IS_DIAGNOSTIC_REFERRALS_REQUIRED" pdf_field_index="145" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="1" flip_index="125" />
+
+			<field db_field_name="I_PATIENT_NEXT_APPOINTMENT" pdf_field_index="185,39,45,53,62,73,87" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="2" flip_index="" />
+			
+			
+			<!-- Section E - Doctor's Opinion -->
+
+			<field db_field_name="BT_IS_COMPETENT_MEDICAL_CAUSE" pdf_field_index="164" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="1" flip_index="143" />
+			
+			<field db_field_name="BT_IS_CONSISTENT_WITH_HISTORY" pdf_field_index="123" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="1" flip_index="104" />
+			
+			<field db_field_name="BT_IS_CONSISTENT_WITH_OBJECTIVE_FINDINGS" pdf_field_index="32,38,44" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="2" flip_index="" />
+
+			<!-- Section F - Return to Work -->
+
+			<field db_field_name="BT_PATIENT_IS_WORKING" pdf_field_index="61" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="1"
+				flip_index="52" />
+
+			<field db_field_name="BT_WORK_RESTRICTION" pdf_field_index="86" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="1"
+				flip_index="72" />
+
+			<field db_field_name="BT_PATIENT_BENEFIT" pdf_field_index="21" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="1"
+				flip_index="12" />
+
+			<field db_field_name="BT_BOARD_AUTHORIZED" pdf_field_index="102" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="1"
+				flip_index="29" />
+
+			<field db_field_name="INT_HOW_LONG_RESTRICTION_APPLY" pdf_field_index="103,122,142,163,184" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="2" flip_index="" />
+
+			<field db_field_name="INT_HOW_LONG_LIMITATION_APPLY" pdf_field_index="30,36,121,140,161,182" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="2" flip_index="" />
+
+			<field db_field_name="INT_WHOM_DISCUSS" pdf_field_index="201,217,0" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="2" flip_index="" />
+    
+    <field db_field_name="CT Scan,EMG/NCS,MRI (specify):,Labs (specify):,X-rays (specify):,Other (specify):" pdf_field_index="166,186,204,46,54,63"  pdf_Textfield_index="0,0,108,128,148,169"  pdf_field_name="" if_blank="" is_check_box = "1" is_bit="3" flip_index="" pdf_proc_name="SP_MULTIPLE_CHECKBOX_SELECT_FOR_TEMPLATE_C_FOUR_TWO" pdf_flag_name="DIAGNOSTIC_TESTS" />
+
+    <field db_field_name="Chiropractor,Internist/Family Physician,Occupational Therapist,Physical Therapist,Specialist in,Other (specify)" pdf_field_index="74,88,105,124,144,165"  pdf_Textfield_index="0,0,0,0,189,206"  pdf_field_name="" if_blank="" is_check_box = "1" is_bit="3" flip_index="" pdf_proc_name="SP_MULTIPLE_CHECKBOX_SELECT_FOR_TEMPLATE_C_FOUR_TWO" pdf_flag_name="REFERRALS" />
+
+    <field db_field_name="Bending/twisting,Lifting,Sitting,Climbing stairs/ladders,Operating heavy equipment,Standing,Environmental conditions,Operation of motor vehicles,Use of public transportation,Kneeling,Personal protective equipment,Use of upper extremities,Other (explain):" pdf_field_index="14,141,218,23,162,2,31,183,13,37,202,22,43"  pdf_Textfield_index="0,0,0,0,0,0"  pdf_field_name="" if_blank="" is_check_box = "1" is_bit="3" flip_index="" pdf_proc_name="SP_MULTIPLE_CHECKBOX_SELECT_FOR_TEMPLATE_C_FOUR_TWO" pdf_flag_name="WORK_STATUS" />
+
+    <field db_field_name="BT_PATIENT_RETURN_WORK" pdf_field_index="203,219,3,0" pdf_field_name="" if_blank="" is_check_box = "1" is_bit="2" flip_index="" />
+		<!-- checkboxes -->
+	</document>
+</root>

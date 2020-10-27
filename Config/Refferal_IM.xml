@@ -1,0 +1,68 @@
+<root>
+  <document type= "FUNDING_SYSTEM" description="LSC Payoff letter template" lastmodified="June 22 2009 15:35" procedure_name="SP_GET_REFERRAL_INITIAL_EXAMINATION_DETAILS" >
+    <field db_field_name="CHK_MANUAL_THERAPY_STRETCHING"       pdf_field_index="1"  pdf_field_name="CHK_MANUAL_THERAPY_STRETCHING"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_GENTLE_MASSAGE"       pdf_field_index="2"  pdf_field_name="CHK_GENTLE_MASSAGE"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_IMPROVE_FUNCTION"       pdf_field_index="3"  pdf_field_name="CHK_IMPROVE_FUNCTION"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_PATIENT_NAME"       pdf_field_index="4"  pdf_field_name="TXT_PATIENT_NAME"   if_blank=" "/>
+    <field db_field_name="CHK_TRACTION"       pdf_field_index="5"  pdf_field_name="CHK_TRACTION"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_ROM"       pdf_field_index="6"  pdf_field_name="CHK_ROM"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_PROVIDER_ADDRESS"       pdf_field_index="7"  pdf_field_name="TXT_PROVIDER_ADDRESS"   if_blank=" "/>
+    <field db_field_name="CHK_MOIST_HEAT"       pdf_field_index="8"  pdf_field_name="CHK_MOIST_HEAT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_ISOMETIC_STABILIZATION"       pdf_field_index="9"  pdf_field_name="CHK_ISOMETIC_STABILIZATION"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_ELECTRICAL_STIM"       pdf_field_index="10"  pdf_field_name="CHK_ELECTRICAL_STIM"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_STRENGTHENING_EXERCISE"       pdf_field_index="11"  pdf_field_name="CHK_STRENGTHENING_EXERCISE"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CONTINUOUS"       pdf_field_index="12"  pdf_field_name="CHK_CONTINUOUS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_FWB"       pdf_field_index="13"  pdf_field_name="CHK_FWB"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_WEEK_S"       pdf_field_index="14"  pdf_field_name="TXT_WEEK_S"   if_blank=" "/>
+    <field db_field_name="TXT_DATE"       pdf_field_index="15"  pdf_field_name="TXT_DATE"   if_blank=" "/>
+    <field db_field_name="CHK_BIOMECHANICS"       pdf_field_index="16"  pdf_field_name="CHK_BIOMECHANICS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_MYOFACIAL_RELEASE"       pdf_field_index="17"  pdf_field_name="CHK_MYOFACIAL_RELEASE"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_SPRAY_STRENGTH"       pdf_field_index="18"  pdf_field_name="CHK_SPRAY_STRENGTH"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_LBS"       pdf_field_index="19"  pdf_field_name="TXT_LBS"   if_blank=" "/>
+    <field db_field_name="CHK_SWELLING"       pdf_field_index="20"  pdf_field_name="CHK_SWELLING"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_US"       pdf_field_index="21"  pdf_field_name="CHK_US"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="RDO_WEEK"       pdf_field_index="22"  pdf_field_name="RDO_WEEK"   if_blank=" "/>
+    <field db_field_name="CHK_STRETCHING_EXERCISE"       pdf_field_index="23"  pdf_field_name="CHK_STRETCHING_EXERCISE"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_TENS"       pdf_field_index="24"  pdf_field_name="CHK_TENS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_STRENGTH"       pdf_field_index="25"  pdf_field_name="CHK_STRENGTH"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PAIN"       pdf_field_index="26"  pdf_field_name="CHK_PAIN"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_U_PIN_NUMBER"       pdf_field_index="27"  pdf_field_name="TXT_U_PIN_NUMBER"   if_blank=" "/>
+    <field db_field_name="CHK_THERPEUTIC_EXERCISE"       pdf_field_index="28"  pdf_field_name="CHK_THERPEUTIC_EXERCISE"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CRANIOSACRAL"       pdf_field_index="29"  pdf_field_name="CHK_CRANIOSACRAL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_ACTIVATOR"       pdf_field_index="30"  pdf_field_name="CHK_ACTIVATOR"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CERVICAL"       pdf_field_index="31"  pdf_field_name="CHK_CERVICAL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_EVALUATE_TREAT"       pdf_field_index="32"  pdf_field_name="CHK_EVALUATE_TREAT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_PRECAUTIONS"       pdf_field_index="33"  pdf_field_name="TXT_PRECAUTIONS"   if_blank=" "/>
+    <field db_field_name="CHK_PNF"       pdf_field_index="34"  pdf_field_name="CHK_PNF"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_LUMBAR"       pdf_field_index="35"  pdf_field_name="CHK_LUMBAR"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_SPECIFIC_INSTRUCTIONS"       pdf_field_index="36"  pdf_field_name="TXT_SPECIFIC_INSTRUCTIONS"   if_blank=" "/>
+    <field db_field_name="CHK_JOBST_TECHNIQUES"       pdf_field_index="37"  pdf_field_name="CHK_JOBST_TECHNIQUES"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_SMT"       pdf_field_index="38"  pdf_field_name="CHK_SMT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_PROVIDER_FAX"       pdf_field_index="39"  pdf_field_name="TXT_PROVIDER_FAX"   if_blank=" "/>
+    <field db_field_name="TXT_PROVIDER_PHONE"       pdf_field_index="40"  pdf_field_name="TXT_PROVIDER_PHONE"   if_blank=" "/>
+    <field db_field_name="CHK_CMT"       pdf_field_index="41"  pdf_field_name="CHK_CMT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_INTERMITTENT"       pdf_field_index="42"  pdf_field_name="CHK_INTERMITTENT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_OTHER_GOALS"       pdf_field_index="43"  pdf_field_name="CHK_OTHER_GOALS"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_NWB"       pdf_field_index="44"  pdf_field_name="CHK_NWB"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_PARAFIN_BATH"       pdf_field_index="45"  pdf_field_name="CHK_PARAFIN_BATH"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_ICE"       pdf_field_index="46"  pdf_field_name="CHK_ICE"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_INTERFERENTIAL"       pdf_field_index="47"  pdf_field_name="CHK_INTERFERENTIAL"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_DIAGNOSIS"       pdf_field_index="48"  pdf_field_name="TXT_DIAGNOSIS"   if_blank=" "/>
+    <field db_field_name="TXT_PROVIDER_CITY"       pdf_field_index="49"  pdf_field_name="TXT_PROVIDER_CITY"   if_blank=" "/>
+    <field db_field_name="TXT_OTHER_GOALS"       pdf_field_index="50"  pdf_field_name="TXT_OTHER_GOALS"   if_blank=" "/>
+    <field db_field_name="CHK_PWB"       pdf_field_index="51"  pdf_field_name="CHK_PWB"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="IMG_BARCODE"       pdf_field_index="52"  pdf_field_name="IMG_BARCODE"   if_blank=" " isImage="1"/>
+    <field db_field_name="CHK_GAIT_TRAINING"       pdf_field_index="53"  pdf_field_name="CHK_GAIT_TRAINING"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_POSTURE_EXERCISE"       pdf_field_index="54"  pdf_field_name="CHK_POSTURE_EXERCISE"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_HOME_EXERCISE"       pdf_field_index="55"  pdf_field_name="CHK_HOME_EXERCISE"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_ROM_PROM"       pdf_field_index="56"  pdf_field_name="CHK_ROM_PROM"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_CONTRAST_BATH"       pdf_field_index="57"  pdf_field_name="CHK_CONTRAST_BATH"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_PROVIDER_ZIP"       pdf_field_index="58"  pdf_field_name="TXT_PROVIDER_ZIP"   if_blank=" "/>
+    <field db_field_name="TXT_PROVIDER_NAME"       pdf_field_index="59"  pdf_field_name="TXT_PROVIDER_NAME"   if_blank=" "/>
+    <field db_field_name="IMG_PHYSICIANS_SIGNATURE"       pdf_field_index="60"  pdf_field_name="IMG_PHYSICIANS_SIGNATURE"   if_blank=" " isImage="1"/>
+    <field db_field_name="CHK_AROM"       pdf_field_index="61"  pdf_field_name="CHK_AROM"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_HEATER_TRACTION"       pdf_field_index="62"  pdf_field_name="CHK_HEATER_TRACTION"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="CHK_WBAT"       pdf_field_index="63"  pdf_field_name="CHK_WBAT"   if_blank=" "  is_check_box = "1" is_bit="0"  flip_index=""/>
+    <field db_field_name="TXT_PROVIDER_STATE"       pdf_field_index="64"  pdf_field_name="TXT_PROVIDER_STATE"   if_blank=" "/>
+  </document>
+</root>

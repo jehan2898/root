@@ -1,0 +1,297 @@
+body {
+}
+.SMChildrenBox
+{
+
+}
+.level1
+{
+    color: White;
+    background-color: Black;
+    font-variant: small-caps;
+    font-size: large;
+    font-weight: bold;
+}
+
+.level2
+{
+    color: Blue;
+    font-family: Gill Sans MT !important;
+    font-size: medium;
+    background-color: Gray;
+}
+
+.level3
+{
+    color: black;
+    background-color: Silver;
+    font-family: Gill Sans MT !important;
+    font-size: small;
+}
+
+.hoverstyle
+{
+    font-weight: bold;
+}
+     
+ .parentlevel1
+{
+    background-color: Transparent;
+    color: White !important;
+    font-variant:normal;
+}  
+.sublevel1
+{
+    background-color: Transparent;
+    color: White !important;
+    font-variant: small-caps;
+}
+ .maintblCSS
+        {
+            width:300px;
+        }
+        .hdRow
+        {
+            background-color:Aqua;
+        }
+        .userRow
+        {
+            padding-left:10px;
+        }
+        .passwordRow
+        {
+            padding-left:10px;
+        }
+        .rememberRow
+        {
+            padding-left:10px;
+        }
+        .buttonRow
+        {
+           text-align:center;
+        }
+        .errorRow
+        {
+            color:Red;
+        }
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+td {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+th {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.simple-table{
+	width: 90%;
+	border:1px solid;
+	cellspacing:0;
+	cellpadding:0;
+}
+
+.lbl {
+	FONT-SIZE: smaller; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+
+span{
+	FONT-SIZE: smaller; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+
+.bubble {background-color:#C3D9FF}
+
+P{
+	BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BORDER-LEFT-WIDTH: 0px; FONT-SIZE: 100%; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; VERTICAL-ALIGN: baseline; PADDING-TOP: 0px; FONT-FAMILY: inherit; TEXT-ALIGN: left; BORDER-RIGHT-WIDTH: 0px
+}
+
+.grid-header{
+	text-align:center;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	background-color:#CCCCCC;
+	color:#000000;
+	font-weight:bold;
+}
+
+.grid-data{
+	text-align:center;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:10px;
+	background-color:#6694E3;
+	background-color:#EFEFEF;
+	color:#FFFFFF;
+}
+
+.grid-pager{
+	text-align:center;
+	font-size:11px;
+	background-color:#CCCCCC;
+	color:#000000;
+}
+
+.grid-items{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-style:normal;
+	font-weight:normal;
+	text-align:left;
+}
+
+.grid-alternate{
+	background-color:#EFEFEF;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:normal;
+	text-align:left;
+}
+.lbl{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:normal;
+	text-align:left;
+}
+
+.band{
+	background-color:#D2D2D6;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;
+	font-weight:bold;
+	height:20px;
+	text-align:center;
+	/* color:#000066; */
+	color:#333333;
+}
+.text-box{
+	BORDER-RIGHT: #d1c7ac 1px solid; BORDER-TOP: #d1c7ac 1px solid; FLOAT: left; BORDER-LEFT: #d1c7ac 1px solid; PADDING-TOP: 3px; BORDER-BOTTOM: #d1c7ac 1px solid; BACKGROUND-COLOR: #f9f8f2
+}
+
+.message-band{
+	background-color:#FFF1A8;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	height:20px;
+	text-align:center;
+	width:50%;
+}
+
+#newsSideBar .justIn {
+	BORDER-RIGHT: #4fa4c3 1px solid; BORDER-TOP: #4fa4c3 1px solid; MARGIN-BOTTOM: 15px; BORDER-LEFT: #4fa4c3 1px solid; COLOR: #333; BORDER-BOTTOM: #4fa4c3 1px solid; BACKGROUND-COLOR: #f8fafb
+}
+
+#newsSideBar .justIn H5 {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; BACKGROUND: url(http://i.i.com.com/cnwk.1d/i/tron/vader/siteId3headerBar.gif) repeat-x; PADDING-BOTTOM: 0px; FONT: bold 119%/195.5% Arial, Helvetica, san-serif; COLOR: #282828; PADDING-TOP: 0px; BORDER-BOTTOM: #bedbe6 1px solid; HEIGHT: 28px
+}
+
+#newsSideBar .justIn LABEL {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; BACKGROUND: url(http://i.i.com.com/cnwk.1d/i/tron/vader/siteId3headerBar.gif) repeat-x; PADDING-BOTTOM: 0px; FONT-SIZE: 12px;font-family:Arial, Helvetica, san-serif; COLOR: #282828; PADDING-TOP: 0px; BORDER-BOTTOM: #bedbe6 1px solid; HEIGHT: 28px
+}
+
+#newsSideBar .justIn LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: url(http://i.i.com.com/cnwk.1d/i/tron/vader/dottedLine.gif) repeat-x 50% bottom; PADDING-BOTTOM: 7px; MARGIN: 0px 7px; COLOR: #999; PADDING-TOP: 7px
+}
+
+#newsSideBar .justIn LI.last {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+
+#newsSideBar .justIn A {
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:normal;
+	font-size:12px;
+}
+A:hover {
+	COLOR: #800; TEXT-DECORATION: none
+}
+
+.top-menu{
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	font-size:12px;
+	color:#FFFFFF;
+	text-align:right;
+	text-decoration:none;
+}
+
+.pg-bl-usr{
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	font-size:12px;
+	color:#FFFFFF;
+	text-align:left;
+	text-decoration:none;
+}
+
+.usr{
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	font-size:12px;
+	color:#FFFFFF;
+	text-align:right;
+	text-decoration:none;
+}
+
+.pg{
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	font-size:12px;
+	color:#003366;
+	text-align:right;
+	text-decoration:none;
+}
+
+.message-text{
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	font-size:12px;
+	color:#FF0000;
+	text-align:right;
+	text-decoration:none;
+}
+
+.sub-menu{
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	font-size:12px;
+	color:#000066;
+	text-align:right;
+	text-decoration:none;
+}
+
+input.btn{
+   /*color:#FFFFFF;*/
+   /*font: bold 84% 'trebuchet ms',helvetica,sans-serif;   */
+   /*background-color:#336600;
+   border:1px solid;
+   border-color: #FFFFFF #FFFFFF #FFFFFF #FFFFFF;*/
+ }
+
+input.btn-gray{
+   color:#FFFFFF;
+   font: bold 84% 'trebuchet ms',helvetica,sans-serif;
+   background-color:#525252;
+   border:1px solid;
+   border-color: #FFFFFF #FFFFFF #FFFFFF #FFFFFF;
+ }
+ .menu-common{
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	font-size:11px;
+	color:#990000;
+	text-align:center;
+	text-decoration:none;
+ } 
+ 
+ .maintable
+ {
+	width:80%;
+	height:2%;
+	cellpadding:0; 
+	cellspacing:0; 
+	border: 1px solid #D8D8D8;
+ }
+ 

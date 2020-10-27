@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Table Name="MST_INITIAL_EXAMINATION">
+  <Field Name="I_EVENT_ID" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtEventID" Editable="True" Visible="True"/>
+  <Field Name="SZ_PROPOSED_TREATMENT" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtProposed_Treatment" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_MEDICATION_LIST" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtMedication_List" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_OVER_THE_COUNTER_MEDICATION" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtOver_The_Counter_Medication" Editable="True" Visible="True"></Field>
+  <!--<Field Name="I_MEDICATION_RESTRICTION" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="rdlMedication_Restriction" Editable="True" Visible="True"></Field>-->
+  <Field Name="I_MEDICATION_RESTRICTION" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtrdlMedication_Restriction" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_MEDICATION_RESTRICTION" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtMedication_Restriction" Editable="True" Visible="True"></Field>
+  <!--<Field Name="I_PATIENT_NEED_DIAGNOSTIC" DataType="Int" Size="" Null="False" Control="RadioButtonList" ControlID="rdlPatient_Need_Diagnostic" Editable="True" Visible="True"></Field>-->
+  <Field Name="I_PATIENT_NEED_DIAGNOSTIC" DataType="Int" Size="" Null="False" Control="TextBox" ControlID="txtrdlPatient_Need_Diagnostic" Editable="True" Visible="True"></Field>
+  <Field Name="BT_TEST_CT_SCAN" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkTest_CT_Scan" Editable="True" Visible="True"></Field>
+  <Field Name="BT_REFERRALS_CHIROPRACTOR" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkReferrals_Chiropractor" Editable="True" Visible="True"></Field>
+  <Field Name="BT_REFERRALS_INTERNIST_FAMILY_PHYSICIAN" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkReferrals_Internist_Physician" Editable="True" Visible="True"></Field>
+  <Field Name="BT_TEST_EMG_NCV" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkTest_Emg_Ncv" Editable="True" Visible="True"></Field>
+  <Field Name="BT_TEST_MRI" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkTest_MRI" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_TEST_MRI" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtTest_MRI" Editable="True" Visible="True"></Field>
+  <Field Name="BT_REFERRALS_OCCUPATIONAL_THERAPIST" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkReferrals_Occupational_Therapist" Editable="True" Visible="True"></Field>
+  <Field Name="BT_TEST_LABS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkTest_Labs" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_TEST_LABS" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtTest_Labs" Editable="True" Visible="True"></Field>
+  <Field Name="BT_REFERRALS_PHYSICAL_THERAPIST" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkReferrals_Physical_Therapist" Editable="True" Visible="True"></Field>
+  <Field Name="BT_TEST_X_RAY" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkTest_X_Ray" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_TEST_X_RAY" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtTest_X_Ray" Editable="True" Visible="True"></Field>
+  <Field Name="BT_REFERRALS_SPECIALIST_IN" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkReferrals_Specialist_In" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_REFERRALS_SPECIALIST_IN" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtReferrals_Specialist_In" Editable="True" Visible="True"></Field>
+  <Field Name="BT_TEST_OTHER" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkTest_Other" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_TEST_OTHER" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtTest_Other" Editable="True" Visible="True"></Field>
+  <Field Name="BT_REFERRALS_OTHER" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkReferrals_Other" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_REFERRALS_OTHER" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtReferrals_Other" Editable="True" Visible="True"></Field>
+  <Field Name="BT_ASSISTIVE_DEVICE_EMS_UNIT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chk_Assistive_Device_EMS_Unit" Editable="True" Visible="True"></Field>
+  <Field Name="BT_ASSISTIVE_DEVICE_WRIST_SUPPORT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chk_Assistive_Device_Wrist_Support" Editable="True" Visible="True"></Field>
+  <Field Name="BT_ASSISTIVE_DEVICE_CERVICAL_PILLOW" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkAssistive_Device_Cervical_Pillow" Editable="True" Visible="True"></Field>
+  <Field Name="BT_ASSISTIVE_DEVICE_ELBOW_SUPPORT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chk_Assistive_Device_Elbow_Support" Editable="True" Visible="True"></Field>
+  <Field Name="BT_ASSISTIVE_DEVICE_LUMBOSACRAL_BACK_SUPPORT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chk_Assistive_Device_Lumbosacral_Back_Support" Editable="True" Visible="True"></Field>
+  
+  
+  <Field Name="BT_ASSISTIVE_DEVICE_ANKLE_SUPPORT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chk_Assistive_Device_Ankle_Support" Editable="True" Visible="True"></Field>
+  <Field Name="BT_ASSISTIVE_DEVICE_LUMBAR_CUSHION" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chk_Assistive_Device_Lumbar_Cushion" Editable="True" Visible="True"></Field>
+  <Field Name="BT_ASSISTIVE_DEVICE_KNEE_SUPPORT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chk_Assistive_Device_Knee_Support" Editable="True" Visible="True"></Field>
+  <Field Name="BT_ASSISTIVE_DEVICE_MASSAGER" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkAssistive_Device_Massager" Editable="True" Visible="True"></Field>
+  <Field Name="BT_ASSISTIVE_DEVICE_CANE" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chk_Assistive_Device_Cane" Editable="True" Visible="True"></Field>
+  <Field Name="BT_ASSISTIVE_DEVICE_OTHER" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkAssistive_Device_Other" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_ASSISTIVE_DEVICE_OTHER" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtAssistive_Device_Other" Editable="True" Visible="True"></Field>
+  <Field Name="BT_PATIENT_NEXT_VISIT_WITHIN_A_WEEK" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkPatient_Next_Visit_Within_A_Weelk" Editable="True" Visible="True"></Field>
+  <Field Name="BT_PATIENT_NEXT_VISIT_1_TO_2_WKS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkPatient_Next_Visit_1_TO_2_Wks" Editable="True" Visible="True"></Field>
+  <Field Name="BT_PATIENT_NEXT_VISIT_3_TO_4_WKS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkPatient_Next_Visit_3_TO_4_Wks" Editable="True" Visible="True"></Field>
+  <Field Name="BT_PATIENT_NEXT_VISIT_5_TO_6_WEEKS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkPatient_Next_Visit_5_TO_6_Wks" Editable="True" Visible="True"></Field>
+  <Field Name="BT_PATIENT_NEXT_VISIT_7_TO_8_WKS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkPatient_Next_Visit_7_TO_8_Wks" Editable="True" Visible="True"></Field>
+  <Field Name="BT_PATIENT_NEXT_VISIT_NEEDED_MONTH" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkPatient_Next_Visit_Needed_Month" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PATIENT_NEXT_VISIT_NEEDED_MONTH" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="txtPatient_Next_Visit_Needed_Month" Editable="True" Visible="True"></Field>
+  <Field Name="BT_PATIENT_AS_NEEDED" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="chkPatient_As_Needed" Editable="True" Visible="True"></Field>
+  
+  <Field Name="BT_REFERRALS_NERVE_BLOCKS" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_REFERRALS_NERVE_BLOCKS" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_REFERRALS_NERVE_BLOCKS" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="TXT_REFERRALS_NERVE_BLOCKS" Editable="True" Visible="True"></Field>
+
+  <Field Name="BT_VS_NCT" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_VS_NCT" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_VS_NCT" DataType="NVarChar" Size="500" Null="False" Control="TextBox" ControlID="TXT_VS_NCT" Editable="True" Visible="True"></Field>
+  <Field Name="BT_REFERRALS_OROTHOPEDIC_EVALUATION" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_REFERRALS_OROTHOPEDIC_EVALUATION" Editable="True" Visible="True"></Field>
+
+
+  <StoreProcedure name="SP_IM_PlanOfCare" />
+
+
+</Table>
+
+
+<!--
+SZ_PROPOSED_TREATMENT
+SZ_MEDICATION_LIST	
+SZ_OVER_THE_COUNTER_MEDICATION	
+I_MEDICATION_RESTRICTION
+SZ_MEDICATION_RESTRICTION
+I_PATIENT_NEED_DIAGNOSTIC
+BT_TEST_CT_SCAN	
+BT_REFERRALS_CHIROPRACTOR	
+BT_REFERRALS_INTERNIST_FAMILY_PHYSICIAN
+BT_TEST_EMG_NCV
+BT_TEST_MRI
+SZ_TEST_MRI
+BT_REFERRALS_OCCUPATIONAL_THERAPIST
+BT_TEST_LABS
+SZ_TEST_LABS
+BT_REFERRALS_PHYSICAL_THERAPIST
+BT_TEST_X_RAY	
+SZ_TEST_X_RAY	
+BT_REFERRALS_SPECIALIST_IN	
+SZ_REFERRALS_SPECIALIST_IN	
+BT_TEST_OTHER	
+SZ_TEST_OTHER	
+BT_REFERRALS_OTHER	
+SZ_REFERRALS_OTHER	
+BT_ASSISTIVE_DEVICE_EMS_UNIT	
+BT_ASSISTIVE_DEVICE_WRIST_SUPPORT
+BT_ASSISTIVE_DEVICE_CERVICAL_PILLOW
+BT_ASSISTIVE_DEVICE_ELBOW_SUPPORT	
+BT_ASSISTIVE_DEVICE_LUMBOSACRAL_BACK_SUPPORT
+BT_ASSISTIVE_DEVICE_ANKLE_SUPPORT	
+BT_ASSISTIVE_DEVICE_LUMBAR_CUSHION	
+BT_ASSISTIVE_DEVICE_KNEE_SUPPORT
+BT_ASSISTIVE_DEVICE_MASSAGER
+BT_ASSISTIVE_DEVICE_CANE
+BT_ASSISTIVE_DEVICE_OTHER
+SZ_ASSISTIVE_DEVICE_OTHER	
+BT_PATIENT_NEXT_VISIT_WITHIN_A_WEEK
+BT_PATIENT_NEXT_VISIT_1_TO_2_WKS
+BT_PATIENT_NEXT_VISIT_3_TO_4_WKS
+BT_PATIENT_NEXT_VISIT_5_TO_6_WEEKS	
+BT_PATIENT_NEXT_VISIT_7_TO_8_WKS
+BT_PATIENT_NEXT_VISIT_NEEDED_MONTH
+SZ_PATIENT_NEXT_VISIT_NEEDED_MONTH
+BT_PATIENT_AS_NEEDED-->
+

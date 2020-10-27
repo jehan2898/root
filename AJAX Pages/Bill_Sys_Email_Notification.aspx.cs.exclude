@@ -1,0 +1,918 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using mbs.bl;
+using Componend;
+using DocumentTypeBO;
+
+
+public partial class AJAX_Pages_Bill_Sys_Email_Notification : System.Web.UI.Page
+
+{
+    private SaveOperation _saveOperation;
+    private EditOperation _editOperation;
+    private ListOperation _listOperation;
+    private Bill_Sys_DeleteBO _deleteOpeation;
+    string[] listButton;
+    Bill_Sys_TransferDocumentBO objBillSysDocBO = new Bill_Sys_TransferDocumentBO(ConfigurationManager.AppSettings["Connection_String"].ToString());
+    DataSet dsSpecialityDoc = new DataSet();
+    Bill_Sys_DisplaySpeciality objSpeciality = new Bill_Sys_DisplaySpeciality();
+
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        extddlLawFirm.Flag_ID = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+        extddlNotification.Flag_ID = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+        txtCompanyId.Text = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+        
+        if (!IsPostBack)
+        {
+            extddlLawFirm.Visible = false;
+            txtEmailAddress.Visible = false;
+           // ExtendedGroup.Flag_ID = ((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_ID;
+            tblMisDoc.Visible = false;
+        }
+
+    }
+
+    protected void extddlNotification_extendDropDown_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        txtEmailAddress.Text = "";
+        mbs.bl.litigation.Notification obj = new mbs.bl.litigation.Notification();
+        if (extddlNotification.Text != "NA")
+        {
+            if (extddlNotification.Selected_Text == "Transfer of bills for litigation")
+            {
+                lblheder.Text = "Transfer of bills for litigation";
+                lblLawFirm.Visible = true;
+                lblEmailAddress.Visible = true;
+                extddlLawFirm.Visible = true;
+                txtEmailAddress.Visible = true;
+                lblNote.Visible = true;
+                btnSaveEmail.Visible = true;
+                extddlLawFirm.Text = "NA";
+                tblMisDoc.Visible = false;
+
+
+            }
+            else if (extddlNotification.Selected_Text == "Missing Documents")
+            {
+                lblLawFirm.Visible = false;
+                lblEmailAddress.Visible = false;
+                extddlLawFirm.Visible = false;
+                txtEmailAddress.Visible = false;
+                lblNote.Visible = false;
+                btnSaveEmail.Visible = false;
+                lblheder.Text = "Missing Documents";
+                tblMisDoc.Visible = true;
+
+
+                tvwmenu.Attributes.Add("onclick", "OnCheckBoxCheckChanged(event)");
+
+
+                 lbSelectedDocs.Items.Clear();
+                        txtUserID.Text = ((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_ID;
+
+                    //load speciality in the dropdownlist.
+                    DataSet dsSpeciality = obj.GetGroupName(txtCompanyId.Text);
+                    ExtendedGroup.DataSource = dsSpeciality.Tables[0];
+                    if (dsSpeciality.Tables[0].Rows.Count > 0)
+                    {
+                        ExtendedGroup.DataTextField = "DESCRIPTION";
+                        //ExtendedGroup.DataValueField = "CODE";
+                        ExtendedGroup.DataBind();
+                    }
+                    
+                    
+                    ExtendedGroup.Items.Insert(0, "---Select---");
+
+                    DataSet ds = new DataSet();
+                    ds = objBillSysDocBO.GetAllSecialityDoc(txtCompanyId.Text);
+                    ArrayList lstDoc = new ArrayList();
+                    for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                    {
+                        DAO_Assign_Doc DAO = new DAO_Assign_Doc();
+                        DAO.SelectedId = ds.Tables[0].Rows[i][0].ToString();
+                           DAO.SelectedText = objBillSysDocBO.GetFullPathOfNode(ds.Tables[0].Rows[i][0].ToString());
+                        //DAO.SelectedSpeciality = objBillSysDocBO.GetSpecialityNameUsingId(ds.Tables[0].Rows[i][1].ToString());
+                        //DAO.SelectedSpecialityID = ds.Tables[0].Rows[i][1].ToString();
+                        DAO.ORDER = Convert.ToInt32(ds.Tables[0].Rows[i][2]);
+                        //DAO.REQUIRED_MULTIPLE = Convert.ToBoolean(ds.Tables[0].Rows[i][3]);
+                        lstDoc.Add(DAO);
+                    }
+                    Session["SelectedDocList1"] = lstDoc;
+                    tvwmenu.PopulateNodesFromClient = true;
+                    tvwmenu.Nodes.RemoveAt(0);
+                    TreeNode node = new TreeNode("Document Manager", "0");
+                    node.PopulateOnDemand = true;
+                    tvwmenu.Nodes.Add(node);
+                    tvwmenu.ExpandAll();
+                    lbSelectedDocs.Items.Clear();
+                    txtMisDocEmailAddress.Text = "";
+                    txtNewGroup.Text = "";
+
+                //load Listbox on the Step 1 of the wizard. if selected speciality is not '---Select---'
+                //if (!ddlSpeciality.SelectedValue.Equals("0"))
+                //{
+                //    tvwmenu.Visible = true;
+                //    DAO_Assign_Doc DAO = new DAO_Assign_Doc();
+                //    ArrayList lstDoc1 = new ArrayList();
+                //    lstDoc1 = (ArrayList)Session["SelectedDocList1"];
+                //    lbSelectedDocs.Items.Clear();
+                //    if (lstDoc1 != null)
+                //    {
+                //        for (int i = 0; i < lstDoc1.Count; i++)
+                //        {
+                //            DAO = (DAO_Assign_Doc)lstDoc1[i];
+                //            ListItem lst = new ListItem();
+                //            lst.Text = DAO.SelectedText;
+                //            lst.Value = DAO.SelectedSpecialityID + "~" + DAO.SelectedId;
+                //            if (DAO.SelectedSpecialityID.Equals(ddlSpeciality.SelectedValue))
+                //            {
+                //                lbSelectedDocs.Items.Add(lst);
+                //            }
+                //        }
+                //    }
+                //}
+                //else
+                {
+                    //load treeview
+                    
+                }
+                // Label3.Text = "";
+                //lblmsg.Text = "";
+
+                //load treeview and listbox on the step 1 of the wizard if user clicks on 'Previous' button on the step 2 of the wizard.
+                //if (Wizard1.ActiveStepIndex == 1)
+                //{
+                //    if (Session["SelectedDocList1"] != null)
+                //    {
+                //        hfselectedNode.Value = "";
+                //        dsSpecialityDoc = objBillSysDocBO.GetSecialityDoc(txtCompanyID.Text, ddlSpeciality.SelectedValue);
+                //        for (int i = 0; i < dsSpecialityDoc.Tables[0].Rows.Count; i++)
+                //        {
+                //            ListItem list = new ListItem();
+                //            list.Text = "";
+                //            list.Value = "";
+                //            lbSelectedDocs.Items.Add(list);
+                //        }
+                //        //tvwmenu.PopulateNodesFromClient = true;
+                //        //tvwmenu.Nodes.RemoveAt(0);
+                //        //TreeNode node = new TreeNode("Document Manager", "0");
+                //        //node.PopulateOnDemand = true;
+                //        //tvwmenu.Nodes.Add(node);
+                //        //tvwmenu.ExpandAll();
+                //        int count = lbSelectedDocs.Items.Count;
+                //        for (int i = 0; i < count; i++)
+                //        {
+                //            if (lbSelectedDocs.Items[i].Value.Equals(""))
+                //            {
+                //                lbSelectedDocs.Items.RemoveAt(i);
+                //                i--;
+                //                count--;
+                //            }
+                //            else
+                //            {
+
+                //            }
+                //        }
+                //    }
+                //}
+                DataSet dsDoc = new DataSet();
+                dsDoc = objBillSysDocBO.GetAllSecialityDoc(txtCompanyId.Text);
+                //lbAllAssignedDoc.Items.Clear();
+                //for (int i = 0; i < dsDoc.Tables[0].Rows.Count; i++)
+                //{
+                //    DAO_Assign_Doc DAO = new DAO_Assign_Doc();
+                //    DAO.SelectedId = dsDoc.Tables[0].Rows[i][0].ToString();
+                //    DAO.SelectedText = objBillSysDocBO.GetFullPathOfNode(dsDoc.Tables[0].Rows[i][0].ToString());
+                //    DAO.SelectedSpeciality = objBillSysDocBO.GetSpecialityNameUsingId(dsDoc.Tables[0].Rows[i][1].ToString());
+                //    DAO.SelectedSpecialityID = dsDoc.Tables[0].Rows[i][1].ToString();
+                //    DAO.ORDER = Convert.ToInt32(dsDoc.Tables[0].Rows[i][2]);
+                //    DAO.REQUIRED_MULTIPLE = Convert.ToBoolean(dsDoc.Tables[0].Rows[i][3]);
+                //    ListItem lst = new ListItem();
+                //    lst.Text = DAO.SelectedSpeciality.ToString() + DAO.SelectedText.ToString();
+                //    lst.Value = DAO.SelectedId.ToString();
+                //    lbAllAssignedDoc.Items.Add(lst);
+                //}
+
+            }
+            else
+            {
+                lblEmailAddress.Visible = true;
+                txtEmailAddress.Visible = true;
+                lblNote.Visible = true;
+                lblLawFirm.Visible = false;
+                extddlLawFirm.Visible = false;
+                btnSaveEmail.Visible = true;
+                DataSet ds = new DataSet();
+                ds = obj.GetEmail(Convert.ToInt32(extddlNotification.Text), txtCompanyId.Text, "NA");
+                string emailtext = "";
+                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                {
+                    if (emailtext == "")
+                    {
+                        emailtext = ds.Tables[0].Rows[i]["sz_email_id"].ToString();
+                    }
+                    else
+                    {
+                        emailtext = emailtext + "," + ds.Tables[0].Rows[i]["sz_email_id"].ToString();
+                    }
+
+                }
+                txtEmailAddress.Text = emailtext;
+            }
+
+
+
+        }
+        else if (extddlNotification.Text == "NA")
+        {
+            lblLawFirm.Visible = false;
+            lblEmailAddress.Visible = false;
+            extddlLawFirm.Visible = false;
+            txtEmailAddress.Visible = false;
+            lblNote.Visible = false;
+            btnSaveEmail.Visible = false;
+            lblheder.Text = "";
+
+            tblMisDoc.Visible = false;
+        }
+
+
+    }
+    protected void extddlLawFirm_extendDropDown_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        DataSet ds = new DataSet();
+        mbs.bl.litigation.Notification obj = new mbs.bl.litigation.Notification();
+        if (extddlLawFirm.Text != "NA")
+        {
+            ds = obj.GetEmail(Convert.ToInt32(extddlNotification.Text), txtCompanyId.Text, extddlLawFirm.Text);
+            string emailtext = "";
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+            {
+                if (emailtext == "")
+                {
+                    emailtext = ds.Tables[0].Rows[i]["sz_email_id"].ToString();
+                }
+                else
+                {
+                    emailtext = emailtext + "," + ds.Tables[0].Rows[i]["sz_email_id"].ToString();
+                }
+
+            }
+            txtEmailAddress.Text = emailtext;
+        }
+        else
+        {
+            txtEmailAddress.Text = "";
+        }
+
+    }
+    protected void btnSaveEmail_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            string szEmail = txtEmailAddress.Text;
+            string[] words = szEmail.Split(',');
+            ArrayList objAL = new ArrayList();
+            mbs.bl.litigation.NotificationDAO _obj;
+            mbs.bl.litigation.Notification obj = new mbs.bl.litigation.Notification();
+            for (int i = 0; i < words.Length; i++)
+            {
+                _obj = new mbs.bl.litigation.NotificationDAO();
+                _obj.COMPANY_ID = txtCompanyId.Text;
+                _obj.EMAIL_ID = words[i].ToString();
+                _obj.NOTIFICATION_ID = extddlNotification.Text;
+                if (extddlLawFirm.Visible)
+                {
+                    _obj.SPECIFICATION = extddlLawFirm.Text;
+                }
+                else
+                {
+                    _obj.SPECIFICATION = "NA";
+                }
+                objAL.Add(_obj);
+
+            }
+            int val = obj.SaveEmail(objAL);
+            if (val == 1)
+            {
+                usrMessage.PutMessage("Saved successfully.");
+                usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_UserMessage);
+                usrMessage.Show();
+            }
+            else
+            {
+                usrMessage.PutMessage("Error in transaction");
+                usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_ErrorMessage);
+                usrMessage.Show();
+            }
+        }
+        catch (Exception ex)
+        {
+            usrMessage.PutMessage(ex.ToString());
+            usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_ErrorMessage);
+            usrMessage.Show();
+        }
+    }
+
+    public void Node_Populate(object sender, System.Web.UI.WebControls.TreeNodeEventArgs e)
+    {
+        if (e.Node.ChildNodes.Count == 0)
+        {
+            switch (e.Node.Depth)
+            {
+                case 0:
+                    FillMasterMenu(e.Node);
+                    break;
+                case 1:
+                    FillChildMenu(e.Node);
+                    break;
+                case 2:
+                    FillChildMenu(e.Node);
+                    break;
+                case 3:
+                    FillChildMenu(e.Node);
+                    break;
+            }
+        }
+    }
+
+    public void FillMasterMenu(TreeNode node)
+    {
+        DataSet MenuTable = new DataSet();
+        MenuTable = objBillSysDocBO.GetMasterNodes(txtCompanyId.Text);
+        //dsSpecialityDoc = objBillSysDocBO.GetSecialityDoc(txtCompanyId.Text, ddlSpeciality.SelectedValue);
+        mbs.bl.litigation.Notification _obj = new mbs.bl.litigation.Notification();
+        if (ExtendedGroup.Visible)
+        {
+            dsSpecialityDoc = _obj.GetEmailForMissingDocument(Convert.ToInt32(extddlNotification.Text), txtCompanyId.Text, ExtendedGroup.SelectedItem.Text.ToString());
+        }
+        else
+        {
+            dsSpecialityDoc = _obj.GetEmailForMissingDocument(Convert.ToInt32(extddlNotification.Text), txtCompanyId.Text, "");
+        }
+        if (MenuTable.Tables.Count > 0)
+        {
+            foreach (DataRow row in MenuTable.Tables[0].Rows)
+            {
+                TreeNode newNode = new TreeNode(row["SZ_NODE_NAME"].ToString(), row["I_NODE_ID"].ToString());
+                newNode.PopulateOnDemand = true;
+                newNode.Value = row["I_NODE_ID"].ToString();
+                newNode.ToolTip = row["SZ_NODE_NAME"].ToString();
+                newNode.ShowCheckBox = true;
+                newNode.ToolTip = node.ToolTip + ">>" + row["SZ_NODE_NAME"].ToString() + "(" + row["I_NODE_ID"].ToString() + ")";
+                newNode.SelectAction = TreeNodeSelectAction.Expand;
+                for (int i = 0; i < dsSpecialityDoc.Tables[0].Rows.Count; i++)
+                {
+                    if (row["I_NODE_ID"].ToString().Equals(dsSpecialityDoc.Tables[0].Rows[i][0].ToString()))
+                    {
+                        newNode.Checked = true;
+                        string path = node.ToolTip;
+                        string[] nodeid = new string[10];
+                        nodeid = node.ValuePath.Split('/');
+                        for (int j = 0; j < nodeid.Length; j++)
+                        {
+                            path = path.Replace("(" + nodeid[j] + ")", "");
+                        }
+                        hfselectedNode.Value = hfselectedNode.Value + path + ">>" + row["SZ_NODE_NAME"].ToString() + "~" + dsSpecialityDoc.Tables[0].Rows[i][1].ToString() + "~" + row["I_NODE_ID"].ToString() + ",";
+                        hfOrder.Value = hfOrder.Value + row["I_NODE_ID"].ToString() + "~" + dsSpecialityDoc.Tables[0].Rows[i][2].ToString() + ",";
+                        ListItem list1 = new ListItem();
+                        list1.Text = path + ">>" + row["SZ_NODE_NAME"].ToString();
+                        list1.Value = dsSpecialityDoc.Tables[0].Rows[i][1].ToString() + "~" + row["I_NODE_ID"].ToString();
+                        lbSelectedDocs.Items.Insert(Convert.ToInt32(dsSpecialityDoc.Tables[0].Rows[i][2]), list1);
+                        //lbSelectedDocs.Items.RemoveAt(Convert.ToInt32(dsSpecialityDoc.Tables[0].Rows[i][2]) + 1);
+                        DAO_Assign_Doc DAO = new DAO_Assign_Doc();
+                        DAO.SelectedId = row["I_NODE_ID"].ToString();
+                        DAO.SelectedText = path + ">>" + row["SZ_NODE_NAME"].ToString();
+                        //DAO.SelectedSpeciality = ddlSpeciality.SelectedItem.Text;
+                        //DAO.SelectedSpecialityID = dsSpecialityDoc.Tables[0].Rows[i][1].ToString();
+                        DAO.ORDER = Convert.ToInt32(dsSpecialityDoc.Tables[0].Rows[i][2]);
+                        //DAO.REQUIRED_MULTIPLE = Convert.ToBoolean(dsSpecialityDoc.Tables[0].Rows[i][3]);
+                        ArrayList lstDoc = new ArrayList();
+                        if (Session["SelectedDocList1"] == null)
+                        {
+                            lstDoc.Add(DAO);
+                            Session["SelectedDocList1"] = lstDoc;
+                        }
+                        else
+                        {
+                            lstDoc = (ArrayList)Session["SelectedDocList1"];
+                            lstDoc.Add(DAO);
+                            Session["SelectedDocList1"] = lstDoc;
+                        }
+                        if (Session["SelectedDocList1"] != null)
+                        {
+                            ArrayList lstDoc1 = new ArrayList();
+                            lstDoc1 = (ArrayList)Session["SelectedDocList1"];
+                            for (int k = 0; k < lstDoc1.Count; k++)
+                            {
+                                DAO_Assign_Doc dao = new DAO_Assign_Doc();
+                                dao = (DAO_Assign_Doc)lstDoc[k];
+                                if (dao.SelectedId.Equals(row["I_NODE_ID"].ToString()))//&& dao.SelectedSpecialityID.Equals(ddlSpeciality.SelectedValue.ToString())
+                                {
+                                    newNode.Checked = true;
+                                }
+                            }
+                        }
+                    }
+                    else if (Session["SelectedDocList1"] != null)
+                    {
+                        ArrayList lstDoc = new ArrayList();
+                        lstDoc = (ArrayList)Session["SelectedDocList1"];
+                        //for (int k = 0; k < lstDoc.Count; k++)
+                        //{
+                        //    DAO_Assign_Doc dao = new DAO_Assign_Doc();
+                        //    dao = (DAO_Assign_Doc)lstDoc[k];
+                        //    if (dao.SelectedId.Equals(row["I_NODE_ID"].ToString()))//&& dao.SelectedSpecialityID.Equals(ddlSpeciality.SelectedValue.ToString())
+                        //    {
+                        //        newNode.Checked = true;
+                        //    }
+                        //}
+                    }
+                }
+                node.ChildNodes.Add(newNode);
+            }
+        }
+    }
+
+    void FillChildMenu(TreeNode node)
+    {
+        string MenuID = node.Value;
+        DataSet ChildMenuTable = new DataSet();
+        ChildMenuTable = objBillSysDocBO.GetChildNodes(Convert.ToInt32(MenuID), txtCompanyId.Text);
+        mbs.bl.litigation.Notification _obj = new mbs.bl.litigation.Notification();
+      //  dsSpecialityDoc = _obj.GetEmailForMissingDocument(Convert.ToInt32(extddlNotification.Text), txtCompanyId.Text, ExtendedGroup.SelectedItem.Text.ToString());
+        if (ExtendedGroup.Visible)
+        {
+            dsSpecialityDoc = _obj.GetEmailForMissingDocument(Convert.ToInt32(extddlNotification.Text), txtCompanyId.Text, ExtendedGroup.SelectedItem.Text.ToString());
+        }
+        else
+        {
+            dsSpecialityDoc = _obj.GetEmailForMissingDocument(Convert.ToInt32(extddlNotification.Text), txtCompanyId.Text, "");
+        }
+
+        string GroupName = "";
+      
+
+         //dsSpecialityDoc = objBillSysDocBO.GetSecialityDoc(txtCompanyId.Text,ExtendedGroup.SelectedItem.Text.ToString());
+        if (ChildMenuTable.Tables.Count > 0)
+        {
+            foreach (DataRow row in ChildMenuTable.Tables[0].Rows)
+            {
+                TreeNode newNode = new TreeNode(row["SZ_NODE_NAME"].ToString(), row["I_NODE_ID"].ToString());
+                newNode.PopulateOnDemand = false;
+                newNode.SelectAction = TreeNodeSelectAction.Expand;
+                newNode.ShowCheckBox = true;
+                string str = "";
+                newNode.ToolTip = node.ToolTip + ">>" + row["SZ_NODE_NAME"].ToString() + "(" + row["I_NODE_ID"].ToString() + ")";
+                newNode.Value = row["I_NODE_ID"].ToString();
+                for (int i = 0; i < dsSpecialityDoc.Tables[0].Rows.Count; i++)
+                {
+                    if (row["I_NODE_ID"].ToString().Equals(dsSpecialityDoc.Tables[0].Rows[i][0].ToString()))
+                    {
+                        newNode.Checked = true;
+                        string path = node.ToolTip;
+                        string[] nodeid = new string[10];
+                        nodeid = node.ValuePath.Split('/');
+                        for (int j = 0; j < nodeid.Length; j++)
+                        {
+                            path = path.Replace("(" + nodeid[j] + ")", "");
+                        }
+                        hfselectedNode.Value = hfselectedNode.Value + path + ">>" + row["SZ_NODE_NAME"].ToString() + "~" + dsSpecialityDoc.Tables[0].Rows[i][1].ToString() + "~" + row["I_NODE_ID"].ToString() + ",";
+                        ListItem list1 = new ListItem();
+                        list1.Text = path + ">>" + row["SZ_NODE_NAME"].ToString();
+                        list1.Value = dsSpecialityDoc.Tables[0].Rows[i][1].ToString() + "~" + row["I_NODE_ID"].ToString();
+                        lbSelectedDocs.Items.Add(list1);
+                        //lbSelectedDocs.Items.RemoveAt(Convert.ToInt32(dsSpecialityDoc.Tables[0].Rows[i][2]) + 1);
+                        hfOrder.Value = hfOrder.Value + row["I_NODE_ID"].ToString() + "~" + dsSpecialityDoc.Tables[0].Rows[i][2].ToString() + ",";
+                        DAO_Assign_Doc DAO = new DAO_Assign_Doc();
+                        DAO.SelectedId = row["I_NODE_ID"].ToString();
+                        DAO.SelectedText = path + ">>" + row["SZ_NODE_NAME"].ToString();
+                        //DAO.SelectedSpeciality = ddlSpeciality.SelectedItem.Text;
+                        //DAO.SelectedSpecialityID = dsSpecialityDoc.Tables[0].Rows[i][1].ToString();
+                        DAO.ORDER = Convert.ToInt32(dsSpecialityDoc.Tables[0].Rows[i][2]);
+                        //DAO.REQUIRED_MULTIPLE = Convert.ToBoolean(dsSpecialityDoc.Tables[0].Rows[i][3]);
+                        ArrayList lstDoc = new ArrayList();
+
+                        if (Session["SelectedDocList1"] == null)
+                        {
+                            lstDoc.Add(DAO);
+                            Session["SelectedDocList1"] = lstDoc;
+                        }
+                        else
+                        {
+                            lstDoc = (ArrayList)Session["SelectedDocList1"];
+                            Session["SelectedDocList1"] = lstDoc;
+                            int flag = 0;
+                            for (int l = 0; l < lstDoc.Count; l++)
+                            {
+                                DAO_Assign_Doc DAO1 = new DAO_Assign_Doc();
+                                DAO1 = (DAO_Assign_Doc)lstDoc[l];
+                                if (DAO1.SelectedId.Equals(DAO.SelectedId))//&& DAO1.SelectedSpecialityID.Equals(DAO.SelectedSpecialityID)
+                                {
+                                    flag = 1;
+                                    break;
+                                }
+                            }
+                            if (flag == 0)
+                            {
+                                lstDoc.Add(DAO);
+                            }
+                        }
+                        if (Session["SelectedDocList1"] != null)
+                        {
+                            ArrayList lstDoc1 = new ArrayList();
+                            lstDoc1 = (ArrayList)Session["SelectedDocList1"];
+                            for (int k = 0; k < lstDoc1.Count; k++)
+                            {
+                                DAO_Assign_Doc dao = new DAO_Assign_Doc();
+                                dao = (DAO_Assign_Doc)lstDoc[k];
+                                if (dao.SelectedId.Equals(row["I_NODE_ID"].ToString()))//&& dao.SelectedSpecialityID.Equals(ddlSpeciality.SelectedValue.ToString())
+                                {
+                                    newNode.Checked = true;
+                                }
+                            }
+                        }
+
+                    }
+                    else if (Session["SelectedDocList1"] != null)
+                    {
+                        ArrayList lstDoc = new ArrayList();
+                        lstDoc = (ArrayList)Session["SelectedDocList1"];
+                        //for (int k = 0; k < lstDoc.Count; k++)
+                        //{
+                        //    DAO_Assign_Doc dao = new DAO_Assign_Doc();
+                        //    dao = (DAO_Assign_Doc)lstDoc[k];
+                        //    if (dao.SelectedId.Equals(row["I_NODE_ID"].ToString()))//&& dao.SelectedSpecialityID.Equals(ddlSpeciality.SelectedValue.ToString())
+                        //    {
+                        //        newNode.Checked = true;
+                        //    }
+                        //}
+                    }
+                }
+                node.ChildNodes.Add(newNode);
+                FillChildMenu(newNode);
+            }
+        }
+    }
+    protected void btnSave_Click(object sender, EventArgs e)
+    {
+
+        try
+        {
+            //if (ddlSpeciality.SelectedValue.Equals("0"))
+            //{
+            //    usrMessage.PutMessage("Speciality is not selected.");
+            //    usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_ErrorMessage);
+            //    usrMessage.Show();
+            //}
+            //else
+            string groupName = "";
+            int iFlag = 0;
+        string a=    hfselectedNode.Value.ToString(); ;
+            if(ExtendedGroup.Visible==true)
+            {
+                if (ExtendedGroup.SelectedValue.Equals("---Select---"))
+                {
+                    usrMessage.PutMessage("Group is not selected.");
+                    usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_ErrorMessage);
+                    usrMessage.Show();
+                }
+                else
+                {
+                    if (hfselectedNode.Value.ToString().Equals("")  || txtMisDocEmailAddress.Text == "")
+                    {
+
+                        hfselectedNode.Value = "";
+                        lbSelectedDocs.Items.Clear();
+                        tvwmenu.PopulateNodesFromClient = true;
+                        tvwmenu.Nodes.RemoveAt(0);
+                        ExtendedGroup.SelectedIndex = 0;
+                        TreeNode node = new TreeNode("Document Manager", "0");
+                        node.PopulateOnDemand = true;
+                        tvwmenu.Nodes.Add(node);
+                        tvwmenu.ExpandAll();
+
+                        usrMessage.PutMessage("Nodes not selected or Email address missing");
+                        usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_ErrorMessage);
+                        usrMessage.Show();
+                    }
+                    else
+                    {
+
+                        groupName = ExtendedGroup.SelectedItem.Text.ToString();
+                        iFlag = 1;
+                    }
+                }
+            }
+            else if (txtNewGroup.Visible == true)
+            {
+                if (txtNewGroup.Text.Equals(""))
+                {
+                   
+                    usrMessage.PutMessage("Group is not added.");
+                    usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_ErrorMessage);
+                    usrMessage.Show();
+                }
+                else
+                {
+                    if (hfselectedNode.Value.ToString().Equals("") || txtMisDocEmailAddress.Text == "")
+                    {
+                        hfselectedNode.Value = "";
+                        tvwmenu.PopulateNodesFromClient = true;
+                        tvwmenu.Nodes.RemoveAt(0);
+                        TreeNode node = new TreeNode("Document Manager", "0");
+                        node.PopulateOnDemand = true;
+                        tvwmenu.Nodes.Add(node);
+                        tvwmenu.ExpandAll();
+
+                        usrMessage.PutMessage("Nodes not selected or Email address missing");
+                        usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_ErrorMessage);
+                        usrMessage.Show();
+                    }
+                    else
+                    {
+
+                        mbs.bl.litigation.Notification obj = new mbs.bl.litigation.Notification();
+                        int val = obj.CheckGroupName(txtNewGroup.Text, txtCompanyId.Text);
+                        if (val == 0)
+                        {
+                            groupName = txtNewGroup.Text;
+                            iFlag = 1;
+                        }
+                        else
+                        {
+                            usrMessage.PutMessage("Group is already present");
+                            usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_ErrorMessage);
+                            usrMessage.Show();
+                        }
+                    }
+                }
+            }
+            if (iFlag==1)
+            {
+                mbs.bl.litigation.NotificationDAO DAO;
+                ArrayList lstDoc = new ArrayList();///= (ArrayList)Session["SelectedDocList1"];
+                ArrayList objAL = new ArrayList();
+                if (lstDoc == null)
+                {
+                    lstDoc = new ArrayList();
+                }
+                string[] Documents = new string[100];
+                Documents = hfselectedNode.Value.Split(',');
+                //lbSelectedDocs.Items.Clear();
+                ArrayList lstRemoved = new ArrayList();
+                for (int i = 0; i < Documents.Length - 1; i++)
+                {
+                    DAO = new mbs.bl.litigation.NotificationDAO();
+                    DAO.NODE_ID = Documents[i].Split('~')[2];
+                    DAO.NOTIFICATION_ID = extddlNotification.Text;
+                    //DAO.SPECIALTY=ddlSpeciality.SelectedItem.Text;
+                    //DAO.SPECIALTY_ID=ddlSpeciality.SelectedItem.Value;
+                    DAO.COMPANY_ID = txtCompanyId.Text;
+                    DAO.ORDER = i.ToString();
+                    DAO.USER_ID = ((Bill_Sys_UserObject)Session["USER_OBJECT"]).SZ_USER_ID;
+                    DAO.GROUP_NAME = groupName;
+                    DAO.DISCRIPTION = Documents[i].Split('~')[0];
+                    
+                    objAL.Add(DAO);
+                    lbSelectedDocs.Items.Clear();
+                }
+                mbs.bl.litigation.Notification objNotiication = new mbs.bl.litigation.Notification();
+               int val= objNotiication.SaveEmailNotification(objAL, txtMisDocEmailAddress.Text);
+                if (val == 1)
+                {
+
+                    usrMessage.PutMessage("Saved successfully.");
+                    usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_UserMessage);
+                    usrMessage.Show();
+                }
+                else
+                {
+                    usrMessage.PutMessage("Error in transaction");
+                    usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_ErrorMessage);
+                    usrMessage.Show();
+                }
+
+                hfselectedNode.Value = "";
+
+
+            }
+                
+               
+            }
+        
+        catch (Exception ex)
+        {
+            usrMessage.PutMessage(ex.ToString());
+            usrMessage.SetMessageType(UserControl_ErrorMessageControl.DisplayType.Type_ErrorMessage);
+            usrMessage.Show();
+        }
+    }
+    //protected void ddlSpeciality_SelectedIndexChanged(object sender, EventArgs e)
+    //{
+    //    if (ddlSpeciality.SelectedValue.Equals("0"))
+    //    {
+    //        tvwmenu.PopulateNodesFromClient = true;
+    //        tvwmenu.Nodes.RemoveAt(0);
+    //        TreeNode node = new TreeNode("Document Manager", "0");
+    //        node.PopulateOnDemand = true;
+    //        tvwmenu.Nodes.Add(node);
+    //        tvwmenu.ExpandAll();
+    //        lbSelectedDocs.Items.Clear();
+    //        txtMisDocEmailAddress.Text = "";
+    //    }
+    //    else
+    //    {
+    //        if (lbSelectedDocs.Items.Count > 0)
+    //        {
+    //            for (int k = 0; k < lbSelectedDocs.Items.Count+1; k++)
+    //            {
+    //                lbSelectedDocs.Items.RemoveAt(0);
+
+    //            }
+    //            lbSelectedDocs.Items.Clear();
+    //        }
+            
+
+    //        //dsSpecialityDoc = objBillSysDocBO.GetSecialityDoc(txtCompanyId.Text, ddlSpeciality.SelectedValue);
+    //        txtMisDocEmailAddress.Text = "";
+    //        hfselectedNode.Value = "";
+    //        mbs.bl.litigation.Notification _obj = new mbs.bl.litigation.Notification();
+    //      // --atul
+    //        //dsSpecialityDoc = _obj.GetEmailForMissingDocument(Convert.ToInt32(extddlNotification.Text), txtCompanyId.Text, ExtendedGroup.Selected_Text);
+         
+
+    //        for (int i = 0; i < dsSpecialityDoc.Tables[0].Rows.Count; i++)
+    //        {
+    //            ListItem list = new ListItem();
+    //            list.Text = "";
+    //            list.Value = "";
+    //            lbSelectedDocs.Items.Add(list);
+    //        }
+    //            string emailtext = "";
+
+    //        for (int i = 0; i < dsSpecialityDoc.Tables[1].Rows.Count; i++)
+    //        {
+    //            if (emailtext == "")
+    //            {
+    //                emailtext = dsSpecialityDoc.Tables[1].Rows[i][0].ToString();
+    //            }
+    //            else
+    //            {
+    //                emailtext = emailtext + "," + dsSpecialityDoc.Tables[1].Rows[i][0].ToString();
+    //            }
+
+    //        }
+    //        txtMisDocEmailAddress.Text = emailtext;
+
+    //        tvwmenu.PopulateNodesFromClient = true;
+    //        tvwmenu.Nodes.RemoveAt(0);
+    //        TreeNode node = new TreeNode("Document Manager", "0");
+    //        node.PopulateOnDemand = true;
+    //        tvwmenu.Nodes.Add(node);
+    //        tvwmenu.ExpandAll();
+    //        int count = lbSelectedDocs.Items.Count;
+    //        for (int i = 0; i < count; i++)
+    //        {
+    //            if (lbSelectedDocs.Items[i].Value.Equals(""))
+    //            {
+    //                lbSelectedDocs.Items.RemoveAt(i);
+    //                i--;
+    //                count--;
+    //            }
+    //        }
+    //    } 
+    //}
+    protected void chkGroup_CheckedChanged(object sender, EventArgs e)
+    {
+        hfselectedNode.Value = "";
+        if (chkGroup.Checked == true)
+        {
+            txtNewGroup.Visible = true;
+            txtNewGroup.Text = "";
+            ExtendedGroup.Visible = false;
+
+            tvwmenu.PopulateNodesFromClient = true;
+            tvwmenu.Nodes.RemoveAt(0);
+            TreeNode node = new TreeNode("Document Manager", "0");
+            node.PopulateOnDemand = true;
+            tvwmenu.Nodes.Add(node);
+            tvwmenu.ExpandAll();
+            lbSelectedDocs.Items.Clear();
+            txtMisDocEmailAddress.Text = "";
+        }else{
+            txtNewGroup.Visible = false;
+            ExtendedGroup.Visible = true;
+            ExtendedGroup.SelectedIndex=0;
+            tvwmenu.PopulateNodesFromClient = true;
+            tvwmenu.Nodes.RemoveAt(0);
+            TreeNode node = new TreeNode("Document Manager", "0");
+            node.PopulateOnDemand = true;
+            tvwmenu.Nodes.Add(node);
+            tvwmenu.ExpandAll();
+            lbSelectedDocs.Items.Clear();
+            txtMisDocEmailAddress.Text = "";
+            mbs.bl.litigation.Notification obj = new mbs.bl.litigation.Notification();
+            DataSet dsSpeciality = obj.GetGroupName(txtCompanyId.Text);
+            ExtendedGroup.DataSource = dsSpeciality.Tables[0];
+            if (dsSpeciality.Tables[0].Rows.Count > 0)
+            {
+                ExtendedGroup.DataTextField = "DESCRIPTION";
+                //ExtendedGroup.DataValueField = "CODE";
+                ExtendedGroup.DataBind();
+            }
+            ExtendedGroup.Items.Insert(0, "---Select---");
+            ExtendedGroup.SelectedIndex = 0;
+
+
+            }
+    }
+    protected void ExtendedGroup_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        string GroupName="";
+        if (ExtendedGroup.SelectedValue.Equals("---Select---"))
+        {
+            tvwmenu.PopulateNodesFromClient = true;
+            tvwmenu.Nodes.RemoveAt(0);
+            TreeNode node = new TreeNode("Document Manager", "0");
+            node.PopulateOnDemand = true;
+            tvwmenu.Nodes.Add(node);
+            tvwmenu.ExpandAll();
+            lbSelectedDocs.Items.Clear();
+            txtMisDocEmailAddress.Text = "";
+        }
+        else
+        {
+           
+            if (lbSelectedDocs.Items.Count > 0)
+            {
+                for (int k = 0; k < lbSelectedDocs.Items.Count + 1; k++)
+                {
+                    lbSelectedDocs.Items.RemoveAt(0);
+
+                }
+                lbSelectedDocs.Items.Clear();
+            }
+
+
+            //dsSpecialityDoc = objBillSysDocBO.GetSecialityDoc(txtCompanyId.Text, ddlSpeciality.SelectedValue);
+            txtMisDocEmailAddress.Text = "";
+            hfselectedNode.Value = "";
+            mbs.bl.litigation.Notification _obj = new mbs.bl.litigation.Notification();
+            // --atul
+            
+            dsSpecialityDoc = _obj.GetEmailForMissingDocument(Convert.ToInt32(extddlNotification.Text), txtCompanyId.Text,ExtendedGroup.SelectedItem.Text.ToString());
+
+
+            for (int i = 0; i < dsSpecialityDoc.Tables[0].Rows.Count; i++)
+            {
+                ListItem list = new ListItem();
+                list.Text = "";
+                list.Value = "";
+                lbSelectedDocs.Items.Add(list);
+            }
+            string emailtext = "";
+
+            for (int i = 0; i < dsSpecialityDoc.Tables[1].Rows.Count; i++)
+            {
+                if (emailtext == "")
+                {
+                    emailtext = dsSpecialityDoc.Tables[1].Rows[i][0].ToString();
+                }
+                else
+                {
+                    emailtext = emailtext + "," + dsSpecialityDoc.Tables[1].Rows[i][0].ToString();
+                }
+
+            }
+            txtMisDocEmailAddress.Text = emailtext;
+
+            tvwmenu.PopulateNodesFromClient = true;
+            tvwmenu.Nodes.RemoveAt(0);
+            TreeNode node = new TreeNode("Document Manager", "0");
+            node.PopulateOnDemand = true;
+            tvwmenu.Nodes.Add(node);
+                tvwmenu.ExpandAll();
+            int count = lbSelectedDocs.Items.Count;
+            for (int i = 0; i < count; i++)
+            {
+                if (lbSelectedDocs.Items[i].Value.Equals(""))
+                {
+                    lbSelectedDocs.Items.RemoveAt(i);
+                    i--;
+                    count--;
+                }
+            }
+        }
+    }
+}

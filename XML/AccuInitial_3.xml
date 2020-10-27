@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_ACCU_INITIAL">
+
+ <Field Name="BT_SHOULDER_JOINT_PAIN_719_41" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_SHOULDER_JOINT_PAIN_719_41" Editable="True" Visible="True"></Field>
+  <Field Name="BT_ELBOW_JOINT_PAIN_719_42" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_ELBOW_JOINT_PAIN_719_42" Editable="True" Visible="True"></Field>
+  <Field Name="BT_WRIST_JOINT_PAIN_719_43" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_WRIST_JOINT_PAIN_719_43" Editable="True" Visible="True"></Field>
+  <Field Name="BT_HAND_JOINT_PAIN_719_44" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_HAND_JOINT_PAIN_719_44" Editable="True" Visible="True"></Field>
+  <Field Name="BT_HIP_PELVIC_JOINT_PAIN_719_45" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_HIP_PELVIC_JOINT_PAIN_719_45" Editable="True" Visible="True"></Field>
+  <Field Name="BT_KNEE_JOINT_PAIN_719_46" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_KNEE_JOINT_PAIN_719_46" Editable="True" Visible="True"></Field>
+  <Field Name="BT_ANKLE_FOOT_JOINT_PAIN_719_47" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_ANKLE_FOOT_JOINT_PAIN_719_47" Editable="True" Visible="True"></Field>
+  <Field Name="BT_LIMP_PAIN_729_5" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_LIMP_PAIN_729_5" Editable="True" Visible="True"></Field>
+  <Field Name="BT_LUMBARGO_724_2" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_LUMBARGO_724_2" Editable="True" Visible="True"></Field>
+  <Field Name="BT_CERVICALGIA_723_1" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_CERVICALGIA_723_1" Editable="True" Visible="True"></Field>
+  <Field Name="BT_THORACIC_847_1" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_THORACIC_847_1" Editable="True" Visible="True"></Field>
+  <Field Name="BT_THORACIC_SPINE_724_1" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_THORACIC_SPINE_724_1" Editable="True" Visible="True"></Field>
+  <Field Name="BT_MYOFASCIAL_PAIN_729_1" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_MYOFASCIAL_PAIN_729_1" Editable="True" Visible="True"></Field>
+  <Field Name="BT_CHEST_PAIN_786_5" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_CHEST_PAIN_786_5" Editable="True" Visible="True"></Field>
+  <Field Name="BT_DIZZINESS_780_4" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_DIZZINESS_780_4" Editable="True" Visible="True"></Field>
+  <Field Name="BT_HEADACHES_784_0" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_HEADACHES_784_0" Editable="True" Visible="True"></Field>
+  <Field Name="BT_ANXIETY_300_2" DataType="Int" Size="" Null="False" Control="CheckBox" ControlID="CHK_ANXIETY_300_2" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_TREATMENT_AND_RECOMMENDATION" DataType="NVarChar" Size="100" Null="False" Control="TextBox" ControlID="TXT_TREATMENT_AND_RECOMMENDATION" Editable="True" Visible="True"></Field>
+  <Field Name="SZ_PROGNOSIS" DataType="NVarChar" Size="100" Null="False" Control="TextBox" ControlID="TXT_PROGNOSIS" Editable="True" Visible="True"></Field>
+  <Field Name="I_EVENT_ID" DataType="Int" Size="" Null="" Control="TextBox"  ControlID="txtEventID" Editable="True" Visible="True"></Field>
+
+  <StoreProcedure name="SP_MST_AC_ACCU_INITIAL_3"></StoreProcedure>
+
+</Table>

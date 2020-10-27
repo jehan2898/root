@@ -1,0 +1,171 @@
+<%@ master language="C#" autoeventwireup="true" CodeFile="MasterPage.master.cs" inherits="Provider_MasterPage" %>
+<%@ Register Src="~/Provider/UserControl/RightExtraLinks.ascx" TagPrefix="rightextralinks"
+    TagName="hyperlinks" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server" id="masterhead">
+    <link rel="stylesheet" type="text/css" />
+    <meta name="robots" content="noindex" />
+    <!-- DO NOT ADD ANYTHING HERE.. INSTEAD USE THE SERVER CODE FILE TO ADD NEW CONTENT -->
+</head>
+<body class="page-body">
+    <form id="form1" runat="server">
+        <div id="divAutoComp" runat="server" style="font-family: Comic Sans MS; background-color: white;
+            text-align: center; font-size: .95em; width: 100px;">
+        </div>
+        <!-- Page Div will always remain the topmost DIV on the page -->
+        <!-- page strip header always contains logo, non-application links, site-map, additional info, etc -->
+        <div id="strip-header" class="strip-header">
+            <table id="table-logo" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td id="td-strip-header-logo" style="width: 165px">
+                        Green Your Bills.com
+                    </td>
+                    <td align="right" id="td-strip-header-extra-links">
+                        <rightextralinks:hyperlinks ID="rdhyp" runat="server" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!-- display only account specific information in this strip -->
+        <div id="account-diplay" class="account-diplay">
+            <table>
+                <tr>
+                    <td style="width: 20%">
+                        <table id="table-account-diplay" cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                                <td style="width: 520px;" height="43" align="left" valign="top" class="txt1">
+                                    <% =((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_COMPANY_NAME %>
+                                    <br />
+                                    <% =((Bill_Sys_BillingCompanyObject)Session["BILLING_COMPANY_OBJECT"]).SZ_ADDRESS %>
+                                    <br />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td style="width: 20%">
+                        <table id="table1" cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                            </tr>
+                        </table>
+                    </td>
+                    <td style="width: 25%">
+                    </td>
+                    <td style="width: auto">
+                        &nbsp;
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="menu-diplay" class="menu-diplay">
+            <table border="0" cellpadding="0" cellspacing="0" id="table-menu-diplay">
+                <tr>
+                    <td align="center" valign="middle" bgcolor="#9DD559" width="11%" style="height: 19px">
+                        <a href="Bill_Sys_SearchCase.aspx" class="txt1">Patient List</a>
+                    </td>
+                    <td width="9" align="center" valign="middle" style="height: 19px">
+                        <a href="#" class="menutxt"></a>
+                    </td>
+                    <td align="center" valign="middle" bgcolor="#9DD559" width="12%" runat="server" id="tdViewBill"
+                        style="height: 19px">
+                        <a href="../provider/Bill_Sys_BillSearch.aspx" class="txt1">View Bills</a></td>
+                   
+                   <td width="9" align="center" valign="middle" style="height: 19px">
+                        <a href="#" class="menutxt"></a>
+                    </td>
+                    <td align="center" valign="middle" bgcolor="#9DD559" width="12%" runat="server" id="td3"
+                        style="height: 19px">
+                        <a href="../provider/Bill_Sys_Report.aspx" class="txt1">Report</a></td>
+                    <td width="9" align="center" valign="middle" runat="server" id="td6" style="height: 19px">
+                        <a href="#" class="menutxt"></a>
+                    </td>
+
+                    <td align="center" valign="middle" bgcolor="#9DD559" width="12%" runat="server" id="td5"
+                        style="height: 19px">
+                        <a href="../provider/Bill_Sys_BillReportByProvider.aspx" class="txt1">Bill Report By Provider</a>
+                    </td>
+                    <td width="9" align="center" valign="middle" runat="server" id="td4" style="height: 19px">
+                        <a href="#" class="menutxt"></a>
+                    </td>
+                                       <td width="9" align="center" valign="middle" style="height: 19px">
+                        <a
+                    <%--<td width="10" align="center" valign="middle" runat="server" id="tdWorkArea1" style="height: 19px">
+                        <a href="#" class="menutxt"></a>
+                    </td>--%>
+                    <%--    <td  width="12%" runat="server" id="td"  >
+                        <div id="divViewBill" class="menutxt"  runat="server" >
+                        <table >
+                        <tr>
+                        <td align="center" valign="middle" bgcolor="#5998C9" width="12%" height="100%">
+                            <a href="Bill_Sys_Logout.aspx" class="menutxt">ViewBill</a></td>
+                       
+                        </tr>
+                        </table>
+                        </div>
+                        </td>--%>
+                    <%--<td align="center" valign="middle" bgcolor="#5998C9">
+                        <a href="#" class="menutxt"></a><a href="#" class="menutxt">Calendar</a></td>
+                    <td width="2" align="center" valign="middle">
+                        <a href="#" class="menutxt"></a>
+                    </td>
+                    <td align="center" valign="middle" bgcolor="#5998C9">
+                        <a href="#" class="menutxt">Quick Bill Entry</a></td>
+                    <td width="2" align="center" valign="middle">
+                        <a href="#" class="menutxt"></a>
+                    </td>
+                    <td align="center" valign="middle" bgcolor="#5998C9">
+                        <a href="#" class="menutxt">Reports</a></td>
+                    <td width="2" align="center" valign="middle">
+                        <a href="#" class="menutxt"></a>
+                    </td>--%>
+                    <td align="center" valign="middle" bgcolor="#9DD559" width="12%" style="height: 19px">
+                        <a href="#" class="txt1"></a>
+                    </td>
+                    <%-- <td width="9" align="center" valign="middle" runat="server" id="td1" style="height: 19px">
+                        <a href="#" class="menutxt"></a>
+                    </td>--%>
+                    <td align="center" valign="middle" bgcolor="#9DD559" width="12%" style="height: 19px">
+                        <a href="#" class="txt1"></a>
+                    </td>
+                    <%-- <td width="9" align="center" valign="middle" runat="server" id="td2" style="height: 19px">
+                        <a href="#" class="menutxt"></a>
+                    </td>--%>
+                    <td align="center" valign="middle" bgcolor="#9DD559" width="12%" style="height: 19px">
+                        <a href="#" class="txt1"></a>
+                    </td>
+                    <%-- <td width="9" align="center" valign="middle" runat="server" id="td3" style="height: 19px">
+                        <a href="#" class="menutxt"></a>
+                    </td>--%>
+                    <td align="center" valign="middle" bgcolor="#9DD559" width="12%" style="height: 19px">
+                        <a href="#" class="txt1"></a>
+                    </td>
+                    <%-- <td width="10" align="center" valign="middle" runat="server" id="td4" style="height: 19px">
+                        <a href="#" class="menutxt"></a>
+                    </td>--%>
+                    <%--<td width="9" align="center" valign="middle" style="height: 19px">
+                        <a href="#" class="menutxt"></a>
+                    </td>--%>
+                    <td width="308" align="center" valign="middle" bgcolor="#9DD559" style="height: 19px">
+                        &nbsp;</td>
+                    <td width="9" align="center" valign="middle" runat="server" id="td1" style="height: 19px">
+                        <a href="#" class="menutxt"></a>
+                    </td>
+                    <td align="center" valign="middle" bgcolor="#5998C9" width="12%" style="height: 19px">
+                        <a href="../Bill_Sys_Logout.aspx" class="menutxt">Logout</a></td>
+                    <td width="9" align="center" valign="middle" runat="server" id="td2" style="height: 19px">
+                        <a href="#" class="menutxt"></a>
+                    </td>
+                    <%--    <td width="13" align="center" valign="middle" bgcolor="#9DD559" style="height: 19px">
+                        &nbsp;</td>--%>
+                    <%-- <td width="69" align="center" valign="middle" bgcolor="#9DD559" style="height: 19px">
+                        &nbsp;</td>--%>
+                </tr>
+            </table>
+        </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+      
+    </form>
+     
+</body>
+</html>

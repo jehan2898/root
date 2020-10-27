@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="MST_MENU">
+  <Field Name="I_MENU_ID"         DataType="Int"         Size=""         Null="False"  Control="TextBox"                 ControlID=""                     Editable="False" Visible="False"></Field>
+  <Field Name="SZ_MENU_NAME"      DataType="NVarChar"    Size="100"      Null="False"  Control="TextBox"                 ControlID="txtMenuName"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_MENU_CODE"      DataType="NVarChar"    Size="100"      Null="False"  Control="TextBox"                 ControlID="txtMenuCode"          Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_MENU_LINK"      DataType="NVarChar"    Size="1000"     Null="True"   Control="TextBox"                 ControlID="txtMenuLink"          Editable="True"  Visible="True" ></Field>
+  <Field Name="BIT_MENU_ACCESS"   DataType="Bit"         Size=""         Null="True"   Control="CheckBox"                ControlID="chkIsAccessible"      Editable="True"  Visible="True" ></Field>
+  <Field Name="I_PARENT_ID"       DataType="Int"         Size=""         Null="True"   Control="ExtendedDropDownList"    ControlID="extddlParentID"       Editable="True"  Visible="True" ></Field>
+  <Field Name="SZ_DESCRIPTION"    DataType="NVarChar"    Size="100"      Null="True"   Control="TextBox"                 ControlID="txtMenuDesc"          Editable="True"  Visible="True" ></Field>
+
+  <StoreProcedure name="SP_MST_MENU"></StoreProcedure>
+  <ListControl name="grdMenu"></ListControl>
+</Table>
+
+
+

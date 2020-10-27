@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <SZ_TREAT_DATE>19-MAR-2009</SZ_TREAT_DATE>
+	<SZ_TREAT_DOC>Dr. John</SZ_TREAT_DOC>
+    <SZ_PROCEDURE>Initial Visit</SZ_PROCEDURE>
+	<SZ_REMARK>Doctors Initial visit</SZ_REMARK>
+  </Table>
+  <Table>
+    <SZ_TREAT_DATE>26-MAR-2009</SZ_TREAT_DATE>
+	<SZ_TREAT_DOC>Dr. John</SZ_TREAT_DOC>
+    <SZ_PROCEDURE>MRI</SZ_PROCEDURE>
+	<SZ_REMARK>Scheduled at - M.G Medical</SZ_REMARK>
+  </Table>
+</NewDataSet>

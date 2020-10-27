@@ -1,0 +1,34 @@
+<root>
+<document type= "FUNDING_SYSTEM" description="LSC Payoff letter template" lastmodified="June 22 2009 15:35" procedure_name="SP_TEST_FACILITY_INTAKE_PDF" >
+<field db_field_name="TXT_PATIENT_NAME"       pdf_field_index="1"  pdf_field_name="TXT_PATIENT_NAME"   if_blank=" "/>
+<field db_field_name="TXT_OFFICE_NAMES"       pdf_field_index="2"  pdf_field_name="TXT_OFFICE_NAMES"   if_blank=" "/>
+<field db_field_name="TXT_OFFICE_NAME"       pdf_field_index="3"  pdf_field_name="TXT_OFFICE_NAME"   if_blank=" "/>
+<field db_field_name="TXT_PREVIOUS_DATE"       pdf_field_index="4"  pdf_field_name="TXT_PREVIOUS_DATE"   if_blank=" "/>
+<field db_field_name="TXT_DIAGNOSED"       pdf_field_index="5"  pdf_field_name="TXT_DIAGNOSED"   if_blank=" "/>
+<field db_field_name="TXT_DOCTER_NAME"       pdf_field_index="6"  pdf_field_name="TXT_DOCTER_NAME"   if_blank=" "/>
+<field db_field_name="TXT_Date"       pdf_field_index="7"  pdf_field_name="TXT_Date"   if_blank=" "/>
+<field db_field_name="TXT_PROBLEM_DATE"       pdf_field_index="8"  pdf_field_name="TXT_PROBLEM_DATE"   if_blank=" "/>
+<field db_field_name="SIG_PATIENT_SIGNATURE"       pdf_field_index="9"  pdf_field_name="SIG_PATIENT_SIGNATURE"   if_blank=" " isImage="1"/>
+<field db_field_name="Signature1"       pdf_field_index="10"  pdf_field_name="Signature1"   if_blank=" " isImage="1"/>
+<field db_field_name="TXT_DATE"       pdf_field_index="11"  pdf_field_name="TXT_DATE"   if_blank=" "/>
+<field db_field_name="TXT_ADDRESS"       pdf_field_index="12"  pdf_field_name="TXT_ADDRESS"   if_blank=" "/>
+<field db_field_name="TXT_PREVIOUS_DOCTER_NAME"       pdf_field_index="13"  pdf_field_name="TXT_PREVIOUS_DOCTER_NAME"   if_blank=" "/>
+<field db_field_name="TXT_OFFICE_NAMEH"       pdf_field_index="14"  pdf_field_name="TXT_OFFICE_NAMEH"   if_blank=" "/>
+<field db_field_name="SIG_ATTORNEY_SIGNATURE"       pdf_field_index="15"  pdf_field_name="SIG_ATTORNEY_SIGNATURE"   if_blank=" " isImage="1"/>
+<field db_field_name="RDO_PRG"       pdf_field_index="16"  pdf_field_name="RDO_PRG"   if_blank=" "/>
+<field db_field_name="TXT_PROBLRMR_DURATION"       pdf_field_index="17"  pdf_field_name="TXT_PROBLRMR_DURATION"   if_blank=" "/>
+<field db_field_name="TXT_ACCIDENT_DATE"       pdf_field_index="18"  pdf_field_name="TXT_ACCIDENT_DATE"   if_blank=" "/>
+<field db_field_name="SIG_PATIENT_OR_PARENT_MINOR"       pdf_field_index="19"  pdf_field_name="SIG_PATIENT_OR_PARENT_MINOR"   if_blank=" " isImage="1"/>
+<field db_field_name="SIG_PARENT_GARDIAN_SIGNATURE"       pdf_field_index="20"  pdf_field_name="SIG_PARENT_GARDIAN_SIGNATURE"   if_blank=" " isImage="1"/>
+<field db_field_name="TXT_MRI"       pdf_field_index="21"  pdf_field_name="TXT_MRI"   if_blank=" "/>
+<field db_field_name="TXT_HOWMUCH"       pdf_field_index="22"  pdf_field_name="TXT_HOWMUCH"   if_blank=" "/>
+<field db_field_name="TXT_MEDICAL_ILLNESSES"       pdf_field_index="23"  pdf_field_name="TXT_MEDICAL_ILLNESSES"   if_blank=" "/>
+<field db_field_name="TXT_TECH"       pdf_field_index="24"  pdf_field_name="TXT_TECH"   if_blank=" "/>
+<field db_field_name="TXT_PROBLREM_RESULT"       pdf_field_index="25"  pdf_field_name="TXT_PROBLREM_RESULT"   if_blank=" "/>
+<field db_field_name="TXT_LIST_PREVIOUS_SERGERY_OPERATION"       pdf_field_index="26"  pdf_field_name="TXT_LIST_PREVIOUS_SERGERY_OPERATION"   if_blank=" "/>
+<field db_field_name="TXT_PROBLEME_EXPLATION"       pdf_field_index="27"  pdf_field_name="TXT_PROBLEME_EXPLATION"   if_blank=" "/>
+<field db_field_name="TXT_FAX_NO"       pdf_field_index="28"  pdf_field_name="TXT_FAX_NO"   if_blank=" "/>
+<field db_field_name="TXT_CC"       pdf_field_index="29"  pdf_field_name="TXT_CC"   if_blank=" "/>
+<field db_field_name="RDO_IV"       pdf_field_index="30"  pdf_field_name="RDO_IV"   if_blank=" "/>
+<field db_field_name="TXT_TEL_NO"       pdf_field_index="31"  pdf_field_name="TXT_TEL_NO"   if_blank=" "/>
+ </document></root>
